@@ -39,3 +39,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/lib/generated/prisma
+
+# prisma sqlite (dev only - production uses a hosted DB)
+/prisma/*.db
+/prisma/*.db-journal
+/dev.db
+
+# local tooling
+.claude/
+
+# raw uploaded source assets (processed versions live in /public)
+/suitepacific.jpeg

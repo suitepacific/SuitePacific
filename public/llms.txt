@@ -1,0 +1,33 @@
+# SuitePacific
+
+> SuitePacific, LLC is a boutique, US-based Oracle NetSuite consulting company that exclusively supports companies *after* their NetSuite implementation is complete. We are not an implementation partner and do not advertise implementation or integration services.
+
+## What we do
+
+SuitePacific becomes a company's ongoing, dedicated NetSuite team once their initial implementation partner's engagement has ended. We provide:
+
+- SuiteScript development (custom scripts and customizations)
+- Workflow automation (SuiteFlow)
+- Saved searches and dashboards
+- Advanced PDF/HTML templates
+- NetSuite account optimization and cleanup
+- Bug fixes and ongoing troubleshooting
+- Monthly enhancements and continuous improvement
+
+## Who we serve
+
+Companies that have already implemented Oracle NetSuite and need an ongoing, responsive team for support and enhancements. Typical buyers: CFOs, Controllers, ERP Managers, NetSuite Administrators, Operations Managers, and IT Managers.
+
+## How we're different
+
+Unlike large NetSuite consulting firms, SuitePacific is a boutique team offering senior NetSuite developers, direct communication (no account-manager layer), fast turnaround (days, not weeks), and flexible month-to-month engagement with no long-term contracts.
+
+## Key pages
+
+- Homepage: https://suitepacific.com/ — services overview, pricing positioning, FAQ, and contact form
+- Blog: https://suitepacific.com/blog — NetSuite tips, SuiteScript best practices, and workflow automation guidance
+
+## Contact
+
+- Email: info@suitepacific.com
+- Consultation booking form: https://suitepacific.com/#contact

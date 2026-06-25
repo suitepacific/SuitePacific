@@ -1,26 +1,70 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0b1220;
+
+  --color-brand-50: #eef2fb;
+  --color-brand-100: #d7e0f3;
+  --color-brand-200: #b2c2e6;
+  --color-brand-300: #8aa2d6;
+  --color-brand-400: #4f6fb0;
+  --color-brand-500: #1f3a7a;
+  --color-brand-600: #14306b;
+  --color-brand-700: #0f2557;
+  --color-brand-800: #0b1f4d;
+  --color-brand-900: #060f26;
+  --color-brand: #0b1f4d;
+  --color-accent: #4f7fff;
+  --color-accent-light: #8fb1ff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-brand-50: var(--color-brand-50);
+  --color-brand-100: var(--color-brand-100);
+  --color-brand-200: var(--color-brand-200);
+  --color-brand-300: var(--color-brand-300);
+  --color-brand-400: var(--color-brand-400);
+  --color-brand-500: var(--color-brand-500);
+  --color-brand-600: var(--color-brand-600);
+  --color-brand-700: var(--color-brand-700);
+  --color-brand-800: var(--color-brand-800);
+  --color-brand-900: var(--color-brand-900);
+  --color-brand: var(--color-brand);
+  --color-accent: var(--color-accent);
+  --color-accent-light: var(--color-accent-light);
+
+  --font-sans: var(--font-inter);
+
+  --shadow-soft: 0 8px 30px -8px rgb(11 31 77 / 0.18);
+  --shadow-soft-lg: 0 20px 50px -15px rgb(11 31 77 / 0.25);
+  --shadow-glass: 0 4px 24px rgb(11 31 77 / 0.1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@utility glass {
+  background: rgb(255 255 255 / 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgb(255 255 255 / 0.5);
+}
+
+@utility glass-dark {
+  background: rgb(11 31 77 / 0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgb(255 255 255 / 0.08);
+}
+
+@utility text-balance {
+  text-wrap: balance;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
+

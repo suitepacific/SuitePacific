@@ -1,5 +1,5 @@
 {
-  "name": "suitepacific-tmp",
+  "name": "suitepacific",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,19 +9,29 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "framer-motion": "^12.42.0",
+    "gray-matter": "^4.0.3",
+    "lucide-react": "^1.21.0",
+    "marked": "^18.0.5",
+    "next": "15.5.19",
+    "prisma": "^6.19.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.19"
+    "reading-time": "^1.5.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@tailwindcss/typography": "^0.5.20",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
+    "dotenv": "^17.4.2",
     "eslint": "^9",
     "eslint-config-next": "15.5.19",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4",
+    "tsx": "^4.22.4",
+    "typescript": "^5"
   }
 }
