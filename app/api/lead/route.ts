@@ -26,9 +26,14 @@ export async function POST(request: NextRequest) {
       body: formData,
       headers: { Accept: "application/json", Referer: SITE_URL },
     });
-    const result = await response.json();
-    if (result.success !== "true" && result.success !== true) {
-      console.error("FormSubmit rejected the lead:", result.message);
+    const raw = await response.text();
+    try {
+      const result = JSON.parse(raw);
+      if (result.success !== "true" && result.success !== true) {
+        console.error("FormSubmit rejected the lead:", result.message);
+      }
+    } catch {
+      console.error("FormSubmit returned non-JSON, status:", response.status, "body:", raw.slice(0, 1000));
     }
   } catch (error) {
     console.error("Failed to forward lead to FormSubmit:", error);
