@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { FORMSUBMIT_ENDPOINT } from "@/lib/content";
+import { FORMSUBMIT_ENDPOINT, SITE_URL } from "@/lib/content";
 
 export async function POST(request: NextRequest) {
   const formData = await request.formData();
@@ -21,11 +21,15 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    await fetch(FORMSUBMIT_ENDPOINT, {
+    const response = await fetch(FORMSUBMIT_ENDPOINT, {
       method: "POST",
       body: formData,
-      headers: { Accept: "application/json" },
+      headers: { Accept: "application/json", Referer: SITE_URL },
     });
+    const result = await response.json();
+    if (result.success !== "true" && result.success !== true) {
+      console.error("FormSubmit rejected the lead:", result.message);
+    }
   } catch (error) {
     console.error("Failed to forward lead to FormSubmit:", error);
   }
