@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { FORMSUBMIT_ENDPOINT, SITE_URL } from "@/lib/content";
 
+// Email delivery happens client-side (see LeadForm.tsx) — FormSubmit sits behind
+// Cloudflare, which challenges server-to-server requests from Vercel's IPs with a
+// JS challenge page that a backend can never solve. This route only persists the lead.
 export async function POST(request: NextRequest) {
   const formData = await request.formData();
   const name = String(formData.get("name") ?? "");
@@ -18,25 +20,6 @@ export async function POST(request: NextRequest) {
     await prisma.leadSubmission.create({ data: { name, email, company, message } });
   } catch (error) {
     console.error("Failed to save lead to database:", error);
-  }
-
-  try {
-    const response = await fetch(FORMSUBMIT_ENDPOINT, {
-      method: "POST",
-      body: formData,
-      headers: { Accept: "application/json", Referer: SITE_URL },
-    });
-    const raw = await response.text();
-    try {
-      const result = JSON.parse(raw);
-      if (result.success !== "true" && result.success !== true) {
-        console.error("FormSubmit rejected the lead:", result.message);
-      }
-    } catch {
-      console.error("FormSubmit returned non-JSON, status:", response.status, "body:", raw.slice(0, 1000));
-    }
-  } catch (error) {
-    console.error("Failed to forward lead to FormSubmit:", error);
   }
 
   return NextResponse.json({ success: true });

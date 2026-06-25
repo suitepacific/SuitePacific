@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
 import { CheckCircle2, Loader2 } from "lucide-react";
-import { CALENDLY_URL } from "@/lib/content";
+import { CALENDLY_URL, FORMSUBMIT_ENDPOINT } from "@/lib/content";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -24,6 +24,15 @@ export function LeadForm() {
       });
 
       if (!response.ok) throw new Error("Submission failed");
+
+      // Email delivery happens directly from the browser: FormSubmit sits behind
+      // Cloudflare, which blocks server-to-server requests but allows real browsers.
+      fetch(FORMSUBMIT_ENDPOINT, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      }).catch(() => {});
+
       setStatus("success");
       form.reset();
     } catch {
