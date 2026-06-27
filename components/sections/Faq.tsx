@@ -7,7 +7,7 @@ import { FAQ_ITEMS } from "@/lib/content";
 
 export function Faq() {
   return (
-    <section className="py-24 sm:py-32">
+    <section id="faq" className="py-24 sm:py-32">
       <FaqJsonLd />
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <SectionHeading eyebrow="Common Questions" title="Frequently Asked Questions" />

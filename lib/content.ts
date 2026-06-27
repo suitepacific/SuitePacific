@@ -18,13 +18,26 @@ import {
   DollarSign,
   Headset,
   TrendingUp,
+  Search,
+  Database,
+  PanelsTopLeft,
+  Activity,
+  MousePointerClick,
+  Timer,
+  Layers3,
+  Gauge,
+  BarChart3,
+  Factory,
+  Truck,
+  Briefcase,
+  Calculator,
 } from "lucide-react";
 import type {
   NavLink,
   IconItem,
   Service,
   TimelineStep,
-  Testimonial,
+  CaseStudy,
   FooterColumn,
   KpiStat,
   FaqItem,
@@ -40,9 +53,12 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Services", href: "/#services" },
   { label: "How We Help", href: "/#timeline" },
   { label: "Why SuitePacific", href: "/#why-us" },
-  { label: "Testimonials", href: "/#testimonials" },
+  { label: "Case Studies", href: "/#case-studies" },
   { label: "Blog", href: "/blog" },
 ];
+
+export const CTA_SUPPORT_LINE =
+  "No discovery calls. No long-term contracts. Just experienced NetSuite experts helping you get more from NetSuite.";
 
 export const TRUST_BADGES: string[] = [
   "Certified NetSuite Developers",
@@ -174,27 +190,97 @@ export const BOUTIQUE_BENEFITS: IconItem[] = [
   { icon: Headset, title: "Dedicated Support", description: "A consistent team that knows your account, your history, and your priorities." },
 ];
 
-export const TESTIMONIALS: Testimonial[] = [
+export const ABOUT_INTRO = {
+  eyebrow: "About SuitePacific",
+  title: "About SuitePacific",
+  paragraphs: [
+    "SuitePacific is a boutique NetSuite consulting firm dedicated to helping businesses get the most from their NetSuite investment after implementation.",
+    "Unlike large consulting firms, we focus on delivering practical solutions quickly, with direct communication, senior technical expertise, and long-term partnership.",
+    "Whether you need custom SuiteScript development, workflow automation, dashboards, saved searches, advanced PDF templates, or ongoing NetSuite enhancements, our goal is simple: deliver reliable solutions that improve the way your business operates.",
+  ],
+};
+
+export const ABOUT_FEATURES: IconItem[] = [
   {
-    quote:
-      "Our implementation partner vanished the day we went live. SuitePacific stepped in and has been faster and more responsive than anyone we worked with before.",
-    name: "Sarah Chen",
-    role: "Controller",
-    company: "Northwind Supply Co.",
+    icon: Users,
+    title: "Senior NetSuite Expertise",
+    description: "Every project is handled by experienced, certified NetSuite developers, not junior staff learning on your account.",
   },
   {
-    quote:
-      "We needed someone who could just open the account and build, no discovery calls, no statements of work. That's exactly what we got.",
-    name: "Marcus Webb",
-    role: "ERP Manager",
-    company: "Crestline Manufacturing",
+    icon: Zap,
+    title: "Fast Turnaround",
+    description: "Most requests move from request to delivery in days, without sitting in a ticket queue for weeks.",
   },
   {
-    quote:
-      "Monthly enhancements that used to take six weeks with our old partner now take a few days. SuitePacific feels like an extension of our own team.",
-    name: "Priya Raman",
-    role: "VP of Finance",
-    company: "Harborview Foods",
+    icon: MessageCircle,
+    title: "Direct Communication",
+    description: "You work directly with the person doing the work, with no account manager relaying messages back and forth.",
+  },
+  {
+    icon: Heart,
+    title: "Long-Term Partnership",
+    description: "We're built to be your NetSuite team for the long run, not a single project that wraps up and disappears.",
+  },
+];
+
+export const RECENT_WORK: IconItem[] = [
+  { icon: Code2, title: "SuiteScript Development", description: "Custom scripts tailored to exactly how your business operates." },
+  { icon: Workflow, title: "Workflow Automation", description: "Automated approvals and notifications that remove manual busywork." },
+  { icon: Search, title: "Saved Searches", description: "Targeted searches that surface the data your team actually needs." },
+  { icon: LayoutDashboard, title: "Dashboards", description: "Role-based dashboards that put key metrics in front of the right people." },
+  { icon: FileText, title: "Advanced PDF Templates", description: "Branded invoices, statements, and forms that match how you do business." },
+  { icon: Database, title: "Custom Records", description: "Structured records that capture the data your processes depend on." },
+  { icon: PanelsTopLeft, title: "Suitelets", description: "Custom pages and tools built directly inside NetSuite." },
+  { icon: Activity, title: "User Event Scripts", description: "Automatic record-level logic that runs exactly when it should." },
+  { icon: MousePointerClick, title: "Client Scripts", description: "Real-time validation and guidance right on the data entry form." },
+  { icon: Timer, title: "Scheduled Scripts", description: "Background jobs that keep recurring processes running on autopilot." },
+  { icon: Layers3, title: "Map/Reduce Scripts", description: "Reliable processing for high-volume data without hitting governance limits." },
+  { icon: Settings2, title: "NetSuite Optimization", description: "Cleaner configurations for a faster, more reliable account." },
+  { icon: Gauge, title: "Performance Tuning", description: "Faster page loads and searches across a heavily used account." },
+  { icon: BarChart3, title: "Reporting & Analytics", description: "Clearer visibility into the numbers that drive decisions." },
+  { icon: LifeBuoy, title: "Post-Go-Live Support", description: "Responsive, senior-level help for whatever comes up next." },
+];
+
+export const CASE_STUDIES: CaseStudy[] = [
+  {
+    icon: Factory,
+    industry: "Manufacturing Company",
+    challenge:
+      "Purchase order approvals relied on manual email chains, causing delays and no clear visibility into what was still pending.",
+    solution:
+      "Built a SuiteFlow-based approval workflow with role-based routing and automatic notifications.",
+    outcome:
+      "Purchase orders now move through approval automatically, with managers able to see exactly where each request stands.",
+  },
+  {
+    icon: Truck,
+    industry: "Wholesale Distributor",
+    challenge:
+      "The operations team spent hours each week manually pulling inventory and order data into spreadsheets for daily reporting.",
+    solution:
+      "Built a set of saved searches and a role-based dashboard that surfaces live inventory and order status.",
+    outcome:
+      "The team now checks a live dashboard instead of rebuilding reports by hand, freeing up significant time every week.",
+  },
+  {
+    icon: Briefcase,
+    industry: "Professional Services Company",
+    challenge:
+      "Client invoices were generated from a generic template that didn't reflect the company's actual billing structure or branding.",
+    solution:
+      "Designed advanced PDF templates with dynamic line-item logic matching their real billing model.",
+    outcome:
+      "Invoices now go out branded and accurate on the first pass, with far less manual cleanup before sending.",
+  },
+  {
+    icon: Calculator,
+    industry: "Finance Team",
+    challenge:
+      "Month-end close required manually reconciling several custom fields and records across departments.",
+    solution:
+      "Implemented custom SuiteScript and scheduled scripts to automate reconciliation and flag discrepancies early.",
+    outcome:
+      "Month-end preparation now takes less manual review, with issues surfaced earlier in the cycle instead of at close.",
   },
 ];
 
@@ -234,16 +320,40 @@ export const FAQ_ITEMS: FaqItem[] = [
     answer:
       "Yes. Our developers are certified NetSuite professionals with hands-on experience across SuiteScript, SuiteFlow, and NetSuite's reporting tools.",
   },
+  {
+    question: "What types of NetSuite customizations do you provide?",
+    answer:
+      "SuiteScript development, Suitelets, custom records, User Event and Client scripts, Scheduled and Map/Reduce scripts, workflow automation, saved searches, dashboards, and advanced PDF templates, all built around your existing account.",
+  },
+  {
+    question: "Can you customize our existing NetSuite account?",
+    answer:
+      "Yes. That's the core of what we do. We work inside the NetSuite account you already have, building on top of your existing setup rather than starting over.",
+  },
+  {
+    question: "Can you automate our NetSuite business processes?",
+    answer:
+      "Yes. We regularly build SuiteFlow workflows and script-based automation to remove manual steps from approvals, notifications, and recurring data tasks.",
+  },
+  {
+    question: "Do you develop SuiteScript solutions?",
+    answer:
+      "Yes. SuiteScript development is one of our core services, covering everything from small field-level scripts to larger Map/Reduce processes.",
+  },
+  {
+    question: "Can you optimize slow NetSuite accounts?",
+    answer:
+      "Yes. We review configurations, scripts, and saved searches to identify what's slowing an account down and clean up or re-architect what's causing it.",
+  },
 ];
 
 export const FOOTER_COLUMNS: FooterColumn[] = [
   {
-    title: "Navigation",
+    title: "Company",
     links: [
-      { label: "Services", href: "/#services" },
-      { label: "How We Help", href: "/#timeline" },
+      { label: "About SuitePacific", href: "/#about" },
       { label: "Why SuitePacific", href: "/#why-us" },
-      { label: "Testimonials", href: "/#testimonials" },
+      { label: "Recent Work", href: "/#work" },
     ],
   },
   {
@@ -256,17 +366,11 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     ],
   },
   {
-    title: "Company",
-    links: [
-      { label: "About", href: "/#why-us" },
-      { label: "Why Boutique", href: "/#why-us" },
-    ],
-  },
-  {
     title: "Resources",
     links: [
       { label: "Blog", href: "/blog" },
-      { label: "Testimonials", href: "/#testimonials" },
+      { label: "Case Studies", href: "/#case-studies" },
+      { label: "FAQ", href: "/#faq" },
     ],
   },
   {

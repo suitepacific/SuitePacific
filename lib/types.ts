@@ -23,11 +23,12 @@ export type TimelineStep = {
   emphasis?: boolean;
 };
 
-export type Testimonial = {
-  quote: string;
-  name: string;
-  role: string;
-  company: string;
+export type CaseStudy = {
+  icon: LucideIcon;
+  industry: string;
+  challenge: string;
+  solution: string;
+  outcome: string;
 };
 
 export type FooterColumn = {

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
 import { CheckCircle2, Loader2 } from "lucide-react";
-import { CALENDLY_URL, FORMSUBMIT_ENDPOINT } from "@/lib/content";
+import { CALENDLY_URL, FORMSUBMIT_ENDPOINT, CTA_SUPPORT_LINE } from "@/lib/content";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -133,6 +133,8 @@ export function LeadForm() {
           .
         </p>
       )}
+
+      <p className="text-xs text-brand-400 text-center">{CTA_SUPPORT_LINE}</p>
 
       <p className="text-xs text-brand-300 text-center pt-1">
         Prefer to pick a time yourself?{" "}

@@ -4,11 +4,18 @@ import { Timeline } from "@/components/sections/Timeline";
 import { Services } from "@/components/sections/Services";
 import { Comparison } from "@/components/sections/Comparison";
 import { BoutiqueBenefits } from "@/components/sections/BoutiqueBenefits";
-import { Testimonials } from "@/components/sections/Testimonials";
+import { About } from "@/components/sections/About";
+import { RecentWork } from "@/components/sections/RecentWork";
+import { CaseStudies } from "@/components/sections/CaseStudies";
+import { MidCta } from "@/components/sections/MidCta";
+import { Insights } from "@/components/sections/Insights";
 import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
+import { getAllPosts } from "@/lib/blog";
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getAllPosts();
+
   return (
     <main>
       <Hero />
@@ -17,7 +24,11 @@ export default function Home() {
       <Services />
       <Comparison />
       <BoutiqueBenefits />
-      <Testimonials />
+      <About />
+      <RecentWork />
+      <CaseStudies />
+      <MidCta />
+      <Insights posts={posts.slice(0, 3)} />
       <Faq />
       <FinalCta />
     </main>

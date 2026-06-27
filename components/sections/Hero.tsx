@@ -2,7 +2,7 @@ import { CheckCircle2, Clock } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { DashboardMockup } from "@/components/graphics/DashboardMockup";
-import { TRUST_BADGES } from "@/lib/content";
+import { TRUST_BADGES, CTA_SUPPORT_LINE } from "@/lib/content";
 
 export function Hero() {
   return (
@@ -28,6 +28,8 @@ export function Hero() {
               See How We Help
             </Button>
           </div>
+
+          <p className="mt-4 text-sm text-brand-300">{CTA_SUPPORT_LINE}</p>
 
           <div className="mt-6 flex items-center gap-2 text-sm text-brand-600">
             <Clock className="h-4 w-4 text-accent shrink-0" />
