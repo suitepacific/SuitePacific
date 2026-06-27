@@ -40,8 +40,6 @@ export type KpiStat = {
   icon: LucideIcon;
   label: string;
   value: string;
-  delta: string;
-  positive: boolean;
 };
 
 export type FaqItem = {

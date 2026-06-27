@@ -29,5 +29,4 @@ If a workflow sets a field's value in `afterSubmit` and a User Event script also
 
 ---
 
-Workflow problems are rarely about SuiteFlow itself. They're about logic that grew organically over a few years without anyone stepping back to look at the whole picture. If your approval process has become something only one person fully understands, [book a free consultation](/#contact) and we'll help you untangle it.
-
+Workflow problems are rarely about SuiteFlow itself. They're about logic that grew organically over a few years without anyone stepping back to look at the whole picture. Untangling this is part of our [workflow automation service](/#services), and the kind of result it leads to: see our [Intelligent Sales Order Approval Workflow case study](/#case-studies). If your approval process has become something only one person fully understands, [book a free consultation](/#contact) and we'll help you untangle it. For a related read, see [SuiteScript Best Practices](/blog/suitescript-best-practices).

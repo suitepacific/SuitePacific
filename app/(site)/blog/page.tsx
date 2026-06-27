@@ -20,6 +20,7 @@ export default async function BlogIndexPage() {
     <main className="pt-32 pb-24 sm:pt-40 sm:pb-32">
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <SectionHeading
+          as="h1"
           eyebrow="The SuitePacific Blog"
           title="NetSuite Tips & Tricks"
           subtitle="Practical advice for teams managing NetSuite after go-live: saved searches, SuiteScript, workflow automation, and more."
@@ -37,7 +38,7 @@ export default async function BlogIndexPage() {
                 </div>
                 <h2 className="mt-4 font-semibold text-lg text-brand-900">{post.title}</h2>
                 <p className="mt-2 text-sm text-brand-400 flex-1">{post.description}</p>
-                <div className="mt-5 flex items-center justify-between text-xs text-brand-300">
+                <div className="mt-5 flex items-center justify-between text-xs text-brand-400">
                   <span>
                     {new Date(post.date).toLocaleDateString("en-US", {
                       month: "long",

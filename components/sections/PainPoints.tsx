@@ -6,7 +6,7 @@ import { PAIN_POINTS } from "@/lib/content";
 
 export function PainPoints() {
   return (
-    <section className="py-24 sm:py-32">
+    <section id="pain-points" className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading
           eyebrow="The Reality After Go-Live"

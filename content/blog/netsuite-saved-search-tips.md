@@ -51,5 +51,4 @@ Saved searches accumulate. Old searches built for a process that no longer exist
 
 ---
 
-Saved searches are also where we usually start when we take over an account post-go-live: they're cheap to build, easy to fix, and almost always reveal what's actually slowing a finance team down. If your team is stuck exporting to Excel to get answers NetSuite should already give you, [book a free consultation](/#contact) and we'll take a look.
-
+Saved searches are also where we usually start when we take over an account post-go-live: they're cheap to build, easy to fix, and almost always reveal what's actually slowing a finance team down. This is part of our [saved searches and dashboards service](/#services), and you can see a related example in our [client success stories](/#case-studies). If your team is stuck exporting to Excel to get answers NetSuite should already give you, [book a free consultation](/#contact) and we'll take a look.

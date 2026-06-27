@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, FileText, Users, LogOut, ExternalLink } from "lucide-react";
+import { LayoutDashboard, FileText, Users, MapPin, LogOut, ExternalLink } from "lucide-react";
 import { logoutAction } from "@/app/admin/actions";
 
 const LINKS = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
   { href: "/admin/posts", label: "Posts", icon: FileText },
   { href: "/admin/leads", label: "Leads", icon: Users },
+  { href: "/admin/visitors", label: "Visitors", icon: MapPin },
 ];
 
 export function AdminSidebar() {

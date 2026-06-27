@@ -6,7 +6,7 @@ import { BOUTIQUE_BENEFITS } from "@/lib/content";
 
 export function BoutiqueBenefits() {
   return (
-    <section className="py-24 sm:py-32 bg-brand-50/40">
+    <section id="boutique-benefits" className="py-24 sm:py-32 bg-brand-50/40">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <SectionHeading
           eyebrow="The Boutique Advantage"

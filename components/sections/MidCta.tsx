@@ -4,7 +4,7 @@ import { CTA_SUPPORT_LINE } from "@/lib/content";
 
 export function MidCta() {
   return (
-    <section className="py-16 sm:py-20">
+    <section id="mid-cta" className="py-16 sm:py-20">
       <div className="mx-auto max-w-4xl px-6 lg:px-8">
         <FadeIn>
           <div className="rounded-2xl bg-brand-50/60 border border-brand-100 px-8 py-12 sm:py-14 text-center">

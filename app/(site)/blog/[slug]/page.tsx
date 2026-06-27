@@ -5,7 +5,8 @@ import { ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
-import { getAllSlugs, getPostBySlug } from "@/lib/blog";
+import { Card } from "@/components/ui/Card";
+import { getAllPosts, getAllSlugs, getPostBySlug } from "@/lib/blog";
 import { SITE_URL } from "@/lib/content";
 
 export async function generateStaticParams() {
@@ -45,6 +46,9 @@ export default async function BlogPostPage({
   const post = await getPostBySlug(slug);
   if (!post) notFound();
 
+  const allPosts = await getAllPosts();
+  const relatedPosts = allPosts.filter((p) => p.slug !== post.slug).slice(0, 2);
+
   return (
     <main className="pt-32 pb-24 sm:pt-40 sm:pb-32">
       <BlogPostingJsonLd post={post} />
@@ -72,7 +76,7 @@ export default async function BlogPostPage({
           {post.title}
         </h1>
 
-        <div className="mt-4 text-sm text-brand-300">
+        <div className="mt-4 text-sm text-brand-400">
           {new Date(post.date).toLocaleDateString("en-US", {
             month: "long",
             day: "numeric",
@@ -85,6 +89,24 @@ export default async function BlogPostPage({
           className="prose prose-blue mt-10 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900"
           dangerouslySetInnerHTML={{ __html: post.contentHtml }}
         />
+
+        {relatedPosts.length > 0 && (
+          <div className="mt-14 pt-10 border-t border-brand-50">
+            <h2 className="text-sm font-semibold text-brand-900 uppercase tracking-wide">
+              More From the Blog
+            </h2>
+            <div className="mt-5 grid sm:grid-cols-2 gap-4">
+              {relatedPosts.map((related) => (
+                <Link key={related.slug} href={`/blog/${related.slug}`}>
+                  <Card className="p-5 h-full hover:shadow-soft-lg hover:border-brand-100 transition-shadow">
+                    <h3 className="font-semibold text-brand-900 text-sm">{related.title}</h3>
+                    <p className="mt-2 text-sm text-brand-400">{related.description}</p>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="mt-14 pt-10 border-t border-brand-50 text-center">
           <p className="text-brand-900 font-semibold">Have a NetSuite challenge like this?</p>

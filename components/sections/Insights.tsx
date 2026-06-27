@@ -26,7 +26,7 @@ export function Insights({ posts }: { posts: BlogPostMeta[] }) {
                 <Card className="p-6 h-full flex flex-col hover:shadow-soft-lg hover:border-brand-100 transition-shadow">
                   <div className="flex items-center gap-2 flex-wrap">
                     {post.tags[0] && <Badge>{post.tags[0]}</Badge>}
-                    <span className="text-xs text-brand-300">{post.readingTime}</span>
+                    <span className="text-xs text-brand-400">{post.readingTime}</span>
                   </div>
                   <h3 className="mt-4 font-semibold text-brand-900">{post.title}</h3>
                   <p className="mt-2 text-sm text-brand-400 flex-1">{post.description}</p>

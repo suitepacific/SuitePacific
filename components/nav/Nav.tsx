@@ -50,6 +50,7 @@ export function Nav() {
 
         <button
           aria-label="Toggle menu"
+          aria-expanded={menuOpen}
           className="md:hidden text-brand-900"
           onClick={() => setMenuOpen((open) => !open)}
         >

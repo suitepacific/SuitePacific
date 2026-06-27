@@ -38,3 +38,19 @@ model LeadSubmission {
   message   String?
   createdAt DateTime @default(now())
 }
+
+model VisitorSession {
+  id             String   @id @default(cuid())
+  path           String
+  referrer       String?
+  city           String?
+  region         String?
+  country        String?
+  durationMs     Int
+  sectionsViewed String // JSON array of section ids, in the order first viewed
+  exitSection    String?
+  createdAt      DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([path])
+}

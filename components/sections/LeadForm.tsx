@@ -42,7 +42,7 @@ export function LeadForm() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center justify-center text-center py-10">
+      <div role="status" aria-live="polite" className="flex flex-col items-center justify-center text-center py-10">
         <CheckCircle2 className="h-10 w-10 text-emerald-500" />
         <h3 className="mt-4 font-semibold text-brand-900 text-lg">Request received.</h3>
         <p className="mt-2 text-sm text-brand-400 max-w-xs">
@@ -104,7 +104,7 @@ export function LeadForm() {
 
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-brand-700 mb-1.5">
-          What do you need help with? <span className="text-brand-300">(optional)</span>
+          What do you need help with? <span className="text-brand-400">(optional)</span>
         </label>
         <textarea
           id="message"
@@ -125,7 +125,7 @@ export function LeadForm() {
       </button>
 
       {status === "error" && (
-        <p className="text-sm text-red-500 text-center">
+        <p role="status" aria-live="polite" className="text-sm text-red-500 text-center">
           Something went wrong. Please email us directly at{" "}
           <a href="mailto:info@suitepacific.com" className="underline">
             info@suitepacific.com
@@ -136,9 +136,9 @@ export function LeadForm() {
 
       <p className="text-xs text-brand-400 text-center">{CTA_SUPPORT_LINE}</p>
 
-      <p className="text-xs text-brand-300 text-center pt-1">
+      <p className="text-xs text-brand-400 text-center pt-1">
         Prefer to pick a time yourself?{" "}
-        <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-brand-400">
+        <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-brand-600">
           Book directly via Calendly
         </a>
         .

@@ -17,7 +17,6 @@ import {
   Heart,
   DollarSign,
   Headset,
-  TrendingUp,
   Search,
   Database,
   PanelsTopLeft,
@@ -29,6 +28,7 @@ import {
   BarChart3,
   ClipboardList,
   Receipt,
+  ShieldCheck,
 } from "lucide-react";
 import type {
   NavLink,
@@ -62,14 +62,14 @@ export const TRUST_BADGES: string[] = [
   "Certified NetSuite Developers",
   "Boutique & Responsive",
   "Focused on Post-Go-Live",
-  "Trusted by Growing Businesses",
+  "No Long-Term Contracts",
 ];
 
 export const KPI_STATS: KpiStat[] = [
-  { icon: TrendingUp, label: "Process Efficiency", value: "+38%", delta: "+12%", positive: true },
-  { icon: DollarSign, label: "Monthly Close Time", value: "4.2 days", delta: "-2.1 days", positive: true },
-  { icon: Users, label: "Active Automations", value: "27", delta: "+6", positive: true },
-  { icon: Clock, label: "Avg. Ticket Turnaround", value: "1.8 days", delta: "-3.4 days", positive: true },
+  { icon: Workflow, label: "Active Workflows", value: "12" },
+  { icon: Search, label: "Saved Searches", value: "28" },
+  { icon: Code2, label: "Scripts Deployed", value: "16" },
+  { icon: Clock, label: "Open Tickets", value: "4" },
 ];
 
 export const PAIN_POINTS: IconItem[] = [
@@ -202,24 +202,24 @@ export const ABOUT_INTRO = {
 
 export const ABOUT_FEATURES: IconItem[] = [
   {
-    icon: Users,
-    title: "Senior NetSuite Expertise",
-    description: "Every project is handled by experienced, certified NetSuite developers, not junior staff learning on your account.",
+    icon: LifeBuoy,
+    title: "Post-Go-Live Specialists",
+    description: "We only take on work after a NetSuite account is live, so everything we build is grounded in production reality, not implementation theory.",
   },
   {
-    icon: Zap,
-    title: "Fast Turnaround",
-    description: "Most requests move from request to delivery in days, without sitting in a ticket queue for weeks.",
+    icon: ShieldCheck,
+    title: "Sandbox-Tested Changes",
+    description: "Every change is built and verified in a sandbox before it ever touches your live account.",
   },
   {
-    icon: MessageCircle,
-    title: "Direct Communication",
-    description: "You work directly with the person doing the work, with no account manager relaying messages back and forth.",
+    icon: Code2,
+    title: "Hands-On Technical Work",
+    description: "The person you talk to is the person writing the scripts and building the workflows, not relaying your request to someone else.",
   },
   {
-    icon: Heart,
-    title: "Long-Term Partnership",
-    description: "We're built to be your NetSuite team for the long run, not a single project that wraps up and disappears.",
+    icon: RefreshCcw,
+    title: "Built to Scale With You",
+    description: "As your NetSuite usage grows, so does the relationship: more automation, more reporting, more of what you need, without starting over with someone new.",
   },
 ];
 
@@ -313,7 +313,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Do you handle NetSuite implementations?",
     answer:
-      "No. We intentionally focus only on post-go-live support. If you haven't gone live on NetSuite yet, you'll want an implementation partner first. We're who you call once that partner's work is done and you need an ongoing team.",
+      "No. We intentionally focus only on post-go-live support. If you haven't gone live on NetSuite yet, you'll want an implementation partner first. We're who you call once that partner's work is done and you need an ongoing team. See our implementation partner vs. managed support comparison for the full breakdown.",
   },
   {
     question: "How fast can you start?",
@@ -365,6 +365,16 @@ export const FAQ_ITEMS: FaqItem[] = [
     answer:
       "Yes. We review configurations, scripts, and saved searches to identify what's slowing an account down and clean up or re-architect what's causing it.",
   },
+  {
+    question: "How do you make changes without risking our live account?",
+    answer:
+      "We build and test changes in a sandbox account before anything touches production. Once a change is verified there, we deploy to your live account on a schedule that works for your business, not in the middle of your busiest hours.",
+  },
+  {
+    question: "Who actually works on our account?",
+    answer:
+      "A consistent, senior NetSuite developer who learns your account and stays with it, not a rotating cast of juniors. As a boutique team, we keep our client list intentionally limited so every account gets real attention.",
+  },
 ];
 
 export const FOOTER_COLUMNS: FooterColumn[] = [
@@ -391,6 +401,8 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: "Blog", href: "/blog" },
       { label: "Case Studies", href: "/#case-studies" },
       { label: "FAQ", href: "/#faq" },
+      { label: "Post-Go-Live Support Guide", href: "/netsuite-post-go-live-support" },
+      { label: "Implementation vs. Managed Support", href: "/netsuite-implementation-partner-vs-managed-support" },
     ],
   },
   {

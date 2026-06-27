@@ -63,3 +63,15 @@ export async function getAnalyticsSummary() {
 
   return { views7d, views30d, totalLeads, leads7d, topPages, recentLeads };
 }
+
+export async function getVisitorSessions() {
+  const sessions = await prisma.visitorSession.findMany({
+    orderBy: { createdAt: "desc" },
+    take: 200,
+  });
+
+  return sessions.map((session) => ({
+    ...session,
+    sectionsViewed: JSON.parse(session.sectionsViewed) as string[],
+  }));
+}

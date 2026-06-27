@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, LayoutDashboard, CheckCircle2 } from "lucide-react";
+import { LayoutDashboard, CheckCircle2 } from "lucide-react";
 import { KPI_STATS } from "@/lib/content";
 import { GradientBlob } from "./GradientBlob";
 
@@ -41,17 +42,7 @@ export function DashboardMockup() {
         <div className="grid grid-cols-2 gap-3 mb-5">
           {KPI_STATS.map((stat) => (
             <div key={stat.label} className="rounded-xl bg-white/70 border border-brand-50 p-3">
-              <div className="flex items-center justify-between">
-                <stat.icon className="h-4 w-4 text-brand-400" strokeWidth={1.75} />
-                <span
-                  className={`flex items-center text-[11px] font-medium ${
-                    stat.positive ? "text-emerald-600" : "text-red-500"
-                  }`}
-                >
-                  <ArrowUpRight className="h-3 w-3" />
-                  {stat.delta}
-                </span>
-              </div>
+              <stat.icon className="h-4 w-4 text-brand-400" strokeWidth={1.75} />
               <div className="mt-2 text-lg font-semibold text-brand-900">{stat.value}</div>
               <div className="text-[11px] text-brand-400">{stat.label}</div>
             </div>
@@ -114,11 +105,11 @@ export function DashboardMockup() {
                 fill="none"
                 stroke="#4f7fff"
                 strokeWidth="8"
-                strokeDasharray={`${2 * Math.PI * 26 * 0.78} ${2 * Math.PI * 26}`}
+                strokeDasharray={`${2 * Math.PI * 26 * 0.7} ${2 * Math.PI * 26}`}
                 strokeLinecap="round"
               />
             </svg>
-            <span className="mt-1 text-[11px] font-medium text-brand-400">78% Resolved</span>
+            <span className="mt-1 text-[11px] font-medium text-brand-400">Workflow Progress</span>
           </div>
         </div>
       </motion.div>
@@ -129,7 +120,7 @@ export function DashboardMockup() {
         className="absolute -left-6 -bottom-6 glass rounded-xl shadow-soft px-3 py-2 flex items-center gap-2"
       >
         <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-        <span className="text-xs font-medium text-brand-700">Workflow Automated</span>
+        <span className="text-xs font-medium text-brand-700">250+ Workflows Automated</span>
       </motion.div>
 
       <motion.div
@@ -137,7 +128,35 @@ export function DashboardMockup() {
         transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
         className="absolute -right-4 top-10 glass rounded-xl shadow-soft px-3 py-2 flex items-center gap-2"
       >
-        <span className="text-xs font-medium text-brand-700">Ticket #4821 Resolved</span>
+        <span className="text-xs font-medium text-brand-700">5+ Tickets Resolved Daily</span>
+      </motion.div>
+
+      <motion.div
+        animate={{ y: [0, -7, 0] }}
+        transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
+        className="absolute -left-2 top-2 sm:-left-6 sm:-top-8 glass rounded-xl shadow-soft px-4 py-3 flex items-center h-14"
+      >
+        <Image
+          src="/suitecloudDeveloper2badge.png"
+          alt="Oracle NetSuite Certified SuiteCloud Developer II"
+          width={800}
+          height={187}
+          className="h-7 w-auto"
+        />
+      </motion.div>
+
+      <motion.div
+        animate={{ y: [0, 7, 0] }}
+        transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut" }}
+        className="absolute -right-6 -bottom-10"
+      >
+        <Image
+          src="/adminstratorBadge.png"
+          alt="Oracle NetSuite Certified Administrator Professional"
+          width={552}
+          height={276}
+          className="h-20 w-auto drop-shadow-lg"
+        />
       </motion.div>
     </div>
   );

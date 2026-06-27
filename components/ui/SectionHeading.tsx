@@ -4,6 +4,7 @@ type SectionHeadingProps = {
   subtitle?: string;
   align?: "center" | "left";
   light?: boolean;
+  as?: "h1" | "h2";
 };
 
 export function SectionHeading({
@@ -12,8 +13,10 @@ export function SectionHeading({
   subtitle,
   align = "center",
   light = false,
+  as = "h2",
 }: SectionHeadingProps) {
   const alignment = align === "center" ? "text-center mx-auto" : "text-left";
+  const Heading = as;
 
   return (
     <div className={`max-w-2xl ${alignment}`}>
@@ -26,13 +29,13 @@ export function SectionHeading({
           {eyebrow}
         </span>
       )}
-      <h2
+      <Heading
         className={`text-3xl sm:text-4xl font-semibold tracking-tight text-balance ${
           light ? "text-white" : "text-brand-900"
         }`}
       >
         {title}
-      </h2>
+      </Heading>
       {subtitle && (
         <p
           className={`mt-4 text-lg text-balance ${

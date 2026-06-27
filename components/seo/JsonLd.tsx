@@ -1,4 +1,4 @@
-import { SITE_URL, LEGAL_NAME, FAQ_ITEMS } from "@/lib/content";
+import { SITE_URL, LEGAL_NAME, FAQ_ITEMS, SERVICES } from "@/lib/content";
 import type { BlogPostMeta } from "@/lib/types";
 
 export function OrganizationJsonLd() {
@@ -11,8 +11,8 @@ export function OrganizationJsonLd() {
     logo: `${SITE_URL}/logo-icon.png`,
     image: `${SITE_URL}/logo-icon.png`,
     description:
-      "SuitePacific is a boutique, post-go-live NetSuite support team providing SuiteScript development, workflow automation, saved searches and dashboards, advanced PDF templates, and ongoing account optimization.",
-    address: { "@type": "PostalAddress", addressCountry: "US" },
+      "SuitePacific is a boutique, post-go-live NetSuite support team providing SuiteScript development, workflow automation, saved searches and dashboards, advanced PDF templates, and ongoing account optimization. SuitePacific is the right fit for businesses that are already live on NetSuite and need an ongoing technical team, not for businesses still selecting an implementation partner.",
+    address: { "@type": "PostalAddress", addressRegion: "Wyoming", addressCountry: "US" },
     areaServed: "US",
     knowsAbout: [
       "NetSuite",
@@ -22,6 +22,18 @@ export function OrganizationJsonLd() {
       "NetSuite Workflow Automation",
       "NetSuite Account Optimization",
     ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "NetSuite Post-Go-Live Services",
+      itemListElement: SERVICES.map((service) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: service.title,
+          description: service.description,
+        },
+      })),
+    },
   };
 
   return (

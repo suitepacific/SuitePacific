@@ -6,7 +6,7 @@ import { TRUST_BADGES, CTA_SUPPORT_LINE } from "@/lib/content";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
+    <section id="hero" className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-50/60 to-white" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
@@ -29,12 +29,12 @@ export function Hero() {
             </Button>
           </div>
 
-          <p className="mt-4 text-sm text-brand-300">{CTA_SUPPORT_LINE}</p>
+          <p className="mt-4 text-sm text-brand-400">{CTA_SUPPORT_LINE}</p>
 
           <div className="mt-6 flex items-center gap-2 text-sm text-brand-600">
             <Clock className="h-4 w-4 text-accent shrink-0" />
             <span>
-              <span className="font-semibold text-brand-900">1.8-day average turnaround</span> on support requests, not six weeks.
+              Most requests move in <span className="font-semibold text-brand-900">days, not weeks</span>.
             </span>
           </div>
 
