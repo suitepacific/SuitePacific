@@ -16,11 +16,11 @@ export function CaseStudies() {
 
         <StaggerGroup className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-6">
           {CASE_STUDIES.map((study) => (
-            <StaggerItem key={study.industry}>
+            <StaggerItem key={study.title}>
               <Card className="p-7 h-full">
                 <div className="flex items-center gap-3">
                   <IconBadge icon={study.icon} />
-                  <h3 className="font-semibold text-brand-900">{study.industry}</h3>
+                  <h3 className="font-semibold text-brand-900 text-balance">{study.title}</h3>
                 </div>
 
                 <dl className="mt-6 space-y-4">

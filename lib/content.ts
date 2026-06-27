@@ -27,10 +27,8 @@ import {
   Layers3,
   Gauge,
   BarChart3,
-  Factory,
-  Truck,
-  Briefcase,
-  Calculator,
+  ClipboardList,
+  Receipt,
 } from "lucide-react";
 import type {
   NavLink,
@@ -193,6 +191,8 @@ export const BOUTIQUE_BENEFITS: IconItem[] = [
 export const ABOUT_INTRO = {
   eyebrow: "About SuitePacific",
   title: "About SuitePacific",
+  subtitle:
+    "A boutique NetSuite consulting team focused on practical, post-implementation support, direct communication, and long-term partnership.",
   paragraphs: [
     "SuitePacific is a boutique NetSuite consulting firm dedicated to helping businesses get the most from their NetSuite investment after implementation.",
     "Unlike large consulting firms, we focus on delivering practical solutions quickly, with direct communication, senior technical expertise, and long-term partnership.",
@@ -243,44 +243,64 @@ export const RECENT_WORK: IconItem[] = [
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
-    icon: Factory,
-    industry: "Manufacturing Company",
+    icon: LayoutDashboard,
+    title: "Custom Project Performance Dashboard",
     challenge:
-      "Purchase order approvals relied on manual email chains, causing delays and no clear visibility into what was still pending.",
+      "Project managers lacked a centralized view of actual effort versus planned work. Standard NetSuite reporting couldn't accurately compare actual hours, budgeted effort, and remaining work.",
     solution:
-      "Built a SuiteFlow-based approval workflow with role-based routing and automatic notifications.",
+      "Designed and developed a custom NetSuite dashboard that consolidated project metrics into a single interactive view with real-time budget tracking and project progress insights.",
     outcome:
-      "Purchase orders now move through approval automatically, with managers able to see exactly where each request stands.",
+      "Improved project visibility, reduced spreadsheet dependency, and enabled faster decision-making.",
   },
   {
-    icon: Truck,
-    industry: "Wholesale Distributor",
+    icon: ClipboardList,
+    title: "Vendor Quotation Management Solution",
     challenge:
-      "The operations team spent hours each week manually pulling inventory and order data into spreadsheets for daily reporting.",
+      "Managing supplier quotations manually made it difficult to compare pricing, evaluate vendors, and maintain a consistent procurement process.",
     solution:
-      "Built a set of saved searches and a role-based dashboard that surfaces live inventory and order status.",
+      "Developed a custom NetSuite solution that centralized vendor quotations, simplified supplier comparisons, and streamlined the quotation workflow.",
     outcome:
-      "The team now checks a live dashboard instead of rebuilding reports by hand, freeing up significant time every week.",
+      "Reduced manual effort, improved procurement visibility, and accelerated purchasing decisions.",
   },
   {
-    icon: Briefcase,
-    industry: "Professional Services Company",
+    icon: Workflow,
+    title: "Intelligent Sales Order Approval Workflow",
     challenge:
-      "Client invoices were generated from a generic template that didn't reflect the company's actual billing structure or branding.",
+      "Sales orders with low profit margins required manual review, creating delays and inconsistent approval processes.",
     solution:
-      "Designed advanced PDF templates with dynamic line-item logic matching their real billing model.",
+      "Built a configurable approval workflow that automatically evaluated gross margin thresholds and routed transactions to the appropriate approvers.",
     outcome:
-      "Invoices now go out branded and accurate on the first pass, with far less manual cleanup before sending.",
+      "Standardized approvals, improved pricing governance, and increased visibility into the approval process.",
   },
   {
-    icon: Calculator,
-    industry: "Finance Team",
+    icon: Receipt,
+    title: "High-Volume Invoice Processing Automation",
     challenge:
-      "Month-end close required manually reconciling several custom fields and records across departments.",
+      "Processing large invoice batches manually created unnecessary administrative work and slowed financial operations.",
     solution:
-      "Implemented custom SuiteScript and scheduled scripts to automate reconciliation and flag discrepancies early.",
+      "Developed an automated batch processing solution that streamlined invoice generation and document creation for high transaction volumes.",
     outcome:
-      "Month-end preparation now takes less manual review, with issues surfaced earlier in the cycle instead of at close.",
+      "Reduced manual workload, improved processing speed, and increased operational efficiency.",
+  },
+  {
+    icon: FileText,
+    title: "Advanced PDF Document Automation",
+    challenge:
+      "Standard NetSuite templates couldn't support the client's complex document requirements and branding standards.",
+    solution:
+      "Created custom Advanced PDF templates with dynamic layouts, conditional sections, barcode support, and automated formatting.",
+    outcome:
+      "Delivered professional, consistent business documents while eliminating manual formatting.",
+  },
+  {
+    icon: BarChart3,
+    title: "Operational Reporting & Business Intelligence",
+    challenge:
+      "Business users needed faster access to operational insights than standard NetSuite reporting could provide.",
+    solution:
+      "Built custom dashboards, reports, saved searches, and interactive reporting tools tailored to business requirements.",
+    outcome:
+      "Improved reporting visibility, enabled faster decision-making, and reduced manual reporting effort.",
   },
 ];
 

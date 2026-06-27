@@ -8,13 +8,16 @@ export function About() {
   return (
     <section id="about" className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <SectionHeading eyebrow={ABOUT_INTRO.eyebrow} title={ABOUT_INTRO.title} />
+        <SectionHeading
+          eyebrow={ABOUT_INTRO.eyebrow}
+          title={ABOUT_INTRO.title}
+          subtitle={ABOUT_INTRO.subtitle}
+        />
 
-        <div className="mt-8 max-w-3xl mx-auto space-y-5 text-center">
+        {/* Full description kept for SEO/crawlers; condensed to a one-line subtitle visually above */}
+        <div className="sr-only">
           {ABOUT_INTRO.paragraphs.map((paragraph) => (
-            <p key={paragraph} className="text-lg text-brand-400 text-balance">
-              {paragraph}
-            </p>
+            <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
 
