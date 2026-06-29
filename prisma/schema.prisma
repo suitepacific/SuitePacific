@@ -43,6 +43,8 @@ model VisitorSession {
   id             String   @id @default(cuid())
   path           String
   referrer       String?
+  source         String? // resolved, human-readable traffic source (e.g. "Google Search", "Direct / Unknown")
+  campaign       String? // raw utm_campaign value, if present
   city           String?
   region         String?
   country        String?

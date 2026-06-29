@@ -1,4 +1,4 @@
-import { MapPin, Clock } from "lucide-react";
+import { MapPin, Clock, Compass } from "lucide-react";
 import { getVisitorSessions } from "@/lib/admin-data";
 
 function formatDuration(ms: number) {
@@ -29,6 +29,7 @@ export default async function VisitorsPage() {
               <tr className="border-b border-brand-50 text-left text-brand-400">
                 <th className="px-5 py-3 font-medium">Time</th>
                 <th className="px-5 py-3 font-medium">Page</th>
+                <th className="px-5 py-3 font-medium">Source</th>
                 <th className="px-5 py-3 font-medium">Location</th>
                 <th className="px-5 py-3 font-medium">Duration</th>
                 <th className="px-5 py-3 font-medium">Sections viewed</th>
@@ -38,7 +39,7 @@ export default async function VisitorsPage() {
             <tbody>
               {sessions.length === 0 && (
                 <tr>
-                  <td colSpan={6} className="px-5 py-6 text-brand-300 text-center">
+                  <td colSpan={7} className="px-5 py-6 text-brand-300 text-center">
                     No visitor sessions recorded yet.
                   </td>
                 </tr>
@@ -54,6 +55,15 @@ export default async function VisitorsPage() {
                     })}
                   </td>
                   <td className="px-5 py-3 text-brand-900 font-medium whitespace-nowrap">{session.path}</td>
+                  <td className="px-5 py-3 text-brand-700 whitespace-nowrap">
+                    <span className="inline-flex items-center gap-1.5">
+                      <Compass className="h-3.5 w-3.5 text-brand-300" />
+                      {session.source ?? "Direct / Unknown"}
+                    </span>
+                    {session.campaign && (
+                      <div className="text-xs text-brand-300 mt-0.5">{session.campaign}</div>
+                    )}
+                  </td>
                   <td className="px-5 py-3 text-brand-700">
                     <span className="inline-flex items-center gap-1.5">
                       <MapPin className="h-3.5 w-3.5 text-brand-300" />
