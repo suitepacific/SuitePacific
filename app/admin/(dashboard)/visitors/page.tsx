@@ -12,6 +12,16 @@ function formatLocation(city: string | null, region: string | null, country: str
   return parts.length > 0 ? parts.join(", ") : "Unknown";
 }
 
+function formatTimeIST(date: Date) {
+  return date.toLocaleString("en-IN", {
+    timeZone: "Asia/Kolkata",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  });
+}
+
 export default async function VisitorsPage() {
   const sessions = await getVisitorSessions();
 
@@ -47,12 +57,7 @@ export default async function VisitorsPage() {
               {sessions.map((session) => (
                 <tr key={session.id} className="border-b border-brand-50 last:border-0 align-top">
                   <td className="px-5 py-3 text-brand-400 whitespace-nowrap">
-                    {session.createdAt.toLocaleString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                      hour: "numeric",
-                      minute: "2-digit",
-                    })}
+                    {formatTimeIST(session.createdAt)} IST
                   </td>
                   <td className="px-5 py-3 text-brand-900 font-medium whitespace-nowrap">{session.path}</td>
                   <td className="px-5 py-3 text-brand-700 whitespace-nowrap">
