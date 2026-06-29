@@ -26,6 +26,10 @@ Companies that have already implemented Oracle NetSuite and need an ongoing, res
 
 Unlike large NetSuite consulting firms, SuitePacific is a boutique team offering senior NetSuite developers, direct communication (no account-manager layer), fast turnaround (days, not weeks), and flexible month-to-month engagement with no long-term contracts.
 
+## Certifications
+
+SuitePacific's lead developer holds Oracle NetSuite's SuiteCloud Developer II and Administrator Professional certifications.
+
 ## Key pages
 
 - Homepage: https://suitepacific.com/, services overview, pricing positioning, FAQ, and contact form

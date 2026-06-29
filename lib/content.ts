@@ -59,7 +59,7 @@ export const CTA_SUPPORT_LINE =
   "No discovery calls. No long-term contracts. Just experienced NetSuite experts helping you get more from NetSuite.";
 
 export const TRUST_BADGES: string[] = [
-  "Certified NetSuite Developers",
+  "NetSuite Certified Professional",
   "Boutique & Responsive",
   "Focused on Post-Go-Live",
   "No Long-Term Contracts",
@@ -180,10 +180,10 @@ export const COMPARISON_PROS: string[] = [
 ];
 
 export const BOUTIQUE_BENEFITS: IconItem[] = [
-  { icon: Users, title: "Senior Experts", description: "Every engagement is handled by experienced NetSuite developers, no junior staffing." },
-  { icon: Zap, title: "Fast Turnaround", description: "Most requests are scoped and delivered in days, not weeks." },
-  { icon: MessageCircle, title: "Transparent Communication", description: "Direct access to the people doing the work, not a layer of account managers." },
-  { icon: Heart, title: "Long-Term Partnership", description: "We aim to be your NetSuite team for years, not a single project engagement." },
+  { icon: Users, title: "No Junior Staffing", description: "Every engagement is handled by an experienced NetSuite developer; we don't staff accounts with juniors learning on the job." },
+  { icon: Zap, title: "Fast Turnaround", description: "Most requests are scoped and delivered in days, not weeks, with no statement-of-work cycle in between." },
+  { icon: MessageCircle, title: "Talk Directly to Who's Building It", description: "Your point of contact is the developer writing the script or workflow, not an account manager relaying your request." },
+  { icon: Heart, title: "Built for the Long Run", description: "We're set up to stay your NetSuite team for years, picking up new requests as your business changes rather than closing out after one project." },
   { icon: DollarSign, title: "Cost Effective", description: "Boutique overhead means senior expertise without enterprise consulting rates." },
   { icon: Headset, title: "Dedicated Support", description: "A consistent team that knows your account, your history, and your priorities." },
 ];
@@ -194,9 +194,10 @@ export const ABOUT_INTRO = {
   subtitle:
     "A boutique NetSuite consulting team focused on practical, post-implementation support, direct communication, and long-term partnership.",
   paragraphs: [
-    "SuitePacific is a boutique NetSuite consulting firm dedicated to helping businesses get the most from their NetSuite investment after implementation.",
-    "Unlike large consulting firms, we focus on delivering practical solutions quickly, with direct communication, senior technical expertise, and long-term partnership.",
-    "Whether you need custom SuiteScript development, workflow automation, dashboards, saved searches, advanced PDF templates, or ongoing NetSuite enhancements, our goal is simple: deliver reliable solutions that improve the way your business operates.",
+    "SuitePacific exists because of a gap most NetSuite accounts fall into: the implementation partner's contract ends at go-live, but the business doesn't stop changing. What's left is a live, mission-critical system with no one assigned to keep up with it.",
+    "We chose to stay boutique on purpose. A small, focused team means no account-manager layer between you and the person doing the work, no junior staff learning on your account, and no incentive to pad scope with discovery phases you don't need.",
+    "That's also why we focus exclusively on post-go-live work. Implementation and ongoing support require different skills and different pacing; trying to do both well, for every client, is how large firms end up doing neither particularly well for any one of them.",
+    "Direct communication and long-term partnership aren't slogans here, they're the practical result of staying small: you talk to the person building your workflows, every change is tested in a sandbox before it touches production, and the relationship is built to continue for as long as it's useful to you.",
   ],
 };
 
@@ -250,7 +251,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     solution:
       "Designed and developed a custom NetSuite dashboard that consolidated project metrics into a single interactive view with real-time budget tracking and project progress insights.",
     outcome:
-      "Improved project visibility, reduced spreadsheet dependency, and enabled faster decision-making.",
+      "Project managers could see budget-versus-actual status at a glance instead of rebuilding it in a spreadsheet before every status meeting, catching overruns while there was still time to act on them.",
   },
   {
     icon: ClipboardList,
@@ -260,7 +261,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     solution:
       "Developed a custom NetSuite solution that centralized vendor quotations, simplified supplier comparisons, and streamlined the quotation workflow.",
     outcome:
-      "Reduced manual effort, improved procurement visibility, and accelerated purchasing decisions.",
+      "Procurement could compare vendor quotes side by side inside NetSuite instead of cross-referencing emails and spreadsheets, shortening the time between requesting quotes and issuing a purchase order.",
   },
   {
     icon: Workflow,
@@ -270,7 +271,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     solution:
       "Built a configurable approval workflow that automatically evaluated gross margin thresholds and routed transactions to the appropriate approvers.",
     outcome:
-      "Standardized approvals, improved pricing governance, and increased visibility into the approval process.",
+      "Low-margin orders were automatically flagged and routed to the right approver instead of relying on staff to catch them manually, giving finance consistent enforcement of pricing policy across every sales order.",
   },
   {
     icon: Receipt,
@@ -280,7 +281,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     solution:
       "Developed an automated batch processing solution that streamlined invoice generation and document creation for high transaction volumes.",
     outcome:
-      "Reduced manual workload, improved processing speed, and increased operational efficiency.",
+      "Large invoice batches that previously required staff to generate and review documents one at a time now run as a single automated process, freeing the billing team to focus on exceptions instead of repetitive data entry.",
   },
   {
     icon: FileText,
@@ -290,7 +291,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     solution:
       "Created custom Advanced PDF templates with dynamic layouts, conditional sections, barcode support, and automated formatting.",
     outcome:
-      "Delivered professional, consistent business documents while eliminating manual formatting.",
+      "Every invoice, statement, and form now generates correctly formatted and on-brand straight out of NetSuite, with no manual touch-up required before it reaches a customer or vendor.",
   },
   {
     icon: BarChart3,
@@ -300,7 +301,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     solution:
       "Built custom dashboards, reports, saved searches, and interactive reporting tools tailored to business requirements.",
     outcome:
-      "Improved reporting visibility, enabled faster decision-making, and reduced manual reporting effort.",
+      "Business users could pull the numbers they needed directly from a dashboard instead of requesting a custom report and waiting on someone else to build it, shortening the path from question to answer.",
   },
 ];
 
@@ -338,7 +339,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Is your team certified on NetSuite?",
     answer:
-      "Yes. Our developers are certified NetSuite professionals with hands-on experience across SuiteScript, SuiteFlow, and NetSuite's reporting tools.",
+      "Yes. Our lead developer holds Oracle NetSuite's SuiteCloud Developer II and Administrator Professional certifications, with hands-on experience across SuiteScript, SuiteFlow, and NetSuite's reporting tools.",
   },
   {
     question: "What types of NetSuite customizations do you provide?",
@@ -371,9 +372,29 @@ export const FAQ_ITEMS: FaqItem[] = [
       "We build and test changes in a sandbox account before anything touches production. Once a change is verified there, we deploy to your live account on a schedule that works for your business, not in the middle of your busiest hours.",
   },
   {
+    question: "What access do you need, and is our data safe?",
+    answer:
+      "Only the role-based access you grant inside your own NetSuite account, scoped to what the work requires, nothing more. We don't copy your data out to a separate platform or tool; everything we build and everything we touch stays inside the NetSuite account you control and can revoke access to at any time.",
+  },
+  {
     question: "Who actually works on our account?",
     answer:
       "A consistent, senior NetSuite developer who learns your account and stays with it, not a rotating cast of juniors. As a boutique team, we keep our client list intentionally limited so every account gets real attention.",
+  },
+  {
+    question: "Who owns the customizations you build?",
+    answer:
+      "You do, outright. Everything we build, SuiteScript, workflows, saved searches, dashboards, PDF templates, is built natively inside the NetSuite account you already own. None of it lives on a separate platform or depends on us to keep running. If you ever move to a different developer or team, everything we built stays exactly where it is and works exactly the same.",
+  },
+  {
+    question: "What happens if we want to end the engagement?",
+    answer:
+      "You cancel, and that's it. Because we work month-to-month with no long-term contract, there's no termination fee, no offboarding process, and no transition period required, since everything we build lives inside your own NetSuite account rather than a system we control.",
+  },
+  {
+    question: "What happens after I book a consultation?",
+    answer:
+      "We start with a short call to understand your account and current priorities. From there, we get access to your account, review what's already built, and agree on what to tackle first, typically the highest-impact item, not the full backlog at once. Build and testing happen in a sandbox before anything reaches production. There's no separate discovery phase or statement of work before work can begin.",
   },
 ];
 

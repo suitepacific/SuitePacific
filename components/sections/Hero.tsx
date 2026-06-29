@@ -1,4 +1,4 @@
-import { CheckCircle2, Clock } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { DashboardMockup } from "@/components/graphics/DashboardMockup";
@@ -30,13 +30,6 @@ export function Hero() {
           </div>
 
           <p className="mt-4 text-sm text-brand-400">{CTA_SUPPORT_LINE}</p>
-
-          <div className="mt-6 flex items-center gap-2 text-sm text-brand-600">
-            <Clock className="h-4 w-4 text-accent shrink-0" />
-            <span>
-              Most requests move in <span className="font-semibold text-brand-900">days, not weeks</span>.
-            </span>
-          </div>
 
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
             {TRUST_BADGES.map((badge) => (

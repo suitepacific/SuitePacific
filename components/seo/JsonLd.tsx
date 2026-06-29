@@ -22,6 +22,10 @@ export function OrganizationJsonLd() {
       "NetSuite Workflow Automation",
       "NetSuite Account Optimization",
     ],
+    award: [
+      "Oracle NetSuite Certified SuiteCloud Developer II",
+      "Oracle NetSuite Certified Administrator Professional",
+    ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "NetSuite Post-Go-Live Services",
