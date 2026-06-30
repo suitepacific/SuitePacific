@@ -15,6 +15,7 @@ export type Service = {
   icon: LucideIcon;
   title: string;
   description: string;
+  href?: string;
 };
 
 export type TimelineStep = {

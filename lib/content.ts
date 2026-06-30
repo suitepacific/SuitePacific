@@ -133,31 +133,37 @@ export const SERVICES: Service[] = [
     icon: Code2,
     title: "SuiteScript Development",
     description: "Custom scripts that extend NetSuite to fit exactly how your business operates.",
+    href: "/netsuite-suitescript-development",
   },
   {
     icon: Workflow,
     title: "Workflow Automation",
     description: "Automate approvals, notifications, and processes to eliminate manual busywork.",
+    href: "/netsuite-workflow-automation",
   },
   {
     icon: LayoutDashboard,
     title: "Saved Searches & Dashboards",
     description: "Surface the data your team needs with clear, role-based dashboards and searches.",
+    href: "/netsuite-saved-searches-dashboards",
   },
   {
     icon: FileText,
     title: "Advanced PDF Templates",
     description: "Polished invoices, statements, and forms that reflect your brand and fit your workflow.",
+    href: "/netsuite-advanced-pdf-templates",
   },
   {
     icon: Settings2,
     title: "Account Optimization",
     description: "Clean up legacy configurations and tighten your account for speed and reliability.",
+    href: "/netsuite-account-optimization",
   },
   {
     icon: LifeBuoy,
     title: "Post-Go-Live Support",
     description: "Responsive, senior-level support for the day-to-day issues that come up after launch.",
+    href: "/netsuite-post-go-live-support",
   },
 ];
 
@@ -410,10 +416,12 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     title: "Services",
     links: [
-      { label: "SuiteScript Development", href: "/#services" },
-      { label: "Workflow Automation", href: "/#services" },
-      { label: "Saved Searches & Dashboards", href: "/#services" },
-      { label: "Post-Go-Live Support", href: "/#services" },
+      { label: "SuiteScript Development", href: "/netsuite-suitescript-development" },
+      { label: "Workflow Automation", href: "/netsuite-workflow-automation" },
+      { label: "Saved Searches & Dashboards", href: "/netsuite-saved-searches-dashboards" },
+      { label: "Advanced PDF Templates", href: "/netsuite-advanced-pdf-templates" },
+      { label: "Account Optimization", href: "/netsuite-account-optimization" },
+      { label: "Post-Go-Live Support", href: "/netsuite-post-go-live-support" },
     ],
   },
   {

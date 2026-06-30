@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { IconBadge } from "@/components/ui/IconBadge";
@@ -24,9 +26,22 @@ export function Services() {
                 transition={{ duration: 0.2 }}
                 className="bg-white rounded-2xl shadow-soft border border-brand-50 p-6 h-full hover:shadow-soft-lg hover:border-brand-100 transition-shadow"
               >
-                <IconBadge icon={service.icon} size="lg" />
-                <h3 className="mt-5 font-semibold text-brand-900 text-lg">{service.title}</h3>
-                <p className="mt-2 text-sm text-brand-400">{service.description}</p>
+                {service.href ? (
+                  <Link href={service.href} className="flex flex-col h-full group">
+                    <IconBadge icon={service.icon} size="lg" />
+                    <h3 className="mt-5 font-semibold text-brand-900 text-lg">{service.title}</h3>
+                    <p className="mt-2 text-sm text-brand-400 flex-1">{service.description}</p>
+                    <span className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-accent">
+                      Learn more <ArrowRight className="h-3 w-3" />
+                    </span>
+                  </Link>
+                ) : (
+                  <>
+                    <IconBadge icon={service.icon} size="lg" />
+                    <h3 className="mt-5 font-semibold text-brand-900 text-lg">{service.title}</h3>
+                    <p className="mt-2 text-sm text-brand-400">{service.description}</p>
+                  </>
+                )}
               </motion.div>
             </StaggerItem>
           ))}
