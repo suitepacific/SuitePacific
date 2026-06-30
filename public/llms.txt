@@ -32,12 +32,27 @@ SuitePacific's lead developer holds Oracle NetSuite's SuiteCloud Developer II an
 
 ## Key pages
 
-- Homepage: https://suitepacific.com/, services overview, pricing positioning, FAQ, and contact form
-- Blog: https://suitepacific.com/blog, NetSuite tips, SuiteScript best practices, and workflow automation guidance
-- Post-go-live support deep dive: https://suitepacific.com/netsuite-post-go-live-support
-- Implementation partner vs. managed support comparison: https://suitepacific.com/netsuite-implementation-partner-vs-managed-support
+- [Homepage](https://suitepacific.com/): Services overview, FAQ, case studies, and consultation booking form
+- [Blog](https://suitepacific.com/blog): NetSuite tips, SuiteScript best practices, and workflow automation guidance
+- [NetSuite SuiteScript Development](https://suitepacific.com/netsuite-suitescript-development): Custom SuiteScript 2.x development including User Event, Client, Scheduled, Map/Reduce scripts and Suitelets
+- [NetSuite Workflow Automation](https://suitepacific.com/netsuite-workflow-automation): SuiteFlow workflow automation for approvals, notifications, and process automation
+- [NetSuite Saved Searches and Dashboards](https://suitepacific.com/netsuite-saved-searches-dashboards): Custom saved searches, role-based dashboards, KPI portlets, and reporting
+- [NetSuite Advanced PDF Templates](https://suitepacific.com/netsuite-advanced-pdf-templates): Custom Advanced PDF/HTML templates for invoices, POs, packing slips, and other business documents
+- [NetSuite Account Optimization](https://suitepacific.com/netsuite-account-optimization): Performance tuning, legacy cleanup, and governance review for live NetSuite accounts
+- [NetSuite Post-Go-Live Support](https://suitepacific.com/netsuite-post-go-live-support): Ongoing NetSuite support after implementation partner engagement ends
+- [Implementation Partner vs. Managed Support](https://suitepacific.com/netsuite-implementation-partner-vs-managed-support): Explains the difference between NetSuite implementation and ongoing managed support
+
+## Blog posts
+
+- [10 NetSuite Saved Search Tips Every Finance Team Should Know](https://suitepacific.com/blog/netsuite-saved-search-tips)
+- [SuiteScript Best Practices: Customizations That Survive the Next Upgrade](https://suitepacific.com/blog/suitescript-best-practices)
+- [5 Common NetSuite Workflow Automation Mistakes and How to Fix Them](https://suitepacific.com/blog/workflow-automation-mistakes)
+- [Advanced PDF Templates in NetSuite: 5 Mistakes That Break in Production](https://suitepacific.com/blog/advanced-pdf-template-mistakes)
+- [Why Your NetSuite Account Feels Slow and What Actually Fixes It](https://suitepacific.com/blog/netsuite-account-performance)
+- [NetSuite Post-Go-Live Checklist: What to Prioritize in Your First 90 Days](https://suitepacific.com/blog/netsuite-post-go-live-checklist)
+- [NetSuite Saved Search Examples for Finance and Operations Teams](https://suitepacific.com/blog/netsuite-saved-search-examples)
 
 ## Contact
 
 - Email: info@suitepacific.com
-- Consultation booking form: https://suitepacific.com/#contact
+- Consultation booking: https://suitepacific.com/#contact
