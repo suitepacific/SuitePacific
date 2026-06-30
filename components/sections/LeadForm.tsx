@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
 import { CheckCircle2, Loader2 } from "lucide-react";
-import { CALENDLY_URL, FORMSUBMIT_ENDPOINT, CTA_SUPPORT_LINE } from "@/lib/content";
+import { FORMSUBMIT_ENDPOINT, CTA_SUPPORT_LINE } from "@/lib/content";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -136,13 +136,6 @@ export function LeadForm() {
 
       <p className="text-xs text-brand-400 text-center">{CTA_SUPPORT_LINE}</p>
 
-      <p className="text-xs text-brand-400 text-center pt-1">
-        Prefer to pick a time yourself?{" "}
-        <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-brand-600">
-          Book directly via Calendly
-        </a>
-        .
-      </p>
     </form>
   );
 }

@@ -41,7 +41,6 @@ import type {
   FaqItem,
 } from "./types";
 
-export const CALENDLY_URL = "https://calendly.com/suitepacific/consultation";
 export const CONTACT_EMAIL = "info@suitepacific.com";
 export const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/info@suitepacific.com";
 export const SITE_URL = "https://suitepacific.com";
