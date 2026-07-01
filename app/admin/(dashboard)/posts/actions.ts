@@ -4,6 +4,9 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createPost, deletePost, updatePost } from "@/lib/admin-data";
 import type { PostInput } from "@/lib/admin-data";
+import { pingIndexNow } from "@/lib/indexnow";
+
+const SITE_URL = "https://suitepacific.com";
 
 function parsePostInput(formData: FormData): PostInput {
   return {
@@ -24,6 +27,9 @@ function parsePostInput(formData: FormData): PostInput {
 export async function createPostAction(formData: FormData) {
   const input = parsePostInput(formData);
   await createPost(input);
+  if (input.published) {
+    await pingIndexNow([`${SITE_URL}/blog/${input.slug}`, `${SITE_URL}/blog`]);
+  }
   revalidatePath("/blog");
   revalidatePath("/admin/posts");
   redirect("/admin/posts");
@@ -32,6 +38,9 @@ export async function createPostAction(formData: FormData) {
 export async function updatePostAction(id: string, formData: FormData) {
   const input = parsePostInput(formData);
   await updatePost(id, input);
+  if (input.published) {
+    await pingIndexNow([`${SITE_URL}/blog/${input.slug}`, `${SITE_URL}/blog`]);
+  }
   revalidatePath("/blog");
   revalidatePath(`/blog/${input.slug}`);
   revalidatePath("/admin/posts");
