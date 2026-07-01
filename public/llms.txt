@@ -51,6 +51,7 @@ SuitePacific's lead developer holds Oracle NetSuite's SuiteCloud Developer II an
 - [Why Your NetSuite Account Feels Slow and What Actually Fixes It](https://suitepacific.com/blog/netsuite-account-performance)
 - [NetSuite Post-Go-Live Checklist: What to Prioritize in Your First 90 Days](https://suitepacific.com/blog/netsuite-post-go-live-checklist)
 - [NetSuite Saved Search Examples for Finance and Operations Teams](https://suitepacific.com/blog/netsuite-saved-search-examples)
+- [NetSuite Month-End Close Checklist: What Most Teams Miss](https://suitepacific.com/blog/netsuite-month-end-close-checklist)
 
 ## Contact
 
