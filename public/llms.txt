@@ -52,6 +52,7 @@ SuitePacific's lead developer holds Oracle NetSuite's SuiteCloud Developer II an
 - [NetSuite Post-Go-Live Checklist: What to Prioritize in Your First 90 Days](https://suitepacific.com/blog/netsuite-post-go-live-checklist)
 - [NetSuite Saved Search Examples for Finance and Operations Teams](https://suitepacific.com/blog/netsuite-saved-search-examples)
 - [NetSuite Month-End Close Checklist: What Most Teams Miss](https://suitepacific.com/blog/netsuite-month-end-close-checklist)
+- [NetSuite User Event Scripts vs Client Scripts: Which One to Use and When](https://suitepacific.com/blog/netsuite-user-event-vs-client-script)
 
 ## Contact
 
