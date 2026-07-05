@@ -2,25 +2,32 @@ import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
 import { SITE_URL } from "@/lib/content";
 
+const SITE_LAUNCH_DATE = new Date("2026-06-01");
+
+const SERVICE_PAGES = [
+  "/netsuite-suitescript-development",
+  "/netsuite-workflow-automation",
+  "/netsuite-saved-searches-dashboards",
+  "/netsuite-advanced-pdf-templates",
+  "/netsuite-account-optimization",
+  "/netsuite-post-go-live-support",
+  "/netsuite-implementation-partner-vs-managed-support",
+];
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getAllPosts();
 
-  const servicePages = [
-    "/netsuite-suitescript-development",
-    "/netsuite-workflow-automation",
-    "/netsuite-saved-searches-dashboards",
-    "/netsuite-advanced-pdf-templates",
-    "/netsuite-account-optimization",
-    "/netsuite-post-go-live-support",
-    "/netsuite-implementation-partner-vs-managed-support",
-  ];
-
   return [
-    { url: SITE_URL, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
-    { url: `${SITE_URL}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
-    ...servicePages.map((path) => ({
+    { url: SITE_URL, lastModified: SITE_LAUNCH_DATE, changeFrequency: "monthly", priority: 1 },
+    {
+      url: `${SITE_URL}/blog`,
+      lastModified: posts.length > 0 ? new Date(posts[0].date) : SITE_LAUNCH_DATE,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    ...SERVICE_PAGES.map((path) => ({
       url: `${SITE_URL}${path}`,
-      lastModified: new Date(),
+      lastModified: SITE_LAUNCH_DATE,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
