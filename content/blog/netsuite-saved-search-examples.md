@@ -16,6 +16,8 @@ Most teams know they should be using saved searches more than they do. The gap i
 
 This is the AR aging search most finance teams eventually build, but commonly built wrong by filtering on Invoice Date rather than Due Date, which includes current invoices that aren't actually late. The Due Date filter with a `before today` dynamic date range gives you a clean view of what's genuinely overdue.
 
+Add a Days Overdue formula column — `{today} - {duedate}` — and sort descending. The goal is to surface the most overdue amounts, not just the largest balances. Published as a dashboard portlet for the collections team, this search replaces the weekly "who do we chase today" spreadsheet.
+
 ## 2. Sales orders pending approval
 
 **Record type:** Transaction (Sales Order)
@@ -25,6 +27,8 @@ This is the AR aging search most finance teams eventually build, but commonly bu
 
 Simple but essential if you have an approval workflow. The "oldest first" sort surfaces orders that have been sitting the longest, which is what the person managing the queue actually needs to see rather than the default newest-first view.
 
+Pair this with a scheduled email alert — set on the saved search itself under the Email tab — to notify the approver each morning if the search returns any results. Use the "Send only if results exist" option to suppress empty emails. That eliminates the need for anyone to remember to log in and check.
+
 ## 3. Purchase orders received but not yet billed
 
 **Record type:** Transaction (Purchase Order)
@@ -33,13 +37,17 @@ Simple but essential if you have an approval workflow. The "oldest first" sort s
 
 This is the GRN-not-invoiced search that AP teams need for accruals. Without it, period-end close involves manually cross-referencing receipts against bills, which is exactly the kind of work a saved search should be doing instead.
 
+The `Billed = No` filter is a join field that checks whether a vendor bill has been created against the PO. For accounts with partial receipts and partial billing, add a Remaining Billed Amount formula column to show the exact unbilled balance per PO rather than the full original amount, so the accrual figure is accurate rather than overstated.
+
 ## 4. Items below reorder point
 
 **Record type:** Item
 **Key criteria:** Preferred Stock Level greater than Quantity On Hand + Quantity On Order
 **Columns:** Item name, Location, On hand, On order, Reorder point, Preferred vendor
 
-The trick here is using a formula column to compute `{quantityonhand} + {quantityonorder}` and filtering where that sum is below `{preferredstocklevel}`, rather than filtering on On Hand alone (which ignores pending purchase orders and triggers false alarms).
+The trick here is using a formula column to compute `{quantityonhand} + {quantityonorder}` and filtering where that sum is below `{preferredstocklevel}`, rather than filtering on On Hand alone, which ignores pending purchase orders and triggers false alarms on items that already have replenishment in transit.
+
+For multi-location accounts, add Location as a grouping column and run the summary by item and location separately. A global reorder search that ignores location will miss the case where an item is critically low at one warehouse but overstocked at another, and will generate unnecessary purchase orders for the wrong location.
 
 ## 5. Expenses submitted but not yet approved
 
@@ -49,13 +57,17 @@ The trick here is using a formula column to compute `{quantityonhand} + {quantit
 
 Expense report queues fall off the radar faster than any other approval type because there's no obvious place to check them without a saved search. This one, published to finance and managers, eliminates the "I submitted it last week, did you see it?" follow-up.
 
+Add a Days Pending formula column — `{today} - {createddate}` — and sort descending. Any expense report sitting more than five business days usually means either the notification was missed or the approver doesn't know they're the assigned approver for that employee's expense type.
+
 ## 6. Customers with no activity in 90 days
 
 **Record type:** Customer
 **Key criteria:** Last Order Date before 90 days ago (or is empty)
 **Columns:** Customer name, Customer since, Last order date, Sales rep, Total lifetime value
 
-Filtering on a relative date range (`before today minus 90 days`) rather than a static date means this search stays accurate without maintenance. It's useful for customer success follow-up and for identifying accounts that have quietly churned.
+Filtering on a relative date range (`before today minus 90 days`) rather than a static date means this search stays accurate without maintenance. The `or is empty` condition catches customers who were created but never placed an order, which is a separate data quality problem worth flagging to the sales team separately from the dormant account list.
+
+Add Total Lifetime Value as a column and sort descending. A high-value account with no recent activity warrants a different response than a small account that's been quietly dormant.
 
 ## 7. Transactions created by a specific script or workflow
 
@@ -63,8 +75,49 @@ Filtering on a relative date range (`before today minus 90 days`) rather than a 
 **Criteria:** Created by = [script or workflow name]
 **Columns:** Record type, Internal ID, Date, Created by
 
-This one is more for administrators than finance users. When a script or workflow is creating records unexpectedly or in the wrong volume, this search isolates the specific records it touched, which is the first thing you need before debugging what went wrong.
+This one is more for administrators than finance users. When a script or workflow is creating records unexpectedly or in the wrong volume, this search isolates the specific records it touched, which is the first thing you need before debugging what went wrong. Add a date range filter to limit results to the period in question.
+
+## 8. Vendor aging by due date
+
+**Record type:** Transaction (Vendor Bill)
+**Key criteria:** Status = Open
+**Columns:** Vendor, Bill number, Bill date, Due date, Amount remaining
+**Summary:** Group by Vendor, Sum on Amount remaining
+
+The AP equivalent of the AR aging search. Add a Days Until Due formula column — `{duedate} - {today}` — and sort ascending so the most urgent bills appear first. Negative values mean the bill is already past due.
+
+For accounts with multiple payment terms across vendors, add Payment Terms as a column. A bill on Net 30 terms that is 25 days old has different urgency than one on Net 60 terms at the same age. This distinction matters when prioritizing which vendor payments to release during a cash flow constraint.
+
+## 9. Time entries not yet billed
+
+**Record type:** Time (Time Bill)
+**Key criteria:** Billable = Yes, Billing Status = Not Billed
+**Columns:** Employee, Customer, Project, Date, Hours, Billing rate, Billable amount
+
+Essential for any professional services or project-based business tracking time in NetSuite. Without this search, billable hours fall through the cracks: an employee logs time, the project closes, and nobody generates an invoice because there was no systematic check that all logged hours were captured before billing.
+
+Add a formula column grouping by week — `TRUNC({date}, 'IW')` — to see which weeks have unbilled time. Time entries older than 60 days that are still marked unbilled usually need to either be invoiced or written off as non-billable. Letting that determination linger keeps the billing backlog artificially inflated and makes project profitability reporting unreliable.
+
+## 10. Open projects over budget
+
+**Record type:** Project
+**Key criteria:** Status = In Progress, Actual Cost greater than Estimated Cost
+**Columns:** Project name, Project manager, Estimated cost, Actual cost, Budget variance
+
+Add a Percent Over Budget formula column: `ROUND(({actualcost} - {estimatedcost}) / NULLIF({estimatedcost}, 0) * 100, 1)`. The NULLIF prevents a divide-by-zero error on projects with no estimated cost entered. Sort descending by variance.
+
+Published to project managers as a dashboard portlet, this search surfaces budget overruns before the project closes rather than after. Filter to Status = In Progress so completed projects don't clutter the view — you cannot do much about a completed project's budget overage, but you can intervene on one still in flight.
+
+## Making searches operational
+
+Building the search is half the work. A saved search sitting in the library that nobody opens produces the same outcome as not having the search at all. Three patterns that make searches consistently actionable:
+
+**Dashboard portlets.** Any saved search can be assigned as a portlet on a role's home page under Home > Manage Portlets. The most useful portlets are high-signal and ideally zero-result when everything is working — the overdue invoice portlet showing nothing means collections is current, not that the search is broken. Keep portlet searches narrow: too many columns or too many results makes the portlet harder to act on than a fresh search.
+
+**Scheduled email alerts.** On any saved search, the Email tab lets you set a delivery schedule and recipient list. A daily 7am email of open approval queues means approvers don't need to remember to check a dashboard — the list comes to them. Use the "Send only when results exist" checkbox to avoid sending empty emails that train people to ignore the alert. For exception searches that rarely return results, weekly delivery is usually the right cadence.
+
+**Workflow triggers.** A saved search can serve as the entry condition filter in a workflow, so when a record matches the criteria, the workflow fires automatically. This is how you build automated escalations without a scheduled script: a search for approvals sitting open more than three days triggers an escalation notification to the approver's manager without any manual intervention. The search does the filtering; the workflow does the action.
 
 ---
 
-These are starting points, not finished searches. The right criteria, columns, and available filters depend on how your specific account is set up: your custom fields, your approval chain, your item types. For the techniques that make these searches fast and accurate, see [10 NetSuite Saved Search Tips](/blog/netsuite-saved-search-tips). Several of these searches are also directly useful for month-end close — see [NetSuite Month-End Close Checklist: What Most Teams Miss](/blog/netsuite-month-end-close-checklist) for the full close process context. If you need these built inside your own account, [saved searches and dashboards](/netsuite-saved-searches-dashboards) is one of our core services. [Book a consultation](/#contact) if you want to start there.
+These are starting points, not finished searches. The right criteria, columns, and available filters depend on how your specific account is set up: your custom fields, your approval chain, your item types. For the techniques that make these searches fast and accurate, see [10 NetSuite Saved Search Tips](/blog/netsuite-saved-search-tips). Several of these searches are also directly useful for month-end close — see [NetSuite Month-End Close Checklist: What Most Teams Miss](/blog/netsuite-month-end-close-checklist) for the full close process context. If you need these built inside your own account, [saved searches and dashboards](/netsuite-saved-searches-dashboards) is one of our core services. [Book a consultation](/contact) if you want to start there.

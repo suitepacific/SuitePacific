@@ -51,6 +51,30 @@ NetSuite allows you to lock A/R, A/P, and Payroll sub-periods independently from
 
 If your account has scheduled or Map/Reduce scripts that run as part of your close process (automated accruals, data synchronizations, commission calculations), check that they completed without error before closing. Under Customization > Scripting > Script Deployments, filter by type and check the Last Run status. A failed script that nobody noticed means the data it was supposed to update is wrong, and it will not be obvious from the financial statements.
 
+## 9. Reconcile bank accounts to the GL
+
+NetSuite has a Bank Reconciliation feature under Transactions > Bank > Reconcile Bank Statement. For every bank account on the balance sheet, reconcile the statement balance to the GL balance before locking. Unreconciled items — deposits in transit, outstanding checks, bank fees not yet entered — need to be explained or posted before close.
+
+If your account uses the Cash Management module, the reconciliation is more structured; if not, you may be doing this manually in a spreadsheet. Either way, a GL bank balance that does not match the bank statement at period end is an open question that should not survive into the next period.
+
+## 10. Review intercompany balances for multi-subsidiary accounts
+
+For accounts running multiple subsidiaries under OneWorld, intercompany eliminations must zero out before consolidated financials are meaningful. Run the Intercompany Elimination report under Reports > Financial > Intercompany Elimination. Any non-zero balance indicates an intercompany transaction that was posted on one side but not the other, or that was posted in different periods.
+
+The most common cause is a subsidiary posting an intercompany bill in one period while the corresponding intercompany income is posted in the next. Timing differences between subsidiaries need to be resolved before the parent-level numbers are reliable. Check this before locking any subsidiary period.
+
+## 11. Confirm revenue recognition schedules have processed
+
+If your account uses NetSuite's Revenue Recognition module (or Advanced Revenue Management), revenue recognition does not post automatically — it must be triggered. Under Financial > Revenue Recognition > Revenue Arrangement > Generate Revenue Plans, confirm that all plans for the period have been generated and approved. Then run the revenue recognition journals.
+
+Skipping this step means recognized revenue is understated for the period and the deferred revenue balance is overstated. Unlike depreciation, revenue recognition errors are often not caught until the next period's revenue reconciliation surfaces the discrepancy. Check the Revenue Recognition Schedule report before locking to confirm no pending recognition remains for the period.
+
+## 12. Review the Accounting Period Summary before locking
+
+Before locking the period, open Setup > Accounting > Manage Accounting Periods and review the period summary. NetSuite shows the transaction count, the posting status, and any outstanding items per period. This is the final confirmation that nothing is still in a non-posted state that belongs in the closing period.
+
+Lock the subledger periods (A/R, A/P, Payroll) before locking the main All Transactions period. Locking All Transactions without locking subledger periods first allows transactions to continue posting to subledger accounts even after the GL is locked. The full lock sequence: subledger periods first, All Transactions second.
+
 ---
 
-Month-end in NetSuite is faster when the underlying account is clean and automated correctly. If any of these items consistently require manual intervention or workarounds, that is a signal that a saved search, a workflow, or a script could remove it from the checklist entirely. That is the kind of ongoing work covered under our [NetSuite post-go-live support](/netsuite-post-go-live-support). For the tooling side, [saved searches and dashboards](/netsuite-saved-searches-dashboards) and [workflow automation](/netsuite-workflow-automation) are the two services most relevant to tightening a close process. For the broader post-go-live context, see [NetSuite Post-Go-Live Checklist: What to Prioritize in Your First 90 Days](/blog/netsuite-post-go-live-checklist). If your close is still taking longer than it should, [book a consultation](/#contact) and we can look at where the time is actually going.
+Month-end in NetSuite is faster when the underlying account is clean and automated correctly. If any of these items consistently require manual intervention or workarounds, that is a signal that a saved search, a workflow, or a script could remove it from the checklist entirely. That is the kind of ongoing work covered under our [NetSuite post-go-live support](/netsuite-post-go-live-support). For the tooling side, [saved searches and dashboards](/netsuite-saved-searches-dashboards) and [workflow automation](/netsuite-workflow-automation) are the two services most relevant to tightening a close process. For the broader post-go-live context, see [NetSuite Post-Go-Live Checklist: What to Prioritize in Your First 90 Days](/blog/netsuite-post-go-live-checklist). If your close is still taking longer than it should, [book a consultation](/contact) and we can look at where the time is actually going.
