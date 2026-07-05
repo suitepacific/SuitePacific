@@ -15,7 +15,7 @@ The criteria: Transaction Date within the period, Posting Period does not equal 
 
 ## 2. Clear unposted and pending approval transactions
 
-A saved search for transactions in Pending Approval, Pending Supervisor Approval, or any non-Posted status dated in or before the current period tells you exactly what hasn't made it into the books yet. Sales orders in Pending Billing, vendor bills in Pending Approval, expense reports not yet approved. All of these affect your numbers if they belong in the current period.
+A saved search for transactions in Pending Approval, Pending Supervisor Approval, or any non-Posted status dated in or before the current period tells you exactly what hasn't made it into the books yet. Sales orders in Pending Billing, vendor bills in Pending Approval, expense reports not yet approved. All of these affect your numbers if they belong in the current period. See [NetSuite Saved Search Examples for Finance and Operations Teams](/blog/netsuite-saved-search-examples) for a template you can adapt for this.
 
 This should be run and reviewed by each department lead, not just accounting. The A/P team cannot see what the sales team has stuck in approval.
 
@@ -53,4 +53,4 @@ If your account has scheduled or Map/Reduce scripts that run as part of your clo
 
 ---
 
-Month-end in NetSuite is faster when the underlying account is clean and automated correctly. If any of these items consistently require manual intervention or workarounds, that is a signal that a saved search, a workflow, or a script could remove it from the checklist entirely. That is the kind of ongoing work covered under our [NetSuite post-go-live support](/netsuite-post-go-live-support). For the tooling side, [saved searches and dashboards](/netsuite-saved-searches-dashboards) and [workflow automation](/netsuite-workflow-automation) are the two services most relevant to tightening a close process. If your close is still taking longer than it should, [book a consultation](/#contact) and we can look at where the time is actually going.
+Month-end in NetSuite is faster when the underlying account is clean and automated correctly. If any of these items consistently require manual intervention or workarounds, that is a signal that a saved search, a workflow, or a script could remove it from the checklist entirely. That is the kind of ongoing work covered under our [NetSuite post-go-live support](/netsuite-post-go-live-support). For the tooling side, [saved searches and dashboards](/netsuite-saved-searches-dashboards) and [workflow automation](/netsuite-workflow-automation) are the two services most relevant to tightening a close process. For the broader post-go-live context, see [NetSuite Post-Go-Live Checklist: What to Prioritize in Your First 90 Days](/blog/netsuite-post-go-live-checklist). If your close is still taking longer than it should, [book a consultation](/#contact) and we can look at where the time is actually going.

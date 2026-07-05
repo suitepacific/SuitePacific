@@ -29,11 +29,11 @@ Everything else — searches nobody has opened in a year, searches built for a o
 
 Two things to check on every active workflow. First, does the process it was built for still exist? Second, does it have entry conditions set?
 
-A workflow with no entry conditions runs on every save of that record type, regardless of what changed. That is fine if the workflow actually needs to run every time. Most do not. Go to Customization > Workflow > Workflows, open each active workflow, and look at the initiation tab. If there are no conditions limiting when it triggers, it is worth reviewing whether that is intentional.
+A workflow with no entry conditions runs on every save of that record type, regardless of what changed. That is fine if the workflow actually needs to run every time. Most do not. Go to Customization > Workflow > Workflows, open each active workflow, and look at the initiation tab. If there are no conditions limiting when it triggers, it is worth reviewing whether that is intentional. For the workflow mistakes that most commonly cause this pattern, see [5 Common NetSuite Workflow Automation Mistakes](/blog/workflow-automation-mistakes).
 
 ## Script deployments
 
-Same logic as workflows. A User Event script deployed to the Transaction record type runs on every transaction save, for as long as it is active. Go to Customization > Scripting > Script Deployments, filter by Status = Released, and work through the list. For each deployment, ask what business process it supports. If you cannot answer that, it needs investigation before staying active.
+Same logic as workflows. A User Event script deployed to the Transaction record type runs on every transaction save, for as long as it is active. Go to Customization > Scripting > Script Deployments, filter by Status = Released, and work through the list. For each deployment, ask what business process it supports. If you cannot answer that, it needs investigation before staying active. For practices that prevent deployment sprawl in the first place, see [SuiteScript Best Practices: Customizations That Survive the Next Upgrade](/blog/suitescript-best-practices).
 
 ## Roles and permissions
 

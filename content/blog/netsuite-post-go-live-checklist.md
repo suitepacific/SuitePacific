@@ -17,7 +17,7 @@ Roles set during implementation are often wider than they should be, because it 
 
 ## 3. Build the exception searches that catch data problems early
 
-The first 90 days will surface data quality issues that weren't visible in testing: records missing required fields, transactions that got saved in the wrong status, vendor records with incomplete information. Build saved searches specifically designed to catch these, filtering for things that should normally be zero, like open sales orders with no assigned rep, or vendor bills with no due date. Checking these weekly catches problems while they're still small.
+The first 90 days will surface data quality issues that weren't visible in testing: records missing required fields, transactions that got saved in the wrong status, vendor records with incomplete information. Build saved searches specifically designed to catch these, filtering for things that should normally be zero, like open sales orders with no assigned rep, or vendor bills with no due date. See [NetSuite Saved Search Examples for Finance and Operations Teams](/blog/netsuite-saved-search-examples) for a set of starting points you can adapt. Checking these weekly catches problems while they're still small.
 
 ## 4. Set up role-based dashboards for your main user groups
 
@@ -33,8 +33,8 @@ Every finance team has reports they ran in the previous system that they now nee
 
 ## 7. Run your first period close and note every manual step
 
-The first month-end close in NetSuite will involve manual steps that could be automated, workarounds that shouldn't be permanent, and reports that don't yet exist. Write down every single one of them. That list becomes your roadmap for the first several months of post-go-live development, in priority order based on how much time each manual step actually takes.
+The first month-end close in NetSuite will involve manual steps that could be automated, workarounds that shouldn't be permanent, and reports that don't yet exist. Write down every single one of them. For a NetSuite-specific guide to what that first close should cover, see [NetSuite Month-End Close Checklist: What Most Teams Miss](/blog/netsuite-month-end-close-checklist). That list becomes your roadmap for the first several months of post-go-live development, in priority order based on how much time each manual step actually takes.
 
 ---
 
-The first 90 days are really about preventing two years of debt rather than adding features. Most of what gets painful in a mature NetSuite account was optional to address at go-live and wasn't. If you need help working through this list or don't have an internal resource to own it, [post-go-live support](/netsuite-post-go-live-support) is what SuitePacific does. For the specific tooling: [saved searches](/netsuite-saved-searches-dashboards), [SuiteScript](/netsuite-suitescript-development), and [workflow automation](/netsuite-workflow-automation) are the main levers you'll reach for across most of these items.
+The first 90 days are really about preventing two years of debt rather than adding features. Most of what gets painful in a mature NetSuite account was optional to address at go-live and wasn't. If you need help working through this list or don't have an internal resource to own it, [post-go-live support](/netsuite-post-go-live-support) is what SuitePacific does. For the specific tooling: [saved searches](/netsuite-saved-searches-dashboards), [SuiteScript](/netsuite-suitescript-development), and [workflow automation](/netsuite-workflow-automation) are the main levers you'll reach for across most of these items. For what tends to go wrong once an account has been live a while, see [Why Your NetSuite Account Feels Slow and What Actually Fixes It](/blog/netsuite-account-performance).

@@ -25,7 +25,7 @@ If a business rule is "skip this validation for customers in this subsidiary" to
 
 ## Respect the User Event script execution order
 
-`beforeLoad` → `beforeSubmit` → (database write) → `afterSubmit`. Validation belongs in `beforeSubmit`, where you can still block the save. Anything that depends on the record actually being saved (sending a notification, updating a related record) belongs in `afterSubmit`. We regularly find validation logic incorrectly placed in `afterSubmit`, which means the bad record already saved before the script tried to stop it.
+`beforeLoad` → `beforeSubmit` → (database write) → `afterSubmit`. Validation belongs in `beforeSubmit`, where you can still block the save. Anything that depends on the record actually being saved (sending a notification, updating a related record) belongs in `afterSubmit`. We regularly find validation logic incorrectly placed in `afterSubmit`, which means the bad record already saved before the script tried to stop it. For a detailed breakdown of each script type and when to use which, see [NetSuite User Event Scripts vs Client Scripts](/blog/netsuite-user-event-vs-client-script).
 
 ## Avoid `N/search` calls inside loops
 
@@ -41,4 +41,4 @@ A comment that says `// loop through line items` adds nothing; the code already 
 
 ---
 
-Most of the SuiteScript "bugs" we get called in for aren't really bugs. They're customizations that made a reasonable assumption that stopped being true as the business changed. This kind of cleanup is core to our [SuiteScript development service](/#services). If you've got scripts nobody on your team wants to touch anymore, [book a free consultation](/#contact) and we'll take a look at what's actually going on. For a related read, see [5 Common NetSuite Workflow Automation Mistakes](/blog/workflow-automation-mistakes).
+Most of the SuiteScript "bugs" we get called in for aren't really bugs. They're customizations that made a reasonable assumption that stopped being true as the business changed. This kind of cleanup is core to our [SuiteScript development service](/netsuite-suitescript-development). If you've got scripts nobody on your team wants to touch anymore, [book a free consultation](/#contact) and we'll take a look at what's actually going on. For related reading, see [5 Common NetSuite Workflow Automation Mistakes](/blog/workflow-automation-mistakes) and [NetSuite User Event Scripts vs Client Scripts](/blog/netsuite-user-event-vs-client-script).
