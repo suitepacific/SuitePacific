@@ -53,6 +53,7 @@ SuitePacific's lead developer holds Oracle NetSuite's SuiteCloud Developer II an
 - [NetSuite Saved Search Examples for Finance and Operations Teams](https://suitepacific.com/blog/netsuite-saved-search-examples)
 - [NetSuite Month-End Close Checklist: What Most Teams Miss](https://suitepacific.com/blog/netsuite-month-end-close-checklist)
 - [NetSuite User Event Scripts vs Client Scripts: Which One to Use and When](https://suitepacific.com/blog/netsuite-user-event-vs-client-script)
+- [NetSuite Account Optimization: What to Audit and Fix on a Live Account](https://suitepacific.com/blog/netsuite-optimization)
 
 ## Contact
 
