@@ -5,8 +5,28 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
 import { Button } from "@/components/ui/Button";
-import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
+import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { SITE_URL } from "@/lib/content";
+
+const FAQ = [
+  {
+    question: "Do you work on scripts an existing developer built?",
+    answer: "Yes. Inheriting a customized account with undocumented scripts is common. We audit what's there, document what each script controls, and extend or fix it without breaking what's working.",
+  },
+  {
+    question: "Will custom scripts break when NetSuite updates?",
+    answer: "Scripts built against SuiteScript 2.1 using modular patterns rarely break on updates. The most common risk is scripts referencing hard-coded internal IDs for renamed fields or using deprecated API methods. We build with upgrade resilience in mind and can audit existing scripts for that risk.",
+  },
+  {
+    question: "Can you integrate NetSuite with external systems?",
+    answer: "Yes, via RESTlets (custom API endpoints on the NetSuite side) or Scheduled and Map/Reduce scripts that push and pull data from external APIs. We have built integrations with e-commerce platforms, payment processors, 3PLs, and various business applications.",
+  },
+  {
+    question: "How long does a typical SuiteScript project take?",
+    answer: "A focused script — a User Event for a validation rule, a Scheduled script for a recurring data update — typically takes one to two weeks from scoping to sandbox-tested delivery. We scope each project before starting so the timeline is agreed upfront.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "NetSuite SuiteScript Development",
@@ -33,6 +53,7 @@ export default function SuiteScriptDevelopmentPage() {
           { name: "NetSuite SuiteScript Development", url: `${SITE_URL}/netsuite-suitescript-development` },
         ]}
       />
+      <FaqJsonLd items={FAQ} />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading
@@ -99,13 +120,15 @@ export default function SuiteScriptDevelopmentPage() {
           </p>
         </div>
 
+        <ServiceFaqSection items={FAQ} />
+
         <div className="mt-14 pt-10 border-t border-brand-50 text-center">
           <p className="text-brand-900 font-semibold">Need a custom NetSuite script?</p>
           <p className="mt-2 text-sm text-brand-400">
             Tell us what you’re trying to automate or fix and we’ll scope it out.
           </p>
           <div className="mt-6">
-            <Button href="/#contact">Book a Free Consultation</Button>
+            <Button href="/contact">Book a Free Consultation</Button>
           </div>
         </div>
       </div>

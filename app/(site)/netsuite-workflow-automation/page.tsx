@@ -5,8 +5,28 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
 import { Button } from "@/components/ui/Button";
-import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
+import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { SITE_URL } from "@/lib/content";
+
+const FAQ = [
+  {
+    question: "Can you automate approvals in NetSuite without SuiteScript?",
+    answer: "Yes, for most standard scenarios. SuiteFlow handles multi-level approvals, conditional routing by amount or department, and escalation if approvers don't respond — without code. We add SuiteScript only when the logic exceeds what SuiteFlow's native action set can handle.",
+  },
+  {
+    question: "Why do workflows sometimes fire when they shouldn't?",
+    answer: "The most common cause is missing entry conditions. A workflow with no entry conditions fires on every save of that record type, regardless of what changed. The fix is an explicit condition set that limits when the workflow initiates. We check every active workflow for this pattern on new engagements.",
+  },
+  {
+    question: "Can workflows send emails to external contacts, not just NetSuite users?",
+    answer: "Yes. Workflow email actions can target any email address, including customer and vendor contacts on the record. The email body is templated using the record's field values, so each notification is specific to the transaction it references.",
+  },
+  {
+    question: "Can you fix workflows that are already behaving unexpectedly?",
+    answer: "Yes. Diagnosing and repairing existing workflows is work we take on regularly. The most common issues are missing entry conditions, conflicting workflows on the same record type, and workflows still running for processes that no longer exist.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "NetSuite Workflow Automation",
@@ -33,6 +53,7 @@ export default function WorkflowAutomationPage() {
           { name: "NetSuite Workflow Automation", url: `${SITE_URL}/netsuite-workflow-automation` },
         ]}
       />
+      <FaqJsonLd items={FAQ} />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading
@@ -93,13 +114,15 @@ export default function WorkflowAutomationPage() {
           </p>
         </div>
 
+        <ServiceFaqSection items={FAQ} />
+
         <div className="mt-14 pt-10 border-t border-brand-50 text-center">
           <p className="text-brand-900 font-semibold">Have a manual process that should be automated?</p>
           <p className="mt-2 text-sm text-brand-400">
             Tell us what it is and we’ll tell you whether SuiteFlow, a script, or both is the right fit.
           </p>
           <div className="mt-6">
-            <Button href="/#contact">Book a Free Consultation</Button>
+            <Button href="/contact">Book a Free Consultation</Button>
           </div>
         </div>
       </div>

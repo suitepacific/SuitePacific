@@ -2,8 +2,28 @@ import type { Metadata } from "next";
 import { X, Check } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
-import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
+import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { SITE_URL } from "@/lib/content";
+
+const FAQ = [
+  {
+    question: "Do I still need my implementation partner after go-live?",
+    answer: "Many implementation partners offer post-go-live support as an add-on, but it is usually a break-fix model with slower turnaround than a dedicated support provider. If your account needs active development — new scripts, workflow changes, reporting improvements — a dedicated managed support team is generally more efficient.",
+  },
+  {
+    question: "When is the right time to transition to managed support?",
+    answer: "Typically 60 to 90 days after go-live, once the initial stabilization period is over. By then, the most critical go-live issues have been resolved, and the remaining work shifts from implementation cleanup to ongoing customization and process improvements.",
+  },
+  {
+    question: "Can SuitePacific work alongside our implementation partner?",
+    answer: "Yes, when scope is clearly divided. We take on specific service areas while the implementation partner handles others. The main thing to avoid is two teams making changes to the same customization without coordination.",
+  },
+  {
+    question: "Do you do NetSuite implementations?",
+    answer: "No. We only work with accounts that are already live. If you are still in the implementation phase, we are not the right fit yet. Once your implementation partner has handed off the account, that is when to reach out.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "NetSuite Implementation Partner vs. Managed Support",
@@ -40,6 +60,7 @@ export default function ComparisonPage() {
           },
         ]}
       />
+      <FaqJsonLd items={FAQ} />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading
@@ -113,13 +134,15 @@ export default function ComparisonPage() {
           </div>
         </div>
 
+        <ServiceFaqSection items={FAQ} />
+
         <div className="mt-14 pt-10 border-t border-brand-50 text-center">
           <p className="text-brand-900 font-semibold">Already live on NetSuite?</p>
           <p className="mt-2 text-sm text-brand-400">
             That’s exactly who we work with. Let’s talk about what’s next.
           </p>
           <div className="mt-6">
-            <Button href="/#contact">Book a Free Consultation</Button>
+            <Button href="/contact">Book a Free Consultation</Button>
           </div>
         </div>
       </div>

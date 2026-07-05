@@ -5,8 +5,28 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
 import { Button } from "@/components/ui/Button";
-import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
+import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { SITE_URL } from "@/lib/content";
+
+const FAQ = [
+  {
+    question: "What's the difference between basic and advanced PDF templates?",
+    answer: "Basic templates use a drag-and-drop interface with limited layout control. Advanced PDF/HTML templates use FreeMarker, which supports full conditional logic, dynamic content blocks, multi-column layouts, loops over line items, and positioning control that the basic editor cannot handle.",
+  },
+  {
+    question: "Can you match our existing document design exactly?",
+    answer: "Yes. Advanced templates give complete control over fonts, colors, logos, table layouts, and page structure. We start from your existing invoice or document design and recreate it in FreeMarker, including conditional sections that show or hide based on transaction data.",
+  },
+  {
+    question: "Do you build templates for invoices only, or other document types too?",
+    answer: "We build templates for any NetSuite document type: invoices, purchase orders, sales orders, packing slips, statements, credit memos, and custom print layouts. If it has a Print button in NetSuite, it can be templated.",
+  },
+  {
+    question: "What happens to templates when NetSuite updates?",
+    answer: "Advanced PDF templates are custom files stored in the File Cabinet. NetSuite updates do not overwrite them. We document all field references in the template so any future field changes are easy to locate and update without starting from scratch.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "NetSuite Advanced PDF Templates",
@@ -33,6 +53,7 @@ export default function AdvancedPdfTemplatesPage() {
           { name: "NetSuite Advanced PDF Templates", url: `${SITE_URL}/netsuite-advanced-pdf-templates` },
         ]}
       />
+      <FaqJsonLd items={FAQ} />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading
@@ -86,13 +107,15 @@ export default function AdvancedPdfTemplatesPage() {
           </p>
         </div>
 
+        <ServiceFaqSection items={FAQ} />
+
         <div className="mt-14 pt-10 border-t border-brand-50 text-center">
           <p className="text-brand-900 font-semibold">Need professional NetSuite documents?</p>
           <p className="mt-2 text-sm text-brand-400">
             Tell us what you need the output to look like and we’ll build it.
           </p>
           <div className="mt-6">
-            <Button href="/#contact">Book a Free Consultation</Button>
+            <Button href="/contact">Book a Free Consultation</Button>
           </div>
         </div>
       </div>

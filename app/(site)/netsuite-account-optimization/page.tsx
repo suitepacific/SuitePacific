@@ -5,8 +5,28 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
 import { Button } from "@/components/ui/Button";
-import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
+import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { SITE_URL } from "@/lib/content";
+
+const FAQ = [
+  {
+    question: "How long does an account optimization engagement take?",
+    answer: "A structured audit covering custom fields, saved searches, workflows, script deployments, roles, and forms typically takes two to three weeks. Remediation runs alongside the audit. Total time depends on how much has accumulated since go-live — accounts live for three or more years typically have more to address.",
+  },
+  {
+    question: "Will the cleanup affect live users?",
+    answer: "Deactivating unused fields and forms has no visible effect on users who weren't using them. Removing portlet searches from dashboards does change what users see on their home page, and we communicate those changes in advance. Workflow and script changes are tested in sandbox first and deployed outside business hours.",
+  },
+  {
+    question: "How do you identify which custom fields are safe to deactivate?",
+    answer: "We check three things: whether the field appears on any active form, whether any data is stored in it, and whether any active saved search or workflow references it. A field that fails all three checks is safe to deactivate. If there is historical data, we deactivate rather than delete to preserve it.",
+  },
+  {
+    question: "Is optimization a one-time project or ongoing work?",
+    answer: "Both. The initial audit is a defined-scope project with a specific deliverable. After that, ongoing optimization is part of our post-go-live support service, where we handle new customization requests and periodically review what has accumulated since the last cleanup.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "NetSuite Account Optimization",
@@ -33,6 +53,7 @@ export default function AccountOptimizationPage() {
           { name: "NetSuite Account Optimization", url: `${SITE_URL}/netsuite-account-optimization` },
         ]}
       />
+      <FaqJsonLd items={FAQ} />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading
@@ -91,13 +112,15 @@ export default function AccountOptimizationPage() {
           </p>
         </div>
 
+        <ServiceFaqSection items={FAQ} />
+
         <div className="mt-14 pt-10 border-t border-brand-50 text-center">
           <p className="text-brand-900 font-semibold">Is your NetSuite account getting slower or harder to manage?</p>
           <p className="mt-2 text-sm text-brand-400">
             Tell us what you’re seeing and we’ll identify what’s causing it.
           </p>
           <div className="mt-6">
-            <Button href="/#contact">Book a Free Consultation</Button>
+            <Button href="/contact">Book a Free Consultation</Button>
           </div>
         </div>
       </div>

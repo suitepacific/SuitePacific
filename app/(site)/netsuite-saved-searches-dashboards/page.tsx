@@ -5,8 +5,28 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
 import { Button } from "@/components/ui/Button";
-import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
+import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { SITE_URL } from "@/lib/content";
+
+const FAQ = [
+  {
+    question: "What's the difference between a saved search and a report in NetSuite?",
+    answer: "Saved searches query records directly with full filter and column control, and can be published as dashboard portlets, scheduled emails, or workflow conditions. Reports use a fixed structure optimized for formatted financial output. For operational monitoring and exception tracking, saved searches are significantly more flexible.",
+  },
+  {
+    question: "Can searches run automatically and send results by email?",
+    answer: "Yes. Any saved search can be scheduled to email results on a daily, weekly, or monthly cadence, and configured to send only when results exist. This is how you replace the manual 'pull a report and forward it' process.",
+  },
+  {
+    question: "How many portlet searches are too many?",
+    answer: "There is no fixed number, but every portlet search on a role's home page runs every time that dashboard loads. Accounts with many complex portlet searches will have noticeably slow dashboard load times. We audit portlet assignments as part of any optimization engagement.",
+  },
+  {
+    question: "Can saved searches pull data from multiple record types?",
+    answer: "Yes, through joins. A transaction search can pull in customer, contact, item, or employee fields from related records on the same row without any export or manual combination. This is one of the main advantages over standard reports, which often cannot surface cross-record data in a single view.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "NetSuite Saved Searches & Dashboards",
@@ -33,6 +53,7 @@ export default function SavedSearchesDashboardsPage() {
           { name: "NetSuite Saved Searches & Dashboards", url: `${SITE_URL}/netsuite-saved-searches-dashboards` },
         ]}
       />
+      <FaqJsonLd items={FAQ} />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading
@@ -88,13 +109,15 @@ export default function SavedSearchesDashboardsPage() {
           </p>
         </div>
 
+        <ServiceFaqSection items={FAQ} />
+
         <div className="mt-14 pt-10 border-t border-brand-50 text-center">
           <p className="text-brand-900 font-semibold">Still pulling NetSuite data into Excel?</p>
           <p className="mt-2 text-sm text-brand-400">
             Tell us what you need to see and we’ll build it inside NetSuite instead.
           </p>
           <div className="mt-6">
-            <Button href="/#contact">Book a Free Consultation</Button>
+            <Button href="/contact">Book a Free Consultation</Button>
           </div>
         </div>
       </div>

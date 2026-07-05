@@ -1,4 +1,4 @@
-import { SITE_URL, LEGAL_NAME, FAQ_ITEMS, SERVICES } from "@/lib/content";
+import { SITE_URL, LEGAL_NAME, SERVICES } from "@/lib/content";
 import type { BlogPostMeta } from "@/lib/types";
 
 export function OrganizationJsonLd() {
@@ -46,11 +46,11 @@ export function OrganizationJsonLd() {
   );
 }
 
-export function FaqJsonLd() {
+export function FaqJsonLd({ items }: { items: { question: string; answer: string }[] }) {
   const data = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: FAQ_ITEMS.map((item) => ({
+    mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.question,
       acceptedAnswer: { "@type": "Answer", text: item.answer },

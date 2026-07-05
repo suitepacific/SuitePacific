@@ -3,8 +3,28 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
 import { Button } from "@/components/ui/Button";
-import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
+import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { RECENT_WORK, SITE_URL } from "@/lib/content";
+
+const FAQ = [
+  {
+    question: "What's the difference between this and NetSuite's own support?",
+    answer: "NetSuite's support handles platform bugs and questions about standard functionality. We handle the customization layer — scripts, workflows, saved searches, templates, and configuration specific to your account. Most day-to-day questions in a live account sit in the customization layer, not the platform itself.",
+  },
+  {
+    question: "How is support billed?",
+    answer: "We work on a retained hours model: a monthly block of hours applied to whatever work comes up that month. This works better than per-ticket billing for accounts that have a steady but unpredictable stream of customization requests.",
+  },
+  {
+    question: "Do you require a long-term contract?",
+    answer: "We typically start with a three-month engagement, which gives enough time to understand the account and address the highest-priority items. Most clients continue month-to-month after that.",
+  },
+  {
+    question: "Can you take over support from a current managed services provider?",
+    answer: "Yes. We handle transitions regularly. The process involves a documented handoff of active customizations, known issues, and in-progress work. We also review the account independently rather than relying solely on the previous provider's documentation.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "NetSuite Post-Go-Live Support",
@@ -22,6 +42,7 @@ export default function PostGoLiveSupportPage() {
           { name: "NetSuite Post-Go-Live Support", url: `${SITE_URL}/netsuite-post-go-live-support` },
         ]}
       />
+      <FaqJsonLd items={FAQ} />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading
@@ -88,13 +109,15 @@ export default function PostGoLiveSupportPage() {
           </p>
         </div>
 
+        <ServiceFaqSection items={FAQ} />
+
         <div className="mt-14 pt-10 border-t border-brand-50 text-center">
           <p className="text-brand-900 font-semibold">Already live on NetSuite?</p>
           <p className="mt-2 text-sm text-brand-400">
             Tell us what’s not working or what you need built next.
           </p>
           <div className="mt-6">
-            <Button href="/#contact">Book a Free Consultation</Button>
+            <Button href="/contact">Book a Free Consultation</Button>
           </div>
         </div>
       </div>
