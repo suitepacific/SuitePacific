@@ -74,7 +74,16 @@ export function SectionTracker() {
         exitSection,
         ...firstTouch,
       });
-      navigator.sendBeacon?.("/api/track-session", payload);
+      const blob = new Blob([payload], { type: "application/json" });
+      const queued = navigator.sendBeacon?.("/api/track-session", blob) ?? false;
+      if (!queued) {
+        fetch("/api/track-session", {
+          method: "POST",
+          body: payload,
+          headers: { "Content-Type": "application/json" },
+          keepalive: true,
+        }).catch(() => {});
+      }
     };
 
     const onVisibilityChange = () => {
