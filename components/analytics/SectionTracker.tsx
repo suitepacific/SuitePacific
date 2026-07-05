@@ -43,7 +43,6 @@ export function SectionTracker() {
     let exitSection: string | null = null;
 
     const sections = Array.from(document.querySelectorAll<HTMLElement>("section[id]"));
-    if (sections.length === 0) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
