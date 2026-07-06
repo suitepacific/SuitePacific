@@ -107,7 +107,7 @@ export default function SuiteScriptDevelopmentPage() {
           <p>
             For a deeper look at how we write scripts that hold up over time, see our{" "}
             <Link href="/blog/suitescript-best-practices">SuiteScript best practices guide</Link>.
-            If you're troubleshooting a live script, our guide to{" "}
+            If you&apos;re troubleshooting a live script, our guide to{" "}
             <Link href="/blog/netsuite-script-governance-limit">
               NetSuite governance limit errors
             </Link>{" "}

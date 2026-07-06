@@ -370,14 +370,14 @@ export default function HireNetSuiteDeveloperPage() {
         <div className="prose prose-blue mt-14 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
           <h2>Why Companies Hire a NetSuite Developer</h2>
           <p>
-            Most organizations don't realize they need a NetSuite developer until their business
+            Most organizations don&apos;t realize they need a NetSuite developer until their business
             begins to outgrow standard NetSuite functionality. After implementation, new requirements
             appear:
           </p>
           <ul>
             <li>Manual processes become bottlenecks.</li>
             <li>Approval workflows become increasingly complex.</li>
-            <li>Finance teams need reports that standard Saved Searches can't easily provide.</li>
+            <li>Finance teams need reports that standard Saved Searches can&apos;t easily provide.</li>
             <li>Warehouse teams require custom scanning or barcode solutions.</li>
             <li>Sales teams need automated pricing and approval logic.</li>
             <li>External systems need to exchange data with NetSuite.</li>
@@ -444,7 +444,7 @@ export default function HireNetSuiteDeveloperPage() {
         <div className="mt-14">
           <h2 className="text-lg font-semibold text-brand-900">NetSuite Administrator vs. NetSuite Developer</h2>
           <p className="mt-2 text-sm text-brand-400">
-            Many businesses are unsure whether they need an administrator or a developer. Here's the practical difference:
+            Many businesses are unsure whether they need an administrator or a developer. Here&apos;s the practical difference:
           </p>
           <div className="mt-5 grid grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-brand-100">
             <div className="bg-brand-50/60 p-5">
@@ -465,7 +465,7 @@ export default function HireNetSuiteDeveloperPage() {
             </div>
           </div>
           <p className="mt-3 text-sm text-brand-400">
-            Administrators configure NetSuite using built-in features. Developers extend NetSuite when configuration alone isn't enough. Many organizations benefit from having both.
+            Administrators configure NetSuite using built-in features. Developers extend NetSuite when configuration alone isn&apos;t enough. Many organizations benefit from having both.
           </p>
         </div>
 
@@ -673,7 +673,7 @@ export default function HireNetSuiteDeveloperPage() {
           <p className="text-brand-900 font-semibold">Ready to hire a NetSuite developer?</p>
           <p className="mt-2 text-sm text-brand-400">
             Whether you need a one-time customization, a complex integration, or a long-term
-            NetSuite development partner, we'd love to learn more about your requirements.
+            NetSuite development partner, we&apos;d love to learn more about your requirements.
           </p>
           <div className="mt-6">
             <Button href="/contact">Book a Free Consultation</Button>
