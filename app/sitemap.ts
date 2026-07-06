@@ -12,6 +12,7 @@ const SERVICE_PAGES = [
   "/netsuite-workflow-automation",
   "/netsuite-saved-searches-dashboards",
   "/netsuite-advanced-pdf-templates",
+  "/netsuite-administrator-support",
   "/netsuite-account-optimization",
   "/netsuite-post-go-live-support",
   "/netsuite-implementation-partner-vs-managed-support",
