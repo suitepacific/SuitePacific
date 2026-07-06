@@ -140,7 +140,7 @@ const WHAT_WE_BUILD = [
       "REST APIs",
       "SFTP file transfers",
     ],
-    href: "/netsuite-suitescript-development",
+    href: "/netsuite-integrations",
   },
 ];
 

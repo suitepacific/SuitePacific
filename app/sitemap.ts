@@ -6,6 +6,7 @@ const SITE_LAUNCH_DATE = new Date("2026-06-01");
 
 const SERVICE_PAGES = [
   "/hire-netsuite-developer",
+  "/netsuite-integrations",
   "/netsuite-suitescript-development",
   "/netsuite-workflow-automation",
   "/netsuite-saved-searches-dashboards",

@@ -5,6 +5,7 @@ import {
   FileText,
   Settings2,
   LifeBuoy,
+  Globe,
   UserX,
   RefreshCcw,
   Clock,
@@ -151,6 +152,12 @@ export const SERVICES: Service[] = [
     title: "Advanced PDF Templates",
     description: "Polished invoices, statements, and forms that reflect your brand and fit your workflow.",
     href: "/netsuite-advanced-pdf-templates",
+  },
+  {
+    icon: Globe,
+    title: "NetSuite Integrations",
+    description: "Connect NetSuite to your 3PL, e-commerce platform, CRM, or other business systems — reliably and without silent failures.",
+    href: "/netsuite-integrations",
   },
   {
     icon: Settings2,
@@ -419,6 +426,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: "Workflow Automation", href: "/netsuite-workflow-automation" },
       { label: "Saved Searches & Dashboards", href: "/netsuite-saved-searches-dashboards" },
       { label: "Advanced PDF Templates", href: "/netsuite-advanced-pdf-templates" },
+      { label: "NetSuite Integrations", href: "/netsuite-integrations" },
       { label: "Account Optimization", href: "/netsuite-account-optimization" },
       { label: "Post-Go-Live Support", href: "/netsuite-post-go-live-support" },
     ],
