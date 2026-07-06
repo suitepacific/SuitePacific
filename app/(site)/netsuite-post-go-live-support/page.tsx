@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
@@ -105,7 +106,10 @@ export default function PostGoLiveSupportPage() {
             <a href="/netsuite-implementation-partner-vs-managed-support">
               implementation partner vs. managed support
             </a>{" "}
-            for that distinction.
+            for that distinction. If you’re evaluating what it looks like to{" "}
+            <Link href="/hire-netsuite-developer">hire a NetSuite developer</Link> — what to
+            look for, how engagements are structured, and what questions matter — that guide
+            covers all of it.
           </p>
         </div>
 

@@ -5,6 +5,7 @@ import { SITE_URL } from "@/lib/content";
 const SITE_LAUNCH_DATE = new Date("2026-06-01");
 
 const SERVICE_PAGES = [
+  "/hire-netsuite-developer",
   "/netsuite-suitescript-development",
   "/netsuite-workflow-automation",
   "/netsuite-saved-searches-dashboards",

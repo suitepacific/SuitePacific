@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { X, Check } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
@@ -124,7 +125,9 @@ export default function ComparisonPage() {
             but the business keeps changing and NetSuite needs to keep changing with it, that’s
             managed support. That’s the entirety of what SuitePacific does. See our{" "}
             <a href="/netsuite-post-go-live-support">post-go-live support page</a> for what that
-            looks like in practice.
+            looks like in practice, or our guide to{" "}
+            <Link href="/hire-netsuite-developer">hiring a NetSuite developer</Link> if you’re
+            evaluating your options before reaching out.
           </p>
           <div className="not-prose">
             <div className="flex items-center gap-3 text-sm text-brand-400 mt-2">

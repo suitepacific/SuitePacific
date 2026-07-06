@@ -107,6 +107,11 @@ export default function SuiteScriptDevelopmentPage() {
           <p>
             For a deeper look at how we write scripts that hold up over time, see our{" "}
             <Link href="/blog/suitescript-best-practices">SuiteScript best practices guide</Link>.
+            If you're troubleshooting a live script, our guide to{" "}
+            <Link href="/blog/netsuite-script-governance-limit">
+              NetSuite governance limit errors
+            </Link>{" "}
+            covers every common cause and the architectural patterns that fix them permanently.
           </p>
 
           <h2>Who this is for</h2>
@@ -116,7 +121,11 @@ export default function SuiteScriptDevelopmentPage() {
             and need help extending or cleaning up. We don’t handle NetSuite implementations;
             see our{" "}
             <Link href="/netsuite-post-go-live-support">post-go-live support overview</Link> for
-            context on where SuiteScript work typically fits.
+            context on where SuiteScript work typically fits. If you’re evaluating options,
+            our{" "}
+            <Link href="/hire-netsuite-developer">guide to hiring a NetSuite developer</Link>{" "}
+            covers what to look for, what different engagement models cost, and what questions
+            to ask before you commit.
           </p>
         </div>
 

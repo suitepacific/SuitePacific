@@ -429,6 +429,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: "Blog", href: "/blog" },
       { label: "Case Studies", href: "/#case-studies" },
       { label: "FAQ", href: "/#faq" },
+      { label: "Hire a NetSuite Developer", href: "/hire-netsuite-developer" },
       { label: "Post-Go-Live Support Guide", href: "/netsuite-post-go-live-support" },
       { label: "Implementation vs. Managed Support", href: "/netsuite-implementation-partner-vs-managed-support" },
     ],
