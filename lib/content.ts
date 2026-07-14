@@ -52,6 +52,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: "How We Help", href: "/#timeline" },
   { label: "Why SuitePacific", href: "/#why-us" },
   { label: "Case Studies", href: "/#case-studies" },
+  { label: "Resources", href: "/resources" },
   { label: "Blog", href: "/blog" },
 ];
 
@@ -435,6 +436,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     title: "Resources",
     links: [
+      { label: "NetSuite Resources", href: "/resources" },
       { label: "Blog", href: "/blog" },
       { label: "Case Studies", href: "/case-studies" },
       { label: "FAQ", href: "/#faq" },

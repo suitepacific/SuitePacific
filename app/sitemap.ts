@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
 import { SITE_URL } from "@/lib/content";
 import { getAllCaseStudySlugs } from "@/lib/case-studies";
+import { getAllResourceSlugs } from "@/lib/resources";
 
 const SITE_LAUNCH_DATE = new Date("2026-06-01");
 
@@ -21,12 +22,19 @@ const SERVICE_PAGES = [
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getAllPosts();
   const caseStudySlugs = getAllCaseStudySlugs();
+  const resourceSlugs = getAllResourceSlugs();
 
   return [
     { url: SITE_URL, lastModified: SITE_LAUNCH_DATE, changeFrequency: "monthly", priority: 1 },
     {
       url: `${SITE_URL}/blog`,
       lastModified: posts.length > 0 ? new Date(posts[0].date) : SITE_LAUNCH_DATE,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/resources`,
+      lastModified: new Date("2026-07-14"),
       changeFrequency: "weekly",
       priority: 0.8,
     },
@@ -47,6 +55,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: SITE_LAUNCH_DATE,
       changeFrequency: "monthly" as const,
       priority: 0.6,
+    })),
+    ...resourceSlugs.map((slug) => ({
+      url: `${SITE_URL}/resources/${slug}`,
+      lastModified: new Date("2026-07-14"),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     })),
     ...posts.map((post) => ({
       url: `${SITE_URL}/blog/${post.slug}`,
