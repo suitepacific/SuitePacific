@@ -54,6 +54,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Case Studies", href: "/#case-studies" },
   { label: "Resources", href: "/resources" },
   { label: "Blog", href: "/blog" },
+  { label: "Partners", href: "/partners" },
 ];
 
 export const CTA_SUPPORT_LINE =

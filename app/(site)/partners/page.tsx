@@ -27,7 +27,7 @@ const FEATURED_PARTNERS = [
     website: "https://suitepreferences.com",
     linkedin: "https://www.linkedin.com/company/suitepreferences",
     description:
-      "SuitePreferences is a Chrome extension designed to streamline workflows for NetSuite users, administrators, and developers. It integrates powerful productivity and developer tools directly into your NetSuite account — with advanced utilities accessible via a side panel — to eliminate tedious context-switching and help teams ship faster.",
+      "SuitePreferences is a Chrome extension designed to streamline workflows for NetSuite users, administrators, and developers. It integrates powerful productivity and developer tools directly into your NetSuite account, with advanced utilities accessible via a side panel, to eliminate tedious context-switching and help teams ship faster.",
   },
 ];
 
@@ -42,7 +42,7 @@ const PARTNER_TYPES = [
     icon: Users,
     title: "Oracle NetSuite Resellers",
     description:
-      "You sell NetSuite licenses and help clients get started. We extend that value by being the resource your clients call when they need custom scripting, workflow automation, or integrations built after go-live. We don't compete for implementation or license work — we're the team that makes your clients successful on the platform long-term.",
+      "You sell NetSuite licenses and help clients get started. We extend that value by being the resource your clients call when they need custom scripting, workflow automation, or integrations built after go-live. We don't compete for implementation or license work. We're the team that makes your clients successful on the platform long-term.",
   },
   {
     icon: Calculator,
@@ -54,7 +54,7 @@ const PARTNER_TYPES = [
     icon: Boxes,
     title: "Software & SaaS Vendors",
     description:
-      "Your product needs to connect to NetSuite. Your customers need someone to build and maintain that integration. SuitePacific builds RESTlet-based, SuiteTalk, and middleware integrations with NetSuite — so your clients get a clean, production-ready connection without you having to become a NetSuite specialist.",
+      "Your product needs to connect to NetSuite. Your customers need someone to build and maintain that integration. SuitePacific builds RESTlet-based, SuiteTalk, and middleware integrations with NetSuite so your clients get a clean, production-ready connection without you having to become a NetSuite specialist.",
   },
 ];
 
@@ -75,7 +75,7 @@ const WHY_PARTNER = [
     icon: Zap,
     title: "Fast turnaround, direct communication",
     description:
-      "Your clients speak directly to the developer working on their account — no account managers, no relay layers. Most requests are scoped and delivered in days.",
+      "Your clients speak directly to the developer working on their account. No account managers, no relay layers. Most requests are scoped and delivered in days.",
   },
   {
     icon: Clock,
@@ -130,7 +130,7 @@ export default function PartnersPage() {
           as="h1"
           eyebrow="Partner Program"
           title="Partner with SuitePacific"
-          subtitle="Work with a specialist NetSuite team that handles post-go-live support, development, and automation — without competing for your work."
+          subtitle="Work with a specialist NetSuite team that handles post-go-live support, development, and automation, without competing for your work."
           align="left"
         />
 
@@ -138,7 +138,7 @@ export default function PartnersPage() {
           <p>
             SuitePacific works with implementation partners, resellers, accounting firms, and
             software vendors who need a trusted, specialist referral for NetSuite post-go-live work.
-            We focus exclusively on clients who are already live on NetSuite — which means we
+            We focus exclusively on clients who are already live on NetSuite, which means we
             complement your work rather than compete with it.
           </p>
           <p>
@@ -154,7 +154,7 @@ export default function PartnersPage() {
 
         {/* Featured Partners */}
         <div className="mt-16">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Current Partners</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Featured Partners</h2>
           <div className="space-y-5">
             {FEATURED_PARTNERS.map((partner) => (
               <Card key={partner.name} className="p-6">
