@@ -418,6 +418,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: "About SuitePacific", href: "/#about" },
       { label: "Why SuitePacific", href: "/#why-us" },
       { label: "Recent Work", href: "/#work" },
+      { label: "Partners", href: "/partners" },
     ],
   },
   {
