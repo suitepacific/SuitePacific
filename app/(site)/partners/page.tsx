@@ -9,6 +9,7 @@ import {
   Zap,
   Clock,
   ArrowRight,
+  ExternalLink,
 } from "lucide-react";
 import Link from "next/link";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -17,6 +18,18 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL } from "@/lib/content";
+
+const FEATURED_PARTNERS = [
+  {
+    name: "SuitePreferences",
+    logoDark: "https://suitepreferences.com/assets/logo-dark.svg",
+    logoLight: "https://suitepreferences.com/assets/logo-light.svg",
+    website: "https://suitepreferences.com",
+    linkedin: "https://www.linkedin.com/company/suitepreferences",
+    description:
+      "SuitePreferences is a Chrome extension designed to streamline workflows for NetSuite users, administrators, and developers. It integrates powerful productivity and developer tools directly into your NetSuite account — with advanced utilities accessible via a side panel — to eliminate tedious context-switching and help teams ship faster.",
+  },
+];
 
 const PARTNER_TYPES = [
   {
@@ -137,6 +150,54 @@ export default function PartnersPage() {
 
         <div className="mt-6">
           <Button href="/contact">Get in Touch</Button>
+        </div>
+
+        {/* Featured Partners */}
+        <div className="mt-16">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Current Partners</h2>
+          <div className="space-y-5">
+            {FEATURED_PARTNERS.map((partner) => (
+              <Card key={partner.name} className="p-6">
+                <div className="flex flex-col sm:flex-row sm:items-start gap-6">
+                  <div className="shrink-0">
+                    <img
+                      src={partner.logoDark}
+                      alt={`${partner.name} logo`}
+                      className="h-9 w-auto dark:hidden"
+                    />
+                    <img
+                      src={partner.logoLight}
+                      alt={`${partner.name} logo`}
+                      className="h-9 w-auto hidden dark:block"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-semibold text-brand-900 text-sm">{partner.name}</p>
+                    <p className="mt-2 text-sm text-brand-400 leading-relaxed">{partner.description}</p>
+                    <div className="mt-4 flex items-center gap-4">
+                      <a
+                        href={partner.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs text-accent hover:underline"
+                      >
+                        <ExternalLink className="h-3.5 w-3.5" />
+                        Visit website
+                      </a>
+                      <a
+                        href={partner.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs text-accent hover:underline"
+                      >
+                        LinkedIn
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
 
         {/* Who we partner with */}
