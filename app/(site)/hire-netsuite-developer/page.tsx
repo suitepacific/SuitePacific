@@ -446,22 +446,24 @@ export default function HireNetSuiteDeveloperPage() {
           <p className="mt-2 text-sm text-brand-400">
             Many businesses are unsure whether they need an administrator or a developer. Here&apos;s the practical difference:
           </p>
-          <div className="mt-5 grid grid-cols-2 gap-0 rounded-2xl overflow-hidden border border-brand-100">
-            <div className="bg-brand-50/60 p-5">
-              <p className="font-semibold text-brand-900 text-sm mb-3">NetSuite Administrator</p>
-              {ADMIN_ROWS.map((r) => (
-                <div key={r.admin} className="py-2 border-b border-brand-100/60 last:border-0">
-                  <p className="text-sm text-brand-600">{r.admin}</p>
-                </div>
-              ))}
-            </div>
-            <div className="bg-brand p-5">
-              <p className="font-semibold text-white text-sm mb-3">NetSuite Developer</p>
-              {ADMIN_ROWS.map((r) => (
-                <div key={r.dev} className="py-2 border-b border-white/10 last:border-0">
-                  <p className="text-sm text-blue-100">{r.dev}</p>
-                </div>
-              ))}
+          <div className="mt-5 overflow-x-auto rounded-2xl border border-brand-100">
+            <div className="grid grid-cols-2 min-w-[420px]">
+              <div className="bg-brand-50/60 p-5">
+                <p className="font-semibold text-brand-900 text-sm mb-3">NetSuite Administrator</p>
+                {ADMIN_ROWS.map((r) => (
+                  <div key={r.admin} className="py-2 border-b border-brand-100/60 last:border-0">
+                    <p className="text-sm text-brand-600">{r.admin}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-brand p-5">
+                <p className="font-semibold text-white text-sm mb-3">NetSuite Developer</p>
+                {ADMIN_ROWS.map((r) => (
+                  <div key={r.dev} className="py-2 border-b border-white/10 last:border-0">
+                    <p className="text-sm text-blue-100">{r.dev}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
           <p className="mt-3 text-sm text-brand-400">
@@ -531,24 +533,26 @@ export default function HireNetSuiteDeveloperPage() {
           <p className="mt-2 text-sm text-brand-400">
             Each engagement model has strengths. SuitePacific combines the flexibility of a freelancer with the reliability of an experienced consultancy.
           </p>
-          <div className="mt-5 grid grid-cols-3 gap-0 rounded-2xl overflow-hidden border border-brand-100 text-sm">
-            <div className="bg-brand-50/40 p-4">
-              <p className="font-semibold text-brand-900 mb-3">Freelancer</p>
-              {FREELANCER_ROWS.map((r) => (
-                <div key={r.freelancer} className="py-2 border-b border-brand-100/60 last:border-0 text-brand-500">{r.freelancer}</div>
-              ))}
-            </div>
-            <div className="bg-brand-50/20 p-4 border-x border-brand-100">
-              <p className="font-semibold text-brand-900 mb-3">Large Consulting Firm</p>
-              {FREELANCER_ROWS.map((r) => (
-                <div key={r.large} className="py-2 border-b border-brand-100/60 last:border-0 text-brand-500">{r.large}</div>
-              ))}
-            </div>
-            <div className="bg-brand p-4">
-              <p className="font-semibold text-white mb-3">SuitePacific</p>
-              {FREELANCER_ROWS.map((r) => (
-                <div key={r.sp} className="py-2 border-b border-white/10 last:border-0 text-blue-100">{r.sp}</div>
-              ))}
+          <div className="mt-5 overflow-x-auto rounded-2xl border border-brand-100">
+            <div className="grid grid-cols-3 min-w-[560px] text-sm">
+              <div className="bg-brand-50/40 p-4">
+                <p className="font-semibold text-brand-900 mb-3">Freelancer</p>
+                {FREELANCER_ROWS.map((r) => (
+                  <div key={r.freelancer} className="py-2 border-b border-brand-100/60 last:border-0 text-brand-500">{r.freelancer}</div>
+                ))}
+              </div>
+              <div className="bg-brand-50/20 p-4 border-x border-brand-100">
+                <p className="font-semibold text-brand-900 mb-3">Large Consulting Firm</p>
+                {FREELANCER_ROWS.map((r) => (
+                  <div key={r.large} className="py-2 border-b border-brand-100/60 last:border-0 text-brand-500">{r.large}</div>
+                ))}
+              </div>
+              <div className="bg-brand p-4">
+                <p className="font-semibold text-white mb-3">SuitePacific</p>
+                {FREELANCER_ROWS.map((r) => (
+                  <div key={r.sp} className="py-2 border-b border-white/10 last:border-0 text-blue-100">{r.sp}</div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

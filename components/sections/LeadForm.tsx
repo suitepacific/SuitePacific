@@ -121,7 +121,7 @@ export function LeadForm() {
         className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-brand text-white font-medium px-6 py-3 text-sm shadow-soft hover:bg-brand-700 transition-colors disabled:opacity-60"
       >
         {status === "submitting" && <Loader2 className="h-4 w-4 animate-spin" />}
-        {status === "submitting" ? "Sending..." : "Request My Free Consultation"}
+        {status === "submitting" ? "Sending..." : "Talk to a NetSuite Expert"}
       </button>
 
       {status === "error" && (
