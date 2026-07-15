@@ -14,7 +14,7 @@ import { FinalCta } from "@/components/sections/FinalCta";
 import { getAllPosts } from "@/lib/blog";
 
 export default async function Home() {
-  const posts = await getAllPosts();
+  const posts = await getAllPosts().catch(() => []);
 
   return (
     <main>

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 export default async function BlogIndexPage() {
-  const posts = await getAllPosts();
+  const posts = await getAllPosts().catch(() => []);
 
   return (
     <main className="pt-32 pb-24 sm:pt-40 sm:pb-32">

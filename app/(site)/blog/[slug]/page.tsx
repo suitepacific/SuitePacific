@@ -10,7 +10,7 @@ import { getAllPosts, getAllSlugs, getPostBySlug } from "@/lib/blog";
 import { SITE_URL } from "@/lib/content";
 
 export async function generateStaticParams() {
-  const slugs = await getAllSlugs();
+  const slugs = await getAllSlugs().catch(() => []);
   return slugs.map((slug) => ({ slug }));
 }
 
@@ -46,7 +46,7 @@ export default async function BlogPostPage({
   const post = await getPostBySlug(slug);
   if (!post) notFound();
 
-  const allPosts = await getAllPosts();
+  const allPosts = await getAllPosts().catch(() => []);
   const relatedPosts = allPosts.filter((p) => p.slug !== post.slug).slice(0, 2);
 
   return (
