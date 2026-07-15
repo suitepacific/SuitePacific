@@ -41,7 +41,7 @@ export default function ContactPage() {
           <div className="lg:col-span-2">
             <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3">Get in Touch</p>
             <h1 className="text-2xl sm:text-3xl font-bold text-brand-900 leading-tight">
-              Talk to a NetSuite Developer
+              Talk to a NetSuite Expert
             </h1>
             <p className="mt-4 text-sm text-brand-400 leading-relaxed">
               Tell us what you&apos;re working with and what you need. We&apos;ll follow up within one business day to schedule a call.
