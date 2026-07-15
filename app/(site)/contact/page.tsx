@@ -1,14 +1,20 @@
 import type { Metadata } from "next";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ShieldCheck, Clock, Star } from "lucide-react";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL, CONTACT_EMAIL } from "@/lib/content";
 
 const WHAT_TO_EXPECT = [
-  "Response within one business day",
-  "No sales pressure or long-term contracts",
-  "Direct communication with the developer",
+  "We'll respond within one business day",
+  "No sales pressure. No long-term contracts.",
+  "Talk directly with the developer working on your account",
   "Free 30-minute consultation call",
+];
+
+const TRUST_BADGES = [
+  { icon: ShieldCheck, label: "Oracle Certified" },
+  { icon: Clock, label: "Post-Go-Live Specialists" },
+  { icon: Star, label: "6+ Years NetSuite Experience" },
 ];
 
 export const metadata: Metadata = {
@@ -35,7 +41,7 @@ export default function ContactPage() {
           <div className="lg:col-span-2">
             <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3">Get in Touch</p>
             <h1 className="text-2xl sm:text-3xl font-bold text-brand-900 leading-tight">
-              Book a Free Consultation
+              Talk to a NetSuite Developer
             </h1>
             <p className="mt-4 text-sm text-brand-400 leading-relaxed">
               Tell us what you&apos;re working with and what you need. We&apos;ll follow up within one business day to schedule a call.
@@ -50,19 +56,30 @@ export default function ContactPage() {
               ))}
             </ul>
 
+            <div className="mt-8 space-y-3">
+              {TRUST_BADGES.map(({ icon: Icon, label }) => (
+                <div key={label} className="flex items-center gap-2.5 text-sm text-brand-600">
+                  <Icon className="h-4 w-4 text-accent shrink-0" />
+                  {label}
+                </div>
+              ))}
+            </div>
+
             <div className="mt-8 pt-6 border-t border-brand-50">
-              <p className="text-xs text-brand-400">Prefer email?</p>
-              <a
-                href={`mailto:${CONTACT_EMAIL}`}
-                className="text-sm text-accent hover:underline mt-0.5 block"
-              >
-                {CONTACT_EMAIL}
-              </a>
+              <p className="text-sm text-brand-400">
+                Prefer email? Reach us directly at{" "}
+                <a href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">
+                  {CONTACT_EMAIL}
+                </a>
+              </p>
             </div>
           </div>
 
           {/* Right column — form */}
           <div className="lg:col-span-3">
+            <p className="text-sm text-brand-400 mb-5">
+              Whether you need a small customization or ongoing post-go-live support, we&apos;re happy to help.
+            </p>
             <div className="rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
               <LeadForm />
             </div>

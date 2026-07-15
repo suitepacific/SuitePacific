@@ -111,7 +111,7 @@ export function LeadForm() {
           name="message"
           rows={3}
           className="w-full rounded-lg border border-brand-100 px-3.5 py-2.5 text-sm text-brand-900 placeholder:text-brand-300 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent resize-none"
-          placeholder="e.g. We need a custom approval workflow and a few saved searches cleaned up."
+          placeholder="Tell us about your project, issue, or idea..."
         />
       </div>
 
