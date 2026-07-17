@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { createPost, deletePost, updatePost } from "@/lib/admin-data";
 import type { PostInput } from "@/lib/admin-data";
 import { pingIndexNow } from "@/lib/indexnow";
+import { requireAdmin } from "@/lib/auth";
 
 const SITE_URL = "https://suitepacific.com";
 
@@ -25,6 +26,7 @@ function parsePostInput(formData: FormData): PostInput {
 }
 
 export async function createPostAction(formData: FormData) {
+  await requireAdmin();
   const input = parsePostInput(formData);
   await createPost(input);
   if (input.published) {
@@ -36,6 +38,7 @@ export async function createPostAction(formData: FormData) {
 }
 
 export async function updatePostAction(id: string, formData: FormData) {
+  await requireAdmin();
   const input = parsePostInput(formData);
   await updatePost(id, input);
   if (input.published) {
@@ -48,6 +51,7 @@ export async function updatePostAction(id: string, formData: FormData) {
 }
 
 export async function deletePostAction(id: string) {
+  await requireAdmin();
   const post = await deletePost(id);
   revalidatePath("/blog");
   revalidatePath(`/blog/${post.slug}`);

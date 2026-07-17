@@ -13,7 +13,7 @@ function getSecret(): string {
   return secret;
 }
 
-async function hmac(payload: string): Promise<string> {
+async function hmacSign(payload: string): Promise<string> {
   const key = await crypto.subtle.importKey(
     "raw",
     new TextEncoder().encode(getSecret()),
@@ -21,10 +21,29 @@ async function hmac(payload: string): Promise<string> {
     false,
     ["sign"]
   );
-  const signature = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(payload));
-  return Array.from(new Uint8Array(signature))
+  const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(payload));
+  return Array.from(new Uint8Array(sig))
     .map((b) => b.toString(16).padStart(2, "0"))
     .join("");
+}
+
+// Constant-time HMAC verification via crypto.subtle.verify
+async function hmacVerify(payload: string, hexSig: string): Promise<boolean> {
+  try {
+    const key = await crypto.subtle.importKey(
+      "raw",
+      new TextEncoder().encode(getSecret()),
+      { name: "HMAC", hash: "SHA-256" },
+      false,
+      ["verify"]
+    );
+    const bytes = hexSig.match(/[0-9a-f]{2}/gi);
+    if (!bytes || bytes.length !== 32) return false;
+    const sigBytes = new Uint8Array(bytes.map((b) => parseInt(b, 16)));
+    return crypto.subtle.verify("HMAC", key, sigBytes, new TextEncoder().encode(payload));
+  } catch {
+    return false;
+  }
 }
 
 export async function hashPassword(plain: string): Promise<string> {
@@ -38,7 +57,7 @@ export async function verifyPassword(plain: string, hash: string): Promise<boole
 export async function createPartnerSessionToken(partnerId: string): Promise<string> {
   const expires = Date.now() + SESSION_MAX_AGE_SECONDS * 1000;
   const payload = `partner.${partnerId}.${expires}`;
-  const signature = await hmac(payload);
+  const signature = await hmacSign(payload);
   return `${payload}.${signature}`;
 }
 
@@ -51,10 +70,11 @@ export async function verifyPartnerSessionToken(
 
   const [role, partnerId, expiresStr, signature] = parts;
   if (role !== "partner") return null;
+  if (!partnerId) return null;
 
   const payload = `partner.${partnerId}.${expiresStr}`;
-  const expectedSignature = await hmac(payload);
-  if (signature !== expectedSignature) return null;
+  const isValidSig = await hmacVerify(payload, signature);
+  if (!isValidSig) return null;
 
   const expires = Number(expiresStr);
   if (!Number.isFinite(expires) || Date.now() >= expires) return null;
@@ -62,10 +82,13 @@ export async function verifyPartnerSessionToken(
   return { partnerId };
 }
 
+// Returns null if partner doesn't exist OR is suspended — active check prevents suspended partners from acting
 export async function getPartnerFromRequest(): Promise<Partner | null> {
   const cookieStore = await cookies();
   const token = cookieStore.get(PARTNER_SESSION_COOKIE)?.value;
   const result = await verifyPartnerSessionToken(token);
   if (!result) return null;
-  return prisma.partner.findUnique({ where: { id: result.partnerId } });
+  const partner = await prisma.partner.findUnique({ where: { id: result.partnerId } });
+  if (!partner || partner.status !== "active") return null;
+  return partner;
 }

@@ -13,7 +13,10 @@ export default async function PortalDashboardLayout({
   return (
     <div className="flex min-h-screen bg-brand-50/30">
       <PortalSidebar partnerName={partner.name} />
-      <main className="flex-1 p-8 overflow-auto">{children}</main>
+      {/* mt-14 md:mt-0: offset for mobile fixed top bar; desktop sidebar is in normal flow */}
+      <main className="flex-1 mt-14 md:mt-0 p-4 md:p-8 min-w-0 overflow-auto">
+        {children}
+      </main>
     </div>
   );
 }
