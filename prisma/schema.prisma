@@ -13,8 +13,8 @@ model Post {
   title       String
   description String
   date        DateTime
-  tags        String // comma-separated
-  content     String // raw markdown
+  tags        String
+  content     String
   published   Boolean  @default(true)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
@@ -58,47 +58,122 @@ model VisitorSession {
 }
 
 model Partner {
-  id           String     @id @default(cuid())
-  name         String
-  email        String     @unique
-  company      String?
-  passwordHash String
-  status       String     @default("active")
-  createdAt    DateTime   @default(now())
-  referrals    Referral[]
+  id                     String       @id @default(cuid())
+  name                   String
+  email                  String       @unique
+  company                String?
+  website                String?
+  country                String?
+  timezone               String?
+  taxId                  String?
+  preferredPaymentMethod String?      // bank_transfer | paypal | wise | check
+  paymentDetails         String?      // free text: account details
+  commissionRate         Float?       // partner-level default; overrides global setting
+  passwordHash           String
+  status                 String       @default("active")
+  agreementAcceptedAt    DateTime?
+  agreementAcceptedIp    String?
+  archivedAt             DateTime?
+  createdAt              DateTime     @default(now())
+  referrals              Referral[]
+  auditLogs              AuditLog[]
+
+  @@index([status])
+  @@index([archivedAt])
 }
 
 model Referral {
-  id               String            @id @default(cuid())
-  partner          Partner           @relation(fields: [partnerId], references: [id])
-  partnerId        String
-  companyName      String
-  contactName      String?
-  contactEmail     String?
-  notes            String?
-  status           ReferralStatus    @default(NEW)
-  // Commission lifecycle
-  projectValue     Float?
-  commissionRate   Float?            // percentage, e.g. 10.0 = 10%
-  commissionAmount Float?
-  commissionStatus CommissionStatus?
-  paymentDate      DateTime?
-  paymentMethod    String?
-  paymentReference String?
-  createdAt        DateTime          @default(now())
-  updatedAt        DateTime          @updatedAt
+  id                 String            @id @default(cuid())
+  partner            Partner           @relation(fields: [partnerId], references: [id])
+  partnerId          String
+  assignedTo         String?           // SuitePacific team member
+  companyName        String
+  contactName        String?
+  contactEmail       String?
+  contactWebsite     String?
+  partnerNotes       String?           // visible to both admin and partner
+  internalNotes      String?           // admin-only
+  status             ReferralStatus    @default(NEW)
+  // Commission — priority: Referral.commissionRate → Partner.commissionRate → SystemSetting[default_commission_rate]
+  projectCurrency    String            @default("USD")
+  projectValue       Float?
+  commissionRate     Float?            // per-referral override; null = use partner/global default
+  commissionCurrency String            @default("USD")
+  commissionAmount   Float?            // always auto-calculated: projectValue × effectiveRate / 100
+  commissionStatus   CommissionStatus?
+  paymentDate        DateTime?
+  paymentMethod      String?
+  paymentReference   String?
+  paymentNotes       String?
+  // Future-proofing for self-service referral links
+  referralCode       String?
+  utmSource          String?
+  utmCampaign        String?
+  // Soft delete
+  archivedAt         DateTime?
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+
+  activities ReferralActivity[]
+  auditLogs  AuditLog[]
 
   @@index([partnerId])
   @@index([status])
   @@index([commissionStatus])
+  @@index([companyName])
+  @@index([contactEmail])
+  @@index([archivedAt])
+}
+
+model ReferralActivity {
+  id          String   @id @default(cuid())
+  referral    Referral @relation(fields: [referralId], references: [id])
+  referralId  String
+  type        String   // submitted | status_changed | commission_updated | payment_received | commission_paid | note_added
+  description String
+  actor       String   @default("system") // system | admin | partner
+  createdAt   DateTime @default(now())
+
+  @@index([referralId])
+  @@index([createdAt])
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  entityType String   // partner | referral
+  entityId   String
+  action     String
+  actor      String
+  before     String?  // JSON snapshot of changed fields
+  after      String?
+  createdAt  DateTime @default(now())
+
+  partner    Partner?  @relation(fields: [partnerId], references: [id])
+  partnerId  String?
+  referral   Referral? @relation(fields: [referralId], references: [id])
+  referralId String?
+
+  @@index([entityType, entityId])
+  @@index([createdAt])
+}
+
+// Key-value store for global configuration
+// Keys: default_commission_rate (e.g. "10"), default_commission_currency (e.g. "USD")
+model SystemSetting {
+  key   String @id
+  value String
 }
 
 enum ReferralStatus {
   NEW
+  QUALIFIED
   CONTACTED
+  DISCOVERY_CALL
   PROPOSAL_SENT
+  NEGOTIATION
   WON
   LOST
+  DUPLICATE
 }
 
 enum CommissionStatus {

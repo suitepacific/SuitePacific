@@ -3,13 +3,14 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, ListChecks, PlusCircle, LogOut, Menu, X } from "lucide-react";
+import { LayoutDashboard, ListChecks, PlusCircle, LogOut, Menu, X, UserCircle } from "lucide-react";
 import { logoutAction } from "@/app/partner-portal/actions";
 
 const NAV = [
   { label: "Dashboard", href: "/partner-portal/dashboard", icon: LayoutDashboard, exact: true },
   { label: "My Referrals", href: "/partner-portal/referrals", icon: ListChecks, exact: false },
   { label: "Submit a Referral", href: "/partner-portal/referrals/new", icon: PlusCircle, exact: true },
+  { label: "My Profile", href: "/partner-portal/profile", icon: UserCircle, exact: true },
 ];
 
 export function PortalSidebar({ partnerName }: { partnerName: string }) {

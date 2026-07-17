@@ -12,6 +12,8 @@ import {
   ExternalLink,
   Handshake,
   Send,
+  BarChart2,
+  Settings,
   Menu,
   X,
 } from "lucide-react";
@@ -24,6 +26,8 @@ const LINKS = [
   { href: "/admin/visitors", label: "Visitors", icon: MapPin, exact: false },
   { href: "/admin/partners", label: "Partners", icon: Handshake, exact: false },
   { href: "/admin/referrals", label: "Referrals", icon: Send, exact: false },
+  { href: "/admin/analytics", label: "Analytics", icon: BarChart2, exact: false },
+  { href: "/admin/settings", label: "Settings", icon: Settings, exact: false },
 ];
 
 export function AdminSidebar() {
