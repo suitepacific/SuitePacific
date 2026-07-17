@@ -43,13 +43,13 @@ model VisitorSession {
   id             String   @id @default(cuid())
   path           String
   referrer       String?
-  source         String? // resolved, human-readable traffic source (e.g. "Google Search", "Direct / Unknown")
-  campaign       String? // raw utm_campaign value, if present
+  source         String?
+  campaign       String?
   city           String?
   region         String?
   country        String?
   durationMs     Int
-  sectionsViewed String // JSON array of section ids, in the order first viewed
+  sectionsViewed String
   exitSection    String?
   createdAt      DateTime @default(now())
 
@@ -69,22 +69,28 @@ model Partner {
 }
 
 model Referral {
-  id               String         @id @default(cuid())
-  partner          Partner        @relation(fields: [partnerId], references: [id])
+  id               String            @id @default(cuid())
+  partner          Partner           @relation(fields: [partnerId], references: [id])
   partnerId        String
   companyName      String
   contactName      String?
   contactEmail     String?
   notes            String?
-  status           ReferralStatus @default(NEW)
+  status           ReferralStatus    @default(NEW)
+  // Commission lifecycle
+  projectValue     Float?
+  commissionRate   Float?            // percentage, e.g. 10.0 = 10%
   commissionAmount Float?
-  commissionPaid   Boolean        @default(false)
-  commissionPaidAt DateTime?
-  createdAt        DateTime       @default(now())
-  updatedAt        DateTime       @updatedAt
+  commissionStatus CommissionStatus?
+  paymentDate      DateTime?
+  paymentMethod    String?
+  paymentReference String?
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
 
   @@index([partnerId])
   @@index([status])
+  @@index([commissionStatus])
 }
 
 enum ReferralStatus {
@@ -93,4 +99,10 @@ enum ReferralStatus {
   PROPOSAL_SENT
   WON
   LOST
+}
+
+enum CommissionStatus {
+  PENDING_PAYMENT
+  PAYABLE
+  PAID
 }

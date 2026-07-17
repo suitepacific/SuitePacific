@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import { ReferralStatusBadge } from "@/components/portal/ReferralStatusBadge";
+import { CommissionStatusBadge } from "@/components/portal/CommissionStatusBadge";
 
 export default async function AdminReferralsPage() {
   const referrals = await prisma.referral.findMany({
@@ -20,8 +21,7 @@ export default async function AdminReferralsPage() {
               <tr className="border-b border-brand-50 text-left text-brand-400">
                 <th className="px-5 py-3 font-medium">Company</th>
                 <th className="px-5 py-3 font-medium">Partner</th>
-                <th className="px-5 py-3 font-medium">Contact</th>
-                <th className="px-5 py-3 font-medium">Status</th>
+                <th className="px-5 py-3 font-medium">Deal</th>
                 <th className="px-5 py-3 font-medium">Commission</th>
                 <th className="px-5 py-3 font-medium">Submitted</th>
               </tr>
@@ -35,16 +35,20 @@ export default async function AdminReferralsPage() {
                     </Link>
                   </td>
                   <td className="px-5 py-3 text-brand-500">{r.partner.name}</td>
-                  <td className="px-5 py-3 text-brand-500">{r.contactName ?? "-"}</td>
                   <td className="px-5 py-3">
                     <ReferralStatusBadge status={r.status} />
                   </td>
-                  <td className="px-5 py-3 text-brand-500">
-                    {r.commissionAmount != null ? (
-                      <span className={r.commissionPaid ? "text-emerald-600" : ""}>
-                        ${r.commissionAmount.toFixed(2)} {r.commissionPaid ? "(Paid)" : "(Pending)"}
-                      </span>
-                    ) : "-"}
+                  <td className="px-5 py-3">
+                    {r.commissionStatus ? (
+                      <div className="flex items-center gap-2">
+                        <CommissionStatusBadge status={r.commissionStatus} />
+                        {r.commissionAmount != null && (
+                          <span className="text-xs text-brand-400">${r.commissionAmount.toFixed(2)}</span>
+                        )}
+                      </div>
+                    ) : (
+                      <span className="text-brand-300">-</span>
+                    )}
                   </td>
                   <td className="px-5 py-3 text-brand-400">
                     {r.createdAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}

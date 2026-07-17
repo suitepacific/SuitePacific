@@ -1,9 +1,10 @@
 import { redirect } from "next/navigation";
 import { getPartnerFromRequest } from "@/lib/partner-auth";
 import { prisma } from "@/lib/prisma";
-import { DollarSign, Send, Trophy, Clock } from "lucide-react";
+import { Send, Trophy, Banknote, Clock } from "lucide-react";
 import Link from "next/link";
 import { ReferralStatusBadge } from "@/components/portal/ReferralStatusBadge";
+import { CommissionStatusBadge } from "@/components/portal/CommissionStatusBadge";
 
 export default async function PortalDashboardPage() {
   const partner = await getPartnerFromRequest();
@@ -14,28 +15,28 @@ export default async function PortalDashboardPage() {
     orderBy: { createdAt: "desc" },
   });
 
-  const totalReferrals = referrals.length;
   const wonReferrals = referrals.filter((r) => r.status === "WON");
-  const totalEarned = wonReferrals.reduce((sum, r) => sum + (r.commissionAmount ?? 0), 0);
-  const totalPaid = wonReferrals
-    .filter((r) => r.commissionPaid)
+  const payableAmount = wonReferrals
+    .filter((r) => r.commissionStatus === "PAYABLE")
     .reduce((sum, r) => sum + (r.commissionAmount ?? 0), 0);
-  const totalPending = totalEarned - totalPaid;
+  const paidAmount = wonReferrals
+    .filter((r) => r.commissionStatus === "PAID")
+    .reduce((sum, r) => sum + (r.commissionAmount ?? 0), 0);
 
   const stats = [
-    { label: "Total Referrals", value: totalReferrals, icon: Send, color: "text-blue-600 bg-blue-50" },
+    { label: "Total Referrals", value: referrals.length, icon: Send, color: "text-blue-600 bg-blue-50" },
     { label: "Won", value: wonReferrals.length, icon: Trophy, color: "text-emerald-600 bg-emerald-50" },
     {
-      label: "Commission Earned",
-      value: `$${totalEarned.toLocaleString("en-US", { minimumFractionDigits: 2 })}`,
-      icon: DollarSign,
-      color: "text-emerald-600 bg-emerald-50",
+      label: "Ready for Payout",
+      value: payableAmount > 0 ? `$${payableAmount.toFixed(2)}` : "$0",
+      icon: Clock,
+      color: "text-blue-600 bg-blue-50",
     },
     {
-      label: "Pending Payment",
-      value: `$${totalPending.toLocaleString("en-US", { minimumFractionDigits: 2 })}`,
-      icon: Clock,
-      color: "text-amber-600 bg-amber-50",
+      label: "Total Paid to Me",
+      value: paidAmount > 0 ? `$${paidAmount.toFixed(2)}` : "$0",
+      icon: Banknote,
+      color: "text-emerald-600 bg-emerald-50",
     },
   ];
 
@@ -69,10 +70,7 @@ export default async function PortalDashboardPage() {
         {referrals.length === 0 ? (
           <div className="px-6 py-12 text-center">
             <p className="text-sm text-brand-400">No referrals yet.</p>
-            <Link
-              href="/partner-portal/referrals/new"
-              className="mt-3 inline-flex items-center gap-1.5 text-sm text-accent hover:underline"
-            >
+            <Link href="/partner-portal/referrals/new" className="mt-3 inline-flex text-sm text-accent hover:underline">
               Submit your first referral
             </Link>
           </div>
@@ -90,7 +88,10 @@ export default async function PortalDashboardPage() {
                     {new Date(r.createdAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
                   </p>
                 </div>
-                <ReferralStatusBadge status={r.status} />
+                <div className="flex items-center gap-2">
+                  {r.commissionStatus && <CommissionStatusBadge status={r.commissionStatus} />}
+                  <ReferralStatusBadge status={r.status} />
+                </div>
               </Link>
             ))}
           </div>

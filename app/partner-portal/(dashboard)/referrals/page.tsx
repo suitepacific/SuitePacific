@@ -3,6 +3,7 @@ import { getPartnerFromRequest } from "@/lib/partner-auth";
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import { ReferralStatusBadge } from "@/components/portal/ReferralStatusBadge";
+import { CommissionStatusBadge } from "@/components/portal/CommissionStatusBadge";
 import { PlusCircle } from "lucide-react";
 
 export default async function PortalReferralsPage() {
@@ -19,7 +20,9 @@ export default async function PortalReferralsPage() {
       <div className="flex items-center justify-between mb-8">
         <div>
           <h1 className="text-xl font-semibold text-brand-900">My Referrals</h1>
-          <p className="text-sm text-brand-400 mt-1">{referrals.length} referral{referrals.length !== 1 ? "s" : ""} submitted</p>
+          <p className="text-sm text-brand-400 mt-1">
+            {referrals.length} referral{referrals.length !== 1 ? "s" : ""} submitted
+          </p>
         </div>
         <Link
           href="/partner-portal/referrals/new"
@@ -45,7 +48,7 @@ export default async function PortalReferralsPage() {
                 <tr className="border-b border-brand-100">
                   <th className="text-left px-6 py-3 text-xs font-medium text-brand-400 uppercase tracking-wide">Company</th>
                   <th className="text-left px-6 py-3 text-xs font-medium text-brand-400 uppercase tracking-wide">Contact</th>
-                  <th className="text-left px-6 py-3 text-xs font-medium text-brand-400 uppercase tracking-wide">Status</th>
+                  <th className="text-left px-6 py-3 text-xs font-medium text-brand-400 uppercase tracking-wide">Deal</th>
                   <th className="text-left px-6 py-3 text-xs font-medium text-brand-400 uppercase tracking-wide">Commission</th>
                   <th className="text-left px-6 py-3 text-xs font-medium text-brand-400 uppercase tracking-wide">Submitted</th>
                 </tr>
@@ -54,7 +57,10 @@ export default async function PortalReferralsPage() {
                 {referrals.map((r) => (
                   <tr key={r.id} className="hover:bg-brand-50/40 transition-colors">
                     <td className="px-6 py-4">
-                      <Link href={`/partner-portal/referrals/${r.id}`} className="font-medium text-brand-900 hover:text-accent">
+                      <Link
+                        href={`/partner-portal/referrals/${r.id}`}
+                        className="font-medium text-brand-900 hover:text-accent"
+                      >
                         {r.companyName}
                       </Link>
                     </td>
@@ -62,17 +68,24 @@ export default async function PortalReferralsPage() {
                     <td className="px-6 py-4">
                       <ReferralStatusBadge status={r.status} />
                     </td>
-                    <td className="px-6 py-4 text-brand-500">
-                      {r.commissionAmount != null ? (
-                        <span className={r.commissionPaid ? "text-emerald-600" : ""}>
-                          ${r.commissionAmount.toFixed(2)} {r.commissionPaid ? "(Paid)" : "(Pending)"}
-                        </span>
+                    <td className="px-6 py-4">
+                      {r.commissionStatus ? (
+                        <div className="space-y-1">
+                          <CommissionStatusBadge status={r.commissionStatus} />
+                          {r.commissionAmount != null && (
+                            <p className="text-xs text-brand-400">${r.commissionAmount.toFixed(2)}</p>
+                          )}
+                        </div>
                       ) : (
-                        "-"
+                        <span className="text-brand-300 text-xs">—</span>
                       )}
                     </td>
                     <td className="px-6 py-4 text-brand-400">
-                      {new Date(r.createdAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+                      {new Date(r.createdAt).toLocaleDateString("en-US", {
+                        month: "short",
+                        day: "numeric",
+                        year: "numeric",
+                      })}
                     </td>
                   </tr>
                 ))}

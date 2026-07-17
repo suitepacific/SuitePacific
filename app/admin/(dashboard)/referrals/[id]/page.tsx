@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { ReferralUpdateForm } from "@/components/admin/ReferralUpdateForm";
+import { ReferralStatusBadge } from "@/components/portal/ReferralStatusBadge";
 
 export default async function AdminReferralDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -22,7 +23,10 @@ export default async function AdminReferralDetailPage({ params }: { params: Prom
         Back to Referrals
       </Link>
 
-      <h1 className="text-2xl font-semibold text-brand-900 mb-1">{referral.companyName}</h1>
+      <div className="flex items-center gap-3 mb-1">
+        <h1 className="text-2xl font-semibold text-brand-900">{referral.companyName}</h1>
+        <ReferralStatusBadge status={referral.status} />
+      </div>
       <p className="text-sm text-brand-400 mb-8">
         Referred by {referral.partner.name} ({referral.partner.email})
       </p>
@@ -45,9 +49,13 @@ export default async function AdminReferralDetailPage({ params }: { params: Prom
       <ReferralUpdateForm
         referralId={referral.id}
         currentStatus={referral.status}
+        currentProjectValue={referral.projectValue}
+        currentCommissionRate={referral.commissionRate}
         currentCommissionAmount={referral.commissionAmount}
-        currentCommissionPaid={referral.commissionPaid}
-        commissionPaidAt={referral.commissionPaidAt}
+        currentCommissionStatus={referral.commissionStatus}
+        currentPaymentDate={referral.paymentDate}
+        currentPaymentMethod={referral.paymentMethod}
+        currentPaymentReference={referral.paymentReference}
       />
     </div>
   );
