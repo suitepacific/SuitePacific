@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { ADMIN_SESSION_COOKIE, verifySessionToken } from "@/lib/auth";
 import { PARTNER_SESSION_COOKIE, verifyPartnerSessionToken } from "@/lib/partner-auth";
+import { CUSTOMER_SESSION_COOKIE, verifyCustomerSessionToken } from "@/lib/customer-auth";
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -28,9 +29,20 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Customer portal routes
+  if (pathname.startsWith("/customer-portal")) {
+    if (pathname === "/customer-portal/login") return NextResponse.next();
+    const token = request.cookies.get(CUSTOMER_SESSION_COOKIE)?.value;
+    const result = await verifyCustomerSessionToken(token);
+    if (!result) {
+      return NextResponse.redirect(new URL("/customer-portal/login", request.url));
+    }
+    return NextResponse.next();
+  }
+
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/partner-portal/:path*"],
+  matcher: ["/admin/:path*", "/partner-portal/:path*", "/customer-portal/:path*"],
 };

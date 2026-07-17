@@ -181,3 +181,84 @@ enum CommissionStatus {
   PAYABLE
   PAID
 }
+
+// ─── Customer Portal ─────────────────────────────────────────────────────────
+
+model Customer {
+  id                  String    @id @default(cuid())
+  name                String
+  email               String    @unique
+  company             String
+  website             String?
+  country             String?
+  timezone            String?
+  passwordHash        String
+  status              String    @default("active") // active | suspended
+  agreementAcceptedAt DateTime?
+  agreementAcceptedIp String?
+  archivedAt          DateTime?
+  createdAt           DateTime  @default(now())
+  tickets             Ticket[]
+
+  @@index([status])
+  @@index([archivedAt])
+}
+
+model Ticket {
+  id            String         @id @default(cuid())
+  customer      Customer       @relation(fields: [customerId], references: [id])
+  customerId    String
+  title         String
+  description   String
+  type          TicketType     @default(SUPPORT)
+  priority      TicketPriority @default(NORMAL)
+  status        TicketStatus   @default(OPEN)
+  assignedTo    String?
+  internalNotes String?
+  archivedAt    DateTime?
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  comments      TicketComment[]
+
+  @@index([customerId])
+  @@index([status])
+  @@index([priority])
+  @@index([type])
+  @@index([archivedAt])
+}
+
+model TicketComment {
+  id         String   @id @default(cuid())
+  ticket     Ticket   @relation(fields: [ticketId], references: [id])
+  ticketId   String
+  body       String
+  author     String   // "customer" | "admin"
+  authorName String
+  isInternal Boolean  @default(false) // admin-only; never shown to customer
+  createdAt  DateTime @default(now())
+
+  @@index([ticketId])
+  @@index([createdAt])
+}
+
+enum TicketType {
+  SUPPORT
+  DEVELOPMENT
+  QUESTION
+  OPTIMIZATION
+}
+
+enum TicketPriority {
+  LOW
+  NORMAL
+  HIGH
+  URGENT
+}
+
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  PENDING_CUSTOMER
+  RESOLVED
+  CLOSED
+}

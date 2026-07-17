@@ -16,6 +16,8 @@ import {
   Settings,
   Menu,
   X,
+  Building2,
+  Ticket,
 } from "lucide-react";
 import { logoutAction } from "@/app/admin/actions";
 
@@ -24,6 +26,8 @@ const LINKS = [
   { href: "/admin/posts", label: "Posts", icon: FileText, exact: false },
   { href: "/admin/leads", label: "Leads", icon: Users, exact: false },
   { href: "/admin/visitors", label: "Visitors", icon: MapPin, exact: false },
+  { href: "/admin/customers", label: "Customers", icon: Building2, exact: false },
+  { href: "/admin/tickets", label: "Tickets", icon: Ticket, exact: false },
   { href: "/admin/partners", label: "Partners", icon: Handshake, exact: false },
   { href: "/admin/referrals", label: "Referrals", icon: Send, exact: false },
   { href: "/admin/analytics", label: "Analytics", icon: BarChart2, exact: false },
