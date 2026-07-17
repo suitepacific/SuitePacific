@@ -56,3 +56,41 @@ model VisitorSession {
   @@index([createdAt])
   @@index([path])
 }
+
+model Partner {
+  id           String     @id @default(cuid())
+  name         String
+  email        String     @unique
+  company      String?
+  passwordHash String
+  status       String     @default("active")
+  createdAt    DateTime   @default(now())
+  referrals    Referral[]
+}
+
+model Referral {
+  id               String         @id @default(cuid())
+  partner          Partner        @relation(fields: [partnerId], references: [id])
+  partnerId        String
+  companyName      String
+  contactName      String?
+  contactEmail     String?
+  notes            String?
+  status           ReferralStatus @default(NEW)
+  commissionAmount Float?
+  commissionPaid   Boolean        @default(false)
+  commissionPaidAt DateTime?
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+
+  @@index([partnerId])
+  @@index([status])
+}
+
+enum ReferralStatus {
+  NEW
+  CONTACTED
+  PROPOSAL_SENT
+  WON
+  LOST
+}

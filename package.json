@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",
+    "@types/bcryptjs": "^2.4.6",
+    "bcryptjs": "^3.0.3",
     "framer-motion": "^12.42.0",
     "gray-matter": "^4.0.3",
     "lucide-react": "^1.21.0",
