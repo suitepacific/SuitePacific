@@ -3,7 +3,14 @@ import Link from "next/link";
 import { getScUserFromRequest } from "@/lib/sc-auth";
 import { Nav } from "@/components/nav/Nav";
 import { Footer } from "@/components/sections/Footer";
-import { GitCompare, ShieldAlert, FileSearch, GitMerge, Zap, Lock, Code2 } from "lucide-react";
+import {
+  GitCompare,
+  Hash,
+  FileMinus2,
+  Lock,
+  MousePointerClick,
+  CheckCircle2,
+} from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
@@ -11,83 +18,64 @@ import { Button } from "@/components/ui/Button";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "SuiteCompare: Compare NetSuite Scripts Across Environments",
+  title: "SuiteCompare: One-Click NetSuite Environment Comparison",
   description:
-    "Side-by-side diff tool for SuiteScript files. Compare your Sandbox and Production scripts before deploying, catch drift early, and ship with confidence.",
+    "Stop logging into two NetSuite accounts to compare scripts. SuiteCompare fetches Production and Sandbox SuiteScript files by Script ID and diffs them in one click.",
 };
 
-const FEATURES = [
+const OLD_STEPS = [
+  "Log into Production",
+  "Find the script",
+  "Copy the code",
+  "Log into Sandbox",
+  "Find the same script",
+  "Copy the code",
+  "Open a diff tool",
+  "Paste both versions",
+];
+
+const WORKFLOW_BENEFITS = [
   {
-    icon: GitCompare,
-    title: "Side-by-side diff",
+    icon: Hash,
+    title: "Compare by Script ID",
     description:
-      "Line-by-line comparison with color-coded additions, removals, and unchanged blocks. The same format NetSuite developers already know from version control.",
+      "Enter a Script ID. SuiteCompare finds the script in Production and Sandbox automatically. No navigating menus in two accounts.",
   },
   {
-    icon: FileSearch,
-    title: "Script browser",
+    icon: MousePointerClick,
+    title: "One click, full comparison",
     description:
-      "Browse all SuiteScript files across connected environments: User Events, Map/Reduce, RESTlets, Suitelets, and Client Scripts, in one filterable list.",
+      "Pick a script, choose two environments, see the diff. The copy-paste cycle is gone entirely.",
   },
   {
-    icon: GitMerge,
-    title: "Environment connections",
+    icon: FileMinus2,
+    title: "Detect missing scripts",
     description:
-      "Connect your Sandbox and Production accounts securely via Token-Based Authentication. No admin credentials stored, no third-party access granted.",
-  },
-  {
-    icon: Code2,
-    title: "SuiteScript-aware",
-    description:
-      "Syntax highlighting built for SuiteScript 2.x: AMD module format, NetSuite API namespaces, governance-aware patterns. Not a generic JavaScript differ.",
-  },
-  {
-    icon: Zap,
-    title: "Instant comparison",
-    description:
-      "Script content is fetched live from your NetSuite instance on every comparison, never stored on our servers. You always see the true current state of your code.",
+      "See at a glance which scripts exist in one environment but not the other. No more discovering gaps after a deploy.",
   },
   {
     icon: Lock,
-    title: "Isolated per organization",
+    title: "Built for NetSuite TBA",
     description:
-      "Every team gets their own workspace. Script content never crosses tenant boundaries. TBA credentials are encrypted at rest and never logged.",
+      "Connects via Token-Based Authentication. No admin credentials stored, no shared logins. Designed for how NetSuite security actually works.",
   },
 ];
 
-const STEPS = [
+const HOW_IT_WORKS = [
   {
     number: "01",
-    title: "Connect your environments",
-    body: "Add your Production and Sandbox accounts using Token-Based Authentication. SuiteCompare fetches scripts directly from your NetSuite instance. No admin login, no shared credentials.",
+    title: "Connect your environments once",
+    body: "Add Production and Sandbox using Token-Based Authentication. This takes about two minutes. You never have to do it again.",
   },
   {
     number: "02",
-    title: "Browse your scripts",
-    body: "Enter a Script ID and SuiteCompare fetches its name and type live from NetSuite. It appears in your script list immediately, ready to compare across environments.",
+    title: "Enter a Script ID",
+    body: "Type any Script ID and SuiteCompare fetches the source code from both environments automatically. No logging in, no navigating menus.",
   },
   {
     number: "03",
-    title: "Compare before you deploy",
-    body: "Pick any script, choose two environments, and get a line-by-line diff. Know exactly what is different between Sandbox and Production before pushing a release.",
-  },
-];
-
-const PAIN_POINTS = [
-  {
-    icon: ShieldAlert,
-    title: "Blind deploys",
-    body: "Pushing a release without knowing what changed between Sandbox and Production is how good scripts get overwritten. And why prod breaks on a Friday.",
-  },
-  {
-    icon: FileSearch,
-    title: "No audit trail",
-    body: "NetSuite doesn&apos;t version-control your scripts. Without a compare tool, you have no record of what was different between environments at any point in time.",
-  },
-  {
-    icon: GitMerge,
-    title: "Manual review",
-    body: "Opening two browser tabs, copying source code into a local diff tool, and hunting for changes line-by-line. It works. It&apos;s also slow and error-prone.",
+    title: "See exactly what changed",
+    body: "Get a line-by-line diff showing what is different, what is missing, and what is identical. One click from start to result.",
   },
 ];
 
@@ -109,8 +97,8 @@ export default async function SuiteCompareHomePage() {
             <SectionHeading
               as="h1"
               eyebrow="SuiteCompare"
-              title="Compare your NetSuite scripts before they cost you"
-              subtitle="Side-by-side diff tool for SuiteScript files. See exactly what changed between Sandbox and Production before every release."
+              title="Stop logging into two NetSuite accounts just to compare one script"
+              subtitle="Compare Production and Sandbox in one click. No copy. No paste. No switching tabs."
               align="center"
             />
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -129,41 +117,68 @@ export default async function SuiteCompareHomePage() {
             </p>
           </div>
 
-          {/* Pain points */}
-          <div className="mt-20">
+          {/* The manual workflow */}
+          <div className="mt-24">
             <SectionHeading
               eyebrow="The problem"
-              title="Three things that go wrong without it"
+              title="Eight steps every time you want one diff"
+              subtitle="This is what comparing a single script looks like without SuiteCompare."
               align="center"
             />
-            <div className="mt-10 grid sm:grid-cols-3 gap-5">
-              {PAIN_POINTS.map((item) => (
-                <Card key={item.title} className="p-5">
-                  <IconBadge icon={item.icon} />
-                  <h3 className="mt-3 font-semibold text-brand-900 text-sm">{item.title}</h3>
-                  <p
-                    className="mt-1.5 text-sm text-brand-400"
-                    dangerouslySetInnerHTML={{ __html: item.body }}
-                  />
-                </Card>
-              ))}
+            <div className="mt-8 rounded-2xl border border-brand-100 bg-white shadow-soft overflow-hidden">
+              <div className="flex items-center justify-between px-5 py-3 border-b border-brand-50 bg-brand-50/60">
+                <span className="text-xs font-semibold uppercase tracking-wider text-brand-400">
+                  The manual process
+                </span>
+                <span className="inline-flex items-center rounded-full bg-red-50 px-2.5 py-1 text-xs font-semibold text-red-500">
+                  8 steps
+                </span>
+              </div>
+              <ol className="divide-y divide-brand-50">
+                {OLD_STEPS.map((step, i) => (
+                  <li key={i} className="flex items-center gap-4 px-5 py-3">
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-brand-100 text-xs font-medium text-brand-300">
+                      {i + 1}
+                    </span>
+                    <span className="text-sm text-brand-500">{step}</span>
+                  </li>
+                ))}
+              </ol>
+              <div className="flex items-center gap-3 border-t border-brand-100 bg-emerald-50 px-5 py-3.5">
+                <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" />
+                <span className="text-sm font-medium text-emerald-800">
+                  With SuiteCompare: enter a Script ID, click Compare.
+                </span>
+              </div>
             </div>
           </div>
 
-          {/* Features */}
+          {/* Why not Diffchecker */}
+          <div className="mt-8 rounded-2xl border border-brand-100 bg-brand-50/40 px-6 py-5">
+            <p className="text-sm font-semibold text-brand-900 mb-1.5">
+              Why not just use Diffchecker?
+            </p>
+            <p className="text-sm text-brand-500 leading-relaxed">
+              Free diff tools solve the last step. SuiteCompare eliminates the first seven. The problem
+              was never the diff. It was the manual work required to get the code in front of a diff tool
+              in the first place.
+            </p>
+          </div>
+
+          {/* What it replaces */}
           <div className="mt-20">
             <SectionHeading
-              eyebrow="Features"
-              title="Built for NetSuite developers"
+              eyebrow="What it replaces"
+              title="Built for NetSuite developers, not text editors"
               align="center"
             />
             <div className="mt-10 grid sm:grid-cols-2 gap-5">
-              {FEATURES.map((feature) => (
-                <Card key={feature.title} className="p-5 flex items-start gap-4">
-                  <IconBadge icon={feature.icon} />
+              {WORKFLOW_BENEFITS.map((item) => (
+                <Card key={item.title} className="p-5 flex items-start gap-4">
+                  <IconBadge icon={item.icon} />
                   <div>
-                    <h3 className="font-semibold text-brand-900 text-sm">{feature.title}</h3>
-                    <p className="mt-1.5 text-sm text-brand-400">{feature.description}</p>
+                    <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
+                    <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
                   </div>
                 </Card>
               ))}
@@ -174,11 +189,11 @@ export default async function SuiteCompareHomePage() {
           <div className="mt-20">
             <SectionHeading
               eyebrow="How it works"
-              title="From connection to comparison in minutes"
+              title="Connect once. Compare forever."
               align="center"
             />
-            <div className="mt-10 space-y-6">
-              {STEPS.map((step) => (
+            <div className="mt-10 space-y-4">
+              {HOW_IT_WORKS.map((step) => (
                 <div
                   key={step.number}
                   className="flex gap-5 p-6 bg-white rounded-2xl border border-brand-50 shadow-soft"
@@ -273,10 +288,10 @@ export default async function SuiteCompareHomePage() {
           {/* CTA */}
           <div className="mt-20 rounded-2xl bg-brand-900 px-8 py-12 text-center">
             <h2 className="text-2xl font-semibold text-white">
-              Start comparing your scripts today
+              Stop doing it the manual way
             </h2>
             <p className="mt-3 text-sm text-brand-300">
-              Free to start. No credit card required. Connect your first environment in under five minutes.
+              Connect your first environment in under two minutes. Free to start, no credit card required.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <Button href="/suitecompare/signup" size="lg">
