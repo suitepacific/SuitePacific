@@ -52,20 +52,19 @@ export default async function AdminTimeEntriesPage({
 
       {/* Filters */}
       <div className="flex gap-2 flex-wrap mb-6">
-        <form className="flex gap-2">
+        <form method="GET" className="flex gap-2 items-center">
           <select name="customerId" defaultValue={customerFilter ?? ""}
-            onChange={(e) => {
-              const url = new URL(window.location.href);
-              if (e.target.value) url.searchParams.set("customerId", e.target.value);
-              else url.searchParams.delete("customerId");
-              window.location.href = url.toString();
-            }}
             className="rounded-xl border border-brand-100 px-3 py-1.5 text-sm text-brand-700 focus:outline-none">
             <option value="">All customers</option>
             {customers.map((c) => (
               <option key={c.id} value={c.id}>{c.company} ({c.name})</option>
             ))}
           </select>
+          {unbilledOnly && <input type="hidden" name="unbilledOnly" value="1" />}
+          <button type="submit"
+            className="text-xs px-3 py-1.5 rounded-xl border border-brand-100 text-brand-500 hover:border-brand-300 transition-colors">
+            Filter
+          </button>
         </form>
         <Link href={unbilledOnly ? `/admin/time-entries${customerFilter ? `?customerId=${customerFilter}` : ""}` : `/admin/time-entries?unbilledOnly=1${customerFilter ? `&customerId=${customerFilter}` : ""}`}
           className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${unbilledOnly ? "bg-brand-900 text-white border-brand-900" : "border-brand-100 text-brand-500 hover:border-brand-300"}`}>
