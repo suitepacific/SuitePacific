@@ -344,3 +344,95 @@ enum InvoiceStatus {
   PAID
   VOID
 }
+
+// ─── SuiteCompare ─────────────────────────────────────────────────────────────
+
+model ScUser {
+  id            String        @id @default(cuid())
+  email         String        @unique
+  name          String
+  passwordHash  String
+  status        String        @default("active")
+  emailVerified        Boolean   @default(false)
+  otp                  String?
+  otpExpiry            DateTime?
+  passwordResetToken   String?
+  passwordResetExpiry  DateTime?
+  archivedAt    DateTime?
+  createdAt     DateTime      @default(now())
+  memberships   ScOrgMember[]
+
+  @@index([archivedAt])
+}
+
+model ScOrg {
+  id         String              @id @default(cuid())
+  name       String
+  slug       String              @unique
+  plan       String              @default("free")
+  archivedAt DateTime?
+  createdAt  DateTime            @default(now())
+  members    ScOrgMember[]
+  nsAccounts ScNetSuiteAccount[]
+
+  @@index([archivedAt])
+}
+
+model ScOrgMember {
+  id        String   @id @default(cuid())
+  org       ScOrg    @relation(fields: [orgId], references: [id])
+  orgId     String
+  user      ScUser   @relation(fields: [userId], references: [id])
+  userId    String
+  role      String   @default("member")
+  createdAt DateTime @default(now())
+
+  @@unique([orgId, userId])
+}
+
+model ScNetSuiteAccount {
+  id           String          @id @default(cuid())
+  org          ScOrg           @relation(fields: [orgId], references: [id])
+  orgId        String
+  name         String
+  nsAccountId  String
+  archivedAt   DateTime?
+  createdAt    DateTime        @default(now())
+  environments ScEnvironment[]
+
+  @@index([orgId])
+  @@index([archivedAt])
+}
+
+model ScEnvironment {
+  id             String            @id @default(cuid())
+  account        ScNetSuiteAccount @relation(fields: [scAccountId], references: [id])
+  scAccountId    String
+  name           String
+  type           String
+  nsEnvAccountId String?
+  tokenKey       String?
+  tokenSecret    String?
+  consumerKey    String?
+  consumerSecret String?
+  lastSyncAt     DateTime?
+  createdAt      DateTime          @default(now())
+  scripts        ScScript[]
+
+  @@index([scAccountId])
+}
+
+model ScScript {
+  id            String        @id @default(cuid())
+  environment   ScEnvironment @relation(fields: [environmentId], references: [id])
+  environmentId String
+  scriptId      String
+  name          String
+  scriptType    String
+  content       String?
+  lastModified  DateTime?
+  browsedAt     DateTime      @default(now())
+
+  @@unique([environmentId, scriptId])
+  @@index([environmentId])
+}

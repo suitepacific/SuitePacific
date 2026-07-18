@@ -20,6 +20,7 @@ const SERVICE_PAGES = [
   "/netsuite-post-go-live-support",
   "/netsuite-implementation-partner-vs-managed-support",
   "/netsuite-consulting-services",
+  "/suitecompare",
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

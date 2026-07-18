@@ -1,0 +1,239 @@
+"use server";
+
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+import { prisma } from "@/lib/prisma";
+import {
+  SC_SESSION_COOKIE,
+  SC_SESSION_MAX_AGE,
+  hashScPassword,
+  verifyScPassword,
+  createScSessionToken,
+} from "@/lib/sc-auth";
+import { generateOtp, sendOtpEmail, sendPasswordResetEmail } from "@/lib/sc-email";
+import crypto from "crypto";
+
+async function setSession(userId: string) {
+  const token = await createScSessionToken(userId);
+  const cookieStore = await cookies();
+  cookieStore.set(SC_SESSION_COOKIE, token, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    maxAge: SC_SESSION_MAX_AGE,
+    path: "/suitecompare",
+  });
+}
+
+export async function loginScAction(
+  _prev: unknown,
+  formData: FormData
+): Promise<{ error?: string }> {
+  const email = String(formData.get("email") ?? "").toLowerCase().trim();
+  const password = String(formData.get("password") ?? "");
+
+  const user = await prisma.scUser.findUnique({ where: { email } });
+  if (!user || user.status !== "active") return { error: "Invalid email or password." };
+
+  const valid = await verifyScPassword(password, user.passwordHash);
+  if (!valid) return { error: "Invalid email or password." };
+
+  if (!user.emailVerified) {
+    const otp = generateOtp();
+    const otpExpiry = new Date(Date.now() + 10 * 60 * 1000);
+    await prisma.scUser.update({ where: { id: user.id }, data: { otp, otpExpiry } });
+    try { await sendOtpEmail(email, user.name, otp); } catch (e) { console.error("[sc] OTP email failed:", e); }
+    redirect(`/suitecompare/verify?email=${encodeURIComponent(email)}`);
+  }
+
+  await setSession(user.id);
+  redirect("/suitecompare/dashboard");
+}
+
+export async function signupScAction(
+  _prev: unknown,
+  formData: FormData
+): Promise<{ error?: string }> {
+  const name = String(formData.get("name") ?? "").trim();
+  const email = String(formData.get("email") ?? "").toLowerCase().trim();
+  const password = String(formData.get("password") ?? "");
+  const orgName = String(formData.get("orgName") ?? "").trim();
+
+  if (!name || !email || !password || !orgName) return { error: "All fields are required." };
+  if (password.length < 8) return { error: "Password must be at least 8 characters." };
+
+  const existing = await prisma.scUser.findUnique({ where: { email } });
+  if (existing) {
+    if (!existing.emailVerified) {
+      // Resend OTP to existing unverified account
+      const otp = generateOtp();
+      const otpExpiry = new Date(Date.now() + 10 * 60 * 1000);
+      await prisma.scUser.update({ where: { id: existing.id }, data: { otp, otpExpiry } });
+      try { await sendOtpEmail(email, existing.name, otp); } catch (e) { console.error("[sc] OTP email failed:", e); }
+      redirect(`/suitecompare/verify?email=${encodeURIComponent(email)}`);
+    }
+    return { error: "An account with this email already exists." };
+  }
+
+  const slug = orgName.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const slugExists = await prisma.scOrg.findUnique({ where: { slug } });
+  const finalSlug = slugExists ? `${slug}-${Date.now()}` : slug;
+
+  const otp = generateOtp();
+  const otpExpiry = new Date(Date.now() + 10 * 60 * 1000);
+  const passwordHash = await hashScPassword(password);
+
+  const user = await prisma.scUser.create({
+    data: { name, email, passwordHash, otp, otpExpiry, emailVerified: false },
+  });
+
+  const org = await prisma.scOrg.create({ data: { name: orgName, slug: finalSlug } });
+  await prisma.scOrgMember.create({ data: { orgId: org.id, userId: user.id, role: "owner" } });
+
+  try { await sendOtpEmail(email, name, otp); } catch (e) { console.error("[sc] OTP email failed:", e); }
+  redirect(`/suitecompare/verify?email=${encodeURIComponent(email)}`);
+}
+
+export async function verifyOtpAction(
+  _prev: unknown,
+  formData: FormData
+): Promise<{ error?: string }> {
+  const email = String(formData.get("email") ?? "").toLowerCase().trim();
+  const otp = String(formData.get("otp") ?? "").trim();
+
+  const user = await prisma.scUser.findUnique({ where: { email } });
+  if (!user) return { error: "Account not found. Please sign up again." };
+
+  if (user.emailVerified) {
+    await setSession(user.id);
+    redirect("/suitecompare/dashboard");
+  }
+
+  if (!user.otp || !user.otpExpiry) {
+    return { error: "No code found. Use the resend button to get a new one." };
+  }
+  if (new Date() > user.otpExpiry) {
+    return { error: "Code expired. Use the resend button to get a new one." };
+  }
+  if (user.otp !== otp) {
+    return { error: "Incorrect code. Please try again." };
+  }
+
+  await prisma.scUser.update({
+    where: { id: user.id },
+    data: { emailVerified: true, otp: null, otpExpiry: null },
+  });
+
+  await setSession(user.id);
+  redirect("/suitecompare/dashboard");
+}
+
+export async function resendOtpAction(
+  _prev: unknown,
+  formData: FormData
+): Promise<{ error?: string; success?: boolean }> {
+  const email = String(formData.get("email") ?? "").toLowerCase().trim();
+
+  const user = await prisma.scUser.findUnique({ where: { email } });
+  if (!user || user.emailVerified) return { error: "Cannot resend code." };
+
+  // Throttle: block if existing code still has >9 minutes left
+  if (user.otpExpiry && user.otpExpiry.getTime() - Date.now() > 9 * 60 * 1000) {
+    return { error: "Please wait a moment before requesting a new code." };
+  }
+
+  const otp = generateOtp();
+  const otpExpiry = new Date(Date.now() + 10 * 60 * 1000);
+  await prisma.scUser.update({ where: { id: user.id }, data: { otp, otpExpiry } });
+
+  try {
+    await sendOtpEmail(email, user.name, otp);
+    return { success: true };
+  } catch {
+    return { error: "Failed to send email. Please try again." };
+  }
+}
+
+export async function forgotPasswordAction(
+  _prev: unknown,
+  formData: FormData
+): Promise<{ error?: string; success?: boolean }> {
+  const email = String(formData.get("email") ?? "").toLowerCase().trim();
+  if (!email) return { error: "Email is required." };
+
+  const user = await prisma.scUser.findUnique({ where: { email } });
+
+  // Always return success — never reveal whether an email is registered
+  if (!user || user.status !== "active") return { success: true };
+
+  const rawToken = crypto.randomBytes(32).toString("hex");
+  const hashedToken = crypto.createHash("sha256").update(rawToken).digest("hex");
+  const expiry = new Date(Date.now() + 60 * 60 * 1000); // 1 hour
+
+  await prisma.scUser.update({
+    where: { id: user.id },
+    data: { passwordResetToken: hashedToken, passwordResetExpiry: expiry },
+  });
+
+  const siteUrl = process.env.SITE_URL ?? "https://suitepacific.com";
+  const resetUrl = `${siteUrl}/suitecompare/reset-password?token=${rawToken}`;
+
+  try {
+    await sendPasswordResetEmail(email, user.name, resetUrl);
+  } catch (e) {
+    console.error("[sc] Password reset email failed:", e);
+  }
+
+  return { success: true };
+}
+
+export async function resetPasswordAction(
+  _prev: unknown,
+  formData: FormData
+): Promise<{ error?: string }> {
+  const rawToken = String(formData.get("token") ?? "").trim();
+  const password = String(formData.get("password") ?? "");
+  const confirm = String(formData.get("confirm") ?? "");
+
+  if (!rawToken) return { error: "Invalid reset link." };
+  if (password.length < 8) return { error: "Password must be at least 8 characters." };
+  if (password !== confirm) return { error: "Passwords do not match." };
+
+  const hashedToken = crypto.createHash("sha256").update(rawToken).digest("hex");
+  const user = await prisma.scUser.findFirst({
+    where: {
+      passwordResetToken: hashedToken,
+      passwordResetExpiry: { gt: new Date() },
+      status: "active",
+    },
+  });
+
+  if (!user) return { error: "This reset link is invalid or has expired. Please request a new one." };
+
+  const passwordHash = await hashScPassword(password);
+  await prisma.scUser.update({
+    where: { id: user.id },
+    data: {
+      passwordHash,
+      passwordResetToken: null,
+      passwordResetExpiry: null,
+      emailVerified: true, // reset flow proves email ownership
+    },
+  });
+
+  await setSession(user.id);
+  redirect("/suitecompare/dashboard");
+}
+
+export async function logoutScAction() {
+  const cookieStore = await cookies();
+  // Must specify the same path used when setting, otherwise the browser won't clear it
+  cookieStore.set(SC_SESSION_COOKIE, "", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    maxAge: 0,
+    path: "/suitecompare",
+  });
+  redirect("/suitecompare/login");
+}

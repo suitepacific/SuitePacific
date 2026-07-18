@@ -3,6 +3,7 @@ import type { NextRequest } from "next/server";
 import { ADMIN_SESSION_COOKIE, verifySessionToken } from "@/lib/auth";
 import { PARTNER_SESSION_COOKIE, verifyPartnerSessionToken } from "@/lib/partner-auth";
 import { CUSTOMER_SESSION_COOKIE, verifyCustomerSessionToken } from "@/lib/customer-auth";
+import { SC_SESSION_COOKIE, verifyScSessionToken } from "@/lib/sc-auth";
 
 // In-memory rate limiting for login endpoints.
 // Per edge instance (not distributed), but effective as a first line of defense
@@ -11,7 +12,16 @@ const loginAttempts = new Map<string, number[]>();
 const RATE_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
 const RATE_MAX = 10; // max login attempts per IP per window
 
-const LOGIN_PATHS = new Set(["/admin/login", "/partner-portal/login", "/customer-portal/login"]);
+const LOGIN_PATHS = new Set([
+  "/admin/login",
+  "/partner-portal/login",
+  "/customer-portal/login",
+  "/suitecompare/login",
+  "/suitecompare/signup",
+  "/suitecompare/verify",
+  "/suitecompare/forgot-password",
+  "/suitecompare/reset-password",
+]);
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
@@ -80,9 +90,34 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // SuiteCompare routes
+  if (pathname.startsWith("/suitecompare")) {
+    if (
+      pathname === "/suitecompare" ||
+      pathname === "/suitecompare/login" ||
+      pathname === "/suitecompare/signup" ||
+      pathname === "/suitecompare/verify" ||
+      pathname === "/suitecompare/forgot-password" ||
+      pathname === "/suitecompare/reset-password"
+    ) {
+      return NextResponse.next();
+    }
+    const token = request.cookies.get(SC_SESSION_COOKIE)?.value;
+    const result = await verifyScSessionToken(token);
+    if (!result) {
+      return NextResponse.redirect(new URL("/suitecompare/login", request.url));
+    }
+    return NextResponse.next();
+  }
+
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/partner-portal/:path*", "/customer-portal/:path*"],
+  matcher: [
+    "/admin/:path*",
+    "/partner-portal/:path*",
+    "/customer-portal/:path*",
+    "/suitecompare/:path*",
+  ],
 };

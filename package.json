@@ -16,7 +16,9 @@
   "dependencies": {
     "@prisma/client": "^6.19.3",
     "@types/bcryptjs": "^2.4.6",
+    "@types/diff": "^7.0.2",
     "bcryptjs": "^3.0.3",
+    "diff": "^9.0.0",
     "framer-motion": "^12.42.0",
     "gray-matter": "^4.0.3",
     "lucide-react": "^1.21.0",
@@ -25,7 +27,8 @@
     "prisma": "^6.19.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "reading-time": "^1.5.0"
+    "reading-time": "^1.5.0",
+    "resend": "^6.17.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

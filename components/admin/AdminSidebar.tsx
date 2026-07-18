@@ -20,6 +20,7 @@ import {
   Ticket,
   Clock,
   Receipt,
+  GitCompare,
 } from "lucide-react";
 import { logoutAction } from "@/app/admin/actions";
 
@@ -34,6 +35,7 @@ const LINKS = [
   { href: "/admin/invoices", label: "Invoices", icon: Receipt, exact: false },
   { href: "/admin/partners", label: "Partners", icon: Handshake, exact: false },
   { href: "/admin/referrals", label: "Referrals", icon: Send, exact: false },
+  { href: "/admin/suitecompare-users", label: "SuiteCompare", icon: GitCompare, exact: false },
   { href: "/admin/analytics", label: "Analytics", icon: BarChart2, exact: false },
   { href: "/admin/settings", label: "Settings", icon: Settings, exact: false },
 ];
