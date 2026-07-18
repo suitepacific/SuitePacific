@@ -1,11 +1,14 @@
 "use client";
 
 import { useActionState } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { GitCompare, Loader2 } from "lucide-react";
 import { loginScAction } from "@/app/suitecompare/actions";
 
 export default function SuiteCompareLoginPage() {
+  const searchParams = useSearchParams();
+  const inviteToken = searchParams.get("invite") ?? "";
   const [state, formAction, isPending] = useActionState(loginScAction, {});
 
   return (
@@ -21,6 +24,7 @@ export default function SuiteCompareLoginPage() {
 
         <div className="bg-white rounded-2xl border border-brand-100 shadow-soft p-7">
           <form action={formAction} className="space-y-4">
+            {inviteToken && <input type="hidden" name="inviteToken" value={inviteToken} />}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-brand-700 mb-1.5">
                 Email

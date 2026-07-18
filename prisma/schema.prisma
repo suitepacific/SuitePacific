@@ -375,6 +375,7 @@ model ScOrg {
   createdAt  DateTime            @default(now())
   members    ScOrgMember[]
   nsAccounts ScNetSuiteAccount[]
+  invites    ScInvite[]
 
   @@index([archivedAt])
 }
@@ -389,6 +390,20 @@ model ScOrgMember {
   createdAt DateTime @default(now())
 
   @@unique([orgId, userId])
+}
+
+model ScInvite {
+  id        String    @id @default(cuid())
+  org       ScOrg     @relation(fields: [orgId], references: [id])
+  orgId     String
+  email     String
+  token     String    @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdBy String
+  createdAt DateTime  @default(now())
+
+  @@index([orgId])
 }
 
 model ScNetSuiteAccount {

@@ -13,6 +13,31 @@ import {
 import { generateOtp, sendOtpEmail, sendPasswordResetEmail } from "@/lib/sc-email";
 import crypto from "crypto";
 
+async function acceptPendingInvite(token: string, userId: string): Promise<void> {
+  const invite = await prisma.scInvite.findUnique({ where: { token } });
+  if (!invite || invite.usedAt || invite.expiresAt < new Date()) return;
+
+  const org = await prisma.scOrg.findUnique({
+    where: { id: invite.orgId },
+    include: { members: true },
+  });
+  if (!org) return;
+
+  const seatLimit = org.plan === "team" ? 5 : 1;
+  if (org.members.length >= seatLimit) return;
+
+  const alreadyMember = await prisma.scOrgMember.findFirst({
+    where: { orgId: invite.orgId, userId },
+  });
+
+  await prisma.$transaction([
+    prisma.scInvite.update({ where: { id: invite.id }, data: { usedAt: new Date() } }),
+    ...(alreadyMember
+      ? []
+      : [prisma.scOrgMember.create({ data: { orgId: invite.orgId, userId, role: "member" } })]),
+  ]);
+}
+
 async function setSession(userId: string) {
   const { sessionVersion } = await prisma.scUser.update({
     where: { id: userId },
@@ -36,6 +61,7 @@ export async function loginScAction(
 ): Promise<{ error?: string }> {
   const email = String(formData.get("email") ?? "").toLowerCase().trim();
   const password = String(formData.get("password") ?? "");
+  const inviteToken = String(formData.get("inviteToken") ?? "").trim();
 
   const user = await prisma.scUser.findUnique({ where: { email } });
   if (!user || user.status !== "active") return { error: "Invalid email or password." };
@@ -51,6 +77,8 @@ export async function loginScAction(
     redirect(`/suitecompare/verify?email=${encodeURIComponent(email)}`);
   }
 
+  if (inviteToken) await acceptPendingInvite(inviteToken, user.id);
+
   await setSession(user.id);
   redirect("/suitecompare/dashboard");
 }
@@ -62,15 +90,38 @@ export async function signupScAction(
   const name = String(formData.get("name") ?? "").trim();
   const email = String(formData.get("email") ?? "").toLowerCase().trim();
   const password = String(formData.get("password") ?? "");
-  const orgName = String(formData.get("orgName") ?? "").trim();
+  const inviteToken = String(formData.get("inviteToken") ?? "").trim();
 
-  if (!name || !email || !password || !orgName) return { error: "All fields are required." };
+  if (!name || !email || !password) return { error: "All fields are required." };
   if (password.length < 8) return { error: "Password must be at least 8 characters." };
+
+  // Invite flow: skip orgName, skip OTP, join existing org
+  if (inviteToken) {
+    const invite = await prisma.scInvite.findUnique({ where: { token: inviteToken } });
+    if (!invite || invite.usedAt || invite.expiresAt < new Date()) {
+      return { error: "This invite link is invalid or has expired." };
+    }
+
+    const existing = await prisma.scUser.findUnique({ where: { email } });
+    if (existing) redirect(`/suitecompare/login?invite=${inviteToken}`);
+
+    const passwordHash = await hashScPassword(password);
+    const user = await prisma.scUser.create({
+      data: { name, email, passwordHash, emailVerified: true },
+    });
+
+    await acceptPendingInvite(inviteToken, user.id);
+    await setSession(user.id);
+    redirect("/suitecompare/dashboard");
+  }
+
+  // Normal signup flow
+  const orgName = String(formData.get("orgName") ?? "").trim();
+  if (!orgName) return { error: "All fields are required." };
 
   const existing = await prisma.scUser.findUnique({ where: { email } });
   if (existing) {
     if (!existing.emailVerified) {
-      // Resend OTP to existing unverified account
       const otp = generateOtp();
       const otpExpiry = new Date(Date.now() + 10 * 60 * 1000);
       await prisma.scUser.update({ where: { id: existing.id }, data: { otp, otpExpiry } });

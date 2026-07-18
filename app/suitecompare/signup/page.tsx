@@ -1,11 +1,14 @@
 "use client";
 
 import { useActionState } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { GitCompare, Loader2 } from "lucide-react";
 import { signupScAction } from "@/app/suitecompare/actions";
 
 export default function SuiteCompareSignupPage() {
+  const searchParams = useSearchParams();
+  const inviteToken = searchParams.get("invite") ?? "";
   const [state, formAction, isPending] = useActionState(signupScAction, {});
 
   return (
@@ -21,6 +24,7 @@ export default function SuiteCompareSignupPage() {
 
         <div className="bg-white rounded-2xl border border-brand-100 shadow-soft p-7">
           <form action={formAction} className="space-y-4">
+            {inviteToken && <input type="hidden" name="inviteToken" value={inviteToken} />}
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-brand-700 mb-1.5">
                 Full name
@@ -51,19 +55,21 @@ export default function SuiteCompareSignupPage() {
               />
             </div>
 
-            <div>
-              <label htmlFor="orgName" className="block text-sm font-medium text-brand-700 mb-1.5">
-                Organization name
-              </label>
-              <input
-                id="orgName"
-                name="orgName"
-                type="text"
-                required
-                className="w-full rounded-lg border border-brand-100 px-3.5 py-2.5 text-sm text-brand-900 placeholder:text-brand-300 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent"
-                placeholder="Acme Corp"
-              />
-            </div>
+            {!inviteToken && (
+              <div>
+                <label htmlFor="orgName" className="block text-sm font-medium text-brand-700 mb-1.5">
+                  Organization name
+                </label>
+                <input
+                  id="orgName"
+                  name="orgName"
+                  type="text"
+                  required
+                  className="w-full rounded-lg border border-brand-100 px-3.5 py-2.5 text-sm text-brand-900 placeholder:text-brand-300 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent"
+                  placeholder="Acme Corp"
+                />
+              </div>
+            )}
 
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-brand-700 mb-1.5">

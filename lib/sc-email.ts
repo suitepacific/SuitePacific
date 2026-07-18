@@ -29,6 +29,26 @@ export async function sendPasswordResetEmail(to: string, name: string, resetUrl:
   });
 }
 
+export async function sendInviteEmail(to: string, inviterName: string, orgName: string, inviteUrl: string): Promise<void> {
+  await getResend().emails.send({
+    from: "SuiteCompare <noreply@suitepacific.com>",
+    to,
+    subject: `${inviterName} invited you to join ${orgName} on SuiteCompare`,
+    html: `
+      <div style="font-family:ui-sans-serif,system-ui,sans-serif;max-width:480px;margin:0 auto;padding:40px 24px;color:#0f172a">
+        <div style="margin-bottom:24px">
+          <span style="font-size:13px;font-weight:600;color:#6366f1;letter-spacing:.05em;text-transform:uppercase">SuiteCompare</span>
+        </div>
+        <h1 style="font-size:22px;font-weight:700;margin:0 0 8px">You have been invited</h1>
+        <p style="color:#64748b;font-size:15px;margin:0 0 28px"><strong>${inviterName}</strong> has invited you to join <strong>${orgName}</strong> on SuiteCompare.</p>
+        <a href="${inviteUrl}" style="display:inline-block;background:#6366f1;color:#fff;font-weight:600;font-size:14px;padding:12px 28px;border-radius:100px;text-decoration:none;margin-bottom:28px">Accept invitation</a>
+        <p style="color:#94a3b8;font-size:13px;margin:0">This invitation expires in 7 days. If you were not expecting this, you can ignore it.</p>
+        <p style="color:#cbd5e1;font-size:12px;margin:12px 0 0">Or copy this link: <span style="color:#6366f1">${inviteUrl}</span></p>
+      </div>
+    `,
+  });
+}
+
 export async function sendOtpEmail(to: string, name: string, otp: string): Promise<void> {
   await getResend().emails.send({
     from: "SuiteCompare <noreply@suitepacific.com>",

@@ -3,12 +3,13 @@
 import { useState, useEffect, useTransition } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { LayoutDashboard, Building2, GitCompare, LogOut, Menu, X, ExternalLink, Loader2 } from "lucide-react";
+import { LayoutDashboard, Building2, GitCompare, LogOut, Menu, X, ExternalLink, Loader2, Settings } from "lucide-react";
 import { logoutScAction } from "@/app/suitecompare/actions";
 
 const NAV = [
   { label: "Dashboard", href: "/suitecompare/dashboard", icon: LayoutDashboard, exact: true },
   { label: "Clients", href: "/suitecompare/accounts", icon: Building2, exact: false },
+  { label: "Settings", href: "/suitecompare/settings/team", icon: Settings, exact: false },
 ];
 
 export function ScSidebar() {
