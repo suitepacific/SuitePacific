@@ -46,7 +46,7 @@ export function BrowseScriptForm({ accountId }: Props) {
       )}
       {!pending && state.success && (
         <p className="text-sm text-emerald-600 bg-emerald-50 rounded-xl px-4 py-2.5">
-          Script browsed successfully — it now appears in the list below.
+          Script browsed successfully. It now appears in the list below.
         </p>
       )}
     </form>

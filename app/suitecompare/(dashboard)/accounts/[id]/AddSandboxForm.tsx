@@ -31,7 +31,7 @@ export function AddSandboxForm({ accountId, planLimited }: { accountId: string; 
 
   return (
     <>
-      {/* Trigger — renders as a dashed card in the env grid */}
+      {/* Trigger: renders as a dashed card in the env grid */}
       <button
         onClick={() => setOpen(true)}
         className="rounded-2xl border-2 border-dashed border-brand-100 p-4 flex flex-col items-center justify-center gap-2 min-h-[130px] hover:border-accent/30 hover:bg-accent/5 transition-all group w-full"
@@ -68,7 +68,7 @@ export function AddSandboxForm({ accountId, planLimited }: { accountId: string; 
                 <Info className="h-4 w-4 text-amber-500 shrink-0 mt-0.5" />
                 <p className="text-xs text-amber-700">
                   Only one <strong>Production</strong> environment is allowed per account. Additional
-                  environments must be Sandboxes — their NetSuite ID must include a suffix like{" "}
+                  environments must be Sandboxes. Their NetSuite ID must include a suffix like{" "}
                   <code className="bg-amber-100 px-1 rounded">_SB1</code>,{" "}
                   <code className="bg-amber-100 px-1 rounded">_SB2</code>, etc.
                 </p>
@@ -99,7 +99,7 @@ export function AddSandboxForm({ accountId, planLimited }: { accountId: string; 
                   className={inputCls}
                 />
                 <p className="mt-1 text-xs text-brand-300">
-                  Must include <code>_SB1</code>, <code>_SB2</code>, etc. — production IDs are not
+                  Must include <code>_SB1</code>, <code>_SB2</code>, etc. Production IDs are not
                   accepted here.
                 </p>
               </div>

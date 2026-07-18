@@ -33,7 +33,7 @@ const TRUST_ITEMS = [
   {
     icon: Users,
     title: "Complete account isolation",
-    body: "Each organization is fully isolated. Your scripts never appear in another tenant&apos;s workspace — at the data layer, not just the UI layer.",
+    body: "Each organization is fully isolated. Your scripts never appear in another tenant&apos;s workspace. Isolation is enforced at the data layer, not just the UI layer.",
   },
   {
     icon: ClipboardList,

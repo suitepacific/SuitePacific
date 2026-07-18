@@ -163,7 +163,7 @@ export async function forgotPasswordAction(
 
   const user = await prisma.scUser.findUnique({ where: { email } });
 
-  // Always return success — never reveal whether an email is registered
+  // Always return success - never reveal whether an email is registered
   if (!user || user.status !== "active") return { success: true };
 
   const rawToken = crypto.randomBytes(32).toString("hex");

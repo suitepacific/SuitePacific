@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/Button";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "SuiteCompare — Compare NetSuite Scripts Across Environments",
+  title: "SuiteCompare: Compare NetSuite Scripts Across Environments",
   description:
     "Side-by-side diff tool for SuiteScript files. Compare your Sandbox and Production scripts before deploying, catch drift early, and ship with confidence.",
 };
@@ -21,13 +21,13 @@ const FEATURES = [
     icon: GitCompare,
     title: "Side-by-side diff",
     description:
-      "Line-by-line comparison with color-coded additions, removals, and unchanged blocks — the same format NetSuite developers already know from version control.",
+      "Line-by-line comparison with color-coded additions, removals, and unchanged blocks. The same format NetSuite developers already know from version control.",
   },
   {
     icon: FileSearch,
     title: "Script browser",
     description:
-      "Browse all SuiteScript files across connected environments — User Events, Map/Reduce, RESTlets, Suitelets, and Client Scripts — in one filterable list.",
+      "Browse all SuiteScript files across connected environments: User Events, Map/Reduce, RESTlets, Suitelets, and Client Scripts, in one filterable list.",
   },
   {
     icon: GitMerge,
@@ -45,7 +45,7 @@ const FEATURES = [
     icon: Zap,
     title: "Instant comparison",
     description:
-      "Script content is fetched live from your NetSuite instance on every comparison — never stored on our servers. You always see the true current state of your code.",
+      "Script content is fetched live from your NetSuite instance on every comparison, never stored on our servers. You always see the true current state of your code.",
   },
   {
     icon: Lock,
@@ -59,7 +59,7 @@ const STEPS = [
   {
     number: "01",
     title: "Connect your environments",
-    body: "Add your Production and Sandbox accounts using Token-Based Authentication. SuiteCompare fetches scripts directly from your NetSuite instance — no admin login, no shared credentials.",
+    body: "Add your Production and Sandbox accounts using Token-Based Authentication. SuiteCompare fetches scripts directly from your NetSuite instance. No admin login, no shared credentials.",
   },
   {
     number: "02",
@@ -77,7 +77,7 @@ const PAIN_POINTS = [
   {
     icon: ShieldAlert,
     title: "Blind deploys",
-    body: "Pushing a release without knowing what changed between Sandbox and Production is how good scripts get overwritten — and why prod breaks on a Friday.",
+    body: "Pushing a release without knowing what changed between Sandbox and Production is how good scripts get overwritten. And why prod breaks on a Friday.",
   },
   {
     icon: FileSearch,
@@ -125,7 +125,7 @@ export default async function SuiteCompareHomePage() {
               <Link href="/suitecompare/pricing" className="text-accent hover:underline">
                 View pricing
               </Link>
-              {" "}— free plan available, no credit card required.
+              {" "}Free plan available, no credit card required.
             </p>
           </div>
 

@@ -29,7 +29,7 @@ export default function DashboardError({
       </h1>
       <p className="text-sm text-brand-400 max-w-sm mb-6">
         {isDbError
-          ? "The connection to the database timed out. This is usually transient — try again in a moment."
+          ? "The connection to the database timed out. This is usually transient. Try again in a moment."
           : "An unexpected error occurred. Try refreshing the page."}
       </p>
       <button

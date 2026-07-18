@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "SuiteCompare Pricing — Free, Pro, and Team Plans",
+  title: "SuiteCompare Pricing: Free, Pro, and Team Plans",
   description:
     "Start free. Upgrade when your client list grows. Plans for solo NetSuite developers, freelancers, and consulting firms.",
 };
@@ -82,7 +82,7 @@ const PLANS = [
 const FAQ = [
   {
     q: "What counts as a client?",
-    a: "A client is a NetSuite account — typically one company you manage scripts for. A consulting firm with 8 customers has 8 clients.",
+    a: "A client is a NetSuite account, typically one company you manage scripts for. A consulting firm with 8 customers has 8 clients.",
   },
   {
     q: "Can I change plans later?",
@@ -90,7 +90,7 @@ const FAQ = [
   },
   {
     q: "What is Token-Based Authentication?",
-    a: "TBA is NetSuite's recommended API authentication method. SuiteCompare uses it to read script content directly from your NetSuite instance — no admin password is ever requested or stored.",
+    a: "TBA is NetSuite&apos;s recommended API authentication method. SuiteCompare uses it to read script content directly from your NetSuite instance. No admin password is ever requested or stored.",
   },
   {
     q: "Is script content stored on your servers?",

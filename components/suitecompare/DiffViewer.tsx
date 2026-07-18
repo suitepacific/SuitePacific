@@ -165,7 +165,7 @@ export function DiffViewer({
             </div>
             <CopyButton content={leftContent} side="left" />
           </div>
-          {/* Center header spacer — aligns with transfer gutter */}
+          {/* Center header spacer: aligns with transfer gutter */}
           <div className="w-10 shrink-0" />
           <div className="flex-1 flex items-center justify-between gap-2 px-4 py-2.5 min-w-0">
             <div className="flex items-center gap-2 min-w-0">
@@ -176,7 +176,7 @@ export function DiffViewer({
           </div>
         </div>
 
-        {/* Diff rows — single scroll container keeps both sides aligned */}
+        {/* Diff rows: single scroll container keeps both sides aligned */}
         <div className="overflow-x-auto">
           <div style={{ minWidth: "720px" }}>
             {rows.map((row, i) => {
