@@ -22,6 +22,8 @@ export function CustomerSidebar({ customerName, company }: { customerName: strin
     <>
       <div className="px-5 py-5 border-b border-brand-100 flex items-center justify-between">
         <div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/SuitePacificLogo.PNG" alt="SuitePacific" className="h-6 w-auto object-contain mb-2" />
           <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-0.5">
             Client Portal
           </p>
@@ -78,7 +80,8 @@ export function CustomerSidebar({ customerName, company }: { customerName: strin
     <>
       {/* Mobile top bar */}
       <div className="md:hidden fixed top-0 inset-x-0 z-30 h-14 bg-white border-b border-brand-100 flex items-center justify-between px-4">
-        <p className="text-xs font-semibold uppercase tracking-widest text-accent">Client Portal</p>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/SuitePacificLogo.PNG" alt="SuitePacific" className="h-7 w-auto object-contain" />
         <button
           onClick={() => setOpen(true)}
           className="p-2 -mr-2 text-brand-400 hover:text-brand-900 rounded-lg"

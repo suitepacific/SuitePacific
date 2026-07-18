@@ -54,8 +54,8 @@ export function InvoicePrintView({ invoice }: { invoice: InvoiceWithItems }) {
           {/* Header */}
           <div className="flex items-start justify-between mb-12">
             <div>
-              <p className="text-2xl font-bold text-brand-900 tracking-tight">SuitePacific</p>
-              <p className="text-sm text-brand-400 mt-1">NetSuite Consulting</p>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/SuitePacificLogo.PNG" alt="SuitePacific" className="h-10 w-auto object-contain" />
             </div>
             <div className="text-right">
               <p className="text-4xl font-bold text-brand-900 tracking-tight">INVOICE</p>
@@ -161,10 +161,10 @@ export function InvoicePrintView({ invoice }: { invoice: InvoiceWithItems }) {
           )}
 
           {/* Footer */}
-          <div className="border-t border-brand-50 pt-8 mt-12 text-center">
-            <p className="text-xs text-brand-300">
-              SuitePacific · suitepacific.com · Thank you for your business.
-            </p>
+          <div className="border-t border-brand-50 pt-8 mt-12 flex flex-col items-center gap-2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/SuitePacificLogo.PNG" alt="SuitePacific" className="h-6 w-auto object-contain opacity-40" />
+            <p className="text-xs text-brand-300">suitepacific.com · Thank you for your business.</p>
           </div>
         </div>
       </div>
