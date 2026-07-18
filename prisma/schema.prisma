@@ -359,11 +359,13 @@ model ScUser {
   otpExpiry            DateTime?
   passwordResetToken   String?
   passwordResetExpiry  DateTime?
+  lastLoginAt          DateTime?
   archivedAt           DateTime?
   createdAt            DateTime      @default(now())
   memberships          ScOrgMember[]
 
   @@index([archivedAt])
+  @@index([lastLoginAt])
 }
 
 model ScOrg {
@@ -451,4 +453,20 @@ model ScScript {
 
   @@unique([environmentId, scriptId])
   @@index([environmentId])
+}
+
+model ScComparison {
+  id       String   @id @default(cuid())
+  userId   String
+  orgId    String
+  scriptId String
+  envAId   String
+  envBId   String
+  status   String   // "success" | "failed"
+  errorMsg String?
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([orgId])
+  @@index([createdAt])
 }

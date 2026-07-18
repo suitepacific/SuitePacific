@@ -298,7 +298,7 @@ export default async function SuiteCompareHomePage() {
                 {
                   name: "Team",
                   price: "$99/mo",
-                  tagline: "For consulting firms with multiple developers on the same accounts.",
+                  tagline: "For consulting firms with multiple developers.",
                   features: ["Unlimited clients", "Unlimited environments", "Up to 5 users"],
                   cta: "Get started",
                   href: "/suitecompare/signup",

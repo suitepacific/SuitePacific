@@ -41,7 +41,7 @@ async function acceptPendingInvite(token: string, userId: string): Promise<void>
 async function setSession(userId: string) {
   const { sessionVersion } = await prisma.scUser.update({
     where: { id: userId },
-    data: { sessionVersion: { increment: 1 } },
+    data: { sessionVersion: { increment: 1 }, lastLoginAt: new Date() },
     select: { sessionVersion: true },
   });
   const token = await createScSessionToken(userId, sessionVersion);

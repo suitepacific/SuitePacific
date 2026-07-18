@@ -46,7 +46,7 @@ const PLANS = [
     name: "Team",
     price: "$99",
     period: "/month",
-    description: "For consulting firms with multiple developers on the same accounts.",
+    description: "For consulting firms with multiple developers.",
     cta: { label: "Get started", href: "/suitecompare/signup", primary: false },
     features: [
       { text: "Unlimited clients", included: true },
