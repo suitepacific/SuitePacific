@@ -84,6 +84,10 @@ export default async function AdminCustomerDetailPage({ params }: { params: Prom
             website: customer.website ?? "",
             country: customer.country ?? "",
             timezone: customer.timezone ?? "",
+            billingType: customer.billingType,
+            hourlyRate: customer.hourlyRate,
+            monthlyRate: customer.monthlyRate,
+            billingCurrency: customer.billingCurrency,
           }}
         />
 

@@ -27,8 +27,20 @@ export async function createCustomerAction(_prev: unknown, formData: FormData) {
   const existing = await prisma.customer.findUnique({ where: { email } });
   if (existing) return { error: "A customer with this email already exists." };
 
+  const billingType = (formData.get("billingType") as string) || "HOURLY";
+  const validBillingTypes = ["HOURLY", "MONTHLY", "HYBRID"];
+  const billingCurrency = (formData.get("billingCurrency") as string)?.trim().slice(0, 10).toUpperCase() || "USD";
+  const hourlyRateRaw = parseFloat(formData.get("hourlyRate") as string);
+  const monthlyRateRaw = parseFloat(formData.get("monthlyRate") as string);
+
+  if (!validBillingTypes.includes(billingType)) return { error: "Invalid billing type." };
+  const hourlyRate = !isNaN(hourlyRateRaw) && hourlyRateRaw >= 0 ? hourlyRateRaw : null;
+  const monthlyRate = !isNaN(monthlyRateRaw) && monthlyRateRaw >= 0 ? monthlyRateRaw : null;
+
   const passwordHash = await hashPassword(password);
-  await prisma.customer.create({ data: { name, email, company, website, country, passwordHash } });
+  await prisma.customer.create({
+    data: { name, email, company, website, country, passwordHash, billingType: billingType as "HOURLY" | "MONTHLY" | "HYBRID", hourlyRate, monthlyRate, billingCurrency },
+  });
 
   redirect("/admin/customers");
 }
@@ -44,9 +56,21 @@ export async function updateCustomerAction(_prev: unknown, formData: FormData) {
   const country = (formData.get("country") as string)?.trim().slice(0, 100) || null;
   const timezone = (formData.get("timezone") as string)?.trim().slice(0, 100) || null;
 
-  if (!company) return { error: "Company name is required." };
+  const billingType = (formData.get("billingType") as string) || "HOURLY";
+  const validBillingTypes = ["HOURLY", "MONTHLY", "HYBRID"];
+  const billingCurrency = (formData.get("billingCurrency") as string)?.trim().slice(0, 10).toUpperCase() || "USD";
+  const hourlyRateRaw = parseFloat(formData.get("hourlyRate") as string);
+  const monthlyRateRaw = parseFloat(formData.get("monthlyRate") as string);
 
-  await prisma.customer.update({ where: { id }, data: { company, website, country, timezone } });
+  if (!company) return { error: "Company name is required." };
+  if (!validBillingTypes.includes(billingType)) return { error: "Invalid billing type." };
+  const hourlyRate = !isNaN(hourlyRateRaw) && hourlyRateRaw >= 0 ? hourlyRateRaw : null;
+  const monthlyRate = !isNaN(monthlyRateRaw) && monthlyRateRaw >= 0 ? monthlyRateRaw : null;
+
+  await prisma.customer.update({
+    where: { id },
+    data: { company, website, country, timezone, billingType: billingType as "HOURLY" | "MONTHLY" | "HYBRID", hourlyRate, monthlyRate, billingCurrency },
+  });
   revalidatePath(`/admin/customers/${id}`);
   return { success: true };
 }

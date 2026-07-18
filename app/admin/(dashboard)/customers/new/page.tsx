@@ -73,6 +73,41 @@ export default function NewCustomerPage() {
             <p className="text-xs text-brand-300 mt-1">Share this with the client to log in.</p>
           </div>
 
+          <div className="border-t border-brand-50 pt-5">
+            <p className="text-xs font-semibold text-brand-400 uppercase tracking-wide mb-4">Billing</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="billingType" className={lbl}>Billing Type</label>
+                <select id="billingType" name="billingType" className={inp}>
+                  <option value="HOURLY">Hourly</option>
+                  <option value="MONTHLY">Monthly Retainer</option>
+                  <option value="HYBRID">Hybrid</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor="billingCurrency" className={lbl}>Currency</label>
+                <input id="billingCurrency" name="billingCurrency" type="text" defaultValue="USD"
+                  placeholder="USD" maxLength={10} className={inp} />
+              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+              <div>
+                <label htmlFor="hourlyRate" className={lbl}>
+                  Hourly Rate <span className={opt}>(optional)</span>
+                </label>
+                <input id="hourlyRate" name="hourlyRate" type="number" min="0" step="0.01"
+                  placeholder="e.g. 150.00" className={inp} />
+              </div>
+              <div>
+                <label htmlFor="monthlyRate" className={lbl}>
+                  Monthly Rate <span className={opt}>(optional)</span>
+                </label>
+                <input id="monthlyRate" name="monthlyRate" type="number" min="0" step="0.01"
+                  placeholder="e.g. 3000.00" className={inp} />
+              </div>
+            </div>
+          </div>
+
           {state?.error && (
             <p className="text-sm text-red-600 bg-red-50 rounded-xl px-4 py-2.5">{state.error}</p>
           )}

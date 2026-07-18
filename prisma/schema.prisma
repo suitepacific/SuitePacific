@@ -185,20 +185,27 @@ enum CommissionStatus {
 // ─── Customer Portal ─────────────────────────────────────────────────────────
 
 model Customer {
-  id                  String    @id @default(cuid())
+  id                  String      @id @default(cuid())
   name                String
-  email               String    @unique
+  email               String      @unique
   company             String
   website             String?
   country             String?
   timezone            String?
   passwordHash        String
-  status              String    @default("active") // active | suspended
+  status              String      @default("active") // active | suspended
   agreementAcceptedAt DateTime?
   agreementAcceptedIp String?
   archivedAt          DateTime?
-  createdAt           DateTime  @default(now())
+  createdAt           DateTime    @default(now())
+  // Billing
+  billingType         BillingType @default(HOURLY)
+  hourlyRate          Float?
+  monthlyRate         Float?
+  billingCurrency     String      @default("USD")
   tickets             Ticket[]
+  timeEntries         TimeEntry[]
+  invoices            Invoice[]
 
   @@index([status])
   @@index([archivedAt])
@@ -219,6 +226,7 @@ model Ticket {
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
   comments      TicketComment[]
+  timeEntries   TimeEntry[]
 
   @@index([customerId])
   @@index([status])
@@ -261,4 +269,78 @@ enum TicketStatus {
   PENDING_CUSTOMER
   RESOLVED
   CLOSED
+}
+
+// ─── Time Tracking & Invoicing ───────────────────────────────────────────────
+
+model TimeEntry {
+  id          String    @id @default(cuid())
+  customer    Customer  @relation(fields: [customerId], references: [id])
+  customerId  String
+  ticket      Ticket?   @relation(fields: [ticketId], references: [id])
+  ticketId    String?
+  date        DateTime  @db.Date
+  hours       Float
+  description String
+  isBillable  Boolean   @default(true)
+  hourlyRate  Float?    // override customer default; null = use customer.hourlyRate
+  invoiceItem InvoiceItem?
+  createdAt   DateTime  @default(now())
+
+  @@index([customerId])
+  @@index([ticketId])
+  @@index([date])
+  @@index([isBillable])
+}
+
+model Invoice {
+  id            String        @id @default(cuid())
+  customer      Customer      @relation(fields: [customerId], references: [id])
+  customerId    String
+  invoiceNumber String        @unique
+  status        InvoiceStatus @default(DRAFT)
+  issueDate     DateTime      @db.Date
+  dueDate       DateTime?     @db.Date
+  currency      String        @default("USD")
+  notes         String?
+  taxPercent    Float         @default(0)
+  subtotal      Float
+  taxAmount     Float         @default(0)
+  total         Float
+  paidAt        DateTime?
+  archivedAt    DateTime?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  items         InvoiceItem[]
+
+  @@index([customerId])
+  @@index([status])
+  @@index([archivedAt])
+}
+
+model InvoiceItem {
+  id          String     @id @default(cuid())
+  invoice     Invoice    @relation(fields: [invoiceId], references: [id])
+  invoiceId   String
+  timeEntry   TimeEntry? @relation(fields: [timeEntryId], references: [id])
+  timeEntryId String?    @unique
+  description String
+  quantity    Float
+  unitPrice   Float
+  amount      Float      // quantity * unitPrice
+
+  @@index([invoiceId])
+}
+
+enum BillingType {
+  HOURLY
+  MONTHLY
+  HYBRID
+}
+
+enum InvoiceStatus {
+  DRAFT
+  SENT
+  PAID
+  VOID
 }

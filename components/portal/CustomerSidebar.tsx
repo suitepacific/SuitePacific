@@ -3,13 +3,14 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Ticket, PlusCircle, UserCircle, LogOut, Menu, X } from "lucide-react";
+import { LayoutDashboard, Ticket, PlusCircle, UserCircle, Receipt, LogOut, Menu, X } from "lucide-react";
 import { logoutAction } from "@/app/customer-portal/actions";
 
 const NAV = [
   { label: "Dashboard", href: "/customer-portal/dashboard", icon: LayoutDashboard, exact: true },
   { label: "My Tickets", href: "/customer-portal/tickets", icon: Ticket, exact: false },
   { label: "Submit a Request", href: "/customer-portal/tickets/new", icon: PlusCircle, exact: true },
+  { label: "Invoices", href: "/customer-portal/invoices", icon: Receipt, exact: false },
   { label: "My Profile", href: "/customer-portal/profile", icon: UserCircle, exact: true },
 ];
 

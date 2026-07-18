@@ -7,7 +7,16 @@ const initialState = {} as { error?: string; success?: boolean };
 
 interface Props {
   id: string;
-  defaults: { company: string; website: string; country: string; timezone: string };
+  defaults: {
+    company: string;
+    website: string;
+    country: string;
+    timezone: string;
+    billingType: string;
+    hourlyRate: number | null;
+    monthlyRate: number | null;
+    billingCurrency: string;
+  };
 }
 
 export function CustomerEditForm({ id, defaults }: Props) {
@@ -44,6 +53,37 @@ export function CustomerEditForm({ id, defaults }: Props) {
         <div>
           <label className="block text-xs text-brand-500 mb-1">Timezone</label>
           <input name="timezone" type="text" defaultValue={defaults.timezone} placeholder="e.g. UTC+5:30" className={inp} />
+        </div>
+
+        <div className="border-t border-brand-50 pt-3">
+          <p className="text-xs font-semibold text-brand-400 uppercase tracking-wide mb-3">Billing</p>
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="block text-xs text-brand-500 mb-1">Billing Type</label>
+              <select name="billingType" defaultValue={defaults.billingType} className={inp}>
+                <option value="HOURLY">Hourly</option>
+                <option value="MONTHLY">Monthly Retainer</option>
+                <option value="HYBRID">Hybrid</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-xs text-brand-500 mb-1">Currency</label>
+              <input name="billingCurrency" type="text" defaultValue={defaults.billingCurrency}
+                placeholder="USD" maxLength={10} className={inp} />
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-3 mt-3">
+            <div>
+              <label className="block text-xs text-brand-500 mb-1">Hourly Rate</label>
+              <input name="hourlyRate" type="number" min="0" step="0.01"
+                defaultValue={defaults.hourlyRate ?? ""} placeholder="e.g. 150.00" className={inp} />
+            </div>
+            <div>
+              <label className="block text-xs text-brand-500 mb-1">Monthly Rate</label>
+              <input name="monthlyRate" type="number" min="0" step="0.01"
+                defaultValue={defaults.monthlyRate ?? ""} placeholder="e.g. 3000.00" className={inp} />
+            </div>
+          </div>
         </div>
 
         {state?.error && (
