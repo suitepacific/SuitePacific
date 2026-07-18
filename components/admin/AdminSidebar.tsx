@@ -47,7 +47,7 @@ export function AdminSidebar() {
       <div className="p-6 flex items-center justify-between">
         <div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/SuitePacificLogo.PNG" alt="SuitePacific" className="h-7 w-auto object-contain mb-1" />
+          <img src="/SuitePacificLogo.PNG" alt="SuitePacific" className="h-14 w-auto object-contain mb-1" />
           <span className="block text-xs text-brand-300">Admin</span>
         </div>
         <button
@@ -108,7 +108,7 @@ export function AdminSidebar() {
       {/* Mobile top bar */}
       <div className="md:hidden fixed top-0 inset-x-0 z-30 h-14 bg-white border-b border-brand-50 flex items-center justify-between px-4">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/SuitePacificLogo.PNG" alt="SuitePacific" className="h-7 w-auto object-contain" />
+        <img src="/SuitePacificLogo.PNG" alt="SuitePacific" className="h-9 w-auto object-contain" />
         <button
           onClick={() => setOpen(true)}
           className="p-2 -mr-2 text-brand-400 hover:text-brand-900 rounded-lg"
