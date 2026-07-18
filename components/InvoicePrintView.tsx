@@ -55,7 +55,7 @@ export function InvoicePrintView({ invoice }: { invoice: InvoiceWithItems }) {
           <div className="flex items-start justify-between mb-12">
             <div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/SuitePacificLogo-cropped.PNG" alt="SuitePacific" className="h-16 w-auto object-contain" />
+              <img src="/SuitePacificLogo-cropped.PNG" alt="SuitePacific" className="h-10 w-auto object-contain" />
             </div>
             <div className="text-right">
               <p className="text-4xl font-bold text-brand-900 tracking-tight">INVOICE</p>
