@@ -55,7 +55,7 @@ export function InvoicePrintView({ invoice }: { invoice: InvoiceWithItems }) {
           <div className="flex items-start justify-between mb-12">
             <div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/SuitePacificLogo.PNG" alt="SuitePacific" className="h-32 w-auto object-contain" />
+              <img src="/SuitePacificLogo-cropped.PNG" alt="SuitePacific" className="h-16 w-auto object-contain" />
             </div>
             <div className="text-right">
               <p className="text-4xl font-bold text-brand-900 tracking-tight">INVOICE</p>
@@ -163,7 +163,7 @@ export function InvoicePrintView({ invoice }: { invoice: InvoiceWithItems }) {
           {/* Footer */}
           <div className="border-t border-brand-50 pt-8 mt-12 flex flex-col items-center gap-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/SuitePacificLogo.PNG" alt="SuitePacific" className="h-20 w-auto object-contain opacity-40" />
+            <img src="/SuitePacificLogo-cropped.PNG" alt="SuitePacific" className="h-10 w-auto object-contain opacity-40" />
             <p className="text-xs text-brand-300">suitepacific.com · Thank you for your business.</p>
           </div>
         </div>
