@@ -1,14 +1,16 @@
 import { Resend } from "resend";
 import crypto from "crypto";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResend() {
+  return new Resend(process.env.RESEND_API_KEY);
+}
 
 export function generateOtp(): string {
   return String(crypto.randomInt(100000, 1000000));
 }
 
 export async function sendPasswordResetEmail(to: string, name: string, resetUrl: string): Promise<void> {
-  await resend.emails.send({
+  await getResend().emails.send({
     from: "SuiteCompare <noreply@suitepacific.com>",
     to,
     subject: "Reset your SuiteCompare password",
@@ -28,7 +30,7 @@ export async function sendPasswordResetEmail(to: string, name: string, resetUrl:
 }
 
 export async function sendOtpEmail(to: string, name: string, otp: string): Promise<void> {
-  await resend.emails.send({
+  await getResend().emails.send({
     from: "SuiteCompare <noreply@suitepacific.com>",
     to,
     subject: `${otp} — your SuiteCompare verification code`,
