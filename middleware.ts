@@ -94,6 +94,7 @@ export async function middleware(request: NextRequest) {
   if (pathname.startsWith("/suitecompare")) {
     if (
       pathname === "/suitecompare" ||
+      pathname === "/suitecompare/pricing" ||
       pathname === "/suitecompare/login" ||
       pathname === "/suitecompare/signup" ||
       pathname === "/suitecompare/verify" ||

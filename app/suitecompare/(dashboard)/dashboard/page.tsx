@@ -86,16 +86,16 @@ export default async function DashboardPage() {
         <div>
           <h1 className="text-2xl font-semibold text-brand-900">Dashboard</h1>
           <p className="mt-1 text-sm text-brand-400">
-            Your NetSuite accounts and connected environments
+            Your clients and connected environments
           </p>
         </div>
         {addAccountLocked ? (
           <span
-            title="Upgrade to add more accounts"
+            title="Upgrade to add more clients"
             className="inline-flex items-center gap-2 rounded-full bg-brand-100 px-4 py-2 text-sm font-medium text-brand-400 cursor-not-allowed shrink-0"
           >
             <Lock className="h-4 w-4" />
-            Add Account
+            Add Client
           </span>
         ) : (
           <Link
@@ -103,7 +103,7 @@ export default async function DashboardPage() {
             className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent/90 transition-colors shrink-0"
           >
             <Plus className="h-4 w-4" />
-            Add Account
+            Add Client
           </Link>
         )}
       </div>
@@ -113,7 +113,7 @@ export default async function DashboardPage() {
         <div className="bg-white rounded-2xl border border-brand-50 shadow-soft p-5">
           <div className="flex items-center gap-2 text-brand-400 text-xs font-medium mb-1">
             <Building2 className="h-3.5 w-3.5" />
-            NetSuite Accounts
+            Clients
           </div>
           <p className="text-2xl font-semibold text-brand-900">{accounts.length}</p>
           <p className="text-xs text-brand-300 mt-0.5">connected</p>
@@ -124,7 +124,7 @@ export default async function DashboardPage() {
             Scripts Browsed
           </div>
           <p className="text-2xl font-semibold text-brand-900">{totalScripts}</p>
-          <p className="text-xs text-brand-300 mt-0.5">across all accounts</p>
+          <p className="text-xs text-brand-300 mt-0.5">across all clients</p>
         </div>
       </div>
 
@@ -134,16 +134,16 @@ export default async function DashboardPage() {
           <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50">
             <Building2 className="h-6 w-6 text-brand-300" />
           </div>
-          <h2 className="text-base font-semibold text-brand-700">No accounts yet</h2>
+          <h2 className="text-base font-semibold text-brand-700">No clients yet</h2>
           <p className="mt-1.5 text-sm text-brand-400 max-w-xs mx-auto">
-            Add a NetSuite account to start browsing and comparing SuiteScript files.
+            Add a client to start browsing and comparing SuiteScript files.
           </p>
           <Link
             href="/suitecompare/accounts/new"
             className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white hover:bg-accent/90 transition-colors"
           >
             <Plus className="h-4 w-4" />
-            Add your first account
+            Add your first client
           </Link>
         </div>
       ) : (
@@ -189,8 +189,8 @@ export default async function DashboardPage() {
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-100">
                 <Lock className="h-4 w-4 text-brand-400" />
               </div>
-              <p className="text-sm font-medium text-brand-400">Add NetSuite Account</p>
-              <p className="text-xs text-brand-300">Upgrade to add more accounts</p>
+              <p className="text-sm font-medium text-brand-400">Add Client</p>
+              <p className="text-xs text-brand-300">Upgrade to add more clients</p>
             </div>
           ) : (
             <Link
@@ -201,7 +201,7 @@ export default async function DashboardPage() {
                 <Plus className="h-4 w-4 text-brand-400 group-hover:text-accent transition-colors" />
               </div>
               <p className="text-sm font-medium text-brand-400 group-hover:text-accent transition-colors">
-                Add NetSuite Account
+                Add Client
               </p>
             </Link>
           )}

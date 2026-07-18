@@ -8,7 +8,7 @@ import { logoutScAction } from "@/app/suitecompare/actions";
 
 const NAV = [
   { label: "Dashboard", href: "/suitecompare/dashboard", icon: LayoutDashboard, exact: true },
-  { label: "Accounts", href: "/suitecompare/accounts", icon: Building2, exact: false },
+  { label: "Clients", href: "/suitecompare/accounts", icon: Building2, exact: false },
 ];
 
 export function ScSidebar() {

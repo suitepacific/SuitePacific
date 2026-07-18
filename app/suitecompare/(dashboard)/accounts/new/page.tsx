@@ -18,9 +18,9 @@ export default function NewAccountPage() {
           <ArrowLeft className="h-3 w-3" />
           Dashboard
         </Link>
-        <h1 className="text-2xl font-semibold text-brand-900">Add NetSuite Account</h1>
+        <h1 className="text-2xl font-semibold text-brand-900">Add Client</h1>
         <p className="mt-1 text-sm text-brand-400">
-          Connect a NetSuite account. Production and Sandbox environments will be created automatically.
+          Connect a client&apos;s NetSuite account. Production and Sandbox environments will be created automatically.
         </p>
       </div>
 
@@ -30,7 +30,7 @@ export default function NewAccountPage() {
             <Building2 className="h-5 w-5 text-accent" />
           </div>
           <div>
-            <p className="text-sm font-semibold text-brand-900">New Account</p>
+            <p className="text-sm font-semibold text-brand-900">New Client</p>
             <p className="text-xs text-brand-400">Phase 1 uses mock data for script content</p>
           </div>
         </div>
@@ -41,18 +41,18 @@ export default function NewAccountPage() {
               htmlFor="name"
               className="block text-sm font-medium text-brand-700 mb-1.5"
             >
-              Account Name
+              Client Name
             </label>
             <input
               id="name"
               name="name"
               type="text"
               required
-              placeholder="e.g. Acme Corp Production"
+              placeholder="e.g. Acme Corp"
               className="w-full rounded-xl border border-brand-100 bg-brand-50/40 px-4 py-2.5 text-sm text-brand-900 placeholder-brand-300 outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition"
             />
             <p className="mt-1 text-xs text-brand-300">
-              A friendly name to identify this customer&apos;s NetSuite instance
+              A name to identify this client
             </p>
           </div>
 
@@ -88,7 +88,7 @@ export default function NewAccountPage() {
               disabled={pending}
               className="flex-1 rounded-xl bg-accent px-4 py-2.5 text-sm font-medium text-white hover:bg-accent/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
-              {pending ? "Creating..." : "Create Account"}
+              {pending ? "Creating..." : "Create Client"}
             </button>
             <Link
               href="/suitecompare/dashboard"

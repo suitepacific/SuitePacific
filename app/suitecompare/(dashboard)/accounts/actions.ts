@@ -118,7 +118,7 @@ export async function addEnvironmentAction(
   if (!account) return { error: "Account not found." };
 
   if (membership.org.plan === "free" && account.environments.length >= 2) {
-    return { error: "Free plan allows max 2 environments per account (1 production + 1 sandbox). Upgrade to add more." };
+    return { error: "Free plan includes 1 Production + 1 Sandbox per client. Upgrade to Pro to add more environments." };
   }
 
   await prisma.scEnvironment.create({
@@ -148,7 +148,7 @@ export async function addNsAccountAction(
   if (!membership) return { error: "Organization not found." };
 
   if (membership.org.plan === "free" && membership.org.nsAccounts.length >= 1) {
-    return { error: "Free plan is limited to 1 NetSuite account. Upgrade to add more." };
+    return { error: "Free plan is limited to 1 client. Upgrade to Pro to add more." };
   }
 
   const account = await prisma.scNetSuiteAccount.create({

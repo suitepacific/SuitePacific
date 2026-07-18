@@ -121,6 +121,12 @@ export default async function SuiteCompareHomePage() {
                 Sign in
               </Button>
             </div>
+            <p className="mt-4 text-sm text-brand-400">
+              <Link href="/suitecompare/pricing" className="text-accent hover:underline">
+                View pricing
+              </Link>
+              {" "}— free plan available, no credit card required.
+            </p>
           </div>
 
           {/* Pain points */}
