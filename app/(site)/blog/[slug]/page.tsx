@@ -114,7 +114,7 @@ export default async function BlogPostPage({
             We can take a look and tell you exactly what we&apos;d do.
           </p>
           <div className="mt-6">
-            <Button href="/#contact">Book a Free Consultation</Button>
+            <Button href="/contact">Book a Free Consultation</Button>
           </div>
         </div>
       </article>

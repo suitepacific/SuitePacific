@@ -140,7 +140,7 @@ export default async function ResourcePage({
             what you&apos;re working on.
           </p>
           <div className="mt-6">
-            <Button href="/#contact">Book a Free Consultation</Button>
+            <Button href="/contact">Book a Free Consultation</Button>
           </div>
         </div>
       </article>

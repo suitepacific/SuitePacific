@@ -57,7 +57,14 @@ function timingSafeEqual(a: string, b: string): boolean {
   return diff === 0;
 }
 
-export function checkPassword(password: string): boolean {
+export async function checkPassword(password: string): Promise<boolean> {
+  // Prefer bcrypt hash when ADMIN_PASSWORD_HASH is set
+  const hash = process.env.ADMIN_PASSWORD_HASH;
+  if (hash) {
+    const bcrypt = await import("bcryptjs");
+    return bcrypt.compare(password, hash);
+  }
+  // Fallback: plaintext ADMIN_PASSWORD with timing-safe comparison
   const expected = process.env.ADMIN_PASSWORD;
   if (!expected) return false;
   return timingSafeEqual(password, expected);

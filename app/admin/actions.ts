@@ -12,7 +12,7 @@ import {
 export async function loginAction(formData: FormData): Promise<{ error?: string }> {
   const password = String(formData.get("password") ?? "");
 
-  if (!checkPassword(password)) {
+  if (!await checkPassword(password)) {
     return { error: "Incorrect password." };
   }
 

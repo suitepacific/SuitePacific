@@ -4,8 +4,48 @@ import { ADMIN_SESSION_COOKIE, verifySessionToken } from "@/lib/auth";
 import { PARTNER_SESSION_COOKIE, verifyPartnerSessionToken } from "@/lib/partner-auth";
 import { CUSTOMER_SESSION_COOKIE, verifyCustomerSessionToken } from "@/lib/customer-auth";
 
+// In-memory rate limiting for login endpoints.
+// Per edge instance (not distributed), but effective as a first line of defense
+// combined with Vercel's infrastructure-level DDoS protection.
+const loginAttempts = new Map<string, number[]>();
+const RATE_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
+const RATE_MAX = 10; // max login attempts per IP per window
+
+const LOGIN_PATHS = new Set(["/admin/login", "/partner-portal/login", "/customer-portal/login"]);
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const prev = loginAttempts.get(ip) ?? [];
+  const recent = prev.filter((t) => now - t < RATE_WINDOW_MS);
+  recent.push(now);
+  loginAttempts.set(ip, recent);
+
+  // Prevent unbounded memory growth
+  if (loginAttempts.size > 5000) {
+    for (const [key, times] of loginAttempts) {
+      if (times.every((t) => now - t >= RATE_WINDOW_MS)) loginAttempts.delete(key);
+    }
+  }
+
+  return recent.length > RATE_MAX;
+}
+
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  // Rate-limit login form submissions (Server Actions POST to the page URL)
+  if (request.method === "POST" && LOGIN_PATHS.has(pathname)) {
+    const ip =
+      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+      request.headers.get("x-real-ip") ??
+      "unknown";
+    if (isRateLimited(ip)) {
+      return new NextResponse("Too many login attempts. Please try again in 15 minutes.", {
+        status: 429,
+        headers: { "Retry-After": "900", "Content-Type": "text/plain" },
+      });
+    }
+  }
 
   // Admin routes
   if (pathname.startsWith("/admin")) {
