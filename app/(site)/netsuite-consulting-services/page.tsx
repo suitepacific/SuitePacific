@@ -118,16 +118,16 @@ export default function NetSuiteConsultingServicesPage() {
           <h2>What NetSuite consulting covers</h2>
           <p>
             NetSuite consulting is the technical work that happens after go-live: the customizations
-            your implementation partner didn't build, the automation that accounting has been requesting
-            for two years, the integration with your new e-commerce platform, the script that breaks
-            every time someone imports records via CSV. It's the layer between what NetSuite does
-            out of the box and what your business actually needs it to do.
+            your implementation partner didn&apos;t build, the automation that accounting has been
+            requesting for two years, the integration with your new e-commerce platform, the script
+            that breaks every time someone imports records via CSV. It&apos;s the layer between what
+            NetSuite does out of the box and what your business actually needs it to do.
           </p>
           <p>
             Implementation partners are scoped for go-live. They get the account configured, data
             migrated, and your team trained. Once that engagement closes, the ongoing technical
-            work falls to whoever you have next. For most companies, that's either an internal
-            admin without scripting depth, a previous implementation partner that's moved to a
+            work falls to whoever you have next. For most companies, that&apos;s either an internal
+            admin without scripting depth, a previous implementation partner that&apos;s moved to a
             different project, or nobody at all. That gap is where a consulting firm fits.
           </p>
 
@@ -154,16 +154,17 @@ export default function NetSuiteConsultingServicesPage() {
           <h2>Who this is for</h2>
           <p>
             Companies that went live on NetSuite — recently or years ago — and need technical
-            development and support that their internal team can't handle alone. The typical
-            situation is some combination of: a customization backlog that's grown faster than
+            development and support that their internal team can&apos;t handle alone. The typical
+            situation is some combination of: a customization backlog that&apos;s grown faster than
             capacity to address it, scripts or workflows from a prior developer that nobody
             currently understands, a new business requirement (a new product line, an acquisition,
             a new sales channel) that requires NetSuite changes, or a performance or reliability
-            problem that's been tolerated too long.
+            problem that&apos;s been tolerated too long.
           </p>
           <p>
-            If you haven't gone live yet and are looking for an implementation partner, that's a
-            different engagement — we don't handle initial implementations. See our comparison of{" "}
+            If you haven&apos;t gone live yet and are looking for an implementation partner,
+            that&apos;s a different engagement — we don&apos;t handle initial implementations.
+            See our comparison of{" "}
             <Link href="/netsuite-implementation-partner-vs-managed-support">
               implementation partners vs. managed support
             </Link>{" "}
@@ -181,9 +182,9 @@ export default function NetSuiteConsultingServicesPage() {
           <p>
             Ongoing support engagements work on a monthly retained hours model: a block of hours
             each month applied to whatever work comes up — new development requests, fixes from
-            NetSuite's twice-yearly releases, questions from your team, or account optimization
-            work. Most clients mix both: project work for defined builds, ongoing support for
-            everything else. Both are month-to-month with no minimum commitment.
+            NetSuite&apos;s twice-yearly releases, questions from your team, or account
+            optimization work. Most clients mix both: project work for defined builds, ongoing
+            support for everything else. Both are month-to-month with no minimum commitment.
           </p>
           <p>
             We work exclusively in NetSuite. Every project is sandbox-tested, every script is
@@ -197,17 +198,17 @@ export default function NetSuiteConsultingServicesPage() {
           <p>
             NetSuite has a deep API surface, a specific governance model, a release cycle that
             introduces changes twice a year, and a scripting environment with its own quirks
-            distinct from standard JavaScript. A developer who writes JavaScript but has
-            never worked in NetSuite will encounter all of that friction on your account,
-            at your expense. A specialist has already solved the common problems: governance
-            limit failures, script deployment conflicts, workflow execution order, the behavioral
+            distinct from standard JavaScript. A developer who writes JavaScript but has never
+            worked in NetSuite will encounter all of that friction on your account, at your
+            expense. A specialist has already solved the common problems: governance limit
+            failures, script deployment conflicts, workflow execution order, the behavioral
             differences between the sandbox and production environments.
           </p>
           <p>
-            We work exclusively in the NetSuite ecosystem — no other platforms, no
-            generalist web development. The technical depth we maintain is specific to the
-            environment your business depends on. For an independent look at the SuiteScript
-            techniques we apply, our{" "}
+            We work exclusively in the NetSuite ecosystem — no other platforms, no generalist
+            web development. The technical depth we maintain is specific to the environment your
+            business depends on. For an independent look at the SuiteScript techniques we apply,
+            our{" "}
             <Link href="/blog/netsuite-map-reduce-script-guide">Map/Reduce scripting guide</Link>{" "}
             and{" "}
             <Link href="/blog/suitescript-best-practices">SuiteScript best practices</Link>{" "}
@@ -220,7 +221,8 @@ export default function NetSuiteConsultingServicesPage() {
         <div className="mt-14 pt-10 border-t border-brand-50 text-center">
           <p className="text-brand-900 font-semibold">Need a NetSuite consulting team?</p>
           <p className="mt-2 text-sm text-brand-400">
-            Tell us what you're working with and what you need — we'll let you know exactly how we can help.
+            Tell us what you&apos;re working with and what you need — we&apos;ll let you know
+            exactly how we can help.
           </p>
           <div className="mt-6">
             <Button href="/contact">Book a Free Consultation</Button>
