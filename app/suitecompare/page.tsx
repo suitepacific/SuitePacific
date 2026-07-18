@@ -195,6 +195,81 @@ export default async function SuiteCompareHomePage() {
             </div>
           </div>
 
+          {/* Pricing */}
+          <div className="mt-20">
+            <SectionHeading
+              eyebrow="Pricing"
+              title="Start free. Upgrade as you grow."
+              align="center"
+            />
+            <div className="mt-10 grid sm:grid-cols-3 gap-5">
+              {[
+                {
+                  name: "Free",
+                  price: "$0",
+                  description: "1 client, Production + Sandbox, 1 user.",
+                  cta: "Start free",
+                  href: "/suitecompare/signup",
+                  highlight: false,
+                },
+                {
+                  name: "Pro",
+                  price: "$29/mo",
+                  description: "Up to 10 clients, unlimited environments, 1 user.",
+                  cta: "Get started",
+                  href: "/suitecompare/signup",
+                  highlight: true,
+                  badge: "Most popular",
+                },
+                {
+                  name: "Team",
+                  price: "$99/mo",
+                  description: "Unlimited clients, up to 5 users.",
+                  cta: "Get started",
+                  href: "/suitecompare/signup",
+                  highlight: false,
+                },
+              ].map((plan) => (
+                <div
+                  key={plan.name}
+                  className={`relative rounded-2xl border p-6 flex flex-col gap-4 ${
+                    plan.highlight
+                      ? "border-accent bg-accent/5 shadow-lg"
+                      : "border-brand-50 bg-white shadow-soft"
+                  }`}
+                >
+                  {plan.badge && (
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center rounded-full bg-accent px-3 py-1 text-xs font-semibold text-white whitespace-nowrap">
+                      {plan.badge}
+                    </span>
+                  )}
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-brand-400 mb-1">
+                      {plan.name}
+                    </p>
+                    <p className="text-2xl font-bold text-brand-900">{plan.price}</p>
+                    <p className="mt-1.5 text-xs text-brand-400">{plan.description}</p>
+                  </div>
+                  <Link
+                    href={plan.href}
+                    className={`mt-auto inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                      plan.highlight
+                        ? "bg-accent text-white hover:bg-accent/90"
+                        : "border border-brand-100 text-brand-700 hover:bg-brand-50"
+                    }`}
+                  >
+                    {plan.cta}
+                  </Link>
+                </div>
+              ))}
+            </div>
+            <p className="mt-5 text-center text-sm text-brand-400">
+              <Link href="/suitecompare/pricing" className="text-accent hover:underline">
+                See full pricing details
+              </Link>
+            </p>
+          </div>
+
           {/* CTA */}
           <div className="mt-20 rounded-2xl bg-brand-900 px-8 py-12 text-center">
             <h2 className="text-2xl font-semibold text-white">

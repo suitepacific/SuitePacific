@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Check, Minus, GitCompare, Mail } from "lucide-react";
+import { Check, Minus, GitCompare } from "lucide-react";
 import { Nav } from "@/components/nav/Nav";
 import { Footer } from "@/components/sections/Footer";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -23,8 +23,8 @@ const PLANS = [
       { text: "Production + Sandbox environments", included: true },
       { text: "Unlimited script comparisons", included: true },
       { text: "1 user", included: true },
-      { text: "Up to 10 clients", included: false },
-      { text: "Multiple users", included: false },
+      { text: "Multiple clients", included: false },
+      { text: "Team members", included: false },
     ],
     highlight: false,
   },
@@ -39,8 +39,8 @@ const PLANS = [
       { text: "Unlimited environments per client", included: true },
       { text: "Unlimited script comparisons", included: true },
       { text: "1 user", included: true },
-      { text: "Multiple users", included: false },
-      { text: "SSO & audit logs", included: false },
+      { text: "Multiple clients", included: true },
+      { text: "Team members", included: false },
     ],
     highlight: true,
     badge: "Most popular",
@@ -56,24 +56,8 @@ const PLANS = [
       { text: "Unlimited environments per client", included: true },
       { text: "Unlimited script comparisons", included: true },
       { text: "Up to 5 users", included: true },
-      { text: "Multiple users", included: true },
-      { text: "SSO & audit logs", included: false },
-    ],
-    highlight: false,
-  },
-  {
-    name: "Enterprise",
-    price: "Custom",
-    period: "",
-    description: "For large NetSuite partners with advanced security and compliance needs.",
-    cta: { label: "Contact us", href: "mailto:hello@suitepacific.com", primary: false },
-    features: [
-      { text: "Unlimited clients", included: true },
-      { text: "Unlimited environments per client", included: true },
-      { text: "Unlimited script comparisons", included: true },
-      { text: "Unlimited users", included: true },
-      { text: "Multiple users", included: true },
-      { text: "SSO & audit logs", included: true },
+      { text: "Multiple clients", included: true },
+      { text: "Team members", included: true },
     ],
     highlight: false,
   },
@@ -103,7 +87,7 @@ export default function SuiteComparePricingPage() {
     <>
       <Nav />
       <main className="pt-32 pb-24 sm:pt-40 sm:pb-32">
-        <div className="mx-auto max-w-5xl px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8">
 
           {/* Header */}
           <div className="text-center mb-14">
@@ -120,7 +104,7 @@ export default function SuiteComparePricingPage() {
           </div>
 
           {/* Plans grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid sm:grid-cols-3 gap-5">
             {PLANS.map((plan) => (
               <div
                 key={plan.name}
@@ -176,7 +160,6 @@ export default function SuiteComparePricingPage() {
                       : "border border-brand-100 text-brand-700 hover:bg-brand-50"
                   }`}
                 >
-                  {plan.name === "Enterprise" && <Mail className="h-3.5 w-3.5 mr-1.5" />}
                   {plan.cta.label}
                 </Link>
               </div>
