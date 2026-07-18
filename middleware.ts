@@ -96,6 +96,7 @@ export async function middleware(request: NextRequest) {
       pathname === "/suitecompare" ||
       pathname === "/suitecompare/pricing" ||
       pathname === "/suitecompare/invite" ||
+      pathname === "/suitecompare/activate" ||
       pathname === "/suitecompare/login" ||
       pathname === "/suitecompare/signup" ||
       pathname === "/suitecompare/verify" ||

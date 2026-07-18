@@ -48,3 +48,18 @@ export async function setSeatLimitOverrideAction(formData: FormData): Promise<vo
   await prisma.scOrg.update({ where: { id: orgId }, data: { seatLimitOverride: limit } });
   revalidate(userId);
 }
+
+export async function setClientLimitOverrideAction(formData: FormData): Promise<void> {
+  await requireAdmin();
+  const orgId = String(formData.get("orgId") ?? "").trim();
+  const userId = String(formData.get("userId") ?? "").trim();
+  const raw = formData.get("limit");
+
+  if (!orgId) return;
+
+  const limit = raw === "" || raw === null ? null : parseInt(String(raw), 10);
+  if (limit !== null && (isNaN(limit) || limit < 1 || limit > 200)) return;
+
+  await prisma.scOrg.update({ where: { id: orgId }, data: { clientLimitOverride: limit } });
+  revalidate(userId);
+}

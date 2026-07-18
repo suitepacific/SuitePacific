@@ -3,11 +3,12 @@ import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { AlertTriangle, CheckCircle2, Clock, User, Building2, Server, CreditCard } from "lucide-react";
-import { getSeatLimit } from "@/lib/sc-plans";
+import { getSeatLimit, getClientLimit } from "@/lib/sc-plans";
 import {
   setOrgPlanAction,
   setOrgBillingStatusAction,
   setSeatLimitOverrideAction,
+  setClientLimitOverrideAction,
 } from "./actions";
 
 function fmt(d: Date | null | undefined) {
@@ -234,11 +235,11 @@ export default async function ScUserDetailPage({ params }: Props) {
 
             {/* Seat limit override */}
             <div>
-              <p className="text-xs text-brand-400 mb-1">Seat limit</p>
+              <p className="text-xs text-brand-400 mb-1">User seats</p>
               <p className="text-xs text-brand-300 mb-2">
-                Default for {org.plan}: {getSeatLimit(org.plan)} seats.
+                Default for {org.plan}: {getSeatLimit(org.plan)}.
                 {org.seatLimitOverride != null && (
-                  <span className="ml-1 text-accent font-medium">Override active: {org.seatLimitOverride} seats.</span>
+                  <span className="ml-1 text-accent font-medium">Override: {org.seatLimitOverride}.</span>
                 )}
               </p>
               <div className="flex items-center gap-2 flex-wrap">
@@ -254,24 +255,49 @@ export default async function ScUserDetailPage({ params }: Props) {
                     placeholder="e.g. 10"
                     className="w-24 rounded-lg border border-brand-100 px-3 py-1.5 text-xs text-brand-900 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent"
                   />
-                  <button
-                    type="submit"
-                    className="rounded-lg border border-brand-100 bg-white px-3 py-1.5 text-xs font-medium text-brand-600 hover:bg-brand-50 transition-colors"
-                  >
-                    Set
-                  </button>
+                  <button type="submit" className="rounded-lg border border-brand-100 bg-white px-3 py-1.5 text-xs font-medium text-brand-600 hover:bg-brand-50 transition-colors">Set</button>
                 </form>
                 {org.seatLimitOverride != null && (
                   <form action={setSeatLimitOverrideAction}>
                     <input type="hidden" name="orgId" value={org.id} />
                     <input type="hidden" name="userId" value={user.id} />
                     <input type="hidden" name="limit" value="" />
-                    <button
-                      type="submit"
-                      className="rounded-lg px-3 py-1.5 text-xs text-brand-400 hover:text-red-500 transition-colors"
-                    >
-                      Clear override
-                    </button>
+                    <button type="submit" className="rounded-lg px-3 py-1.5 text-xs text-brand-400 hover:text-red-500 transition-colors">Clear</button>
+                  </form>
+                )}
+              </div>
+            </div>
+
+            {/* Client limit override */}
+            <div>
+              <p className="text-xs text-brand-400 mb-1">NetSuite accounts (clients)</p>
+              <p className="text-xs text-brand-300 mb-2">
+                Default for {org.plan}: {getClientLimit(org.plan)}.
+                {org.clientLimitOverride != null && (
+                  <span className="ml-1 text-accent font-medium">Override: {org.clientLimitOverride}.</span>
+                )}
+              </p>
+              <div className="flex items-center gap-2 flex-wrap">
+                <form action={setClientLimitOverrideAction} className="flex items-center gap-2">
+                  <input type="hidden" name="orgId" value={org.id} />
+                  <input type="hidden" name="userId" value={user.id} />
+                  <input
+                    name="limit"
+                    type="number"
+                    min={1}
+                    max={200}
+                    defaultValue={org.clientLimitOverride ?? ""}
+                    placeholder="e.g. 5"
+                    className="w-24 rounded-lg border border-brand-100 px-3 py-1.5 text-xs text-brand-900 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent"
+                  />
+                  <button type="submit" className="rounded-lg border border-brand-100 bg-white px-3 py-1.5 text-xs font-medium text-brand-600 hover:bg-brand-50 transition-colors">Set</button>
+                </form>
+                {org.clientLimitOverride != null && (
+                  <form action={setClientLimitOverrideAction}>
+                    <input type="hidden" name="orgId" value={org.id} />
+                    <input type="hidden" name="userId" value={user.id} />
+                    <input type="hidden" name="limit" value="" />
+                    <button type="submit" className="rounded-lg px-3 py-1.5 text-xs text-brand-400 hover:text-red-500 transition-colors">Clear</button>
                   </form>
                 )}
               </div>

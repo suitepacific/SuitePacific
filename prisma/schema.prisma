@@ -376,8 +376,9 @@ model ScOrg {
   slug              String              @unique
   plan              String              @default("free")
   billingStatus     String              @default("active") // "active" | "past_due" | "suspended"
-  seatLimitOverride Int?
-  planExpiresAt     DateTime?
+  seatLimitOverride   Int?
+  clientLimitOverride Int?
+  planExpiresAt       DateTime?
   archivedAt        DateTime?
   createdAt         DateTime            @default(now())
   members    ScOrgMember[]
@@ -458,6 +459,25 @@ model ScScript {
 
   @@unique([environmentId, scriptId])
   @@index([environmentId])
+}
+
+model ScAdminInvite {
+  id             String    @id @default(cuid())
+  email          String
+  name           String?
+  plan           String    @default("pro")
+  seatLimit      Int       @default(1)
+  clientLimit    Int       @default(1)
+  requirePayment Boolean   @default(false)
+  notes          String?
+  token          String    @unique
+  sentAt         DateTime  @default(now())
+  expiresAt      DateTime
+  activatedAt    DateTime?
+  userId         String?
+
+  @@index([email])
+  @@index([token])
 }
 
 model ScComparison {
