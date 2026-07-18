@@ -9,6 +9,10 @@ function fmt(d: Date | null | undefined) {
   return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", hour: "2-digit", minute: "2-digit" });
 }
 
+function toFlag(code: string): string {
+  return [...code.toUpperCase()].map((c) => String.fromCodePoint(0x1f1e6 + c.charCodeAt(0) - 65)).join("");
+}
+
 function fmtDate(d: Date | null | undefined) {
   if (!d) return "—";
   return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
@@ -124,6 +128,10 @@ export default async function ScUserDetailPage({ params }: Props) {
             )}
             {row("Registered", fmtDate(user.createdAt))}
             {row("Last login", fmt(user.lastLoginAt))}
+            {row("Location", user.signupCountry
+              ? <span className="flex items-center gap-1.5 justify-end">{toFlag(user.signupCountry)}{user.signupCity ? `${user.signupCity}, ` : ""}{user.signupCountry}</span>
+              : "—"
+            )}
           </div>
         )}
 

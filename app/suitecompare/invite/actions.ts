@@ -2,7 +2,7 @@
 
 import { prisma } from "@/lib/prisma";
 import { getScUserFromRequest } from "@/lib/sc-auth";
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
 import {
   SC_SESSION_COOKIE,
@@ -107,8 +107,12 @@ export async function signupViaInviteAction(
   }
 
   const passwordHash = await hashScPassword(password);
+  const h = await headers();
+  const signupCountry = h.get("x-vercel-ip-country") ?? null;
+  const rawCity = h.get("x-vercel-ip-city");
+  const signupCity = rawCity ? decodeURIComponent(rawCity) : null;
   const user = await prisma.scUser.create({
-    data: { name, email, passwordHash, emailVerified: true },
+    data: { name, email, passwordHash, emailVerified: true, signupCountry, signupCity },
   });
 
   const ok = await consumeInvite(token, user.id);

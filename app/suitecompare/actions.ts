@@ -1,6 +1,6 @@
 "use server";
 
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import {
@@ -12,6 +12,14 @@ import {
 } from "@/lib/sc-auth";
 import { generateOtp, sendOtpEmail, sendPasswordResetEmail } from "@/lib/sc-email";
 import crypto from "crypto";
+
+async function getSignupLocation(): Promise<{ signupCountry: string | null; signupCity: string | null }> {
+  const h = await headers();
+  const country = h.get("x-vercel-ip-country") ?? null;
+  const rawCity = h.get("x-vercel-ip-city");
+  const city = rawCity ? decodeURIComponent(rawCity) : null;
+  return { signupCountry: country, signupCity: city };
+}
 
 async function acceptPendingInvite(token: string, userId: string): Promise<void> {
   const invite = await prisma.scInvite.findUnique({ where: { token } });
@@ -106,8 +114,9 @@ export async function signupScAction(
     if (existing) redirect(`/suitecompare/login?invite=${inviteToken}`);
 
     const passwordHash = await hashScPassword(password);
+    const loc = await getSignupLocation();
     const user = await prisma.scUser.create({
-      data: { name, email, passwordHash, emailVerified: true },
+      data: { name, email, passwordHash, emailVerified: true, ...loc },
     });
 
     await acceptPendingInvite(inviteToken, user.id);
@@ -138,9 +147,10 @@ export async function signupScAction(
   const otp = generateOtp();
   const otpExpiry = new Date(Date.now() + 10 * 60 * 1000);
   const passwordHash = await hashScPassword(password);
+  const loc = await getSignupLocation();
 
   const user = await prisma.scUser.create({
-    data: { name, email, passwordHash, otp, otpExpiry, emailVerified: false },
+    data: { name, email, passwordHash, otp, otpExpiry, emailVerified: false, ...loc },
   });
 
   const org = await prisma.scOrg.create({ data: { name: orgName, slug: finalSlug } });

@@ -4,6 +4,10 @@ import Link from "next/link";
 
 const PAGE_SIZE = 25;
 
+function toFlag(code: string): string {
+  return [...code.toUpperCase()].map((c) => String.fromCodePoint(0x1f1e6 + c.charCodeAt(0) - 65)).join("");
+}
+
 function fmt(d: Date | null | undefined) {
   if (!d) return "—";
   return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
@@ -101,12 +105,13 @@ export default async function SuiteCompareUsersPage({ searchParams }: Props) {
                 <th className="px-5 py-3 text-xs font-semibold text-brand-400 uppercase tracking-wide">Registered</th>
                 <th className="px-5 py-3 text-xs font-semibold text-brand-400 uppercase tracking-wide">Last Login</th>
                 <th className="px-5 py-3 text-xs font-semibold text-brand-400 uppercase tracking-wide">Status</th>
+                <th className="px-5 py-3 text-xs font-semibold text-brand-400 uppercase tracking-wide">Location</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-brand-50">
               {users.length === 0 && (
                 <tr>
-                  <td colSpan={6} className="px-5 py-8 text-center text-sm text-brand-300">
+                  <td colSpan={7} className="px-5 py-8 text-center text-sm text-brand-300">
                     {q ? "No users match your search." : "No users yet."}
                   </td>
                 </tr>
@@ -130,6 +135,14 @@ export default async function SuiteCompareUsersPage({ searchParams }: Props) {
                       ) : (
                         <span className="inline-flex rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-600">Unverified</span>
                       )}
+                    </td>
+                    <td className="px-5 py-3.5 text-brand-400 text-xs">
+                      {u.signupCountry ? (
+                        <span className="flex items-center gap-1.5">
+                          <span>{toFlag(u.signupCountry)}</span>
+                          <span>{u.signupCity ? `${u.signupCity}, ` : ""}{u.signupCountry}</span>
+                        </span>
+                      ) : "—"}
                     </td>
                   </tr>
                 );

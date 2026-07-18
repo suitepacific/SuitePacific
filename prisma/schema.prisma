@@ -360,6 +360,8 @@ model ScUser {
   passwordResetToken   String?
   passwordResetExpiry  DateTime?
   lastLoginAt          DateTime?
+  signupCountry        String?
+  signupCity           String?
   archivedAt           DateTime?
   createdAt            DateTime      @default(now())
   memberships          ScOrgMember[]
