@@ -14,7 +14,12 @@ import { generateOtp, sendOtpEmail, sendPasswordResetEmail } from "@/lib/sc-emai
 import crypto from "crypto";
 
 async function setSession(userId: string) {
-  const token = await createScSessionToken(userId);
+  const { sessionVersion } = await prisma.scUser.update({
+    where: { id: userId },
+    data: { sessionVersion: { increment: 1 } },
+    select: { sessionVersion: true },
+  });
+  const token = await createScSessionToken(userId, sessionVersion);
   const cookieStore = await cookies();
   cookieStore.set(SC_SESSION_COOKIE, token, {
     httpOnly: true,

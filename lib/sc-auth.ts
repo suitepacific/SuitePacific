@@ -54,32 +54,35 @@ export async function verifyScPassword(plain: string, hash: string): Promise<boo
   return bcrypt.compare(plain, hash);
 }
 
-export async function createScSessionToken(userId: string): Promise<string> {
+// Token format: sc.<userId>.<sessionVersion>.<expiresMs>.<sig>
+export async function createScSessionToken(userId: string, sessionVersion: number): Promise<string> {
   const expires = Date.now() + SESSION_MAX_AGE_SECONDS * 1000;
-  const payload = `sc.${userId}.${expires}`;
+  const payload = `sc.${userId}.${sessionVersion}.${expires}`;
   const signature = await hmacSign(payload);
   return `${payload}.${signature}`;
 }
 
 export async function verifyScSessionToken(
   token: string | undefined
-): Promise<{ userId: string } | null> {
+): Promise<{ userId: string; sessionVersion: number } | null> {
   if (!token) return null;
   const parts = token.split(".");
-  if (parts.length !== 4) return null;
+  if (parts.length !== 5) return null;
 
-  const [role, userId, expiresStr, signature] = parts;
-  if (role !== "sc") return null;
-  if (!userId) return null;
+  const [role, userId, sessionVersionStr, expiresStr, signature] = parts;
+  if (role !== "sc" || !userId) return null;
 
-  const payload = `sc.${userId}.${expiresStr}`;
+  const payload = `sc.${userId}.${sessionVersionStr}.${expiresStr}`;
   const isValidSig = await hmacVerify(payload, signature);
   if (!isValidSig) return null;
 
   const expires = Number(expiresStr);
   if (!Number.isFinite(expires) || Date.now() >= expires) return null;
 
-  return { userId };
+  const sessionVersion = Number(sessionVersionStr);
+  if (!Number.isInteger(sessionVersion) || sessionVersion < 1) return null;
+
+  return { userId, sessionVersion };
 }
 
 export async function getScUserFromRequest(): Promise<ScUser | null> {
@@ -89,6 +92,8 @@ export async function getScUserFromRequest(): Promise<ScUser | null> {
   if (!result) return null;
   const user = await prisma.scUser.findUnique({ where: { id: result.userId } });
   if (!user || user.status !== "active") return null;
+  // Single-session enforcement: if sessionVersion doesn't match, another device logged in
+  if (user.sessionVersion !== result.sessionVersion) return null;
   return user;
 }
 

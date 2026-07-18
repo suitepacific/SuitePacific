@@ -348,19 +348,20 @@ enum InvoiceStatus {
 // ─── SuiteCompare ─────────────────────────────────────────────────────────────
 
 model ScUser {
-  id            String        @id @default(cuid())
-  email         String        @unique
-  name          String
-  passwordHash  String
-  status        String        @default("active")
-  emailVerified        Boolean   @default(false)
+  id                   String        @id @default(cuid())
+  email                String        @unique
+  name                 String
+  passwordHash         String
+  status               String        @default("active")
+  emailVerified        Boolean       @default(false)
+  sessionVersion       Int           @default(1)
   otp                  String?
   otpExpiry            DateTime?
   passwordResetToken   String?
   passwordResetExpiry  DateTime?
-  archivedAt    DateTime?
-  createdAt     DateTime      @default(now())
-  memberships   ScOrgMember[]
+  archivedAt           DateTime?
+  createdAt            DateTime      @default(now())
+  memberships          ScOrgMember[]
 
   @@index([archivedAt])
 }
