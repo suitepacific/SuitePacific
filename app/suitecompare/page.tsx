@@ -10,6 +10,10 @@ import {
   Lock,
   MousePointerClick,
   CheckCircle2,
+  GitBranch,
+  FileText,
+  Shuffle,
+  Search,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
@@ -58,6 +62,33 @@ const WORKFLOW_BENEFITS = [
     title: "Built for NetSuite TBA",
     description:
       "Connects via Token-Based Authentication. No admin credentials stored, no shared logins. Designed for how NetSuite security actually works.",
+  },
+];
+
+const ROADMAP_ITEMS = [
+  {
+    icon: GitBranch,
+    title: "Script deployments and parameters",
+    description:
+      "Compare deployment status, execution context, and parameter values across environments. Catch configuration drift before it causes a production issue.",
+  },
+  {
+    icon: FileText,
+    title: "Advanced PDF templates",
+    description:
+      "Diff the FreeMarker markup in your PDF templates the same way you diff scripts.",
+  },
+  {
+    icon: Shuffle,
+    title: "Workflow comparison",
+    description:
+      "See how SuiteFlow workflows differ between Sandbox and Production, state by state.",
+  },
+  {
+    icon: Search,
+    title: "Saved searches",
+    description:
+      "Compare saved search criteria and columns across environments.",
   },
 ];
 
@@ -178,6 +209,31 @@ export default async function SuiteCompareHomePage() {
                   <IconBadge icon={item.icon} />
                   <div>
                     <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
+                    <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Roadmap */}
+          <div className="mt-20">
+            <SectionHeading
+              eyebrow="On the roadmap"
+              title="Script comparison is just the start"
+              align="center"
+            />
+            <div className="mt-10 grid sm:grid-cols-2 gap-5">
+              {ROADMAP_ITEMS.map((item) => (
+                <Card key={item.title} className="p-5 flex items-start gap-4 opacity-80">
+                  <IconBadge icon={item.icon} />
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
+                      <span className="inline-flex items-center rounded-full bg-brand-50 border border-brand-100 px-2 py-0.5 text-xs text-brand-400">
+                        Coming soon
+                      </span>
+                    </div>
                     <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
                   </div>
                 </Card>
