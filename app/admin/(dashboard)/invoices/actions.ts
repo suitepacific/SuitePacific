@@ -8,12 +8,25 @@ import { requireAdmin } from "@/lib/auth";
 const VALID_STATUSES = new Set(["DRAFT", "SENT", "PAID", "VOID"]);
 const VALID_CURRENCIES = new Set(["USD", "AUD", "GBP", "EUR", "CAD", "NZD", "SGD", "INR"]);
 
-async function nextInvoiceNumber(): Promise<string> {
+function toCustomerCode(company: string): string {
+  return company
+    .toUpperCase()
+    .replace(/[^A-Z]/g, "")
+    .slice(0, 4)
+    .padEnd(4, "X");
+}
+
+async function nextInvoiceNumber(company: string): Promise<string> {
   const year = new Date().getFullYear();
   const count = await prisma.invoice.count({
-    where: { invoiceNumber: { startsWith: `SP-${year}-` } },
+    where: {
+      createdAt: {
+        gte: new Date(`${year}-01-01T00:00:00.000Z`),
+        lt: new Date(`${year + 1}-01-01T00:00:00.000Z`),
+      },
+    },
   });
-  return `SP-${year}-${String(count + 1).padStart(3, "0")}`;
+  return `SP-${toCustomerCode(company)}-${year}-${String(count + 1).padStart(3, "0")}`;
 }
 
 export async function createInvoiceAction(_prev: unknown, formData: FormData) {
@@ -101,7 +114,7 @@ export async function createInvoiceAction(_prev: unknown, formData: FormData) {
   const taxAmount = Math.round(subtotal * taxPercent) / 100;
   const total = subtotal + taxAmount;
 
-  const invoiceNumber = await nextInvoiceNumber();
+  const invoiceNumber = await nextInvoiceNumber(customer.company);
 
   const invoice = await prisma.invoice.create({
     data: {
