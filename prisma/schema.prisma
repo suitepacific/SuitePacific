@@ -371,12 +371,15 @@ model ScUser {
 }
 
 model ScOrg {
-  id         String              @id @default(cuid())
-  name       String
-  slug       String              @unique
-  plan       String              @default("free")
-  archivedAt DateTime?
-  createdAt  DateTime            @default(now())
+  id                String              @id @default(cuid())
+  name              String
+  slug              String              @unique
+  plan              String              @default("free")
+  billingStatus     String              @default("active") // "active" | "past_due" | "suspended"
+  seatLimitOverride Int?
+  planExpiresAt     DateTime?
+  archivedAt        DateTime?
+  createdAt         DateTime            @default(now())
   members    ScOrgMember[]
   nsAccounts ScNetSuiteAccount[]
   invites    ScInvite[]

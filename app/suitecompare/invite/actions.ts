@@ -2,6 +2,7 @@
 
 import { prisma } from "@/lib/prisma";
 import { getScUserFromRequest } from "@/lib/sc-auth";
+import { getSeatLimit } from "@/lib/sc-plans";
 import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
 import {
@@ -39,7 +40,7 @@ async function consumeInvite(token: string, userId: string): Promise<boolean> {
   });
   if (!org) return false;
 
-  const seatLimit = org.plan === "team" ? 5 : 1;
+  const seatLimit = getSeatLimit(org.plan, org.seatLimitOverride);
   if (org.members.length >= seatLimit) return false;
 
   // Already a member? Just mark invite used and proceed

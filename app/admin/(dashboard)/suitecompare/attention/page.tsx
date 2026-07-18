@@ -1,7 +1,7 @@
 import { requireAdmin } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
-import { AlertTriangle, UserX, ServerOff, WifiOff } from "lucide-react";
+import { AlertTriangle, UserX, ServerOff, WifiOff, CreditCard, ShieldOff } from "lucide-react";
 
 function fmtDate(d: Date) {
   return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
@@ -10,8 +10,7 @@ function fmtDate(d: Date) {
 export default async function AttentionPage() {
   await requireAdmin();
 
-  const [neverConnected, noEnvironments, recentFailures] = await Promise.all([
-    // Registered but never connected a NetSuite account
+  const [neverConnected, noEnvironments, recentFailures, pastDueOrgs, suspendedOrgs] = await Promise.all([
     prisma.scUser.findMany({
       where: {
         status: "active",
@@ -21,17 +20,12 @@ export default async function AttentionPage() {
       orderBy: { createdAt: "desc" },
     }),
 
-    // Has an account but no environments added yet
     prisma.scUser.findMany({
       where: {
         status: "active",
         memberships: {
           some: {
-            org: {
-              nsAccounts: {
-                some: { environments: { none: {} } },
-              },
-            },
+            org: { nsAccounts: { some: { environments: { none: {} } } } },
           },
         },
       },
@@ -39,7 +33,6 @@ export default async function AttentionPage() {
       orderBy: { createdAt: "desc" },
     }),
 
-    // Users with recent comparison failures (last 7 days)
     prisma.scComparison.findMany({
       where: {
         status: "failed",
@@ -49,9 +42,36 @@ export default async function AttentionPage() {
       select: { userId: true, createdAt: true, errorMsg: true },
       orderBy: { createdAt: "desc" },
     }),
+
+    prisma.scOrg.findMany({
+      where: { billingStatus: "past_due" },
+      select: {
+        id: true,
+        name: true,
+        plan: true,
+        members: {
+          where: { role: "owner" },
+          take: 1,
+          select: { user: { select: { id: true, name: true, email: true, lastLoginAt: true } } },
+        },
+      },
+    }),
+
+    prisma.scOrg.findMany({
+      where: { billingStatus: "suspended" },
+      select: {
+        id: true,
+        name: true,
+        plan: true,
+        members: {
+          where: { role: "owner" },
+          take: 1,
+          select: { user: { select: { id: true, name: true, email: true, lastLoginAt: true } } },
+        },
+      },
+    }),
   ]);
 
-  // Fetch user details for failure entries
   const failureUserIds = recentFailures.map((f) => f.userId);
   const failureUsers =
     failureUserIds.length > 0
@@ -62,10 +82,16 @@ export default async function AttentionPage() {
       : [];
   const failureUserMap = Object.fromEntries(failureUsers.map((u) => [u.id, u]));
 
-  const total = neverConnected.length + noEnvironments.length + recentFailures.length;
+  const total =
+    neverConnected.length +
+    noEnvironments.length +
+    recentFailures.length +
+    pastDueOrgs.length +
+    suspendedOrgs.length;
 
   function group(
     icon: React.ReactNode,
+    iconColor: string,
     title: string,
     description: string,
     users: { id: string; name: string; email: string; createdAt: Date; lastLoginAt?: Date | null }[]
@@ -74,7 +100,7 @@ export default async function AttentionPage() {
     return (
       <div>
         <div className="flex items-center gap-2.5 mb-3">
-          <span className="text-amber-500">{icon}</span>
+          <span className={iconColor}>{icon}</span>
           <div>
             <h2 className="text-sm font-semibold text-brand-900">
               {title} <span className="ml-1.5 text-brand-400 font-normal">({users.length})</span>
@@ -113,6 +139,69 @@ export default async function AttentionPage() {
     );
   }
 
+  function billingGroup(
+    icon: React.ReactNode,
+    iconColor: string,
+    title: string,
+    description: string,
+    orgs: typeof suspendedOrgs
+  ) {
+    if (orgs.length === 0) return null;
+    return (
+      <div>
+        <div className="flex items-center gap-2.5 mb-3">
+          <span className={iconColor}>{icon}</span>
+          <div>
+            <h2 className="text-sm font-semibold text-brand-900">
+              {title} <span className="ml-1.5 text-brand-400 font-normal">({orgs.length})</span>
+            </h2>
+            <p className="text-xs text-brand-400">{description}</p>
+          </div>
+        </div>
+        <div className="bg-white rounded-2xl border border-brand-50 shadow-soft overflow-hidden">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-brand-50 bg-brand-50/40">
+                <th className="text-left px-5 py-3 text-xs font-semibold text-brand-400 uppercase tracking-wide">Organization</th>
+                <th className="text-left px-5 py-3 text-xs font-semibold text-brand-400 uppercase tracking-wide">Owner</th>
+                <th className="text-left px-5 py-3 text-xs font-semibold text-brand-400 uppercase tracking-wide">Plan</th>
+                <th className="text-left px-5 py-3 text-xs font-semibold text-brand-400 uppercase tracking-wide">Last login</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-brand-50">
+              {orgs.map((org) => {
+                const owner = org.members[0]?.user;
+                return (
+                  <tr key={org.id} className="hover:bg-brand-50/40 transition-colors">
+                    <td className="px-5 py-3.5 font-medium text-brand-900">{org.name}</td>
+                    <td className="px-5 py-3.5">
+                      {owner ? (
+                        <>
+                          <Link href={`/admin/suitecompare/users/${owner.id}`} className="text-brand-900 hover:text-accent">
+                            {owner.name}
+                          </Link>
+                          <p className="text-xs text-brand-400 mt-0.5">{owner.email}</p>
+                        </>
+                      ) : (
+                        <span className="text-brand-400 text-xs">—</span>
+                      )}
+                    </td>
+                    <td className="px-5 py-3.5">
+                      <span className="capitalize text-xs text-brand-600">{org.plan}</span>
+                    </td>
+                    <td className="px-5 py-3.5 text-brand-400 text-xs">
+                      {owner?.lastLoginAt ? fmtDate(owner.lastLoginAt) : "Never"}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-8">
       {total === 0 ? (
@@ -126,12 +215,29 @@ export default async function AttentionPage() {
           <div className="flex items-center gap-2.5 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3">
             <AlertTriangle className="h-4 w-4 text-amber-500 shrink-0" />
             <p className="text-sm text-amber-800">
-              <strong>{total}</strong> user{total !== 1 ? "s" : ""} may need your attention.
+              <strong>{total}</strong> item{total !== 1 ? "s" : ""} may need your attention.
             </p>
           </div>
 
+          {billingGroup(
+            <ShieldOff className="h-4 w-4" />,
+            "text-red-500",
+            "Suspended accounts",
+            "These orgs have been suspended and cannot access SuiteCompare.",
+            suspendedOrgs
+          )}
+
+          {billingGroup(
+            <CreditCard className="h-4 w-4" />,
+            "text-amber-500",
+            "Past-due accounts",
+            "Payment overdue — service interruption pending if not resolved.",
+            pastDueOrgs
+          )}
+
           {group(
             <UserX className="h-4 w-4" />,
+            "text-amber-500",
             "Never connected an environment",
             "Registered but haven't added a NetSuite account yet.",
             neverConnected
@@ -139,6 +245,7 @@ export default async function AttentionPage() {
 
           {group(
             <ServerOff className="h-4 w-4" />,
+            "text-amber-500",
             "Account connected, no environments",
             "Added a client account but haven't set up Production or Sandbox.",
             noEnvironments

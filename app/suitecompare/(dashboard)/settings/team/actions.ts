@@ -3,12 +3,9 @@
 import { prisma } from "@/lib/prisma";
 import { requireScUser } from "@/lib/sc-auth";
 import { sendInviteEmail } from "@/lib/sc-email";
+import { getSeatLimit } from "@/lib/sc-plans";
 import { revalidatePath } from "next/cache";
 import crypto from "crypto";
-
-function getSeatLimit(plan: string): number {
-  return plan === "team" ? 5 : 1;
-}
 
 export async function inviteMemberAction(
   _prev: unknown,
@@ -28,7 +25,7 @@ export async function inviteMemberAction(
   });
   if (!membership) return { error: "Only org owners can invite members." };
 
-  const seatLimit = getSeatLimit(membership.org.plan);
+  const seatLimit = getSeatLimit(membership.org.plan, membership.org.seatLimitOverride);
   if (membership.org.members.length >= seatLimit) {
     return {
       error: `Your ${membership.org.plan} plan supports up to ${seatLimit} user${seatLimit === 1 ? "" : "s"}. Upgrade to Team to add more.`,

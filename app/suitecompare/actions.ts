@@ -12,6 +12,7 @@ import {
 } from "@/lib/sc-auth";
 import { generateOtp, sendOtpEmail, sendPasswordResetEmail } from "@/lib/sc-email";
 import crypto from "crypto";
+import { getSeatLimit } from "@/lib/sc-plans";
 
 async function getSignupLocation(): Promise<{ signupCountry: string | null; signupCity: string | null }> {
   const h = await headers();
@@ -31,7 +32,7 @@ async function acceptPendingInvite(token: string, userId: string): Promise<void>
   });
   if (!org) return;
 
-  const seatLimit = org.plan === "team" ? 5 : 1;
+  const seatLimit = getSeatLimit(org.plan, org.seatLimitOverride);
   if (org.members.length >= seatLimit) return;
 
   const alreadyMember = await prisma.scOrgMember.findFirst({
