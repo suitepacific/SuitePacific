@@ -16,13 +16,14 @@ const PLANS = [
     name: "Free",
     price: "$0",
     period: "",
-    description: "For developers trying SuiteCompare with one client.",
+    description: "Perfect for individual NetSuite developers.",
     cta: { label: "Start free", href: "/suitecompare/signup", primary: false },
     features: [
       { text: "1 client", included: true },
       { text: "Production + Sandbox environments", included: true },
       { text: "Unlimited script comparisons", included: true },
       { text: "1 user", included: true },
+      { text: "No credit card required", included: true },
     ],
     highlight: false,
   },
@@ -30,7 +31,7 @@ const PLANS = [
     name: "Pro",
     price: "$29",
     period: "/month",
-    description: "For freelancers and consultants managing multiple clients.",
+    description: "Built for consultants managing multiple NetSuite accounts.",
     cta: { label: "Get started", href: "/suitecompare/signup", primary: true },
     features: [
       { text: "Up to 10 clients", included: true },
@@ -45,7 +46,7 @@ const PLANS = [
     name: "Team",
     price: "$99",
     period: "/month",
-    description: "For NetSuite consulting firms managing many clients across a team.",
+    description: "For consulting firms with multiple developers on the same accounts.",
     cta: { label: "Get started", href: "/suitecompare/signup", primary: false },
     features: [
       { text: "Unlimited clients", included: true },

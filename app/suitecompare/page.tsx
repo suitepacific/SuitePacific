@@ -14,6 +14,7 @@ import {
   FileText,
   Shuffle,
   Search,
+  Check,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
@@ -278,7 +279,8 @@ export default async function SuiteCompareHomePage() {
                 {
                   name: "Free",
                   price: "$0",
-                  description: "1 client, Production + Sandbox, 1 user.",
+                  tagline: "Perfect for individual NetSuite developers.",
+                  features: ["1 client", "Production + Sandbox", "Unlimited comparisons", "No credit card required"],
                   cta: "Start free",
                   href: "/suitecompare/signup",
                   highlight: false,
@@ -286,7 +288,8 @@ export default async function SuiteCompareHomePage() {
                 {
                   name: "Pro",
                   price: "$29/mo",
-                  description: "Up to 10 clients, unlimited environments, 1 user.",
+                  tagline: "Built for consultants managing multiple NetSuite accounts.",
+                  features: ["Up to 10 clients", "Unlimited environments", "Unlimited comparisons", "1 user"],
                   cta: "Get started",
                   href: "/suitecompare/signup",
                   highlight: true,
@@ -295,7 +298,8 @@ export default async function SuiteCompareHomePage() {
                 {
                   name: "Team",
                   price: "$99/mo",
-                  description: "Unlimited clients, up to 5 users.",
+                  tagline: "For consulting firms with multiple developers on the same accounts.",
+                  features: ["Unlimited clients", "Unlimited environments", "Up to 5 users"],
                   cta: "Get started",
                   href: "/suitecompare/signup",
                   highlight: false,
@@ -303,7 +307,7 @@ export default async function SuiteCompareHomePage() {
               ].map((plan) => (
                 <div
                   key={plan.name}
-                  className={`relative rounded-2xl border p-6 flex flex-col gap-4 ${
+                  className={`relative rounded-2xl border p-6 flex flex-col ${
                     plan.highlight
                       ? "border-accent bg-accent/5 shadow-lg"
                       : "border-brand-50 bg-white shadow-soft"
@@ -314,16 +318,24 @@ export default async function SuiteCompareHomePage() {
                       {plan.badge}
                     </span>
                   )}
-                  <div>
+                  <div className="mb-4">
                     <p className="text-xs font-semibold uppercase tracking-widest text-brand-400 mb-1">
                       {plan.name}
                     </p>
                     <p className="text-2xl font-bold text-brand-900">{plan.price}</p>
-                    <p className="mt-1.5 text-xs text-brand-400">{plan.description}</p>
+                    <p className="mt-2 text-xs text-brand-500 leading-relaxed">{plan.tagline}</p>
                   </div>
+                  <ul className="space-y-1.5 flex-1 mb-5">
+                    {plan.features.map((f) => (
+                      <li key={f} className="flex items-center gap-2 text-xs text-brand-600">
+                        <Check className="h-3 w-3 text-emerald-500 shrink-0" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
                   <Link
                     href={plan.href}
-                    className={`mt-auto inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                    className={`inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                       plan.highlight
                         ? "bg-accent text-white hover:bg-accent/90"
                         : "border border-brand-100 text-brand-700 hover:bg-brand-50"
