@@ -74,11 +74,21 @@ export async function addCustomerCommentAction(_prev: unknown, formData: FormDat
   return { success: true };
 }
 
+function safeUrl(raw: string | null): string | null {
+  if (!raw) return null;
+  try {
+    const p = new URL(raw);
+    return p.protocol === "https:" || p.protocol === "http:" ? raw : null;
+  } catch { return null; }
+}
+
 export async function updateCustomerProfileAction(_prev: unknown, formData: FormData) {
   const customer = await getCustomerFromRequest();
   if (!customer) redirect("/customer-portal/login");
 
-  const website = (formData.get("website") as string)?.trim().slice(0, 500) || null;
+  const websiteRaw = (formData.get("website") as string)?.trim().slice(0, 500) || null;
+  const website = safeUrl(websiteRaw);
+  if (websiteRaw && !website) return { error: "Website must be a valid http or https URL." };
   const country = (formData.get("country") as string)?.trim().slice(0, 100) || null;
   const timezone = (formData.get("timezone") as string)?.trim().slice(0, 100) || null;
 

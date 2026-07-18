@@ -11,8 +11,25 @@ const securityHeaders = [
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
   // Disable unnecessary browser features
   { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
-  // Prevent XSS via reflected content
+  // Prevent XSS via reflected content (legacy browsers)
   { key: "X-XSS-Protection", value: "1; mode=block" },
+  // Content Security Policy — restricts script/style/frame sources
+  {
+    key: "Content-Security-Policy",
+    value: [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval'", // Next.js requires unsafe-inline/eval
+      "style-src 'self' 'unsafe-inline'",                // Tailwind inline styles
+      "img-src 'self' data: https:",                     // logo, og images
+      "font-src 'self'",
+      "connect-src 'self'",
+      "frame-src 'none'",
+      "frame-ancestors 'none'",                          // stronger than X-Frame-Options
+      "base-uri 'self'",
+      "form-action 'self'",
+      "object-src 'none'",
+    ].join("; "),
+  },
 ];
 
 const nextConfig: NextConfig = {

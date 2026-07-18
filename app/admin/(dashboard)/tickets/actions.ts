@@ -24,6 +24,9 @@ export async function updateTicketAction(_prev: unknown, formData: FormData) {
   if (!VALID_PRIORITIES.has(priority)) return { error: "Invalid priority." };
   if (!VALID_TYPES.has(type)) return { error: "Invalid type." };
 
+  const ticket = await prisma.ticket.findUnique({ where: { id }, select: { id: true } });
+  if (!ticket) return { error: "Ticket not found." };
+
   await prisma.ticket.update({
     where: { id },
     data: { status: status as never, priority: priority as never, type: type as never, assignedTo, internalNotes, updatedAt: new Date() },

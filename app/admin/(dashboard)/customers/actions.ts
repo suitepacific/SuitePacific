@@ -8,13 +8,21 @@ import { requireAdmin } from "@/lib/auth";
 
 const EMAIL_RE = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
 
+function safeUrl(raw: string | null): string | null {
+  if (!raw) return null;
+  try {
+    const p = new URL(raw);
+    return p.protocol === "https:" || p.protocol === "http:" ? raw : null;
+  } catch { return null; }
+}
+
 export async function createCustomerAction(_prev: unknown, formData: FormData) {
   await requireAdmin();
 
   const name = (formData.get("name") as string)?.trim();
   const email = (formData.get("email") as string)?.trim().toLowerCase();
   const company = (formData.get("company") as string)?.trim();
-  const website = (formData.get("website") as string)?.trim() || null;
+  const websiteRaw = (formData.get("website") as string)?.trim() || null;
   const country = (formData.get("country") as string)?.trim().slice(0, 100) || null;
   const password = formData.get("password") as string;
 
@@ -22,7 +30,10 @@ export async function createCustomerAction(_prev: unknown, formData: FormData) {
   if (name.length > 200) return { error: "Name is too long." };
   if (email.length > 254 || !EMAIL_RE.test(email)) return { error: "Invalid email address." };
   if (company.length > 200) return { error: "Company name is too long." };
-  if (password.length < 8 || password.length > 200) return { error: "Password must be 8–200 characters." };
+  if (password.length < 8 || password.length > 200) return { error: "Password must be 8–200 characters." }
+
+  const website = safeUrl(websiteRaw);
+  if (websiteRaw && !website) return { error: "Website must be a valid http or https URL." };;
 
   const existing = await prisma.customer.findUnique({ where: { email } });
   if (existing) return { error: "A customer with this email already exists." };
@@ -49,10 +60,15 @@ export async function updateCustomerAction(_prev: unknown, formData: FormData) {
   await requireAdmin();
 
   const id = (formData.get("id") as string)?.trim();
-  if (!id) return { error: "Missing customer ID." };
+  if (!id || id.length > 100) return { error: "Missing customer ID." };
+
+  const customer = await prisma.customer.findUnique({ where: { id }, select: { id: true } });
+  if (!customer) return { error: "Customer not found." };
 
   const company = (formData.get("company") as string)?.trim().slice(0, 200) || null;
-  const website = (formData.get("website") as string)?.trim().slice(0, 500) || null;
+  const websiteRaw2 = (formData.get("website") as string)?.trim().slice(0, 500) || null;
+  const website = safeUrl(websiteRaw2);
+  if (websiteRaw2 && !website) return { error: "Website must be a valid http or https URL." };
   const country = (formData.get("country") as string)?.trim().slice(0, 100) || null;
   const timezone = (formData.get("timezone") as string)?.trim().slice(0, 100) || null;
 

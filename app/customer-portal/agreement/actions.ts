@@ -10,7 +10,10 @@ export async function acceptAgreementAction() {
   if (!customer) redirect("/customer-portal/login");
 
   const headerStore = await headers();
-  const ip = headerStore.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  const ip =
+    headerStore.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+    headerStore.get("x-real-ip") ??
+    "unknown";
 
   await prisma.customer.update({
     where: { id: customer.id },

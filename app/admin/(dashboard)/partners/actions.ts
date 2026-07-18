@@ -9,13 +9,21 @@ import { requireAdmin } from "@/lib/auth";
 const EMAIL_RE = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
 const VALID_PAYMENT_METHODS = new Set(["bank_transfer", "paypal", "wise", "check", ""]);
 
+function safeUrl(raw: string | null): string | null {
+  if (!raw) return null;
+  try {
+    const p = new URL(raw);
+    return p.protocol === "https:" || p.protocol === "http:" ? raw : null;
+  } catch { return null; }
+}
+
 export async function createPartnerAction(_prev: unknown, formData: FormData) {
   await requireAdmin();
 
   const name = (formData.get("name") as string)?.trim();
   const email = (formData.get("email") as string)?.trim().toLowerCase();
   const company = (formData.get("company") as string)?.trim() || null;
-  const website = (formData.get("website") as string)?.trim() || null;
+  const websiteRaw = (formData.get("website") as string)?.trim() || null;
   const country = (formData.get("country") as string)?.trim().slice(0, 100) || null;
   const commissionRateRaw = (formData.get("commissionRate") as string)?.trim();
   const password = formData.get("password") as string;
@@ -25,6 +33,9 @@ export async function createPartnerAction(_prev: unknown, formData: FormData) {
   if (email.length > 254 || !EMAIL_RE.test(email)) return { error: "Invalid email address." };
   if (company && company.length > 200) return { error: "Company name is too long." };
   if (password.length < 8 || password.length > 200) return { error: "Password must be 8–200 characters." };
+
+  const website = safeUrl(websiteRaw);
+  if (websiteRaw && !website) return { error: "Website must be a valid http or https URL." };
 
   const commissionRate = commissionRateRaw ? parseFloat(commissionRateRaw) : null;
   if (commissionRate !== null && (isNaN(commissionRate) || commissionRate < 0 || commissionRate > 100)) {
@@ -46,10 +57,15 @@ export async function updatePartnerAction(_prev: unknown, formData: FormData) {
   await requireAdmin();
 
   const id = (formData.get("id") as string)?.trim();
-  if (!id) return { error: "Missing partner ID." };
+  if (!id || id.length > 100) return { error: "Missing partner ID." };
+
+  const partner = await prisma.partner.findUnique({ where: { id }, select: { id: true } });
+  if (!partner) return { error: "Partner not found." };
 
   const company = (formData.get("company") as string)?.trim().slice(0, 200) || null;
-  const website = (formData.get("website") as string)?.trim().slice(0, 500) || null;
+  const websiteRaw = (formData.get("website") as string)?.trim().slice(0, 500) || null;
+  const website = safeUrl(websiteRaw);
+  if (websiteRaw && !website) return { error: "Website must be a valid http or https URL." };
   const country = (formData.get("country") as string)?.trim().slice(0, 100) || null;
   const timezone = (formData.get("timezone") as string)?.trim().slice(0, 100) || null;
   const commissionRateRaw = (formData.get("commissionRate") as string)?.trim();

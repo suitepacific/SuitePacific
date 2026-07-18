@@ -114,9 +114,12 @@ export async function createInvoiceAction(_prev: unknown, formData: FormData) {
   const taxAmount = Math.round(subtotal * taxPercent) / 100;
   const total = subtotal + taxAmount;
 
-  const invoiceNumber = await nextInvoiceNumber(customer.company);
+  let invoiceNumber = await nextInvoiceNumber(customer.company);
 
-  const invoice = await prisma.invoice.create({
+  // Retry once on the rare duplicate-number race condition (unique constraint on invoiceNumber)
+  let invoice;
+  try {
+    invoice = await prisma.invoice.create({
     data: {
       customerId,
       invoiceNumber,
@@ -138,7 +141,25 @@ export async function createInvoiceAction(_prev: unknown, formData: FormData) {
         })),
       },
     },
-  });
+    });
+  } catch (e: unknown) {
+    const code = (e as { code?: string })?.code;
+    if (code === "P2002") {
+      // Unique constraint on invoiceNumber — regenerate and retry once
+      invoiceNumber = await nextInvoiceNumber(customer.company);
+      invoice = await prisma.invoice.create({
+        data: {
+          customerId, invoiceNumber, issueDate, dueDate, currency, notes, taxPercent,
+          subtotal: Math.round(subtotal * 100) / 100,
+          taxAmount: Math.round(taxAmount * 100) / 100,
+          total: Math.round(total * 100) / 100,
+          items: { create: allItems.map((i) => ({ description: i.description, quantity: i.quantity, unitPrice: i.unitPrice, amount: Math.round(i.amount * 100) / 100, timeEntryId: i.timeEntryId })) },
+        },
+      });
+    } else {
+      throw e;
+    }
+  }
 
   redirect(`/admin/invoices/${invoice.id}`);
 }
@@ -151,6 +172,9 @@ export async function updateInvoiceStatusAction(_prev: unknown, formData: FormDa
 
   if (!id || id.length > 100) return { error: "Invalid invoice ID." };
   if (!VALID_STATUSES.has(status)) return { error: "Invalid status." };
+
+  const inv = await prisma.invoice.findUnique({ where: { id }, select: { id: true } });
+  if (!inv) return { error: "Invoice not found." };
 
   const data: Record<string, unknown> = { status };
   if (status === "PAID") data.paidAt = new Date();
@@ -167,7 +191,9 @@ export async function updateInvoiceNotesAction(_prev: unknown, formData: FormDat
   const notes = (formData.get("notes") as string)?.trim().slice(0, 2000) || null;
   const dueDate = (formData.get("dueDate") as string)?.trim() || null;
 
-  if (!id) return { error: "Missing invoice ID." };
+  if (!id || id.length > 100) return { error: "Missing invoice ID." };
+  const inv2 = await prisma.invoice.findUnique({ where: { id }, select: { id: true } });
+  if (!inv2) return { error: "Invoice not found." };
   await prisma.invoice.update({
     where: { id },
     data: { notes, dueDate: dueDate ? new Date(dueDate) : null },
