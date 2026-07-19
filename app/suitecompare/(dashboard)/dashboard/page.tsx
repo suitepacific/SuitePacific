@@ -12,6 +12,7 @@ import {
   ClipboardList,
   BadgeCheck,
 } from "lucide-react";
+import { getClientLimit } from "@/lib/sc-plans";
 import { EnvironmentBadge } from "@/components/suitecompare/EnvironmentBadge";
 
 const TRUST_ITEMS = [
@@ -73,7 +74,8 @@ export default async function DashboardPage() {
 
   const accounts = membership?.org.nsAccounts ?? [];
   const plan = membership?.org.plan ?? "free";
-  const addAccountLocked = plan === "free" && accounts.length >= 1;
+  const clientLimit = getClientLimit(plan, membership?.org.clientLimitOverride ?? null);
+  const addAccountLocked = accounts.length >= clientLimit;
   const totalScripts = accounts.reduce(
     (sum, acct) =>
       sum + acct.environments.reduce((s, env) => s + env._count.scripts, 0),

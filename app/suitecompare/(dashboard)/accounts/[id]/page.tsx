@@ -2,7 +2,7 @@ import { requireScUser } from "@/lib/sc-auth";
 import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, GitCompare, FileCode2 } from "lucide-react";
+import { ArrowLeft, GitCompare, FileCode2, KeyRound } from "lucide-react";
 import { EnvironmentBadge } from "@/components/suitecompare/EnvironmentBadge";
 import { ScriptTypeBadge } from "@/components/suitecompare/ScriptTypeBadge";
 import { BrowseScriptForm } from "./BrowseScriptForm";
@@ -47,6 +47,7 @@ export default async function AccountPage({ params }: Props) {
 
   const productionEnv = account.environments.find((e) => e.type === "production");
   const sandboxEnvs = account.environments.filter((e) => e.type !== "production");
+  const allUnconfigured = account.environments.every((e) => !e.tokenKey);
 
   // Deduplicated scripts keyed by scriptId
   const scriptMap = new Map<
@@ -90,6 +91,22 @@ export default async function AccountPage({ params }: Props) {
           Account ID: {account.nsAccountId}
         </p>
       </div>
+
+      {/* TBA setup banner — shown until at least one environment has credentials */}
+      {allUnconfigured && (
+        <div className="mb-6 rounded-xl bg-accent/5 border border-accent/15 p-4 flex gap-3">
+          <KeyRound className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+          <div>
+            <p className="text-sm font-semibold text-brand-900">Connect to NetSuite</p>
+            <p className="text-xs text-brand-500 mt-0.5 leading-relaxed">
+              Click the <span className="font-medium text-brand-700">⚙ settings icon</span> on any
+              environment card below to enter your TBA credentials. Without credentials, script
+              content is shown as demo data. In NetSuite, find your credentials under{" "}
+              <span className="font-medium text-brand-700">Setup → Integration → Manage Integrations</span>.
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* Environments */}
       <div className="mb-8">
