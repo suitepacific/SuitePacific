@@ -64,7 +64,7 @@ export default async function InvitePage({ searchParams }: Props) {
         ) : (
           // Not logged in — show signup form, link to login
           <div className="bg-white rounded-2xl border border-brand-100 shadow-soft p-7">
-            <SignupViaInviteForm token={token} />
+            <SignupViaInviteForm token={token} invitedEmail={invite!.email} />
             <p className="mt-5 text-center text-xs text-brand-400">
               Already have an account?{" "}
               <Link href={`/suitecompare/login?invite=${token}`} className="text-accent hover:underline">

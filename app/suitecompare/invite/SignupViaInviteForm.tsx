@@ -4,7 +4,7 @@ import { useActionState } from "react";
 import { Loader2 } from "lucide-react";
 import { signupViaInviteAction } from "./actions";
 
-export function SignupViaInviteForm({ token }: { token: string }) {
+export function SignupViaInviteForm({ token, invitedEmail }: { token: string; invitedEmail: string }) {
   const [state, action, pending] = useActionState(signupViaInviteAction, {});
 
   return (
@@ -28,16 +28,16 @@ export function SignupViaInviteForm({ token }: { token: string }) {
 
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-brand-700 mb-1.5">
-          Work email
+          Email
         </label>
         <input
           id="email"
           name="email"
           type="email"
           required
-          autoComplete="email"
-          className="w-full rounded-lg border border-brand-100 px-3.5 py-2.5 text-sm text-brand-900 placeholder:text-brand-300 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent"
-          placeholder="jane@company.com"
+          readOnly
+          value={invitedEmail}
+          className="w-full rounded-lg border border-brand-100 px-3.5 py-2.5 text-sm text-brand-900 bg-brand-50 cursor-not-allowed"
         />
       </div>
 

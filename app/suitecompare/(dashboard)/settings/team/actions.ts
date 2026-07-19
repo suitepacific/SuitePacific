@@ -15,6 +15,7 @@ export async function inviteMemberAction(
   const email = String(formData.get("email") ?? "").toLowerCase().trim();
 
   if (!email) return { error: "Email is required." };
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return { error: "Please enter a valid email address." };
   if (email === user.email) return { error: "You cannot invite yourself." };
 
   const membership = await prisma.scOrgMember.findFirst({

@@ -22,9 +22,12 @@ async function getSignupLocation(): Promise<{ signupCountry: string | null; sign
   return { signupCountry: country, signupCity: city };
 }
 
-async function acceptPendingInvite(token: string, userId: string): Promise<void> {
+async function acceptPendingInvite(token: string, userId: string, userEmail: string): Promise<void> {
   const invite = await prisma.scInvite.findUnique({ where: { token } });
   if (!invite || invite.usedAt || invite.expiresAt < new Date()) return;
+
+  // Invite must be for this specific user's email
+  if (invite.email !== userEmail) return;
 
   const org = await prisma.scOrg.findUnique({
     where: { id: invite.orgId },
@@ -86,7 +89,7 @@ export async function loginScAction(
     redirect(`/suitecompare/verify?email=${encodeURIComponent(email)}`);
   }
 
-  if (inviteToken) await acceptPendingInvite(inviteToken, user.id);
+  if (inviteToken) await acceptPendingInvite(inviteToken, user.id, user.email);
 
   await setSession(user.id);
   redirect("/suitecompare/dashboard");
@@ -111,6 +114,11 @@ export async function signupScAction(
       return { error: "This invite link is invalid or has expired." };
     }
 
+    // Invite is tied to a specific email address
+    if (invite.email !== email) {
+      return { error: "This invite was sent to a different email address." };
+    }
+
     const existing = await prisma.scUser.findUnique({ where: { email } });
     if (existing) redirect(`/suitecompare/login?invite=${inviteToken}`);
 
@@ -120,7 +128,7 @@ export async function signupScAction(
       data: { name, email, passwordHash, emailVerified: true, ...loc },
     });
 
-    await acceptPendingInvite(inviteToken, user.id);
+    await acceptPendingInvite(inviteToken, user.id, user.email);
     await setSession(user.id);
     redirect("/suitecompare/dashboard");
   }

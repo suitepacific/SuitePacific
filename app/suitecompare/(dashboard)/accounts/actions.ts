@@ -6,6 +6,7 @@ import { requireScUser } from "@/lib/sc-auth";
 import { inferScriptName, inferScriptType } from "@/lib/sc-mock";
 import { encrypt, decrypt } from "@/lib/sc-crypto";
 import { testCredentials, fetchScriptMeta, hasCredentials } from "@/lib/sc-netsuite";
+import { getClientLimit } from "@/lib/sc-plans";
 import { revalidatePath } from "next/cache";
 
 export async function updateEnvironmentAction(
@@ -147,8 +148,9 @@ export async function addNsAccountAction(
   });
   if (!membership) return { error: "Organization not found." };
 
-  if (membership.org.plan === "free" && membership.org.nsAccounts.length >= 1) {
-    return { error: "Free plan is limited to 1 client. Upgrade to Pro to add more." };
+  const clientLimit = getClientLimit(membership.org.plan, membership.org.clientLimitOverride);
+  if (membership.org.nsAccounts.length >= clientLimit) {
+    return { error: `Your plan allows up to ${clientLimit} client${clientLimit === 1 ? "" : "s"}. Upgrade to add more.` };
   }
 
   const account = await prisma.scNetSuiteAccount.create({
