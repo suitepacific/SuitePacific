@@ -40,19 +40,22 @@ export default async function SuiteCompareUsersPage({ searchParams }: Props) {
       }
     : { status: "active" as const };
 
-  const [users, total] = await Promise.all([
+  const [users, total, adminInviteRows] = await Promise.all([
     prisma.scUser.findMany({
       where,
       orderBy: { createdAt: "desc" },
       skip,
       take: PAGE_SIZE,
-      include: {
-        memberships: { include: { org: true }, take: 1 },
-      },
+      include: { memberships: { include: { org: true }, take: 1 } },
     }),
     prisma.scUser.count({ where }),
+    prisma.scAdminInvite.findMany({
+      where: { userId: { not: null }, activatedAt: { not: null } },
+      select: { userId: true },
+    }),
   ]);
 
+  const adminInvitedIds = new Set(adminInviteRows.map((r) => r.userId!));
   const totalPages = Math.ceil(total / PAGE_SIZE);
 
   function pageUrl(p: number) {
@@ -65,7 +68,6 @@ export default async function SuiteCompareUsersPage({ searchParams }: Props) {
 
   return (
     <div>
-      {/* Search bar */}
       <form className="mb-5 flex gap-2 max-w-sm" method="GET">
         <input
           name="q"
@@ -73,17 +75,11 @@ export default async function SuiteCompareUsersPage({ searchParams }: Props) {
           placeholder="Search name or email..."
           className="flex-1 rounded-lg border border-brand-100 px-3.5 py-2 text-sm text-brand-900 placeholder:text-brand-300 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent"
         />
-        <button
-          type="submit"
-          className="rounded-lg border border-brand-100 bg-white px-4 py-2 text-sm font-medium text-brand-600 hover:bg-brand-50 transition-colors"
-        >
+        <button type="submit" className="rounded-lg border border-brand-100 bg-white px-4 py-2 text-sm font-medium text-brand-600 hover:bg-brand-50 transition-colors">
           Search
         </button>
         {q && (
-          <Link
-            href="/admin/suitecompare/users"
-            className="rounded-lg border border-brand-100 bg-white px-3 py-2 text-sm text-brand-400 hover:text-brand-700 transition-colors"
-          >
+          <Link href="/admin/suitecompare/users" className="rounded-lg border border-brand-100 bg-white px-3 py-2 text-sm text-brand-400 hover:text-brand-700 transition-colors">
             Clear
           </Link>
         )}
@@ -118,12 +114,18 @@ export default async function SuiteCompareUsersPage({ searchParams }: Props) {
               )}
               {users.map((u) => {
                 const org = u.memberships[0]?.org;
+                const isViaInvite = adminInvitedIds.has(u.id);
                 return (
                   <tr key={u.id} className="hover:bg-brand-50/40 transition-colors">
                     <td className="px-5 py-3.5">
-                      <Link href={`/admin/suitecompare/users/${u.id}`} className="font-medium text-brand-900 hover:text-accent">
-                        {u.name}
-                      </Link>
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <Link href={`/admin/suitecompare/users/${u.id}`} className="font-medium text-brand-900 hover:text-accent">
+                          {u.name}
+                        </Link>
+                        {isViaInvite && (
+                          <span className="inline-flex rounded-full bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">Invited</span>
+                        )}
+                      </div>
                     </td>
                     <td className="px-5 py-3.5 text-brand-500">{u.email}</td>
                     <td className="px-5 py-3.5">{planBadge(org?.plan)}</td>
@@ -151,28 +153,15 @@ export default async function SuiteCompareUsersPage({ searchParams }: Props) {
           </table>
         </div>
 
-        {/* Pagination */}
         {totalPages > 1 && (
           <div className="flex items-center justify-between px-5 py-3 border-t border-brand-50">
-            <p className="text-xs text-brand-400">
-              Page {page} of {totalPages}
-            </p>
+            <p className="text-xs text-brand-400">Page {page} of {totalPages}</p>
             <div className="flex gap-1">
               {page > 1 && (
-                <Link
-                  href={pageUrl(page - 1)}
-                  className="rounded-lg border border-brand-100 px-3 py-1.5 text-xs text-brand-600 hover:bg-brand-50 transition-colors"
-                >
-                  Previous
-                </Link>
+                <Link href={pageUrl(page - 1)} className="rounded-lg border border-brand-100 px-3 py-1.5 text-xs text-brand-600 hover:bg-brand-50 transition-colors">Previous</Link>
               )}
               {page < totalPages && (
-                <Link
-                  href={pageUrl(page + 1)}
-                  className="rounded-lg border border-brand-100 px-3 py-1.5 text-xs text-brand-600 hover:bg-brand-50 transition-colors"
-                >
-                  Next
-                </Link>
+                <Link href={pageUrl(page + 1)} className="rounded-lg border border-brand-100 px-3 py-1.5 text-xs text-brand-600 hover:bg-brand-50 transition-colors">Next</Link>
               )}
             </div>
           </div>
