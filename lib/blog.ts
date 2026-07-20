@@ -1,50 +1,53 @@
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 import { marked } from "marked";
 import readingTime from "reading-time";
-import { prisma } from "./prisma";
 import type { BlogPost, BlogPostMeta } from "./types";
 
-function toTags(tags: string): string[] {
-  return tags
-    .split(",")
-    .map((t) => t.trim())
-    .filter(Boolean);
+const BLOG_DIR = path.join(process.cwd(), "content/blog");
+
+function slugsFromDisk(): string[] {
+  if (!fs.existsSync(BLOG_DIR)) return [];
+  return fs
+    .readdirSync(BLOG_DIR)
+    .filter((f) => f.endsWith(".md"))
+    .map((f) => f.replace(/\.md$/, ""));
 }
 
 export async function getAllSlugs(): Promise<string[]> {
-  const posts = await prisma.post.findMany({
-    where: { published: true },
-    select: { slug: true },
-  });
-  return posts.map((p) => p.slug);
+  return slugsFromDisk();
 }
 
 export async function getAllPosts(): Promise<BlogPostMeta[]> {
-  const posts = await prisma.post.findMany({
-    where: { published: true },
-    orderBy: { date: "desc" },
-  });
-
-  return posts.map((post) => ({
-    slug: post.slug,
-    title: post.title,
-    description: post.description,
-    date: post.date.toISOString(),
-    tags: toTags(post.tags),
-    readingTime: readingTime(post.content).text,
-  }));
+  return slugsFromDisk()
+    .map((slug) => {
+      const raw = fs.readFileSync(path.join(BLOG_DIR, `${slug}.md`), "utf-8");
+      const { data, content } = matter(raw);
+      return {
+        slug,
+        title: data.title as string,
+        description: data.description as string,
+        date: data.date as string,
+        tags: (data.tags as string[]) ?? [],
+        readingTime: readingTime(content).text,
+      };
+    })
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
-  const post = await prisma.post.findUnique({ where: { slug, published: true } });
-  if (!post) return null;
-
+  const filePath = path.join(BLOG_DIR, `${slug}.md`);
+  if (!fs.existsSync(filePath)) return null;
+  const raw = fs.readFileSync(filePath, "utf-8");
+  const { data, content } = matter(raw);
   return {
-    slug: post.slug,
-    title: post.title,
-    description: post.description,
-    date: post.date.toISOString(),
-    tags: toTags(post.tags),
-    readingTime: readingTime(post.content).text,
-    contentHtml: marked.parse(post.content, { async: false }) as string,
+    slug,
+    title: data.title as string,
+    description: data.description as string,
+    date: data.date as string,
+    tags: (data.tags as string[]) ?? [],
+    readingTime: readingTime(content).text,
+    contentHtml: marked.parse(content, { async: false }) as string,
   };
 }
