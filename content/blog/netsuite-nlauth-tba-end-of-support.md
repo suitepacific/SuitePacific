@@ -1,0 +1,67 @@
+---
+title: "NetSuite Is Retiring NLAuth and TBA: What Developers Need to Do Before 2027.1"
+description: "NetSuite 2026.2 confirms end of support for NLAuth in 2027.1 and new TBA integrations in 2027.1, with full TBA retirement tentatively planned for 2028.1. Here is what you need to know and what to do now."
+date: "2026-07-21"
+tags: ["Authentication", "SuiteScript", "Security"]
+---
+
+NLAuth is one of the oldest authentication methods in NetSuite. It works by passing your account ID, email, and password directly in an HTTP Authorization header. Easy to implement, nothing to configure, and used in thousands of RESTlet integrations built over the last decade.
+
+NetSuite is ending it.
+
+The 2026.2 release notes confirm two changes coming in 2027.1 and one tentatively planned for 2028.1.
+
+## What is being retired and when
+
+**As of 2027.1:**
+
+- All integrations that use NLAuth as an authentication method will stop working. This includes RESTlets that currently authenticate with NLAuth credentials.
+- You will not be able to create new integrations using Token-Based Authentication (TBA).
+
+**Tentatively planned for 2028.1:**
+
+- TBA will be fully retired. Existing TBA integrations that currently work will stop working when this happens.
+
+## Why NLAuth is being retired
+
+NLAuth passes your NetSuite account email and password with every request. If those credentials are compromised, an attacker can log directly into NetSuite, not just call your API. NetSuite has been phasing it out for years. 2027.1 is the hard cutoff.
+
+TBA is more secure but is based on OAuth 1.0. OAuth 2.0 is the current standard, and NetSuite's direction is to move all integrations there.
+
+## What to do if you use NLAuth
+
+You need to migrate before 2027.1. The options are:
+
+**Option 1: Migrate to TBA (faster)**
+TBA uses consumer key, consumer secret, token key, and token secret. It is more secure than NLAuth, still widely supported, and the migration is straightforward. The catch: you cannot create new TBA integrations from 2027.1, and TBA itself is tentatively being retired in 2028.1. Migrating to TBA now buys you time but is not the final destination.
+
+**Option 2: Migrate directly to OAuth 2.0 (recommended)**
+OAuth 2.0 is what NetSuite recommends. It takes more setup but is the long-term solution. If you have the capacity to do this migration now, skip TBA and go straight to OAuth 2.0.
+
+For both options, the starting point is the same: create an Integration Record in NetSuite at **Setup > Integration > Manage Integrations > New**, and generate credentials from there.
+
+## What to do if you use TBA
+
+If you have existing TBA integrations, you have more runway. They will continue working until TBA is fully retired, which is tentatively planned for 2028.1. However:
+
+- You cannot create new TBA integrations from 2027.1.
+- The 2028.1 retirement date is tentative and could change.
+
+Plan your migration to OAuth 2.0 now. Do not wait until you are forced to.
+
+## One more change in 2027.1: PKCE for OAuth 2.0
+
+If you are already using OAuth 2.0 Authorization Code Grant Flow, PKCE (Proof Key for Code Exchange) will be required as of 2027.1. If your current implementation does not include PKCE, add it before the deadline.
+
+## Summary of changes and timeline
+
+| Change | When |
+|---|---|
+| NLAuth stops working | NetSuite 2027.1 |
+| New TBA integrations blocked | NetSuite 2027.1 |
+| PKCE required for OAuth 2.0 Authorization Code Grant | NetSuite 2027.1 |
+| TBA fully retired (tentative) | NetSuite 2028.1 |
+
+Start your audit now. Find every integration that uses NLAuth or was built with TBA credentials, and map out which ones need to move to OAuth 2.0 and by when.
+
+If you need help migrating your integrations, see [How to Migrate NetSuite Integrations from NLAuth to Token-Based Authentication](/resources/netsuite-nlauth-to-tba-migration).
