@@ -143,11 +143,13 @@ function CopyButton({ content, side }: { content: string; side: "left" | "right"
 function DiffRow({
   row,
   chunkId,
+  isActive,
   onApplyRight,
   onApplyLeft,
 }: {
   row: ChunkRow;
   chunkId?: number;
+  isActive?: boolean;
   onApplyRight?: (idx: number) => void;
   onApplyLeft?: (idx: number) => void;
 }) {
@@ -156,15 +158,23 @@ function DiffRow({
 
   const leftBg =
     row.kind === "removed"
-      ? "bg-red-50 border-l-2 border-l-red-400"
+      ? isActive
+        ? "bg-red-100 border-l-[3px] border-l-red-500"
+        : "bg-red-50 border-l-2 border-l-red-400"
       : row.kind === "added"
-      ? "bg-emerald-50/30"
+      ? isActive
+        ? "bg-emerald-50/50"
+        : "bg-emerald-50/30"
       : "";
   const rightBg =
     row.kind === "added"
-      ? "bg-emerald-50 border-l-2 border-l-emerald-400"
+      ? isActive
+        ? "bg-emerald-100 border-l-[3px] border-l-emerald-500"
+        : "bg-emerald-50 border-l-2 border-l-emerald-400"
       : row.kind === "removed"
-      ? "bg-red-50/30"
+      ? isActive
+        ? "bg-red-50/50"
+        : "bg-red-50/30"
       : "";
 
   return (
@@ -260,6 +270,9 @@ export function DiffViewer({
     return result;
   }, [rows]);
 
+  // The chunkIdx value of the currently focused diff block (for highlighting)
+  const activeChunkValue = diffChunks.length > 0 ? diffChunks[activeDiff] : null;
+
   const applyToRight = useCallback(
     (chunkIdx: number) => {
       const newRight = changes
@@ -346,8 +359,8 @@ export function DiffViewer({
 
   return (
     <div className="flex flex-col gap-3">
-      {/* Summary + navigation */}
-      <div className="flex items-center justify-between flex-wrap gap-2">
+      {/* Summary + navigation — sticky so nav stays visible while scrolling the diff */}
+      <div className="sticky top-14 md:top-4 z-10 flex items-center justify-between flex-wrap gap-2 bg-white/90 backdrop-blur-sm rounded-xl border border-brand-100 shadow-sm px-3 py-2">
         <div className="flex items-center gap-4 text-xs font-medium">
           <span className="text-emerald-600">+{added} added</span>
           <span className="text-red-500">−{removed} removed</span>
@@ -391,6 +404,7 @@ export function DiffViewer({
                     <DiffRow
                       key={`exp-${seg.id}-${i}`}
                       row={row}
+                      isActive={row.kind !== "unchanged" && row.chunkIdx === activeChunkValue}
                       onApplyRight={applyToRight}
                       onApplyLeft={applyToLeft}
                     />
@@ -429,6 +443,7 @@ export function DiffViewer({
                     key={`row-${segIdx}-${i}`}
                     row={row}
                     chunkId={isChunkStart ? row.chunkIdx : undefined}
+                    isActive={row.kind !== "unchanged" && row.chunkIdx === activeChunkValue}
                     onApplyRight={applyToRight}
                     onApplyLeft={applyToLeft}
                   />

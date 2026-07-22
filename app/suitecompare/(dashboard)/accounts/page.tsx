@@ -1,8 +1,9 @@
 import { requireScUser } from "@/lib/sc-auth";
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
-import { Building2, Plus, GitCompare, FileCode2 } from "lucide-react";
+import { Building2, Plus, GitCompare, FileCode2, Lock } from "lucide-react";
 import { EnvironmentBadge } from "@/components/suitecompare/EnvironmentBadge";
+import { getClientLimit } from "@/lib/sc-plans";
 
 export default async function AccountsPage() {
   const user = await requireScUser();
@@ -29,6 +30,8 @@ export default async function AccountsPage() {
   });
 
   const accounts = membership?.org.nsAccounts ?? [];
+  const clientLimit = getClientLimit(membership?.org.plan ?? "free", membership?.org.clientLimitOverride ?? null);
+  const addLocked = accounts.length >= clientLimit;
 
   return (
     <div className="max-w-4xl">
@@ -39,13 +42,24 @@ export default async function AccountsPage() {
             NetSuite accounts connected to your workspace
           </p>
         </div>
-        <Link
-          href="/suitecompare/accounts/new"
-          className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent/90 transition-colors shrink-0"
-        >
-          <Plus className="h-4 w-4" />
-          Add Account
-        </Link>
+        {addLocked ? (
+          <Link
+            href="/suitecompare/pricing"
+            className="inline-flex items-center gap-2 rounded-full bg-brand-100 px-4 py-2 text-sm font-medium text-brand-400 hover:bg-brand-200 hover:text-brand-600 transition-colors shrink-0"
+            title="View upgrade options"
+          >
+            <Lock className="h-4 w-4" />
+            Add Account
+          </Link>
+        ) : (
+          <Link
+            href="/suitecompare/accounts/new"
+            className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent/90 transition-colors shrink-0"
+          >
+            <Plus className="h-4 w-4" />
+            Add Account
+          </Link>
+        )}
       </div>
 
       {accounts.length === 0 ? (
@@ -108,17 +122,30 @@ export default async function AccountsPage() {
             );
           })}
 
-          <Link
-            href="/suitecompare/accounts/new"
-            className="rounded-2xl border-2 border-dashed border-brand-100 p-5 flex flex-col items-center justify-center text-center gap-2 min-h-[160px] hover:border-accent/30 hover:bg-accent/5 transition-all group"
-          >
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-100 group-hover:bg-accent/10 transition-colors">
-              <Plus className="h-4 w-4 text-brand-400 group-hover:text-accent transition-colors" />
-            </div>
-            <p className="text-sm font-medium text-brand-400 group-hover:text-accent transition-colors">
-              Add NetSuite Account
-            </p>
-          </Link>
+          {addLocked ? (
+            <Link
+              href="/suitecompare/pricing"
+              className="rounded-2xl border-2 border-dashed border-brand-100 p-5 flex flex-col items-center justify-center text-center gap-2 min-h-[160px] hover:border-accent/20 hover:bg-accent/5 transition-all group"
+            >
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-100 group-hover:bg-accent/10 transition-colors">
+                <Lock className="h-4 w-4 text-brand-400 group-hover:text-accent transition-colors" />
+              </div>
+              <p className="text-sm font-medium text-brand-400 group-hover:text-accent transition-colors">Upgrade plan</p>
+              <p className="text-xs text-brand-300">View pricing to add more clients</p>
+            </Link>
+          ) : (
+            <Link
+              href="/suitecompare/accounts/new"
+              className="rounded-2xl border-2 border-dashed border-brand-100 p-5 flex flex-col items-center justify-center text-center gap-2 min-h-[160px] hover:border-accent/30 hover:bg-accent/5 transition-all group"
+            >
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-100 group-hover:bg-accent/10 transition-colors">
+                <Plus className="h-4 w-4 text-brand-400 group-hover:text-accent transition-colors" />
+              </div>
+              <p className="text-sm font-medium text-brand-400 group-hover:text-accent transition-colors">
+                Add NetSuite Account
+              </p>
+            </Link>
+          )}
         </div>
       )}
     </div>

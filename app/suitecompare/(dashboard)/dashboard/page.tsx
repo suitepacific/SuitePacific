@@ -34,7 +34,7 @@ const TRUST_ITEMS = [
   {
     icon: Users,
     title: "Complete account isolation",
-    body: "Each organization is fully isolated. Your scripts never appear in another tenant&apos;s workspace. Isolation is enforced at the data layer, not just the UI layer.",
+    body: "Each organization is fully isolated. Your scripts never appear in another tenant's workspace. Isolation is enforced at the data layer, not just the UI layer.",
   },
   {
     icon: ClipboardList,
@@ -53,6 +53,7 @@ export default async function DashboardPage() {
 
   const membership = await prisma.scOrgMember.findFirst({
     where: { userId: user.id },
+    orderBy: { createdAt: "asc" },
     include: {
       org: {
         include: {
@@ -92,13 +93,14 @@ export default async function DashboardPage() {
           </p>
         </div>
         {addAccountLocked ? (
-          <span
-            title="Upgrade to add more clients"
-            className="inline-flex items-center gap-2 rounded-full bg-brand-100 px-4 py-2 text-sm font-medium text-brand-400 cursor-not-allowed shrink-0"
+          <Link
+            href="/suitecompare/pricing"
+            className="inline-flex items-center gap-2 rounded-full bg-brand-100 px-4 py-2 text-sm font-medium text-brand-400 hover:bg-brand-200 hover:text-brand-600 transition-colors shrink-0"
+            title="View upgrade options"
           >
             <Lock className="h-4 w-4" />
             Add Client
-          </span>
+          </Link>
         ) : (
           <Link
             href="/suitecompare/accounts/new"
@@ -187,13 +189,16 @@ export default async function DashboardPage() {
 
           {/* Add account card */}
           {addAccountLocked ? (
-            <div className="rounded-2xl border-2 border-dashed border-brand-100 p-5 flex flex-col items-center justify-center text-center gap-2 min-h-[160px] opacity-60 cursor-not-allowed">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-100">
-                <Lock className="h-4 w-4 text-brand-400" />
+            <Link
+              href="/suitecompare/pricing"
+              className="rounded-2xl border-2 border-dashed border-brand-100 p-5 flex flex-col items-center justify-center text-center gap-2 min-h-[160px] hover:border-accent/20 hover:bg-accent/5 transition-all group"
+            >
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-100 group-hover:bg-accent/10 transition-colors">
+                <Lock className="h-4 w-4 text-brand-400 group-hover:text-accent transition-colors" />
               </div>
-              <p className="text-sm font-medium text-brand-400">Add Client</p>
-              <p className="text-xs text-brand-300">Upgrade to add more clients</p>
-            </div>
+              <p className="text-sm font-medium text-brand-400 group-hover:text-accent transition-colors">Upgrade plan</p>
+              <p className="text-xs text-brand-300">View pricing to add more clients</p>
+            </Link>
           ) : (
             <Link
               href="/suitecompare/accounts/new"
@@ -227,10 +232,9 @@ export default async function DashboardPage() {
               </div>
               <div>
                 <p className="text-xs font-semibold text-brand-900">{item.title}</p>
-                <p
-                  className="mt-0.5 text-xs text-brand-400 leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: item.body }}
-                />
+                <p className="mt-0.5 text-xs text-brand-400 leading-relaxed">
+                  {item.body}
+                </p>
               </div>
             </div>
           ))}

@@ -9,8 +9,8 @@ const SESSION_MAX_AGE_SECONDS = 60 * 60 * 24 * 7; // 7 days
 export const SC_SESSION_MAX_AGE = SESSION_MAX_AGE_SECONDS;
 
 function getSecret(): string {
-  const secret = process.env.ADMIN_SESSION_SECRET;
-  if (!secret) throw new Error("ADMIN_SESSION_SECRET is not set");
+  const secret = process.env.SC_SESSION_SECRET;
+  if (!secret) throw new Error("SC_SESSION_SECRET is not set");
   return secret;
 }
 

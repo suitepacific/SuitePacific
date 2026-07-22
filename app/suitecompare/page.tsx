@@ -53,25 +53,25 @@ const WORKFLOW_BENEFITS = [
       "Pick a script, choose two environments, see the diff. The copy-paste cycle is gone entirely.",
   },
   {
-    icon: FileMinus2,
-    title: "Detect missing scripts",
-    description:
-      "See at a glance which scripts exist in one environment but not the other. No more discovering gaps after a deploy.",
-  },
-  {
     icon: Lock,
     title: "Built for NetSuite TBA",
     description:
       "Connects via Token-Based Authentication. No admin credentials stored, no shared logins. Designed for how NetSuite security actually works.",
   },
+  {
+    icon: GitBranch,
+    title: "Compare deployment status",
+    description:
+      "See how scripts are deployed across environments: record type, deployment status, and log level, side by side. Spot configuration drift without logging into two accounts.",
+  },
 ];
 
 const ROADMAP_ITEMS = [
   {
-    icon: GitBranch,
-    title: "Script deployments and parameters",
+    icon: FileMinus2,
+    title: "Detect missing scripts",
     description:
-      "Compare deployment status, execution context, and parameter values across environments. Catch configuration drift before it causes a production issue.",
+      "See at a glance which scripts exist in one environment but not the other. Catch environment gaps before they cause issues in production.",
   },
   {
     icon: FileText,

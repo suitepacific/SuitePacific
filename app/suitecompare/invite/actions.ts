@@ -125,7 +125,11 @@ export async function signupViaInviteAction(
   });
 
   const ok = await consumeInvite(token, user.id, user.email);
-  if (!ok) return { error: "Could not join team. The invite may have expired or the team is full." };
+  if (!ok) {
+    // Clean up the orphan account — invite was consumed or org filled up in the race window
+    await prisma.scUser.delete({ where: { id: user.id } }).catch(() => {});
+    return { error: "Could not join team. The invite may have expired or the team is full." };
+  }
 
   await setSession(user.id);
   redirect("/suitecompare/dashboard");

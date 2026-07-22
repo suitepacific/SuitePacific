@@ -20,6 +20,7 @@ export async function inviteMemberAction(
 
   const membership = await prisma.scOrgMember.findFirst({
     where: { userId: user.id, role: "owner" },
+    orderBy: { createdAt: "asc" },
     include: {
       org: { include: { members: true } },
     },
@@ -28,8 +29,13 @@ export async function inviteMemberAction(
 
   const seatLimit = getSeatLimit(membership.org.plan, membership.org.seatLimitOverride);
   if (membership.org.members.length >= seatLimit) {
+    const isCustomLimit = membership.org.seatLimitOverride != null;
     return {
-      error: `Your ${membership.org.plan} plan supports up to ${seatLimit} user${seatLimit === 1 ? "" : "s"}. Upgrade to Team to add more.`,
+      error: isCustomLimit
+        ? `You've reached your seat limit of ${seatLimit} user${seatLimit === 1 ? "" : "s"}. Contact your account manager to add more.`
+        : membership.org.plan === "team"
+        ? `You've reached the 5-seat limit for the Team plan. Contact us if you need more.`
+        : `Your plan supports up to ${seatLimit} user${seatLimit === 1 ? "" : "s"}. Upgrade to Team to invite more members.`,
     };
   }
 
@@ -71,12 +77,34 @@ export async function inviteMemberAction(
   return { success: true };
 }
 
+export async function updateOrgNameAction(
+  _prev: unknown,
+  formData: FormData
+): Promise<{ error?: string; success?: boolean }> {
+  const user = await requireScUser();
+  const name = String(formData.get("name") ?? "").trim();
+
+  if (!name) return { error: "Organization name is required." };
+  if (name.length > 100) return { error: "Name must be 100 characters or fewer." };
+
+  const membership = await prisma.scOrgMember.findFirst({
+    where: { userId: user.id, role: "owner" },
+    orderBy: { createdAt: "asc" },
+  });
+  if (!membership) return { error: "Only owners can change the organization name." };
+
+  await prisma.scOrg.update({ where: { id: membership.orgId }, data: { name } });
+  revalidatePath("/suitecompare/settings/team");
+  return { success: true };
+}
+
 export async function removeMemberAction(formData: FormData): Promise<void> {
   const user = await requireScUser();
   const memberId = String(formData.get("memberId") ?? "").trim();
 
   const ownership = await prisma.scOrgMember.findFirst({
     where: { userId: user.id, role: "owner" },
+    orderBy: { createdAt: "asc" },
   });
   if (!ownership) return;
 
@@ -102,6 +130,7 @@ export async function cancelInviteAction(formData: FormData): Promise<void> {
 
   const ownership = await prisma.scOrgMember.findFirst({
     where: { userId: user.id, role: "owner" },
+    orderBy: { createdAt: "asc" },
   });
   if (!ownership) return;
 

@@ -59,9 +59,10 @@ export async function activateAdminInviteAction(
 
   if (existing) {
     userId = existing.id;
+    const passwordHash = await hashScPassword(password);
     await prisma.scUser.update({
       where: { id: userId },
-      data: { name, emailVerified: true },
+      data: { name, passwordHash, emailVerified: true },
     });
 
     const membership = await prisma.scOrgMember.findFirst({

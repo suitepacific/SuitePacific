@@ -5,7 +5,7 @@ import { prisma } from "@/lib/prisma";
 import { requireScUser } from "@/lib/sc-auth";
 import { inferScriptName, inferScriptType } from "@/lib/sc-mock";
 import { encrypt, decrypt } from "@/lib/sc-crypto";
-import { testCredentials, fetchScriptMeta, hasCredentials } from "@/lib/sc-netsuite";
+import { testCredentials, fetchScriptMeta, fetchTemplateMeta, hasCredentials } from "@/lib/sc-netsuite";
 import { getClientLimit } from "@/lib/sc-plans";
 import { revalidatePath } from "next/cache";
 
@@ -50,7 +50,10 @@ export async function updateEnvironmentAction(
     }
   }
 
-  const membership = await prisma.scOrgMember.findFirst({ where: { userId: user.id } });
+  const membership = await prisma.scOrgMember.findFirst({
+    where: { userId: user.id },
+    orderBy: { createdAt: "asc" },
+  });
   if (!membership) return { error: "Organization not found." };
 
   const env = await prisma.scEnvironment.findFirst({
@@ -108,6 +111,7 @@ export async function addEnvironmentAction(
 
   const membership = await prisma.scOrgMember.findFirst({
     where: { userId: user.id },
+    orderBy: { createdAt: "asc" },
     include: { org: true },
   });
   if (!membership) return { error: "Organization not found." };
@@ -130,6 +134,63 @@ export async function addEnvironmentAction(
   return { success: true };
 }
 
+export async function browseFileAction(
+  _prev: unknown,
+  formData: FormData
+): Promise<{ error?: string; success?: boolean }> {
+  const user = await requireScUser();
+  const templateScriptId = String(formData.get("templateScriptId") ?? "").trim().toUpperCase();
+  const accountId = String(formData.get("accountId") ?? "").trim();
+
+  if (!templateScriptId) return { error: "Template Script ID is required." };
+
+  const membership = await prisma.scOrgMember.findFirst({
+    where: { userId: user.id },
+    orderBy: { createdAt: "asc" },
+  });
+  if (!membership) return { error: "Organization not found." };
+
+  const account = await prisma.scNetSuiteAccount.findFirst({
+    where: { id: accountId, orgId: membership.orgId, archivedAt: null },
+    include: { environments: true },
+  });
+  if (!account) return { error: "Account not found." };
+
+  const credEnv = account.environments.find((e) => hasCredentials(e));
+  if (!credEnv) return { error: "Configure TBA credentials for at least one environment before browsing templates." };
+
+  let templateName = templateScriptId;
+  try {
+    const meta = await fetchTemplateMeta(
+      {
+        nsEnvAccountId: credEnv.nsEnvAccountId!,
+        consumerKey: decrypt(credEnv.consumerKey!),
+        consumerSecret: decrypt(credEnv.consumerSecret!),
+        tokenKey: decrypt(credEnv.tokenKey!),
+        tokenSecret: decrypt(credEnv.tokenSecret!),
+      },
+      templateScriptId
+    );
+    if (!meta) return { error: `Template "${templateScriptId}" not found in NetSuite. Verify the Script ID.` };
+    templateName = meta.name;
+  } catch (err) {
+    return { error: err instanceof Error ? err.message : "Could not verify the template in NetSuite." };
+  }
+
+  await Promise.all(
+    account.environments.map((env) =>
+      prisma.scFile.upsert({
+        where: { environmentId_scriptId: { environmentId: env.id, scriptId: templateScriptId } },
+        update: { browsedAt: new Date() },
+        create: { environmentId: env.id, scriptId: templateScriptId, name: templateName },
+      })
+    )
+  );
+
+  revalidatePath(`/suitecompare/accounts/${accountId}`);
+  return { success: true };
+}
+
 export async function addNsAccountAction(
   _prev: unknown,
   formData: FormData
@@ -144,6 +205,7 @@ export async function addNsAccountAction(
 
   const membership = await prisma.scOrgMember.findFirst({
     where: { userId: user.id },
+    orderBy: { createdAt: "asc" },
     include: { org: { include: { nsAccounts: { where: { archivedAt: null } } } } },
   });
   if (!membership) return { error: "Organization not found." };
@@ -182,6 +244,7 @@ export async function browseScriptAction(
 
   const membership = await prisma.scOrgMember.findFirst({
     where: { userId: user.id },
+    orderBy: { createdAt: "asc" },
   });
   if (!membership) return { error: "Organization not found." };
 

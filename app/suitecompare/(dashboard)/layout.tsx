@@ -16,6 +16,7 @@ export default async function SuiteCompareDashboardLayout({ children }: { childr
   if (user) {
     const membership = await prisma.scOrgMember.findFirst({
       where: { userId: user.id },
+      orderBy: { createdAt: "asc" },
       select: { org: { select: { billingStatus: true } } },
     });
     billingStatus = membership?.org.billingStatus ?? "active";
@@ -33,7 +34,7 @@ export default async function SuiteCompareDashboardLayout({ children }: { childr
             Your SuiteCompare account has been suspended. Please contact us to resolve this.
           </p>
           <a
-            href="mailto:hello@suitepacific.com"
+            href="mailto:info@suitepacific.com"
             className="mt-6 inline-block text-sm font-medium text-accent hover:underline"
           >
             Contact SuitePacific
@@ -45,14 +46,14 @@ export default async function SuiteCompareDashboardLayout({ children }: { childr
 
   return (
     <div className="flex min-h-screen bg-brand-50/40">
-      <ScSidebar />
+      <ScSidebar userName={user?.name ?? ""} userEmail={user?.email ?? ""} />
       <main className="flex-1 min-w-0 p-4 md:p-8 mt-14 md:mt-0">
         {billingStatus === "past_due" && (
           <div className="mb-6 flex items-center gap-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3">
             <AlertTriangle className="h-4 w-4 text-amber-500 shrink-0" />
             <p className="text-sm text-amber-800">
               Your account has a past-due payment. Please contact{" "}
-              <a href="mailto:hello@suitepacific.com" className="font-medium underline">hello@suitepacific.com</a>{" "}
+              <a href="mailto:info@suitepacific.com" className="font-medium underline">info@suitepacific.com</a>{" "}
               to avoid service interruption.
             </p>
           </div>

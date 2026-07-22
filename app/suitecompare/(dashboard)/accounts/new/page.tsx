@@ -86,7 +86,7 @@ export default function NewAccountPage() {
             />
             <p className="mt-1 text-xs text-brand-300 flex items-start gap-1">
               <Info className="h-3 w-3 shrink-0 mt-0.5" />
-              Find this in your NetSuite URL — e.g.{" "}
+              Find this in your NetSuite URL, e.g.{" "}
               <span className="font-mono">1234567</span>.app.netsuite.com
             </p>
           </div>
@@ -125,7 +125,7 @@ export default function NewAccountPage() {
           <li className="flex items-start gap-2">
             <span className="text-accent font-bold shrink-0 mt-0.5">2</span>
             <span>
-              Click the settings icon on each environment to enter your TBA credentials — this
+              Click the settings icon on each environment to enter your TBA credentials. This
               unlocks real script content from NetSuite
             </span>
           </li>

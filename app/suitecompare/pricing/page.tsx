@@ -69,7 +69,7 @@ const FAQ = [
   },
   {
     q: "What is Token-Based Authentication?",
-    a: "TBA is NetSuite&apos;s recommended API authentication method. SuiteCompare uses it to read script content directly from your NetSuite instance. No admin password is ever requested or stored.",
+    a: "TBA is NetSuite's recommended API authentication method. SuiteCompare uses it to read script content directly from your NetSuite instance. No admin password is ever requested or stored.",
   },
   {
     q: "Is script content stored on your servers?",

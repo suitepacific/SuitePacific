@@ -35,10 +35,13 @@ export function ActivateForm({ token, email, plan, seatLimit, clientLimit, requi
             <span className="text-sm text-brand-600">NetSuite accounts</span>
             <span className="text-sm font-semibold text-brand-900">{clientLimit}</span>
           </div>
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-brand-600">Billing</span>
+          <div className="flex items-start justify-between gap-4">
+            <span className="text-sm text-brand-600 shrink-0">Billing</span>
             {requirePayment ? (
-              <span className="text-sm font-medium text-amber-600">Payment required</span>
+              <div className="text-right">
+                <p className="text-sm font-medium text-amber-600">Payment required</p>
+                <p className="text-xs text-brand-400 mt-0.5">SuitePacific will contact you to arrange payment.</p>
+              </div>
             ) : (
               <span className="text-sm font-medium text-emerald-600">Complimentary</span>
             )}

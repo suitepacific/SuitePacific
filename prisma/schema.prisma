@@ -390,19 +390,20 @@ model ScOrg {
 
 model ScOrgMember {
   id        String   @id @default(cuid())
-  org       ScOrg    @relation(fields: [orgId], references: [id])
+  org       ScOrg    @relation(fields: [orgId], references: [id], onDelete: Cascade)
   orgId     String
-  user      ScUser   @relation(fields: [userId], references: [id])
+  user      ScUser   @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    String
   role      String   @default("member")
   createdAt DateTime @default(now())
 
   @@unique([orgId, userId])
+  @@index([userId])
 }
 
 model ScInvite {
   id        String    @id @default(cuid())
-  org       ScOrg     @relation(fields: [orgId], references: [id])
+  org       ScOrg     @relation(fields: [orgId], references: [id], onDelete: Cascade)
   orgId     String
   email     String
   token     String    @unique
@@ -416,7 +417,7 @@ model ScInvite {
 
 model ScNetSuiteAccount {
   id           String          @id @default(cuid())
-  org          ScOrg           @relation(fields: [orgId], references: [id])
+  org          ScOrg           @relation(fields: [orgId], references: [id], onDelete: Cascade)
   orgId        String
   name         String
   nsAccountId  String
@@ -430,7 +431,7 @@ model ScNetSuiteAccount {
 
 model ScEnvironment {
   id             String            @id @default(cuid())
-  account        ScNetSuiteAccount @relation(fields: [scAccountId], references: [id])
+  account        ScNetSuiteAccount @relation(fields: [scAccountId], references: [id], onDelete: Cascade)
   scAccountId    String
   name           String
   type           String
@@ -442,19 +443,30 @@ model ScEnvironment {
   lastSyncAt     DateTime?
   createdAt      DateTime          @default(now())
   scripts        ScScript[]
+  files          ScFile[]
 
   @@index([scAccountId])
 }
 
 model ScScript {
   id            String        @id @default(cuid())
-  environment   ScEnvironment @relation(fields: [environmentId], references: [id])
+  environment   ScEnvironment @relation(fields: [environmentId], references: [id], onDelete: Cascade)
   environmentId String
   scriptId      String
   name          String
   scriptType    String
-  content       String?
-  lastModified  DateTime?
+  browsedAt     DateTime      @default(now())
+
+  @@unique([environmentId, scriptId])
+  @@index([environmentId])
+}
+
+model ScFile {
+  id            String        @id @default(cuid())
+  environment   ScEnvironment @relation(fields: [environmentId], references: [id], onDelete: Cascade)
+  environmentId String
+  scriptId      String        // PDF Template Script ID e.g. CUSTTMPL_INVOICE
+  name          String
   browsedAt     DateTime      @default(now())
 
   @@unique([environmentId, scriptId])

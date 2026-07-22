@@ -14,11 +14,7 @@ type Props = {
 };
 
 function formatDate(date: Date): string {
-  return date.toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
+  return date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 }
 
 export default async function AccountPage({ params }: Props) {
@@ -49,60 +45,41 @@ export default async function AccountPage({ params }: Props) {
   const sandboxEnvs = account.environments.filter((e) => e.type !== "production");
   const allUnconfigured = account.environments.every((e) => !e.tokenKey);
 
-  // Deduplicated scripts keyed by scriptId
-  const scriptMap = new Map<
-    string,
-    { scriptId: string; name: string; scriptType: string; browsedAt: Date }
-  >();
+  const scriptMap = new Map<string, { scriptId: string; name: string; scriptType: string; browsedAt: Date }>();
   for (const env of account.environments) {
     for (const script of env.scripts) {
       if (!scriptMap.has(script.scriptId)) {
-        scriptMap.set(script.scriptId, {
-          scriptId: script.scriptId,
-          name: script.name,
-          scriptType: script.scriptType,
-          browsedAt: script.browsedAt,
-        });
+        scriptMap.set(script.scriptId, { scriptId: script.scriptId, name: script.name, scriptType: script.scriptType, browsedAt: script.browsedAt });
       }
     }
   }
-  const scripts = Array.from(scriptMap.values()).sort(
-    (a, b) => b.browsedAt.getTime() - a.browsedAt.getTime()
-  );
+  const scripts = Array.from(scriptMap.values()).sort((a, b) => b.browsedAt.getTime() - a.browsedAt.getTime());
 
-  const compareBase =
-    productionEnv && sandboxEnvs[0]
-      ? `?left=${productionEnv.id}&right=${sandboxEnvs[0].id}`
-      : null;
+  const compareBase = productionEnv && sandboxEnvs[0]
+    ? `?left=${productionEnv.id}&right=${sandboxEnvs[0].id}`
+    : null;
 
   return (
     <div className="max-w-4xl">
       {/* Header */}
       <div className="mb-8">
-        <Link
-          href="/suitecompare/dashboard"
-          className="inline-flex items-center gap-1.5 text-xs text-brand-400 hover:text-brand-700 mb-4 transition-colors"
-        >
+        <Link href="/suitecompare/dashboard" className="inline-flex items-center gap-1.5 text-xs text-brand-400 hover:text-brand-700 mb-4 transition-colors">
           <ArrowLeft className="h-3 w-3" />
           Dashboard
         </Link>
         <h1 className="text-2xl font-semibold text-brand-900">{account.name}</h1>
-        <p className="mt-0.5 text-sm font-mono text-brand-400">
-          Account ID: {account.nsAccountId}
-        </p>
+        <p className="mt-0.5 text-sm font-mono text-brand-400">Account ID: {account.nsAccountId}</p>
       </div>
 
-      {/* TBA setup banner — shown until at least one environment has credentials */}
+      {/* TBA setup banner */}
       {allUnconfigured && (
         <div className="mb-6 rounded-xl bg-accent/5 border border-accent/15 p-4 flex gap-3">
           <KeyRound className="h-4 w-4 text-accent shrink-0 mt-0.5" />
           <div>
             <p className="text-sm font-semibold text-brand-900">Connect to NetSuite</p>
             <p className="text-xs text-brand-500 mt-0.5 leading-relaxed">
-              Click the <span className="font-medium text-brand-700">⚙ settings icon</span> on any
-              environment card below to enter your TBA credentials. Without credentials, script
-              content is shown as demo data. In NetSuite, find your credentials under{" "}
-              <span className="font-medium text-brand-700">Setup → Integration → Manage Integrations</span>.
+              Click the <span className="font-medium text-brand-700">settings icon</span> on any environment card to enter your TBA credentials. In NetSuite, go to{" "}
+              <span className="font-medium text-brand-700">Setup &gt; Integration &gt; Manage Integrations</span>.
             </p>
           </div>
         </div>
@@ -113,50 +90,30 @@ export default async function AccountPage({ params }: Props) {
         <h2 className="text-sm font-semibold text-brand-900 mb-3">Environments</h2>
         <div className="grid sm:grid-cols-3 gap-3">
           {account.environments.map((env) => (
-            <div
-              key={env.id}
-              className="bg-white rounded-2xl border border-brand-50 shadow-soft p-4"
-            >
-              {/* Top row: badge + config button */}
+            <div key={env.id} className="bg-white rounded-2xl border border-brand-50 shadow-soft p-4">
               <div className="flex items-center justify-between mb-2">
                 <EnvironmentBadge type={env.type} />
-                <EnvironmentConfig
-                env={{
+                <EnvironmentConfig env={{
                   id: env.id,
                   name: env.name,
                   type: env.type,
                   nsEnvAccountId: env.nsEnvAccountId,
                   credentialsConfigured: !!(env.consumerKey && env.consumerSecret && env.tokenKey && env.tokenSecret),
-                }}
-              />
+                }} />
               </div>
-
-              {/* Name */}
               <p className="font-medium text-brand-900 text-sm">{env.name}</p>
-
-              {/* NS Account ID if set */}
               {env.nsEnvAccountId && (
-                <p className="mt-0.5 text-xs font-mono text-brand-300 truncate">
-                  {env.nsEnvAccountId}
-                </p>
+                <p className="mt-0.5 text-xs font-mono text-brand-300 truncate">{env.nsEnvAccountId}</p>
               )}
-
-              {/* Status row */}
               <div className="mt-2.5 flex items-center justify-between text-xs">
                 <span className="flex items-center gap-1.5 text-brand-400">
-                  <span
-                    className={`h-1.5 w-1.5 rounded-full ${
-                      env.tokenKey ? "bg-emerald-400" : "bg-brand-200"
-                    }`}
-                  />
+                  <span className={`h-1.5 w-1.5 rounded-full ${env.tokenKey ? "bg-emerald-400" : "bg-brand-200"}`} />
                   {env.tokenKey ? "Connected" : "Not configured"}
                 </span>
                 <span className="text-brand-300">{env._count.scripts} scripts</span>
               </div>
             </div>
           ))}
-
-          {/* Add sandbox card */}
           <AddSandboxForm
             accountId={account.id}
             planLimited={membership.org.plan === "free" && account.environments.length >= 2}
@@ -164,7 +121,7 @@ export default async function AccountPage({ params }: Props) {
         </div>
       </div>
 
-      {/* Browse script */}
+      {/* Browse */}
       <div className="mb-8">
         <h2 className="text-sm font-semibold text-brand-900 mb-1">Browse a Script</h2>
         <p className="text-xs text-brand-400 mb-3">
@@ -177,20 +134,15 @@ export default async function AccountPage({ params }: Props) {
       <div>
         <div className="flex items-center gap-2 mb-3">
           <h2 className="text-sm font-semibold text-brand-900">Browsed Scripts</h2>
-          {scripts.length > 0 && (
-            <span className="text-xs text-brand-400">({scripts.length})</span>
-          )}
+          {scripts.length > 0 && <span className="text-xs text-brand-400">({scripts.length})</span>}
         </div>
-
         {scripts.length === 0 ? (
           <div className="rounded-2xl border-2 border-dashed border-brand-100 p-10 text-center">
             <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50">
               <FileCode2 className="h-5 w-5 text-brand-300" />
             </div>
             <p className="text-sm font-medium text-brand-700">No scripts yet</p>
-            <p className="mt-1 text-xs text-brand-400">
-              Enter a Script ID above to browse your first script.
-            </p>
+            <p className="mt-1 text-xs text-brand-400">Enter a Script ID above to browse your first script.</p>
           </div>
         ) : (
           <div className="bg-white rounded-2xl border border-brand-50 shadow-soft overflow-hidden">
@@ -198,41 +150,24 @@ export default async function AccountPage({ params }: Props) {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-brand-50 bg-brand-50/60">
-                    <th className="text-left px-5 py-3 text-xs font-semibold text-brand-400 uppercase tracking-wide">
-                      Script Name
-                    </th>
-                    <th className="text-left px-5 py-3 text-xs font-semibold text-brand-400 uppercase tracking-wide">
-                      Script ID
-                    </th>
-                    <th className="text-left px-5 py-3 text-xs font-semibold text-brand-400 uppercase tracking-wide">
-                      Type
-                    </th>
-                    <th className="text-left px-5 py-3 text-xs font-semibold text-brand-400 uppercase tracking-wide">
-                      Last Browsed
-                    </th>
+                    <th className="text-left px-5 py-3 text-xs font-semibold text-brand-400 uppercase tracking-wide">Script Name</th>
+                    <th className="text-left px-5 py-3 text-xs font-semibold text-brand-400 uppercase tracking-wide">Script ID</th>
+                    <th className="text-left px-5 py-3 text-xs font-semibold text-brand-400 uppercase tracking-wide">Type</th>
+                    <th className="text-left px-5 py-3 text-xs font-semibold text-brand-400 uppercase tracking-wide">Last Browsed</th>
                     <th className="px-5 py-3" />
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-brand-50">
                   {scripts.map((script) => (
-                    <tr
-                      key={script.scriptId}
-                      className="hover:bg-brand-50/40 transition-colors"
-                    >
-                      <td className="px-5 py-3.5 font-medium text-brand-900">
-                        {script.name}
-                      </td>
+                    <tr key={script.scriptId} className="hover:bg-brand-50/40 transition-colors">
+                      <td className="px-5 py-3.5 font-medium text-brand-900">{script.name}</td>
                       <td className="px-5 py-3.5">
-                        <span className="font-mono text-xs text-brand-400">
-                          {script.scriptId}
-                        </span>
+                        <span className="font-mono text-xs text-brand-400">{script.scriptId}</span>
                       </td>
                       <td className="px-5 py-3.5">
                         <ScriptTypeBadge type={script.scriptType} />
                       </td>
-                      <td className="px-5 py-3.5 text-brand-400 text-xs">
-                        {formatDate(script.browsedAt)}
-                      </td>
+                      <td className="px-5 py-3.5 text-brand-400 text-xs">{formatDate(script.browsedAt)}</td>
                       <td className="px-5 py-3.5 text-right">
                         {compareBase ? (
                           <Link

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { ArrowLeftRight } from "lucide-react";
 import { EnvironmentBadge } from "./EnvironmentBadge";
 
@@ -12,22 +12,27 @@ export function EnvSelector({
   leftEnvId,
   rightEnvId,
   scriptId,
+  paramName = "script",
 }: {
   envs: EnvOption[];
   leftEnvId: string;
   rightEnvId: string;
   scriptId: string;
+  paramName?: string;
 }) {
   const router = useRouter();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [leftId, setLeftId] = useState(leftEnvId);
   const [rightId, setRightId] = useState(rightEnvId);
 
   function update(left: string, right: string) {
     setLeftId(left);
     setRightId(right);
+    const tab = searchParams.get("tab");
+    const tabPart = tab ? `&tab=${encodeURIComponent(tab)}` : "";
     router.push(
-      `${pathname}?left=${encodeURIComponent(left)}&right=${encodeURIComponent(right)}&script=${encodeURIComponent(scriptId)}`
+      `${pathname}?left=${encodeURIComponent(left)}&right=${encodeURIComponent(right)}&${paramName}=${encodeURIComponent(scriptId)}${tabPart}`
     );
   }
 

@@ -33,9 +33,10 @@ export default async function InvitesPage() {
   const now = new Date();
 
   const [adminInvites, teamInvites] = await Promise.all([
-    prisma.scAdminInvite.findMany({ orderBy: { sentAt: "desc" } }),
+    prisma.scAdminInvite.findMany({ orderBy: { sentAt: "desc" }, take: 50 }),
     prisma.scInvite.findMany({
       orderBy: { createdAt: "desc" },
+      take: 50,
       include: {
         org: { select: { id: true, name: true, plan: true } },
       },
@@ -75,11 +76,11 @@ export default async function InvitesPage() {
 
   return (
     <div className="space-y-10">
-      {/* ── Partner invites ─────────────────────────── */}
+      {/* ── Customer invites ─────────────────────────── */}
       <section className="space-y-6">
         <div>
-          <h2 className="text-base font-semibold text-brand-900">Partner invites</h2>
-          <p className="text-xs text-brand-400 mt-0.5">Onboard a new partner with a custom plan, seat count, and client limit.</p>
+          <h2 className="text-base font-semibold text-brand-900">Customer invites</h2>
+          <p className="text-xs text-brand-400 mt-0.5">Onboard a new customer with a custom plan, seat count, and client limit.</p>
         </div>
 
         {/* Send form */}
@@ -112,7 +113,7 @@ export default async function InvitesPage() {
         {adminInvites.length > 0 ? (
           <div className="bg-white rounded-2xl border border-brand-50 shadow-soft overflow-hidden">
             <div className="px-6 py-4 border-b border-brand-50 bg-brand-50/40 flex items-center justify-between">
-              <h3 className="text-sm font-semibold text-brand-900">All partner invites</h3>
+              <h3 className="text-sm font-semibold text-brand-900">All customer invites</h3>
               <span className="text-xs text-brand-400">{adminInvites.length} total</span>
             </div>
             <div className="overflow-x-auto">
@@ -186,8 +187,8 @@ export default async function InvitesPage() {
           </div>
         ) : (
           <div className="rounded-2xl border border-brand-50 bg-white shadow-soft px-8 py-12 text-center">
-            <p className="text-sm font-semibold text-brand-900">No partner invites yet</p>
-            <p className="text-xs text-brand-400 mt-1">Use the form above to invite a partner.</p>
+            <p className="text-sm font-semibold text-brand-900">No customer invites yet</p>
+            <p className="text-xs text-brand-400 mt-1">Use the form above to invite a customer.</p>
           </div>
         )}
       </section>

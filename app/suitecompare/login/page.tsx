@@ -15,10 +15,12 @@ export default function SuiteCompareLoginPage() {
     <div className="min-h-screen bg-brand-50/40 flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <div className="mb-8 text-center">
-          <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10">
-            <GitCompare className="h-6 w-6 text-accent" />
-          </div>
-          <h1 className="text-xl font-semibold text-brand-900">SuiteCompare</h1>
+          <Link href="/suitecompare" className="inline-flex flex-col items-center group">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 group-hover:bg-accent/20 transition-colors">
+              <GitCompare className="h-6 w-6 text-accent" />
+            </div>
+            <h1 className="text-xl font-semibold text-brand-900 group-hover:text-accent transition-colors">SuiteCompare</h1>
+          </Link>
           <p className="mt-1 text-sm text-brand-400">Sign in to your account</p>
         </div>
 
@@ -66,7 +68,7 @@ export default function SuiteCompareLoginPage() {
             <button
               type="submit"
               disabled={isPending}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-brand text-white font-medium px-6 py-2.5 text-sm shadow-soft hover:bg-brand-700 transition-colors disabled:opacity-60"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-accent text-white font-medium px-6 py-2.5 text-sm shadow-soft hover:bg-accent/90 transition-colors disabled:opacity-60"
             >
               {isPending && <Loader2 className="h-4 w-4 animate-spin" />}
               {isPending ? "Signing in..." : "Sign In"}

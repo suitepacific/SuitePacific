@@ -2,18 +2,17 @@ import { redirect } from "next/navigation";
 import { requireScUser } from "@/lib/sc-auth";
 import { prisma } from "@/lib/prisma";
 import { InviteForm } from "./InviteForm";
-import { removeMemberAction, cancelInviteAction } from "./actions";
-import { Users, Mail, Crown, UserMinus, X } from "lucide-react";
-
-function getSeatLimit(plan: string): number {
-  return plan === "team" ? 5 : 1;
-}
+import { OrgNameForm } from "./OrgNameForm";
+import { RemoveMemberButton, CancelInviteButton } from "./TeamActions";
+import { Users, Mail, Crown } from "lucide-react";
+import { getSeatLimit } from "@/lib/sc-plans";
 
 export default async function TeamSettingsPage() {
   const currentUser = await requireScUser();
 
   const membership = await prisma.scOrgMember.findFirst({
     where: { userId: currentUser.id },
+    orderBy: { createdAt: "asc" },
     include: {
       org: {
         include: {
@@ -31,24 +30,24 @@ export default async function TeamSettingsPage() {
 
   const { org } = membership;
   const isOwner = membership.role === "owner";
-  const seatLimit = getSeatLimit(org.plan);
+  const seatLimit = getSeatLimit(org.plan, org.seatLimitOverride);
   const usedSeats = org.members.length;
 
   return (
-    <div className="max-w-2xl">
-      <div className="mb-8">
-        <h1 className="text-xl font-semibold text-brand-900">Team</h1>
-        <p className="mt-1 text-sm text-brand-400">
-          Manage members and invitations for {org.name}.
-        </p>
-      </div>
+    <div>
+      <p className="text-sm text-brand-400 mb-6">
+        Manage members and invitations for <span className="font-medium text-brand-700">{org.name}</span>.
+      </p>
+
+      {/* Organization name (owner only) */}
+      {isOwner && <OrgNameForm currentName={org.name} />}
 
       {/* Seat usage */}
       <div className="mb-6 flex items-center gap-3 rounded-xl border border-brand-100 bg-white px-4 py-3">
         <Users className="h-4 w-4 text-brand-300 shrink-0" />
         <span className="text-sm text-brand-600">
           {usedSeats} of {seatLimit} seat{seatLimit !== 1 ? "s" : ""} used
-          {org.plan !== "team" && (
+          {org.plan !== "team" && !org.seatLimitOverride && (
             <span className="ml-2 text-brand-300">
               &middot; Upgrade to Team for up to 5 seats
             </span>
@@ -66,9 +65,13 @@ export default async function TeamSettingsPage() {
         </div>
       )}
 
-      {isOwner && usedSeats >= seatLimit && org.plan !== "team" && (
+      {isOwner && usedSeats >= seatLimit && (
         <div className="mb-6 rounded-xl border border-brand-100 bg-brand-50/60 px-4 py-3 text-sm text-brand-500">
-          You&apos;ve reached the seat limit for your plan. Upgrade to Team to invite more members.
+          {org.seatLimitOverride
+            ? "You've reached your seat limit. Contact your account manager to add more members."
+            : org.plan !== "team"
+            ? "You've reached the seat limit for your plan. Upgrade to Team to invite more members."
+            : "You've reached the 5-seat limit for the Team plan. Contact us if you need more."}
         </div>
       )}
 
@@ -103,16 +106,7 @@ export default async function TeamSettingsPage() {
                     </span>
                   )}
                   {isOwner && !isSelf && (
-                    <form action={removeMemberAction}>
-                      <input type="hidden" name="memberId" value={m.id} />
-                      <button
-                        type="submit"
-                        title="Remove member"
-                        className="p-1.5 rounded-lg text-brand-300 hover:text-red-500 hover:bg-red-50 transition-colors"
-                      >
-                        <UserMinus className="h-3.5 w-3.5" />
-                      </button>
-                    </form>
+                    <RemoveMemberButton memberId={m.id} memberName={m.user.name} />
                   )}
                 </div>
               </div>
@@ -141,16 +135,7 @@ export default async function TeamSettingsPage() {
                     </p>
                   </div>
                 </div>
-                <form action={cancelInviteAction}>
-                  <input type="hidden" name="inviteId" value={inv.id} />
-                  <button
-                    type="submit"
-                    title="Cancel invite"
-                    className="p-1.5 rounded-lg text-brand-300 hover:text-red-500 hover:bg-red-50 transition-colors"
-                  >
-                    <X className="h-3.5 w-3.5" />
-                  </button>
-                </form>
+                <CancelInviteButton inviteId={inv.id} email={inv.email} />
               </div>
             ))}
           </div>

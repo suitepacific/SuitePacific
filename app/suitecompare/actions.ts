@@ -22,21 +22,21 @@ async function getSignupLocation(): Promise<{ signupCountry: string | null; sign
   return { signupCountry: country, signupCity: city };
 }
 
-async function acceptPendingInvite(token: string, userId: string, userEmail: string): Promise<void> {
+async function acceptPendingInvite(token: string, userId: string, userEmail: string): Promise<boolean> {
   const invite = await prisma.scInvite.findUnique({ where: { token } });
-  if (!invite || invite.usedAt || invite.expiresAt < new Date()) return;
+  if (!invite || invite.usedAt || invite.expiresAt < new Date()) return false;
 
   // Invite must be for this specific user's email
-  if (invite.email !== userEmail) return;
+  if (invite.email !== userEmail) return false;
 
   const org = await prisma.scOrg.findUnique({
     where: { id: invite.orgId },
     include: { members: true },
   });
-  if (!org) return;
+  if (!org) return false;
 
   const seatLimit = getSeatLimit(org.plan, org.seatLimitOverride);
-  if (org.members.length >= seatLimit) return;
+  if (org.members.length >= seatLimit) return false;
 
   const alreadyMember = await prisma.scOrgMember.findFirst({
     where: { orgId: invite.orgId, userId },
@@ -48,6 +48,7 @@ async function acceptPendingInvite(token: string, userId: string, userEmail: str
       ? []
       : [prisma.scOrgMember.create({ data: { orgId: invite.orgId, userId, role: "member" } })]),
   ]);
+  return true;
 }
 
 async function setSession(userId: string) {
@@ -83,8 +84,9 @@ export async function loginScAction(
 
   if (!user.emailVerified) {
     const otp = generateOtp();
+    const otpHash = crypto.createHash("sha256").update(otp).digest("hex");
     const otpExpiry = new Date(Date.now() + 10 * 60 * 1000);
-    await prisma.scUser.update({ where: { id: user.id }, data: { otp, otpExpiry } });
+    await prisma.scUser.update({ where: { id: user.id }, data: { otp: otpHash, otpExpiry } });
     try { await sendOtpEmail(email, user.name, otp); } catch (e) { console.error("[sc] OTP email failed:", e); }
     redirect(`/suitecompare/verify?email=${encodeURIComponent(email)}`);
   }
@@ -105,6 +107,7 @@ export async function signupScAction(
   const inviteToken = String(formData.get("inviteToken") ?? "").trim();
 
   if (!name || !email || !password) return { error: "All fields are required." };
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return { error: "Please enter a valid email address." };
   if (password.length < 8) return { error: "Password must be at least 8 characters." };
 
   // Invite flow: skip orgName, skip OTP, join existing org
@@ -128,7 +131,11 @@ export async function signupScAction(
       data: { name, email, passwordHash, emailVerified: true, ...loc },
     });
 
-    await acceptPendingInvite(inviteToken, user.id, user.email);
+    const joined = await acceptPendingInvite(inviteToken, user.id, user.email);
+    if (!joined) {
+      await prisma.scUser.delete({ where: { id: user.id } }).catch(() => {});
+      return { error: "Could not join team. The invite may have expired or the team is full." };
+    }
     await setSession(user.id);
     redirect("/suitecompare/dashboard");
   }
@@ -141,8 +148,9 @@ export async function signupScAction(
   if (existing) {
     if (!existing.emailVerified) {
       const otp = generateOtp();
+      const otpHash = crypto.createHash("sha256").update(otp).digest("hex");
       const otpExpiry = new Date(Date.now() + 10 * 60 * 1000);
-      await prisma.scUser.update({ where: { id: existing.id }, data: { otp, otpExpiry } });
+      await prisma.scUser.update({ where: { id: existing.id }, data: { otp: otpHash, otpExpiry } });
       try { await sendOtpEmail(email, existing.name, otp); } catch (e) { console.error("[sc] OTP email failed:", e); }
       redirect(`/suitecompare/verify?email=${encodeURIComponent(email)}`);
     }
@@ -154,12 +162,13 @@ export async function signupScAction(
   const finalSlug = slugExists ? `${slug}-${Date.now()}` : slug;
 
   const otp = generateOtp();
+  const otpHash = crypto.createHash("sha256").update(otp).digest("hex");
   const otpExpiry = new Date(Date.now() + 10 * 60 * 1000);
   const passwordHash = await hashScPassword(password);
   const loc = await getSignupLocation();
 
   const user = await prisma.scUser.create({
-    data: { name, email, passwordHash, otp, otpExpiry, emailVerified: false, ...loc },
+    data: { name, email, passwordHash, otp: otpHash, otpExpiry, emailVerified: false, ...loc },
   });
 
   const org = await prisma.scOrg.create({ data: { name: orgName, slug: finalSlug } });
@@ -190,7 +199,8 @@ export async function verifyOtpAction(
   if (new Date() > user.otpExpiry) {
     return { error: "Code expired. Use the resend button to get a new one." };
   }
-  if (user.otp !== otp) {
+  const otpHash = crypto.createHash("sha256").update(otp).digest("hex");
+  if (user.otp !== otpHash) {
     return { error: "Incorrect code. Please try again." };
   }
 
@@ -218,8 +228,9 @@ export async function resendOtpAction(
   }
 
   const otp = generateOtp();
+  const otpHash = crypto.createHash("sha256").update(otp).digest("hex");
   const otpExpiry = new Date(Date.now() + 10 * 60 * 1000);
-  await prisma.scUser.update({ where: { id: user.id }, data: { otp, otpExpiry } });
+  await prisma.scUser.update({ where: { id: user.id }, data: { otp: otpHash, otpExpiry } });
 
   try {
     await sendOtpEmail(email, user.name, otp);

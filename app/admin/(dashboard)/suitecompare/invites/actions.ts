@@ -34,6 +34,7 @@ export async function sendAdminInviteAction(
   const notes = String(formData.get("notes") ?? "").trim() || null;
 
   if (!email) return { error: "Email is required." };
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return { error: "Please enter a valid email address." };
   if (!["free", "pro", "team"].includes(plan)) return { error: "Invalid plan." };
   if (isNaN(seatLimit) || seatLimit < 1 || seatLimit > 500) return { error: "Seat limit must be between 1 and 500." };
   if (isNaN(clientLimit) || clientLimit < 1 || clientLimit > 200) return { error: "Client limit must be between 1 and 200." };
@@ -64,6 +65,9 @@ export async function cancelAdminInviteAction(formData: FormData): Promise<void>
   await requireAdmin();
   const id = String(formData.get("id") ?? "").trim();
   if (!id) return;
+
+  const invite = await prisma.scAdminInvite.findUnique({ where: { id } });
+  if (!invite || invite.activatedAt) return;
 
   await prisma.scAdminInvite.delete({ where: { id } });
   revalidatePath("/admin/suitecompare/invites");

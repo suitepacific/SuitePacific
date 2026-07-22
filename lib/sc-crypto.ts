@@ -20,8 +20,12 @@ export function encrypt(plaintext: string): string {
 
 export function decrypt(stored: string): string {
   if (!stored.startsWith("v1:")) {
-    // Legacy plain-text value stored before encryption was added
-    return stored;
+    // A value without the v1: prefix was stored before encryption was introduced.
+    // Reject it so credentials aren't silently used as plaintext — the user must
+    // re-save their credentials to re-encrypt them.
+    throw new Error(
+      "Stored credential is not encrypted. Please re-enter your TBA credentials to continue."
+    );
   }
   const [, ivHex, tagHex, dataHex] = stored.split(":");
   const key = getKey();
@@ -31,21 +35,4 @@ export function decrypt(stored: string): string {
     decipher.update(Buffer.from(dataHex, "hex")),
     decipher.final(),
   ]).toString("utf8");
-}
-
-type CredFields = {
-  consumerKey: string | null;
-  consumerSecret: string | null;
-  tokenKey: string | null;
-  tokenSecret: string | null;
-};
-
-// Decrypt all four credential fields for display in the config modal
-export function decryptCreds(env: CredFields): CredFields {
-  return {
-    consumerKey: env.consumerKey ? decrypt(env.consumerKey) : null,
-    consumerSecret: env.consumerSecret ? decrypt(env.consumerSecret) : null,
-    tokenKey: env.tokenKey ? decrypt(env.tokenKey) : null,
-    tokenSecret: env.tokenSecret ? decrypt(env.tokenSecret) : null,
-  };
 }

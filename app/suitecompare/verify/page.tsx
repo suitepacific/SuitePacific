@@ -106,7 +106,7 @@ export default function VerifyPage() {
                   : "Resend code"}
               </button>
             </form>
-            {resendState?.success && !cooldown && (
+            {resendState?.success && cooldown > 0 && (
               <p className="mt-1 text-xs text-emerald-600 text-center">Code sent!</p>
             )}
             {resendState?.error && (

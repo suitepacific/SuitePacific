@@ -27,18 +27,17 @@ export default async function SuiteCompareUsersPage({ searchParams }: Props) {
   await requireAdmin();
   const sp = await searchParams;
   const q = (sp.q ?? "").trim();
-  const page = Math.max(1, parseInt(sp.page ?? "1", 10));
+  const page = Math.min(Math.max(1, parseInt(sp.page ?? "1", 10)), 1000);
   const skip = (page - 1) * PAGE_SIZE;
 
   const where = q
     ? {
-        status: "active" as const,
         OR: [
           { name: { contains: q, mode: "insensitive" as const } },
           { email: { contains: q, mode: "insensitive" as const } },
         ],
       }
-    : { status: "active" as const };
+    : {};
 
   const [users, total, adminInviteRows] = await Promise.all([
     prisma.scUser.findMany({
@@ -132,7 +131,9 @@ export default async function SuiteCompareUsersPage({ searchParams }: Props) {
                     <td className="px-5 py-3.5 text-brand-400">{fmt(u.createdAt)}</td>
                     <td className="px-5 py-3.5 text-brand-400">{fmt(u.lastLoginAt)}</td>
                     <td className="px-5 py-3.5">
-                      {u.emailVerified ? (
+                      {u.status === "suspended" ? (
+                        <span className="inline-flex rounded-full bg-red-50 px-2 py-0.5 text-xs font-medium text-red-600">Suspended</span>
+                      ) : u.emailVerified ? (
                         <span className="inline-flex rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-600">Verified</span>
                       ) : (
                         <span className="inline-flex rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-600">Unverified</span>

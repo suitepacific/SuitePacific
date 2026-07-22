@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { AlertTriangle, CheckCircle2, Clock, User, Building2, Server, CreditCard, Crown, Users } from "lucide-react";
 import { getSeatLimit, getClientLimit } from "@/lib/sc-plans";
+import { hasCredentials } from "@/lib/sc-netsuite";
 import {
   setOrgPlanAction,
   setOrgBillingStatusAction,
@@ -72,7 +73,7 @@ export default async function ScUserDetailPage({ params }: Props) {
   const [comparisonsTotal, recentComparisons, viaAdminInvite, orgMembers, pendingTeamInvites] = await Promise.all([
     prisma.scComparison.count({ where: { userId: id } }),
     prisma.scComparison.findMany({ where: { userId: id }, orderBy: { createdAt: "desc" }, take: 10 }),
-    prisma.scAdminInvite.findFirst({ where: { userId: user.id }, select: { activatedAt: true, plan: true, sentAt: true } }),
+    prisma.scAdminInvite.findFirst({ where: { userId: user.id }, orderBy: { sentAt: "desc" }, select: { activatedAt: true, plan: true, sentAt: true } }),
     org
       ? prisma.scOrgMember.findMany({
           where: { orgId: org.id },
@@ -447,7 +448,7 @@ export default async function ScUserDetailPage({ params }: Props) {
                   ) : (
                     <div className="space-y-2 pl-2">
                       {acct.environments.map((env) => {
-                        const hasToken = !!(env.tokenKey && env.tokenSecret);
+                        const hasToken = hasCredentials(env);
                         const lastScript = env.scripts[0];
                         return (
                           <div key={env.id} className="flex items-start justify-between gap-3 rounded-lg border border-brand-50 bg-brand-50/40 px-3 py-2">

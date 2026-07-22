@@ -64,7 +64,7 @@ export default async function ActivatePage({ searchParams }: Props) {
         <XCircle className="h-10 w-10 text-brand-300 mx-auto mb-4" />
         <h1 className="text-lg font-semibold text-brand-900 mb-2">Link expired</h1>
         <p className="text-sm text-brand-400">This activation link has expired. Please contact SuitePacific for a new one.</p>
-        <a href="mailto:hello@suitepacific.com" className="mt-5 inline-block text-sm font-medium text-accent hover:underline">
+        <a href="mailto:info@suitepacific.com" className="mt-5 inline-block text-sm font-medium text-accent hover:underline">
           Contact SuitePacific
         </a>
       </Shell>
