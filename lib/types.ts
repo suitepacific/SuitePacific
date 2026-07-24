@@ -55,6 +55,7 @@ export type BlogPostMeta = {
   date: string;
   tags: string[];
   readingTime: string;
+  calloutText?: string;
 };
 
 export type BlogPost = BlogPostMeta & {

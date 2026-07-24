@@ -31,6 +31,7 @@ export async function getAllPosts(): Promise<BlogPostMeta[]> {
         date: data.date as string,
         tags: (data.tags as string[]) ?? [],
         readingTime: readingTime(content).text,
+        calloutText: data.calloutText as string | undefined,
       };
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -48,6 +49,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     date: data.date as string,
     tags: (data.tags as string[]) ?? [],
     readingTime: readingTime(content).text,
+    calloutText: data.calloutText as string | undefined,
     contentHtml: marked.parse(content, { async: false }) as string,
   };
 }

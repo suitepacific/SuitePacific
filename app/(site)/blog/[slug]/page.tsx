@@ -87,7 +87,9 @@ export default async function BlogPostPage({
 
         {/* Early callout, catches readers before they scroll */}
         <div className="mt-8 rounded-xl bg-brand-50/60 border border-brand-100 px-5 py-4">
-          <p className="text-sm text-brand-600 mb-3">Need help with this in your NetSuite account?</p>
+          <p className="text-sm text-brand-600 mb-3">
+            {post.calloutText ?? "Need help with this in your NetSuite account?"}
+          </p>
           <LeadFormLight />
         </div>
 
