@@ -24,6 +24,44 @@ This works. But loading a record retrieves everything associated with it, all bo
 
 In a script that runs once or twice, this is irrelevant. In a Scheduled Script running nightly across thousands of transactions, or a Map/Reduce script processing your full orders list, it becomes a significant governance and performance cost.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 162" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <!-- Left: record.load() -->
+  <rect x="0" y="0" width="320" height="162" rx="9" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <rect x="0" y="0" width="320" height="30" rx="9" fill="#991b1b"/>
+  <rect x="0" y="20" width="320" height="10" fill="#991b1b"/>
+  <text x="160" y="19" text-anchor="middle" font-size="10" font-weight="700" fill="#fee2e2" letter-spacing="0.04em">record.load() — loads everything</text>
+  <rect x="16" y="40" width="288" height="14" rx="3" fill="#fca5a5" opacity="0.6"/>
+  <text x="160" y="51" text-anchor="middle" font-size="8" fill="#7f1d1d">All body fields (including unused ones)</text>
+  <rect x="16" y="58" width="288" height="14" rx="3" fill="#fca5a5" opacity="0.6"/>
+  <text x="160" y="69" text-anchor="middle" font-size="8" fill="#7f1d1d">Sublist: Item lines (all 50 line items)</text>
+  <rect x="16" y="76" width="288" height="14" rx="3" fill="#fca5a5" opacity="0.6"/>
+  <text x="160" y="87" text-anchor="middle" font-size="8" fill="#7f1d1d">Sublist: Billing / Shipping addresses</text>
+  <rect x="16" y="94" width="288" height="14" rx="3" fill="#fca5a5" opacity="0.4"/>
+  <text x="160" y="105" text-anchor="middle" font-size="8" fill="#7f1d1d">Subrecords (e.g. inventory detail)</text>
+  <rect x="16" y="112" width="288" height="14" rx="3" fill="#ef4444" opacity="0.25"/>
+  <text x="160" y="123" text-anchor="middle" font-size="8" font-weight="700" fill="#991b1b">→ target field: memo (1 field)</text>
+  <text x="160" y="147" text-anchor="middle" font-size="8.5" font-weight="700" fill="#991b1b">Full governance cost per record</text>
+  <!-- Right: record.submitFields() -->
+  <rect x="360" y="0" width="320" height="162" rx="9" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <rect x="360" y="0" width="320" height="30" rx="9" fill="#14532d"/>
+  <rect x="360" y="20" width="320" height="10" fill="#14532d"/>
+  <text x="520" y="19" text-anchor="middle" font-size="10" font-weight="700" fill="#dcfce7" letter-spacing="0.04em">record.submitFields() — targeted</text>
+  <rect x="376" y="40" width="288" height="14" rx="3" fill="#d1fae5" opacity="0.5"/>
+  <text x="520" y="51" text-anchor="middle" font-size="8" fill="#6b7280">body fields — skipped</text>
+  <rect x="376" y="58" width="288" height="14" rx="3" fill="#d1fae5" opacity="0.5"/>
+  <text x="520" y="69" text-anchor="middle" font-size="8" fill="#6b7280">sublists — not loaded</text>
+  <rect x="376" y="76" width="288" height="14" rx="3" fill="#d1fae5" opacity="0.5"/>
+  <text x="520" y="87" text-anchor="middle" font-size="8" fill="#6b7280">addresses — not loaded</text>
+  <rect x="376" y="94" width="288" height="14" rx="3" fill="#d1fae5" opacity="0.5"/>
+  <text x="520" y="105" text-anchor="middle" font-size="8" fill="#6b7280">subrecords — not loaded</text>
+  <rect x="376" y="112" width="288" height="14" rx="3" fill="#4ade80" opacity="0.6"/>
+  <text x="520" y="123" text-anchor="middle" font-size="8" font-weight="700" fill="#14532d">→ target field: memo (1 field) ✓</text>
+  <text x="520" y="147" text-anchor="middle" font-size="8.5" font-weight="700" fill="#14532d">Fraction of the governance cost</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">The governance difference is negligible on one record. On 5,000 records in a nightly script, it is not.</figcaption>
+</figure>
+
 ## A faster alternative for body field updates
 
 `record.submitFields()` updates body fields directly without loading the full record:

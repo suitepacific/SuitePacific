@@ -7,6 +7,48 @@ tags: ["Post-Go-Live", "NetSuite"]
 
 The first 90 days after your implementation partner hands off the account are the highest-leverage period in your NetSuite history. Most of what's annoying or broken two years later was set in motion here, when decisions got made quickly to hit the go-live deadline rather than correctly. Here's what to prioritize before the implementation team is too far gone to ask.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 148" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="pgl-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#b2c2e6"/></marker>
+  </defs>
+  <text x="340" y="13" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">FIRST 90 DAYS POST-GO-LIVE</text>
+  <!-- Days 1-30 -->
+  <rect x="0" y="20" width="196" height="100" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <rect x="0" y="20" width="196" height="24" rx="7" fill="#0b1f4d"/>
+  <rect x="0" y="35" width="196" height="9" fill="#0b1f4d"/>
+  <text x="98" y="36" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">Days 1–30: Foundation</text>
+  <text x="10" y="58" font-size="9" fill="#14306b">• Get documentation from impl. partner</text>
+  <text x="10" y="72" font-size="9" fill="#14306b">• Audit roles and permissions</text>
+  <text x="10" y="86" font-size="9" fill="#14306b">• Build exception saved searches</text>
+  <text x="10" y="100" font-size="9" fill="#14306b">• Document all deployed customizations</text>
+  <!-- Arrow -->
+  <line x1="198" y1="70" x2="236" y2="70" stroke="#b2c2e6" stroke-width="1.5" marker-end="url(#pgl-arrow)"/>
+  <!-- Days 31-60 -->
+  <rect x="238" y="20" width="196" height="100" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <rect x="238" y="20" width="196" height="24" rx="7" fill="#0b1f4d"/>
+  <rect x="238" y="35" width="196" height="9" fill="#0b1f4d"/>
+  <text x="336" y="36" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">Days 31–60: Verify and Report</text>
+  <text x="248" y="58" font-size="9" fill="#14306b">• Run first period close, log every step</text>
+  <text x="248" y="72" font-size="9" fill="#14306b">• Build role-based dashboards</text>
+  <text x="248" y="86" font-size="9" fill="#14306b">• Recreate reports from old system</text>
+  <text x="248" y="100" font-size="9" fill="#14306b">• Fix data quality issues surfaced</text>
+  <!-- Arrow -->
+  <line x1="436" y1="70" x2="474" y2="70" stroke="#b2c2e6" stroke-width="1.5" marker-end="url(#pgl-arrow)"/>
+  <!-- Days 61-90 -->
+  <rect x="476" y="20" width="204" height="100" rx="7" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+  <rect x="476" y="20" width="204" height="24" rx="7" fill="#059669"/>
+  <rect x="476" y="35" width="204" height="9" fill="#059669"/>
+  <text x="578" y="36" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">Days 61–90: Automate</text>
+  <text x="486" y="58" font-size="9" fill="#065f46">• Automate manual close steps</text>
+  <text x="486" y="72" font-size="9" fill="#065f46">• Tighten entry conditions on workflows</text>
+  <text x="486" y="86" font-size="9" fill="#065f46">• Schedule recurring exception reports</text>
+  <text x="486" y="100" font-size="9" fill="#065f46">• Remove unused scripts and searches</text>
+  <!-- footer -->
+  <text x="0" y="136" font-size="9" fill="#8aa2d6">Most two-year-old account debt was optional to fix at go-live. The first 90 days are when it costs least to get things right.</text>
+</svg>
+</figure>
+
 ## 1. Get access documentation before your implementation partner leaves
 
 The single most important thing to capture is a record of what was built, where, and why. Custom fields, roles, workflows, saved searches, scripts, ideally documented, at minimum listed. The implementation team knows what they changed; you need to know too. Even a spreadsheet of script IDs and what they do is better than nothing. Without this, everything they built becomes a black box the next developer has to reverse-engineer.

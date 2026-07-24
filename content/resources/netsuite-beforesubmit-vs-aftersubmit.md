@@ -17,6 +17,59 @@ NetSuite User Event scripts fire in response to record saves. Both `beforeSubmit
 
 Getting this wrong is one of the most common sources of subtle SuiteScript bugs, logic that looks correct but fails silently, or runs at the wrong time.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="bs-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#b2c2e6"/></marker>
+  </defs>
+  <!-- Title -->
+  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">RECORD SAVE LIFECYCLE</text>
+  <!-- Timeline baseline -->
+  <line x1="40" y1="52" x2="640" y2="52" stroke="#d7e0f3" stroke-width="2"/>
+  <!-- Node 1: User saves -->
+  <circle cx="60" cy="52" r="10" fill="#eef2fb" stroke="#b2c2e6" stroke-width="2"/>
+  <text x="60" y="56" text-anchor="middle" font-size="9" fill="#4f6fb0" font-weight="600">1</text>
+  <text x="60" y="76" text-anchor="middle" font-size="9" fill="#4f6fb0">User clicks</text>
+  <text x="60" y="87" text-anchor="middle" font-size="9" fill="#4f6fb0">Save</text>
+  <!-- Arrow 1→2 -->
+  <line x1="72" y1="52" x2="208" y2="52" stroke="#b2c2e6" stroke-width="1.5" marker-end="url(#bs-arrow)"/>
+  <!-- Node 2: beforeSubmit -->
+  <circle cx="220" cy="52" r="14" fill="#4f7fff" stroke="#14306b" stroke-width="2"/>
+  <text x="220" y="56" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">2</text>
+  <text x="220" y="76" text-anchor="middle" font-size="10" fill="#14306b" font-weight="700">beforeSubmit</text>
+  <text x="220" y="88" text-anchor="middle" font-size="8.5" fill="#4f6fb0">fires here</text>
+  <!-- beforeSubmit callouts below -->
+  <line x1="220" y1="100" x2="220" y2="110" stroke="#4f7fff" stroke-width="1" stroke-dasharray="2,1"/>
+  <rect x="108" y="110" width="224" height="18" rx="3" fill="#eef2fb" stroke="#b2c2e6" stroke-width="1"/>
+  <text x="220" y="122" text-anchor="middle" font-size="8.5" fill="#14306b">Modify fields · Abort the save · Run validation</text>
+  <!-- Arrow 2→3 -->
+  <line x1="236" y1="52" x2="348" y2="52" stroke="#b2c2e6" stroke-width="1.5" marker-end="url(#bs-arrow)"/>
+  <!-- Node 3: DB Write -->
+  <circle cx="360" cy="52" r="10" fill="#eef2fb" stroke="#b2c2e6" stroke-width="2"/>
+  <text x="360" y="56" text-anchor="middle" font-size="9" fill="#4f6fb0" font-weight="600">3</text>
+  <text x="360" y="76" text-anchor="middle" font-size="9" fill="#4f6fb0">Database</text>
+  <text x="360" y="87" text-anchor="middle" font-size="9" fill="#4f6fb0">write</text>
+  <!-- Arrow 3→4 -->
+  <line x1="372" y1="52" x2="508" y2="52" stroke="#b2c2e6" stroke-width="1.5" marker-end="url(#bs-arrow)"/>
+  <!-- Node 4: afterSubmit -->
+  <circle cx="520" cy="52" r="14" fill="#059669" stroke="#065f46" stroke-width="2"/>
+  <text x="520" y="56" text-anchor="middle" font-size="9" fill="#fff" font-weight="700">4</text>
+  <text x="520" y="76" text-anchor="middle" font-size="10" fill="#14306b" font-weight="700">afterSubmit</text>
+  <text x="520" y="88" text-anchor="middle" font-size="8.5" fill="#4f6fb0">fires here</text>
+  <!-- afterSubmit callouts below -->
+  <line x1="520" y1="100" x2="520" y2="110" stroke="#059669" stroke-width="1" stroke-dasharray="2,1"/>
+  <rect x="380" y="110" width="280" height="18" rx="3" fill="#d1fae5" stroke="#6ee7b7" stroke-width="1"/>
+  <text x="520" y="122" text-anchor="middle" font-size="8.5" fill="#065f46">Record has ID · Load related records · Send emails</text>
+  <!-- Arrow 4→5 -->
+  <line x1="536" y1="52" x2="618" y2="52" stroke="#b2c2e6" stroke-width="1.5" marker-end="url(#bs-arrow)"/>
+  <!-- Node 5: Complete -->
+  <circle cx="630" cy="52" r="10" fill="#eef2fb" stroke="#b2c2e6" stroke-width="2"/>
+  <text x="630" y="56" text-anchor="middle" font-size="9" fill="#4f6fb0" font-weight="600">5</text>
+  <text x="630" y="76" text-anchor="middle" font-size="9" fill="#4f6fb0">Complete</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">beforeSubmit fires before the record exists in the database. afterSubmit fires after it is committed and has a permanent ID.</figcaption>
+</figure>
+
 ## What beforeSubmit can do
 
 Because `beforeSubmit` fires before the record is committed, it has two capabilities that `afterSubmit` does not:

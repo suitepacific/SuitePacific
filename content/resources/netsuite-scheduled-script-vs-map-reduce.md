@@ -11,6 +11,57 @@ linkedinDay: 6
 
 SuiteScript provides two script types designed for processing records in batch: Scheduled Scripts and Map/Reduce scripts. Both run in the background on a schedule or on demand. Both can process large numbers of records. But they work fundamentally differently, and choosing the wrong one for the workload is a reliable path to governance limit errors and slow execution.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 176" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="smr-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#4f6fb0"/></marker>
+    <marker id="smr-arrow-g" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#16a34a"/></marker>
+  </defs>
+  <!-- Left panel: Scheduled Script -->
+  <rect x="0" y="0" width="320" height="176" rx="9" fill="#eef2fb" stroke="#b2c2e6" stroke-width="1.5"/>
+  <rect x="0" y="0" width="320" height="30" rx="9" fill="#0b1f4d"/>
+  <rect x="0" y="20" width="320" height="10" fill="#0b1f4d"/>
+  <text x="160" y="19" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb" letter-spacing="0.04em">SCHEDULED SCRIPT — Single Thread</text>
+  <!-- Sequential flow -->
+  <rect x="20" y="42" width="280" height="22" rx="5" fill="#14306b"/>
+  <text x="160" y="57" text-anchor="middle" font-size="9" font-weight="700" fill="#eef2fb">Start</text>
+  <line x1="160" y1="64" x2="160" y2="76" stroke="#4f6fb0" stroke-width="1.5" marker-end="url(#smr-arrow)"/>
+  <rect x="20" y="76" width="280" height="20" rx="4" fill="#d7e0f3" stroke="#4f7fff" stroke-width="1"/>
+  <text x="160" y="90" text-anchor="middle" font-size="8.5" fill="#14306b">Record 1 → Record 2 → Record 3 → …</text>
+  <line x1="160" y1="96" x2="160" y2="108" stroke="#4f6fb0" stroke-width="1.5" marker-end="url(#smr-arrow)"/>
+  <rect x="20" y="108" width="280" height="20" rx="4" fill="#d7e0f3" stroke="#4f7fff" stroke-width="1"/>
+  <text x="160" y="122" text-anchor="middle" font-size="8.5" fill="#14306b">All work: one governance budget</text>
+  <text x="160" y="148" text-anchor="middle" font-size="8" fill="#4f6fb0">Hits limit → entire job fails</text>
+  <text x="160" y="163" text-anchor="middle" font-size="8" font-weight="600" fill="#14306b">Best for: hundreds of records, simple logic</text>
+  <!-- Right panel: Map/Reduce -->
+  <rect x="360" y="0" width="320" height="176" rx="9" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <rect x="360" y="0" width="320" height="30" rx="9" fill="#14532d"/>
+  <rect x="360" y="20" width="320" height="10" fill="#14532d"/>
+  <text x="520" y="19" text-anchor="middle" font-size="10" font-weight="700" fill="#dcfce7" letter-spacing="0.04em">MAP/REDUCE — Distributed Stages</text>
+  <!-- Stages -->
+  <rect x="400" y="42" width="240" height="18" rx="4" fill="#166534"/>
+  <text x="520" y="55" text-anchor="middle" font-size="8.5" font-weight="700" fill="#dcfce7">getInputData() — define workload</text>
+  <line x1="520" y1="60" x2="520" y2="70" stroke="#16a34a" stroke-width="1.5" marker-end="url(#smr-arrow-g)"/>
+  <!-- 3 parallel map boxes -->
+  <rect x="375" y="70" width="70" height="16" rx="3" fill="#bbf7d0" stroke="#4ade80" stroke-width="1"/>
+  <text x="410" y="82" text-anchor="middle" font-size="7.5" fill="#14532d">map() ①</text>
+  <rect x="450" y="70" width="70" height="16" rx="3" fill="#bbf7d0" stroke="#4ade80" stroke-width="1"/>
+  <text x="485" y="82" text-anchor="middle" font-size="7.5" fill="#14532d">map() ②</text>
+  <rect x="525" y="70" width="70" height="16" rx="3" fill="#bbf7d0" stroke="#4ade80" stroke-width="1"/>
+  <text x="560" y="82" text-anchor="middle" font-size="7.5" fill="#14532d">map() ③</text>
+  <text x="650" y="82" text-anchor="middle" font-size="7.5" fill="#4f6fb0">parallel</text>
+  <line x1="520" y1="86" x2="520" y2="96" stroke="#16a34a" stroke-width="1.5" marker-end="url(#smr-arrow-g)"/>
+  <rect x="400" y="96" width="240" height="18" rx="4" fill="#bbf7d0" stroke="#4ade80" stroke-width="1"/>
+  <text x="520" y="109" text-anchor="middle" font-size="8.5" fill="#14532d">reduce() — aggregate by key</text>
+  <line x1="520" y1="114" x2="520" y2="124" stroke="#16a34a" stroke-width="1.5" marker-end="url(#smr-arrow-g)"/>
+  <rect x="400" y="124" width="240" height="18" rx="4" fill="#166534"/>
+  <text x="520" y="137" text-anchor="middle" font-size="8.5" font-weight="700" fill="#dcfce7">summarize() — completion</text>
+  <text x="520" y="155" text-anchor="middle" font-size="8" fill="#16a34a">Each map() gets its own governance budget</text>
+  <text x="520" y="168" text-anchor="middle" font-size="8" font-weight="600" fill="#14532d">Best for: thousands of records, batch scale</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Scheduled Scripts fail at scale because one governance budget covers all records. Map/Reduce distributes the budget across independent map() executions.</figcaption>
+</figure>
+
 ## Scheduled Scripts: single-threaded, sequential
 
 A Scheduled Script runs as a single execution. It starts, processes records one by one in sequence, and finishes. All of the work happens in one transaction context, on one thread.

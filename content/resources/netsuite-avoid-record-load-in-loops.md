@@ -30,6 +30,52 @@ Each `record.load()` retrieves the complete record: every body field, every subl
 
 This increases governance unit usage, slows execution, and is one of the most common causes of scripts approaching or hitting governance limits.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 152" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="loop-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#ef4444"/></marker>
+    <marker id="loop-arrow-g" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#16a34a"/></marker>
+  </defs>
+  <!-- Left: Bad pattern -->
+  <rect x="0" y="0" width="320" height="152" rx="9" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <rect x="0" y="0" width="320" height="26" rx="9" fill="#991b1b"/>
+  <rect x="0" y="16" width="320" height="10" fill="#991b1b"/>
+  <text x="160" y="17" text-anchor="middle" font-size="10" font-weight="700" fill="#fee2e2">Loop with record.load() — 1,000 loads</text>
+  <rect x="16" y="34" width="288" height="18" rx="4" fill="#0b1f4d"/>
+  <text x="160" y="47" text-anchor="middle" font-size="9" font-weight="700" fill="#eef2fb">Saved search returns 1,000 IDs</text>
+  <line x1="160" y1="52" x2="160" y2="60" stroke="#ef4444" stroke-width="1.5" marker-end="url(#loop-arrow)"/>
+  <!-- 3 sample record.load boxes -->
+  <rect x="16" y="62" width="88" height="16" rx="3" fill="#fca5a5"/>
+  <text x="60" y="74" text-anchor="middle" font-size="8" fill="#7f1d1d">record.load(1)</text>
+  <rect x="116" y="62" width="88" height="16" rx="3" fill="#fca5a5"/>
+  <text x="160" y="74" text-anchor="middle" font-size="8" fill="#7f1d1d">record.load(2)</text>
+  <rect x="216" y="62" width="88" height="16" rx="3" fill="#fca5a5"/>
+  <text x="260" y="74" text-anchor="middle" font-size="8" fill="#7f1d1d">record.load(3) …</text>
+  <text x="160" y="96" text-anchor="middle" font-size="8" fill="#991b1b">Each loads: all body fields + all line items</text>
+  <text x="160" y="110" text-anchor="middle" font-size="8" fill="#991b1b">+ sublists + subrecords</text>
+  <text x="160" y="132" text-anchor="middle" font-size="8.5" font-weight="700" fill="#991b1b">1,000 × full record cost = governance risk</text>
+  <!-- Right: Good pattern -->
+  <rect x="360" y="0" width="320" height="152" rx="9" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <rect x="360" y="0" width="320" height="26" rx="9" fill="#14532d"/>
+  <rect x="360" y="16" width="320" height="10" fill="#14532d"/>
+  <text x="520" y="17" text-anchor="middle" font-size="10" font-weight="700" fill="#dcfce7">Search columns — 0 extra loads</text>
+  <rect x="376" y="34" width="288" height="18" rx="4" fill="#166534"/>
+  <text x="520" y="47" text-anchor="middle" font-size="9" font-weight="700" fill="#dcfce7">Search returns 1,000 rows with columns</text>
+  <line x1="520" y1="52" x2="520" y2="60" stroke="#16a34a" stroke-width="1.5" marker-end="url(#loop-arrow-g)"/>
+  <!-- 3 result rows -->
+  <rect x="376" y="62" width="88" height="16" rx="3" fill="#bbf7d0"/>
+  <text x="420" y="74" text-anchor="middle" font-size="8" fill="#14532d">result[0]</text>
+  <rect x="476" y="62" width="88" height="16" rx="3" fill="#bbf7d0"/>
+  <text x="520" y="74" text-anchor="middle" font-size="8" fill="#14532d">result[1]</text>
+  <rect x="576" y="62" width="88" height="16" rx="3" fill="#bbf7d0"/>
+  <text x="620" y="74" text-anchor="middle" font-size="8" fill="#14532d">result[2] …</text>
+  <text x="520" y="96" text-anchor="middle" font-size="8" fill="#14532d">result.getValue('entity') — already there</text>
+  <text x="520" y="110" text-anchor="middle" font-size="8" fill="#14532d">No additional operation needed</text>
+  <text x="520" y="132" text-anchor="middle" font-size="8.5" font-weight="700" fill="#14532d">0 extra record loads · governance intact</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Include the fields you need as search columns. The data is already in the result — no loop record load required.</figcaption>
+</figure>
+
 ## The fix: design your search to return what you need
 
 The correct approach is to include the required fields as columns in the saved search, so the data is already available in the result:

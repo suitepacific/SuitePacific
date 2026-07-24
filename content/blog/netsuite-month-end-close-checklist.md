@@ -7,6 +7,61 @@ tags: ["NetSuite", "Reporting"]
 
 Generic month-end close advice is easy to find. What's harder to find is what's specific to NetSuite: the things that behave differently than your old system, the steps that require clicking in a specific order, and the reports that only tell you something went wrong after you've already closed the period. This checklist covers those.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 168" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="cl-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#b2c2e6"/></marker>
+  </defs>
+  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">MONTH-END CLOSE SEQUENCE</text>
+  <!-- Phase 1 -->
+  <rect x="0" y="22" width="148" height="108" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <rect x="0" y="22" width="148" height="26" rx="7" fill="#4f7fff"/>
+  <rect x="0" y="40" width="148" height="8" fill="#4f7fff"/>
+  <text x="74" y="39" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">1. Data Prep</text>
+  <text x="10" y="60" font-size="9" fill="#14306b">✓ Date vs. posting period check</text>
+  <text x="10" y="74" font-size="9" fill="#14306b">✓ Clear pending approvals</text>
+  <text x="10" y="88" font-size="9" fill="#14306b">✓ Currency revaluation</text>
+  <text x="10" y="102" font-size="9" fill="#14306b">✓ Received-not-billed accruals</text>
+  <text x="74" y="122" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Items 1, 2, 3, 5</text>
+  <!-- Arrow 1→2 -->
+  <line x1="150" y1="76" x2="168" y2="76" stroke="#b2c2e6" stroke-width="1.5" marker-end="url(#cl-arrow)"/>
+  <!-- Phase 2 -->
+  <rect x="170" y="22" width="148" height="108" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <rect x="170" y="22" width="148" height="26" rx="7" fill="#4f7fff"/>
+  <rect x="170" y="40" width="148" height="8" fill="#4f7fff"/>
+  <text x="244" y="39" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">2. Process Runs</text>
+  <text x="180" y="60" font-size="9" fill="#14306b">✓ Run depreciation (FAM)</text>
+  <text x="180" y="74" font-size="9" fill="#14306b">✓ Verify scheduled scripts</text>
+  <text x="180" y="88" font-size="9" fill="#14306b">✓ Revenue recognition plans</text>
+  <text x="244" y="122" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Items 6, 8, 11</text>
+  <!-- Arrow 2→3 -->
+  <line x1="320" y1="76" x2="338" y2="76" stroke="#b2c2e6" stroke-width="1.5" marker-end="url(#cl-arrow)"/>
+  <!-- Phase 3 -->
+  <rect x="340" y="22" width="148" height="108" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <rect x="340" y="22" width="148" height="26" rx="7" fill="#4f7fff"/>
+  <rect x="340" y="40" width="148" height="8" fill="#4f7fff"/>
+  <text x="414" y="39" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">3. Reconciliation</text>
+  <text x="350" y="60" font-size="9" fill="#14306b">✓ A/R and A/P to GL</text>
+  <text x="350" y="74" font-size="9" fill="#14306b">✓ Bank accounts to GL</text>
+  <text x="350" y="88" font-size="9" fill="#14306b">✓ Intercompany elimination</text>
+  <text x="414" y="122" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Items 4, 9, 10</text>
+  <!-- Arrow 3→4 -->
+  <line x1="490" y1="76" x2="508" y2="76" stroke="#b2c2e6" stroke-width="1.5" marker-end="url(#cl-arrow)"/>
+  <!-- Phase 4 -->
+  <rect x="510" y="22" width="170" height="108" rx="7" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+  <rect x="510" y="22" width="170" height="26" rx="7" fill="#059669"/>
+  <rect x="510" y="40" width="170" height="8" fill="#059669"/>
+  <text x="595" y="39" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">4. Lock Down</text>
+  <text x="520" y="60" font-size="9" fill="#065f46">✓ Lock subledger periods first</text>
+  <text x="520" y="74" font-size="9" fill="#065f46">✓ Review Period Summary</text>
+  <text x="520" y="88" font-size="9" fill="#065f46">✓ Lock All Transactions</text>
+  <text x="595" y="122" text-anchor="middle" font-size="8.5" fill="#059669">Items 7, 12</text>
+  <!-- Footer -->
+  <text x="0" y="148" font-size="9" fill="#8aa2d6">Do not lock before reconciliation is clean. Subledger periods must be locked before the All Transactions period.</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">The sequence matters. Running process jobs after reconciliation — or locking before them — produces unreliable financials.</figcaption>
+</figure>
+
 ## 1. Check for transactions with mismatched dates and posting periods
 
 NetSuite lets a transaction have a date in one period but post to a completely different period. A vendor bill dated March 31 can post to April if someone changed the posting period manually. Before closing, run a saved search on Transactions where Transaction Date is in the current period but Posting Period is not, and vice versa. Entries that shouldn't exist will surface immediately.

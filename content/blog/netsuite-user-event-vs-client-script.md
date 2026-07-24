@@ -7,6 +7,45 @@ tags: ["SuiteScript", "Development"]
 
 The most common SuiteScript question from teams inheriting a customized NetSuite account is some version of: "Why does this logic only work sometimes?" Nine times out of ten, the answer is that someone put server-side business logic in a Client script, or vice versa. Understanding the difference between the two isn't just academic - it determines whether your customization works reliably or only when someone manually saves a record from the UI.
 
+<div style="overflow-x:auto;margin:2rem 0">
+<table style="width:100%;border-collapse:collapse;font-size:0.85rem;font-family:system-ui,-apple-system,sans-serif;min-width:480px">
+<thead>
+<tr>
+<th style="padding:0.75rem 1rem;text-align:left;background:#060f26;color:#eef2fb;font-weight:600;width:36%">Save path</th>
+<th style="padding:0.75rem 1rem;text-align:center;background:#0b1f4d;color:#eef2fb;font-weight:600">Client Script fires?</th>
+<th style="padding:0.75rem 1rem;text-align:center;background:#4f7fff;color:#fff;font-weight:600">User Event fires?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;color:#14306b">User saves in the UI</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#065f46;font-weight:700">Yes</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#065f46;font-weight:700">Yes</td>
+</tr>
+<tr style="background:#f8faff">
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;color:#14306b">CSV import</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#dc2626;font-weight:700">No</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#065f46;font-weight:700">Yes</td>
+</tr>
+<tr>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;color:#14306b">REST API / integration</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#dc2626;font-weight:700">No</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#065f46;font-weight:700">Yes</td>
+</tr>
+<tr style="background:#f8faff">
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;color:#14306b">Another SuiteScript</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#dc2626;font-weight:700">No</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#065f46;font-weight:700">Yes</td>
+</tr>
+<tr>
+<td style="padding:0.65rem 1rem;color:#14306b">Workflow action</td>
+<td style="padding:0.65rem 1rem;text-align:center;color:#dc2626;font-weight:700">No</td>
+<td style="padding:0.65rem 1rem;text-align:center;color:#065f46;font-weight:700">Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+
 ## What a Client Script actually is
 
 A Client script runs in the user's browser while they are actively working with a record. It executes in response to user actions: opening a form, changing a field value, clicking a button, or submitting a record from the UI. The key word is "browser" - the script lives and runs on the client side, which means it only fires when a human is interacting with the form through NetSuite's web interface.

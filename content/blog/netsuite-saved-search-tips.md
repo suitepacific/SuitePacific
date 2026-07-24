@@ -7,6 +7,38 @@ tags: ["Saved Searches", "Reporting"]
 
 Saved searches are the most underused power tool in NetSuite. Most teams use them for basic filtering and stop there, but a well-built saved search can replace a custom report, feed a dashboard, trigger a workflow, or catch data errors before they become a closing-day fire drill.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="ss-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#8aa2d6"/></marker>
+  </defs>
+  <text x="340" y="13" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">THREE WAYS TO MAKE A SAVED SEARCH OPERATIONAL</text>
+  <!-- Source: Saved Search -->
+  <rect x="254" y="22" width="172" height="44" rx="7" fill="#0b1f4d" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="340" y="42" text-anchor="middle" font-size="11" font-weight="700" fill="#eef2fb">Saved Search</text>
+  <text x="340" y="57" text-anchor="middle" font-size="9" fill="#8aa2d6">criteria · columns · summary types</text>
+  <!-- Arrow to Dashboard -->
+  <line x1="254" y1="50" x2="160" y2="90" stroke="#8aa2d6" stroke-width="1.5" marker-end="url(#ss-arrow)"/>
+  <!-- Dashboard Portlet box -->
+  <rect x="20" y="90" width="182" height="44" rx="7" fill="#eef2fb" stroke="#b2c2e6" stroke-width="1.5"/>
+  <text x="111" y="111" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b">Dashboard Portlet</text>
+  <text x="111" y="124" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Visible on login · refreshes live</text>
+  <!-- Arrow to Email -->
+  <line x1="340" y1="66" x2="340" y2="88" stroke="#8aa2d6" stroke-width="1.5" marker-end="url(#ss-arrow)"/>
+  <!-- Scheduled Email box -->
+  <rect x="249" y="90" width="182" height="44" rx="7" fill="#eef2fb" stroke="#b2c2e6" stroke-width="1.5"/>
+  <text x="340" y="111" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b">Scheduled Email</text>
+  <text x="340" y="124" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Set under Email tab · suppresses if empty</text>
+  <!-- Arrow to Workflow -->
+  <line x1="426" y1="50" x2="520" y2="90" stroke="#8aa2d6" stroke-width="1.5" marker-end="url(#ss-arrow)"/>
+  <!-- Workflow Trigger box -->
+  <rect x="478" y="90" width="182" height="44" rx="7" fill="#eef2fb" stroke="#b2c2e6" stroke-width="1.5"/>
+  <text x="569" y="111" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b">Workflow Filter</text>
+  <text x="569" y="124" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Entry condition · triggers automation</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">A single saved search can feed all three outputs. The search is built once; operations run automatically.</figcaption>
+</figure>
+
 Here are ten techniques we use constantly when cleaning up or building out a client's saved searches.
 
 ## 1. Use summary types instead of exporting to Excel

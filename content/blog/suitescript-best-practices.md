@@ -7,6 +7,47 @@ tags: ["SuiteScript", "Development"]
 
 The most common SuiteScript problem we see when we take over a NetSuite account isn't bad code. It's code that worked fine in isolation but breaks the moment the business changes around it, or silently stops working after a release. Here's what we check first, and what we build differently.
 
+<div style="background:#f0fdf4;border:1px solid #86efac;border-radius:10px;overflow:hidden;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<div style="background:#14532d;padding:0.7rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem">
+<span style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#4ade80"></span><span style="font-size:0.68rem;font-weight:700;color:#dcfce7;letter-spacing:0.08em">SUITESCRIPT 2.x BEST PRACTICES — QUICK REFERENCE</span></span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 1.25rem;border-bottom:1px solid #bbf7d0">
+<span style="color:#16a34a;flex-shrink:0;font-size:0.85rem;margin-top:1px">✓</span>
+<span style="color:#14532d;font-size:0.8rem;flex:1;line-height:1.45"><strong>Map/Reduce for bulk jobs.</strong> If a Scheduled Script needs to yield more than once to finish, convert it to Map/Reduce.</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 1.25rem;border-bottom:1px solid #bbf7d0;background:#f0fdf4">
+<span style="color:#16a34a;flex-shrink:0;font-size:0.85rem;margin-top:1px">✓</span>
+<span style="color:#14532d;font-size:0.8rem;flex:1;line-height:1.45"><strong>No hard-coded internal IDs.</strong> IDs differ between sandbox and production. Resolve by script ID or saved search instead.</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 1.25rem;border-bottom:1px solid #bbf7d0">
+<span style="color:#16a34a;flex-shrink:0;font-size:0.85rem;margin-top:1px">✓</span>
+<span style="color:#14532d;font-size:0.8rem;flex:1;line-height:1.45"><strong>Wrap external calls in try/catch.</strong> API timeouts, null fields, and governance errors are not edge cases. Handle them explicitly.</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 1.25rem;border-bottom:1px solid #bbf7d0;background:#f0fdf4">
+<span style="color:#16a34a;flex-shrink:0;font-size:0.85rem;margin-top:1px">✓</span>
+<span style="color:#14532d;font-size:0.8rem;flex:1;line-height:1.45"><strong>Validation in beforeSubmit, notifications in afterSubmit.</strong> Validation after the DB write cannot block a bad save.</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 1.25rem;border-bottom:1px solid #bbf7d0">
+<span style="color:#16a34a;flex-shrink:0;font-size:0.85rem;margin-top:1px">✓</span>
+<span style="color:#14532d;font-size:0.8rem;flex:1;line-height:1.45"><strong>Batch searches before loops, not inside them.</strong> One search returning 500 rows costs far less than 500 individual lookupFields calls.</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 1.25rem;border-bottom:1px solid #bbf7d0;background:#f0fdf4">
+<span style="color:#16a34a;flex-shrink:0;font-size:0.85rem;margin-top:1px">✓</span>
+<span style="color:#14532d;font-size:0.8rem;flex:1;line-height:1.45"><strong>Config in script parameters, not in code.</strong> Subsidiary IDs, thresholds, and feature flags belong in a parameter or setup record.</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 1.25rem;border-bottom:1px solid #bbf7d0">
+<span style="color:#16a34a;flex-shrink:0;font-size:0.85rem;margin-top:1px">✓</span>
+<span style="color:#14532d;font-size:0.8rem;flex:1;line-height:1.45"><strong>Log decisions, not field dumps.</strong> Log why a record was skipped or which branch it took. Reserve log.error for things that need action.</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 1.25rem">
+<span style="color:#16a34a;flex-shrink:0;font-size:0.85rem;margin-top:1px">✓</span>
+<span style="color:#14532d;font-size:0.8rem;flex:1;line-height:1.45"><strong>Comment the WHY, not the WHAT.</strong> "// subtotal lines have no inventory impact" is useful. "// loop through line items" is not.</span>
+</div>
+<div style="padding:0.65rem 1.25rem;background:#dcfce7;border-top:1px solid #86efac;font-size:0.78rem;color:#14532d">
+These practices matter most at scale. A script that ignores them works fine on 50 records in sandbox and fails in production on 5,000.
+</div>
+</div>
+
 ## Prefer Map/Reduce over heavy Scheduled Scripts
 
 If a script processes more than a few hundred records, a Scheduled Script will eventually hit governance limits and either fail or require complex manual re-queuing logic. **Map/Reduce scripts** are built for exactly this: NetSuite handles the batching, retries, and governance allocation per stage automatically. Migrating a struggling Scheduled Script to Map/Reduce is one of the highest-leverage cleanups we do.

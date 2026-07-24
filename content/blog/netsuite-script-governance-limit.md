@@ -24,6 +24,45 @@ Each script type has a different total governance budget per execution:
 | Mass Update | 1,000 units per record |
 | Workflow Action Script | 1,000 units |
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="gov-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#ef4444"/></marker>
+  </defs>
+  <!-- Title -->
+  <text x="0" y="14" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.07em">WHAT 1,000 UNITS LOOKS LIKE IN PRACTICE (USER EVENT SCRIPT)</text>
+  <!-- Scale bar background -->
+  <rect x="0" y="24" width="540" height="6" rx="3" fill="#eef2fb"/>
+  <!-- 1,000-unit limit marker -->
+  <line x1="270" y1="18" x2="270" y2="185" stroke="#b2c2e6" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="272" y="22" font-size="9" fill="#8aa2d6">1,000 unit limit</text>
+  <!-- ─── ROW 1: record.load() in a loop ─── -->
+  <text x="0" y="52" font-size="10" font-weight="600" fill="#7f1d1d">Loading records in a loop  (record.load() × 100 = 1,000 units)</text>
+  <!-- Bar: 100 loads = exactly 1,000 units = 270px -->
+  <rect x="0" y="56" width="270" height="22" rx="3" fill="#fca5a5"/>
+  <text x="8" y="71" font-size="10" font-weight="600" fill="#7f1d1d">1,000 units</text>
+  <!-- overflow arrow showing it goes further with more records -->
+  <line x1="270" y1="67" x2="530" y2="67" stroke="#ef4444" stroke-width="2" marker-end="url(#gov-arrow)"/>
+  <rect x="534" y="56" width="80" height="22" rx="3" fill="#fee2e2" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="574" y="71" font-size="10" font-weight="700" fill="#ef4444" text-anchor="middle">EXCEEDED</text>
+  <!-- ─── ROW 2: search + submitFields mix ─── -->
+  <text x="0" y="104" font-size="10" font-weight="600" fill="#92400e">Mixed operations  (20 loads + 10 searches + 15 submits = 450 units)</text>
+  <rect x="0" y="108" width="122" height="22" rx="3" fill="#fed7aa"/>
+  <text x="8" y="123" font-size="10" fill="#92400e">450 / 1,000</text>
+  <text x="130" y="123" font-size="10" fill="#8aa2d6">550 units remaining</text>
+  <!-- ─── ROW 3: search with columns ─── -->
+  <text x="0" y="156" font-size="10" font-weight="600" fill="#065f46">Search with columns  (1 search returning all needed data = ~20 units)</text>
+  <rect x="0" y="160" width="5" height="22" rx="2" fill="#34d399"/>
+  <text x="12" y="175" font-size="10" fill="#065f46">20 / 1,000</text>
+  <text x="80" y="175" font-size="10" fill="#8aa2d6">980 units remaining</text>
+  <rect x="534" y="160" width="80" height="22" rx="3" fill="#d1fae5" stroke="#34d399" stroke-width="1.5"/>
+  <text x="574" y="175" font-size="10" font-weight="700" fill="#065f46" text-anchor="middle">SAFE</text>
+  <!-- Key -->
+  <text x="0" y="198" font-size="9" fill="#4f6fb0">record.load() = 10 units · search.run() = 5+ units · search.lookupFields() = 10 units · record.submitFields() = 10 units</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">A single search with column projections uses a fraction of the budget a record-load loop consumes.</figcaption>
+</figure>
+
 The most consequential limits in practice are User Event scripts (1,000 units per record save) and Scheduled Scripts (10,000 units per execution, after which the script must yield or fail).
 
 When a script exceeds its governance budget, NetSuite throws `"Script Execution Governance Limit Exceeded"` and aborts the script at that point. For User Event scripts on `beforeSubmit`, this means the record save is rejected. For `afterSubmit`, the record saved but the script's remaining logic did not execute. For Scheduled scripts, the execution stops until the next scheduled run.

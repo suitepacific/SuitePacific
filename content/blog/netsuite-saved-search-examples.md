@@ -7,6 +7,45 @@ tags: ["Saved Searches", "Reporting"]
 
 Most teams know they should be using saved searches more than they do. The gap is usually a starting point: it's hard to know what's worth building if you're staring at a blank search screen. These are searches we build or encounter regularly across post-go-live accounts, along with the specific criteria that make them work correctly.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">10 SEARCHES — BY TEAM AND PURPOSE</text>
+  <!-- Row 1: Finance -->
+  <rect x="0" y="24" width="215" height="52" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="107" y="43" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Finance / AR</text>
+  <text x="107" y="57" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Overdue invoices · Vendor aging</text>
+  <text x="107" y="69" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Time entries not yet billed</text>
+  <!-- Row 1: Sales -->
+  <rect x="233" y="24" width="214" height="52" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="340" y="43" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Sales / CRM</text>
+  <text x="340" y="57" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Orders pending approval</text>
+  <text x="340" y="69" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Customers with no activity in 90 days</text>
+  <!-- Row 1: Purchasing -->
+  <rect x="465" y="24" width="215" height="52" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="572" y="43" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Purchasing / AP</text>
+  <text x="572" y="57" text-anchor="middle" font-size="8.5" fill="#4f6fb0">POs received not billed</text>
+  <text x="572" y="69" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Expenses pending approval</text>
+  <!-- Row 2: Operations -->
+  <rect x="0" y="92" width="215" height="52" rx="7" fill="#eef2fb" stroke="#b2c2e6" stroke-width="1.5"/>
+  <text x="107" y="111" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Operations</text>
+  <text x="107" y="125" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Items below reorder point</text>
+  <text x="107" y="137" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Open projects over budget</text>
+  <!-- Row 2: Admin -->
+  <rect x="233" y="92" width="214" height="52" rx="7" fill="#eef2fb" stroke="#b2c2e6" stroke-width="1.5"/>
+  <text x="340" y="111" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Admin / Audit</text>
+  <text x="340" y="125" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Transactions created by script</text>
+  <text x="340" y="137" text-anchor="middle" font-size="8.5" fill="#4f6fb0">or workflow (with date filter)</text>
+  <!-- Output methods -->
+  <rect x="465" y="92" width="215" height="52" rx="7" fill="#060f26" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="572" y="111" text-anchor="middle" font-size="9.5" font-weight="700" fill="#eef2fb">All searches can output to:</text>
+  <text x="572" y="125" text-anchor="middle" font-size="8.5" fill="#8aa2d6">Dashboard portlet · Scheduled email</text>
+  <text x="572" y="137" text-anchor="middle" font-size="8.5" fill="#8aa2d6">Workflow entry condition</text>
+  <!-- footer bar -->
+  <rect x="0" y="162" width="680" height="32" rx="6" fill="#f0f4ff" stroke="#d7e0f3" stroke-width="1"/>
+  <text x="340" y="181" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Each search includes the specific criteria fields, formula columns, and summary settings that make it work correctly.</text>
+</svg>
+</figure>
+
 ## 1. Overdue open invoices by customer
 
 **Record type:** Transaction (Invoice)

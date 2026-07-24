@@ -19,6 +19,48 @@ The FreeMarker template sees the transaction data as a single object called `rec
 
 To see the exact XML data model for a specific transaction, open the template editor (Customization > Forms > Advanced PDF/HTML Templates), scroll down to the "Data" section, and select a sample transaction, NetSuite shows the full XML so you can see exactly what field names to reference.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 108" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="fm-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#4f6fb0"/></marker>
+  </defs>
+  <text x="340" y="13" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">FREEMARKER PDF RENDERING PIPELINE</text>
+  <!-- Step 1: Transaction -->
+  <rect x="0" y="22" width="118" height="48" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="59" y="43" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b">Transaction</text>
+  <text x="59" y="58" text-anchor="middle" font-size="8" fill="#4f6fb0">record + related</text>
+  <text x="59" y="70" text-anchor="middle" font-size="8" fill="#4f6fb0">records</text>
+  <!-- Arrow 1 -->
+  <line x1="118" y1="46" x2="144" y2="46" stroke="#4f6fb0" stroke-width="1.5" marker-end="url(#fm-arrow)"/>
+  <!-- Step 2: XML Data Model -->
+  <rect x="147" y="22" width="130" height="48" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="212" y="43" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b">XML Data</text>
+  <text x="212" y="56" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b">Model</text>
+  <text x="212" y="70" text-anchor="middle" font-size="8" fill="#4f6fb0">record.entity etc.</text>
+  <!-- Arrow 2 -->
+  <line x1="277" y1="46" x2="303" y2="46" stroke="#4f6fb0" stroke-width="1.5" marker-end="url(#fm-arrow)"/>
+  <!-- Step 3: FreeMarker Engine -->
+  <rect x="306" y="22" width="140" height="48" rx="7" fill="#0b1f4d" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="376" y="43" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">FreeMarker</text>
+  <text x="376" y="56" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">Engine</text>
+  <text x="376" y="70" text-anchor="middle" font-size="8" fill="#8aa2d6">template + data</text>
+  <!-- Arrow 3 -->
+  <line x1="446" y1="46" x2="472" y2="46" stroke="#4f6fb0" stroke-width="1.5" marker-end="url(#fm-arrow)"/>
+  <!-- Step 4: HTML -->
+  <rect x="475" y="22" width="90" height="48" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="520" y="46" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b">HTML</text>
+  <text x="520" y="62" text-anchor="middle" font-size="8" fill="#4f6fb0">rendered output</text>
+  <!-- Arrow 4 -->
+  <line x1="565" y1="46" x2="591" y2="46" stroke="#4f6fb0" stroke-width="1.5" marker-end="url(#fm-arrow)"/>
+  <!-- Step 5: PDF -->
+  <rect x="594" y="22" width="86" height="48" rx="7" fill="#4f7fff" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="637" y="46" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">PDF</text>
+  <text x="637" y="62" text-anchor="middle" font-size="8" fill="#d7e0f3">NetSuite renderer</text>
+  <!-- Footnote -->
+  <text x="340" y="96" text-anchor="middle" font-size="8" fill="#8aa2d6">The template references data as ${record.fieldId} — field names match the XML data model, not the UI label.</text>
+</svg>
+</figure>
+
 ## The core FreeMarker syntax
 
 FreeMarker has two types of constructs: expressions that output a value (`${...}`) and directives that control template logic (`<# ... >`).

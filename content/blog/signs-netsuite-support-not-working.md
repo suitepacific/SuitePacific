@@ -10,6 +10,56 @@ Most NetSuite support problems don't announce themselves. They accumulate. A slo
 
 If you're reading this, you're probably already suspicious. Here are the signs that confirm it.
 
+<div style="background:#060f26;border-radius:10px;overflow:hidden;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<div style="background:#0b1f4d;padding:0.7rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem">
+<span style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#ef4444"></span><span style="font-size:0.68rem;font-weight:700;color:#eef2fb;letter-spacing:0.08em">SUPPORT ENGAGEMENT DIAGNOSTIC</span></span>
+<span style="font-size:0.68rem;color:#ef4444;font-weight:700;letter-spacing:0.05em;white-space:nowrap">8 WARNINGS FOUND</span>
+</div>
+<div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 1.25rem;border-bottom:1px solid #0d1f3c">
+<span style="color:#ef4444;flex-shrink:0;font-size:0.85rem">⚠</span>
+<span style="color:#d7e0f3;font-size:0.8rem;flex:1;line-height:1.45">Scripts break after every release. Your team tells you first, not your partner.</span>
+<span style="color:#ef4444;background:#1e0606;border:1px solid #5c1a1a;padding:0.15rem 0.45rem;border-radius:3px;font-size:0.6rem;font-weight:700;letter-spacing:0.04em;white-space:nowrap;flex-shrink:0">CRITICAL</span>
+</div>
+<div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 1.25rem;border-bottom:1px solid #0d1f3c;background:#08142e">
+<span style="color:#ef4444;flex-shrink:0;font-size:0.85rem">⚠</span>
+<span style="color:#d7e0f3;font-size:0.8rem;flex:1;line-height:1.45">The developer who built your customization is no longer reachable.</span>
+<span style="color:#ef4444;background:#1e0606;border:1px solid #5c1a1a;padding:0.15rem 0.45rem;border-radius:3px;font-size:0.6rem;font-weight:700;letter-spacing:0.04em;white-space:nowrap;flex-shrink:0">CRITICAL</span>
+</div>
+<div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 1.25rem;border-bottom:1px solid #0d1f3c">
+<span style="color:#ef4444;flex-shrink:0;font-size:0.85rem">⚠</span>
+<span style="color:#d7e0f3;font-size:0.8rem;flex:1;line-height:1.45">Changes go straight to production without sandbox testing.</span>
+<span style="color:#ef4444;background:#1e0606;border:1px solid #5c1a1a;padding:0.15rem 0.45rem;border-radius:3px;font-size:0.6rem;font-weight:700;letter-spacing:0.04em;white-space:nowrap;flex-shrink:0">CRITICAL</span>
+</div>
+<div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 1.25rem;border-bottom:1px solid #0d1f3c;background:#08142e">
+<span style="color:#f97316;flex-shrink:0;font-size:0.85rem">⚠</span>
+<span style="color:#d7e0f3;font-size:0.8rem;flex:1;line-height:1.45">Routine questions take 3 to 5 business days to get a response.</span>
+<span style="color:#f97316;background:#1e0a02;border:1px solid #7c2d12;padding:0.15rem 0.45rem;border-radius:3px;font-size:0.6rem;font-weight:700;letter-spacing:0.04em;white-space:nowrap;flex-shrink:0">HIGH</span>
+</div>
+<div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 1.25rem;border-bottom:1px solid #0d1f3c">
+<span style="color:#f97316;flex-shrink:0;font-size:0.85rem">⚠</span>
+<span style="color:#d7e0f3;font-size:0.8rem;flex:1;line-height:1.45">Every small request triggers a new SOW and a kickoff call.</span>
+<span style="color:#f97316;background:#1e0a02;border:1px solid #7c2d12;padding:0.15rem 0.45rem;border-radius:3px;font-size:0.6rem;font-weight:700;letter-spacing:0.04em;white-space:nowrap;flex-shrink:0">HIGH</span>
+</div>
+<div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 1.25rem;border-bottom:1px solid #0d1f3c;background:#08142e">
+<span style="color:#f97316;flex-shrink:0;font-size:0.85rem">⚠</span>
+<span style="color:#d7e0f3;font-size:0.8rem;flex:1;line-height:1.45">Partner re-learns your account and business on every support call.</span>
+<span style="color:#f97316;background:#1e0a02;border:1px solid #7c2d12;padding:0.15rem 0.45rem;border-radius:3px;font-size:0.6rem;font-weight:700;letter-spacing:0.04em;white-space:nowrap;flex-shrink:0">HIGH</span>
+</div>
+<div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 1.25rem;border-bottom:1px solid #0d1f3c">
+<span style="color:#f97316;flex-shrink:0;font-size:0.85rem">⚠</span>
+<span style="color:#d7e0f3;font-size:0.8rem;flex:1;line-height:1.45">No documentation of what scripts and workflows are running in your account.</span>
+<span style="color:#f97316;background:#1e0a02;border:1px solid #7c2d12;padding:0.15rem 0.45rem;border-radius:3px;font-size:0.6rem;font-weight:700;letter-spacing:0.04em;white-space:nowrap;flex-shrink:0">HIGH</span>
+</div>
+<div style="display:flex;align-items:center;gap:0.75rem;padding:0.6rem 1.25rem;border-bottom:1px solid #0d1f3c;background:#08142e">
+<span style="color:#eab308;flex-shrink:0;font-size:0.85rem">⚠</span>
+<span style="color:#d7e0f3;font-size:0.8rem;flex:1;line-height:1.45">You were locked into a long-term contract before any real discovery was done.</span>
+<span style="color:#eab308;background:#1a1502;border:1px solid #713f12;padding:0.15rem 0.45rem;border-radius:3px;font-size:0.6rem;font-weight:700;letter-spacing:0.04em;white-space:nowrap;flex-shrink:0">MEDIUM</span>
+</div>
+<div style="padding:0.65rem 1.25rem;background:#040b1a;font-size:0.78rem;color:#4f6fb0;border-top:1px solid #0d1f3c">
+Recognized 3 or more? The structure of the engagement is the problem, not the individual incidents.
+</div>
+</div>
+
 <div style="overflow-x:auto;margin:2rem 0;border-radius:10px;overflow:hidden;border:1px solid #d7e0f3">
 <table style="width:100%;border-collapse:collapse;font-size:0.875rem;font-family:system-ui,-apple-system,sans-serif;min-width:520px">
 <thead>

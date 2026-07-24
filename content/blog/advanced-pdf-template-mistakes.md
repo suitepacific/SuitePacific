@@ -7,6 +7,51 @@ tags: ["Advanced PDF", "Templates"]
 
 A new Advanced PDF template almost always passes testing. The failures usually surface weeks later, on a specific customer's invoice or a transaction with unusual data, and by then nobody remembers what the template was supposed to handle. Five causes account for most of what we end up fixing.
 
+<div style="background:#fefce8;border:1px solid #fde68a;border-radius:10px;overflow:hidden;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<div style="background:#78350f;padding:0.7rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem">
+<span style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fbbf24"></span><span style="font-size:0.68rem;font-weight:700;color:#fef9c3;letter-spacing:0.08em">ADVANCED PDF TEMPLATE FAILURE PATTERNS</span></span>
+<span style="font-size:0.68rem;color:#fbbf24;font-weight:700;white-space:nowrap">5 FOUND</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 1.25rem;border-bottom:1px solid #fde68a">
+<span style="color:#b45309;flex-shrink:0;font-size:0.85rem;margin-top:1px">⚠</span>
+<div style="flex:1">
+<span style="font-size:0.8rem;font-weight:600;color:#713f12;display:block">Multiple near-identical templates instead of one with conditions</span>
+<span style="font-size:0.76rem;color:#92400e;line-height:1.4;display:block;margin-top:2px">Every future change must be made in every copy. One will get missed. Use FreeMarker <code style="font-size:0.72rem;background:#fef3c7;padding:0.1rem 0.3rem;border-radius:2px">&lt;#if&gt;</code> blocks instead.</span>
+</div>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 1.25rem;border-bottom:1px solid #fde68a;background:#fffbeb">
+<span style="color:#b45309;flex-shrink:0;font-size:0.85rem;margin-top:1px">⚠</span>
+<div style="flex:1">
+<span style="font-size:0.8rem;font-weight:600;color:#713f12;display:block">Deep nested joins to pull a single field</span>
+<span style="font-size:0.76rem;color:#92400e;line-height:1.4;display:block;margin-top:2px">Slow to render and fails silently when any link in the chain is empty. Flatten the value onto the transaction at save time.</span>
+</div>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 1.25rem;border-bottom:1px solid #fde68a">
+<span style="color:#b45309;flex-shrink:0;font-size:0.85rem;margin-top:1px">⚠</span>
+<div style="flex:1">
+<span style="font-size:0.8rem;font-weight:600;color:#713f12;display:block">Confusing transaction-level and line-level field scopes</span>
+<span style="font-size:0.76rem;color:#92400e;line-height:1.4;display:block;margin-top:2px">A header field referenced inside a <code style="font-size:0.72rem;background:#fef3c7;padding:0.1rem 0.3rem;border-radius:2px">&lt;#list&gt;</code> loop prints blank or throws an error. First place to check when a field "isn't showing up."</span>
+</div>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 1.25rem;border-bottom:1px solid #fde68a;background:#fffbeb">
+<span style="color:#b45309;flex-shrink:0;font-size:0.85rem;margin-top:1px">⚠</span>
+<div style="flex:1">
+<span style="font-size:0.8rem;font-weight:600;color:#713f12;display:block">Only tested with clean, typical records</span>
+<span style="font-size:0.76rem;color:#92400e;line-height:1.4;display:block;margin-top:2px">Templates break on zero-line transactions, missing addresses, or special characters. Test against the messiest real record in the account before deploying.</span>
+</div>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 1.25rem">
+<span style="color:#b45309;flex-shrink:0;font-size:0.85rem;margin-top:1px">⚠</span>
+<div style="flex:1">
+<span style="font-size:0.8rem;font-weight:600;color:#713f12;display:block">Editing live templates with no backup</span>
+<span style="font-size:0.76rem;color:#92400e;line-height:1.4;display:block;margin-top:2px">No version history is built in. One typo in a conditional block means every document generated until someone notices is wrong. Paste the working version somewhere before touching anything.</span>
+</div>
+</div>
+<div style="padding:0.6rem 1.25rem;background:#fef9c3;border-top:1px solid #fde68a;font-size:0.78rem;color:#713f12">
+Templates pass testing because test data is clean. Production data has missing fields, special characters, and zero-quantity lines that expose every assumption the template made.
+</div>
+</div>
+
 ## 1. Maintaining near-identical templates instead of one template with conditions
 
 The most common pattern we find is three or four templates that are 90% identical, one for each customer type or region, copied and tweaked instead of built once. Every future change then has to be made three or four times, and it's only a matter of time before one copy gets missed. FreeMarker's `<#if>` and `<#else>` blocks can handle almost all of this branching inside a single template, keyed off a field on the record. One template to maintain beats four that drift apart.

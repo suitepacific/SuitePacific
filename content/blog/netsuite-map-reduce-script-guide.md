@@ -40,6 +40,69 @@ The practical threshold: if your Scheduled Script currently needs more than one 
 
 Map/Reduce scripts have five stages. Each stage runs in its own execution context with its own governance budget, which is why Map/Reduce can handle workloads that would destroy a single-execution Scheduled Script.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="mr-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#8aa2d6"/></marker>
+  </defs>
+  <!-- Stage boxes: getInputData, map, shuffle, reduce, summarize -->
+  <!-- getInputData -->
+  <rect x="0" y="34" width="108" height="62" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="54" y="56" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b">getInputData</text>
+  <text x="54" y="70" text-anchor="middle" font-size="9" fill="#4f6fb0">Returns Search</text>
+  <text x="54" y="82" text-anchor="middle" font-size="9" fill="#4f6fb0">or Array</text>
+  <rect x="14" y="100" width="80" height="16" rx="3" fill="#dbeafe"/>
+  <text x="54" y="111" text-anchor="middle" font-size="8.5" fill="#1d4ed8" font-weight="600">10,000 units</text>
+  <!-- Arrow -->
+  <line x1="108" y1="65" x2="134" y2="65" stroke="#8aa2d6" stroke-width="1.5" marker-end="url(#mr-arrow)"/>
+  <text x="121" y="60" text-anchor="middle" font-size="8" fill="#8aa2d6">distributes</text>
+  <!-- map() - stacked to show parallelism -->
+  <rect x="140" y="44" width="100" height="52" rx="7" fill="#eef2fb" stroke="#4f6fb0" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+  <rect x="136" y="39" width="100" height="52" rx="7" fill="#eef2fb" stroke="#4f6fb0" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
+  <rect x="132" y="34" width="100" height="62" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="182" y="56" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b">map()</text>
+  <text x="182" y="70" text-anchor="middle" font-size="9" fill="#4f6fb0">Per input key</text>
+  <text x="182" y="82" text-anchor="middle" font-size="9" fill="#4f6fb0">emits key/value</text>
+  <rect x="146" y="100" width="72" height="16" rx="3" fill="#dbeafe"/>
+  <text x="182" y="111" text-anchor="middle" font-size="8.5" fill="#1d4ed8" font-weight="600">1,000 units each</text>
+  <text x="182" y="128" text-anchor="middle" font-size="8" fill="#4f7fff" font-weight="600">runs in parallel</text>
+  <!-- Arrow -->
+  <line x1="232" y1="65" x2="268" y2="65" stroke="#8aa2d6" stroke-width="1.5" marker-end="url(#mr-arrow)"/>
+  <text x="250" y="60" text-anchor="middle" font-size="8" fill="#8aa2d6">groups by key</text>
+  <!-- shuffle (implicit) -->
+  <rect x="274" y="48" width="72" height="46" rx="5" fill="#f8faff" stroke="#b2c2e6" stroke-width="1" stroke-dasharray="2,2"/>
+  <text x="310" y="68" text-anchor="middle" font-size="9" fill="#8aa2d6">NetSuite</text>
+  <text x="310" y="80" text-anchor="middle" font-size="9" fill="#8aa2d6">sorts keys</text>
+  <text x="310" y="111" text-anchor="middle" font-size="8" fill="#b2c2e6">(implicit)</text>
+  <!-- Arrow -->
+  <line x1="346" y1="65" x2="382" y2="65" stroke="#8aa2d6" stroke-width="1.5" marker-end="url(#mr-arrow)"/>
+  <!-- reduce() - stacked -->
+  <rect x="394" y="44" width="100" height="52" rx="7" fill="#eef2fb" stroke="#4f6fb0" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+  <rect x="390" y="39" width="100" height="52" rx="7" fill="#eef2fb" stroke="#4f6fb0" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
+  <rect x="386" y="34" width="100" height="62" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="436" y="56" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b">reduce()</text>
+  <text x="436" y="70" text-anchor="middle" font-size="9" fill="#4f6fb0">Per unique key</text>
+  <text x="436" y="82" text-anchor="middle" font-size="9" fill="#4f6fb0">all values grouped</text>
+  <rect x="400" y="100" width="72" height="16" rx="3" fill="#dbeafe"/>
+  <text x="436" y="111" text-anchor="middle" font-size="8.5" fill="#1d4ed8" font-weight="600">5,000 units each</text>
+  <text x="436" y="128" text-anchor="middle" font-size="8" fill="#4f7fff" font-weight="600">runs in parallel</text>
+  <!-- Arrow -->
+  <line x1="486" y1="65" x2="522" y2="65" stroke="#8aa2d6" stroke-width="1.5" marker-end="url(#mr-arrow)"/>
+  <!-- summarize() -->
+  <rect x="528" y="34" width="108" height="62" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="582" y="56" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b">summarize()</text>
+  <text x="582" y="70" text-anchor="middle" font-size="9" fill="#4f6fb0">Runs once</text>
+  <text x="582" y="82" text-anchor="middle" font-size="9" fill="#4f6fb0">errors, cleanup</text>
+  <rect x="542" y="100" width="80" height="16" rx="3" fill="#dbeafe"/>
+  <text x="582" y="111" text-anchor="middle" font-size="8.5" fill="#1d4ed8" font-weight="600">10,000 units</text>
+  <!-- Title -->
+  <text x="340" y="16" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">MAP/REDUCE EXECUTION PIPELINE</text>
+  <!-- Footer note -->
+  <text x="0" y="158" font-size="9" fill="#8aa2d6">Stacked boxes indicate parallel execution. NetSuite manages the distribution and retry logic automatically.</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">map() and reduce() run in parallel across many workers. Each worker gets its own governance budget.</figcaption>
+</figure>
+
 ### Stage 1: getInputData()
 
 `getInputData()` tells the framework what records need to be processed. It returns a data source, a Search object, a Query object, or a small fixed array, and NetSuite's framework handles the rest.

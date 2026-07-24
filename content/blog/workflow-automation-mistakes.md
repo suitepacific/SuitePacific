@@ -7,6 +7,51 @@ tags: ["Workflow Automation", "SuiteFlow"]
 
 SuiteFlow makes it easy to build a workflow and easy to build one that breaks in ways that are hard to diagnose later. Here are the five mistakes we find most often when we inherit a client's workflow library.
 
+<div style="background:#fefce8;border:1px solid #fde68a;border-radius:10px;overflow:hidden;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<div style="background:#854d0e;padding:0.7rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem">
+<span style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fbbf24"></span><span style="font-size:0.68rem;font-weight:700;color:#fef9c3;letter-spacing:0.08em">WORKFLOW DESIGN ISSUES DETECTED</span></span>
+<span style="font-size:0.68rem;color:#fbbf24;font-weight:700;white-space:nowrap">5 PATTERNS FOUND</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.65rem 1.25rem;border-bottom:1px solid #fde68a">
+<span style="color:#b45309;font-size:0.85rem;flex-shrink:0;margin-top:1px">⚠</span>
+<div style="flex:1">
+<span style="font-size:0.8rem;font-weight:600;color:#713f12;display:block">Triggers on every save, not on relevant field changes</span>
+<span style="font-size:0.76rem;color:#92400e;line-height:1.4;display:block;margin-top:2px">Fires constantly, re-sends approval emails on typo fixes, fills logs with noise.</span>
+</div>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.65rem 1.25rem;border-bottom:1px solid #fde68a;background:#fffbeb">
+<span style="color:#b45309;font-size:0.85rem;flex-shrink:0;margin-top:1px">⚠</span>
+<div style="flex:1">
+<span style="font-size:0.8rem;font-weight:600;color:#713f12;display:block">Business logic duplicated across multiple workflows</span>
+<span style="font-size:0.76rem;color:#92400e;line-height:1.4;display:block;margin-top:2px">No single source of truth. When the rule changes, it must be updated in every place that encodes it.</span>
+</div>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.65rem 1.25rem;border-bottom:1px solid #fde68a">
+<span style="color:#b45309;font-size:0.85rem;flex-shrink:0;margin-top:1px">⚠</span>
+<div style="flex:1">
+<span style="font-size:0.8rem;font-weight:600;color:#713f12;display:block">No state diagram — nobody can explain what the workflow actually does</span>
+<span style="font-size:0.76rem;color:#92400e;line-height:1.4;display:block;margin-top:2px">The workflow editor is not documentation. A 6-state workflow with no diagram is a change risk.</span>
+</div>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.65rem 1.25rem;border-bottom:1px solid #fde68a;background:#fffbeb">
+<span style="color:#b45309;font-size:0.85rem;flex-shrink:0;margin-top:1px">⚠</span>
+<div style="flex:1">
+<span style="font-size:0.8rem;font-weight:600;color:#713f12;display:block">Critical notifications sent via workflow email actions</span>
+<span style="font-size:0.76rem;color:#92400e;line-height:1.4;display:block;margin-top:2px">Workflow queues can back up. Time-sensitive alerts need a scheduled or Map/Reduce script with explicit delivery.</span>
+</div>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.65rem 1.25rem">
+<span style="color:#b45309;font-size:0.85rem;flex-shrink:0;margin-top:1px">⚠</span>
+<div style="flex:1">
+<span style="font-size:0.8rem;font-weight:600;color:#713f12;display:block">Workflow and User Event script both writing the same field</span>
+<span style="font-size:0.76rem;color:#92400e;line-height:1.4;display:block;margin-top:2px">Execution order is unpredictable. One silently overwrites the other. The field value becomes non-deterministic.</span>
+</div>
+</div>
+<div style="padding:0.6rem 1.25rem;background:#fef9c3;border-top:1px solid #fde68a;font-size:0.78rem;color:#713f12">
+Most of these accumulate gradually. None of them cause obvious failures at first — they surface months later when the account grows or someone inherits the workflow library.
+</div>
+</div>
+
 ## 1. Triggering on every record save instead of relevant changes
 
 A workflow set to run on **every** record save, rather than only when a specific field changes, will fire constantly, including for unrelated edits. This wastes governance, can cause unexpected side effects (re-sending an approval email because someone fixed a typo in a memo field), and makes the workflow's logs nearly impossible to read. Use a **field-changed condition**, or check the field's old vs. new value in a workflow action script, so the workflow only runs when it actually needs to.

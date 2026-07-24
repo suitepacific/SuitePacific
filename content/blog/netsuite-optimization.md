@@ -11,6 +11,44 @@ None of this gets added on purpose. It builds up because NetSuite makes it easy 
 
 A NetSuite optimization is a cleanup pass on a live account. No re-implementation, no module changes, no big project. Just a structured review of what is actually in the system and what should not be.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 148" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <text x="340" y="13" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">AUDIT AREAS — LIVE ACCOUNT OPTIMIZATION</text>
+  <!-- Row 1: 3 boxes -->
+  <rect x="0" y="22" width="206" height="54" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="103" y="43" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b">Custom Fields</text>
+  <text x="103" y="57" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Deactivate fields not on any active</text>
+  <text x="103" y="69" text-anchor="middle" font-size="8.5" fill="#4f6fb0">form with no data in them</text>
+
+  <rect x="237" y="22" width="206" height="54" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="340" y="43" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b">Saved Searches</text>
+  <text x="340" y="57" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Remove portlet assignments for</text>
+  <text x="340" y="69" text-anchor="middle" font-size="8.5" fill="#4f6fb0">ended processes; deactivate stale ones</text>
+
+  <rect x="474" y="22" width="206" height="54" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="577" y="43" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b">Workflows</text>
+  <text x="577" y="57" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Check entry conditions; deactivate</text>
+  <text x="577" y="69" text-anchor="middle" font-size="8.5" fill="#4f6fb0">workflows for ended processes</text>
+
+  <!-- Row 2: 3 boxes -->
+  <rect x="0" y="90" width="206" height="54" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="103" y="111" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b">Script Deployments</text>
+  <text x="103" y="125" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Review Released status; confirm each</text>
+  <text x="103" y="137" text-anchor="middle" font-size="8.5" fill="#4f6fb0">deployment has an active business use</text>
+
+  <rect x="237" y="90" width="206" height="54" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="340" y="111" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b">Roles and Permissions</text>
+  <text x="340" y="125" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Move users off Admin/Full Access;</text>
+  <text x="340" y="137" text-anchor="middle" font-size="8.5" fill="#4f6fb0">scope roles to actual job functions</text>
+
+  <rect x="474" y="90" width="206" height="54" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="577" y="111" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b">Custom Forms</text>
+  <text x="577" y="125" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Set obsolete forms to inactive so</text>
+  <text x="577" y="137" text-anchor="middle" font-size="8.5" fill="#4f6fb0">they don't appear in the selector</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">All six areas compound. A script deployed to a high-volume record type with no entry condition, custom fields loading on that same record, and a portlet search running on every login adds up fast.</figcaption>
+</figure>
+
 Here is what to look at.
 
 ## Custom fields
