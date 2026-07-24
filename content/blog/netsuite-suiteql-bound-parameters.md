@@ -9,6 +9,32 @@ If you build SuiteQL queries in NetSuite that include dynamic values, such as a 
 
 NetSuite 2026.2 adds support for **bound parameters** in REST SuiteQL queries. Instead of embedding values directly in the query string, you put placeholders in the query and pass the values separately. NetSuite handles the substitution safely.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <rect x="0" y="0" width="320" height="140" rx="9" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <rect x="0" y="0" width="320" height="28" rx="9" fill="#991b1b"/>
+  <rect x="0" y="18" width="320" height="10" fill="#991b1b"/>
+  <text x="160" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#fee2e2">String interpolation — unsafe</text>
+  <rect x="12" y="34" width="296" height="32" rx="4" fill="#1e0505" stroke="#7f1d1d" stroke-width="1"/>
+  <text x="160" y="48" text-anchor="middle" font-size="7.5" fill="#fca5a5" font-family="monospace">WHERE status = '${statusValue}'</text>
+  <text x="160" y="60" text-anchor="middle" font-size="7.5" fill="#f87171" font-family="monospace">// value comes from dynamic input</text>
+  <text x="160" y="82" text-anchor="middle" font-size="8" fill="#991b1b">statusValue = <tspan font-family="monospace" fill="#ef4444">' OR '1'='1</tspan></text>
+  <text x="160" y="97" text-anchor="middle" font-size="8" fill="#991b1b">... alters the SQL structure</text>
+  <text x="160" y="120" text-anchor="middle" font-size="8.5" font-weight="700" fill="#991b1b">Dynamic value changes the query logic</text>
+  <rect x="360" y="0" width="320" height="140" rx="9" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <rect x="360" y="0" width="320" height="28" rx="9" fill="#14532d"/>
+  <rect x="360" y="18" width="320" height="10" fill="#14532d"/>
+  <text x="520" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#dcfce7">Bound parameters — safe (2026.2+)</text>
+  <rect x="372" y="34" width="296" height="32" rx="4" fill="#052e16" stroke="#166534" stroke-width="1"/>
+  <text x="520" y="48" text-anchor="middle" font-size="7.5" fill="#86efac" font-family="monospace">WHERE status = ?</text>
+  <text x="520" y="60" text-anchor="middle" font-size="7.5" fill="#4ade80" font-family="monospace">params: [statusValue]</text>
+  <text x="520" y="82" text-anchor="middle" font-size="8" fill="#14532d">statusValue = <tspan font-family="monospace" fill="#16a34a">' OR '1'='1</tspan></text>
+  <text x="520" y="97" text-anchor="middle" font-size="8" fill="#14532d">... treated as a literal string</text>
+  <text x="520" y="120" text-anchor="middle" font-size="8.5" font-weight="700" fill="#14532d">Query structure cannot be altered</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Bound parameters parse the query once, then substitute values safely. The <code>?</code> placeholder is never interpreted as SQL.</figcaption>
+</figure>
+
 ## The problem with inline values
 
 A common pattern for building SuiteQL queries with dynamic values looks like this:

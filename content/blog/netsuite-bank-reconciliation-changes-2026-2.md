@@ -7,6 +7,39 @@ tags: ["Banking", "Accounting", "Administration"]
 
 If you do bank reconciliation in NetSuite, the Match Bank Data page looks different in 2026.2. Several tabs have been renamed, buttons have changed, and a new subtab has replaced the old Review tab. Here is a complete rundown of what changed.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 144" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="brc-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#4f7fff"/></marker>
+  </defs>
+  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">MATCH BANK DATA PAGE — KEY CHANGES IN 2026.2</text>
+  <!-- Before: old Review tab -->
+  <rect x="0" y="22" width="290" height="116" rx="9" fill="#f8f9fc" stroke="#d7e0f3" stroke-width="1.5"/>
+  <rect x="0" y="22" width="290" height="26" rx="9" fill="#4f6fb0"/>
+  <rect x="0" y="38" width="290" height="10" fill="#4f6fb0"/>
+  <text x="145" y="40" text-anchor="middle" font-size="9.5" font-weight="700" fill="#eef2fb">Before 2026.2</text>
+  <text x="145" y="60" text-anchor="middle" font-size="9" fill="#14306b">Review subtab</text>
+  <text x="145" y="76" text-anchor="middle" font-size="8.5" fill="#4f6fb0">List of unmatched bank lines</text>
+  <text x="145" y="90" text-anchor="middle" font-size="8.5" fill="#4f6fb0">No structured suggested actions</text>
+  <text x="145" y="104" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Manual matching only</text>
+  <text x="145" y="127" text-anchor="middle" font-size="8" fill="#8aa2d6">Covers AR only</text>
+  <!-- Arrow -->
+  <line x1="290" y1="80" x2="390" y2="80" stroke="#4f7fff" stroke-width="2" marker-end="url(#brc-arrow)"/>
+  <text x="340" y="73" text-anchor="middle" font-size="8" font-weight="700" fill="#4f7fff">2026.2</text>
+  <!-- After: Match Suggestions -->
+  <rect x="392" y="22" width="288" height="116" rx="9" fill="#eef2fb" stroke="#4f7fff" stroke-width="2"/>
+  <rect x="392" y="22" width="288" height="26" rx="9" fill="#0b1f4d"/>
+  <rect x="392" y="38" width="288" height="10" fill="#0b1f4d"/>
+  <text x="536" y="40" text-anchor="middle" font-size="9.5" font-weight="700" fill="#eef2fb">After 2026.2</text>
+  <text x="536" y="60" text-anchor="middle" font-size="9" font-weight="700" fill="#14306b">Match Suggestions subtab</text>
+  <text x="536" y="74" text-anchor="middle" font-size="8" fill="#4f6fb0">Match Transaction · Review Match Options</text>
+  <text x="536" y="87" text-anchor="middle" font-size="8" fill="#4f6fb0">Apply Payment · Review Payment Options</text>
+  <text x="536" y="100" text-anchor="middle" font-size="8" fill="#4f6fb0">Create (new transaction)</text>
+  <text x="536" y="127" text-anchor="middle" font-size="8" fill="#16a34a">Covers both AR and AP</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Match Suggestions gives each unmatched bank line five structured resolution options rather than a flat review list.</figcaption>
+</figure>
+
 ## The Match Suggestions subtab replaces the Review subtab
 
 The biggest change on the Match Bank Data page is the new **Match Suggestions** subtab. It replaces the old Review subtab.

@@ -21,6 +21,42 @@ A single Payment Run can contain any combination of:
 
 You add whatever payables belong together, review them as a batch, get approvals, and process everything at once.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 86" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="prb-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#4f6fb0"/></marker>
+  </defs>
+  <text x="340" y="13" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">PAYMENT RUN — FOUR-STAGE WORKFLOW</text>
+  <rect x="0" y="22" width="144" height="58" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <rect x="0" y="22" width="144" height="22" rx="7" fill="#0b1f4d"/>
+  <rect x="0" y="34" width="144" height="10" fill="#0b1f4d"/>
+  <text x="72" y="35" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">① Prepare</text>
+  <text x="72" y="55" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Add payables to run</text>
+  <text x="72" y="68" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Bills · credits · journals</text>
+  <line x1="144" y1="51" x2="162" y2="51" stroke="#4f6fb0" stroke-width="1.5" marker-end="url(#prb-arrow)"/>
+  <rect x="164" y="22" width="144" height="58" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <rect x="164" y="22" width="144" height="22" rx="7" fill="#0b1f4d"/>
+  <rect x="164" y="34" width="144" height="10" fill="#0b1f4d"/>
+  <text x="236" y="35" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">② Review</text>
+  <text x="236" y="55" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Full batch visible</text>
+  <text x="236" y="68" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Remove duplicates</text>
+  <line x1="308" y1="51" x2="326" y2="51" stroke="#4f6fb0" stroke-width="1.5" marker-end="url(#prb-arrow)"/>
+  <rect x="328" y="22" width="144" height="58" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <rect x="328" y="22" width="144" height="22" rx="7" fill="#0b1f4d"/>
+  <rect x="328" y="34" width="144" height="10" fill="#0b1f4d"/>
+  <text x="400" y="35" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">③ Approve</text>
+  <text x="400" y="55" text-anchor="middle" font-size="8.5" fill="#4f6fb0">AP approval workflow</text>
+  <text x="400" y="68" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Sees full batch</text>
+  <line x1="472" y1="51" x2="490" y2="51" stroke="#4f6fb0" stroke-width="1.5" marker-end="url(#prb-arrow)"/>
+  <rect x="492" y="22" width="188" height="58" rx="7" fill="#060f26" stroke="#4f7fff" stroke-width="1.5"/>
+  <rect x="492" y="22" width="188" height="22" rx="7" fill="#4f7fff"/>
+  <rect x="492" y="34" width="188" height="10" fill="#4f7fff"/>
+  <text x="586" y="35" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">④ Process</text>
+  <text x="586" y="55" text-anchor="middle" font-size="8.5" fill="#8aa2d6">Bulk Processing Framework</text>
+  <text x="586" y="68" text-anchor="middle" font-size="8.5" fill="#8aa2d6">All payments execute</text>
+</svg>
+</figure>
+
 ## How the workflow works
 
 Payment Runs follows a four-stage workflow:
