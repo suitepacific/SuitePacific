@@ -21,6 +21,42 @@ Over months or years, someone added:
 
 Each change looked harmless on its own. Together, they transformed a simple operational search into a complex analytical query, one that was never designed for the data volume or the reporting complexity it now carries.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 136" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="ssp-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#4f6fb0"/></marker>
+  </defs>
+  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">HOW A SEARCH GETS SLOW — ACCUMULATION PATTERN</text>
+  <!-- Stage 1 -->
+  <rect x="0" y="24" width="128" height="54" rx="7" fill="#eef2fb" stroke="#4ade80" stroke-width="2"/>
+  <text x="64" y="43" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Simple search</text>
+  <text x="64" y="57" text-anchor="middle" font-size="8" fill="#4f6fb0">Status + date range</text>
+  <text x="64" y="70" text-anchor="middle" font-size="8" font-weight="700" fill="#16a34a">Fast</text>
+  <line x1="128" y1="51" x2="148" y2="51" stroke="#4f6fb0" stroke-width="1.5" marker-end="url(#ssp-arrow)"/>
+  <!-- Stage 2 -->
+  <rect x="150" y="24" width="128" height="54" rx="7" fill="#eef2fb" stroke="#eab308" stroke-width="2"/>
+  <text x="214" y="43" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">+ Formula column</text>
+  <text x="214" y="57" text-anchor="middle" font-size="8" fill="#4f6fb0">Margin % per row</text>
+  <text x="214" y="70" text-anchor="middle" font-size="8" font-weight="700" fill="#b45309">Slower</text>
+  <line x1="278" y1="51" x2="298" y2="51" stroke="#4f6fb0" stroke-width="1.5" marker-end="url(#ssp-arrow)"/>
+  <!-- Stage 3 -->
+  <rect x="300" y="24" width="128" height="54" rx="7" fill="#fef2f2" stroke="#f97316" stroke-width="2"/>
+  <text x="364" y="43" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">+ Joined fields</text>
+  <text x="364" y="57" text-anchor="middle" font-size="8" fill="#4f6fb0">Customer group join</text>
+  <text x="364" y="70" text-anchor="middle" font-size="8" font-weight="700" fill="#c2410c">Much slower</text>
+  <line x1="428" y1="51" x2="448" y2="51" stroke="#4f6fb0" stroke-width="1.5" marker-end="url(#ssp-arrow)"/>
+  <!-- Stage 4 -->
+  <rect x="450" y="24" width="230" height="54" rx="7" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+  <text x="565" y="40" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">+ Summary SUM/COUNT</text>
+  <text x="565" y="54" text-anchor="middle" font-size="8" fill="#4f6fb0">Full-dataset aggregation</text>
+  <text x="565" y="70" text-anchor="middle" font-size="8" font-weight="700" fill="#991b1b">Reports say "takes forever"</text>
+  <!-- Explanation row -->
+  <rect x="0" y="94" width="680" height="38" rx="6" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
+  <text x="340" y="110" text-anchor="middle" font-size="8.5" fill="#713f12">Each addition looked reasonable in isolation. Combined with 50,000 rows, the search now does work it was never designed for.</text>
+  <text x="340" y="125" text-anchor="middle" font-size="8.5" fill="#713f12">Fix: remove unused columns, replace deep joins with flat fields, or move analytical queries to SuiteAnalytics Workbook.</text>
+</svg>
+</figure>
+
 ## What makes a Saved Search expensive
 
 **Formula columns** require NetSuite to evaluate a calculation for every row in the result set. A `CASE WHEN amount > 10000 THEN 'High' ELSE 'Low' END` formula runs once per result. At 50,000 rows, that is 50,000 formula evaluations.

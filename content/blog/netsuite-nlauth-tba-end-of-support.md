@@ -11,6 +11,37 @@ NetSuite is ending it.
 
 The 2026.2 release notes confirm two changes coming in 2027.1 and one tentatively planned for 2028.1.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">AUTHENTICATION RETIREMENT TIMELINE</text>
+  <!-- Timeline spine -->
+  <line x1="40" y1="50" x2="640" y2="50" stroke="#d7e0f3" stroke-width="2"/>
+  <!-- Now marker -->
+  <circle cx="60" cy="50" r="7" fill="#4f7fff"/>
+  <text x="60" y="37" text-anchor="middle" font-size="8.5" font-weight="700" fill="#14306b">Now</text>
+  <text x="60" y="69" text-anchor="middle" font-size="8" fill="#4f6fb0">2026.2</text>
+  <!-- 2027.1 marker -->
+  <circle cx="340" cy="50" r="7" fill="#ef4444"/>
+  <text x="340" y="37" text-anchor="middle" font-size="8.5" font-weight="700" fill="#991b1b">Hard deadline</text>
+  <text x="340" y="69" text-anchor="middle" font-size="8" fill="#991b1b">2027.1</text>
+  <!-- 2028.1 marker -->
+  <circle cx="600" cy="50" r="7" fill="#f97316"/>
+  <text x="600" y="37" text-anchor="middle" font-size="8.5" font-weight="700" fill="#92400e">Tentative</text>
+  <text x="600" y="69" text-anchor="middle" font-size="8" fill="#92400e">2028.1</text>
+  <!-- Action items under 2027.1 -->
+  <text x="340" y="88" text-anchor="middle" font-size="8" fill="#991b1b">NLAuth integrations stop working</text>
+  <text x="340" y="100" text-anchor="middle" font-size="8" fill="#991b1b">New TBA integrations blocked</text>
+  <text x="340" y="112" text-anchor="middle" font-size="8" fill="#991b1b">PKCE required for OAuth 2.0</text>
+  <!-- Action items under 2028.1 -->
+  <text x="600" y="88" text-anchor="middle" font-size="8" fill="#92400e">TBA fully retired</text>
+  <text x="600" y="100" text-anchor="middle" font-size="8" fill="#92400e">(existing integrations stop)</text>
+  <!-- Now action -->
+  <text x="60" y="88" text-anchor="middle" font-size="8" fill="#4f6fb0">Audit all integrations</text>
+  <text x="60" y="100" text-anchor="middle" font-size="8" fill="#4f6fb0">Plan OAuth 2.0 migration</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Migrating to TBA now buys time but is not the final destination. OAuth 2.0 is the long-term target.</figcaption>
+</figure>
+
 ## What is being retired and when
 
 **As of 2027.1:**

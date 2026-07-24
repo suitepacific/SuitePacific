@@ -22,6 +22,51 @@ NetSuite processes the payments using the Bulk Processing Framework. After proce
 
 ## The four stages of a Payment Run
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 110" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="pr-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#4f6fb0"/></marker>
+  </defs>
+  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">PAYMENT RUN — FOUR-STAGE WORKFLOW</text>
+  <!-- Stage 1 -->
+  <rect x="0" y="24" width="144" height="64" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <rect x="0" y="24" width="144" height="24" rx="7" fill="#0b1f4d"/>
+  <rect x="0" y="38" width="144" height="10" fill="#0b1f4d"/>
+  <text x="72" y="39" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">① Prepare</text>
+  <text x="72" y="58" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Add payables to run</text>
+  <text x="72" y="70" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Bills · credits · journals</text>
+  <text x="72" y="82" text-anchor="middle" font-size="8.5" fill="#4f6fb0">expense reports</text>
+  <line x1="144" y1="56" x2="162" y2="56" stroke="#4f6fb0" stroke-width="1.5" marker-end="url(#pr-arrow)"/>
+  <!-- Stage 2 -->
+  <rect x="164" y="24" width="144" height="64" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <rect x="164" y="24" width="144" height="24" rx="7" fill="#0b1f4d"/>
+  <rect x="164" y="38" width="144" height="10" fill="#0b1f4d"/>
+  <text x="236" y="39" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">② Review</text>
+  <text x="236" y="58" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Full batch visible before</text>
+  <text x="236" y="70" text-anchor="middle" font-size="8.5" fill="#4f6fb0">payment leaves NetSuite</text>
+  <text x="236" y="82" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Remove · verify · check dupes</text>
+  <line x1="308" y1="56" x2="326" y2="56" stroke="#4f6fb0" stroke-width="1.5" marker-end="url(#pr-arrow)"/>
+  <!-- Stage 3 -->
+  <rect x="328" y="24" width="144" height="64" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <rect x="328" y="24" width="144" height="24" rx="7" fill="#0b1f4d"/>
+  <rect x="328" y="38" width="144" height="10" fill="#0b1f4d"/>
+  <text x="400" y="39" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">③ Approve</text>
+  <text x="400" y="58" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Approval workflow routes</text>
+  <text x="400" y="70" text-anchor="middle" font-size="8.5" fill="#4f6fb0">full batch to approvers</text>
+  <text x="400" y="82" text-anchor="middle" font-size="8.5" fill="#4f6fb0">not individual records</text>
+  <line x1="472" y1="56" x2="490" y2="56" stroke="#4f6fb0" stroke-width="1.5" marker-end="url(#pr-arrow)"/>
+  <!-- Stage 4 -->
+  <rect x="492" y="24" width="188" height="64" rx="7" fill="#060f26" stroke="#4f7fff" stroke-width="1.5"/>
+  <rect x="492" y="24" width="188" height="24" rx="7" fill="#4f7fff"/>
+  <rect x="492" y="38" width="188" height="10" fill="#4f7fff"/>
+  <text x="586" y="39" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">④ Process</text>
+  <text x="586" y="58" text-anchor="middle" font-size="8.5" fill="#8aa2d6">Bulk Processing Framework</text>
+  <text x="586" y="70" text-anchor="middle" font-size="8.5" fill="#8aa2d6">executes all payments</text>
+  <text x="586" y="82" text-anchor="middle" font-size="8.5" fill="#8aa2d6">Source records updated</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">No payment leaves NetSuite until the Review and Approve stages are complete.</figcaption>
+</figure>
+
 **Stage 1: Prepare**
 
 Create the Payment Run and add the payables you want to include. You can mix record types freely. This is also your first opportunity to review for duplicates.

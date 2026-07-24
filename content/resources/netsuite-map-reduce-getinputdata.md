@@ -15,6 +15,45 @@ Most Map/Reduce documentation focuses on the `map()` and `reduce()` stages, wher
 
 Its job is simple: tell NetSuite what records need to be processed. Return a data source, and let the framework take it from there.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 152" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="gid-arrow-r" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#ef4444"/></marker>
+    <marker id="gid-arrow-g" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#16a34a"/></marker>
+  </defs>
+  <!-- Left: Wrong pattern -->
+  <rect x="0" y="0" width="320" height="152" rx="9" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <rect x="0" y="0" width="320" height="28" rx="9" fill="#991b1b"/>
+  <rect x="0" y="18" width="320" height="10" fill="#991b1b"/>
+  <text x="160" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#fee2e2">getInputData() — wrong pattern</text>
+  <rect x="16" y="36" width="288" height="18" rx="4" fill="#fca5a5" opacity="0.7"/>
+  <text x="160" y="49" text-anchor="middle" font-size="8.5" fill="#7f1d1d">Run search inside getInputData()</text>
+  <line x1="160" y1="54" x2="160" y2="64" stroke="#ef4444" stroke-width="1.5" marker-end="url(#gid-arrow-r)"/>
+  <rect x="16" y="64" width="288" height="18" rx="4" fill="#fca5a5" opacity="0.7"/>
+  <text x="160" y="77" text-anchor="middle" font-size="8.5" fill="#7f1d1d">Loop through ALL results sequentially</text>
+  <line x1="160" y1="82" x2="160" y2="92" stroke="#ef4444" stroke-width="1.5" marker-end="url(#gid-arrow-r)"/>
+  <rect x="16" y="92" width="288" height="18" rx="4" fill="#fca5a5" opacity="0.7"/>
+  <text x="160" y="105" text-anchor="middle" font-size="8.5" fill="#7f1d1d">Build array, then pass to map()</text>
+  <text x="160" y="126" text-anchor="middle" font-size="8" fill="#991b1b">All work in single thread · no parallel benefit</text>
+  <text x="160" y="140" text-anchor="middle" font-size="8" font-weight="700" fill="#991b1b">Governance limit risk on large datasets</text>
+  <!-- Right: Correct pattern -->
+  <rect x="360" y="0" width="320" height="152" rx="9" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <rect x="360" y="0" width="320" height="28" rx="9" fill="#14532d"/>
+  <rect x="360" y="18" width="320" height="10" fill="#14532d"/>
+  <text x="520" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#dcfce7">getInputData() — correct pattern</text>
+  <rect x="376" y="36" width="288" height="18" rx="4" fill="#bbf7d0" stroke="#4ade80" stroke-width="1"/>
+  <text x="520" y="49" text-anchor="middle" font-size="8.5" font-weight="700" fill="#14532d">return search.load({ id: '...' })</text>
+  <line x1="520" y1="54" x2="520" y2="68" stroke="#16a34a" stroke-width="1.5" marker-end="url(#gid-arrow-g)"/>
+  <rect x="376" y="68" width="288" height="62" rx="4" fill="#dcfce7"/>
+  <text x="520" y="84" text-anchor="middle" font-size="8.5" fill="#14532d">NetSuite framework handles:</text>
+  <text x="520" y="97" text-anchor="middle" font-size="8.5" fill="#14532d">· iterating results</text>
+  <text x="520" y="110" text-anchor="middle" font-size="8.5" fill="#14532d">· distributing to parallel map() workers</text>
+  <text x="520" y="123" text-anchor="middle" font-size="8.5" fill="#14532d">· managing governance per execution</text>
+  <text x="520" y="140" text-anchor="middle" font-size="8" font-weight="700" fill="#14532d">Full parallel benefit · scales with dataset size</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Return the search object itself, not an array you built by looping. The framework does the rest.</figcaption>
+</figure>
+
 ## What many scripts do instead
 
 A common pattern uses `getInputData()` to run a search, loop through every result, and build an array before passing it to `map()`:
