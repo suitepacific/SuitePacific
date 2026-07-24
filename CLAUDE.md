@@ -2,7 +2,13 @@
 
 ## Content Rules
 - All article content (blogs, resources) must come strictly from official NetSuite release notes or verified NetSuite documentation. No hallucinated steps, no invented navigation paths.
-- No em dashes anywhere on the site or in posts.
+- No em dashes (`—`) anywhere on the site, in posts, or in content files. Use contextually appropriate punctuation instead:
+  - After a bold label in a list (`**Label** — description`): use a colon (`**Label:** description`)
+  - In a step or section heading (`## Step 1 — Title`): use a colon (`## Step 1: Title`)
+  - Mid-sentence as a parenthetical aside: use a comma (`, `)
+  - At a clause boundary (stronger break): use a semicolon (`;`)
+  - In code comments inside code blocks: use a regular hyphen (` - `) or colon
+  - This applies to all TSX files, markdown content, and any string literals visible to users.
 - Never add author pages, team pages, named Person schema, or anything that reveals who is behind SuitePacific.
 
 ## Development Rules
