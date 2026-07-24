@@ -18,6 +18,22 @@ As of NetSuite 2026.2, SuiteQL queries against the Transaction table that do not
 
 Queries that already include `ORDER BY` are not affected. This change also applies to SuiteQL used in Analytics Datasets.
 
+<div style="background:#fefce8;border:1px solid #fde68a;border-radius:10px;overflow:hidden;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<div style="background:#78350f;padding:0.7rem 1.25rem;display:flex;align-items:center;gap:8px">
+<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fbbf24"></span><span style="font-size:0.68rem;font-weight:700;color:#fef9c3;letter-spacing:0.08em">DEFAULT SORT CHANGE — ACTION REQUIRED</span>
+</div>
+<div style="padding:0.65rem 1.25rem;border-bottom:1px solid #fde68a">
+<div style="font-size:0.8rem;font-weight:600;color:#713f12;margin-bottom:4px">SELECT ... FROM Transaction WHERE ... (no ORDER BY)</div>
+<div style="display:flex;gap:2rem">
+<span style="font-size:0.76rem;color:#92400e"><strong>Before 2026.2:</strong> sorted by <code style="background:#fef3c7;padding:0.1rem 0.3rem;border-radius:2px;font-size:0.72rem">tranDisplayName</code></span>
+<span style="font-size:0.76rem;color:#14532d"><strong>From 2026.2:</strong> sorted by <code style="background:#d1fae5;padding:0.1rem 0.3rem;border-radius:2px;font-size:0.72rem">tranDate</code></span>
+</div>
+</div>
+<div style="padding:0.65rem 1.25rem;background:#fffbeb;font-size:0.78rem;color:#713f12">
+Fix: add <code style="background:#fef3c7;padding:0.1rem 0.3rem;border-radius:2px">ORDER BY tranDate</code> (or your intended sort) to any Transaction query where result order affects behavior. Applies to SuiteScript and Analytics Datasets.
+</div>
+</div>
+
 ## Step 1: Find affected queries in your codebase
 
 Search for SuiteQL queries that query the Transaction table without an `ORDER BY` clause.

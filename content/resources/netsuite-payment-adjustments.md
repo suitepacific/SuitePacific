@@ -11,6 +11,34 @@ linkedinDay: 27
 
 NetSuite 2026.2 introduces automation for three types of payment discrepancies that previously required manual adjustment entries:
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 110" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">THREE PAYMENT DISCREPANCY TYPES — AUTO-ADJUSTED IN 2026.2</text>
+  <rect x="0" y="22" width="206" height="74" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <rect x="0" y="22" width="206" height="26" rx="7" fill="#0b1f4d"/>
+  <rect x="0" y="38" width="206" height="10" fill="#0b1f4d"/>
+  <text x="103" y="38" text-anchor="middle" font-size="9.5" font-weight="700" fill="#eef2fb">Bank Fees</text>
+  <text x="103" y="60" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Bank deducts processing charge</text>
+  <text x="103" y="74" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Net deposit differs from invoice</text>
+  <text x="103" y="90" text-anchor="middle" font-size="8" font-weight="600" fill="#14306b">Auto-accounted at payment record</text>
+  <rect x="237" y="22" width="206" height="74" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <rect x="237" y="22" width="206" height="26" rx="7" fill="#0b1f4d"/>
+  <rect x="237" y="38" width="206" height="10" fill="#0b1f4d"/>
+  <text x="340" y="38" text-anchor="middle" font-size="9.5" font-weight="700" fill="#eef2fb">Convenience Fees</text>
+  <text x="340" y="60" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Credit card surcharge deducted</text>
+  <text x="340" y="74" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Net deposit below invoice total</text>
+  <text x="340" y="90" text-anchor="middle" font-size="8" font-weight="600" fill="#14306b">Auto-adjusted at payment level</text>
+  <rect x="474" y="22" width="206" height="74" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <rect x="474" y="22" width="206" height="26" rx="7" fill="#0b1f4d"/>
+  <rect x="474" y="38" width="206" height="10" fill="#0b1f4d"/>
+  <text x="577" y="38" text-anchor="middle" font-size="9.5" font-weight="700" fill="#eef2fb">Underpayments</text>
+  <text x="577" y="60" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Customer pays less than billed</text>
+  <text x="577" y="74" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Within configured write-off threshold</text>
+  <text x="577" y="90" text-anchor="middle" font-size="8" font-weight="600" fill="#14306b">Auto write-off, no journal entry needed</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">All three handled from customer payment or customer deposit records. No separate adjustment workflow required.</figcaption>
+</figure>
+
 **Bank fees:** When a bank deducts a processing fee from a customer payment before depositing the remainder, the deposited amount is less than the invoice total. The automated adjustment accounts for the fee difference at the time you record the payment.
 
 **Convenience fees:** When a customer pays through a channel that charges a fee (such as a credit card surcharge), the net amount deposited may differ from the invoiced amount. The adjustment handles this difference automatically.

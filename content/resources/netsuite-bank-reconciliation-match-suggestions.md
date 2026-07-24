@@ -11,6 +11,31 @@ linkedinDay: 25
 
 The Match Bank Data page in NetSuite 2026.2 has a new **Match Suggestions** subtab that replaces the old Review subtab. Along with this, several tab names and button labels changed. If you did bank reconciliation before 2026.2, the page looks different.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="ms-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#4f7fff"/></marker>
+  </defs>
+  <rect x="0" y="0" width="270" height="120" rx="9" fill="#f8f9fc" stroke="#d7e0f3" stroke-width="1.5"/>
+  <rect x="0" y="0" width="270" height="24" rx="9" fill="#4f6fb0"/>
+  <rect x="0" y="14" width="270" height="10" fill="#4f6fb0"/>
+  <text x="135" y="16" text-anchor="middle" font-size="9.5" font-weight="700" fill="#eef2fb">Before 2026.2 — Review subtab</text>
+  <text x="135" y="40" text-anchor="middle" font-size="8.5" fill="#14306b">List of unmatched bank lines</text>
+  <text x="135" y="55" text-anchor="middle" font-size="8.5" fill="#14306b">No suggested action structure</text>
+  <text x="135" y="70" text-anchor="middle" font-size="8.5" fill="#14306b">AR only</text>
+  <line x1="270" y1="60" x2="350" y2="60" stroke="#4f7fff" stroke-width="2" marker-end="url(#ms-arrow)"/>
+  <text x="310" y="52" text-anchor="middle" font-size="8" font-weight="700" fill="#4f7fff">2026.2</text>
+  <rect x="352" y="0" width="328" height="120" rx="9" fill="#eef2fb" stroke="#4f7fff" stroke-width="2"/>
+  <rect x="352" y="0" width="328" height="24" rx="9" fill="#0b1f4d"/>
+  <rect x="352" y="14" width="328" height="10" fill="#0b1f4d"/>
+  <text x="516" y="16" text-anchor="middle" font-size="9.5" font-weight="700" fill="#eef2fb">After 2026.2 — Match Suggestions</text>
+  <text x="516" y="38" text-anchor="middle" font-size="8.5" fill="#14306b">Five actions per unmatched bank line:</text>
+  <text x="516" y="53" text-anchor="middle" font-size="8" fill="#4f6fb0">Match Transaction · Review Match Options</text>
+  <text x="516" y="67" text-anchor="middle" font-size="8" fill="#4f6fb0">Apply Payment · Review Payment Options · Create</text>
+  <text x="516" y="92" text-anchor="middle" font-size="8" fill="#16a34a">Covers both AR and AP</text>
+</svg>
+</figure>
+
 ## Step 1: Navigate to Match Bank Data
 
 Go to **Transactions > Bank > Bank Matching and Reconciliation > Match Bank Data**.

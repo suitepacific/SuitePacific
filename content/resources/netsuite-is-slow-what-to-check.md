@@ -17,6 +17,35 @@ NetSuite performance degrades gradually and silently. Scripts accumulate. Workfl
 
 Before assuming the issue requires an upgrade or re-implementation, check these five areas first.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 148" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">FIVE AREAS TO CHECK — IN THIS ORDER</text>
+  <!-- Row 1: 3 boxes -->
+  <rect x="0" y="22" width="206" height="54" rx="7" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="103" y="41" text-anchor="middle" font-size="9.5" font-weight="700" fill="#991b1b">① Dashboard Searches</text>
+  <text x="103" y="55" text-anchor="middle" font-size="8" fill="#7f1d1d">Portlet searches run on every login</text>
+  <text x="103" y="67" text-anchor="middle" font-size="8" fill="#7f1d1d">Highest frequency in the account</text>
+  <rect x="237" y="22" width="206" height="54" rx="7" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="340" y="41" text-anchor="middle" font-size="9.5" font-weight="700" fill="#991b1b">② Scripts Without Conditions</text>
+  <text x="340" y="55" text-anchor="middle" font-size="8" fill="#7f1d1d">Fire on every save of record type</text>
+  <text x="340" y="67" text-anchor="middle" font-size="8" fill="#7f1d1d">Competes with other script queue</text>
+  <rect x="474" y="22" width="206" height="54" rx="7" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="577" y="41" text-anchor="middle" font-size="9.5" font-weight="700" fill="#991b1b">③ Workflows Without Conditions</text>
+  <text x="577" y="55" text-anchor="middle" font-size="8" fill="#7f1d1d">Evaluate on every record save</text>
+  <text x="577" y="67" text-anchor="middle" font-size="8" fill="#7f1d1d">Accumulate at volume</text>
+  <!-- Row 2: 2 boxes -->
+  <rect x="0" y="88" width="320" height="54" rx="7" fill="#fffbeb" stroke="#fde68a" stroke-width="1.5"/>
+  <text x="160" y="107" text-anchor="middle" font-size="9.5" font-weight="700" fill="#713f12">④ Accumulated Metadata</text>
+  <text x="160" y="121" text-anchor="middle" font-size="8" fill="#92400e">Unused custom fields load with every record</text>
+  <text x="160" y="133" text-anchor="middle" font-size="8" fill="#92400e">Old forms and searches still evaluated</text>
+  <rect x="360" y="88" width="320" height="54" rx="7" fill="#fffbeb" stroke="#fde68a" stroke-width="1.5"/>
+  <text x="520" y="107" text-anchor="middle" font-size="9.5" font-weight="700" fill="#713f12">⑤ Search Criteria vs. Filter</text>
+  <text x="520" y="121" text-anchor="middle" font-size="8" fill="#92400e">Formula filters load full dataset first</text>
+  <text x="520" y="133" text-anchor="middle" font-size="8" fill="#92400e">Move conditions into Criteria tab</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">None of these require a platform upgrade. All are configuration or cleanup changes in the account.</figcaption>
+</figure>
+
 ## 1. Dashboard saved searches
 
 Every portlet on a dashboard backed by a saved search re-executes that search every time someone opens the dashboard. A search with formula columns, joined fields, and no tight date filter runs in full every morning when users log in.

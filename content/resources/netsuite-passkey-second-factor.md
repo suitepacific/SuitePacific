@@ -13,6 +13,32 @@ Before 2026.2, a passkey in NetSuite handled passwordless login. It replaced you
 
 From 2026.2 onward, a FIDO2-compliant passkey can satisfy the 2FA requirement. When NetSuite prompts for a second factor, your passkey biometric scan takes the place of the authenticator app code.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 104" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="p2f-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#4f7fff"/></marker>
+  </defs>
+  <rect x="0" y="0" width="300" height="104" rx="9" fill="#f8f9fc" stroke="#d7e0f3" stroke-width="1.5"/>
+  <rect x="0" y="0" width="300" height="24" rx="9" fill="#4f6fb0"/>
+  <rect x="0" y="14" width="300" height="10" fill="#4f6fb0"/>
+  <text x="150" y="16" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">Before 2026.2</text>
+  <text x="150" y="38" text-anchor="middle" font-size="8.5" fill="#14306b">① Enter password (or use passkey for step 1)</text>
+  <text x="150" y="53" text-anchor="middle" font-size="8.5" fill="#14306b">② Open authenticator app</text>
+  <text x="150" y="68" text-anchor="middle" font-size="8.5" fill="#14306b">③ Enter 6-digit 2FA code</text>
+  <text x="150" y="88" text-anchor="middle" font-size="8" fill="#991b1b">Passkey alone: not valid for 2FA</text>
+  <line x1="300" y1="52" x2="380" y2="52" stroke="#4f7fff" stroke-width="2" marker-end="url(#p2f-arrow)"/>
+  <text x="340" y="44" text-anchor="middle" font-size="8" font-weight="700" fill="#4f7fff">2026.2</text>
+  <rect x="382" y="0" width="298" height="104" rx="9" fill="#eef2fb" stroke="#4f7fff" stroke-width="2"/>
+  <rect x="382" y="0" width="298" height="24" rx="9" fill="#0b1f4d"/>
+  <rect x="382" y="14" width="298" height="10" fill="#0b1f4d"/>
+  <text x="531" y="16" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">After 2026.2</text>
+  <text x="531" y="38" text-anchor="middle" font-size="8.5" fill="#14306b">① Enter password</text>
+  <text x="531" y="53" text-anchor="middle" font-size="8.5" fill="#14306b">② Passkey biometric scan (2FA ✓)</text>
+  <text x="531" y="70" text-anchor="middle" font-size="8.5" fill="#14306b">FIDO2 passkey satisfies the 2FA prompt</text>
+  <text x="531" y="88" text-anchor="middle" font-size="8" font-weight="600" fill="#16a34a">No authenticator app code needed</text>
+</svg>
+</figure>
+
 ## Step 1: Set up a passkey in NetSuite first
 
 If you have not already created a passkey in your NetSuite account, do that first. See [How to Enable Passkeys in NetSuite](/resources/netsuite-passkeys) for the setup steps.

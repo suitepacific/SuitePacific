@@ -13,6 +13,33 @@ Most NetSuite users type a password every day. That password can be guessed, phi
 
 NetSuite now supports **passkeys:** a modern authentication standard that replaces your password with biometric verification on your trusted device. Once configured, you authenticate with Touch ID, Face ID, Windows Hello, or your device's built-in biometric sensor. No password required.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 108" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="pk2-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#4f7fff"/></marker>
+  </defs>
+  <rect x="0" y="0" width="300" height="108" rx="9" fill="#f8f9fc" stroke="#d7e0f3" stroke-width="1.5"/>
+  <rect x="0" y="0" width="300" height="26" rx="9" fill="#4f6fb0"/>
+  <rect x="0" y="16" width="300" height="10" fill="#4f6fb0"/>
+  <text x="150" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">Password Login</text>
+  <text x="150" y="42" text-anchor="middle" font-size="8.5" fill="#14306b">Type account ID + email</text>
+  <text x="150" y="57" text-anchor="middle" font-size="8.5" fill="#14306b">Type password (can be phished/leaked)</text>
+  <text x="150" y="72" text-anchor="middle" font-size="8.5" fill="#14306b">Enter 2FA code from authenticator app</text>
+  <text x="150" y="94" text-anchor="middle" font-size="8" fill="#991b1b">Password can be guessed or stolen</text>
+  <line x1="300" y1="54" x2="380" y2="54" stroke="#4f7fff" stroke-width="2" marker-end="url(#pk2-arrow)"/>
+  <text x="340" y="46" text-anchor="middle" font-size="8" font-weight="700" fill="#4f7fff">passkey</text>
+  <rect x="382" y="0" width="298" height="108" rx="9" fill="#eef2fb" stroke="#4f7fff" stroke-width="2"/>
+  <rect x="382" y="0" width="298" height="26" rx="9" fill="#0b1f4d"/>
+  <rect x="382" y="16" width="298" height="10" fill="#0b1f4d"/>
+  <text x="531" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">Passkey Login</text>
+  <text x="531" y="42" text-anchor="middle" font-size="8.5" fill="#14306b">Open NetSuite</text>
+  <text x="531" y="57" text-anchor="middle" font-size="8.5" fill="#14306b">Biometric prompt on device</text>
+  <text x="531" y="72" text-anchor="middle" font-size="8.5" fill="#14306b">(Face ID / Touch ID / Windows Hello)</text>
+  <text x="531" y="94" text-anchor="middle" font-size="8" font-weight="600" fill="#16a34a">Private key never leaves device · phishing-resistant</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">A passkey eliminates both the password and the authenticator app step from the login flow.</figcaption>
+</figure>
+
 ## What is a passkey?
 
 A passkey is a cryptographic credential stored on your device. When you log in, NetSuite sends a challenge to your device, which your biometric sensor verifies locally. The private key never leaves your device, and there is no password to steal.

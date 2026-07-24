@@ -26,6 +26,38 @@ No error is thrown. No warning is logged. The script simply processes fewer reco
 
 This is one of the more dangerous limitations in SuiteScript because it fails silently. A script that works correctly with 3,000 matching records will silently skip records as your data volume grows past 4,000.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 124" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <!-- Left: search.run() with ceiling -->
+  <rect x="0" y="0" width="320" height="124" rx="9" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <rect x="0" y="0" width="320" height="28" rx="9" fill="#991b1b"/>
+  <rect x="0" y="18" width="320" height="10" fill="#991b1b"/>
+  <text x="160" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#fee2e2">search.run() — hard 4,000-record ceiling</text>
+  <!-- Bar showing data -->
+  <rect x="16" y="36" width="288" height="16" rx="3" fill="#bbf7d0"/>
+  <text x="120" y="48" font-size="8" fill="#14532d">records 1–3,999 returned</text>
+  <rect x="16" y="56" width="144" height="16" rx="3" fill="#ef4444" opacity="0.6"/>
+  <text x="88" y="68" text-anchor="middle" font-size="8" fill="#fee2e2">records 4,000+ silently dropped</text>
+  <line x1="160" y1="52" x2="160" y2="52" stroke="#991b1b" stroke-width="0"/>
+  <!-- Danger indicator -->
+  <rect x="16" y="80" width="288" height="18" rx="4" fill="#991b1b" opacity="0.2"/>
+  <text x="160" y="93" text-anchor="middle" font-size="8.5" font-weight="700" fill="#991b1b">No error. No warning. Silent data loss.</text>
+  <text x="160" y="112" text-anchor="middle" font-size="8" fill="#991b1b">Works on 3K records; fails silently at 5K</text>
+  <!-- Right: search.runPaged() -->
+  <rect x="360" y="0" width="320" height="124" rx="9" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <rect x="360" y="0" width="320" height="28" rx="9" fill="#14532d"/>
+  <rect x="360" y="18" width="320" height="10" fill="#14532d"/>
+  <text x="520" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#dcfce7">search.runPaged() — no ceiling</text>
+  <!-- Full bar -->
+  <rect x="376" y="36" width="288" height="16" rx="3" fill="#bbf7d0"/>
+  <text x="520" y="48" text-anchor="middle" font-size="8" fill="#14532d">all matching records returned (unlimited)</text>
+  <text x="520" y="72" text-anchor="middle" font-size="8.5" fill="#14532d">Returns pages of up to 1,000 per call</text>
+  <text x="520" y="86" text-anchor="middle" font-size="8.5" fill="#14532d">iterate until no more results</text>
+  <text x="520" y="112" text-anchor="middle" font-size="8" font-weight="600" fill="#14532d">Safe for datasets of any size</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Use search.runPaged() any time the result set might exceed 4,000 records now or in the future.</figcaption>
+</figure>
+
 ## How search.runPaged() works differently
 
 `search.runPaged()` removes the 4,000-record ceiling entirely. It returns a `PagedData` object that iterates through every matching result regardless of total count:

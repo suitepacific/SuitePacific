@@ -11,6 +11,33 @@ linkedinDay: 26
 
 Advanced Record Customization (ARC) is a new feature in NetSuite 2026.2 that gives you a centralized place to manage AI descriptions for record types. An AI description is a short text (up to 280 characters) that tells NetSuite's AI Connector Service what a record type is and how it is used in your account. These descriptions inform AI-powered features and MCP-based integrations connected to your NetSuite instance.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 90" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <rect x="200" y="0" width="280" height="20" rx="5" fill="#060f26" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="340" y="14" text-anchor="middle" font-size="8.5" font-weight="700" fill="#8aa2d6" font-family="monospace">Customization > Advanced Record Customization</text>
+  <rect x="0" y="30" width="120" height="48" rx="6" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="60" y="50" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">View</text>
+  <text x="60" y="65" text-anchor="middle" font-size="7.5" fill="#4f6fb0">Current description</text>
+  <text x="60" y="75" text-anchor="middle" font-size="7.5" fill="#4f6fb0">default or custom</text>
+  <rect x="140" y="30" width="120" height="48" rx="6" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="200" y="50" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Create</text>
+  <text x="200" y="65" text-anchor="middle" font-size="7.5" fill="#4f6fb0">New description</text>
+  <text x="200" y="75" text-anchor="middle" font-size="7.5" fill="#4f6fb0">up to 280 chars</text>
+  <rect x="280" y="30" width="120" height="48" rx="6" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="340" y="50" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Update</text>
+  <text x="340" y="65" text-anchor="middle" font-size="7.5" fill="#4f6fb0">Edit for your</text>
+  <text x="340" y="75" text-anchor="middle" font-size="7.5" fill="#4f6fb0">account's usage</text>
+  <rect x="420" y="30" width="120" height="48" rx="6" fill="#eef2fb" stroke="#b2c2e6" stroke-width="1.5"/>
+  <text x="480" y="50" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Compare</text>
+  <text x="480" y="65" text-anchor="middle" font-size="7.5" fill="#4f6fb0">Custom vs. default</text>
+  <text x="480" y="75" text-anchor="middle" font-size="7.5" fill="#4f6fb0">or partner version</text>
+  <rect x="560" y="30" width="120" height="48" rx="6" fill="#eef2fb" stroke="#b2c2e6" stroke-width="1.5"/>
+  <text x="620" y="50" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Revert</text>
+  <text x="620" y="65" text-anchor="middle" font-size="7.5" fill="#4f6fb0">Back to original</text>
+  <text x="620" y="75" text-anchor="middle" font-size="7.5" fill="#4f6fb0">NetSuite default</text>
+</svg>
+</figure>
+
 ## Step 1: Go to Advanced Record Customization
 
 Navigate to **Customization > Advanced Record Customization**.
