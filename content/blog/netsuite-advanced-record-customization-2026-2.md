@@ -7,6 +7,37 @@ tags: ["Administration", "Customization", "NetSuite Tips"]
 
 NetSuite 2026.2 adds a new section called **Advanced Record Customization**, accessible under the Customization menu. It gives administrators a centralized place to manage AI descriptions for both standard and custom record types.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">ADVANCED RECORD CUSTOMIZATION (ARC) — 2026.2</text>
+  <!-- Menu path -->
+  <rect x="200" y="22" width="280" height="22" rx="5" fill="#060f26" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="340" y="37" text-anchor="middle" font-size="8.5" font-weight="700" fill="#8aa2d6" font-family="monospace">Customization > Advanced Record Customization</text>
+  <!-- 5 actions in a row -->
+  <rect x="0" y="58" width="120" height="52" rx="6" fill="#eef2fb" stroke="#b2c2e6" stroke-width="1.5"/>
+  <text x="60" y="79" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">View</text>
+  <text x="60" y="93" text-anchor="middle" font-size="8" fill="#4f6fb0">Current description</text>
+  <text x="60" y="103" text-anchor="middle" font-size="8" fill="#4f6fb0">default or custom</text>
+  <rect x="140" y="58" width="120" height="52" rx="6" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="200" y="79" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Create</text>
+  <text x="200" y="93" text-anchor="middle" font-size="8" fill="#4f6fb0">New AI description</text>
+  <text x="200" y="103" text-anchor="middle" font-size="8" fill="#4f6fb0">up to 280 chars</text>
+  <rect x="280" y="58" width="120" height="52" rx="6" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="340" y="79" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Update</text>
+  <text x="340" y="93" text-anchor="middle" font-size="8" fill="#4f6fb0">Edit existing to match</text>
+  <text x="340" y="103" text-anchor="middle" font-size="8" fill="#4f6fb0">your account's usage</text>
+  <rect x="420" y="58" width="120" height="52" rx="6" fill="#eef2fb" stroke="#b2c2e6" stroke-width="1.5"/>
+  <text x="480" y="79" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Compare</text>
+  <text x="480" y="93" text-anchor="middle" font-size="8" fill="#4f6fb0">Custom vs. default</text>
+  <text x="480" y="103" text-anchor="middle" font-size="8" fill="#4f6fb0">or partner description</text>
+  <rect x="560" y="58" width="120" height="52" rx="6" fill="#eef2fb" stroke="#b2c2e6" stroke-width="1.5"/>
+  <text x="620" y="79" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Revert</text>
+  <text x="620" y="93" text-anchor="middle" font-size="8" fill="#4f6fb0">Back to original</text>
+  <text x="620" y="103" text-anchor="middle" font-size="8" fill="#4f6fb0">NetSuite default</text>
+  <text x="340" y="124" text-anchor="middle" font-size="8" fill="#8aa2d6">AI descriptions tell NetSuite's AI Connector what each record type is used for. More accurate descriptions produce more relevant AI output.</text>
+</svg>
+</figure>
+
 ## What Advanced Record Customization is
 
 Advanced Record Customization (ARC) is a new area in NetSuite for managing AI-level metadata on record types. In 2026.2, its primary function is managing AI descriptions.

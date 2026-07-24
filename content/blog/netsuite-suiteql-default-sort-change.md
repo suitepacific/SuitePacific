@@ -14,6 +14,24 @@ NetSuite changed the default sort column for Transaction queries:
 
 This only affects queries that do not include an explicit `ORDER BY` clause. If your query specifies a sort order, nothing changes.
 
+<div style="background:#fefce8;border:1px solid #fde68a;border-radius:10px;overflow:hidden;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<div style="background:#78350f;padding:0.7rem 1.25rem;display:flex;align-items:center;gap:8px">
+<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fbbf24"></span><span style="font-size:0.68rem;font-weight:700;color:#fef9c3;letter-spacing:0.08em">SUITEQL TRANSACTION DEFAULT SORT CHANGE — 2026.2</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.65rem 1.25rem;border-bottom:1px solid #fde68a">
+<div style="flex:1">
+<span style="font-size:0.8rem;font-weight:600;color:#713f12;display:block">SELECT ... FROM Transaction WHERE ... (no ORDER BY)</span>
+<div style="margin-top:6px;display:flex;gap:2rem">
+<span style="font-size:0.76rem;color:#92400e"><strong>Before 2026.2:</strong> sorted by <code style="background:#fef3c7;padding:0.1rem 0.3rem;border-radius:2px;font-size:0.72rem">tranDisplayName</code> (A-Z)</span>
+<span style="font-size:0.76rem;color:#14532d"><strong>After 2026.2:</strong> sorted by <code style="background:#d1fae5;padding:0.1rem 0.3rem;border-radius:2px;font-size:0.72rem">tranDate</code> (chronological)</span>
+</div>
+</div>
+</div>
+<div style="padding:0.65rem 1.25rem;background:#fffbeb;border-top:1px solid #fde68a;font-size:0.78rem;color:#713f12">
+Fix: add <code style="background:#fef3c7;padding:0.1rem 0.3rem;border-radius:2px">ORDER BY tranDate</code> (or your preferred column) to any SuiteQL query where result order matters. Queries that only need data values are not affected.
+</div>
+</div>
+
 ## Why this matters
 
 SuiteQL, like most SQL dialects, does not guarantee result order unless you ask for one. In practice, many queries skip `ORDER BY` and developers rely on whatever order the database returns. When NetSuite changes the underlying default, those queries return results in a different sequence without throwing any error.

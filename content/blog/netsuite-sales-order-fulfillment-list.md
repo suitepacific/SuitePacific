@@ -9,6 +9,37 @@ Fulfilling a sales order in NetSuite has always required opening the order recor
 
 NetSuite 2026.2 changes this. You can now start order fulfillment directly from the sales order record list, without opening each order individually.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 116" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="sfl-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#4f7fff"/></marker>
+  </defs>
+  <!-- Before: 5-click flow -->
+  <rect x="0" y="0" width="290" height="116" rx="9" fill="#f8f9fc" stroke="#d7e0f3" stroke-width="1.5"/>
+  <rect x="0" y="0" width="290" height="26" rx="9" fill="#4f6fb0"/>
+  <rect x="0" y="16" width="290" height="10" fill="#4f6fb0"/>
+  <text x="145" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">Before 2026.2 — per order</text>
+  <text x="145" y="42" text-anchor="middle" font-size="8.5" fill="#14306b">① Open sales order list</text>
+  <text x="145" y="56" text-anchor="middle" font-size="8.5" fill="#14306b">② Click into order (page load)</text>
+  <text x="145" y="70" text-anchor="middle" font-size="8.5" fill="#14306b">③ Start fulfillment from inside record</text>
+  <text x="145" y="84" text-anchor="middle" font-size="8.5" fill="#14306b">④ Complete fulfillment</text>
+  <text x="145" y="104" text-anchor="middle" font-size="8" fill="#991b1b">Repeat ②-④ for every order</text>
+  <!-- Arrow -->
+  <line x1="290" y1="58" x2="380" y2="58" stroke="#4f7fff" stroke-width="2" marker-end="url(#sfl-arrow)"/>
+  <text x="335" y="51" text-anchor="middle" font-size="8" font-weight="700" fill="#4f7fff">2026.2</text>
+  <!-- After: list-level action -->
+  <rect x="382" y="0" width="298" height="116" rx="9" fill="#eef2fb" stroke="#4f7fff" stroke-width="2"/>
+  <rect x="382" y="0" width="298" height="26" rx="9" fill="#0b1f4d"/>
+  <rect x="382" y="16" width="298" height="10" fill="#0b1f4d"/>
+  <text x="531" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">After 2026.2 — from list</text>
+  <text x="531" y="42" text-anchor="middle" font-size="8.5" fill="#14306b">① Open sales order list</text>
+  <text x="531" y="56" text-anchor="middle" font-size="8.5" fill="#14306b">② Trigger fulfillment from row</text>
+  <text x="531" y="70" text-anchor="middle" font-size="8.5" fill="#14306b">③ Complete fulfillment</text>
+  <text x="531" y="87" text-anchor="middle" font-size="8" fill="#14306b">Repeat ②-③ without leaving the list</text>
+  <text x="531" y="104" text-anchor="middle" font-size="8" font-weight="600" fill="#16a34a">Fewer page loads for batch processing</text>
+</svg>
+</figure>
+
 ## What changed
 
 The sales order list now supports initiating fulfillment as a list-level action. Instead of the workflow being:

@@ -13,6 +13,29 @@ In most tax jurisdictions, yes. The taxable base is what was actually paid, not 
 
 NetSuite 2026.2 adds a formal mechanism for this.
 
+<div style="background:#eef2fb;border:1px solid #d7e0f3;border-radius:10px;overflow:hidden;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<div style="background:#0b1f4d;padding:0.7rem 1.25rem;display:flex;align-items:center;gap:8px">
+<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#4f7fff"></span><span style="font-size:0.68rem;font-weight:700;color:#eef2fb;letter-spacing:0.08em">TWO SETTINGS TO ENABLE — 2026.2</span>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.65rem 1.25rem;border-bottom:1px solid #d7e0f3">
+<span style="font-size:0.68rem;font-weight:700;color:#4f7fff;background:#0b1f4d;width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">1</span>
+<div style="flex:1">
+<span style="font-size:0.8rem;font-weight:600;color:#14306b;display:block">Create Adjustment Transactions for Term Discounts</span>
+<span style="font-size:0.76rem;color:#4f6fb0;line-height:1.4;display:block;margin-top:2px">Accounting Preferences. Tells NetSuite to generate an adjustment entry when a term discount is applied on a purchase.</span>
+</div>
+</div>
+<div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.65rem 1.25rem">
+<span style="font-size:0.68rem;font-weight:700;color:#4f7fff;background:#0b1f4d;width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">2</span>
+<div style="flex:1">
+<span style="font-size:0.8rem;font-weight:600;color:#14306b;display:block">Include Tax When Calculating Term Discount</span>
+<span style="font-size:0.76rem;color:#4f6fb0;line-height:1.4;display:block;margin-top:2px">Nexus-level setting. Controls whether tax is recalculated on the discounted amount at the jurisdiction level. Both settings must be enabled together.</span>
+</div>
+</div>
+<div style="padding:0.65rem 1.25rem;background:#f0f4ff;border-top:1px solid #d7e0f3;font-size:0.78rem;color:#4f6fb0">
+Both settings are required. Enabling only one does not produce the correct tax adjustment.
+</div>
+</div>
+
 ## What the new settings do
 
 Two settings work together to enable tax adjustments on term discounts:
