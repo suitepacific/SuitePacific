@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
   const company = String(formData.get("company") ?? "").trim();
   const message = formData.get("message") ? String(formData.get("message")).trim() : null;
 
-  if (!name || !email || !company) {
+  if (!email) {
     return NextResponse.json({ success: false, error: "Missing required fields." }, { status: 400 });
   }
   if (name.length > 200) return NextResponse.json({ success: false, error: "Name too long." }, { status: 400 });
