@@ -126,7 +126,7 @@ export function DashboardMockup() {
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-        className="absolute -right-4 top-10 glass rounded-xl shadow-soft px-3 py-2 flex items-center gap-2"
+        className="absolute -right-4 top-10 glass rounded-xl shadow-soft px-3 py-2 hidden sm:flex items-center gap-2"
       >
         <span className="text-xs font-medium text-brand-700">5+ Tickets Resolved Daily</span>
       </motion.div>
@@ -148,7 +148,7 @@ export function DashboardMockup() {
       <motion.div
         animate={{ y: [0, 7, 0] }}
         transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut" }}
-        className="absolute -right-6 -bottom-10"
+        className="absolute -right-6 -bottom-10 hidden sm:block"
       >
         <Image
           src="/adminstratorBadge.png"

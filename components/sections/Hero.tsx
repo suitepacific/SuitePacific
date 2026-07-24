@@ -9,7 +9,7 @@ export function Hero() {
     <section id="hero" className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-brand-50/60 to-white" />
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
         <FadeIn>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-brand-900 text-balance">
             Your NetSuite Journey Doesn&apos;t End After Go-Live.

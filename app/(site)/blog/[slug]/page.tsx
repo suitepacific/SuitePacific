@@ -91,10 +91,12 @@ export default async function BlogPostPage({
           <LeadFormLight />
         </div>
 
-        <div
-          className="prose prose-blue mt-10 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900"
-          dangerouslySetInnerHTML={{ __html: post.contentHtml }}
-        />
+        <div className="overflow-x-auto">
+          <div
+            className="prose prose-blue mt-10 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900"
+            dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+          />
+        </div>
 
         {relatedPosts.length > 0 && (
           <div className="mt-14 pt-10 border-t border-brand-50">

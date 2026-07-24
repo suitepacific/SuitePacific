@@ -11,7 +11,7 @@ export function Comparison() {
 
         <div className="mt-14 grid sm:grid-cols-2 gap-6">
           <FadeIn>
-            <div className="rounded-2xl border border-brand-100 bg-brand-50/40 p-8 h-full">
+            <div className="rounded-2xl border border-brand-100 bg-brand-50/40 p-6 sm:p-8 h-full">
               <h3 className="font-semibold text-brand-400">Large Consulting Firms</h3>
               <ul className="mt-6 space-y-4">
                 {COMPARISON_CONS.map((item) => (
@@ -25,7 +25,7 @@ export function Comparison() {
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <div className="rounded-2xl bg-brand text-white p-8 h-full shadow-soft-lg">
+            <div className="rounded-2xl bg-brand text-white p-6 sm:p-8 h-full shadow-soft-lg">
               <h3 className="font-semibold">SuitePacific</h3>
               <ul className="mt-6 space-y-4">
                 {COMPARISON_PROS.map((item) => (

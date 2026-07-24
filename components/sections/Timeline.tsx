@@ -96,7 +96,7 @@ export function Timeline() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               variants={listVariants}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-5"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-3 gap-y-4 sm:gap-x-6 sm:gap-y-5"
             >
               {TIMELINE_BENEFITS.map((benefit) => (
                 <motion.div

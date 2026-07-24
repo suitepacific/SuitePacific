@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="bg-brand-900 text-blue-100/80">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-10">
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-2">
               <Image src="/logo-icon.png" alt="SuitePacific" width={36} height={36} className="rounded-lg" />

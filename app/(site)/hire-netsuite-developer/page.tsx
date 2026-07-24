@@ -426,15 +426,15 @@ export default function HireNetSuiteDeveloperPage() {
           <p className="mt-2 text-sm text-brand-400">
             Each engagement model has strengths. SuitePacific combines the flexibility of a freelancer with the reliability of an experienced consultancy.
           </p>
-          <div className="mt-5 overflow-x-auto rounded-2xl border border-brand-100">
-            <div className="grid grid-cols-3 min-w-[560px] text-sm">
-              <div className="bg-brand-50/40 p-4">
+          <div className="mt-5 rounded-2xl border border-brand-100 overflow-hidden text-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-3">
+              <div className="bg-brand-50/40 p-4 border-b sm:border-b-0 sm:border-r border-brand-100">
                 <p className="font-semibold text-brand-900 mb-3">Freelancer</p>
                 {FREELANCER_ROWS.map((r) => (
                   <div key={r.freelancer} className="py-2 border-b border-brand-100/60 last:border-0 text-brand-500">{r.freelancer}</div>
                 ))}
               </div>
-              <div className="bg-brand-50/20 p-4 border-x border-brand-100">
+              <div className="bg-brand-50/20 p-4 border-b sm:border-b-0 sm:border-r border-brand-100">
                 <p className="font-semibold text-brand-900 mb-3">Large Consulting Firm</p>
                 {FREELANCER_ROWS.map((r) => (
                   <div key={r.large} className="py-2 border-b border-brand-100/60 last:border-0 text-brand-500">{r.large}</div>
@@ -509,7 +509,7 @@ export default function HireNetSuiteDeveloperPage() {
                   <p className="mt-1 text-sm text-brand-400">{item.description}</p>
                 </div>
               </div>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-1 mt-1 pl-1">
+              <ul className="grid grid-cols-2 gap-x-2 sm:gap-x-4 gap-y-1 mt-1 pl-1">
                 {item.items.map((i) => (
                   <li key={i} className="text-xs text-brand-400 flex items-center gap-1.5">
                     <span className="h-1 w-1 rounded-full bg-accent shrink-0" />
@@ -530,9 +530,9 @@ export default function HireNetSuiteDeveloperPage() {
           <p className="mt-2 text-sm text-brand-400">
             Many businesses are unsure whether they need an administrator or a developer. Here&apos;s the practical difference:
           </p>
-          <div className="mt-5 overflow-x-auto rounded-2xl border border-brand-100">
-            <div className="grid grid-cols-2 min-w-[420px]">
-              <div className="bg-brand-50/60 p-5">
+          <div className="mt-5 rounded-2xl border border-brand-100 overflow-hidden">
+            <div className="grid grid-cols-2">
+              <div className="bg-brand-50/60 p-4 sm:p-5">
                 <p className="font-semibold text-brand-900 text-sm mb-3">NetSuite Administrator</p>
                 {ADMIN_ROWS.map((r) => (
                   <div key={r.admin} className="py-2 border-b border-brand-100/60 last:border-0">
@@ -540,7 +540,7 @@ export default function HireNetSuiteDeveloperPage() {
                   </div>
                 ))}
               </div>
-              <div className="bg-brand p-5">
+              <div className="bg-brand p-4 sm:p-5">
                 <p className="font-semibold text-white text-sm mb-3">NetSuite Developer</p>
                 {ADMIN_ROWS.map((r) => (
                   <div key={r.dev} className="py-2 border-b border-white/10 last:border-0">
@@ -561,7 +561,7 @@ export default function HireNetSuiteDeveloperPage() {
           <p className="mt-2 text-sm text-brand-400">
             When evaluating a NetSuite developer, look for hands-on experience with:
           </p>
-          <ul className="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {SKILLS.map((skill) => (
               <li key={skill} className="flex items-center gap-2 text-sm text-brand-600">
                 <Check className="h-4 w-4 text-emerald-500 shrink-0" />
