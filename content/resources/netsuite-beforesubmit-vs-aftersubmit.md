@@ -9,13 +9,13 @@ linkedinDay: 4
 
 ## Two triggers, two different moments
 
-NetSuite User Event scripts fire in response to record saves. Both `beforeSubmit` and `afterSubmit` run when a record is saved, but they fire at different points in the save process — and that difference determines what each one can and cannot do.
+NetSuite User Event scripts fire in response to record saves. Both `beforeSubmit` and `afterSubmit` run when a record is saved, but they fire at different points in the save process, and that difference determines what each one can and cannot do.
 
 **beforeSubmit** fires after the user clicks Save but before the record is written to the database. The record exists in memory but is not yet committed.
 
 **afterSubmit** fires after the record has been successfully written to the database. The record now has a permanent ID and all its data is committed.
 
-Getting this wrong is one of the most common sources of subtle SuiteScript bugs — logic that looks correct but fails silently, or runs at the wrong time.
+Getting this wrong is one of the most common sources of subtle SuiteScript bugs, logic that looks correct but fails silently, or runs at the wrong time.
 
 ## What beforeSubmit can do
 
@@ -73,18 +73,18 @@ function afterSubmit(context) {
 }
 ```
 
-**What afterSubmit cannot do:** You cannot modify the current record's field values using `setValue()` on `context.newRecord`. The record is already saved — your changes won't persist. If you need to update the record after save, you would need to use `record.submitFields()` with the record's ID, which triggers another save cycle (use with care to avoid loops).
+**What afterSubmit cannot do:** You cannot modify the current record's field values using `setValue()` on `context.newRecord`. The record is already saved, your changes won't persist. If you need to update the record after save, you would need to use `record.submitFields()` with the record's ID, which triggers another save cycle (use with care to avoid loops).
 
 ## The most common mistake
 
 Placing external API calls or record creation logic in `beforeSubmit`.
 
-If the API call fails or takes too long, it can cause the record save to fail or time out — even when the record data itself is valid. External calls belong in `afterSubmit`, where the record is already committed and a failure in the external system does not roll back the user's save.
+If the API call fails or takes too long, it can cause the record save to fail or time out, even when the record data itself is valid. External calls belong in `afterSubmit`, where the record is already committed and a failure in the external system does not roll back the user's save.
 
 The pattern to avoid:
 
 ```javascript
-// Wrong placement — external call blocks the save
+// Wrong placement: external call blocks the save
 function beforeSubmit(context) {
     // If this API call fails, the record save fails too
     callExternalApi(context.newRecord.getValue('entity'));
@@ -94,7 +94,7 @@ function beforeSubmit(context) {
 The correct pattern:
 
 ```javascript
-// afterSubmit — external call runs after the record is safe
+// afterSubmit: external call runs after the record is safe
 function afterSubmit(context) {
     // Record is committed; an API failure won't affect the save
     callExternalApi(context.newRecord.getValue('entity'));
@@ -117,6 +117,6 @@ function afterSubmit(context) {
 
 If the logic must modify the current record or can abort the save, it belongs in `beforeSubmit`.
 
-If the logic should only run after the record is committed — notifications, related record creation, external system calls — it belongs in `afterSubmit`.
+If the logic should only run after the record is committed, notifications, related record creation, external system calls, it belongs in `afterSubmit`.
 
 When in doubt, prefer `afterSubmit`. It runs after the user's data is safe, so a bug in your script cannot accidentally cancel a legitimate save.

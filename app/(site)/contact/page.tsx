@@ -20,7 +20,7 @@ const TRUST_BADGES = [
 export const metadata: Metadata = {
   title: "Contact SuitePacific | Book a Free NetSuite Consultation",
   description:
-    "Get in touch with SuitePacific for NetSuite post-go-live support, SuiteScript development, workflow automation, and integrations. Book a free consultation — no long-term contracts.",
+    "Get in touch with SuitePacific for NetSuite post-go-live support, SuiteScript development, workflow automation, and integrations. Book a free consultation, no long-term contracts.",
   alternates: { canonical: "/contact" },
 };
 
@@ -37,7 +37,7 @@ export default function ContactPage() {
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
 
-          {/* Left column — context */}
+          {/* Left column, context */}
           <div className="lg:col-span-2">
             <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3">Get in Touch</p>
             <h1 className="text-2xl sm:text-3xl font-bold text-brand-900 leading-tight">
@@ -75,7 +75,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Right column — form */}
+          {/* Right column, form */}
           <div className="lg:col-span-3">
             <p className="text-sm text-brand-400 mb-5">
               Whether you need a small customization or ongoing post-go-live support, we&apos;re happy to help.

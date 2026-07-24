@@ -13,7 +13,7 @@ When a vendor gives you a term discount (for example, 2% off if you pay within 1
 
 NetSuite 2026.2 adds two settings that work together to create a tax adjustment when a term discount is applied on a purchase transaction in SuiteTax. Both settings must be enabled for the adjustment to work.
 
-## Step 1 — Enable the accounting preference
+## Step 1: Enable the accounting preference
 
 Go to **Setup > Accounting > Accounting Preferences**.
 
@@ -23,7 +23,7 @@ Enable it and save.
 
 This tells NetSuite to generate an adjustment transaction whenever a term discount is applied on a purchase. Without this, no adjustment is created regardless of the nexus setting.
 
-## Step 2 — Enable the nexus-level setting
+## Step 2: Enable the nexus-level setting
 
 Navigate to your nexus configuration. In NetSuite, nexuses are managed at **Setup > Tax > Nexuses** (or through your SuiteTax setup area, depending on your account configuration).
 
@@ -35,7 +35,7 @@ Enable it and save.
 
 Repeat this for each nexus where you want term discount tax adjustments to apply. Nexuses where this is not enabled will not generate tax adjustments even when the accounting preference is active.
 
-## Step 3 — Test with a purchase transaction
+## Step 3: Test with a purchase transaction
 
 Create a vendor bill or purchase order with payment terms that include a discount, for example "2/10 Net 30." Apply a payment that takes the term discount.
 

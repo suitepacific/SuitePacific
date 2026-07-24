@@ -13,13 +13,13 @@ Before 2026.2, a passkey in NetSuite handled passwordless login. It replaced you
 
 From 2026.2 onward, a FIDO2-compliant passkey can satisfy the 2FA requirement. When NetSuite prompts for a second factor, your passkey biometric scan takes the place of the authenticator app code.
 
-## Step 1 — Set up a passkey in NetSuite first
+## Step 1: Set up a passkey in NetSuite first
 
 If you have not already created a passkey in your NetSuite account, do that first. See [How to Enable Passkeys in NetSuite](/resources/netsuite-passkeys) for the setup steps.
 
 Once a passkey is active on your account, the 2FA behavior in 2026.2 works automatically. There is no separate toggle to turn on.
 
-## Step 2 — Confirm your passkey is FIDO2-compliant
+## Step 2: Confirm your passkey is FIDO2-compliant
 
 Not all authentication methods meet the FIDO2 standard. Your passkey qualifies if you created it using:
 
@@ -30,7 +30,7 @@ Not all authentication methods meet the FIDO2 standard. Your passkey qualifies i
 
 Passkeys created through these methods are FIDO2-compliant and will work as a second factor in NetSuite.
 
-## Step 3 — Log in to NetSuite
+## Step 3: Log in to NetSuite
 
 The next time NetSuite prompts for a second factor after your password login:
 

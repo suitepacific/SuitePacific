@@ -11,9 +11,9 @@ If your NetSuite account uses Bill Capture to process vendor bills, two preferen
 
 NetSuite Bill Capture uses two preferences that control how captured bill data is saved:
 
-**Save Tax As** — controls what NetSuite does with tax amounts detected on a captured bill.
+**Save Tax As:** controls what NetSuite does with tax amounts detected on a captured bill.
 
-**Save Shipping Cost As** — controls what NetSuite does with shipping costs detected on a captured bill.
+**Save Shipping Cost As:** controls what NetSuite does with shipping costs detected on a captured bill.
 
 Before 2026.2, if either of these was left blank in your Bill Capture Preferences, the behavior was undefined or dependent on other settings.
 

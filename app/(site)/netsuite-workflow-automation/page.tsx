@@ -12,7 +12,7 @@ import { SITE_URL } from "@/lib/content";
 const FAQ = [
   {
     question: "Can you automate approvals in NetSuite without SuiteScript?",
-    answer: "Yes, for most standard scenarios. SuiteFlow handles multi-level approvals, conditional routing by amount or department, and escalation if approvers don't respond — without code. We add SuiteScript only when the logic exceeds what SuiteFlow's native action set can handle.",
+    answer: "Yes, for most standard scenarios. SuiteFlow handles multi-level approvals, conditional routing by amount or department, and escalation if approvers don't respond, without code. We add SuiteScript only when the logic exceeds what SuiteFlow's native action set can handle.",
   },
   {
     question: "Why do workflows sometimes fire when they shouldn't?",

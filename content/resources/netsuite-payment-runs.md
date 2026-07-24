@@ -22,19 +22,19 @@ NetSuite processes the payments using the Bulk Processing Framework. After proce
 
 ## The four stages of a Payment Run
 
-**Stage 1 — Prepare**
+**Stage 1: Prepare**
 
 Create the Payment Run and add the payables you want to include. You can mix record types freely. This is also your first opportunity to review for duplicates.
 
-**Stage 2 — Review**
+**Stage 2: Review**
 
 Before any payment is processed, the full batch is available for review. Remove any items that do not belong in this run, verify totals, and check for duplicate entries. No payment leaves NetSuite until this stage is complete and approved.
 
-**Stage 3 — Approve**
+**Stage 3: Approve**
 
 If your account uses an approval workflow for AP, the Payment Run routes through it here. Approvers see the full batch, not individual records, before giving the go-ahead.
 
-**Stage 4 — Process**
+**Stage 4: Process**
 
 NetSuite executes the payments. Each source transaction is updated with the related payment activity from the run.
 
@@ -42,13 +42,13 @@ NetSuite executes the payments. Each source transaction is updated with the rela
 
 Payment Runs are a standard NetSuite record type. They support:
 
-- **Permissions and roles** — define who can create, review, approve, and process payment runs
-- **Approval workflows** — use your existing NetSuite approval logic
-- **Custom fields and custom segments** — add additional tracking data to payment runs
-- **Saved searches** — report on payment run status, amounts, and history
-- **SuiteScript** — automate or extend payment runs with scripts
-- **REST web services** — integrate with external systems that trigger or read payment runs
-- **CSV import** — import payment run data in bulk
+- **Permissions and roles:** define who can create, review, approve, and process payment runs
+- **Approval workflows:** use your existing NetSuite approval logic
+- **Custom fields and custom segments:** add additional tracking data to payment runs
+- **Saved searches:** report on payment run status, amounts, and history
+- **SuiteScript:** automate or extend payment runs with scripts
+- **REST web services:** integrate with external systems that trigger or read payment runs
+- **CSV import:** import payment run data in bulk
 
 ## Why use Payment Runs instead of paying bills individually
 

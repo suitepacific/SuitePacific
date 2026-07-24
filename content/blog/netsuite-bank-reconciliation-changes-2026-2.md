@@ -13,11 +13,11 @@ The biggest change on the Match Bank Data page is the new **Match Suggestions** 
 
 Match Suggestions shows NetSuite's proposed matches for imported bank transactions. For each suggestion, you can choose from five actions:
 
-- **Match Transaction** — confirm the suggested match
-- **Review Match Options** — see other possible matches before deciding
-- **Apply Payment** — apply the bank transaction as a payment against an open invoice or payable
-- **Review Payment Options** — see other payment options before deciding
-- **Create** — create a new transaction type to match against
+- **Match Transaction:** confirm the suggested match
+- **Review Match Options:** see other possible matches before deciding
+- **Apply Payment:** apply the bank transaction as a payment against an open invoice or payable
+- **Review Payment Options:** see other payment options before deciding
+- **Create:** create a new transaction type to match against
 
 This is more than a rename. The suggested actions give you a structured workflow for each unmatched bank line instead of just a list to review.
 

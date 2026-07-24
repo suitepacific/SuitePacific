@@ -13,7 +13,7 @@ Currency custom fields store monetary amounts. In a multi-currency NetSuite acco
 
 Currency Context is a field-level setting that controls this behavior. NetSuite 2026.2 adds a new Currency Context option to give administrators more explicit control at the individual field level.
 
-## Step 1 — Navigate to the field type
+## Step 1: Navigate to the field type
 
 Go to **Customization > Lists, Records, & Fields**.
 
@@ -25,19 +25,19 @@ Select the field type that contains the currency custom field you want to config
 - Item Field
 - Custom Record Field
 
-## Step 2 — Open the currency custom field
+## Step 2: Open the currency custom field
 
 Find the currency custom field you want to update and click to open it.
 
 If you are creating a new currency custom field, select **Currency** as the field type during setup.
 
-## Step 3 — Find the Currency Context setting
+## Step 3: Find the Currency Context setting
 
 In the field definition, locate the **Currency Context** option. This is the new setting added in 2026.2.
 
 Review the available options and select the one that matches how this field's value should be treated in multi-currency contexts.
 
-## Step 4 — Save and test
+## Step 4: Save and test
 
 Save the field definition.
 

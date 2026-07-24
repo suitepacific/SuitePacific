@@ -37,9 +37,9 @@ Administrators can disable the passkey-as-2FA feature for their account. If your
 
 In 2026.2, NetSuite released two separate passkey-related changes:
 
-**Passwordless Authentication with Passkeys** — Use your passkey to sign in without a password at all. This replaces the password and 2FA prompt entirely.
+**Passwordless Authentication with Passkeys:** Use your passkey to sign in without a password at all. This replaces the password and 2FA prompt entirely.
 
-**Passkey as a 2FA Authenticator** — Use your passkey as the second factor when you are still logging in with a password.
+**Passkey as a 2FA Authenticator:** Use your passkey as the second factor when you are still logging in with a password.
 
 These are two separate use cases. If you are already using passkeys for full passwordless login, the 2FA change may not affect your day-to-day experience. But if your account uses password plus 2FA and you want to remove the authenticator app step, this is how.
 

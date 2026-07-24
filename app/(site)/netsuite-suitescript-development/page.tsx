@@ -24,7 +24,7 @@ const FAQ = [
   },
   {
     question: "How long does a typical SuiteScript project take?",
-    answer: "A focused script — a User Event for a validation rule, a Scheduled script for a recurring data update — typically takes one to two weeks from scoping to sandbox-tested delivery. We scope each project before starting so the timeline is agreed upfront.",
+    answer: "A focused script, a User Event for a validation rule, a Scheduled script for a recurring data update, typically takes one to two weeks from scoping to sandbox-tested delivery. We scope each project before starting so the timeline is agreed upfront.",
   },
   {
     question: "How do you handle scripts that are hitting governance limits?",
@@ -36,7 +36,7 @@ const FAQ = [
   },
   {
     question: "What happens after the script is deployed?",
-    answer: "We monitor the first production run, confirm the script is executing correctly in the execution log, and make any adjustments based on real production data. After that, scripts we build are on a month-to-month retainer — if something breaks or needs to be adjusted after a NetSuite release, we handle it.",
+    answer: "We monitor the first production run, confirm the script is executing correctly in the execution log, and make any adjustments based on real production data. After that, scripts we build are on a month-to-month retainer, if something breaks or needs to be adjusted after a NetSuite release, we handle it.",
   },
 ];
 
@@ -48,11 +48,11 @@ export const metadata: Metadata = {
 };
 
 const SCRIPT_TYPES = [
-  { icon: Activity, title: "User Event Scripts", description: "Automatic logic that runs before or after a record is saved, validated, or loaded — for field defaults, validation rules, and cross-record updates." },
+  { icon: Activity, title: "User Event Scripts", description: "Automatic logic that runs before or after a record is saved, validated, or loaded, for field defaults, validation rules, and cross-record updates." },
   { icon: MousePointerClick, title: "Client Scripts", description: "Real-time field-level logic directly on the data entry form: instant validation, conditional field visibility, and guided data entry." },
-  { icon: Timer, title: "Scheduled Scripts", description: "Background jobs that run on a defined schedule — for recurring data tasks, batch updates, and automated maintenance processes." },
+  { icon: Timer, title: "Scheduled Scripts", description: "Background jobs that run on a defined schedule, for recurring data tasks, batch updates, and automated maintenance processes." },
   { icon: Layers3, title: "Map/Reduce Scripts", description: "High-volume data processing without hitting governance limits, handling thousands of records reliably in background queues." },
-  { icon: PanelsTopLeft, title: "Suitelets", description: "Custom pages and tools built directly inside NetSuite — internal portals, approval interfaces, and data entry tools outside the standard record model." },
+  { icon: PanelsTopLeft, title: "Suitelets", description: "Custom pages and tools built directly inside NetSuite, internal portals, approval interfaces, and data entry tools outside the standard record model." },
   { icon: GitBranch, title: "RESTlets", description: "Custom API endpoints on your NetSuite account for integrating with external systems, webhooks, or custom data exchange." },
 ];
 
@@ -157,12 +157,12 @@ export default function SuiteScriptDevelopmentPage() {
               <strong>A Scheduled Script is failing at production volume.</strong> A script that
               worked fine in sandbox with 200 records hits governance limits in production with
               8,000. Migrating to a Map/Reduce script handles the full volume with parallel
-              processing — often completing in 5–10 minutes what was taking 45 minutes to fail.
+              processing, often completing in 5–10 minutes what was taking 45 minutes to fail.
             </li>
             <li>
               <strong>NetSuite needs to talk to another system.</strong> Pushing Sales Orders to a
               3PL, receiving webhook updates from a payment processor, syncing customer records
-              to a CRM — these require RESTlets or Scheduled Scripts that call external APIs.
+              to a CRM, these require RESTlets or Scheduled Scripts that call external APIs.
               There is no configuration path for this.
             </li>
             <li>
@@ -172,8 +172,8 @@ export default function SuiteScriptDevelopmentPage() {
             </li>
             <li>
               <strong>You need a custom interface inside NetSuite.</strong> Suitelets build fully
-              custom pages that live inside NetSuite’s chrome — approval dashboards, data entry
-              tools, admin utilities — without exposing data to external systems.
+              custom pages that live inside NetSuite’s chrome, approval dashboards, data entry
+              tools, admin utilities, without exposing data to external systems.
             </li>
           </ul>
 
@@ -181,28 +181,28 @@ export default function SuiteScriptDevelopmentPage() {
           <p>These are representative examples of the kinds of work we build:</p>
           <ul>
             <li>
-              <strong>Vendor bill validation</strong> — A <code>beforeSubmit</code> User Event
+              <strong>Vendor bill validation</strong>, A <code>beforeSubmit</code> User Event
               script that checks a vendor bill against an approved PO before allowing it to post,
               enforcing a three-way match without modifying the approval workflow. Any discrepancy
               above a threshold blocks the save with a specific error message.
             </li>
             <li>
-              <strong>Overnight inventory sync</strong> — A Map/Reduce script that runs nightly,
+              <strong>Overnight inventory sync</strong>, A Map/Reduce script that runs nightly,
               reads inventory levels from a 3PL via their API, and updates item quantity fields in
               NetSuite. Handles 12,000+ SKUs in a single scheduled run.
             </li>
             <li>
-              <strong>Project margin recalculation</strong> — A Scheduled Script that recalculates
+              <strong>Project margin recalculation</strong>, A Scheduled Script that recalculates
               the margin on all open project records based on actual hours logged versus the
               original estimate, and flags projects where margin has fallen below the threshold.
             </li>
             <li>
-              <strong>Custom PDF documents</strong> — Suitelets that generate branded output from
-              NetSuite data — packing slips with QR codes, custom quote formats, certificate
-              documents — pulling from custom records and standard transactions.
+              <strong>Custom PDF documents</strong>, Suitelets that generate branded output from
+              NetSuite data, packing slips with QR codes, custom quote formats, certificate
+              documents, pulling from custom records and standard transactions.
             </li>
             <li>
-              <strong>Bulk field migration</strong> — A one-time Map/Reduce script to migrate
+              <strong>Bulk field migration</strong>, A one-time Map/Reduce script to migrate
               data from a legacy custom field to a new structure across 20,000 records, running
               in a sandbox first to confirm the logic before touching production.
             </li>
@@ -218,7 +218,7 @@ export default function SuiteScriptDevelopmentPage() {
           </p>
           <p>
             Development and testing happen entirely in a sandbox account. We test against the
-            full range of cases — the expected path, boundary conditions, and the edge cases most
+            full range of cases, the expected path, boundary conditions, and the edge cases most
             likely to appear in production. Scripts are reviewed for governance efficiency before
             deployment: any loop containing a record load or search call gets restructured. Any
             script that touches a high-volume record type gets tested with production-scale data
@@ -226,7 +226,7 @@ export default function SuiteScriptDevelopmentPage() {
           </p>
           <p>
             Deployment to production is done in a scheduled maintenance window with a written
-            rollback plan. After go-live, we monitor the first full execution cycle — for a
+            rollback plan. After go-live, we monitor the first full execution cycle, for a
             Scheduled Script, that means the first overnight run; for a User Event, that means
             watching the execution log on the first batch of production record saves.
           </p>
@@ -240,8 +240,8 @@ export default function SuiteScriptDevelopmentPage() {
 
           <h2>What to expect</h2>
           <p>
-            A focused, single-purpose script — a validation rule, a scheduled data sync, a
-            one-time migration — typically takes one to two weeks from scoping to production
+            A focused, single-purpose script, a validation rule, a scheduled data sync, a
+            one-time migration, typically takes one to two weeks from scoping to production
             deployment. More complex projects with multiple script types, external API
             integrations, or large data migrations run two to four weeks depending on the number
             of edge cases and the external system’s API reliability.

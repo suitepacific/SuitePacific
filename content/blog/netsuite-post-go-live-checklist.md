@@ -9,7 +9,7 @@ The first 90 days after your implementation partner hands off the account are th
 
 ## 1. Get access documentation before your implementation partner leaves
 
-The single most important thing to capture is a record of what was built, where, and why. Custom fields, roles, workflows, saved searches, scripts — ideally documented, at minimum listed. The implementation team knows what they changed; you need to know too. Even a spreadsheet of script IDs and what they do is better than nothing. Without this, everything they built becomes a black box the next developer has to reverse-engineer.
+The single most important thing to capture is a record of what was built, where, and why. Custom fields, roles, workflows, saved searches, scripts, ideally documented, at minimum listed. The implementation team knows what they changed; you need to know too. Even a spreadsheet of script IDs and what they do is better than nothing. Without this, everything they built becomes a black box the next developer has to reverse-engineer.
 
 ## 2. Verify user roles and permissions actually match job functions
 

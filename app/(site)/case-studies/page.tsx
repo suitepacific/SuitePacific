@@ -12,7 +12,7 @@ import { CASE_STUDIES_DETAIL } from "@/lib/case-studies";
 export const metadata: Metadata = {
   title: "NetSuite Case Studies | SuitePacific",
   description:
-    "Real NetSuite customization projects: dashboards, approval workflows, invoice automation, PDF templates, integrations, and operational reporting — built for post-go-live accounts.",
+    "Real NetSuite customization projects: dashboards, approval workflows, invoice automation, PDF templates, integrations, and operational reporting, built for post-go-live accounts.",
   alternates: { canonical: "/case-studies" },
 };
 

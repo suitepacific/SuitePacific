@@ -53,7 +53,7 @@ If your account has scheduled or Map/Reduce scripts that run as part of your clo
 
 ## 9. Reconcile bank accounts to the GL
 
-NetSuite has a Bank Reconciliation feature under Transactions > Bank > Reconcile Bank Statement. For every bank account on the balance sheet, reconcile the statement balance to the GL balance before locking. Unreconciled items — deposits in transit, outstanding checks, bank fees not yet entered — need to be explained or posted before close.
+NetSuite has a Bank Reconciliation feature under Transactions > Bank > Reconcile Bank Statement. For every bank account on the balance sheet, reconcile the statement balance to the GL balance before locking. Unreconciled items, deposits in transit, outstanding checks, bank fees not yet entered, need to be explained or posted before close.
 
 If your account uses the Cash Management module, the reconciliation is more structured; if not, you may be doing this manually in a spreadsheet. Either way, a GL bank balance that does not match the bank statement at period end is an open question that should not survive into the next period.
 
@@ -65,7 +65,7 @@ The most common cause is a subsidiary posting an intercompany bill in one period
 
 ## 11. Confirm revenue recognition schedules have processed
 
-If your account uses NetSuite's Revenue Recognition module (or Advanced Revenue Management), revenue recognition does not post automatically — it must be triggered. Under Financial > Revenue Recognition > Revenue Arrangement > Generate Revenue Plans, confirm that all plans for the period have been generated and approved. Then run the revenue recognition journals.
+If your account uses NetSuite's Revenue Recognition module (or Advanced Revenue Management), revenue recognition does not post automatically, it must be triggered. Under Financial > Revenue Recognition > Revenue Arrangement > Generate Revenue Plans, confirm that all plans for the period have been generated and approved. Then run the revenue recognition journals.
 
 Skipping this step means recognized revenue is understated for the period and the deferred revenue balance is overstated. Unlike depreciation, revenue recognition errors are often not caught until the next period's revenue reconciliation surfaces the discrepancy. Check the Revenue Recognition Schedule report before locking to confirm no pending recognition remains for the period.
 

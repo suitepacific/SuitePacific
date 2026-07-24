@@ -1,6 +1,6 @@
 ---
 title: "NetSuite Account Optimization: What to Audit and Fix on a Live Account"
-description: "A practical guide to optimizing a live NetSuite account — covering custom fields, saved searches, workflows, script deployments, roles, and form cleanup."
+description: "A practical guide to optimizing a live NetSuite account, covering custom fields, saved searches, workflows, script deployments, roles, and form cleanup."
 date: "2026-07-05"
 tags: ["Account Optimization", "Performance", "Administration"]
 ---
@@ -23,7 +23,7 @@ Pull the full list from Customization > Lists, Records and Fields > Transaction 
 
 The ones that matter most for performance are saved searches assigned as dashboard portlets. Those run every single time someone with that role loads their home page, whether they are looking at the results or not. Go to Reports > Saved Searches > All Saved Searches, filter for public searches, and check portlet assignments. If a search is running on a dashboard for a process that no longer exists, remove the portlet assignment.
 
-Everything else — searches nobody has opened in a year, searches built for a one-time report — should be deactivated.
+Everything else, searches nobody has opened in a year, searches built for a one-time report, should be deactivated.
 
 ## Workflows
 

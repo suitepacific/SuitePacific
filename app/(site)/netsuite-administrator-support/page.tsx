@@ -13,7 +13,7 @@ const FAQ = [
   {
     question: "Can you support our existing internal NetSuite administrator?",
     answer:
-      "Yes. Most clients have an internal admin who handles day-to-day questions and basic configuration. We work alongside them — taking on tasks that are outside their bandwidth or require more technical depth, while they stay the main point of contact for their team's routine requests.",
+      "Yes. Most clients have an internal admin who handles day-to-day questions and basic configuration. We work alongside them, taking on tasks that are outside their bandwidth or require more technical depth, while they stay the main point of contact for their team's routine requests.",
   },
   {
     question: "What if we have no internal NetSuite knowledge at all?",
@@ -23,17 +23,17 @@ const FAQ = [
   {
     question: "Do you handle user provisioning and offboarding?",
     answer:
-      "Yes. Adding new users, assigning roles, updating permissions when someone changes roles, and deactivating accounts when someone leaves — all of this is standard administration work we take on.",
+      "Yes. Adding new users, assigning roles, updating permissions when someone changes roles, and deactivating accounts when someone leaves, all of this is standard administration work we take on.",
   },
   {
     question: "What is the difference between administration and development?",
     answer:
-      "Administration covers what you can do inside NetSuite's configuration tools: roles, fields, forms, basic workflows, saved searches, period management, and data imports. Development — SuiteScript, custom integrations, advanced automation — is needed when standard configuration can't achieve the business requirement. Many engagements involve both, and we handle each as it comes up.",
+      "Administration covers what you can do inside NetSuite's configuration tools: roles, fields, forms, basic workflows, saved searches, period management, and data imports. Development, SuiteScript, custom integrations, advanced automation, is needed when standard configuration can't achieve the business requirement. Many engagements involve both, and we handle each as it comes up.",
   },
   {
     question: "Can you set up roles and permissions from scratch for a new subsidiary or department?",
     answer:
-      "Yes. Role design — deciding which record types, fields, and transactions each role should access — is a common administration task, particularly when a business adds a new entity, hires for a new function, or needs to tighten access controls.",
+      "Yes. Role design, deciding which record types, fields, and transactions each role should access, is a common administration task, particularly when a business adds a new entity, hires for a new function, or needs to tighten access controls.",
   },
 ];
 
@@ -60,7 +60,7 @@ const ADMIN_AREAS = [
     icon: Search,
     title: "Saved Searches",
     description:
-      "Building saved searches for end users — open orders, overdue invoices, approval queues, inventory exceptions — and keeping them maintained as business requirements change.",
+      "Building saved searches for end users, open orders, overdue invoices, approval queues, inventory exceptions, and keeping them maintained as business requirements change.",
   },
   {
     icon: CalendarDays,
@@ -99,7 +99,7 @@ export default function NetSuiteAdministratorSupportPage() {
           as="h1"
           eyebrow="NetSuite Administration"
           title="NetSuite Administrator Support"
-          subtitle="Ongoing configuration support for live NetSuite accounts — users, roles, fields, saved searches, and the day-to-day changes that keep pace with a growing business."
+          subtitle="Ongoing configuration support for live NetSuite accounts, users, roles, fields, saved searches, and the day-to-day changes that keep pace with a growing business."
           align="left"
         />
 
@@ -109,7 +109,7 @@ export default function NetSuiteAdministratorSupportPage() {
             NetSuite implementations hand off a configured account. What they don&apos;t hand off
             is a team to keep it configured. When a new department is added, a role needs to
             change, a custom field needs to be added for a new process, or month-end closes
-            with a period lock question — that work falls to whoever is available, which is often
+            with a period lock question, that work falls to whoever is available, which is often
             no one with specific NetSuite knowledge.
           </p>
           <p>
@@ -138,7 +138,7 @@ export default function NetSuiteAdministratorSupportPage() {
         <div className="prose prose-blue mt-12 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
           <h2>Administration vs development</h2>
           <p>
-            NetSuite administration uses the platform&apos;s built-in configuration tools —
+            NetSuite administration uses the platform&apos;s built-in configuration tools;
             no code required. When a requirement exceeds what configuration can do, it moves
             into development territory: custom SuiteScript logic, advanced workflow automation,
             or integrations with external systems. Most live accounts need both at different
@@ -155,7 +155,7 @@ export default function NetSuiteAdministratorSupportPage() {
           <h2>Who this is for</h2>
           <p>
             Companies that are live on NetSuite and don&apos;t have a dedicated internal
-            administrator — or have one who is stretched across other responsibilities and
+            administrator, or have one who is stretched across other responsibilities and
             needs someone to handle the NetSuite-specific work. We function as an extension
             of your team: requests come in as they arise, changes are made and documented,
             and your account stays current without you needing to build internal NetSuite

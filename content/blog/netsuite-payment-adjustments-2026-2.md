@@ -13,11 +13,11 @@ NetSuite 2026.2 introduces **Automating Payment Adjustments**, which handles the
 
 The automation handles three types of payment discrepancies:
 
-**Bank fees** — When a bank deducts its processing charge from a customer payment before depositing the remainder, the amount received does not match the invoice total. NetSuite can now automatically account for the fee difference when you record the payment.
+**Bank fees:** When a bank deducts its processing charge from a customer payment before depositing the remainder, the amount received does not match the invoice total. NetSuite can now automatically account for the fee difference when you record the payment.
 
-**Convenience fees** — When customers pay through a channel that charges a convenience fee (such as a credit card surcharge), the net amount deposited may differ from the invoiced amount. The automation handles this difference at the payment record level.
+**Convenience fees:** When customers pay through a channel that charges a convenience fee (such as a credit card surcharge), the net amount deposited may differ from the invoiced amount. The automation handles this difference at the payment record level.
 
-**Underpayments** — When a customer pays less than the full amount due, and the difference is within a threshold your account considers acceptable for write-off, the adjustment can be applied automatically rather than creating a separate journal entry.
+**Underpayments:** When a customer pays less than the full amount due, and the difference is within a threshold your account considers acceptable for write-off, the adjustment can be applied automatically rather than creating a separate journal entry.
 
 ## Where this happens
 

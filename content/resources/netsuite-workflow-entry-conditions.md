@@ -9,15 +9,15 @@ linkedinDay: 11
 
 ## The hidden cost of workflows without Entry Conditions
 
-Every time a record is saved in NetSuite, the platform checks all deployed workflows to determine which ones should run. If a workflow has no Entry Condition, NetSuite evaluates it on every save — regardless of whether anything relevant changed.
+Every time a record is saved in NetSuite, the platform checks all deployed workflows to determine which ones should run. If a workflow has no Entry Condition, NetSuite evaluates it on every save, regardless of whether anything relevant changed.
 
-For a workflow deployed on Sales Orders in an account that processes hundreds of transactions per day, that means hundreds of unnecessary evaluations. The workflow still has to answer the question: "Should I run?" — it just has nothing useful to filter on.
+For a workflow deployed on Sales Orders in an account that processes hundreds of transactions per day, that means hundreds of unnecessary evaluations. The workflow still has to answer the question: "Should I run?", it just has nothing useful to filter on.
 
 Individually, each evaluation is small. At volume, across all workflows deployed on a record type, it adds up as a consistent drag on save performance.
 
 ## What Entry Conditions do
 
-An Entry Condition is a filter that NetSuite checks before deciding whether to begin evaluating a workflow. If the condition is not met, the workflow is skipped entirely — no state evaluation, no action checks, no processing overhead.
+An Entry Condition is a filter that NetSuite checks before deciding whether to begin evaluating a workflow. If the condition is not met, the workflow is skipped entirely, no state evaluation, no action checks, no processing overhead.
 
 The difference in how NetSuite evaluates each case:
 
@@ -50,19 +50,19 @@ Or for a more targeted condition that only fires when the status changes to pend
 
 > Approval Status | changed to | Pending Approval
 
-The "changed to" operator is particularly useful — it ensures the workflow only enters when the field transitions to the target value, not when it is already there on a subsequent save.
+The "changed to" operator is particularly useful, it ensures the workflow only enters when the field transitions to the target value, not when it is already there on a subsequent save.
 
 ## Why experienced admins look at Entry Conditions first
 
 When a NetSuite account feels slow on record saves, the instinct is often to look at the number of workflow states or the complexity of workflow actions. Entry Conditions matter more for performance because they determine whether any of that internal logic runs at all.
 
-A workflow with 15 states and a well-designed Entry Condition will perform better than a workflow with 3 states and no Entry Condition — because the 3-state workflow is evaluating on every save while the 15-state one only runs when it actually has something to do.
+A workflow with 15 states and a well-designed Entry Condition will perform better than a workflow with 3 states and no Entry Condition, because the 3-state workflow is evaluating on every save while the 15-state one only runs when it actually has something to do.
 
 The number of states is internal complexity. The Entry Condition controls external frequency.
 
 ## Additional performance benefits
 
-Beyond save performance, Entry Conditions also make workflows easier to troubleshoot. When a workflow runs on every save, the execution history fills with evaluations where nothing happened — making it harder to find the runs that actually mattered. With a good Entry Condition, the execution log reflects meaningful events only.
+Beyond save performance, Entry Conditions also make workflows easier to troubleshoot. When a workflow runs on every save, the execution history fills with evaluations where nothing happened, making it harder to find the runs that actually mattered. With a good Entry Condition, the execution log reflects meaningful events only.
 
 A tighter execution history means:
 - Faster identification of the specific save that triggered an issue
@@ -75,4 +75,4 @@ For every workflow, identify the minimum conditions under which it has meaningfu
 
 If a workflow should only run when a specific field changes to a specific value, use "changed to" rather than "is." If it should only run on certain transaction types or above a certain threshold, add those conditions.
 
-The fastest workflow is not the one with the fewest states — it is the one that never runs unless it actually needs to.
+The fastest workflow is not the one with the fewest states, it is the one that never runs unless it actually needs to.

@@ -11,18 +11,18 @@ linkedinDay: 27
 
 NetSuite 2026.2 introduces automation for three types of payment discrepancies that previously required manual adjustment entries:
 
-**Bank fees** — When a bank deducts a processing fee from a customer payment before depositing the remainder, the deposited amount is less than the invoice total. The automated adjustment accounts for the fee difference at the time you record the payment.
+**Bank fees:** When a bank deducts a processing fee from a customer payment before depositing the remainder, the deposited amount is less than the invoice total. The automated adjustment accounts for the fee difference at the time you record the payment.
 
-**Convenience fees** — When a customer pays through a channel that charges a fee (such as a credit card surcharge), the net amount deposited may differ from the invoiced amount. The adjustment handles this difference automatically.
+**Convenience fees:** When a customer pays through a channel that charges a fee (such as a credit card surcharge), the net amount deposited may differ from the invoiced amount. The adjustment handles this difference automatically.
 
-**Underpayments** — When a customer pays slightly less than the full amount due and the difference falls within a write-off threshold, the adjustment can be applied automatically rather than requiring a separate journal entry.
+**Underpayments:** When a customer pays slightly less than the full amount due and the difference falls within a write-off threshold, the adjustment can be applied automatically rather than requiring a separate journal entry.
 
 ## Where the automation happens
 
 Payment adjustment automation is available on two record types:
 
-- **Customer Payment** — records of money received from customers against open invoices
-- **Customer Deposit** — advance payments or deposits received from customers
+- **Customer Payment:** records of money received from customers against open invoices
+- **Customer Deposit:** advance payments or deposits received from customers
 
 When you record a payment on either of these records and a discrepancy exists that falls within the automated adjustment scope, NetSuite handles the adjustment at that point rather than leaving it for a separate manual step.
 

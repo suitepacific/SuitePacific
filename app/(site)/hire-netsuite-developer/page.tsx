@@ -201,7 +201,7 @@ const WHY_SUITEPACIFIC = [
     icon: ShieldCheck,
     title: "Oracle-Certified Expertise",
     description:
-      "Our developers hold Oracle NetSuite SuiteCloud Developer II and Administrator Professional certifications — verified technical knowledge, not self-declared.",
+      "Our developers hold Oracle NetSuite SuiteCloud Developer II and Administrator Professional certifications, verified technical knowledge, not self-declared.",
   },
   {
     icon: Star,
@@ -213,13 +213,13 @@ const WHY_SUITEPACIFIC = [
     icon: Users,
     title: "Direct Communication",
     description:
-      "You'll work directly with the developer completing your work — not through layers of project managers or account coordinators.",
+      "You'll work directly with the developer completing your work, not through layers of project managers or account coordinators.",
   },
   {
     icon: CheckCircle2,
     title: "Sandbox-First Development",
     description:
-      "Every customization is developed and tested in a Sandbox environment before Production deployment — no exceptions.",
+      "Every customization is developed and tested in a Sandbox environment before Production deployment, no exceptions.",
   },
   {
     icon: Clock,
@@ -238,7 +238,7 @@ const WHY_SUITEPACIFIC = [
 const PROCESS_STEPS = [
   {
     step: "01",
-    title: "Account Intake — Read First, Build Second",
+    title: "Account Intake, Read First, Build Second",
     description:
       "We review your live account before scoping anything: existing scripts, active workflows, custom fields, and what the previous developer left behind. We understand what's already built before adding to it.",
   },
@@ -246,19 +246,19 @@ const PROCESS_STEPS = [
     step: "02",
     title: "No SOW for Small Requests",
     description:
-      "Small enhancements start immediately — no discovery phase or multi-page statement of work required. We scope as we go for routine requests. Formal scoping is reserved for large, well-defined projects.",
+      "Small enhancements start immediately, no discovery phase or multi-page statement of work required. We scope as we go for routine requests. Formal scoping is reserved for large, well-defined projects.",
   },
   {
     step: "03",
     title: "Sandbox Build Against Real Data",
     description:
-      "Everything is built in your sandbox using actual record types, real field configurations, and representative data volumes — not a clean test account. If something will break, it breaks in sandbox, not in production.",
+      "Everything is built in your sandbox using actual record types, real field configurations, and representative data volumes, not a clean test account. If something will break, it breaks in sandbox, not in production.",
   },
   {
     step: "04",
     title: "Governance Check Before Deploy",
     description:
-      "Before any script goes to production, we verify governance consumption at realistic volume — not just a single test record. A script that looks clean on one record can fail on a 200-line sales order.",
+      "Before any script goes to production, we verify governance consumption at realistic volume, not just a single test record. A script that looks clean on one record can fail on a 200-line sales order.",
   },
   {
     step: "05",
@@ -270,7 +270,7 @@ const PROCESS_STEPS = [
     step: "06",
     title: "Documentation That Survives Turnover",
     description:
-      "Every custom script is documented: what it does, why it exists, and what would break if someone removed it. The next developer — including us six months later — shouldn't have to reverse-engineer your account.",
+      "Every custom script is documented: what it does, why it exists, and what would break if someone removed it. The next developer, including us six months later, shouldn't have to reverse-engineer your account.",
   },
   {
     step: "07",
@@ -296,7 +296,7 @@ const CASE_STUDY_HIGHLIGHTS = [
     href: "/case-studies/invoice-processing-automation",
   },
   {
-    outcome: "The full quotation process — from request to purchase order — now runs inside NetSuite, with a complete audit trail and no re-entry of data.",
+    outcome: "The full quotation process, from request to purchase order, now runs inside NetSuite, with a complete audit trail and no re-entry of data.",
     tag: "Workflow Automation",
     href: "/case-studies/vendor-quotation-management",
   },
@@ -385,7 +385,7 @@ export default function HireNetSuiteDeveloperPage() {
           <Button href="/contact">Book a Free Consultation</Button>
         </div>
 
-        {/* Social proof — real outcomes */}
+        {/* Social proof, real outcomes */}
         <div className="mt-12">
           <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-5">Recent Work</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -404,7 +404,7 @@ export default function HireNetSuiteDeveloperPage() {
           </p>
         </div>
 
-        {/* Why SuitePacific — moved up */}
+        {/* Why SuitePacific, moved up */}
         <div className="mt-14">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">Why Companies Choose SuitePacific</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -420,7 +420,7 @@ export default function HireNetSuiteDeveloperPage() {
           </div>
         </div>
 
-        {/* Freelancer vs Partner vs SuitePacific — moved up */}
+        {/* Freelancer vs Partner vs SuitePacific, moved up */}
         <div className="mt-14">
           <h2 className="text-lg font-semibold text-brand-900">Freelancer vs. Consulting Firm vs. SuitePacific</h2>
           <p className="mt-2 text-sm text-brand-400">
@@ -607,7 +607,7 @@ export default function HireNetSuiteDeveloperPage() {
             ))}
           </ul>
           <p className="mt-4 text-sm text-brand-400">
-            A good developer aims to improve your existing NetSuite environment — not replace it unnecessarily.
+            A good developer aims to improve your existing NetSuite environment, not replace it unnecessarily.
           </p>
         </div>
 
@@ -673,27 +673,27 @@ export default function HireNetSuiteDeveloperPage() {
           <p>Our core development services for live NetSuite accounts:</p>
           <ul>
             <li>
-              <Link href="/netsuite-suitescript-development">SuiteScript development</Link> —
+              <Link href="/netsuite-suitescript-development">SuiteScript development</Link>:
               User Event, Client, Scheduled, Map/Reduce, Suitelets, and RESTlets
             </li>
             <li>
-              <Link href="/netsuite-workflow-automation">Workflow automation</Link> — SuiteFlow
+              <Link href="/netsuite-workflow-automation">Workflow automation</Link>, SuiteFlow
               approval routing, notifications, status transitions, and process automation
             </li>
             <li>
-              <Link href="/netsuite-saved-searches-dashboards">Saved searches and dashboards</Link> —
+              <Link href="/netsuite-saved-searches-dashboards">Saved searches and dashboards</Link>:
               role-based dashboards, exception searches, KPI portlets, and formula-based reporting
             </li>
             <li>
-              <Link href="/netsuite-advanced-pdf-templates">Advanced PDF templates</Link> — branded
+              <Link href="/netsuite-advanced-pdf-templates">Advanced PDF templates</Link>, branded
               invoices, purchase orders, packing slips, and statements with conditional formatting
             </li>
             <li>
-              <Link href="/netsuite-account-optimization">Account optimization</Link> — cleanup
+              <Link href="/netsuite-account-optimization">Account optimization</Link>, cleanup
               of legacy scripts, unused fields, conflicting workflows, and slow configurations
             </li>
             <li>
-              <Link href="/netsuite-post-go-live-support">Post-go-live support</Link> — ongoing
+              <Link href="/netsuite-post-go-live-support">Post-go-live support</Link>, ongoing
               retained hours for a live account that keeps evolving
             </li>
           </ul>

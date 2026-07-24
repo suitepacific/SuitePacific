@@ -25,13 +25,13 @@ You add whatever payables belong together, review them as a batch, get approvals
 
 Payment Runs follows a four-stage workflow:
 
-**Prepare** — Create the payment run and add the payables you want to include. You can combine any of the record types listed above in a single run.
+**Prepare:** Create the payment run and add the payables you want to include. You can combine any of the record types listed above in a single run.
 
-**Review** — Before any payment goes out, the full batch is available for review. This is where you catch errors, remove duplicate entries, or pull out items that should go on a different run.
+**Review:** Before any payment goes out, the full batch is available for review. This is where you catch errors, remove duplicate entries, or pull out items that should go on a different run.
 
-**Approve** — The payment run routes through your standard NetSuite approval workflow before processing begins.
+**Approve:** The payment run routes through your standard NetSuite approval workflow before processing begins.
 
-**Process** — NetSuite executes the payments using the Bulk Processing Framework. After processing, each source transaction (vendor bill, expense report, etc.) shows the related payment activity on its record.
+**Process:** NetSuite executes the payments using the Bulk Processing Framework. After processing, each source transaction (vendor bill, expense report, etc.) shows the related payment activity on its record.
 
 ## Why this matters
 

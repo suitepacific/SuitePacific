@@ -10,7 +10,7 @@ import { SITE_URL } from "@/lib/content";
 const FAQ = [
   {
     question: "Do I still need my implementation partner after go-live?",
-    answer: "Many implementation partners offer post-go-live support as an add-on, but it is usually a break-fix model with slower turnaround than a dedicated support provider. If your account needs active development — new scripts, workflow changes, reporting improvements — a dedicated managed support team is generally more efficient.",
+    answer: "Many implementation partners offer post-go-live support as an add-on, but it is usually a break-fix model with slower turnaround than a dedicated support provider. If your account needs active development, new scripts, workflow changes, reporting improvements, a dedicated managed support team is generally more efficient.",
   },
   {
     question: "When is the right time to transition to managed support?",

@@ -12,7 +12,7 @@ import { SITE_URL } from "@/lib/content";
 const FAQ = [
   {
     question: "How long does an account optimization engagement take?",
-    answer: "A structured audit covering custom fields, saved searches, workflows, script deployments, roles, and forms typically takes two to three weeks. Remediation runs alongside the audit. Total time depends on how much has accumulated since go-live — accounts live for three or more years typically have more to address.",
+    answer: "A structured audit covering custom fields, saved searches, workflows, script deployments, roles, and forms typically takes two to three weeks. Remediation runs alongside the audit. Total time depends on how much has accumulated since go-live, accounts live for three or more years typically have more to address.",
   },
   {
     question: "Will the cleanup affect live users?",
@@ -70,7 +70,7 @@ export default function AccountOptimizationPage() {
             NetSuite accounts that have been live for a few years accumulate technical debt in
             the same way any software system does. Scripts written in a hurry, custom fields
             added for a project that ended, saved searches nobody cleaned up, workflows that
-            predate a process change — none of these cause an immediate outage, but they add up
+            predate a process change, none of these cause an immediate outage, but they add up
             to an account that loads slowly, behaves inconsistently, and is increasingly
             difficult for anyone to understand.
           </p>

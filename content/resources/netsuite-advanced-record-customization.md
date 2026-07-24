@@ -11,17 +11,17 @@ linkedinDay: 26
 
 Advanced Record Customization (ARC) is a new feature in NetSuite 2026.2 that gives you a centralized place to manage AI descriptions for record types. An AI description is a short text (up to 280 characters) that tells NetSuite's AI Connector Service what a record type is and how it is used in your account. These descriptions inform AI-powered features and MCP-based integrations connected to your NetSuite instance.
 
-## Step 1 — Go to Advanced Record Customization
+## Step 1: Go to Advanced Record Customization
 
 Navigate to **Customization > Advanced Record Customization**.
 
 This section is new in 2026.2. If you do not see it, confirm that your account is on the 2026.2 release.
 
-## Step 2 — Select a record type
+## Step 2: Select a record type
 
 From the Advanced Record Customization page, select the record type you want to manage. Both standard NetSuite record types and custom record types you have created in your account are available here.
 
-## Step 3 — View the current AI description
+## Step 3: View the current AI description
 
 When you open a record type in ARC, you can see its current AI description. This may be:
 
@@ -29,13 +29,13 @@ When you open a record type in ARC, you can see its current AI description. This
 - A description added by a partner solution or bundle installed in your account
 - A custom description you have previously set
 
-## Step 4 — Create or update the AI description
+## Step 4: Create or update the AI description
 
 If the current description does not accurately reflect how the record type is used in your account, you can write a new one. The description is limited to **280 characters**.
 
 A good AI description is specific to your account. If your account uses a standard record type in an unusual way, the description should reflect that. For example, if your Opportunity record is used for internal projects rather than external sales, say so in the description. This helps the AI connector return more relevant results.
 
-## Step 5 — Compare descriptions
+## Step 5: Compare descriptions
 
 ARC lets you compare your custom description against:
 
@@ -44,7 +44,7 @@ ARC lets you compare your custom description against:
 
 Use this to check whether your customization is significantly different from the default, or to decide whether the default description is actually accurate enough for your account.
 
-## Step 6 — Revert if needed
+## Step 6: Revert if needed
 
 If you have set a custom description and want to go back to the original, you can revert. This restores either the NetSuite default or the partner solution description, depending on which one was in place before your customization.
 

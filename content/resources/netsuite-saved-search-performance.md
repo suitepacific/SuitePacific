@@ -19,7 +19,7 @@ Over months or years, someone added:
 - A joined field to pull in data from a related record
 - An additional summary calculation at the bottom
 
-Each change looked harmless on its own. Together, they transformed a simple operational search into a complex analytical query — one that was never designed for the data volume or the reporting complexity it now carries.
+Each change looked harmless on its own. Together, they transformed a simple operational search into a complex analytical query, one that was never designed for the data volume or the reporting complexity it now carries.
 
 ## What makes a Saved Search expensive
 
@@ -41,7 +41,7 @@ When a Saved Search is slow, review its columns for:
 
 2. **Are there joined fields?** Each join to a related record type (Customer, Item, Vendor) adds a join operation. Multiple joins on a high-volume search compound quickly.
 
-3. **What is the date range filter?** Searches without a date range filter — or with a very wide one — scan the full transaction history. Tighten the date filter to the reporting period you actually need.
+3. **What is the date range filter?** Searches without a date range filter, or with a very wide one, scan the full transaction history. Tighten the date filter to the reporting period you actually need.
 
 4. **Are there summary columns?** If the search uses summarize by and has multiple summary calculations, each one requires a pass over the data.
 
@@ -51,16 +51,16 @@ When a Saved Search is slow, review its columns for:
 
 Saved Searches are designed for operational reporting: open orders, overdue invoices, inventory exceptions, approval queues. They work best when the dataset is current, the filters are tight, and the column set is focused.
 
-When reporting requirements grow to include large date ranges, trend analysis, cross-period comparisons, or management-level summaries — that is analytical reporting, and it is not what Saved Searches were designed for.
+When reporting requirements grow to include large date ranges, trend analysis, cross-period comparisons, or management-level summaries, that is analytical reporting, and it is not what Saved Searches were designed for.
 
 If your NetSuite account includes SuiteAnalytics Workbook, it is often a better fit for these types of reports. Workbook is built on a dataset model designed for analytical queries: it handles large result sets, period comparisons, and complex aggregations more efficiently than an equivalent Saved Search.
 
-The distinction matters because adding more formulas and joins to a Saved Search to make it more analytical is working against the tool's design. At some point, the right answer is not to optimize the search further — it is to move the requirement to a tool designed for it.
+The distinction matters because adding more formulas and joins to a Saved Search to make it more analytical is working against the tool's design. At some point, the right answer is not to optimize the search further, it is to move the requirement to a tool designed for it.
 
 ## The practical rule
 
 Use Saved Searches for operational data: what needs action today, what is open, what is overdue, what exception needs attention.
 
-When reporting becomes analytical — large date ranges, trend comparisons, management summaries — ask whether the requirement has outgrown what a Saved Search was designed to do.
+When reporting becomes analytical, large date ranges, trend comparisons, management summaries, ask whether the requirement has outgrown what a Saved Search was designed to do.
 
 If a Saved Search keeps growing, don't just keep adding columns. Ask whether it is still the right tool.

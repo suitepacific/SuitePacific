@@ -158,7 +158,7 @@ export const SERVICES: Service[] = [
   {
     icon: Globe,
     title: "NetSuite Integrations",
-    description: "Connect NetSuite to your 3PL, e-commerce platform, CRM, or other business systems — reliably and without silent failures.",
+    description: "Connect NetSuite to your 3PL, e-commerce platform, CRM, or other business systems, reliably and without silent failures.",
     href: "/netsuite-integrations",
   },
   {

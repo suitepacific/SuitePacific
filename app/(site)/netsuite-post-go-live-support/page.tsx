@@ -11,7 +11,7 @@ import { RECENT_WORK, SITE_URL } from "@/lib/content";
 const FAQ = [
   {
     question: "What's the difference between this and NetSuite's own support?",
-    answer: "NetSuite's support handles platform bugs and questions about standard functionality. We handle the customization layer — scripts, workflows, saved searches, templates, and configuration specific to your account. Most day-to-day questions in a live account sit in the customization layer, not the platform itself.",
+    answer: "NetSuite's support handles platform bugs and questions about standard functionality. We handle the customization layer, scripts, workflows, saved searches, templates, and configuration specific to your account. Most day-to-day questions in a live account sit in the customization layer, not the platform itself.",
   },
   {
     question: "How is support billed?",
@@ -107,8 +107,8 @@ export default function PostGoLiveSupportPage() {
               implementation partner vs. managed support
             </a>{" "}
             for that distinction. If you’re evaluating what it looks like to{" "}
-            <Link href="/hire-netsuite-developer">hire a NetSuite developer</Link> — what to
-            look for, how engagements are structured, and what questions matter — that guide
+            <Link href="/hire-netsuite-developer">hire a NetSuite developer</Link>, what to
+            look for, how engagements are structured, and what questions matter, that guide
             covers all of it.
           </p>
         </div>

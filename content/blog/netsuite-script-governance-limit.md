@@ -43,7 +43,7 @@ results.forEach(function(result) {
 });
 ```
 
-With 200 records, this is 2,000 governance units on record loads alone — already double the User Event limit, before any other operations. The fix is to pull all the data you need from the search itself using columns, rather than loading each record separately:
+With 200 records, this is 2,000 governance units on record loads alone, already double the User Event limit, before any other operations. The fix is to pull all the data you need from the search itself using columns, rather than loading each record separately:
 
 ```javascript
 // Do this instead: pull needed data in the search columns
@@ -67,7 +67,7 @@ If you genuinely need to modify each record (not just read), use `record.submitF
 A variant of the above: using `search.lookupFields()` or creating a new search inside a loop:
 
 ```javascript
-// DON'T do this — one search call per iteration
+// DON'T do this: one search call per iteration
 items.forEach(function(itemId) {
   let fields = search.lookupFields({ // 10+ units per call
     type: 'item',
@@ -81,7 +81,7 @@ Pre-load everything you need in a single search before the loop starts, store it
 
 ### 3. A Scheduled Script that doesn't yield
 
-Scheduled Scripts have a 10,000-unit limit. A script processing thousands of records without yielding will eventually hit it. NetSuite's governance API lets you check remaining units and yield — handing control back to the scheduler, which re-queues the script to continue from a saved state:
+Scheduled Scripts have a 10,000-unit limit. A script processing thousands of records without yielding will eventually hit it. NetSuite's governance API lets you check remaining units and yield, handing control back to the scheduler, which re-queues the script to continue from a saved state:
 
 ```javascript
 function execute(context) {
@@ -111,7 +111,7 @@ Without this pattern, a Scheduled Script processing a large dataset will fail pa
 
 A User Event script that runs cleanly in development, where transactions happen one at a time, can break in production during a CSV import of 500 records or an integration push. Every record save triggers the User Event, and each execution has its own 1,000-unit budget.
 
-The failure mode here isn't usually a single execution hitting the limit — it's a script that works fine on individual records but consumes too many units when the trigger pattern includes conditions that weren't anticipated during development. Review any User Event on a Transaction type (Sales Orders, Vendor Bills, Inventory Adjustments) for:
+The failure mode here isn't usually a single execution hitting the limit, it's a script that works fine on individual records but consumes too many units when the trigger pattern includes conditions that weren't anticipated during development. Review any User Event on a Transaction type (Sales Orders, Vendor Bills, Inventory Adjustments) for:
 
 - Searches or record loads inside `beforeSubmit` or `afterSubmit`
 - Missing `context.type` guards that cause the full script to run on `COPY`, `XEDIT`, and `INLINE_EDIT` events unnecessarily
@@ -119,9 +119,9 @@ The failure mode here isn't usually a single execution hitting the limit — it'
 
 ### 5. Map/Reduce reduce() function exceeding 1,000 units
 
-Map/Reduce scripts avoid the Scheduled Script governance problem for large datasets by distributing work across parallel queues — but each individual `reduce()` call still has a 1,000-unit limit. If your `reduce()` function loads related records or runs additional searches for each key, it can hit the limit the same way a User Event can.
+Map/Reduce scripts avoid the Scheduled Script governance problem for large datasets by distributing work across parallel queues, but each individual `reduce()` call still has a 1,000-unit limit. If your `reduce()` function loads related records or runs additional searches for each key, it can hit the limit the same way a User Event can.
 
-The solution is to move data retrieval into the `map()` stage (where the data can be fetched and attached to the output before being passed to reduce) rather than performing additional lookups inside `reduce()`. This is the same principle as the "load outside the loop" pattern — just applied across Map/Reduce stages.
+The solution is to move data retrieval into the `map()` stage (where the data can be fetched and attached to the output before being passed to reduce) rather than performing additional lookups inside `reduce()`. This is the same principle as the "load outside the loop" pattern, just applied across Map/Reduce stages.
 
 ### 6. SuiteScript APIs with hidden governance costs
 
@@ -188,10 +188,10 @@ Add `runtime.getCurrentScript().getRemainingUsage()` logging at key checkpoints 
 
 ## The governance limit and script architecture
 
-The governance limit is not a bug or an arbitrary restriction. It is a signal about script architecture. A well-designed script running on a single record should consume a small fraction of its governance budget. A script that regularly approaches or exceeds the limit almost always has one of the structural problems described above — and fixing the architecture, rather than trying to shave governance units one at a time, is what produces a script that runs reliably at any volume.
+The governance limit is not a bug or an arbitrary restriction. It is a signal about script architecture. A well-designed script running on a single record should consume a small fraction of its governance budget. A script that regularly approaches or exceeds the limit almost always has one of the structural problems described above, and fixing the architecture, rather than trying to shave governance units one at a time, is what produces a script that runs reliably at any volume.
 
 The most durable fix for a governance-limit problem is almost always moving from Scheduled Scripts to Map/Reduce for high-volume work, and eliminating record loads and search calls from inside loops everywhere else.
 
 ---
 
-Governance limit errors in production scripts are one of the most common issues we resolve when taking over a customized NetSuite account. If you have scripts that are hitting governance limits — or scripts that behave differently under high load than they did in development — [book a consultation](/contact) and we'll identify the root cause and fix it. For related reading, see [SuiteScript Best Practices: Customizations That Survive the Next Upgrade](/blog/suitescript-best-practices), [NetSuite User Event Scripts vs Client Scripts: Which One to Use and When](/blog/netsuite-user-event-vs-client-script), and our [SuiteScript development service](/netsuite-suitescript-development).
+Governance limit errors in production scripts are one of the most common issues we resolve when taking over a customized NetSuite account. If you have scripts that are hitting governance limits, or scripts that behave differently under high load than they did in development, [book a consultation](/contact) and we'll identify the root cause and fix it. For related reading, see [SuiteScript Best Practices: Customizations That Survive the Next Upgrade](/blog/suitescript-best-practices), [NetSuite User Event Scripts vs Client Scripts: Which One to Use and When](/blog/netsuite-user-event-vs-client-script), and our [SuiteScript development service](/netsuite-suitescript-development).

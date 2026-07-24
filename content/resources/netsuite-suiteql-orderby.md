@@ -18,7 +18,7 @@ As of NetSuite 2026.2, SuiteQL queries against the Transaction table that do not
 
 Queries that already include `ORDER BY` are not affected. This change also applies to SuiteQL used in Analytics Datasets.
 
-## Step 1 — Find affected queries in your codebase
+## Step 1: Find affected queries in your codebase
 
 Search for SuiteQL queries that query the Transaction table without an `ORDER BY` clause.
 
@@ -31,13 +31,13 @@ query.runSuiteQL({
     FROM Transaction
     WHERE custbody_custom_field = 'value'
   `
-  // No ORDER BY — this is the problem
+  // No ORDER BY - this is the problem
 });
 ```
 
 Search your codebase for `FROM Transaction` and review each result for a missing `ORDER BY`.
 
-## Step 2 — Decide if order matters for each query
+## Step 2: Decide if order matters for each query
 
 Not every query without `ORDER BY` needs to be fixed. Only act on a query if your code depends on result order in any of these ways:
 
@@ -48,7 +48,7 @@ Not every query without `ORDER BY` needs to be fixed. Only act on a query if you
 
 If the script aggregates all results, looks up by a specific field value, or processes every row regardless of position, the sort change has no impact.
 
-## Step 3 — Add an explicit ORDER BY to affected queries
+## Step 3: Add an explicit ORDER BY to affected queries
 
 **To restore the previous alphabetical sort by display name:**
 
@@ -91,11 +91,11 @@ query.runSuiteQL({
 
 Specifying `ORDER BY` explicitly makes your queries immune to future default sort changes.
 
-## Step 4 — Check Analytics Datasets
+## Step 4: Check Analytics Datasets
 
 If you use SuiteQL in Analytics Datasets, open any dataset definition that queries the Transaction table. Look for queries without `ORDER BY` and evaluate whether sort order affects the workbooks or reports built on top of those datasets. Apply the same fix: add an explicit `ORDER BY`.
 
-## Step 5 — Test in sandbox
+## Step 5: Test in sandbox
 
 After updating your queries, run your scripts in a sandbox environment to confirm results come back in the expected order. Pay attention to scripts that do conditional logic based on the first result, or that pass results to another system in a specific sequence.
 

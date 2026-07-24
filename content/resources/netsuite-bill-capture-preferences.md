@@ -16,25 +16,25 @@ Two fields in Bill Capture Preferences now have explicit behavior when left blan
 
 Before 2026.2, leaving these fields blank produced undefined behavior. After the upgrade, blank means the amount is discarded. If your account has either field blank and you expected captured tax or shipping amounts to flow through to saved bills, you need to set them explicitly.
 
-## Step 1 — Go to Bill Capture Preferences
+## Step 1: Go to Bill Capture Preferences
 
 Navigate to **Setup > Accounting > Bill Capture Preferences**.
 
-## Step 2 — Check the Save Tax As field
+## Step 2: Check the Save Tax As field
 
 Find the **Save Tax As** field. If it is blank, captured tax amounts will now be treated as No Tax when bills are saved. Set this field to the tax code or tax treatment your account uses for captured vendor bills if you want tax amounts to be preserved.
 
-## Step 3 — Check the Save Shipping Cost As field
+## Step 3: Check the Save Shipping Cost As field
 
 Find the **Save Shipping Cost As** field. If it is blank, captured shipping costs will now be treated as No Shipping Cost when bills are saved. Set this field to the correct cost account or item if you want shipping amounts to carry through to saved bills.
 
-## Step 4 — Review the new gross and net options
+## Step 4: Review the new gross and net options
 
 2026.2 also adds gross and net options on the Bill Capture Preferences page. These control whether captured amounts are treated as tax-inclusive (gross) or tax-exclusive (net) when the bill is saved.
 
 Review these options and confirm they match how your vendors present amounts on their bills. If your vendors show tax-inclusive totals, set the preference to gross. If they show amounts before tax, use net.
 
-## Step 5 — Save and test with a captured bill
+## Step 5: Save and test with a captured bill
 
 After updating your preferences, save the changes and run a test capture on a vendor bill that includes both tax and shipping amounts. Confirm the saved bill reflects the tax and shipping correctly before processing live bills.
 

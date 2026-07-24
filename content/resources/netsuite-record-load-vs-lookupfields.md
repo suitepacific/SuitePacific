@@ -21,7 +21,7 @@ var customer = rec.getValue('entity');
 var total = rec.getValue('amount');
 ```
 
-This works, but it loads the entire record — every body field, every sublist, every line item. For a sales order with 50 line items, you are loading all 50 lines and their associated data just to read three field values.
+This works, but it loads the entire record, every body field, every sublist, every line item. For a sales order with 50 line items, you are loading all 50 lines and their associated data just to read three field values.
 
 In a script that runs once, the overhead is negligible. In a Scheduled Script checking the status of hundreds of records nightly, or a User Event script that fires on every save, those full record loads accumulate quickly.
 
@@ -47,11 +47,11 @@ No full record load. Only the specified fields are retrieved. The governance and
 
 The return value is a plain object with the field values keyed by field ID. Most fields return simple string or number values. Select fields (like `entity`, `status`) return the display value by default.
 
-For fields that have both an internal ID and a display value — like a list/record field — `lookupFields()` returns the value in a format similar to how it appears in a search result. If you need the internal ID of a select field, you can access it via the result's `value` property in some cases, or run a search with the field as a column.
+For fields that have both an internal ID and a display value, like a list/record field, `lookupFields()` returns the value in a format similar to how it appears in a search result. If you need the internal ID of a select field, you can access it via the result's `value` property in some cases, or run a search with the field as a column.
 
 ## What search.lookupFields() cannot do
 
-This is important: `search.lookupFields()` is read-only. You cannot use the result to update the record. If your script needs to read values and then update the record based on what it reads, you still need `record.load()` — or you can use `lookupFields()` for the read and `record.submitFields()` for the update (keeping them separate).
+This is important: `search.lookupFields()` is read-only. You cannot use the result to update the record. If your script needs to read values and then update the record based on what it reads, you still need `record.load()`, or you can use `lookupFields()` for the read and `record.submitFields()` for the update (keeping them separate).
 
 `search.lookupFields()` also cannot read sublist data. If you need line items, sublists, or subrecords, you need `record.load()`.
 
@@ -61,7 +61,7 @@ This is important: `search.lookupFields()` is read-only. You cannot use the resu
 - You know the record's internal ID
 - You need to read one or a few body field values
 - You do not need to update the record after reading
-- Performance matters — the script runs frequently or across many records
+- Performance matters, the script runs frequently or across many records
 
 **Use `record.load()` when:**
 - You need to update the record after reading it

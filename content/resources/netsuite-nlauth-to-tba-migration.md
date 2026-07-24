@@ -15,7 +15,7 @@ If any of your RESTlet integrations use NLAuth, they will fail when 2027.1 goes 
 
 Token-Based Authentication (TBA) is the most direct migration path for existing RESTlet integrations. Note that from 2027.1, you will not be able to create new TBA integrations, so migrate before that deadline. TBA itself is tentatively planned for full retirement in 2028.1, at which point migrating to OAuth 2.0 will be required.
 
-## Step 1 — Find every integration using NLAuth
+## Step 1: Find every integration using NLAuth
 
 Search your codebase and any integration configuration for the string `NLAuth` or `nlauth`. NLAuth appears in HTTP Authorization headers in this format:
 
@@ -30,7 +30,7 @@ Also check:
 
 For each one, note what it does and what NetSuite record types it accesses.
 
-## Step 2 — Create an Integration Record in NetSuite
+## Step 2: Create an Integration Record in NetSuite
 
 Each TBA connection requires an Integration Record.
 
@@ -40,7 +40,7 @@ Give the integration a descriptive name. Under Authentication, enable **Token-Ba
 
 NetSuite will display a **Consumer Key** and **Consumer Secret**. Copy both immediately. They will not be shown again after you leave this page.
 
-## Step 3 — Generate an Access Token
+## Step 3: Generate an Access Token
 
 Go to **Setup > Users/Roles > Access Tokens > New**.
 
@@ -57,7 +57,7 @@ You now have four values:
 - Token ID
 - Token Secret
 
-## Step 4 — Update your integration to use TBA
+## Step 4: Update your integration to use TBA
 
 Replace the NLAuth Authorization header in your integration with a TBA OAuth 1.0 signed header. The format is:
 
@@ -75,13 +75,13 @@ Authorization: OAuth
 
 The signature is HMAC-SHA256 of a canonical base string using your Consumer Secret and Token Secret as the signing key. Most NetSuite TBA libraries and HTTP clients with OAuth 1.0 support handle this automatically.
 
-## Step 5 — Test in sandbox before switching production
+## Step 5: Test in sandbox before switching production
 
 Point your updated integration at your sandbox environment using sandbox credentials. Run through the same operations your integration performs in production and confirm everything works correctly.
 
 Sandbox NetSuite Account IDs follow the format `ACCOUNT_ID_SB1` or `ACCOUNT_ID_SB2`. You will need a separate Integration Record and Access Token created in the sandbox account.
 
-## Step 6 — Switch production and remove NLAuth credentials
+## Step 6: Switch production and remove NLAuth credentials
 
 Once sandbox testing passes, update your production integration to use the TBA credentials you created in Step 3. Then remove all NLAuth credentials from your codebase, config files, and any secret managers. Do not leave them in place after migration.
 

@@ -13,7 +13,7 @@ const FAQ = [
   {
     question: "What is the difference between a RESTlet and SuiteTalk?",
     answer:
-      "RESTlets are custom API endpoints you build inside NetSuite using SuiteScript. They give you complete control over the data structure, validation logic, and what gets created or updated on the NetSuite side. SuiteTalk is Oracle's native web service layer that exposes standard NetSuite records directly — no custom code required, but no flexibility beyond what the standard API supports. For most custom integrations, RESTlets are the right choice because you can build exactly the interface your external system needs.",
+      "RESTlets are custom API endpoints you build inside NetSuite using SuiteScript. They give you complete control over the data structure, validation logic, and what gets created or updated on the NetSuite side. SuiteTalk is Oracle's native web service layer that exposes standard NetSuite records directly, no custom code required, but no flexibility beyond what the standard API supports. For most custom integrations, RESTlets are the right choice because you can build exactly the interface your external system needs.",
   },
   {
     question: "Do you work with middleware platforms like Celigo or Boomi?",
@@ -28,7 +28,7 @@ const FAQ = [
   {
     question: "Can you integrate NetSuite with our 3PL?",
     answer:
-      "Yes. 3PL integrations typically sync purchase orders, item receipts, sales orders, fulfillment confirmations, and inventory adjustments. The implementation depends on what your 3PL exposes — REST API, SFTP file exchange, or EDI — and we build to match that.",
+      "Yes. 3PL integrations typically sync purchase orders, item receipts, sales orders, fulfillment confirmations, and inventory adjustments. The implementation depends on what your 3PL exposes, REST API, SFTP file exchange, or EDI, and we build to match that.",
   },
   {
     question: "Can you take over an existing integration that's broken or needs changes?",
@@ -48,7 +48,7 @@ const INTEGRATION_TYPES = [
     icon: ArrowLeftRight,
     title: "Bidirectional Data Sync",
     description:
-      "Two-way synchronization between NetSuite and external platforms — keeping inventory levels, order status, customer records, and financial data consistent without manual exports.",
+      "Two-way synchronization between NetSuite and external platforms, keeping inventory levels, order status, customer records, and financial data consistent without manual exports.",
   },
   {
     icon: Cloud,
@@ -60,7 +60,7 @@ const INTEGRATION_TYPES = [
     icon: Database,
     title: "SuiteTalk Web Services",
     description:
-      "Oracle's native REST and SOAP web service layer for direct access to standard NetSuite records — suitable for read-heavy integrations where a pre-built approach covers the requirements.",
+      "Oracle's native REST and SOAP web service layer for direct access to standard NetSuite records, suitable for read-heavy integrations where a pre-built approach covers the requirements.",
   },
   {
     icon: RefreshCcw,
@@ -72,7 +72,7 @@ const INTEGRATION_TYPES = [
     icon: FileCode2,
     title: "File-Based Integrations",
     description:
-      "SFTP, CSV, and structured file integrations for systems that don't expose a modern API — automated file pickup, parsing, validation, and import into NetSuite records.",
+      "SFTP, CSV, and structured file integrations for systems that don't expose a modern API, automated file pickup, parsing, validation, and import into NetSuite records.",
   },
 ];
 
@@ -99,7 +99,7 @@ export default function NetSuiteIntegrationsPage() {
           as="h1"
           eyebrow="Integration Development"
           title="NetSuite Integrations"
-          subtitle="Connect NetSuite to your other business systems — reliably, with proper error handling, and without silent failures."
+          subtitle="Connect NetSuite to your other business systems, reliably, with proper error handling, and without silent failures."
           align="left"
         />
 
@@ -108,7 +108,7 @@ export default function NetSuiteIntegrationsPage() {
           <p>
             Most businesses running NetSuite don&apos;t run NetSuite alone. There&apos;s a 3PL
             managing warehouse operations, a Shopify store taking orders, a Salesforce CRM tracking
-            customers, or a payment processor handling transactions — and data needs to flow between
+            customers, or a payment processor handling transactions, and data needs to flow between
             them accurately and automatically.
           </p>
           <p>
@@ -142,28 +142,28 @@ export default function NetSuiteIntegrationsPage() {
           <h2>Common systems we integrate with NetSuite</h2>
           <ul>
             <li>
-              <strong>3PL providers</strong> — purchase orders, item receipts, sales orders,
+              <strong>3PL providers</strong>, purchase orders, item receipts, sales orders,
               fulfillment confirmations, and inventory adjustments
             </li>
             <li>
-              <strong>E-commerce platforms</strong> — order import, inventory sync, customer
+              <strong>E-commerce platforms</strong>, order import, inventory sync, customer
               creation, and fulfillment status updates from Shopify, WooCommerce, and similar
               platforms
             </li>
             <li>
-              <strong>CRM systems</strong> — customer and lead sync between Salesforce, HubSpot,
+              <strong>CRM systems</strong>, customer and lead sync between Salesforce, HubSpot,
               and NetSuite
             </li>
             <li>
-              <strong>Payment gateways</strong> — payment status, reconciliation, and transaction
+              <strong>Payment gateways</strong>, payment status, reconciliation, and transaction
               import
             </li>
             <li>
-              <strong>EDI and supply chain</strong> — purchase orders, advance ship notices,
+              <strong>EDI and supply chain</strong>, purchase orders, advance ship notices,
               invoices, and acknowledgements in structured EDI formats
             </li>
             <li>
-              <strong>Internal business systems</strong> — custom-built tools, legacy databases,
+              <strong>Internal business systems</strong>, custom-built tools, legacy databases,
               and internal APIs that need to exchange data with NetSuite
             </li>
           </ul>
@@ -184,7 +184,7 @@ export default function NetSuiteIntegrationsPage() {
           </p>
           <p>
             If you have an existing integration that&apos;s unreliable, undocumented, or needs to
-            be extended, we take those on as well — starting with a documented review of what&apos;s
+            be extended, we take those on as well, starting with a documented review of what&apos;s
             already there before making any changes.
           </p>
 

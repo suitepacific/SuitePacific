@@ -11,7 +11,7 @@ linkedinDay: 1
 
 A workflow fires twice on the same record save. Approval emails go out in duplicate. Field updates happen twice. A workflow that should create one record creates two.
 
-This is one of the most common workflow issues in NetSuite accounts, and the cause is almost always in the trigger configuration — not a bug in NetSuite itself.
+This is one of the most common workflow issues in NetSuite accounts, and the cause is almost always in the trigger configuration, not a bug in NetSuite itself.
 
 ## Cause 1: Both "Before Record Submit" and "After Record Submit" are selected
 
@@ -21,7 +21,7 @@ Both triggers fire on every save:
 - Before Record Submit fires before the record is committed to the database
 - After Record Submit fires after the record is committed
 
-If both are selected, the workflow runs once for each trigger — two executions per save, every time that record type is saved.
+If both are selected, the workflow runs once for each trigger, two executions per save, every time that record type is saved.
 
 **The fix:** Choose one trigger and remove the other. In most cases:
 - Use **Before Record Submit** if the workflow needs to validate or modify the record before it is saved
@@ -39,12 +39,12 @@ This is a less obvious but equally common cause. The sequence looks like this:
 4. That update triggers a second save
 5. Workflow fires again (second execution)
 
-The workflow itself is configured correctly — it only fires once per save. But because another process is triggering a second save programmatically, the workflow runs again on that second save.
+The workflow itself is configured correctly, it only fires once per save. But because another process is triggering a second save programmatically, the workflow runs again on that second save.
 
 **How to identify this:** Check what User Event scripts are deployed on the same record type. Look for any `afterSubmit` scripts that call `record.submitFields()` or `record.load() + save()` on the same record. If one of those updates is triggering the workflow's Entry Condition, it will re-fire the workflow.
 
 **The fix options:**
-- Add an Entry Condition to the workflow so it only fires when a specific field changes to a specific value — not on every save. If the User Event script does not touch that field, the workflow will not re-fire.
+- Add an Entry Condition to the workflow so it only fires when a specific field changes to a specific value, not on every save. If the User Event script does not touch that field, the workflow will not re-fire.
 - Modify the User Event script to skip its update when the save originated from a workflow context (check `runtime.executionContext`).
 - Restructure the workflow or script so they do not create a save loop.
 

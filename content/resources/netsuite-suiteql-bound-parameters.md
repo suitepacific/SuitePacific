@@ -13,12 +13,12 @@ Bound parameters separate the logic of a SuiteQL query from its dynamic values. 
 
 This feature is available on the REST SuiteQL endpoint as of NetSuite 2026.2.
 
-## Step 1 — Identify queries with dynamic values
+## Step 1: Identify queries with dynamic values
 
 Look for SuiteQL queries in your code where a value is inserted into the query string at runtime. The pattern to find is string concatenation or interpolation inside a query:
 
 ```javascript
-// Before — value embedded in the query string
+// Before: value embedded in the query string
 query.runSuiteQL({
   query: `SELECT id FROM Transaction WHERE custbody_status = '${statusValue}'`
 });
@@ -26,12 +26,12 @@ query.runSuiteQL({
 
 Any query where a variable is placed directly inside the query string is a candidate for bound parameters.
 
-## Step 2 — Replace inline values with ? placeholders
+## Step 2: Replace inline values with ? placeholders
 
 Rewrite the query to use `?` in place of each dynamic value:
 
 ```javascript
-// After — value replaced with a placeholder
+// After: value replaced with a placeholder
 const suiteqlQuery = "SELECT id FROM Transaction WHERE custbody_status = ?";
 ```
 
@@ -41,7 +41,7 @@ Use one `?` for each dynamic value. If you have multiple values, use multiple pl
 const suiteqlQuery = "SELECT id, tranDate FROM Transaction WHERE tranDate > SYSDATE + ? AND status = ?";
 ```
 
-## Step 3 — Add the params array
+## Step 3: Add the params array
 
 Pass the values as a `params` array alongside the query. The values map positionally to the `?` placeholders in order:
 
@@ -54,7 +54,7 @@ Pass the values as a `params` array alongside the query. The values map position
 
 The first `?` receives `"-7"`, the second receives `"0"`. NetSuite handles the substitution.
 
-## Step 4 — Send the request to the REST SuiteQL endpoint
+## Step 4: Send the request to the REST SuiteQL endpoint
 
 The bound parameters format is supported on the standard REST SuiteQL endpoint:
 

@@ -1,11 +1,11 @@
 ---
 title: "NetSuite Advanced PDF Templates: A FreeMarker Syntax Guide with Examples"
-description: "How FreeMarker works inside NetSuite's Advanced PDF/HTML Template editor — the data model, the core syntax, date and number formatting, line item loops, conditionals, and working code you can copy."
+description: "How FreeMarker works inside NetSuite's Advanced PDF/HTML Template editor, the data model, the core syntax, date and number formatting, line item loops, conditionals, and working code you can copy."
 date: "2026-07-18"
 tags: ["Advanced PDF", "Templates", "Development"]
 ---
 
-NetSuite's Advanced PDF/HTML Template editor uses FreeMarker, an open-source Java template language, to produce transaction documents — invoices, quotes, purchase orders, packing slips, statements. If you've opened the template editor and found a mix of HTML, CSS, and unfamiliar tags wrapped in `<#` and `${`, this guide explains what each piece does and how to adapt it to your documents.
+NetSuite's Advanced PDF/HTML Template editor uses FreeMarker, an open-source Java template language, to produce transaction documents, invoices, quotes, purchase orders, packing slips, statements. If you've opened the template editor and found a mix of HTML, CSS, and unfamiliar tags wrapped in `<#` and `${`, this guide explains what each piece does and how to adapt it to your documents.
 
 ## How it works
 
@@ -17,7 +17,7 @@ When NetSuite generates a PDF from an Advanced PDF template, it does two things:
 
 The FreeMarker template sees the transaction data as a single object called `record`. Every field on the transaction is a property of `record`. Line items (the sublist) are a collection under `record.item`. Everything you print in the template comes from navigating this structure.
 
-To see the exact XML data model for a specific transaction, open the template editor (Customization > Forms > Advanced PDF/HTML Templates), scroll down to the "Data" section, and select a sample transaction — NetSuite shows the full XML so you can see exactly what field names to reference.
+To see the exact XML data model for a specific transaction, open the template editor (Customization > Forms > Advanced PDF/HTML Templates), scroll down to the "Data" section, and select a sample transaction, NetSuite shows the full XML so you can see exactly what field names to reference.
 
 ## The core FreeMarker syntax
 
@@ -100,7 +100,7 @@ The sublist of line items on a transaction is accessed as `record.item`. Loop ov
   <tbody>
     <#list record.item as line>
     <tr>
-      <td>${line.item!"—"}</td>
+      <td>${line.item!"-"}</td>
       <td>${line.description!""}</td>
       <td>${line.quantity?string["0.##"]}</td>
       <td>${"$"}${line.rate?string["#,##0.00"]}</td>
@@ -111,7 +111,7 @@ The sublist of line items on a transaction is accessed as `record.item`. Loop ov
 </table>
 ```
 
-`line` is a local variable that holds each row as the loop iterates. Field names inside the loop reference line-level fields: `line.item`, `line.description`, `line.quantity`, `line.rate`, `line.amount`. Transaction-level fields (`record.entity`, `record.tranid`) are still accessible inside the loop — they're not local to it.
+`line` is a local variable that holds each row as the loop iterates. Field names inside the loop reference line-level fields: `line.item`, `line.description`, `line.quantity`, `line.rate`, `line.amount`. Transaction-level fields (`record.entity`, `record.tranid`) are still accessible inside the loop, they're not local to it.
 
 The most common mistake: referencing a line-level field outside the loop, or a transaction-level field incorrectly inside it. If a field silently prints blank, check which scope it belongs to.
 
@@ -163,7 +163,7 @@ The pattern of one template with `<#if>` branches for different customer types, 
 </#if>
 ```
 
-This suppresses the entire "Notes:" section when the memo is blank — useful for any optional field that should only appear when it has a value.
+This suppresses the entire "Notes:" section when the memo is blank, useful for any optional field that should only appear when it has a value.
 
 ## Assigning variables
 
@@ -179,7 +179,7 @@ Use `<#assign>` to compute or alias a value once and reuse it:
 <p>Tax: ${"$"}${taxAmount?string["#,##0.00"]}</p>
 ```
 
-`?number` converts a string to a number — necessary when you want to do arithmetic on a field that FreeMarker received as a string.
+`?number` converts a string to a number, necessary when you want to do arithmetic on a field that FreeMarker received as a string.
 
 ## Addressing fields
 
@@ -194,7 +194,7 @@ ${record.billcountry!""}
 
 Shipping address equivalents use `ship` instead of `bill`: `record.shipaddr1`, `record.shipcity`, etc.
 
-If the formatted address `record.billaddress` has the right layout for your document, use it directly — it handles the multi-line formatting and empty-field logic already:
+If the formatted address `record.billaddress` has the right layout for your document, use it directly, it handles the multi-line formatting and empty-field logic already:
 
 ```
 ${record.billaddress!""}
@@ -316,7 +316,7 @@ Use the Preview button in the Advanced PDF/HTML Template editor with a specific 
 
 For testing edge cases, deliberately pick transactions with:
 - Zero line items
-- Long descriptions with special characters (`&`, `<`, `>` — these need to be HTML-escaped in the data or they'll break the XML)
+- Long descriptions with special characters (`&`, `<`, `>`, these need to be HTML-escaped in the data or they'll break the XML)
 - Missing optional fields (no shipping address, no memo, no PO number)
 - Multi-page output (many line items)
 
@@ -324,7 +324,7 @@ NetSuite will render `&` in a field value as `&amp;` automatically in most cases
 
 ## When FreeMarker isn't enough
 
-FreeMarker templates reference fields that NetSuite includes in the transaction data model. If you need a value that isn't in that data model — a custom record field joined through several levels, a calculated aggregate from a saved search, or data from an external system — you have two options:
+FreeMarker templates reference fields that NetSuite includes in the transaction data model. If you need a value that isn't in that data model, a custom record field joined through several levels, a calculated aggregate from a saved search, or data from an external system, you have two options:
 
 First, write the value to a custom field on the transaction at save time using a User Event script. The field then appears in the data model and the template can reference it normally.
 

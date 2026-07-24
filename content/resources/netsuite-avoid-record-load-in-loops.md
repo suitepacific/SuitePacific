@@ -24,7 +24,7 @@ results.each(function(result) {
 });
 ```
 
-If the search returns 1,000 results, this performs 1,000 full record loads — just to read a single field value from each one.
+If the search returns 1,000 results, this performs 1,000 full record loads, just to read a single field value from each one.
 
 Each `record.load()` retrieves the complete record: every body field, every sublist, every line item. For a sales order with 40 line items, you are loading all 40 lines 1,000 times, when you only needed the customer name.
 
@@ -64,7 +64,7 @@ var mySearch = search.create({
 });
 ```
 
-Then read the values directly from each result in the loop — no record load needed.
+Then read the values directly from each result in the loop, no record load needed.
 
 ## When record.load() in a loop is actually necessary
 
@@ -72,11 +72,11 @@ There are cases where loading inside a loop is unavoidable. The key question is:
 
 **Loading is necessary when you need to:**
 
-- **Update the record** — `record.load()` is required if you need to call `setValue()` and `save()`. (Alternatively, use `record.submitFields()` for body-field-only updates, which avoids the full load.)
-- **Read or modify sublists** — Sublist data (line items, address sublists) is not available as search columns. If you need line-level data, you need `record.load()`.
-- **Work with subrecords** — Subrecords require the full record context.
+- **Update the record:** `record.load()` is required if you need to call `setValue()` and `save()`. (Alternatively, use `record.submitFields()` for body-field-only updates, which avoids the full load.)
+- **Read or modify sublists:** Sublist data (line items, address sublists) is not available as search columns. If you need line-level data, you need `record.load()`.
+- **Work with subrecords:** Subrecords require the full record context.
 
-If you genuinely need one of the above, load only what you must — and consider whether the script design can be restructured to reduce the number of loads. For example, if you are updating one field on many records, `record.submitFields()` avoids a full load entirely.
+If you genuinely need one of the above, load only what you must, and consider whether the script design can be restructured to reduce the number of loads. For example, if you are updating one field on many records, `record.submitFields()` avoids a full load entirely.
 
 ## The right question before every loop
 

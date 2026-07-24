@@ -5,7 +5,7 @@ date: "2026-07-18"
 tags: ["SuiteScript", "Map/Reduce", "Performance", "Development"]
 ---
 
-The first time most NetSuite developers encounter Map/Reduce is when a Scheduled Script starts failing at scale. The script worked fine in testing with 200 records, but in production with 8,000 records it times out, hits governance limits, or yields and restarts so many times that what should take 10 minutes takes four hours. Map/Reduce exists to solve exactly this problem — and once you understand how it distributes work, it becomes the obvious choice for any heavy bulk processing job.
+The first time most NetSuite developers encounter Map/Reduce is when a Scheduled Script starts failing at scale. The script worked fine in testing with 200 records, but in production with 8,000 records it times out, hits governance limits, or yields and restarts so many times that what should take 10 minutes takes four hours. Map/Reduce exists to solve exactly this problem, and once you understand how it distributes work, it becomes the obvious choice for any heavy bulk processing job.
 
 This guide covers every stage of the Map/Reduce lifecycle, how to structure each one correctly, the governance limits that apply at each stage, and a complete working example that ties it all together.
 
@@ -21,13 +21,13 @@ The tradeoff: Map/Reduce requires a specific structure that Scheduled Scripts do
 
 **Use Map/Reduce when:**
 - You're processing more than a few hundred records and a Scheduled Script would need to yield and restart multiple times
-- The records can be processed independently — each record doesn't need to know what happened to any other record
+- The records can be processed independently, each record doesn't need to know what happened to any other record
 - You need to aggregate data across many records by grouping key (totals by customer, counts by category, sums by period)
-- You want automatic retry handling at the individual record level — a failure on one record doesn't abort the entire job
+- You want automatic retry handling at the individual record level, a failure on one record doesn't abort the entire job
 
 **Use a Scheduled Script when:**
 - The dataset is small (under a few hundred records per run)
-- The processing is inherently sequential — record B depends on the result of processing record A
+- The processing is inherently sequential, record B depends on the result of processing record A
 - You need fine-grained control over execution flow or error handling that the Map/Reduce framework doesn't expose
 
 **Use Mass Update when:**
@@ -42,12 +42,12 @@ Map/Reduce scripts have five stages. Each stage runs in its own execution contex
 
 ### Stage 1: getInputData()
 
-`getInputData()` tells the framework what records need to be processed. It returns a data source — a Search object, a Query object, or a small fixed array — and NetSuite's framework handles the rest.
+`getInputData()` tells the framework what records need to be processed. It returns a data source, a Search object, a Query object, or a small fixed array, and NetSuite's framework handles the rest.
 
 The most important rule for `getInputData()` is to return the Search object itself, not the result of running it:
 
 ```javascript
-// Correct: return the Search object — NetSuite paginates and distributes it
+// Correct: return the Search object; NetSuite paginates and distributes it
 function getInputData(context) {
     return search.create({
         type: search.Type.INVOICE,
@@ -79,17 +79,17 @@ function getInputData(context) {
 }
 ```
 
-When you return a Search object, NetSuite fetches results in pages and dispatches individual results to `map()` workers in parallel. When you pre-execute and return an array, all 10,000 records are fetched in a single thread — you've done the most expensive work before parallelism begins.
+When you return a Search object, NetSuite fetches results in pages and dispatches individual results to `map()` workers in parallel. When you pre-execute and return an array, all 10,000 records are fetched in a single thread, you've done the most expensive work before parallelism begins.
 
 See the [full explanation of why getInputData() should stay thin](/resources/netsuite-map-reduce-getinputdata).
 
 ### Stage 2: map()
 
-`map()` receives one search result at a time and processes it. NetSuite runs many `map()` invocations simultaneously — this is where the parallel execution actually happens.
+`map()` receives one search result at a time and processes it. NetSuite runs many `map()` invocations simultaneously, this is where the parallel execution actually happens.
 
 Each `map()` invocation receives a `context` object with two properties:
-- `context.key` — the index of the item in the input data (0, 1, 2, ...)
-- `context.value` — a JSON string of the search result, with an `id`, `recordType`, and `values` object
+- `context.key`, the index of the item in the input data (0, 1, 2, ...)
+- `context.value`, a JSON string of the search result, with an `id`, `recordType`, and `values` object
 
 Parsing the result and writing a key-value pair forward:
 
@@ -101,7 +101,7 @@ function map(context) {
     var amountRemaining = parseFloat(result.values.amountremaining);
     var daysOverdue = parseInt(result.values.daysoverdue, 10);
 
-    // Key = customerId — all invoices for one customer will group in reduce()
+    // Key = customerId: all invoices for one customer will group in reduce()
     context.write({
         key: customerId,
         value: JSON.stringify({
@@ -122,7 +122,7 @@ If you find yourself wanting to accumulate a running total in `map()`, that's th
 
 You write no code for this stage. After all `map()` invocations complete, NetSuite automatically groups every key-value pair written via `context.write()` by their key. All values that share the same key are collected and delivered together to a single `reduce()` invocation.
 
-In the example above: if customer 678 has 9 overdue invoices, all 9 `context.write()` calls from `map()` — all with key `"678"` — are grouped and arrive together in one `reduce()` call. This grouping is what makes aggregation possible.
+In the example above: if customer 678 has 9 overdue invoices, all 9 `context.write()` calls from `map()`, all with key `"678"`, are grouped and arrive together in one `reduce()` call. This grouping is what makes aggregation possible.
 
 ### Stage 4: reduce()
 
@@ -147,14 +147,14 @@ function reduce(context) {
         var invoiceList = invoices
             .sort(function(a, b) { return b.daysOverdue - a.daysOverdue; })
             .map(function(inv) {
-                return inv.tranId + ' — $' + inv.amountRemaining.toFixed(2) +
+                return inv.tranId + ': $' + inv.amountRemaining.toFixed(2) +
                        ' (' + inv.daysOverdue + ' days overdue)';
             }).join('\n');
 
         email.send({
             author: -5, // -5 = NetSuite default sender
             recipients: customerEmail,
-            subject: 'Overdue Invoice Summary — Action Required',
+            subject: 'Overdue Invoice Summary: Action Required',
             body: 'Dear ' + customerName + ',\n\nThe following invoices are overdue:\n\n' +
                   invoiceList + '\n\nTotal outstanding: $' + totalDue.toFixed(2) +
                   '\n\nPlease contact us to discuss payment.'
@@ -165,7 +165,7 @@ function reduce(context) {
 }
 ```
 
-The distinction from `map()`: `map()` transforms and routes one item at a time. `reduce()` combines multiple items that belong together. If processing requires knowing about more than one record — totals, grouping, sending one notification for a set of related records — it belongs in `reduce()`.
+The distinction from `map()`: `map()` transforms and routes one item at a time. `reduce()` combines multiple items that belong together. If processing requires knowing about more than one record, totals, grouping, sending one notification for a set of related records, it belongs in `reduce()`.
 
 ### Stage 5: summarize()
 
@@ -193,7 +193,7 @@ function summarize(context) {
     var customersProcessed = context.reduceSummary.keys.count;
 
     log.audit({
-        title: 'Overdue invoice emails — complete',
+        title: 'Overdue invoice emails: complete',
         details: JSON.stringify({
             customersProcessed: customersProcessed,
             mapErrors: mapErrors,
@@ -208,7 +208,7 @@ Two things to know about `summarize()`:
 
 First, if you don't iterate the error iterators, errors disappear silently. A `map()` that failed on 400 records will show no sign of failure in the job status unless you log from `summarize()`.
 
-Second, `summarize()` retries up to three times if it throws an error. Write it defensively — wrap the body in a try/catch if you're doing anything beyond logging, and log errors before the logic that might throw, not after.
+Second, `summarize()` retries up to three times if it throws an error. Write it defensively, wrap the body in a try/catch if you're doing anything beyond logging, and log errors before the logic that might throw, not after.
 
 ## Governance limits by stage
 
@@ -223,7 +223,7 @@ Each stage runs in a separate context with a separate governance budget:
 
 These limits explain why the structure matters. If `getInputData()` exhausts its 10,000-unit budget pre-executing a large search, the job fails before any `map()` runs. By returning the Search object instead, you defer all search execution to the framework, which allocates it correctly across stages.
 
-For `map()` at 1,000 units per invocation: a typical operation — one `record.load()` (10 units), one `record.submitFields()` (10 units), and a couple of search calls (5 units each) — leaves plenty of headroom. Where `map()` governance failures happen is when developers load additional records inside `map()` that should have been fetched in `getInputData()` via search columns.
+For `map()` at 1,000 units per invocation: a typical operation, one `record.load()` (10 units), one `record.submitFields()` (10 units), and a couple of search calls (5 units each), leaves plenty of headroom. Where `map()` governance failures happen is when developers load additional records inside `map()` that should have been fetched in `getInputData()` via search columns.
 
 For a full breakdown of what each NetSuite operation costs in governance units, see [Governance Limit Exceeded: Causes and Fixes](/blog/netsuite-script-governance-limit).
 
@@ -283,14 +283,14 @@ define(['N/search', 'N/record', 'N/email', 'N/log'], function(search, record, em
             var invoiceLines = invoices
                 .sort(function(a, b) { return b.daysOverdue - a.daysOverdue; })
                 .map(function(inv) {
-                    return inv.tranId + ' — $' + inv.amountRemaining.toFixed(2) +
+                    return inv.tranId + ': $' + inv.amountRemaining.toFixed(2) +
                            ' (' + inv.daysOverdue + ' days overdue)';
                 }).join('\n');
 
             email.send({
                 author: -5,
                 recipients: [{ address: customerEmail }],
-                subject: 'Outstanding Invoices — ' + (new Date()).getFullYear(),
+                subject: 'Outstanding Invoices - ' + (new Date()).getFullYear(),
                 body: 'Dear ' + customerName + ',\n\n' +
                       'The following invoices require your attention:\n\n' +
                       invoiceLines + '\n\n' +
@@ -337,10 +337,10 @@ To deploy: go to Customization > Scripting > Scripts > New, set the type to Map/
 
 After triggering a deployment, the status appears on the deployment record itself:
 
-- **Pending** — queued, waiting for a processing slot
-- **Processing** — actively running (could be in getInputData, map, or reduce)
-- **Complete** — all stages finished without an unhandled error
-- **Failed** — an unhandled error aborted a stage; check the execution log
+- **Pending:** queued, waiting for a processing slot
+- **Processing:** actively running (could be in getInputData, map, or reduce)
+- **Complete:** all stages finished without an unhandled error
+- **Failed:** an unhandled error aborted a stage; check the execution log
 
 The execution log (on the deployment's Execution Log tab) shows every `log.audit()`, `log.debug()`, and `log.error()` call from all stages. If a job is stuck in Processing for longer than expected, check whether `getInputData()` is running a large search, or whether individual `map()` invocations are consistently hitting governance limits.
 
@@ -348,12 +348,12 @@ One practical note: Map/Reduce jobs run concurrently with other scripted process
 
 ## Key design principles, summarized
 
-- `getInputData()` returns a Search or Query object — it defines work, it does not do work
-- `map()` processes one item and writes one or more key-value pairs forward — it does not share state with other invocations
-- The shuffle stage groups values by key automatically — you don't write code for it
-- `reduce()` receives all values for a key together — this is where aggregation belongs
-- `summarize()` handles errors from all previous stages — always iterate the error iterators
+- `getInputData()` returns a Search or Query object, it defines work, it does not do work
+- `map()` processes one item and writes one or more key-value pairs forward, it does not share state with other invocations
+- The shuffle stage groups values by key automatically, you don't write code for it
+- `reduce()` receives all values for a key together, this is where aggregation belongs
+- `summarize()` handles errors from all previous stages, always iterate the error iterators
 
 Map/Reduce is the right choice for any job that a Scheduled Script is struggling with at scale. The framework handles the parallelism, retry logic, and governance allocation; your job is to design the five stages to be stateless at the individual invocation level.
 
-If you're working with a NetSuite account that has aging Scheduled Scripts hitting governance limits under load, [the SuiteScript development work we do](/netsuite-suitescript-development) includes exactly this kind of migration — identifying which scripts are good Map/Reduce candidates and restructuring them to take advantage of the parallel processing model.
+If you're working with a NetSuite account that has aging Scheduled Scripts hitting governance limits under load, [the SuiteScript development work we do](/netsuite-suitescript-development) includes exactly this kind of migration, identifying which scripts are good Map/Reduce candidates and restructuring them to take advantage of the parallel processing model.

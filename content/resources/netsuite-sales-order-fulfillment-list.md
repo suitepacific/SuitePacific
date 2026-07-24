@@ -13,21 +13,21 @@ Before 2026.2, starting fulfillment for a sales order required opening the order
 
 From 2026.2, you can initiate fulfillment directly from the sales order list without opening each order individually.
 
-## Step 1 — Navigate to the sales order list
+## Step 1: Navigate to the sales order list
 
 Go to **Transactions > Sales > Enter Sales Orders** and switch to the list view, or access the sales order list from your saved searches or dashboards.
 
-## Step 2 — Locate the order to fulfill
+## Step 2: Locate the order to fulfill
 
 Find the sales order you want to fulfill. The order must be in a status that allows fulfillment (typically Pending Fulfillment).
 
-## Step 3 — Use the fulfillment action from the list
+## Step 3: Use the fulfillment action from the list
 
 On the sales order list, use the fulfillment action available directly on the row or through the list's action menu. This initiates fulfillment without requiring you to open the sales order record.
 
-## Step 4 — Complete the fulfillment
+## Step 4: Complete the fulfillment
 
-Follow the standard fulfillment steps. The Item Fulfillment record is created the same way as before. Inventory is committed and decremented using the same logic. Nothing about the fulfillment process itself has changed — only the starting point.
+Follow the standard fulfillment steps. The Item Fulfillment record is created the same way as before. Inventory is committed and decremented using the same logic. Nothing about the fulfillment process itself has changed, only the starting point.
 
 ## What stays the same
 
