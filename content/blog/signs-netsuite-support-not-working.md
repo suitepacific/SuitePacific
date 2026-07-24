@@ -10,6 +10,43 @@ Most NetSuite support problems don't announce themselves. They accumulate. A slo
 
 If you're reading this, you're probably already suspicious. Here are the signs that confirm it.
 
+<div style="overflow-x:auto;margin:2rem 0;border-radius:10px;overflow:hidden;border:1px solid #d7e0f3">
+<table style="width:100%;border-collapse:collapse;font-size:0.875rem;font-family:system-ui,-apple-system,sans-serif;min-width:520px">
+<thead>
+<tr>
+<th style="padding:0.875rem 1.25rem;text-align:left;background:#060f26;color:#eef2fb;font-weight:600;width:50%">What you're experiencing</th>
+<th style="padding:0.875rem 1.25rem;text-align:left;background:#4f7fff;color:#fff;font-weight:600">What it should look like</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding:0.75rem 1.25rem;border-bottom:1px solid #eef2fb;color:#14306b;vertical-align:top">Scripts break on release weekends. Your team tells you first.</td>
+<td style="padding:0.75rem 1.25rem;border-bottom:1px solid #eef2fb;color:#14306b;vertical-align:top">Release notes reviewed, sandbox tested. You're warned before it hits production.</td>
+</tr>
+<tr style="background:#f8faff">
+<td style="padding:0.75rem 1.25rem;border-bottom:1px solid #eef2fb;color:#14306b;vertical-align:top">The developer who built your customization is no longer reachable.</td>
+<td style="padding:0.75rem 1.25rem;border-bottom:1px solid #eef2fb;color:#14306b;vertical-align:top">The same developer who built it owns it and fixes it.</td>
+</tr>
+<tr>
+<td style="padding:0.75rem 1.25rem;border-bottom:1px solid #eef2fb;color:#14306b;vertical-align:top">Changes go straight to production without sandbox testing.</td>
+<td style="padding:0.75rem 1.25rem;border-bottom:1px solid #eef2fb;color:#14306b;vertical-align:top">Every change, regardless of size, is tested in sandbox first. No exceptions.</td>
+</tr>
+<tr style="background:#f8faff">
+<td style="padding:0.75rem 1.25rem;border-bottom:1px solid #eef2fb;color:#14306b;vertical-align:top">Routine questions take 3 to 5 business days to get a response.</td>
+<td style="padding:0.75rem 1.25rem;border-bottom:1px solid #eef2fb;color:#14306b;vertical-align:top">Same-day response on most requests. No queue between you and the developer.</td>
+</tr>
+<tr>
+<td style="padding:0.75rem 1.25rem;border-bottom:1px solid #eef2fb;color:#14306b;vertical-align:top">Every small request requires a new SOW and a kickoff call.</td>
+<td style="padding:0.75rem 1.25rem;border-bottom:1px solid #eef2fb;color:#14306b;vertical-align:top">Routine requests handled without formal paperwork. SOWs for large projects only.</td>
+</tr>
+<tr style="background:#f8faff">
+<td style="padding:0.75rem 1.25rem;color:#14306b;vertical-align:top">You re-explain your account and your business on every support call.</td>
+<td style="padding:0.75rem 1.25rem;color:#14306b;vertical-align:top">Your account is known. Context doesn't need to be rebuilt every time.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
 ## 1. Your scripts break after every NetSuite release and your partner isn't the one who tells you
 
 NetSuite releases new versions twice a year. A partner actively maintaining your account should be reviewing the release notes for anything that could affect your customizations, testing in sandbox before the release hits production, and telling you what to expect, not waiting for your users to call in with errors.

@@ -21,11 +21,55 @@ An Entry Condition is a filter that NetSuite checks before deciding whether to b
 
 The difference in how NetSuite evaluates each case:
 
-**Without Entry Condition:**
-Record saved → Workflow evaluated → States checked → May or may not proceed
-
-**With Entry Condition:**
-Record saved → Entry Condition checked → Condition not met → Workflow skipped entirely
+<figure style="margin:1.5rem 0">
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="ec-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#8aa2d6"/></marker>
+    <marker id="ec-arrow-g" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#34d399"/></marker>
+  </defs>
+  <!-- Divider -->
+  <line x1="340" y1="8" x2="340" y2="215" stroke="#d7e0f3" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Labels -->
+  <text x="170" y="16" text-anchor="middle" font-size="10" font-weight="700" fill="#991b1b" letter-spacing="0.06em">WITHOUT ENTRY CONDITION</text>
+  <text x="510" y="16" text-anchor="middle" font-size="10" font-weight="700" fill="#065f46" letter-spacing="0.06em">WITH ENTRY CONDITION</text>
+  <!-- LEFT: Record saved -->
+  <rect x="70" y="24" width="200" height="34" rx="6" fill="#eef2fb" stroke="#b2c2e6" stroke-width="1.5"/>
+  <text x="170" y="46" text-anchor="middle" font-size="12" fill="#0b1f4d">Record saved</text>
+  <line x1="170" y1="58" x2="170" y2="72" stroke="#8aa2d6" stroke-width="1.5" marker-end="url(#ec-arrow)"/>
+  <!-- LEFT: All states evaluated -->
+  <rect x="50" y="72" width="240" height="34" rx="6" fill="#fef9c3" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="170" y="94" text-anchor="middle" font-size="12" fill="#92400e">All workflow states evaluated</text>
+  <line x1="170" y1="106" x2="170" y2="120" stroke="#8aa2d6" stroke-width="1.5" marker-end="url(#ec-arrow)"/>
+  <!-- LEFT: All actions checked -->
+  <rect x="50" y="120" width="240" height="34" rx="6" fill="#fef9c3" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="170" y="142" text-anchor="middle" font-size="12" fill="#92400e">All actions checked</text>
+  <line x1="170" y1="154" x2="170" y2="168" stroke="#8aa2d6" stroke-width="1.5" marker-end="url(#ec-arrow)"/>
+  <!-- LEFT: Result -->
+  <rect x="70" y="168" width="200" height="34" rx="6" fill="#fee2e2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="170" y="189" text-anchor="middle" font-size="11" fill="#991b1b">Runs on every save</text>
+  <!-- RIGHT: Record saved -->
+  <rect x="410" y="24" width="200" height="34" rx="6" fill="#eef2fb" stroke="#b2c2e6" stroke-width="1.5"/>
+  <text x="510" y="46" text-anchor="middle" font-size="12" fill="#0b1f4d">Record saved</text>
+  <line x1="510" y1="58" x2="510" y2="72" stroke="#8aa2d6" stroke-width="1.5" marker-end="url(#ec-arrow)"/>
+  <!-- RIGHT: Diamond -->
+  <polygon points="510,72 600,106 510,140 420,106" fill="#eef2fb" stroke="#4f7fff" stroke-width="2"/>
+  <text x="510" y="101" text-anchor="middle" font-size="11" fill="#0b1f4d">Entry condition</text>
+  <text x="510" y="115" text-anchor="middle" font-size="11" fill="#0b1f4d">met?</text>
+  <!-- NO branch -->
+  <line x1="600" y1="106" x2="640" y2="106" stroke="#34d399" stroke-width="1.5" marker-end="url(#ec-arrow-g)"/>
+  <text x="622" y="100" text-anchor="middle" font-size="10" fill="#059669" font-weight="700">NO</text>
+  <rect x="640" y="90" width="36" height="32" rx="5" fill="#d1fae5" stroke="#34d399" stroke-width="1.5"/>
+  <text x="658" y="110" text-anchor="middle" font-size="10" fill="#065f46" font-weight="700">SKIP</text>
+  <!-- YES branch -->
+  <line x1="510" y1="140" x2="510" y2="158" stroke="#8aa2d6" stroke-width="1.5" marker-end="url(#ec-arrow)"/>
+  <text x="522" y="153" font-size="10" fill="#4f6fb0" font-weight="600">YES</text>
+  <!-- RIGHT: Evaluate -->
+  <rect x="410" y="158" width="200" height="46" rx="6" fill="#d1fae5" stroke="#34d399" stroke-width="1.5"/>
+  <text x="510" y="177" text-anchor="middle" font-size="12" fill="#065f46">Workflow evaluates</text>
+  <text x="510" y="193" text-anchor="middle" font-size="10" fill="#047857">Only when the condition is met</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.8rem;color:#8aa2d6;margin-top:0.5rem">Without an Entry Condition, NetSuite runs the full workflow evaluation on every save, regardless of whether anything relevant changed.</figcaption>
+</figure>
 
 When the condition is not met, NetSuite stops at the entry check. None of the internal workflow logic is evaluated.
 
@@ -42,15 +86,40 @@ If none of those conditions are met, the workflow has no meaningful work to do o
 
 **Example: Approval workflow Entry Condition**
 
-Instead of evaluating on every save:
+Instead of evaluating on every save, set:
 
-> Approval Status | is | Pending Approval
+```
+Field:     Approval Status
+Operator:  changed to
+Value:     Pending Approval
+```
 
-Or for a more targeted condition that only fires when the status changes to pending:
+The `changed to` operator is more targeted than `is`. It fires only when the field transitions to the target value on this save, not when it already carried that value from a previous save. A workflow using `is` on Approval Status will re-evaluate on every subsequent edit to the record while it stays in Pending Approval. `changed to` fires once, when the status first reaches that state.
 
-> Approval Status | changed to | Pending Approval
+The SuiteScript equivalent of an Entry Condition is an early exit at the top of the script:
 
-The "changed to" operator is particularly useful, it ensures the workflow only enters when the field transitions to the target value, not when it is already there on a subsequent save.
+```javascript
+// @NScriptType UserEventScript
+// @NApiVersion 2.1
+define([], () => {
+    function afterSubmit(context) {
+        // Early exit: same logic as a workflow Entry Condition
+        if (context.type !== context.UserEventType.EDIT) return;
+
+        const newStatus = context.newRecord.getValue('approvalstatus');
+        const oldStatus = context.oldRecord.getValue('approvalstatus');
+
+        // Only act when status changes to Approved (2)
+        if (newStatus !== '2' || oldStatus === '2') return;
+
+        // The rest of the function only runs when relevant
+        // ...
+    }
+    return { afterSubmit };
+});
+```
+
+This is the SuiteScript discipline that mirrors Entry Conditions: check the minimum conditions first, return immediately if they aren't met, and only run the actual logic when it has something meaningful to do. The performance principle is identical to what Entry Conditions achieve at the workflow level.
 
 ## Why experienced admins look at Entry Conditions first
 

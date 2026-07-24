@@ -16,7 +16,14 @@ Most teams know they should be using saved searches more than they do. The gap i
 
 This is the AR aging search most finance teams eventually build, but commonly built wrong by filtering on Invoice Date rather than Due Date, which includes current invoices that aren't actually late. The Due Date filter with a `before today` dynamic date range gives you a clean view of what's genuinely overdue.
 
-Add a Days Overdue formula column, `{today} - {duedate}`, and sort descending. The goal is to surface the most overdue amounts, not just the largest balances. Published as a dashboard portlet for the collections team, this search replaces the weekly "who do we chase today" spreadsheet.
+Add a Days Overdue formula column and sort descending. The goal is to surface the most overdue amounts, not just the largest balances. Published as a dashboard portlet for the collections team, this search replaces the weekly "who do we chase today" spreadsheet.
+
+```
+Formula column — Days Overdue:
+  Formula (Numeric):  {today} - {duedate}
+  Label:              Days Overdue
+  Sort:               Descending
+```
 
 ## 2. Sales orders pending approval
 
@@ -45,7 +52,17 @@ The `Billed = No` filter is a join field that checks whether a vendor bill has b
 **Key criteria:** Preferred Stock Level greater than Quantity On Hand + Quantity On Order
 **Columns:** Item name, Location, On hand, On order, Reorder point, Preferred vendor
 
-The trick here is using a formula column to compute `{quantityonhand} + {quantityonorder}` and filtering where that sum is below `{preferredstocklevel}`, rather than filtering on On Hand alone, which ignores pending purchase orders and triggers false alarms on items that already have replenishment in transit.
+The trick here is using a formula column and a criteria filter, rather than filtering on On Hand alone, which ignores pending purchase orders and triggers false alarms on items that already have replenishment in transit.
+
+```
+Criteria filter:
+  Formula (Numeric):  {preferredstocklevel} - {quantityonhand} - {quantityonorder}
+  Condition:          greater than 0
+
+Formula column — Units to Order:
+  Formula (Numeric):  {preferredstocklevel} - {quantityonhand} - {quantityonorder}
+  Label:              Units to Order
+```
 
 For multi-location accounts, add Location as a grouping column and run the summary by item and location separately. A global reorder search that ignores location will miss the case where an item is critically low at one warehouse but overstocked at another, and will generate unnecessary purchase orders for the wrong location.
 
@@ -57,7 +74,14 @@ For multi-location accounts, add Location as a grouping column and run the summa
 
 Expense report queues fall off the radar faster than any other approval type because there's no obvious place to check them without a saved search. This one, published to finance and managers, eliminates the "I submitted it last week, did you see it?" follow-up.
 
-Add a Days Pending formula column, `{today} - {createddate}`, and sort descending. Any expense report sitting more than five business days usually means either the notification was missed or the approver doesn't know they're the assigned approver for that employee's expense type.
+Add a Days Pending formula column and sort descending. Any expense report sitting more than five business days usually means either the notification was missed or the approver doesn't know they're the assigned approver for that employee's expense type.
+
+```
+Formula column — Days Pending:
+  Formula (Numeric):  {today} - {createddate}
+  Label:              Days Pending
+  Sort:               Descending
+```
 
 ## 6. Customers with no activity in 90 days
 
@@ -84,7 +108,14 @@ This one is more for administrators than finance users. When a script or workflo
 **Columns:** Vendor, Bill number, Bill date, Due date, Amount remaining
 **Summary:** Group by Vendor, Sum on Amount remaining
 
-The AP equivalent of the AR aging search. Add a Days Until Due formula column, `{duedate} - {today}`, and sort ascending so the most urgent bills appear first. Negative values mean the bill is already past due.
+The AP equivalent of the AR aging search. Add a Days Until Due formula column and sort ascending so the most urgent bills appear first. Negative values mean the bill is already past due.
+
+```
+Formula column — Days Until Due:
+  Formula (Numeric):  {duedate} - {today}
+  Label:              Days Until Due
+  Sort:               Ascending  (negative = already past due)
+```
 
 For accounts with multiple payment terms across vendors, add Payment Terms as a column. A bill on Net 30 terms that is 25 days old has different urgency than one on Net 60 terms at the same age. This distinction matters when prioritizing which vendor payments to release during a cash flow constraint.
 
@@ -96,7 +127,14 @@ For accounts with multiple payment terms across vendors, add Payment Terms as a 
 
 Essential for any professional services or project-based business tracking time in NetSuite. Without this search, billable hours fall through the cracks: an employee logs time, the project closes, and nobody generates an invoice because there was no systematic check that all logged hours were captured before billing.
 
-Add a formula column grouping by week, `TRUNC({date}, 'IW')`, to see which weeks have unbilled time. Time entries older than 60 days that are still marked unbilled usually need to either be invoiced or written off as non-billable. Letting that determination linger keeps the billing backlog artificially inflated and makes project profitability reporting unreliable.
+Add a formula column grouping by week to see which weeks have unbilled time. Time entries older than 60 days that are still marked unbilled usually need to either be invoiced or written off as non-billable.
+
+```
+Formula column — Week:
+  Formula (Date):   TRUNC({date}, 'IW')
+  Label:            Week Starting
+  Summary type:     Group
+``` Letting that determination linger keeps the billing backlog artificially inflated and makes project profitability reporting unreliable.
 
 ## 10. Open projects over budget
 
@@ -104,7 +142,14 @@ Add a formula column grouping by week, `TRUNC({date}, 'IW')`, to see which weeks
 **Key criteria:** Status = In Progress, Actual Cost greater than Estimated Cost
 **Columns:** Project name, Project manager, Estimated cost, Actual cost, Budget variance
 
-Add a Percent Over Budget formula column: `ROUND(({actualcost} - {estimatedcost}) / NULLIF({estimatedcost}, 0) * 100, 1)`. The NULLIF prevents a divide-by-zero error on projects with no estimated cost entered. Sort descending by variance.
+Add a Percent Over Budget formula column and sort descending by variance. The `NULLIF` prevents a divide-by-zero error on projects with no estimated cost entered.
+
+```
+Formula column — % Over Budget:
+  Formula (Numeric):  ROUND(({actualcost} - {estimatedcost}) / NULLIF({estimatedcost}, 0) * 100, 1)
+  Label:              % Over Budget
+  Sort:               Descending
+```
 
 Published to project managers as a dashboard portlet, this search surfaces budget overruns before the project closes rather than after. Filter to Status = In Progress so completed projects don't clutter the view, you cannot do much about a completed project's budget overage, but you can intervene on one still in flight.
 

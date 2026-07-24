@@ -9,6 +9,60 @@ One of the most common questions on NetSuite implementation projects is some ver
 
 Here's a practical decision guide, organized around what each tool is actually designed for.
 
+<div style="overflow-x:auto;margin:2rem 0;border-radius:10px;overflow:hidden;border:1px solid #d7e0f3">
+<table style="width:100%;border-collapse:collapse;font-size:0.875rem;font-family:system-ui,-apple-system,sans-serif;min-width:480px">
+<thead>
+<tr>
+<th style="padding:0.75rem 1rem;text-align:left;background:#060f26;color:#eef2fb;font-weight:600;width:36%">Capability</th>
+<th style="padding:0.75rem 1rem;text-align:center;background:#0b1f4d;color:#eef2fb;font-weight:600;width:32%">SuiteFlow</th>
+<th style="padding:0.75rem 1rem;text-align:center;background:#4f7fff;color:#fff;font-weight:600;width:32%">SuiteScript</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;color:#14306b">Approval routing and sign-offs</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#065f46;font-weight:600">Built in</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#8aa2d6">Reimplementation</td>
+</tr>
+<tr style="background:#f8faff">
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;color:#14306b">Block a record save with an error</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#8aa2d6">Not natively</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#065f46;font-weight:600">Yes (beforeSubmit)</td>
+</tr>
+<tr>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;color:#14306b">Bulk processing (1,000+ records)</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#8aa2d6">No</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#065f46;font-weight:600">Yes (Map/Reduce)</td>
+</tr>
+<tr style="background:#f8faff">
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;color:#14306b">Call an external API</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#8aa2d6">Via action script</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#065f46;font-weight:600">Direct</td>
+</tr>
+<tr>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;color:#14306b">Visual stage badge on the record form</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#065f46;font-weight:600">Built in</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#8aa2d6">Custom build required</td>
+</tr>
+<tr style="background:#f8faff">
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;color:#14306b">Non-developer can edit the logic</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#065f46;font-weight:600">Yes</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#8aa2d6">No</td>
+</tr>
+<tr>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;color:#14306b">Fires on CSV import and API saves</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#065f46;font-weight:600">Yes</td>
+<td style="padding:0.65rem 1rem;border-bottom:1px solid #eef2fb;text-align:center;color:#065f46;font-weight:600">Yes</td>
+</tr>
+<tr style="background:#f8faff">
+<td style="padding:0.65rem 1rem;color:#14306b">Execution audit trail visible in UI</td>
+<td style="padding:0.65rem 1rem;text-align:center;color:#065f46;font-weight:600">Yes</td>
+<td style="padding:0.65rem 1rem;text-align:center;color:#4f6fb0">Script execution log</td>
+</tr>
+</tbody>
+</table>
+</div>
+
 ## What SuiteFlow (Workflow) is designed for
 
 SuiteFlow is NetSuite's no-code/low-code automation tool. It models business processes as state machines, records move through defined states (Draft, Pending Approval, Approved, Rejected) via transitions that are triggered by user actions or record changes. Along the way, actions fire: send an email, update a field, create a related record.
@@ -73,6 +127,47 @@ Many automations could be built in either tool. An email notification on a field
 
 **Prevent a Sales Order from being saved if the customer has exceeded their credit limit** → SuiteScript User Event (`beforeSubmit`). This needs to throw an error to block the save, SuiteFlow cannot do this natively without a Workflow Action Script that throws the error. For a validation that must always fire and must block saves, a direct `beforeSubmit` script is cleaner.
 
+```javascript
+// @NScriptType UserEventScript
+// @NApiVersion 2.1
+define(['N/error', 'N/search'], (error, search) => {
+
+    function beforeSubmit(context) {
+        if (context.type !== context.UserEventType.CREATE &&
+            context.type !== context.UserEventType.EDIT) return;
+
+        const record = context.newRecord;
+        const customerId = record.getValue('entity');
+
+        // Load the customer's current balance and credit limit
+        const customer = search.lookupFields({
+            type: search.Type.CUSTOMER,
+            id: customerId,
+            columns: ['balance', 'creditlimit', 'creditholdoverride']
+        });
+
+        // Skip check if credit hold is overridden for this customer
+        if (customer.creditholdoverride === 'ON') return;
+
+        const orderTotal = record.getValue('total') || 0;
+        const projectedBalance = (customer.balance || 0) + orderTotal;
+        const creditLimit = customer.creditlimit || 0;
+
+        if (creditLimit > 0 && projectedBalance > creditLimit) {
+            throw error.create({
+                name: 'CREDIT_LIMIT_EXCEEDED',
+                message: `Order blocked: projected balance $${projectedBalance.toFixed(2)} exceeds credit limit $${creditLimit.toFixed(2)}.`,
+                notifyOff: false
+            });
+        }
+    }
+
+    return { beforeSubmit };
+});
+```
+
+This fires on every save path — UI, CSV import, REST API call, another script — which is exactly what a financial control requires. A SuiteFlow condition cannot load related records, compute a derived value, or throw a blocking error in one step.
+
 **Send a weekly summary email to all active customers** → SuiteScript Scheduled Script or Map/Reduce. This is a scheduled bulk operation with no per-record trigger.
 
 ## When to use both together
@@ -95,7 +190,46 @@ The situation to avoid: a workflow and a User Event script both modifying the sa
 
 The diagnostic: when a field's value changes inconsistently with no obvious explanation, check for both a workflow action and a User Event script targeting the same field. The fix is almost always consolidating the logic into one mechanism.
 
-The other conflict pattern: a User Event `afterSubmit` script calls `record.submitFields()` to update the current record, which triggers a second save, which re-fires the workflow. This is the most common cause of [workflows firing twice](/resources/netsuite-workflow-firing-twice). The fix is either adding an entry condition that filters out programmatic saves, or redesigning the script to avoid the second save.
+The other conflict pattern: a User Event `afterSubmit` script calls `record.submitFields()` to update the current record, which triggers a second save, which re-fires the workflow. This is the most common cause of [workflows firing twice](/resources/netsuite-workflow-firing-twice).
+
+```javascript
+// Common pattern that causes a save loop:
+function afterSubmit(context) {
+    // This triggers a second save, re-firing the workflow
+    record.submitFields({
+        type: context.newRecord.type,
+        id: context.newRecord.id,
+        values: { custbody_processed: true }
+    });
+}
+
+// Fix option 1: Check execution context to detect programmatic saves
+function afterSubmit(context) {
+    const runtime = require('N/runtime');
+    // Skip if this save was triggered by another script (not a user action)
+    if (runtime.executionContext !== runtime.ContextType.USER_INTERFACE) return;
+
+    record.submitFields({
+        type: context.newRecord.type,
+        id: context.newRecord.id,
+        values: { custbody_processed: true }
+    });
+}
+
+// Fix option 2: Check if the field already has the target value
+function afterSubmit(context) {
+    // Don't write if the field is already set — avoids the second save entirely
+    if (context.newRecord.getValue('custbody_processed')) return;
+
+    record.submitFields({
+        type: context.newRecord.type,
+        id: context.newRecord.id,
+        values: { custbody_processed: true }
+    });
+}
+```
+
+The fix is either adding an entry condition to the workflow that filters out programmatic saves, or redesigning the script to avoid the second save using one of the patterns above.
 
 ## The maintenance test
 
