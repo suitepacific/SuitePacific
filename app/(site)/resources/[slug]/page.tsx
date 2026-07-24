@@ -8,7 +8,7 @@ import { Card } from "@/components/ui/Card";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL, LEGAL_NAME } from "@/lib/content";
 import { getAllResourceSlugs, getAllResources, getResourceBySlug } from "@/lib/resources";
-import { LeadForm } from "@/components/sections/LeadForm";
+import { LeadFormLight } from "@/components/sections/LeadFormLight";
 
 export function generateStaticParams() {
   return getAllResourceSlugs().map((slug) => ({ slug }));
@@ -138,8 +138,8 @@ export default async function ResourcePage({
           <p className="mt-2 text-sm text-brand-400">
             We work with post-go-live NetSuite accounts every day. Tell us what you&apos;re working on.
           </p>
-          <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
-            <LeadForm />
+          <div className="mt-5">
+            <LeadFormLight />
           </div>
         </div>
       </article>

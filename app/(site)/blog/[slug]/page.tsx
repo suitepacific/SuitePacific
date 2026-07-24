@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/Badge";
 import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { Card } from "@/components/ui/Card";
 import { getAllPosts, getAllSlugs, getPostBySlug } from "@/lib/blog";
-import { LeadForm } from "@/components/sections/LeadForm";
+import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 
 export async function generateStaticParams() {
@@ -113,8 +113,8 @@ export default async function BlogPostPage({
           <p className="mt-2 text-sm text-brand-400">
             We work with post-go-live NetSuite accounts every day. Tell us what you&apos;re working on.
           </p>
-          <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
-            <LeadForm />
+          <div className="mt-5">
+            <LeadFormLight />
           </div>
         </div>
       </article>
