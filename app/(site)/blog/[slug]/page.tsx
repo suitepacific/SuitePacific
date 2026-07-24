@@ -85,6 +85,12 @@ export default async function BlogPostPage({
           · {post.readingTime}
         </div>
 
+        {/* Early callout — catches readers before they scroll */}
+        <div className="mt-8 rounded-xl bg-brand-50/60 border border-brand-100 px-5 py-4">
+          <p className="text-sm text-brand-600 mb-3">Need help with this in your NetSuite account?</p>
+          <LeadFormLight />
+        </div>
+
         <div
           className="prose prose-blue mt-10 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900"
           dangerouslySetInnerHTML={{ __html: post.contentHtml }}
