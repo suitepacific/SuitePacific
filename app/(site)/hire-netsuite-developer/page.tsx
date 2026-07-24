@@ -21,6 +21,7 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
+import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
 
 const FAQ = [
@@ -288,6 +289,24 @@ const ADMIN_ROWS = [
   { admin: "Dashboards", dev: "Suitelets & Portlets" },
 ];
 
+const CASE_STUDY_HIGHLIGHTS = [
+  {
+    outcome: "Batch invoice generation now runs overnight as a scheduled process. The team starts each day with a completion report and a short exceptions list instead of a queue of individual records.",
+    tag: "SuiteScript",
+    href: "/case-studies/invoice-processing-automation",
+  },
+  {
+    outcome: "The full quotation process — from request to purchase order — now runs inside NetSuite, with a complete audit trail and no re-entry of data.",
+    tag: "Workflow Automation",
+    href: "/case-studies/vendor-quotation-management",
+  },
+  {
+    outcome: "Each team now has a dashboard that answers their recurring questions in real time, without a weekly export or a request queue.",
+    tag: "Dashboards",
+    href: "/case-studies/operational-reporting",
+  },
+];
+
 const FREELANCER_ROWS = [
   {
     freelancer: "Single point of failure",
@@ -364,6 +383,71 @@ export default function HireNetSuiteDeveloperPage() {
         {/* Above the fold CTA */}
         <div className="mt-6">
           <Button href="/contact">Book a Free Consultation</Button>
+        </div>
+
+        {/* Social proof — real outcomes */}
+        <div className="mt-12">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-5">Recent Work</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {CASE_STUDY_HIGHLIGHTS.map((cs) => (
+              <Link key={cs.href} href={cs.href} className="group block">
+                <Card className="p-5 h-full flex flex-col gap-3 hover:border-accent/30 transition-colors">
+                  <span className="text-xs font-medium text-accent bg-accent/8 rounded-full px-2.5 py-0.5 self-start">{cs.tag}</span>
+                  <p className="text-sm text-brand-600 flex-1 leading-relaxed">{cs.outcome}</p>
+                  <span className="text-xs text-accent group-hover:underline">Read case study →</span>
+                </Card>
+              </Link>
+            ))}
+          </div>
+          <p className="mt-3 text-xs text-brand-300 text-right">
+            <Link href="/case-studies" className="hover:text-accent hover:underline">View all case studies →</Link>
+          </p>
+        </div>
+
+        {/* Why SuitePacific — moved up */}
+        <div className="mt-14">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why Companies Choose SuitePacific</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {WHY_SUITEPACIFIC.map((item) => (
+              <Card key={item.title} className="p-5 flex items-start gap-4">
+                <IconBadge icon={item.icon} />
+                <div>
+                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
+                  <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Freelancer vs Partner vs SuitePacific — moved up */}
+        <div className="mt-14">
+          <h2 className="text-lg font-semibold text-brand-900">Freelancer vs. Consulting Firm vs. SuitePacific</h2>
+          <p className="mt-2 text-sm text-brand-400">
+            Each engagement model has strengths. SuitePacific combines the flexibility of a freelancer with the reliability of an experienced consultancy.
+          </p>
+          <div className="mt-5 overflow-x-auto rounded-2xl border border-brand-100">
+            <div className="grid grid-cols-3 min-w-[560px] text-sm">
+              <div className="bg-brand-50/40 p-4">
+                <p className="font-semibold text-brand-900 mb-3">Freelancer</p>
+                {FREELANCER_ROWS.map((r) => (
+                  <div key={r.freelancer} className="py-2 border-b border-brand-100/60 last:border-0 text-brand-500">{r.freelancer}</div>
+                ))}
+              </div>
+              <div className="bg-brand-50/20 p-4 border-x border-brand-100">
+                <p className="font-semibold text-brand-900 mb-3">Large Consulting Firm</p>
+                {FREELANCER_ROWS.map((r) => (
+                  <div key={r.large} className="py-2 border-b border-brand-100/60 last:border-0 text-brand-500">{r.large}</div>
+                ))}
+              </div>
+              <div className="bg-brand p-4">
+                <p className="font-semibold text-white mb-3">SuitePacific</p>
+                {FREELANCER_ROWS.map((r) => (
+                  <div key={r.sp} className="py-2 border-b border-white/10 last:border-0 text-blue-100">{r.sp}</div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Why Companies Hire */}
@@ -527,36 +611,6 @@ export default function HireNetSuiteDeveloperPage() {
           </p>
         </div>
 
-        {/* Freelancer vs Partner vs SuitePacific */}
-        <div className="mt-14">
-          <h2 className="text-lg font-semibold text-brand-900">Freelancer vs. Consulting Firm vs. SuitePacific</h2>
-          <p className="mt-2 text-sm text-brand-400">
-            Each engagement model has strengths. SuitePacific combines the flexibility of a freelancer with the reliability of an experienced consultancy.
-          </p>
-          <div className="mt-5 overflow-x-auto rounded-2xl border border-brand-100">
-            <div className="grid grid-cols-3 min-w-[560px] text-sm">
-              <div className="bg-brand-50/40 p-4">
-                <p className="font-semibold text-brand-900 mb-3">Freelancer</p>
-                {FREELANCER_ROWS.map((r) => (
-                  <div key={r.freelancer} className="py-2 border-b border-brand-100/60 last:border-0 text-brand-500">{r.freelancer}</div>
-                ))}
-              </div>
-              <div className="bg-brand-50/20 p-4 border-x border-brand-100">
-                <p className="font-semibold text-brand-900 mb-3">Large Consulting Firm</p>
-                {FREELANCER_ROWS.map((r) => (
-                  <div key={r.large} className="py-2 border-b border-brand-100/60 last:border-0 text-brand-500">{r.large}</div>
-                ))}
-              </div>
-              <div className="bg-brand p-4">
-                <p className="font-semibold text-white mb-3">SuitePacific</p>
-                {FREELANCER_ROWS.map((r) => (
-                  <div key={r.sp} className="py-2 border-b border-white/10 last:border-0 text-blue-100">{r.sp}</div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Cost section */}
         <div className="prose prose-blue mt-14 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-strong:text-brand-900">
           <h2>How Much Does It Cost to Hire a NetSuite Developer?</h2>
@@ -594,22 +648,6 @@ export default function HireNetSuiteDeveloperPage() {
           Many clients prefer a monthly retained-hours model because it provides predictable access
           to experienced NetSuite developers without committing to a long-term contract.
         </p>
-
-        {/* Why SuitePacific */}
-        <div className="mt-14">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why Companies Choose SuitePacific</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {WHY_SUITEPACIFIC.map((item) => (
-              <Card key={item.title} className="p-5 flex items-start gap-4">
-                <IconBadge icon={item.icon} />
-                <div>
-                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
-                  <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
 
         {/* Our Development Process */}
         <div className="mt-14">
@@ -672,15 +710,14 @@ export default function HireNetSuiteDeveloperPage() {
         {/* FAQ */}
         <ServiceFaqSection items={FAQ} />
 
-        {/* Final CTA */}
-        <div className="mt-14 pt-10 border-t border-brand-50 text-center">
-          <p className="text-brand-900 font-semibold">Ready to hire a NetSuite developer?</p>
+        {/* Inline contact form */}
+        <div className="mt-14 pt-10 border-t border-brand-50">
+          <p className="text-brand-900 font-semibold text-lg">Ready to hire a NetSuite developer?</p>
           <p className="mt-2 text-sm text-brand-400">
-            Whether you need a one-time customization, a complex integration, or a long-term
-            NetSuite development partner, we&apos;d love to learn more about your requirements.
+            Tell us what you need. We respond within one business day.
           </p>
-          <div className="mt-6">
-            <Button href="/contact">Book a Free Consultation</Button>
+          <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
+            <LeadForm />
           </div>
         </div>
       </div>
