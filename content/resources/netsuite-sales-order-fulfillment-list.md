@@ -13,6 +13,35 @@ Before 2026.2, starting fulfillment for a sales order required opening the order
 
 From 2026.2, you can initiate fulfillment directly from the sales order list without opening each order individually.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 86" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="sof-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#4f6fb0"/></marker>
+  </defs>
+  <text x="340" y="13" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">FULFILLMENT FROM THE LIST — 4 STEPS (2026.2+)</text>
+  <rect x="0" y="22" width="150" height="50" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="75" y="43" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">① Navigate</text>
+  <text x="75" y="57" text-anchor="middle" font-size="8" fill="#4f6fb0">Transactions > Sales</text>
+  <text x="75" y="68" text-anchor="middle" font-size="8" fill="#4f6fb0">List view</text>
+  <line x1="150" y1="47" x2="168" y2="47" stroke="#4f6fb0" stroke-width="1.5" marker-end="url(#sof-arrow)"/>
+  <rect x="170" y="22" width="150" height="50" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="245" y="43" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">② Locate</text>
+  <text x="245" y="57" text-anchor="middle" font-size="8" fill="#4f6fb0">Find order at</text>
+  <text x="245" y="68" text-anchor="middle" font-size="8" fill="#4f6fb0">Pending Fulfillment</text>
+  <line x1="320" y1="47" x2="338" y2="47" stroke="#4f6fb0" stroke-width="1.5" marker-end="url(#sof-arrow)"/>
+  <rect x="340" y="22" width="150" height="50" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="415" y="43" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">③ Action</text>
+  <text x="415" y="57" text-anchor="middle" font-size="8" fill="#4f6fb0">Fulfill from row</text>
+  <text x="415" y="68" text-anchor="middle" font-size="8" fill="#4f6fb0">no record open needed</text>
+  <line x1="490" y1="47" x2="508" y2="47" stroke="#4f6fb0" stroke-width="1.5" marker-end="url(#sof-arrow)"/>
+  <rect x="510" y="22" width="170" height="50" rx="7" fill="#060f26" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="595" y="43" text-anchor="middle" font-size="9.5" font-weight="700" fill="#eef2fb">④ Fulfillment</text>
+  <text x="595" y="57" text-anchor="middle" font-size="8" fill="#8aa2d6">Standard Item Fulfillment</text>
+  <text x="595" y="68" text-anchor="middle" font-size="8" fill="#8aa2d6">record created as usual</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">The fulfillment logic is unchanged. Only the starting point is new.</figcaption>
+</figure>
+
 ## Step 1: Navigate to the sales order list
 
 Go to **Transactions > Sales > Enter Sales Orders** and switch to the list view, or access the sales order list from your saved searches or dashboards.

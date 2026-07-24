@@ -13,6 +13,39 @@ Project health indicators in NetSuite give project managers a quick status read 
 
 NetSuite 2026.2 adds five new indicators to the existing set.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 156" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">5 NEW PROJECT HEALTH INDICATORS — 2026.2</text>
+  <!-- Row 1: 3 indicators -->
+  <rect x="0" y="22" width="206" height="58" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="103" y="42" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Time Overrun</text>
+  <text x="103" y="56" text-anchor="middle" font-size="8" fill="#4f6fb0">Actual hours exceed planned</text>
+  <text x="103" y="70" text-anchor="middle" font-size="8" fill="#4f6fb0">Early signal of scope creep</text>
+
+  <rect x="237" y="22" width="206" height="58" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="340" y="42" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Overdue Tasks</text>
+  <text x="340" y="56" text-anchor="middle" font-size="8" fill="#4f6fb0">Past due date, not complete</text>
+  <text x="340" y="70" text-anchor="middle" font-size="8" fill="#4f6fb0">Pattern signals scheduling risk</text>
+
+  <rect x="474" y="22" width="206" height="58" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <text x="577" y="42" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Resource Coverage</text>
+  <text x="577" y="56" text-anchor="middle" font-size="8" fill="#4f6fb0">Remaining tasks vs. available</text>
+  <text x="577" y="70" text-anchor="middle" font-size="8" fill="#4f6fb0">resource hours going forward</text>
+
+  <!-- Row 2: 2 indicators -->
+  <rect x="0" y="92" width="320" height="58" rx="7" fill="#eef2fb" stroke="#b2c2e6" stroke-width="1.5"/>
+  <text x="160" y="112" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Project Margin</text>
+  <text x="160" y="126" text-anchor="middle" font-size="8" fill="#4f6fb0">Budget vs. actual spend ratio</text>
+  <text x="160" y="140" text-anchor="middle" font-size="8" fill="#4f6fb0">Flags projects running over on cost</text>
+
+  <rect x="360" y="92" width="320" height="58" rx="7" fill="#eef2fb" stroke="#b2c2e6" stroke-width="1.5"/>
+  <text x="520" y="112" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Unbilled Approved Charges</text>
+  <text x="520" y="126" text-anchor="middle" font-size="8" fill="#4f6fb0">Approved charges not yet invoiced</text>
+  <text x="520" y="140" text-anchor="middle" font-size="8" fill="#4f6fb0">Catch billing gaps before project closes</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Indicators surface risk signals without requiring a full timesheet or transaction review.</figcaption>
+</figure>
+
 ## The 5 new indicators
 
 ### Planned vs. Actual Time Overrun
