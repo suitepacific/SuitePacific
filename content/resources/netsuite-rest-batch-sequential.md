@@ -13,6 +13,50 @@ NetSuite REST Web Services supports batch operations, which let you send multipl
 
 As of 2026.2, you can enable sequential processing for a batch. When sequential processing is active, each operation in the batch completes before the next one begins, in the order you specified.
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 138" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="rbs-arrow-r" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#ef4444"/></marker>
+    <marker id="rbs-arrow-g" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#16a34a"/></marker>
+  </defs>
+  <!-- Left: Parallel -->
+  <rect x="0" y="0" width="320" height="138" rx="9" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <rect x="0" y="0" width="320" height="26" rx="9" fill="#7f1d1d"/>
+  <rect x="0" y="16" width="320" height="10" fill="#7f1d1d"/>
+  <text x="160" y="17" text-anchor="middle" font-size="10" font-weight="700" fill="#fee2e2">Parallel batch (before 2026.2)</text>
+  <rect x="70" y="33" width="180" height="16" rx="4" fill="#991b1b" opacity="0.7"/>
+  <text x="160" y="45" text-anchor="middle" font-size="8.5" font-weight="700" fill="#fee2e2">Batch request sent</text>
+  <line x1="110" y1="49" x2="60" y2="60" stroke="#ef4444" stroke-width="1.5" marker-end="url(#rbs-arrow-r)"/>
+  <line x1="160" y1="49" x2="160" y2="60" stroke="#ef4444" stroke-width="1.5" marker-end="url(#rbs-arrow-r)"/>
+  <line x1="210" y1="49" x2="260" y2="60" stroke="#ef4444" stroke-width="1.5" marker-end="url(#rbs-arrow-r)"/>
+  <rect x="16" y="60" width="88" height="16" rx="3" fill="#fca5a5"/>
+  <text x="60" y="72" text-anchor="middle" font-size="8" fill="#7f1d1d">Create customer</text>
+  <rect x="116" y="60" width="88" height="16" rx="3" fill="#fca5a5"/>
+  <text x="160" y="72" text-anchor="middle" font-size="8" fill="#7f1d1d">Create order</text>
+  <rect x="216" y="60" width="88" height="16" rx="3" fill="#fca5a5"/>
+  <text x="260" y="72" text-anchor="middle" font-size="8" fill="#7f1d1d">Apply payment</text>
+  <text x="160" y="96" text-anchor="middle" font-size="8" fill="#991b1b">Execution order: not guaranteed</text>
+  <text x="160" y="110" text-anchor="middle" font-size="8" font-weight="700" fill="#991b1b">Dependent steps may fail intermittently</text>
+  <!-- Right: Sequential -->
+  <rect x="360" y="0" width="320" height="138" rx="9" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <rect x="360" y="0" width="320" height="26" rx="9" fill="#14532d"/>
+  <rect x="360" y="16" width="320" height="10" fill="#14532d"/>
+  <text x="520" y="17" text-anchor="middle" font-size="10" font-weight="700" fill="#dcfce7">Sequential batch (2026.2+)</text>
+  <rect x="430" y="33" width="180" height="14" rx="4" fill="#166534"/>
+  <text x="520" y="44" text-anchor="middle" font-size="8.5" font-weight="700" fill="#dcfce7">Batch request sent</text>
+  <line x1="520" y1="47" x2="520" y2="57" stroke="#16a34a" stroke-width="1.5" marker-end="url(#rbs-arrow-g)"/>
+  <rect x="430" y="57" width="180" height="14" rx="3" fill="#bbf7d0" stroke="#4ade80" stroke-width="1"/>
+  <text x="520" y="68" text-anchor="middle" font-size="8.5" font-weight="700" fill="#14532d">① Create customer</text>
+  <line x1="520" y1="71" x2="520" y2="81" stroke="#16a34a" stroke-width="1.5" marker-end="url(#rbs-arrow-g)"/>
+  <rect x="430" y="81" width="180" height="14" rx="3" fill="#bbf7d0" stroke="#4ade80" stroke-width="1"/>
+  <text x="520" y="92" text-anchor="middle" font-size="8.5" font-weight="700" fill="#14532d">② Create order (customer exists ✓)</text>
+  <line x1="520" y1="95" x2="520" y2="105" stroke="#16a34a" stroke-width="1.5" marker-end="url(#rbs-arrow-g)"/>
+  <rect x="430" y="105" width="180" height="14" rx="3" fill="#bbf7d0" stroke="#4ade80" stroke-width="1"/>
+  <text x="520" y="116" text-anchor="middle" font-size="8.5" font-weight="700" fill="#14532d">③ Apply payment (order exists ✓)</text>
+  <text x="520" y="131" text-anchor="middle" font-size="8" font-weight="600" fill="#14532d">Each step completes before the next begins</text>
+</svg>
+</figure>
+
 ## When to use sequential processing
 
 Use sequential processing when operations in your batch depend on each other.
