@@ -1,9 +1,9 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { marked } from "marked";
 import readingTime from "reading-time";
 import type { BlogPost, BlogPostMeta } from "./types";
+import { parseMarkdown } from "./markdown";
 
 const BLOG_DIR = path.join(process.cwd(), "content/blog");
 
@@ -50,6 +50,6 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     tags: (data.tags as string[]) ?? [],
     readingTime: readingTime(content).text,
     calloutText: data.calloutText as string | undefined,
-    contentHtml: marked.parse(content, { async: false }) as string,
+    contentHtml: await parseMarkdown(content),
   };
 }

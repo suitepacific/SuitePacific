@@ -20,7 +20,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const resource = getResourceBySlug(slug);
+  const resource = await getResourceBySlug(slug);
   if (!resource) return {};
   return {
     title: `${resource.title} | SuitePacific`,
@@ -42,7 +42,7 @@ export default async function ResourcePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const resource = getResourceBySlug(slug);
+  const resource = await getResourceBySlug(slug);
   if (!resource) notFound();
 
   const related = getAllResources()
@@ -117,7 +117,7 @@ export default async function ResourcePage({
 
         <div className="overflow-x-auto">
           <div
-            className="prose prose-blue mt-10 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900 prose-code:text-accent prose-code:bg-brand-50 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:font-mono prose-pre:bg-brand-900 prose-pre:text-brand-50"
+            className="prose prose-blue mt-10 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900 prose-code:text-accent prose-code:bg-brand-50 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:font-mono"
             dangerouslySetInnerHTML={{ __html: resource.contentHtml }}
           />
         </div>

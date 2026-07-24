@@ -68,3 +68,23 @@ body {
   color: var(--foreground);
 }
 
+/* Shiki syntax-highlighted code blocks */
+.shiki-wrap {
+  margin: 1.5rem 0;
+}
+
+.shiki-wrap pre.shiki {
+  border-radius: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+}
+
+.shiki-wrap pre.shiki code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+  border-radius: 0;
+}
+

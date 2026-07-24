@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { marked } from "marked";
 import readingTime from "reading-time";
+import { parseMarkdown } from "./markdown";
 
 const RESOURCES_DIR = path.join(process.cwd(), "content/resources");
 
@@ -61,7 +61,7 @@ export function getAllResources(): ResourceMeta[] {
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
 }
 
-export function getResourceBySlug(slug: string): Resource | null {
+export async function getResourceBySlug(slug: string): Promise<Resource | null> {
   const filePath = path.join(RESOURCES_DIR, `${slug}.md`);
   if (!fs.existsSync(filePath)) return null;
   const raw = fs.readFileSync(filePath, "utf-8");
@@ -75,6 +75,6 @@ export function getResourceBySlug(slug: string): Resource | null {
     publishedAt: data.publishedAt as string,
     linkedinDay: data.linkedinDay as number | undefined,
     readingTime: readingTime(content).text,
-    contentHtml: marked.parse(content, { async: false }) as string,
+    contentHtml: await parseMarkdown(content),
   };
 }
