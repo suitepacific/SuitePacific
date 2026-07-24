@@ -4,11 +4,11 @@ import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL, LEGAL_NAME } from "@/lib/content";
 import { getAllResourceSlugs, getAllResources, getResourceBySlug } from "@/lib/resources";
+import { LeadForm } from "@/components/sections/LeadForm";
 
 export function generateStaticParams() {
   return getAllResourceSlugs().map((slug) => ({ slug }));
@@ -133,14 +133,13 @@ export default async function ResourcePage({
           </div>
         )}
 
-        <div className="mt-14 pt-10 border-t border-brand-50 text-center">
+        <div className="mt-14 pt-10 border-t border-brand-50">
           <p className="text-brand-900 font-semibold">Need help applying this in your account?</p>
           <p className="mt-2 text-sm text-brand-400">
-            We work with post-go-live NetSuite accounts every day. Book a free call and tell us
-            what you&apos;re working on.
+            We work with post-go-live NetSuite accounts every day. Tell us what you&apos;re working on.
           </p>
-          <div className="mt-6">
-            <Button href="/contact">Book a Free Consultation</Button>
+          <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
+            <LeadForm />
           </div>
         </div>
       </article>

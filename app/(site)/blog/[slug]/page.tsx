@@ -3,10 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
 import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { Card } from "@/components/ui/Card";
 import { getAllPosts, getAllSlugs, getPostBySlug } from "@/lib/blog";
+import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
 
 export async function generateStaticParams() {
@@ -108,13 +108,13 @@ export default async function BlogPostPage({
           </div>
         )}
 
-        <div className="mt-14 pt-10 border-t border-brand-50 text-center">
+        <div className="mt-14 pt-10 border-t border-brand-50">
           <p className="text-brand-900 font-semibold">Have a NetSuite challenge like this?</p>
           <p className="mt-2 text-sm text-brand-400">
-            We can take a look and tell you exactly what we&apos;d do.
+            We work with post-go-live NetSuite accounts every day. Tell us what you&apos;re working on.
           </p>
-          <div className="mt-6">
-            <Button href="/contact">Book a Free Consultation</Button>
+          <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
+            <LeadForm />
           </div>
         </div>
       </article>
