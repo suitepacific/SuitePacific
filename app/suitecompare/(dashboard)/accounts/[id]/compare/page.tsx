@@ -204,15 +204,13 @@ export default async function AccountComparePage({ params, searchParams }: Props
             leftType={leftScript.environment.type}
             rightType={rightScript.environment.type}
           />
-          {process.env.GROQ_API_KEY && (
-            <AiSummaryPanel
-              left={leftContent.content}
-              right={rightContent.content}
-              leftLabel={leftScript.environment.name}
-              rightLabel={rightScript.environment.name}
-              hasDiff={leftContent.content !== rightContent.content}
-            />
-          )}
+          <AiSummaryPanel
+            left={leftContent.content}
+            right={rightContent.content}
+            leftLabel={leftScript.environment.name}
+            rightLabel={rightScript.environment.name}
+            hasDiff={leftContent.content !== rightContent.content}
+          />
         </>
       );
     } else {
