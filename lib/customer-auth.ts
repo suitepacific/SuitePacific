@@ -8,8 +8,9 @@ const SESSION_MAX_AGE_SECONDS = 60 * 60 * 24 * 7; // 7 days
 export const CUSTOMER_SESSION_MAX_AGE = SESSION_MAX_AGE_SECONDS;
 
 function getSecret(): string {
-  const secret = process.env.ADMIN_SESSION_SECRET;
-  if (!secret) throw new Error("ADMIN_SESSION_SECRET is not set");
+  // Prefer a dedicated secret; fall back to ADMIN_SESSION_SECRET for existing deployments
+  const secret = process.env.CUSTOMER_SESSION_SECRET ?? process.env.ADMIN_SESSION_SECRET;
+  if (!secret) throw new Error("CUSTOMER_SESSION_SECRET is not set");
   return secret;
 }
 
@@ -53,32 +54,35 @@ export async function verifyPassword(plain: string, hash: string): Promise<boole
   return bcrypt.compare(plain, hash);
 }
 
-export async function createCustomerSessionToken(customerId: string): Promise<string> {
+// Token format: customer.<customerId>.<sessionVersion>.<expires>.<sig>
+export async function createCustomerSessionToken(customerId: string, sessionVersion: number): Promise<string> {
   const expires = Date.now() + SESSION_MAX_AGE_SECONDS * 1000;
-  const payload = `customer.${customerId}.${expires}`;
+  const payload = `customer.${customerId}.${sessionVersion}.${expires}`;
   const signature = await hmacSign(payload);
   return `${payload}.${signature}`;
 }
 
 export async function verifyCustomerSessionToken(
   token: string | undefined
-): Promise<{ customerId: string } | null> {
+): Promise<{ customerId: string; sessionVersion: number } | null> {
   if (!token) return null;
   const parts = token.split(".");
-  if (parts.length !== 4) return null;
+  if (parts.length !== 5) return null;
 
-  const [role, customerId, expiresStr, signature] = parts;
-  if (role !== "customer") return null;
-  if (!customerId) return null;
+  const [role, customerId, sessionVersionStr, expiresStr, signature] = parts;
+  if (role !== "customer" || !customerId) return null;
 
-  const payload = `customer.${customerId}.${expiresStr}`;
+  const payload = `customer.${customerId}.${sessionVersionStr}.${expiresStr}`;
   const isValidSig = await hmacVerify(payload, signature);
   if (!isValidSig) return null;
 
   const expires = Number(expiresStr);
   if (!Number.isFinite(expires) || Date.now() >= expires) return null;
 
-  return { customerId };
+  const sessionVersion = Number(sessionVersionStr);
+  if (!Number.isInteger(sessionVersion) || sessionVersion < 1) return null;
+
+  return { customerId, sessionVersion };
 }
 
 export async function getCustomerFromRequest(): Promise<Customer | null> {
@@ -88,5 +92,6 @@ export async function getCustomerFromRequest(): Promise<Customer | null> {
   if (!result) return null;
   const customer = await prisma.customer.findUnique({ where: { id: result.customerId } });
   if (!customer || customer.status !== "active") return null;
+  if (customer.sessionVersion !== result.sessionVersion) return null;
   return customer;
 }

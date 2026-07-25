@@ -70,6 +70,7 @@ model Partner {
   paymentDetails         String?      // free text: account details
   commissionRate         Float?       // partner-level default; overrides global setting
   passwordHash           String
+  sessionVersion         Int          @default(1)
   status                 String       @default("active")
   agreementAcceptedAt    DateTime?
   agreementAcceptedIp    String?
@@ -193,6 +194,7 @@ model Customer {
   country             String?
   timezone            String?
   passwordHash        String
+  sessionVersion      Int         @default(1)
   status              String      @default("active") // active | suspended
   agreementAcceptedAt DateTime?
   agreementAcceptedIp String?

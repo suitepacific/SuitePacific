@@ -6,6 +6,7 @@ import { prisma } from "@/lib/prisma";
 import {
   verifyPassword,
   createCustomerSessionToken,
+  getCustomerFromRequest,
   CUSTOMER_SESSION_COOKIE,
   CUSTOMER_SESSION_MAX_AGE,
 } from "@/lib/customer-auth";
@@ -26,7 +27,13 @@ export async function loginAction(_prev: unknown, formData: FormData) {
   const valid = await verifyPassword(password, customer.passwordHash);
   if (!valid) return { error: "Invalid email or password." };
 
-  const token = await createCustomerSessionToken(customer.id);
+  const { sessionVersion } = await prisma.customer.update({
+    where: { id: customer.id },
+    data: { sessionVersion: { increment: 1 } },
+    select: { sessionVersion: true },
+  });
+
+  const token = await createCustomerSessionToken(customer.id, sessionVersion);
   const cookieStore = await cookies();
   cookieStore.set(CUSTOMER_SESSION_COOKIE, token, {
     httpOnly: true,
@@ -40,7 +47,21 @@ export async function loginAction(_prev: unknown, formData: FormData) {
 }
 
 export async function logoutAction() {
+  const customer = await getCustomerFromRequest();
+  if (customer) {
+    await prisma.customer.update({
+      where: { id: customer.id },
+      data: { sessionVersion: { increment: 1 } },
+    });
+  }
+
   const cookieStore = await cookies();
-  cookieStore.delete(CUSTOMER_SESSION_COOKIE);
+  cookieStore.set(CUSTOMER_SESSION_COOKIE, "", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    maxAge: 0,
+    path: "/",
+  });
   redirect("/customer-portal/login");
 }

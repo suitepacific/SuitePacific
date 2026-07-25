@@ -31,6 +31,12 @@ export async function loginAction(formData: FormData): Promise<{ error?: string 
 
 export async function logoutAction() {
   const cookieStore = await cookies();
-  cookieStore.delete(ADMIN_SESSION_COOKIE);
+  cookieStore.set(ADMIN_SESSION_COOKIE, "", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    maxAge: 0,
+    path: "/",
+  });
   redirect("/admin/login");
 }
