@@ -11,77 +11,201 @@ function truncate(s: string) {
   return s.slice(0, MAX_CHARS) + "\n\n[... truncated for length ...]";
 }
 
+type Deployment = {
+  id: string;
+  scriptid: string;
+  recordtype: string | null;
+  isdeployed: string;
+  status: string;
+  loglevel: string;
+};
+
+function formatDeployments(deploys: Deployment[], label: string) {
+  if (!deploys.length) return `${label}: no deployment data available`;
+  return deploys.map(d =>
+    `${label} deployment: ${d.scriptid} | status: ${d.status} | deployed: ${d.isdeployed} | record type: ${d.recordtype || "—"} | log level: ${d.loglevel}`
+  ).join("\n");
+}
+
 export async function POST(req: Request) {
-
   if (!process.env.GROQ_API_KEY) {
-    return new Response("AI summarization is not configured.", { status: 503 });
+    return new Response("Not configured.", { status: 503 });
   }
 
-  const { mode, left, right, leftLabel, rightLabel, leftDeployments = [], rightDeployments = [] } = await req.json();
-
-  function formatDeployments(deploys: { id: string; scriptid: string; recordtype: string | null; isdeployed: string; status: string; loglevel: string }[], label: string) {
-    if (!deploys.length) return `${label}: no deployment data available`;
-    return deploys.map(d =>
-      `${label} deployment: ${d.scriptid} | status: ${d.status} | deployed: ${d.isdeployed} | record type: ${d.recordtype || "—"} | log level: ${d.loglevel}`
-    ).join("\n");
-  }
+  const {
+    mode,
+    left,
+    right,
+    leftLabel,
+    rightLabel,
+    leftDeployments = [],
+    rightDeployments = [],
+  } = await req.json();
 
   const groq = createGroq({ apiKey: process.env.GROQ_API_KEY });
 
+  const deploymentBlock = `
+Deployment information:
+${formatDeployments(leftDeployments, leftLabel)}
+${formatDeployments(rightDeployments, rightLabel)}`.trim();
+
   let prompt: string;
+  let maxOutputTokens = 700;
 
-  if (mode === "diff") {
-    prompt = `You are a NetSuite SuiteScript expert. You are comparing two versions of a SuiteScript file.
+  if (mode === "explain_left" || mode === "explain_right") {
+    const code = mode === "explain_left" ? left : right;
+    const label = mode === "explain_left" ? leftLabel : rightLabel;
+    const deploys = mode === "explain_left" ? leftDeployments : rightDeployments;
+    prompt = `You are a NetSuite SuiteScript expert. A developer has just inherited this script and needs to understand what it does.
 
-LEFT (${leftLabel}):
+Script (${label}):
+\`\`\`javascript
+${truncate(code)}
+\`\`\`
+
+${formatDeployments(deploys, label)}
+
+Explain:
+- Script type and when it triggers
+- What records or transactions it operates on
+- Its main purpose in plain English
+- Key logic (what it actually does, step by step)
+- Business impact (what changes in NetSuite when this runs)
+
+Only flag genuine risks like re-save loops, cross-script triggers, or operations outside the stated purpose. Be concise and specific.`;
+
+  } else if (mode === "explain_diff") {
+    prompt = `You are a NetSuite SuiteScript expert comparing two versions of a script.
+
+${leftLabel}:
 \`\`\`javascript
 ${truncate(left)}
 \`\`\`
 
-RIGHT (${rightLabel}):
+${rightLabel}:
 \`\`\`javascript
 ${truncate(right)}
 \`\`\`
 
-Deployment information:
-${formatDeployments(leftDeployments, leftLabel)}
-${formatDeployments(rightDeployments, rightLabel)}
+${deploymentBlock}
 
-Explain what changed between the two versions in plain English. Cover:
-1. What the code changes do functionally
-2. Any differences in deployment configuration between environments
-3. Any potential risks or side effects
-4. What a developer reviewing this diff should pay attention to
+Explain what changed between these two versions:
+- What does each code change actually do differently?
+- Are there any deployment configuration differences?
+- What should a developer know before deciding which version to keep?
 
-Be concise and specific. Use bullet points where helpful.`;
-  } else if (mode === "left") {
-    prompt = `You are a NetSuite SuiteScript expert. Explain what this SuiteScript (${leftLabel}) does in plain English.
+Be specific. Skip anything that is identical between the two versions.`;
 
+  } else if (mode === "risk") {
+    prompt = `You are a NetSuite SuiteScript expert performing a risk analysis on changes between two environments.
+
+${leftLabel} (current production):
 \`\`\`javascript
 ${truncate(left)}
 \`\`\`
 
-Deployment information:
-${formatDeployments(leftDeployments, leftLabel)}
+${rightLabel} (candidate for promotion):
+\`\`\`javascript
+${truncate(right)}
+\`\`\`
 
-Describe: the script type and trigger, what records it operates on, its deployment status, its main purpose, key logic, and business impact (what it changes in NetSuite). Only flag something as a side effect if it is a genuine unintended consequence — like triggering another script, causing a re-save loop, or modifying records outside the script's stated purpose. Be concise.`;
+${deploymentBlock}
+
+Identify risks in the ${rightLabel} version or in promoting it to replace ${leftLabel}. Check for:
+- Recursive saves (record.save() inside beforeSubmit/afterSubmit without guards)
+- Hardcoded internal IDs that may differ between environments
+- Governance risk (record.load() in loops, expensive operations without limits)
+- Deployment issues (NOTSCHEDULED status, Debug log level, missing record type)
+- Logic changes that could affect live transactions or data integrity
+- Any new dependencies (saved searches, script parameters) that must exist in production before deployment
+
+Rate each issue as CRITICAL, WARNING, or INFO. If no issues found, say so clearly.`;
+    maxOutputTokens = 800;
+
+  } else if (mode === "migration") {
+    prompt = `You are a NetSuite SuiteScript expert. The ${rightLabel} version of this script is being promoted to replace ${leftLabel}.
+
+${leftLabel} (will be replaced):
+\`\`\`javascript
+${truncate(left)}
+\`\`\`
+
+${rightLabel} (will replace it):
+\`\`\`javascript
+${truncate(right)}
+\`\`\`
+
+${deploymentBlock}
+
+Write a migration summary covering:
+1. What new behavior will production users experience after the change?
+2. What existing behavior will change or be removed?
+3. What must be configured in production before deployment (parameters, saved searches, deployments, record type filters)?
+4. Is it safe to deploy, or are there blockers that need to be resolved first?
+
+Be direct and actionable.`;
+
+  } else if (mode === "release_notes") {
+    prompt = `You are a NetSuite SuiteScript expert. Generate professional release notes for this script update.
+
+${leftLabel} (before):
+\`\`\`javascript
+${truncate(left)}
+\`\`\`
+
+${rightLabel} (after):
+\`\`\`javascript
+${truncate(right)}
+\`\`\`
+
+${deploymentBlock}
+
+Format the release notes as:
+
+**Summary**
+One sentence describing the overall change.
+
+**What changed**
+- [bullet for each meaningful change]
+
+**Impact**
+Who and what is affected by this update.
+
+**Deployment checklist**
+- [any steps required before or after deploying]
+
+Keep it concise. Write it as if it will be read by a project manager or client.`;
+    maxOutputTokens = 800;
+
+  } else if (mode === "functional") {
+    const code = right || left;
+    const label = right ? rightLabel : leftLabel;
+    const deploys = right ? rightDeployments : leftDeployments;
+    prompt = `You are translating a NetSuite SuiteScript into plain business language for a functional consultant or project manager who does not read code.
+
+Script (${label}):
+\`\`\`javascript
+${truncate(code)}
+\`\`\`
+
+${formatDeployments(deploys, label)}
+
+Explain this customization as if speaking to a business stakeholder:
+- What business process does this support?
+- When does it run? (what action triggers it)
+- What does it do in plain business terms?
+- Which records, transactions, or users are affected?
+- What business rules does it enforce?
+
+Do not use any technical terms (no SuiteScript, no API names, no function names). Write as you would in a business requirements document.`;
   } else {
-    prompt = `You are a NetSuite SuiteScript expert. Explain what this SuiteScript (${rightLabel}) does in plain English.
-
-\`\`\`javascript
-${truncate(right)}
-\`\`\`
-
-Deployment information:
-${formatDeployments(rightDeployments, rightLabel)}
-
-Describe: the script type and trigger, what records it operates on, its deployment status, its main purpose, key logic, and business impact (what it changes in NetSuite). Only flag something as a side effect if it is a genuine unintended consequence — like triggering another script, causing a re-save loop, or modifying records outside the script's stated purpose. Be concise.`;
+    return new Response("Unknown mode.", { status: 400 });
   }
 
   const result = streamText({
     model: groq("llama-3.3-70b-versatile"),
     prompt,
-    maxOutputTokens: 600,
+    maxOutputTokens,
   });
 
   return result.toTextStreamResponse();
