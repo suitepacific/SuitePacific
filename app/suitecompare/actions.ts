@@ -64,7 +64,7 @@ async function setSession(userId: string) {
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
     maxAge: SC_SESSION_MAX_AGE,
-    path: "/suitecompare",
+    path: "/", // shared with /importDetector, which reuses this same login
   });
 }
 
@@ -319,7 +319,7 @@ export async function logoutScAction() {
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
     maxAge: 0,
-    path: "/suitecompare",
+    path: "/", // shared with /importDetector, which reuses this same login
   });
   redirect("/suitecompare/login");
 }

@@ -23,7 +23,7 @@ async function setSession(userId: string) {
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
     maxAge: SC_SESSION_MAX_AGE,
-    path: "/suitecompare",
+    path: "/", // shared with /importDetector, which reuses this same login
   });
 }
 

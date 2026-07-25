@@ -18,7 +18,7 @@ function pct(s: string): string {
     .replace(/\*/g, "%2A");
 }
 
-function oauthHeader(
+export function oauthHeader(
   method: string,
   url: string,
   creds: NsCredentials
@@ -66,7 +66,7 @@ function oauthHeader(
 }
 
 // 1234567_SB2 → https://1234567-sb2.suitetalk.api.netsuite.com
-function nsBase(nsAccountId: string): string {
+export function nsBase(nsAccountId: string): string {
   // Validate format before building URL — blocks SSRF via crafted account IDs
   if (!/^\d+(_SB\d+)?$/i.test(nsAccountId.trim())) {
     throw new Error("Invalid NetSuite Account ID format (expected e.g. 1234567 or 1234567_SB2).");
