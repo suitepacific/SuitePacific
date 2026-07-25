@@ -9,6 +9,7 @@ import { ScriptTypeBadge } from "@/components/suitecompare/ScriptTypeBadge";
 import { CodePane } from "@/components/suitecompare/CodePane";
 import { CompareTabs } from "@/components/suitecompare/CompareTabs";
 import { DeploymentCompare } from "@/components/suitecompare/DeploymentCompare";
+import { AiSummaryPanel } from "@/components/suitecompare/AiSummaryPanel";
 import {
   fetchScriptContent,
   fetchScriptDeployments,
@@ -193,15 +194,26 @@ export default async function AccountComparePage({ params, searchParams }: Props
       );
     } else if (leftContent.ok && rightContent.ok) {
       codeContent = (
-        <DiffViewer
-          key={`${leftEnvId}-${rightEnvId}`}
-          left={leftContent.content}
-          right={rightContent.content}
-          leftLabel={leftScript.environment.name}
-          rightLabel={rightScript.environment.name}
-          leftType={leftScript.environment.type}
-          rightType={rightScript.environment.type}
-        />
+        <>
+          <DiffViewer
+            key={`${leftEnvId}-${rightEnvId}`}
+            left={leftContent.content}
+            right={rightContent.content}
+            leftLabel={leftScript.environment.name}
+            rightLabel={rightScript.environment.name}
+            leftType={leftScript.environment.type}
+            rightType={rightScript.environment.type}
+          />
+          {process.env.GROQ_API_KEY && (
+            <AiSummaryPanel
+              left={leftContent.content}
+              right={rightContent.content}
+              leftLabel={leftScript.environment.name}
+              rightLabel={rightScript.environment.name}
+              hasDiff={leftContent.content !== rightContent.content}
+            />
+          )}
+        </>
       );
     } else {
       const notConfiguredPane = (label: string) => (
