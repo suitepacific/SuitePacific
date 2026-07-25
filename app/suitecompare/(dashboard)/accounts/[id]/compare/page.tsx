@@ -106,7 +106,7 @@ export default async function AccountComparePage({ params, searchParams }: Props
     ? await Promise.all([getContent(leftScript.environment, scriptId), getContent(rightScript.environment, scriptId)])
     : [null, null];
 
-  const [leftDeploy, rightDeploy] = tab === "deployments"
+  const [leftDeploy, rightDeploy] = (tab === "deployments" || tab === "code")
     ? await Promise.all([getDeployments(leftScript.environment, scriptId), getDeployments(rightScript.environment, scriptId)])
     : [null, null];
 
@@ -211,6 +211,8 @@ export default async function AccountComparePage({ params, searchParams }: Props
             rightLabel={rightScript.environment.name}
             scriptId={scriptId}
             hasDiff={leftContent.content !== rightContent.content}
+            leftDeployments={leftDeploy?.ok ? leftDeploy.deployments : []}
+            rightDeployments={rightDeploy?.ok ? rightDeploy.deployments : []}
           />
         </>
       );
@@ -243,6 +245,8 @@ export default async function AccountComparePage({ params, searchParams }: Props
               rightLabel={rightScript.environment.name}
               scriptId={scriptId}
               hasDiff={false}
+              leftDeployments={leftDeploy?.ok ? leftDeploy.deployments : []}
+              rightDeployments={rightDeploy?.ok ? rightDeploy.deployments : []}
             />
           )}
         </>

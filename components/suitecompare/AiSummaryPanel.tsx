@@ -5,6 +5,15 @@ import { Sparkles, ChevronDown, ChevronUp, Loader2 } from "lucide-react";
 
 type Mode = "diff" | "left" | "right";
 
+type Deployment = {
+  id: string;
+  scriptid: string;
+  recordtype: string | null;
+  isdeployed: string;
+  status: string;
+  loglevel: string;
+};
+
 type Props = {
   left: string;
   right: string;
@@ -12,9 +21,11 @@ type Props = {
   rightLabel: string;
   scriptId: string;
   hasDiff: boolean;
+  leftDeployments?: Deployment[];
+  rightDeployments?: Deployment[];
 };
 
-export function AiSummaryPanel({ left, right, leftLabel, rightLabel, scriptId, hasDiff }: Props) {
+export function AiSummaryPanel({ left, right, leftLabel, rightLabel, scriptId, hasDiff, leftDeployments = [], rightDeployments = [] }: Props) {
   const [open, setOpen] = useState(false);
   const [mode, setMode] = useState<Mode>("diff");
   const [output, setOutput] = useState("");
@@ -39,7 +50,7 @@ export function AiSummaryPanel({ left, right, leftLabel, rightLabel, scriptId, h
       const res = await fetch("/api/sc/summarize", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ mode: m, left, right, leftLabel, rightLabel }),
+        body: JSON.stringify({ mode: m, left, right, leftLabel, rightLabel, leftDeployments, rightDeployments }),
         signal: controller.signal,
       });
 

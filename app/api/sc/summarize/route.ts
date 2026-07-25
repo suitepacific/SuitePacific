@@ -17,7 +17,14 @@ export async function POST(req: Request) {
     return new Response("AI summarization is not configured.", { status: 503 });
   }
 
-  const { mode, left, right, leftLabel, rightLabel } = await req.json();
+  const { mode, left, right, leftLabel, rightLabel, leftDeployments = [], rightDeployments = [] } = await req.json();
+
+  function formatDeployments(deploys: { id: string; scriptid: string; recordtype: string | null; isdeployed: string; status: string; loglevel: string }[], label: string) {
+    if (!deploys.length) return `${label}: no deployment data available`;
+    return deploys.map(d =>
+      `${label} deployment: ${d.scriptid} | status: ${d.status} | deployed: ${d.isdeployed} | record type: ${d.recordtype || "—"} | log level: ${d.loglevel}`
+    ).join("\n");
+  }
 
   const groq = createGroq({ apiKey: process.env.GROQ_API_KEY });
 
@@ -36,10 +43,15 @@ RIGHT (${rightLabel}):
 ${truncate(right)}
 \`\`\`
 
+Deployment information:
+${formatDeployments(leftDeployments, leftLabel)}
+${formatDeployments(rightDeployments, rightLabel)}
+
 Explain what changed between the two versions in plain English. Cover:
-1. What the changes do functionally
-2. Any potential risks or side effects
-3. What a developer reviewing this diff should pay attention to
+1. What the code changes do functionally
+2. Any differences in deployment configuration between environments
+3. Any potential risks or side effects
+4. What a developer reviewing this diff should pay attention to
 
 Be concise and specific. Use bullet points where helpful.`;
   } else if (mode === "left") {
@@ -49,7 +61,10 @@ Be concise and specific. Use bullet points where helpful.`;
 ${truncate(left)}
 \`\`\`
 
-Describe: the script type and trigger, what records it operates on, its main purpose, and any key logic or side effects. Be concise.`;
+Deployment information:
+${formatDeployments(leftDeployments, leftLabel)}
+
+Describe: the script type and trigger, what records it operates on, its deployment status, its main purpose, and any key logic or side effects. Be concise.`;
   } else {
     prompt = `You are a NetSuite SuiteScript expert. Explain what this SuiteScript (${rightLabel}) does in plain English.
 
@@ -57,7 +72,10 @@ Describe: the script type and trigger, what records it operates on, its main pur
 ${truncate(right)}
 \`\`\`
 
-Describe: the script type and trigger, what records it operates on, its main purpose, and any key logic or side effects. Be concise.`;
+Deployment information:
+${formatDeployments(rightDeployments, rightLabel)}
+
+Describe: the script type and trigger, what records it operates on, its deployment status, its main purpose, and any key logic or side effects. Be concise.`;
   }
 
   const result = streamText({
