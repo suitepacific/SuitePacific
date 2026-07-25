@@ -9,6 +9,7 @@ import {
   hashScPassword,
   verifyScPassword,
   createScSessionToken,
+  getScUserFromRequest,
 } from "@/lib/sc-auth";
 import { generateOtp, sendOtpEmail, sendPasswordResetEmail } from "@/lib/sc-email";
 import crypto from "crypto";
@@ -312,14 +313,27 @@ export async function resetPasswordAction(
 }
 
 export async function logoutScAction() {
+  const user = await getScUserFromRequest();
+  if (user) {
+    // Increment sessionVersion to invalidate any live tokens for this user,
+    // regardless of which cookie path they were issued under.
+    await prisma.scUser.update({
+      where: { id: user.id },
+      data: { sessionVersion: { increment: 1 } },
+    });
+  }
+
   const cookieStore = await cookies();
-  // Must specify the same path used when setting, otherwise the browser won't clear it
-  cookieStore.set(SC_SESSION_COOKIE, "", {
+  const clearOpts = {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
-    sameSite: "lax",
+    sameSite: "lax" as const,
     maxAge: 0,
-    path: "/", // shared with /importDetector, which reuses this same login
-  });
+  };
+  // Clear at current path
+  cookieStore.set(SC_SESSION_COOKIE, "", { ...clearOpts, path: "/" });
+  // Also clear at legacy path (cookie was previously scoped to /suitecompare)
+  cookieStore.set(SC_SESSION_COOKIE, "", { ...clearOpts, path: "/suitecompare" });
+
   redirect("/suitecompare/login");
 }
