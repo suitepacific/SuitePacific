@@ -55,6 +55,16 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Resources", href: "/resources" },
   { label: "Blog", href: "/blog" },
   { label: "Partners", href: "/partners" },
+  {
+    label: "Products",
+    children: [
+      {
+        label: "SuiteCompare",
+        href: "/suitecompare",
+        description: "Compare NetSuite scripts across environments in one click.",
+      },
+    ],
+  },
 ];
 
 export const CTA_SUPPORT_LINE =

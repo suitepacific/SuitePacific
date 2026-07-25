@@ -1,9 +1,8 @@
 import type { LucideIcon } from "lucide-react";
 
-export type NavLink = {
-  label: string;
-  href: string;
-};
+export type NavLink =
+  | { label: string; href: string; children?: never }
+  | { label: string; href?: never; children: { label: string; href: string; description?: string }[] };
 
 export type IconItem = {
   icon: LucideIcon;
@@ -34,7 +33,7 @@ export type CaseStudy = {
 
 export type FooterColumn = {
   title: string;
-  links: NavLink[];
+  links: { label: string; href: string }[];
 };
 
 export type KpiStat = {
