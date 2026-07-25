@@ -13,8 +13,13 @@ function truncate(s: string) {
 }
 
 export async function POST(req: Request) {
-  const user = await getScUserFromRequest();
-  if (!user) return new Response("Unauthorized", { status: 401 });
+  let user;
+  try {
+    user = await getScUserFromRequest();
+  } catch (e) {
+    return new Response(`Auth error: ${e instanceof Error ? e.message : String(e)}`, { status: 500 });
+  }
+  if (!user) return new Response("No session found — try refreshing and logging in again", { status: 401 });
 
   if (!process.env.GROQ_API_KEY) {
     return new Response("AI summarization is not configured.", { status: 503 });
