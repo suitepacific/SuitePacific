@@ -64,7 +64,7 @@ ${truncate(left)}
 Deployment information:
 ${formatDeployments(leftDeployments, leftLabel)}
 
-Describe: the script type and trigger, what records it operates on, its deployment status, its main purpose, and any key logic or side effects. Be concise.`;
+Describe: the script type and trigger, what records it operates on, its deployment status, its main purpose, key logic, and business impact (what it changes in NetSuite). Only flag something as a side effect if it is a genuine unintended consequence — like triggering another script, causing a re-save loop, or modifying records outside the script's stated purpose. Be concise.`;
   } else {
     prompt = `You are a NetSuite SuiteScript expert. Explain what this SuiteScript (${rightLabel}) does in plain English.
 
@@ -75,7 +75,7 @@ ${truncate(right)}
 Deployment information:
 ${formatDeployments(rightDeployments, rightLabel)}
 
-Describe: the script type and trigger, what records it operates on, its deployment status, its main purpose, and any key logic or side effects. Be concise.`;
+Describe: the script type and trigger, what records it operates on, its deployment status, its main purpose, key logic, and business impact (what it changes in NetSuite). Only flag something as a side effect if it is a genuine unintended consequence — like triggering another script, causing a re-save loop, or modifying records outside the script's stated purpose. Be concise.`;
   }
 
   const result = streamText({
