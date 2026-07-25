@@ -175,13 +175,21 @@ export function AiSummaryPanel({ left, right, leftLabel, rightLabel, scriptId, h
                 const trimmed = line.trim();
                 if (!trimmed && !loading) return null;
                 const isBullet = /^[\*\-\+]\s/.test(trimmed);
-                const text = isBullet ? trimmed.slice(2) : trimmed;
+                const isNumbered = /^\d+\.\s/.test(trimmed);
+                const text = isBullet ? trimmed.slice(2) : isNumbered ? trimmed.replace(/^\d+\.\s/, "") : trimmed;
+                const num = isNumbered ? trimmed.match(/^(\d+)\./)?.[1] : null;
                 const rendered = text
                   .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
                   .replace(/`(.+?)`/g, '<code class="bg-brand-50 px-1 rounded font-mono">$1</code>');
                 if (isBullet) return (
                   <div key={i} className="flex gap-1.5 items-start">
                     <span className="mt-1 shrink-0 w-1 h-1 rounded-full bg-brand-300" />
+                    <span dangerouslySetInnerHTML={{ __html: rendered }} />
+                  </div>
+                );
+                if (isNumbered) return (
+                  <div key={i} className="flex gap-1.5 items-start">
+                    <span className="shrink-0 text-brand-400 font-medium w-4 text-right">{num}.</span>
                     <span dangerouslySetInnerHTML={{ __html: rendered }} />
                   </div>
                 );
