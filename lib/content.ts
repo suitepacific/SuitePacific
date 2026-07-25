@@ -49,12 +49,9 @@ export const LEGAL_NAME = "SuitePacific, LLC";
 
 export const NAV_LINKS: NavLink[] = [
   { label: "Services", href: "/#services" },
-  { label: "How We Help", href: "/#timeline" },
-  { label: "Why SuitePacific", href: "/#why-us" },
-  { label: "Case Studies", href: "/#case-studies" },
+  { label: "Case Studies", href: "/case-studies" },
   { label: "Resources", href: "/resources" },
   { label: "Blog", href: "/blog" },
-  { label: "Partners", href: "/partners" },
   {
     label: "Products",
     children: [
