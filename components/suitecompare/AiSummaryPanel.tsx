@@ -107,38 +107,42 @@ export function AiSummaryPanel({ left, right, leftLabel, rightLabel, hasDiff }: 
                 Explain diff
               </button>
             )}
-            <button
-              onClick={() => run("left")}
-              disabled={loading}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors border ${
-                mode === "left" && output
-                  ? "bg-accent/10 border-accent/30 text-accent"
-                  : "border-brand-100 text-brand-600 hover:bg-brand-50 hover:border-brand-200"
-              } disabled:opacity-60`}
-            >
-              {loading && mode === "left" ? (
-                <Loader2 className="h-3 w-3 animate-spin" />
-              ) : (
-                <Sparkles className="h-3 w-3" />
-              )}
-              Summarize {leftLabel}
-            </button>
-            <button
-              onClick={() => run("right")}
-              disabled={loading}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors border ${
-                mode === "right" && output
-                  ? "bg-accent/10 border-accent/30 text-accent"
-                  : "border-brand-100 text-brand-600 hover:bg-brand-50 hover:border-brand-200"
-              } disabled:opacity-60`}
-            >
-              {loading && mode === "right" ? (
-                <Loader2 className="h-3 w-3 animate-spin" />
-              ) : (
-                <Sparkles className="h-3 w-3" />
-              )}
-              Summarize {rightLabel}
-            </button>
+            {left && (
+              <button
+                onClick={() => run("left")}
+                disabled={loading}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors border ${
+                  mode === "left" && output
+                    ? "bg-accent/10 border-accent/30 text-accent"
+                    : "border-brand-100 text-brand-600 hover:bg-brand-50 hover:border-brand-200"
+                } disabled:opacity-60`}
+              >
+                {loading && mode === "left" ? (
+                  <Loader2 className="h-3 w-3 animate-spin" />
+                ) : (
+                  <Sparkles className="h-3 w-3" />
+                )}
+                Summarize {leftLabel}
+              </button>
+            )}
+            {right && (
+              <button
+                onClick={() => run("right")}
+                disabled={loading}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors border ${
+                  mode === "right" && output
+                    ? "bg-accent/10 border-accent/30 text-accent"
+                    : "border-brand-100 text-brand-600 hover:bg-brand-50 hover:border-brand-200"
+                } disabled:opacity-60`}
+              >
+                {loading && mode === "right" ? (
+                  <Loader2 className="h-3 w-3 animate-spin" />
+                ) : (
+                  <Sparkles className="h-3 w-3" />
+                )}
+                Summarize {rightLabel}
+              </button>
+            )}
           </div>
 
           {error && (

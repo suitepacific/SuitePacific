@@ -225,14 +225,25 @@ export default async function AccountComparePage({ params, searchParams }: Props
         </div>
       );
       codeContent = (
-        <div className="flex gap-4 min-h-[400px]">
-          {leftContent.ok
-            ? <CodePane content={leftContent.content} label={leftScript.environment.name} type={leftScript.environment.type} />
-            : notConfiguredPane(leftScript.environment.name)}
-          {rightContent.ok
-            ? <CodePane content={rightContent.content} label={rightScript.environment.name} type={rightScript.environment.type} />
-            : notConfiguredPane(rightScript.environment.name)}
-        </div>
+        <>
+          <div className="flex gap-4 min-h-[400px]">
+            {leftContent.ok
+              ? <CodePane content={leftContent.content} label={leftScript.environment.name} type={leftScript.environment.type} />
+              : notConfiguredPane(leftScript.environment.name)}
+            {rightContent.ok
+              ? <CodePane content={rightContent.content} label={rightScript.environment.name} type={rightScript.environment.type} />
+              : notConfiguredPane(rightScript.environment.name)}
+          </div>
+          {(leftContent.ok || rightContent.ok) && (
+            <AiSummaryPanel
+              left={leftContent.ok ? leftContent.content : ""}
+              right={rightContent.ok ? rightContent.content : ""}
+              leftLabel={leftScript.environment.name}
+              rightLabel={rightScript.environment.name}
+              hasDiff={false}
+            />
+          )}
+        </>
       );
     }
   }
