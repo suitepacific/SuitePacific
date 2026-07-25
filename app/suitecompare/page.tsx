@@ -69,7 +69,7 @@ const WORKFLOW_BENEFITS = [
     icon: Sparkles,
     title: "Understand any script instantly",
     description:
-      "Explain what a script does, summarize changes between environments, detect deployment risks, and generate release notes — built directly into the comparison view, no context-switching required.",
+      "Explain what a script does, summarize changes between environments, detect deployment risks, and generate release notes. Built directly into the comparison view, no context-switching required.",
     isNew: true,
   },
 ];
@@ -138,7 +138,7 @@ export default async function SuiteCompareHomePage() {
               as="h1"
               eyebrow="SuiteCompare"
               title="Stop logging into two NetSuite accounts just to compare one script"
-              subtitle="Compare Production and Sandbox in one click. Understand what any script does without opening ChatGPT. No copy. No paste. No switching tabs."
+              subtitle="Compare Production and Sandbox in one click. Understand what any script does without leaving NetSuite. No copy. No paste. No switching tabs."
               align="center"
             />
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -217,7 +217,7 @@ export default async function SuiteCompareHomePage() {
                   <span className="inline-flex items-center rounded-full bg-accent px-2 py-0.5 text-xs font-semibold text-white">New</span>
                 </div>
                 <p className="text-sm text-brand-500 leading-relaxed mb-4">
-                  Every NetSuite consultant has inherited a client account full of scripts named <code className="text-xs bg-white border border-brand-100 rounded px-1.5 py-0.5 font-mono text-brand-700">customscript_invoice_approval</code> with no documentation. Today the workflow is: open the script, copy the code, paste into ChatGPT, ask what it does, repeat for every script and every environment. SuiteCompare eliminates that entirely.
+                  Every NetSuite consultant has inherited a client account full of scripts named <code className="text-xs bg-white border border-brand-100 rounded px-1.5 py-0.5 font-mono text-brand-700">customscript_invoice_approval</code> with no documentation. Today the workflow is: open the script, copy the code, paste it into an external AI tool, ask what it does, then repeat for every script and every environment. SuiteCompare eliminates that entirely.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-2">
                   {[
@@ -226,7 +226,7 @@ export default async function SuiteCompareHomePage() {
                     { label: "Risk Analysis", desc: "Detect recursive saves, hardcoded IDs, governance issues, and inactive deployments" },
                     { label: "Migration Summary", desc: "What will change if Sandbox replaces Production" },
                     { label: "Generate Release Notes", desc: "Create release notes automatically from code changes" },
-                    { label: "Explain for Consultants", desc: "Convert technical SuiteScript into business language" },
+                    { label: "Non-Technical Summary", desc: "Convert technical SuiteScript into business language for consultants and PMs" },
                   ].map((item) => (
                     <div key={item.label} className="flex items-start gap-2">
                       <Sparkles className="h-3 w-3 text-accent mt-0.5 shrink-0" />

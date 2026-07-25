@@ -56,8 +56,8 @@ const ACTIONS: Action[] = [
   },
   {
     mode: "functional",
-    label: "Explain for Consultants",
-    description: "Translate into business language for non-technical stakeholders",
+    label: "Non-Technical Summary",
+    description: "Translate into business language for functional consultants and project managers",
     requiresRight: true,
   },
   {
