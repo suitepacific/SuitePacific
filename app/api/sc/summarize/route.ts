@@ -1,6 +1,6 @@
 import { createGroq } from "@ai-sdk/groq";
 import { streamText } from "ai";
-import { requireScUser } from "@/lib/sc-auth";
+import { getScUserFromRequest } from "@/lib/sc-auth";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -13,11 +13,8 @@ function truncate(s: string) {
 }
 
 export async function POST(req: Request) {
-  try {
-    await requireScUser();
-  } catch {
-    return new Response("Unauthorized", { status: 401 });
-  }
+  const user = await getScUserFromRequest();
+  if (!user) return new Response("Unauthorized", { status: 401 });
 
   if (!process.env.GROQ_API_KEY) {
     return new Response("AI summarization is not configured.", { status: 503 });

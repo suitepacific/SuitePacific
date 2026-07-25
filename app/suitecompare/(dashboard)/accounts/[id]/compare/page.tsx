@@ -209,6 +209,7 @@ export default async function AccountComparePage({ params, searchParams }: Props
             right={rightContent.content}
             leftLabel={leftScript.environment.name}
             rightLabel={rightScript.environment.name}
+            scriptId={scriptId}
             hasDiff={leftContent.content !== rightContent.content}
           />
         </>
@@ -240,6 +241,7 @@ export default async function AccountComparePage({ params, searchParams }: Props
               right={rightContent.ok ? rightContent.content : ""}
               leftLabel={leftScript.environment.name}
               rightLabel={rightScript.environment.name}
+              scriptId={scriptId}
               hasDiff={false}
             />
           )}

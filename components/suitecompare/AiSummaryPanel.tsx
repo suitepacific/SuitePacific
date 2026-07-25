@@ -10,10 +10,11 @@ type Props = {
   right: string;
   leftLabel: string;
   rightLabel: string;
+  scriptId: string;
   hasDiff: boolean;
 };
 
-export function AiSummaryPanel({ left, right, leftLabel, rightLabel, hasDiff }: Props) {
+export function AiSummaryPanel({ left, right, leftLabel, rightLabel, scriptId, hasDiff }: Props) {
   const [open, setOpen] = useState(false);
   const [mode, setMode] = useState<Mode>("diff");
   const [output, setOutput] = useState("");
@@ -122,7 +123,7 @@ export function AiSummaryPanel({ left, right, leftLabel, rightLabel, hasDiff }: 
                 ) : (
                   <Sparkles className="h-3 w-3" />
                 )}
-                Summarize {leftLabel}
+                Summarize {scriptId} ({leftLabel})
               </button>
             )}
             {right && (
@@ -140,7 +141,7 @@ export function AiSummaryPanel({ left, right, leftLabel, rightLabel, hasDiff }: 
                 ) : (
                   <Sparkles className="h-3 w-3" />
                 )}
-                Summarize {rightLabel}
+                Summarize {scriptId} ({rightLabel})
               </button>
             )}
           </div>
