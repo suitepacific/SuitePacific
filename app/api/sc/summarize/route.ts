@@ -1,6 +1,5 @@
 import { createGroq } from "@ai-sdk/groq";
 import { streamText } from "ai";
-import { getScUserFromRequest } from "@/lib/sc-auth";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -13,13 +12,6 @@ function truncate(s: string) {
 }
 
 export async function POST(req: Request) {
-  let user;
-  try {
-    user = await getScUserFromRequest();
-  } catch (e) {
-    return new Response(`Auth error: ${e instanceof Error ? e.message : String(e)}`, { status: 500 });
-  }
-  if (!user) return new Response("No session found — try refreshing and logging in again", { status: 401 });
 
   if (!process.env.GROQ_API_KEY) {
     return new Response("AI summarization is not configured.", { status: 503 });
