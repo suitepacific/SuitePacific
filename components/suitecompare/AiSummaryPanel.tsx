@@ -174,7 +174,7 @@ export function AiSummaryPanel({ left, right, leftLabel, rightLabel, scriptId, h
               {output.split("\n").map((line, i) => {
                 const trimmed = line.trim();
                 if (!trimmed && !loading) return null;
-                const isBullet = /^[\*\-]\s/.test(trimmed);
+                const isBullet = /^[\*\-\+]\s/.test(trimmed);
                 const text = isBullet ? trimmed.slice(2) : trimmed;
                 const rendered = text
                   .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
