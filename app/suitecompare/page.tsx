@@ -15,6 +15,7 @@ import {
   Shuffle,
   Search,
   Check,
+  Sparkles,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
@@ -64,6 +65,13 @@ const WORKFLOW_BENEFITS = [
     description:
       "See how scripts are deployed across environments: record type, deployment status, and log level, side by side. Spot configuration drift without logging into two accounts.",
   },
+  {
+    icon: Sparkles,
+    title: "AI script summaries",
+    description:
+      "Get a plain-English explanation of any script or diff. Understand what a script does, what changed between environments, and what risks to watch for, without reading every line of code.",
+    isNew: true,
+  },
 ];
 
 const ROADMAP_ITEMS = [
@@ -107,7 +115,7 @@ const HOW_IT_WORKS = [
   {
     number: "03",
     title: "See exactly what changed",
-    body: "Get a line-by-line diff showing what is different, what is missing, and what is identical. One click from start to result.",
+    body: "Get a line-by-line diff showing what is different, what is missing, and what is identical. Then ask the AI Summary to explain it in plain English.",
   },
 ];
 
@@ -130,7 +138,7 @@ export default async function SuiteCompareHomePage() {
               as="h1"
               eyebrow="SuiteCompare"
               title="Stop logging into two NetSuite accounts just to compare one script"
-              subtitle="Compare Production and Sandbox in one click. No copy. No paste. No switching tabs."
+              subtitle="Compare Production and Sandbox in one click. Understand what changed with AI. No copy. No paste. No switching tabs."
               align="center"
             />
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -197,6 +205,24 @@ export default async function SuiteCompareHomePage() {
             </p>
           </div>
 
+          {/* AI Summary highlight */}
+          <div className="mt-10 rounded-2xl border border-accent/30 bg-accent/5 px-6 py-5">
+            <div className="flex items-start gap-4">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/10">
+                <Sparkles className="h-5 w-5 text-accent" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <p className="text-sm font-semibold text-brand-900">New: AI script summaries</p>
+                  <span className="inline-flex items-center rounded-full bg-accent px-2 py-0.5 text-xs font-semibold text-white">New</span>
+                </div>
+                <p className="text-sm text-brand-500 leading-relaxed">
+                  Every comparison now includes an AI Summary panel. Ask SuiteCompare to explain what a script does, summarize the diff between environments, or flag risks like re-save loops and unscheduled deployments. Powered by Llama 3.3, runs server-side, no data sent to third parties beyond what you select.
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* What it replaces */}
           <div className="mt-20">
             <SectionHeading
@@ -205,11 +231,19 @@ export default async function SuiteCompareHomePage() {
               align="center"
             />
             <div className="mt-10 grid sm:grid-cols-2 gap-5">
-              {WORKFLOW_BENEFITS.map((item) => (
-                <Card key={item.title} className="p-5 flex items-start gap-4">
+              {WORKFLOW_BENEFITS.map((item, i) => (
+                <Card
+                  key={item.title}
+                  className={`p-5 flex items-start gap-4${i === WORKFLOW_BENEFITS.length - 1 && WORKFLOW_BENEFITS.length % 2 !== 0 ? " sm:col-span-2" : ""}`}
+                >
                   <IconBadge icon={item.icon} />
-                  <div>
-                    <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
+                      {"isNew" in item && item.isNew && (
+                        <span className="inline-flex items-center rounded-full bg-accent/10 px-2 py-0.5 text-xs font-semibold text-accent">New</span>
+                      )}
+                    </div>
                     <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
                   </div>
                 </Card>
