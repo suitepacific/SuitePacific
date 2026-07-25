@@ -75,6 +75,10 @@ const FAQ = [
     q: "Is script content stored on your servers?",
     a: "No. Script content is fetched live from NetSuite on every comparison and never written to our database. Only script metadata (name, type, ID) is stored.",
   },
+  {
+    q: "Does the AI summary feature store my code?",
+    a: "No. When you use Explain Script, Risk Analysis, or any other AI action, your script code is sent to an AI service for real-time processing and is not stored by SuiteCompare. The response is returned directly to your browser.",
+  },
 ];
 
 export default function SuiteComparePricingPage() {

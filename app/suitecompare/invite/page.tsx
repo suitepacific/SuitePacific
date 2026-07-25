@@ -54,7 +54,7 @@ export default async function InvitePage({ searchParams }: Props) {
             </Link>
           </div>
         ) : currentUser ? (
-          // Already logged in — one-click accept
+          // Already logged in: one-click accept
           <div className="bg-white rounded-2xl border border-brand-100 shadow-soft p-7">
             <p className="text-sm text-brand-600 mb-5 text-center">
               Signed in as <strong className="text-brand-900">{currentUser.email}</strong>. Accept the invitation below.
@@ -62,7 +62,7 @@ export default async function InvitePage({ searchParams }: Props) {
             <AcceptInviteForm token={token} />
           </div>
         ) : (
-          // Not logged in — show signup form, link to login
+          // Not logged in: show signup form, link to login
           <div className="bg-white rounded-2xl border border-brand-100 shadow-soft p-7">
             <SignupViaInviteForm token={token} invitedEmail={invite!.email} />
             <p className="mt-5 text-center text-xs text-brand-400">

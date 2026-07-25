@@ -12,6 +12,12 @@ const loginAttempts = new Map<string, number[]>();
 const RATE_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
 const RATE_MAX = 10; // max login attempts per IP per window
 
+// Rate limiting for AI summarize API - keeps Groq quota safe.
+// 20 req/min per IP: below Groq's 30/min limit, leaves headroom for concurrent users.
+const apiAttempts = new Map<string, number[]>();
+const API_RATE_WINDOW_MS = 60 * 1000; // 1 minute
+const API_RATE_MAX = 20;
+
 const LOGIN_PATHS = new Set([
   "/admin/login",
   "/partner-portal/login",
@@ -22,6 +28,20 @@ const LOGIN_PATHS = new Set([
   "/suitecompare/forgot-password",
   "/suitecompare/reset-password",
 ]);
+
+function isApiRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const prev = apiAttempts.get(ip) ?? [];
+  const recent = prev.filter((t) => now - t < API_RATE_WINDOW_MS);
+  recent.push(now);
+  apiAttempts.set(ip, recent);
+  if (apiAttempts.size > 5000) {
+    for (const [key, times] of apiAttempts) {
+      if (times.every((t) => now - t >= API_RATE_WINDOW_MS)) apiAttempts.delete(key);
+    }
+  }
+  return recent.length > API_RATE_MAX;
+}
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
@@ -57,6 +77,26 @@ export async function middleware(request: NextRequest) {
     }
   }
 
+  // SC API routes: require valid session token + per-IP rate limit
+  if (pathname.startsWith("/api/sc/")) {
+    const token = request.cookies.get(SC_SESSION_COOKIE)?.value;
+    const result = await verifyScSessionToken(token);
+    if (!result) {
+      return new NextResponse("Unauthorized", { status: 401 });
+    }
+    const ip =
+      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+      request.headers.get("x-real-ip") ??
+      "unknown";
+    if (isApiRateLimited(ip)) {
+      return new NextResponse("Too many requests. Please wait a moment before trying again.", {
+        status: 429,
+        headers: { "Retry-After": "60", "Content-Type": "text/plain" },
+      });
+    }
+    return NextResponse.next();
+  }
+
   // Admin routes
   if (pathname.startsWith("/admin")) {
     if (pathname === "/admin/login") return NextResponse.next();
@@ -86,6 +126,18 @@ export async function middleware(request: NextRequest) {
     const result = await verifyCustomerSessionToken(token);
     if (!result) {
       return NextResponse.redirect(new URL("/customer-portal/login", request.url));
+    }
+    return NextResponse.next();
+  }
+
+  // Import Doctor routes — shares SuiteCompare's login/session (same ScUser/ScOrg model)
+  if (pathname.startsWith("/importDetector")) {
+    const token = request.cookies.get(SC_SESSION_COOKIE)?.value;
+    const result = await verifyScSessionToken(token);
+    if (!result) {
+      const loginUrl = new URL("/suitecompare/login", request.url);
+      loginUrl.searchParams.set("next", pathname);
+      return NextResponse.redirect(loginUrl);
     }
     return NextResponse.next();
   }
@@ -122,5 +174,7 @@ export const config = {
     "/partner-portal/:path*",
     "/customer-portal/:path*",
     "/suitecompare/:path*",
+    "/importDetector/:path*",
+    "/api/sc/:path*",
   ],
 };

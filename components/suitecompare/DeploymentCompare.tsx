@@ -24,7 +24,7 @@ function statusBadge(status: string) {
   const s = status?.toUpperCase();
   if (s === "RELEASED") return badge("Released", "green");
   if (s === "TESTING") return badge("Testing", "amber");
-  return badge(status ?? "—", "gray");
+  return badge(status ?? "None", "gray");
 }
 
 function deployedBadge(val: string) {
@@ -37,7 +37,7 @@ function logBadge(level: string) {
   if (l === "AUDIT") return badge("Audit", "gray");
   if (l === "ERROR") return badge("Error", "red");
   if (l === "QUIET") return badge("Quiet", "gray");
-  return badge(level ?? "—", "gray");
+  return badge(level ?? "None", "gray");
 }
 
 function NotConfiguredPane({ label, accountId }: { label: string; accountId: string }) {
@@ -99,7 +99,7 @@ function DeploymentList({ deployments, otherDeployments, label }: {
                 <tr className="border-b border-brand-50">
                   <td className="px-4 py-2 text-brand-400 w-32 shrink-0">Record type</td>
                   <td className={`px-4 py-2 text-brand-700 font-medium ${diff(dep.recordtype, other?.recordtype)}`}>
-                    {dep.recordtype ?? <span className="text-brand-300">—</span>}
+                    {dep.recordtype ?? <span className="text-brand-300">None</span>}
                   </td>
                 </tr>
                 <tr className="border-b border-brand-50">

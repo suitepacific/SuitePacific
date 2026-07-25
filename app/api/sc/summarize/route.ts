@@ -23,7 +23,7 @@ type Deployment = {
 function formatDeployments(deploys: Deployment[], label: string) {
   if (!deploys.length) return `${label}: no deployment data available`;
   return deploys.map(d =>
-    `${label} deployment: ${d.scriptid} | status: ${d.status} | deployed: ${d.isdeployed} | record type: ${d.recordtype || "—"} | log level: ${d.loglevel}`
+    `${label} deployment: ${d.scriptid} | status: ${d.status} | deployed: ${d.isdeployed} | record type: ${d.recordtype || "none"} | log level: ${d.loglevel}`
   ).join("\n");
 }
 

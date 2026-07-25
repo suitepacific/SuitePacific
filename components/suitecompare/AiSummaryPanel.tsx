@@ -26,7 +26,6 @@ type Props = {
   right: string;
   leftLabel: string;
   rightLabel: string;
-  scriptId: string;
   hasDiff: boolean;
   leftDeployments?: Deployment[];
   rightDeployments?: Deployment[];
@@ -296,9 +295,12 @@ export function AiSummaryPanel({
               {output.split("\n").map((line, i) => {
                 const trimmed = line.trim();
                 if (!trimmed) return <div key={i} className="h-1" />;
+                const headingMatch = trimmed.match(/^(#{1,4})\s+(.+)/);
                 const isBullet = /^[\*\-\+]\s/.test(trimmed);
                 const isNumbered = /^\d+\.\s/.test(trimmed);
-                const text = isBullet
+                const text = headingMatch
+                  ? headingMatch[2]
+                  : isBullet
                   ? trimmed.slice(2)
                   : isNumbered
                   ? trimmed.replace(/^\d+\.\s/, "")
@@ -307,6 +309,15 @@ export function AiSummaryPanel({
                 const rendered = text
                   .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
                   .replace(/`(.+?)`/g, '<code class="bg-brand-50 px-1 rounded font-mono">$1</code>');
+                if (headingMatch) {
+                  const level = headingMatch[1].length;
+                  const cls = level <= 2
+                    ? "font-bold text-brand-900 text-sm mt-2"
+                    : level === 3
+                    ? "font-semibold text-brand-800 text-xs mt-1.5"
+                    : "font-semibold text-brand-700 text-xs mt-1";
+                  return <p key={i} className={cls} dangerouslySetInnerHTML={{ __html: rendered }} />;
+                }
                 if (isBullet) return (
                   <div key={i} className="flex gap-1.5 items-start">
                     <span className="mt-1.5 shrink-0 w-1 h-1 rounded-full bg-brand-300" />

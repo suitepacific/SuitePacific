@@ -359,7 +359,7 @@ export function DiffViewer({
 
   return (
     <div className="flex flex-col gap-3">
-      {/* Summary + navigation — sticky so nav stays visible while scrolling the diff */}
+      {/* Summary + navigation - sticky so nav stays visible while scrolling the diff */}
       <div className="sticky top-14 md:top-4 z-10 flex items-center justify-between flex-wrap gap-2 bg-white/90 backdrop-blur-sm rounded-xl border border-brand-100 shadow-sm px-3 py-2">
         <div className="flex items-center gap-4 text-xs font-medium">
           <span className="text-emerald-600">+{added} added</span>

@@ -110,7 +110,7 @@ export default async function AccountComparePage({ params, searchParams }: Props
     ? await Promise.all([getDeployments(leftScript.environment, scriptId), getDeployments(rightScript.environment, scriptId)])
     : [null, null];
 
-  // Write audit record — fire without awaiting to avoid blocking the render
+  // Write audit record - fire without awaiting to avoid blocking the render
   const auditStatus =
     (leftContent && !leftContent.ok && !leftContent.unconfigured) ||
     (rightContent && !rightContent.ok && !rightContent.unconfigured) ||
@@ -209,7 +209,6 @@ export default async function AccountComparePage({ params, searchParams }: Props
             right={rightContent.content}
             leftLabel={leftScript.environment.name}
             rightLabel={rightScript.environment.name}
-            scriptId={scriptId}
             hasDiff={leftContent.content !== rightContent.content}
             leftDeployments={leftDeploy?.ok ? leftDeploy.deployments : []}
             rightDeployments={rightDeploy?.ok ? rightDeploy.deployments : []}
@@ -243,7 +242,6 @@ export default async function AccountComparePage({ params, searchParams }: Props
               right={rightContent.ok ? rightContent.content : ""}
               leftLabel={leftScript.environment.name}
               rightLabel={rightScript.environment.name}
-              scriptId={scriptId}
               hasDiff={false}
               leftDeployments={leftDeploy?.ok ? leftDeploy.deployments : []}
               rightDeployments={rightDeploy?.ok ? rightDeploy.deployments : []}

@@ -25,7 +25,7 @@ async function setSession(userId: string) {
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
     maxAge: SC_SESSION_MAX_AGE,
-    path: "/suitecompare",
+    path: "/", // shared with /importDetector, which reuses this same login
   });
 }
 
@@ -126,7 +126,7 @@ export async function signupViaInviteAction(
 
   const ok = await consumeInvite(token, user.id, user.email);
   if (!ok) {
-    // Clean up the orphan account — invite was consumed or org filled up in the race window
+    // Clean up the orphan account - invite was consumed or org filled up in the race window
     await prisma.scUser.delete({ where: { id: user.id } }).catch(() => {});
     return { error: "Could not join team. The invite may have expired or the team is full." };
   }
