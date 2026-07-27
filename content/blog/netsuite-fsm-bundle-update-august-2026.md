@@ -1,164 +1,229 @@
 ---
-title: "NetSuite FSM Bundle Update (August 11, 2026): What to Test in Sandbox Before Production"
-description: "Oracle is pushing a managed NetSuite Field Service Management bundle update on August 11. Here is what that means, why Sandbox testing matters, and a practical checklist to validate your configurations before the change reaches Production."
+title: "NetSuite FSM Bundle Update (August 11, 2026): What Is Changing and What to Test in Sandbox"
+description: "NetSuite Field Service Management version 2026.07.1 reaches Production on August 11. Here is exactly what is changing, what requires action before the update, and what to validate in Sandbox to protect your live operation."
 date: "2026-07-27"
 tags: ["Field Service Management", "Administration", "Bundle Updates", "Sandbox Testing"]
 ---
 
 If you have a NetSuite account with the Field Service Management SuiteApp installed, you may have already received a notification from Oracle about an upcoming managed bundle update scheduled for 11 August. Oracle recommends testing the new bundle version in your Sandbox environment before it reaches Production, so that any issues with your existing configurations, customizations, or business processes can be identified and resolved in advance.
 
-That recommendation is easy to overlook when your team is busy. For organizations running FSM in a live field operation, it is worth taking seriously.
+That recommendation is easy to overlook when your team is busy. For organizations running FSM in a live field operation, this particular update warrants close attention.
 
 **Not sure where to start?** SuitePacific helps NetSuite customers validate FSM bundle updates in Sandbox before they reach Production. If you would rather have an expert walk through your environment than navigate this alone, [contact us](/contact) and we will take it from there.
 
-This article explains what a managed bundle update is, what typically changes in FSM releases, what you should validate in Sandbox before August 11, and what to do if you find an issue.
+This article covers exactly what is changing in version 2026.07.1, which changes require action on your part, and what to validate in Sandbox before August 11.
+
+## Release timeline
+
+The 2026.07.1 update is already available in Sandbox accounts as of July 16, 2026. Production upgrades are scheduled as follows:
+
+| Region | Upgrade Window |
+|---|---|
+| APAC | August 11, 8:00 p.m. to 11:00 p.m. Australian Eastern Time |
+| EMEA | August 11, 11:00 p.m. to August 12, 2:00 a.m. UTC |
+| U.S. and North America | August 11, 8:00 p.m. to August 12, 1:00 a.m. PT, and August 12, 8:00 p.m. to August 13, 1:00 a.m. PT |
+
+**Bundle ID: 570821**
 
 ## What is a managed bundle update?
 
-NetSuite Field Service Management is delivered as a managed SuiteApp, which means Oracle controls the bundle and pushes updates to customer accounts on a schedule. You do not choose whether to receive the update. Once Oracle releases it, the update is applied to your Production account.
+NetSuite Field Service Management is delivered as a managed SuiteApp, which means Oracle controls the bundle and pushes updates to customer accounts on a schedule. You do not choose whether to receive the update. Once Oracle releases it, the update is applied to your Production account automatically.
 
-What you do control is preparation.
+What you do control is preparation. Oracle has already pushed 2026.07.1 to Sandbox accounts. That window between July 16 and August 11 is your opportunity to identify anything that breaks or behaves differently before real work orders, real technicians, and real dispatching are affected.
 
-Oracle provides a window between when the update lands in Sandbox and when it reaches Production. That window is your opportunity to identify anything that breaks, behaves differently, or conflicts with your existing configuration before real work orders, real technicians, and real dispatching are affected.
+## What is changing in 2026.07.1
 
-A managed bundle update can include new features, performance improvements, bug fixes, changes to existing records and scripts, and occasionally modifications to how FSM integrates with core NetSuite records such as Cases and Tasks.
+This release is primarily a mobile app update with several configuration changes that administrators need to review before and after the upgrade.
 
-## Why Sandbox testing matters specifically for FSM
+### FSM Mobile app: new status visibility and navigation
 
-FSM is not a standalone module. It is deeply integrated with core NetSuite records including Cases, Customers, Tasks, Employees, Inventory, and Projects. It deploys its own User Event scripts to several of those record types. It runs on mobile devices. It connects to your dispatch board, your work order workflows, and potentially third-party integrations.
+The mobile app is receiving a significant overhaul of how it communicates sync status to technicians. This change affects every area of the app where data syncs with NetSuite.
 
-That integration depth means a bundle update has more surface area than a typical SuiteApp. A change to how FSM deploys a User Event on the Task record, for example, can affect how your existing Task workflows behave. A change to the mobile sync API can affect what technicians see in the field. A permission update can silently restrict what certain roles can do on work orders.
+**App-level and task-level status counters**
 
-Recent FSM releases illustrate this well. In 2026.03.2, Oracle specifically noted that records with FSM User Event scripts deployed (including Case, Customer, and Task) were loading slower than expected, and the update addressed it. That is an example of an FSM bundle change that touches three core record types outside of FSM itself. If you had custom scripts on those records, you would want to verify they still fire correctly and in the expected order after the update.
+Technicians will now see numeric counters at both the task list level and on each individual task, showing how many records have pending sync, draft, error, or offline status. This replaces the current experience where a sync issue on one record is not obviously visible unless the technician navigates to it directly.
 
-## What FSM bundle updates typically change
+When a record carries more than one status at once, the app surfaces the most critical one. Priority runs: Offline first, then Active Sync, Draft, and Error.
 
-Based on the 2026 FSM release history, bundle updates in this SuiteApp have included:
+**Offline warning banner**
 
-- Changes to how FSM deploys User Event scripts on Case, Customer, and Task records
-- Updates to the FSM Mobile app authentication flow and sync behavior
-- New or modified role permissions within the FSM context
-- Enhancements to the dispatch board and scheduling engine
-- Changes to task status logic (including how Field Service Start and End fields affect task status)
-- Translation and globalization updates that affect labels, notifications, and reports
-- Bug fixes that change specific field behaviors or workflow outcomes
-- Performance adjustments that affect how FSM-related records load in the NetSuite UI
+A persistent banner will appear at the bottom of every screen while the device is offline. Technicians moving between tasks and records will see this banner throughout, rather than only on the first screen they loaded offline.
 
-You will not know the exact scope of the August 11 update until Oracle publishes the release notes, typically close to the Sandbox rollout date. That is why a comprehensive Sandbox test matters more than waiting to read what changed.
+**Sync error indicator with retry**
 
-## FSM Sandbox testing checklist
+When a record fails to sync, it will now show a visible error icon so technicians know which records need attention. They can trigger a retry directly from the record without making any edits. The icon clears once the retry succeeds or the record is updated.
 
-Use this checklist to structure your validation work. Assign each area to a team member who knows that part of your operation well.
+**Navigation bar improvements**
+
+The navigation bar will display the name of the current mobile tab alongside the record's configured title field. Records that have not been saved yet will show "Unsaved Draft" so technicians can distinguish them from committed records.
+
+**What this means for your team:** These changes are improvements, not breaking changes. However, your technicians will see a noticeably different interface. Brief your field team before August 11 so they know what to expect. An offline warning banner and new sync icons may otherwise generate support calls from technicians who think something is wrong.
+
+### Configuration changes requiring administrator review
+
+Several changes in this release touch FSM configuration directly. Some require migration steps.
+
+**New `cancomplete` property for task completion**
+
+A new `cancomplete` property in the mobile event map gives administrators control over task completion eligibility. When the expression returns false, the Complete button is visually disabled and no completion request is submitted.
+
+Out of the box after the update, CRM task completion is locked to the assigned technician. Project tasks remain open to any mobile user.
+
+**Review this if:** You have project tasks or CRM tasks where completion should be restricted to specific users. The new default behavior may differ from what your technicians currently experience.
+
+**New `create`, `edit`, and `delete` properties on mobile tabs**
+
+Rather than a single readonly toggle, mobile tab permissions now have separate `create`, `edit`, and `delete` properties that can be controlled independently per tab.
+
+**Important:** As part of this change, the `readonly` rule at the resource level of FSM Configuration is being retired. Any `readonly` rules you have at that level will stop working after the upgrade. Before August 11, identify those rules and replace them with the equivalent `edit` property on the relevant mobile tabs.
+
+**Review this if:** You have configured readonly rules at the resource level in your FSM Configuration. After the update, those rules will no longer restrict technician access as intended.
+
+**nxc_now() expressions: automatic migration with a required review**
+
+FSM Mobile expressions now include `format(date)` and `now()` helpers for handling date, time, and datetime values. Oracle will automatically migrate any existing `nxc_now()` expressions to the new helpers when the update is applied.
+
+The migrated expressions will be stored in a new configuration record named "Auto Configure xxxx: Migrate nxc_now expressions." You should review this record after the upgrade to confirm the migration is correct and that existing checkbox conditions are preserved.
+
+The required formats after migration are:
+
+| Field Type | Required Format | Example |
+|---|---|---|
+| Date | YYYY-MM-DD | 2026-07-14 |
+| Time | HH:mm:ss | 09:30:00 |
+| Date and Time | YYYY-MM-DD HH:mm:ss | 2026-07-14 09:30:00 |
+
+**Review this if:** You use `nxc_now()` in any mobile expressions. Confirm the auto-migrated configuration record is correct in Sandbox before the Production upgrade.
+
+**Time tracking now managed in FSM Configuration**
+
+The Track Service Time feature is now controlled by a `time.timetracking` boolean option in FSM Configuration rather than a separate setting. Accounts that had Track Service Time enabled before the update will retain their setting automatically.
+
+**Review this if:** You plan to enable Track Service Time for the first time. Oracle requires testing this feature in Sandbox before enabling it in Production.
+
+**Mobile user license count removed from employee records**
+
+The at-a-glance license count that appeared next to the Field Service Mobile User field on employee records is being removed. It will no longer be visible there after the upgrade.
+
+Going forward, tracking mobile license consumption requires a saved search. Cross-reference the results against your allotted count on the Billing Information page, which you can reach via Setup, then Company, then View Billing Information.
+
+**Review this if:** Your administrators currently check license counts directly on employee records. You will need a saved search in place before August 11 to maintain visibility over your license usage.
+
+### Heading blocks for mobile tab forms
+
+Administrators can now add heading blocks to mobile tab forms to organize long forms without using placeholder fields or inline HTML workarounds. A heading element can be set to levels 1, 2, or 3 in decreasing visual prominence. Headings span the full content width and follow the existing element ordering logic.
+
+### Portuguese locale support
+
+The FSM Mobile app now supports Portuguese (Portugal) through the pt_PT locale. This applies when the account country is Portugal and the default account language is Portuguese (Portugal).
+
+### Mobile app bug fixes
+
+Five mobile UX fixes ship in this release. Searchable select fields in table rows now reset cleanly between rows instead of carrying over previous search text. Select fields correctly show the current option label rather than the raw saved value. Search keywords on mobile tabs now persist visually when you navigate back to them. Task list search text survives app restarts and refreshes. Service report images now render correctly for customers whose Field Service Language is set to something other than English or French.
+
+## Required actions from Oracle
+
+Oracle has specified the following actions for this update.
+
+### Before August 11: Sandbox testing
+
+Your Sandbox account already has 2026.07.1 available as of July 16. Oracle's minimum testing requirements are:
+
+- Order creation
+- Resource scheduling
+- Job completion
+- Service reports
+- Invoicing
+
+This is the floor, not the ceiling. Organizations with custom configurations, custom scripts, or third-party integrations should test substantially more than this list.
+
+### After August 11: Check your custom center tabs
+
+If you have modified or created custom FSM center tabs, you must check the following after the Production upgrade:
+
+- For each FSM center tab, verify the audience is still set appropriately for your business
+- Check that links to the Field Service mobile and scheduler board on custom center tabs are working
+
+For detailed guidance, refer to SuiteAnswers ID 1021215 (Maintaining Field Service Navigation After SuiteApp Updates).
+
+### After August 11: Check bundle message recipients
+
+Verify that the right people in your organization receive FSM bundle messages such as upgrade notices. On the Bundle Details page for FSM (Bundle ID 570821), confirm that email recipients are set to either All Bundle Admins or Custom. If you select Custom, add or update recipients as needed. Note that email addresses cannot be edited on the Bundle Details page and must be updated directly on the employee record.
+
+## What to validate in Sandbox before August 11
+
+Use this checklist alongside Oracle's minimum requirements. Prioritize the areas that the 2026.07.1 changes directly touch.
+
+### Mobile app
+
+- Log in as a technician and confirm authentication completes successfully
+- Verify the new status counters appear correctly on the task list and on individual tasks
+- Go offline and confirm the warning banner appears and persists across pages
+- Trigger a sync error and confirm the error icon appears on the affected record; test the retry
+- Complete a CRM task as the assigned technician and as a different mobile user; confirm the `cancomplete` default behavior matches your expectations
+- Complete a project task as a non-assigned mobile user; confirm this is permitted by default
+- Test the navigation bar to confirm tab names and record titles display as expected
+
+### FSM Configuration
+
+- If you use `readonly` at the resource level: confirm those rules have been migrated to the `edit` property and that technician access is restricted as expected
+- If you use `nxc_now()` in expressions: locate the "Auto Configure xxxx: Migrate nxc_now expressions" record and review each migrated expression for correctness
+- If you use date, time, or datetime fields in mobile expressions: confirm values are formatted correctly (YYYY-MM-DD, HH:mm:ss, YYYY-MM-DD HH:mm:ss)
+- If you use Track Service Time: confirm the feature is still enabled and behaves as expected through the new `time.timetracking` configuration option
 
 ### Work orders and service tasks
 
-- Create a new work order from scratch and confirm all required fields, custom fields, and field defaulting behave as expected
-- Update an existing work order through each status in your process and verify status transitions still trigger correctly
-- Confirm that work order completion updates related records (inventory, cases, invoices) as configured
-- Test any custom forms on work order or service task records and verify field layout, mandatory fields, and visibility rules
-- Check that sublist behavior on work orders (parts, labor, notes) is unchanged
-
-### Dispatch board and scheduling
-
-- Open the dispatch board and confirm technicians load correctly with their assigned territories and skills
-- Create, drag, and reassign scheduled tasks on the dispatch board
-- Verify that unassigned task queues display correctly
-- Test any custom saved searches used to populate the dispatch board view
-
-### FSM Mobile app
-
-- Have a technician log into the FSM Mobile app and confirm authentication completes successfully
-- Sync the mobile app and verify that assigned tasks appear correctly
-- Complete a task on mobile and confirm the completion status reflects in NetSuite
-- Test offline functionality if your technicians work in areas without connectivity
-- Check that technician notes, photos, and attachments upload correctly
-- Confirm barcode scanning (if used) works as expected in the task list
+- Create a new work order and confirm all required fields, custom fields, and field defaulting behave as expected
+- Walk each work order status transition and verify that associated workflows, scripts, and email actions still fire
+- Test work order completion and confirm related records (inventory, cases, invoices) update correctly
+- Check any custom forms on work order or service task records
 
 ### Scripts and workflows
 
-- Run each of your custom User Event scripts on Case, Customer, and Task records and verify they execute without errors
-- Check SuiteScript execution logs for any new errors on records that FSM touches
-- Walk through each workflow deployed on FSM record types and confirm transitions, email actions, and field updates still fire
-- Test any Scheduled or Map/Reduce scripts that process FSM data (for example, scripts that sync work order status or generate reports)
-- Verify that Client Scripts on custom FSM forms load and execute correctly
+- Run custom User Event scripts on Case, Customer, and Task records and check the execution log for errors
+- Walk through each workflow on FSM record types and confirm transitions and actions still fire
+- Test any Scheduled or Map/Reduce scripts that process FSM data
 
 ### Permissions and roles
 
-- Log in as each role that interacts with FSM (dispatcher, technician, service manager, administrator) and confirm the expected records and actions are accessible
-- Attempt actions that each role should not be able to perform and confirm those restrictions are still in place
-- Check that new or modified FSM features introduced in the update have appropriate role permissions configured
+- Log in as each FSM role (dispatcher, technician, service manager) and confirm access is as expected
+- Specifically test create, edit, and delete actions on mobile tabs for technician roles, given the new permission properties in this release
 
-### Integrations and saved searches
+### Saved searches and reporting
 
-- Run any third-party integrations that connect to FSM data and verify they return expected results
-- Test any REST or SOAP web service calls that create or update FSM records
-- Run your key FSM-related saved searches (open work orders, unassigned tasks, technician schedules, work order history) and confirm result counts and columns are correct
-- Check any saved searches used in email alerts or workflows
+- Run your key FSM saved searches (open work orders, unassigned tasks, technician schedules) and confirm results are correct
+- If you previously relied on the mobile license count on employee records: confirm your replacement saved search is in place and returns accurate counts
 
-### Inventory and parts management
+### Custom center tabs
 
-- Confirm that parts consumption on work orders still updates inventory correctly
-- Test any custom inventory workflows triggered by FSM task completion
-- Verify that inventory availability checks on the mobile app and dispatch board are accurate
-
-## Common risks to watch for after a managed bundle update
-
-**Script execution order changes.** FSM deploys User Event scripts on shared record types. If the bundle update modifies those script deployments, your custom scripts may run in a different order. Logic that depends on FSM's script running before or after yours may break silently.
-
-**Permission changes on FSM records.** Bundle updates occasionally introduce new record types or modify the permissions required for existing ones. A technician role that previously had full access to a work order sublist might find certain actions restricted after the update, with no error message to indicate why.
-
-**Mobile sync failures.** Changes to the mobile sync API or the authentication flow can prevent the FSM Mobile app from connecting to your account. Technicians may see a blank task list or an authentication error without any indication that a bundle update is the cause.
-
-**Workflow field reference breakages.** If the update renames or replaces a field on a work order or task record, any workflow condition or action that references that field will either fail silently or throw an error. This is more likely if the update includes schema changes.
-
-**Custom form field overrides.** FSM may update the default form for work orders, service tasks, or related records. If your custom form is set to override the default, verify that the form hierarchy still works as intended and that no new required fields introduced by the update are missing from your custom form.
-
-**Translation and label changes.** If your operation uses custom labels on FSM records, a translation update in the bundle may reset those labels to defaults. Check any localized or renamed field labels after the update.
-
-## Step-by-step: how to prepare before August 11
-
-**Step 1: Confirm your Sandbox has the update.**
-Oracle typically pushes managed bundle updates to Sandbox before Production. Verify the FSM bundle version in your Sandbox account. Go to Customization, then SuiteCloud, then Installed SuiteApps and locate the Field Service Management bundle to confirm the version number has changed.
-
-**Step 2: Review the release notes.**
-Oracle publishes FSM release notes in the NetSuite Help documentation under Field Service Management release notes. Read through what changed in the new version before you begin testing so you know which areas to prioritize.
-
-**Step 3: Assign testing by function.**
-Do not rely on one administrator to test everything. Assign work order testing to your operations team, mobile testing to a technician or dispatcher, script and workflow testing to your NetSuite administrator or developer, and integration testing to whoever manages your connected systems.
-
-**Step 4: Document what you test and what you find.**
-Keep a simple log of each area tested, the result, and any issues found. This gives you a clear record of what was validated and makes it easier to escalate specific issues to Oracle support if needed.
-
-**Step 5: Raise issues with Oracle before August 11.**
-If you find a genuine defect introduced by the update, log a case with Oracle NetSuite support before the Production rollout date. Include the specific steps to reproduce, the expected behavior, and the actual behavior. Oracle support may be able to provide a workaround or escalate the issue to delay the production deployment for your account in some circumstances.
-
-**Step 6: Communicate with your team.**
-If the update changes how technicians interact with the mobile app, or if you are introducing any configuration changes alongside the update, communicate that to your field team before August 11. Technicians who notice something different on their app and do not know why it changed will escalate to your helpdesk unnecessarily.
+- Open each custom FSM center tab and confirm audience settings are correct
+- Confirm links to FSM mobile and the scheduler board open as expected
 
 ## Frequently asked questions
 
 **Do I have to install this update manually?**
-No. For managed SuiteApps like FSM, Oracle pushes the update automatically to your Production account. You do not need to take any action to receive it. Your action is the Sandbox testing that happens before the Production rollout.
+No. Oracle pushes managed bundle updates automatically to Production accounts. Your action is the Sandbox testing that happens before August 11.
 
-**Will the bundle update overwrite my customizations?**
-Not typically. Managed bundle updates are designed to avoid overwriting customer customizations. However, if you have modified objects that the bundle also modifies, there may be object conflicts. Sandbox testing is the only reliable way to identify these before they affect Production.
+**The update already landed in my Sandbox on July 16. Is it safe to test there now?**
+Yes. Oracle pushed 2026.07.1 to Sandbox accounts on July 16 specifically to give administrators time to test before the August 11 Production rollout.
+
+**Will the update overwrite my customizations?**
+Managed bundle updates are designed to avoid overwriting customer customizations. However, the removal of the `readonly` resource-level rule in this release means that if you relied on that rule, it will no longer apply after the update regardless of whether you took action. Review your FSM Configuration for `readonly` at the resource level before August 11.
+
+**The nxc_now() migration is automatic. Do I still need to do anything?**
+Yes. Oracle auto-migrates the expressions but stores the result in a copied configuration record. You should open that record in Sandbox after the update and confirm the migrated expressions are correct, particularly where checkbox conditions are involved.
 
 **What if I do not have a Sandbox account?**
-If your NetSuite subscription does not include a Sandbox, you are not able to test the FSM update before it reaches Production. This is one of the most common gaps in post-go-live NetSuite environments. If you are not sure whether your account includes Sandbox access, check with your NetSuite account manager.
+Without Sandbox access, you cannot test this update before it reaches Production. Contact your NetSuite account manager to discuss adding Sandbox to your subscription. For organizations running FSM in a live field operation, Sandbox access is not optional.
 
-**How long does Sandbox testing typically take for an FSM update?**
-For a team that is already familiar with their FSM configuration, a focused Sandbox test of the areas above typically takes one to two days. For organizations with complex customizations, integrations, or a large field team, allow more time.
-
-**Where do I find the FSM release notes for this update?**
-Oracle publishes FSM release notes at docs.oracle.com under the NetSuite Applications Suite documentation. Navigate to Field Service Management, then Release Notes, and select the 2026 releases article. Release notes for the August update will be published around the time the Sandbox update is available.
+**Where do I find the full release notes?**
+Oracle published the full 2026.07.1 release notes under SuiteAnswers answer ID 1047018. Additional SuiteAnswers articles referenced in this release: 1046936 (heading blocks), 1047012 (date and time field updates), 1047002 (time tracking), 1046924 (mobile user license saved search), 1021215 (center tab navigation after updates).
 
 **What if I find a problem in Sandbox but Production has already updated?**
-Log a support case with Oracle immediately and document the impact to your business. In parallel, identify whether the issue can be mitigated with a configuration change or custom script until Oracle provides a fix. Having your Sandbox test documentation ready speeds up the resolution process significantly.
+Log a support case with Oracle immediately and document the business impact. In parallel, identify whether the issue can be mitigated through a configuration change or custom script while Oracle works on a fix. Your Sandbox test documentation will significantly speed up Oracle support's response.
 
 ## How SuitePacific can help
 
-Testing a managed bundle update requires someone who knows both FSM and the broader NetSuite environment well enough to spot issues that are not immediately obvious. A permission change that restricts a field on the dispatch board may not surface until a dispatcher tries to reassign a task at 7am on a Monday.
+This update includes configuration changes that require administrator action before and after the Production upgrade, not just passive testing. The removal of the `readonly` resource-level rule, the `nxc_now()` migration review, and the mobile user license reporting change are all items that need to be addressed regardless of whether your Sandbox testing surfaces any issues.
 
-SuitePacific works with NetSuite customers in the post-go-live phase: reviewing configurations, testing updates, resolving issues that emerge after bundle changes, and ensuring that what works in Sandbox is what works in Production. If you received the August 11 FSM notification and are not certain your team has the capacity or expertise to validate the update before it reaches Production, we can help.
-
-Reach out to SuitePacific before August 11. The earlier we review your environment, the more time there is to address anything that surfaces in Sandbox before it becomes a Production incident.
+SuitePacific works with NetSuite customers through the post-go-live phase: reviewing configurations, validating bundle updates, resolving issues that emerge after upgrades, and making sure nothing falls through the gap between Sandbox and Production. If you are not certain your team has the time or expertise to work through the 2026.07.1 changes before August 11, reach out to us and we will take it from there.
