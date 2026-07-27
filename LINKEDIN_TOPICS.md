@@ -32,6 +32,8 @@ Update this file every time a new post is published. No topic should repeat.
 | 24 | Match Bank Data page in 2026.2 — Review subtab replaced by Match Suggestions with five actions per transaction | Release Notes / Finance |
 | 25 | record.load() costs 10 governance units; search.lookupFields() costs 1 — use lookupFields() when you only need a few fields | SuiteScript / Performance |
 | 26 | Script Deployment: Context Filtering + Audience tabs — prevent scripts from being invoked at all instead of using early returns or N/runtime checks in code | SuiteScript / Performance |
+| 27 | NetSuite FSM 2026.07.1 bundle update (August 11): three breaking changes to act on — readonly resource-level rules removed, nxc_now() auto-migration needs review, mobile license counts removed from employee records | Field Service Management |
+| 28 | | |
 
 ---
 
