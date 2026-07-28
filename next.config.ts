@@ -50,6 +50,11 @@ const nextConfig: NextConfig = {
         destination: "https://suitepacific.com/:path*",
         statusCode: 301,
       },
+      {
+        source: "/:path+/",
+        destination: "/:path+",
+        statusCode: 301,
+      },
     ];
   },
 };
