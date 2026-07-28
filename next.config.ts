@@ -48,7 +48,7 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         has: [{ type: "host", value: "www.suitepacific.com" }],
         destination: "https://suitepacific.com/:path*",
-        permanent: true,
+        statusCode: 301,
       },
     ];
   },
