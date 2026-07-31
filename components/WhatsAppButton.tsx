@@ -12,18 +12,17 @@ export default function WhatsAppButton() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const check = () => {
-      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-      if (scrollable <= 0) {
-        setVisible(true);
-        return;
-      }
-      setVisible(window.scrollY / scrollable >= 0.25);
-    };
-
-    check();
-    window.addEventListener("scroll", check, { passive: true });
-    return () => window.removeEventListener("scroll", check);
+    const target = document.getElementById("why-us");
+    if (!target) {
+      setVisible(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.1 }
+    );
+    observer.observe(target);
+    return () => observer.disconnect();
   }, []);
 
   return (

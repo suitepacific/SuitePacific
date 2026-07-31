@@ -22,8 +22,8 @@ export function DashboardMockup() {
       <GradientBlob className="absolute -top-24 -right-16 w-[420px] h-[420px] -z-10" />
 
       <motion.div
-        initial={{ opacity: 0, y: 24, rotate: -1 }}
-        animate={{ opacity: 1, y: 0, rotate: -1 }}
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="glass rounded-2xl shadow-soft-lg p-5 sm:p-6"
       >
@@ -126,7 +126,7 @@ export function DashboardMockup() {
       <motion.div
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-        className="absolute -right-4 top-10 glass rounded-xl shadow-soft px-3 py-2 hidden sm:flex items-center gap-2"
+        className="absolute right-2 top-8 sm:-right-4 sm:top-10 glass rounded-xl shadow-soft px-3 py-2 flex items-center gap-2"
       >
         <span className="text-xs font-medium text-brand-700">5+ Tickets Resolved Daily</span>
       </motion.div>
@@ -148,7 +148,7 @@ export function DashboardMockup() {
       <motion.div
         animate={{ y: [0, 7, 0] }}
         transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut" }}
-        className="absolute -right-6 -bottom-10 hidden sm:block"
+        className="absolute right-0 -bottom-8 sm:-right-6 sm:-bottom-10"
       >
         <Image
           src="/adminstratorBadge.png"
