@@ -458,7 +458,6 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     title: "Contact",
     links: [
       { label: "Book a Consultation", href: "/contact" },
-      { label: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` },
     ],
   },
 ];
