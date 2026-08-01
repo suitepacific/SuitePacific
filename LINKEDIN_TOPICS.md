@@ -33,7 +33,11 @@ Update this file every time a new post is published. No topic should repeat.
 | 25 | record.load() costs 10 governance units; search.lookupFields() costs 1 — use lookupFields() when you only need a few fields | SuiteScript / Performance |
 | 26 | Script Deployment: Context Filtering + Audience tabs — prevent scripts from being invoked at all instead of using early returns or N/runtime checks in code | SuiteScript / Performance |
 | 27 | NetSuite FSM 2026.07.1 bundle update (August 11): three breaking changes to act on — readonly resource-level rules removed, nxc_now() auto-migration needs review, mobile license counts removed from employee records | Field Service Management |
-| 28 | | |
+| 28 | HTML and inlineHTML fields in FSM mobile tabs now require a map reference in 2026.07.1 — unmapped HTML silently disappears on existing records after August 11 | Field Service Management |
+| 29 | Custom GL Plug-in can only add new GL lines, not change the original GL impact — design by extending, not rewriting | SuiteScript / Accounting |
+| 30 | Custom GL Plug-in doesn't execute on every transaction — Journal Entry has 7 documented exceptions including intercompany, statistical, reversing, and voiding journals | SuiteScript / Accounting |
+| 31 | SuiteQL default sort changed in 2026.2 from tranDisplayName to tranDate — queries without ORDER BY may return records in a different order | SuiteQL / Release Notes |
+| 32 | FSM 2026.07.1 mobile changes: status counter (app-level shows all 4 statuses; task-level shows Draft + Error only), persistent offline banner, sync error with retry, smarter navigation bar with "Unsaved Draft" label | Field Service Management |
 
 ---
 
