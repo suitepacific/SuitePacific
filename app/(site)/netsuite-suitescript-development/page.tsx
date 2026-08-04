@@ -159,7 +159,7 @@ export default function SuiteScriptDevelopmentPage() {
         />
 
         <p className="mt-6 text-sm text-brand-400">
-          SuiteScript is NetSuite's built-in JavaScript development platform. When configuration
+          SuiteScript is NetSuite&apos;s built-in JavaScript development platform. When configuration
           runs out, a script in the right place automates what currently takes an hour, enforces
           a rule that workflows cannot, or connects NetSuite to an external system. See our{" "}
           <Link href="/blog/suitescript-best-practices" className="text-accent hover:underline">

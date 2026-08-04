@@ -196,7 +196,7 @@ export default function WorkflowAutomationPage() {
         <div className="mt-14" data-section="automation-types">
           <h2 className="text-lg font-semibold text-brand-900 mb-1">Types of automation we build</h2>
           <p className="text-sm text-brand-400 mb-6">
-            SuiteFlow handles most standard automation needs. We add SuiteScript only where workflow actions alone can't reach.
+            SuiteFlow handles most standard automation needs. We add SuiteScript only where workflow actions alone can&apos;t reach.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {AUTOMATION_TYPES.map((item) => (
@@ -228,7 +228,7 @@ export default function WorkflowAutomationPage() {
             ))}
           </div>
           <p className="mt-5 text-sm text-brand-400">
-            For automation that requires custom code beyond what SuiteFlow's native action set can
+            For automation that requires custom code beyond what SuiteFlow&apos;s native action set can
             handle, see our{" "}
             <Link href="/netsuite-suitescript-development" className="text-accent hover:underline">
               SuiteScript development page

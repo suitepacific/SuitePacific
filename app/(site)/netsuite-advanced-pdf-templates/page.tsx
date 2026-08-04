@@ -163,7 +163,7 @@ export default function AdvancedPdfTemplatesPage() {
         />
 
         <p className="mt-6 text-sm text-brand-400">
-          NetSuite's standard PDF templates break down quickly when documents need conditional
+          NetSuite&apos;s standard PDF templates break down quickly when documents need conditional
           sections, complex line-level formatting, or multi-brand logos. The Advanced PDF/HTML
           template engine (built on FreeMarker) is significantly more capable, but requires knowing
           the template language and testing against real records with edge cases. See our{" "}

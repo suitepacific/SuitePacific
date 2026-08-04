@@ -164,7 +164,7 @@ export default function SavedSearchesDashboardsPage() {
 
         <p className="mt-6 text-sm text-brand-400">
           Most teams that rely on Excel exports are doing it because the right saved search was
-          never built. NetSuite's search engine supports formula fields, summary types, cross-record
+          never built. NetSuite&apos;s search engine supports formula fields, summary types, cross-record
           joins, and live dashboard portlets. The problem is usually that nobody had time to build
           them properly after go-live. See our{" "}
           <Link href="/blog/netsuite-saved-search-tips" className="text-accent hover:underline">
