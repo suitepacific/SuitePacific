@@ -1,36 +1,175 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  Code2,
+  Workflow,
+  LayoutDashboard,
+  Plug,
+  Gauge,
+  ShieldCheck,
+  AlertCircle,
+  RefreshCcw,
+  Wrench,
+  Users,
+  Award,
+} from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
 import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
-import { RECENT_WORK, SITE_URL } from "@/lib/content";
+import { LeadForm } from "@/components/sections/LeadForm";
+import { SITE_URL } from "@/lib/content";
+
+const PAIN_POINTS = [
+  {
+    icon: AlertCircle,
+    title: "Your implementation partner's engagement ended.",
+    description:
+      "The team that built your account was scoped for go-live. Ongoing changes, fixes, and new development were never part of that engagement.",
+  },
+  {
+    icon: RefreshCcw,
+    title: "NetSuite needs to keep up with your business.",
+    description:
+      "New processes, new team members, new requirements. A live account that stops evolving starts creating friction inside the business.",
+  },
+  {
+    icon: Wrench,
+    title: "Things break and nobody knows why.",
+    description:
+      "Scripts fail, workflows misbehave, saved searches return wrong data. Without a technical team on call, these issues accumulate until they become urgent.",
+  },
+];
+
+const WHAT_WE_COVER = [
+  {
+    icon: Code2,
+    title: "SuiteScript Development",
+    description:
+      "New scripts, fixes to existing ones, governance limit issues, and User Event or Scheduled scripts that need updating as your processes change.",
+  },
+  {
+    icon: Workflow,
+    title: "Workflow Automation",
+    description:
+      "New approval workflows, updates to existing SuiteFlow automations, notification logic, and status transition rules as your processes evolve.",
+  },
+  {
+    icon: LayoutDashboard,
+    title: "Saved Searches & Dashboards",
+    description:
+      "New saved searches for operational visibility, updated dashboards as reporting needs shift, and exception searches that flag what needs attention.",
+  },
+  {
+    icon: Plug,
+    title: "Integrations",
+    description:
+      "Fixes to existing integrations when upstream APIs change, new connections to external platforms, and RESTlet endpoints for custom data exchange.",
+  },
+  {
+    icon: Gauge,
+    title: "Account Optimization",
+    description:
+      "Performance fixes for slow pages and searches, script audits, cleanup of legacy customizations, and technical debt reduction.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Administration",
+    description:
+      "User management, role updates, custom fields and forms, period close, and configuration changes that keep the account current with the business.",
+  },
+];
+
+const HOW_IT_WORKS = [
+  {
+    step: "01",
+    title: "We onboard your account",
+    description:
+      "We review your existing scripts, workflows, integrations, and known issues before we start. You do not need to document everything for us; we read the account and figure it out.",
+  },
+  {
+    step: "02",
+    title: "You bring work as it comes up",
+    description:
+      "No new statement of work per request. Changes are built and tested in Sandbox first, then deployed to Production on a schedule that works for your team.",
+  },
+  {
+    step: "03",
+    title: "We stay current with your account",
+    description:
+      "Each request builds on the last. Because we maintain context on your account, there is no re-discovery each time something new comes in.",
+  },
+];
+
+const WHO_ITS_FOR = [
+  "Companies past go-live without a dedicated technical team for ongoing changes",
+  "Accounts with a backlog of requests that have accumulated since implementation",
+  "Teams with scripts or workflows from a previous developer that nobody currently understands",
+  "Organizations that recently parted ways with their managed services provider",
+  "Businesses that need both administration and development handled by the same team",
+];
+
+const WHY_SP = [
+  {
+    icon: ShieldCheck,
+    title: "Oracle-Certified",
+    description:
+      "NetSuite SuiteCloud Developer II and Administrator Professional certifications. Verified technical credentials, not self-declared experience.",
+  },
+  {
+    icon: RefreshCcw,
+    title: "Context Retained",
+    description:
+      "Because we maintain ongoing context on your account, there is no re-discovery each time new work comes in. The second request takes less time than the first.",
+  },
+  {
+    icon: Users,
+    title: "Direct Access",
+    description:
+      "You communicate directly with the person doing the work. No ticket system, no account manager as an intermediary.",
+  },
+  {
+    icon: Award,
+    title: "Enterprise Expertise, SMB Price",
+    description:
+      "The same depth of NetSuite expertise large companies staff internally, available without the overhead of a full-time hire or an enterprise consulting contract.",
+  },
+];
 
 const FAQ = [
   {
-    question: "What's the difference between this and NetSuite's own support?",
-    answer: "NetSuite's support handles platform bugs and questions about standard functionality. We handle the customization layer, scripts, workflows, saved searches, templates, and configuration specific to your account. Most day-to-day questions in a live account sit in the customization layer, not the platform itself.",
+    question: "What is the difference between this and NetSuite's own support?",
+    answer:
+      "NetSuite's support handles platform bugs and questions about standard functionality. We handle the customization layer: scripts, workflows, saved searches, templates, and configuration specific to your account. Most day-to-day questions in a live account sit in the customization layer, not the platform itself.",
   },
   {
     question: "How is support billed?",
-    answer: "We work on a retained hours model: a monthly block of hours applied to whatever work comes up that month. This works better than per-ticket billing for accounts that have a steady but unpredictable stream of customization requests.",
+    answer:
+      "We work on a monthly retainer: a fixed block of hours applied to whatever work comes up that month. This works better than per-ticket billing for accounts that have a steady but unpredictable stream of customization and development requests.",
   },
   {
     question: "Do you require a long-term contract?",
-    answer: "We typically start with a three-month engagement, which gives enough time to understand the account and address the highest-priority items. Most clients continue month-to-month after that.",
+    answer:
+      "We typically start with a three-month engagement, which gives enough time to understand the account and address the highest-priority items. Most clients continue month-to-month after that.",
   },
   {
     question: "Can you take over support from a current managed services provider?",
-    answer: "Yes. We handle transitions regularly. The process involves a documented handoff of active customizations, known issues, and in-progress work. We also review the account independently rather than relying solely on the previous provider's documentation.",
+    answer:
+      "Yes. We handle transitions regularly. The process involves a documented handoff of active customizations, known issues, and in-progress work. We also review the account independently rather than relying solely on the previous provider's documentation.",
+  },
+  {
+    question: "Can you handle both development and administration work?",
+    answer:
+      "Yes. Most live accounts need both. Administration covers configuration changes inside NetSuite's built-in tools. Development covers SuiteScript, integrations, and automation that requires custom code. Both are handled within the same engagement.",
   },
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Post-Go-Live Support",
+  title: "NetSuite Post-Go-Live Support | SuitePacific",
   description:
-    "What NetSuite post-go-live support actually covers: ongoing SuiteScript development, workflow automation, reporting, and account optimization after your implementation partner's work is done.",
+    "Ongoing NetSuite support for live accounts: SuiteScript development, workflow automation, integrations, reporting, and administration after your implementation partner's work is done.",
   alternates: { canonical: "/netsuite-post-go-live-support" },
 };
 
@@ -50,78 +189,121 @@ export default function PostGoLiveSupportPage() {
           as="h1"
           eyebrow="Post-Go-Live Support"
           title="NetSuite Post-Go-Live Support"
-          subtitle="What happens after your implementation partner's engagement ends, and how an ongoing NetSuite team fits into that."
+          subtitle="Ongoing development, automation, and support for companies already live on NetSuite. Your implementation partner got you there; we keep it running and growing."
           align="left"
         />
 
-        <div className="prose prose-blue mt-12 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
-          <h2>What “post-go-live” actually means</h2>
-          <p>
-            Most NetSuite implementation partners are scoped to get your account live: initial
-            configuration, data migration, core workflows, and training. Once you go live, that
-            engagement typically winds down. What’s left is a working NetSuite account and a
-            business that keeps changing, with no dedicated technical team assigned to keep up
-            with it.
-          </p>
-          <p>
-            Post-go-live support is the ongoing work that fills that gap: fixing what breaks,
-            building what the business needs next, and adjusting NetSuite as your processes
-            evolve, on a continuous basis rather than as a single project with an end date.
-          </p>
+        <p className="mt-6 text-sm text-brand-400">
+          Implementation partners are scoped for go-live. Once that engagement closes, the
+          ongoing technical work has nowhere to go. Post-go-live support fills that gap on a
+          continuous basis rather than as a new project each time something is needed.
+        </p>
 
-          <h2>What’s typically included</h2>
-          <p>
-            The specific mix varies by account, but post-go-live engagements generally cover:
-          </p>
+        <div className="mt-6">
+          <Button href="/contact">Book a Free Consultation</Button>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {RECENT_WORK.slice(0, 8).map((item) => (
-            <Card key={item.title} className="p-5 flex items-start gap-4">
-              <IconBadge icon={item.icon} />
-              <div>
+        {/* Pain points */}
+        <div className="mt-14" data-section="pain-points">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">
+            What happens after go-live
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            {PAIN_POINTS.map((item) => (
+              <Card key={item.title} className="p-5 flex flex-col gap-3">
+                <IconBadge icon={item.icon} />
                 <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
-                <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
-              </div>
-            </Card>
-          ))}
+                <p className="text-sm text-brand-400">{item.description}</p>
+              </Card>
+            ))}
+          </div>
         </div>
 
-        <div className="prose prose-blue mt-12 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
-          <h2>How engagements typically work</h2>
-          <p>
-            Post-go-live work doesn’t usually need a new statement of work for every request.
-            Most teams operate on a flexible, month-to-month basis: you bring requests as they
-            come up, changes are built and tested in a sandbox before touching your live
-            account, and the relationship continues for as long as it’s useful, not for a fixed
-            project term.
+        {/* What we cover */}
+        <div className="mt-14" data-section="what-we-cover">
+          <h2 className="text-lg font-semibold text-brand-900 mb-1">What is covered</h2>
+          <p className="text-sm text-brand-400 mb-6">
+            The mix varies by account, but a post-go-live engagement typically spans all of these.
           </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {WHAT_WE_COVER.map((item) => (
+              <Card key={item.title} className="p-5 flex items-start gap-4">
+                <IconBadge icon={item.icon} />
+                <div>
+                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
+                  <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
 
-          <h2>Who this is for</h2>
-          <p>
-            Companies that have already completed their NetSuite implementation and are
-            looking for a responsive, technical team for ongoing development, automation,
-            reporting, and account upkeep. If you haven’t gone live yet, this isn’t the right
-            fit; you’ll want an implementation partner first. See{" "}
-            <a href="/netsuite-implementation-partner-vs-managed-support">
+        {/* How it works */}
+        <div className="mt-14" data-section="how-it-works">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">How it works</h2>
+          <div className="space-y-4">
+            {HOW_IT_WORKS.map((item) => (
+              <div key={item.step} className="flex items-start gap-5">
+                <span className="text-xs font-semibold text-accent bg-accent/10 rounded-full h-7 w-7 flex items-center justify-center shrink-0 mt-0.5">
+                  {item.step}
+                </span>
+                <div>
+                  <p className="font-semibold text-brand-900 text-sm">{item.title}</p>
+                  <p className="mt-0.5 text-sm text-brand-400">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Who this is for */}
+        <div className="mt-14" data-section="who-its-for">
+          <h2 className="text-lg font-semibold text-brand-900 mb-4">Who this is for</h2>
+          <ul className="space-y-3">
+            {WHO_ITS_FOR.map((item) => (
+              <li key={item} className="flex items-start gap-3 text-sm text-brand-600">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent shrink-0 mt-2" />
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-5 text-sm text-brand-400">
+            If you have not gone live yet and are looking for an implementation partner, that is
+            a different engagement. See{" "}
+            <Link href="/netsuite-implementation-partner-vs-managed-support" className="text-accent hover:underline">
               implementation partner vs. managed support
-            </a>{" "}
-            for that distinction. If you’re evaluating what it looks like to{" "}
-            <Link href="/hire-netsuite-developer">hire a NetSuite developer</Link>, what to
-            look for, how engagements are structured, and what questions matter, that guide
-            covers all of it.
+            </Link>{" "}
+            for that distinction.
           </p>
+        </div>
+
+        {/* Why SuitePacific */}
+        <div className="mt-14" data-section="why-suitepacific">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why SuitePacific</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {WHY_SP.map((item) => (
+              <Card key={item.title} className="p-5 flex items-start gap-4">
+                <IconBadge icon={item.icon} />
+                <div>
+                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
+                  <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
 
         <ServiceFaqSection items={FAQ} />
 
-        <div className="mt-14 pt-10 border-t border-brand-50 text-center">
-          <p className="text-brand-900 font-semibold">Already live on NetSuite?</p>
+        {/* Inline form */}
+        <div className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
+          <p className="text-brand-900 font-semibold text-lg">Already live on NetSuite?</p>
           <p className="mt-2 text-sm text-brand-400">
-            Tell us what’s not working or what you need built next.
+            Tell us what is not working or what you need built next. We will respond within one
+            business day.
           </p>
-          <div className="mt-6">
-            <Button href="/contact">Book a Free Consultation</Button>
+          <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
+            <LeadForm />
           </div>
         </div>
       </div>

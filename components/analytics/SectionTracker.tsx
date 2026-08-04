@@ -42,12 +42,12 @@ export function SectionTracker() {
     const visible = new Set<string>();
     let exitSection: string | null = null;
 
-    const sections = Array.from(document.querySelectorAll<HTMLElement>("section[id]"));
+    const sections = Array.from(document.querySelectorAll<HTMLElement>("[data-section]"));
 
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          const id = entry.target.id;
+          const id = (entry.target as HTMLElement).dataset.section ?? entry.target.id;
           if (entry.isIntersecting) {
             visible.add(id);
             if (!viewedOrder.includes(id)) viewedOrder.push(id);

@@ -1,13 +1,120 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FileText, Barcode, Layers, SplitSquareHorizontal, Palette, CheckSquare } from "lucide-react";
+import {
+  FileText, Barcode, Layers, SplitSquareHorizontal, Palette, CheckSquare,
+  AlertCircle, Wrench, AlertTriangle,
+  ShieldCheck, Users, Award,
+} from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
 import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
+import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
+
+const PAIN_POINTS = [
+  {
+    icon: AlertCircle,
+    title: "Documents need manual touch-ups before going out.",
+    description:
+      "Invoices exported from NetSuite get copied into Word, reformatted, and re-exported as PDFs. A process that takes ten minutes per document, every time.",
+  },
+  {
+    icon: Wrench,
+    title: "The template breaks for certain transactions.",
+    description:
+      "Works fine on a standard invoice but fails when a customer has an unusual address format, a transaction has no line items, or a subsidiary logo needs to switch.",
+  },
+  {
+    icon: AlertTriangle,
+    title: "The basic template editor can't get there.",
+    description:
+      "Conditional sections, multi-column line item layouts, dynamic totals, and subsidiary-specific branding are beyond what NetSuite's drag-and-drop template editor supports.",
+  },
+];
+
+const TEMPLATE_TYPES = [
+  {
+    icon: FileText,
+    title: "Invoices & Statements",
+    description: "Branded customer-facing documents with conditional payment terms, multi-currency formatting, and dynamic logo and address blocks per subsidiary.",
+  },
+  {
+    icon: SplitSquareHorizontal,
+    title: "Purchase Orders",
+    description: "Vendor-facing POs with conditional approval signature blocks, line-level notes, and custom formatting that matches your procurement process.",
+  },
+  {
+    icon: Layers,
+    title: "Packing Slips & Fulfillments",
+    description: "Warehouse and shipping documents with item descriptions, quantities, lot/serial numbers, and bin locations laid out for efficient picking.",
+  },
+  {
+    icon: Barcode,
+    title: "Barcode & QR Code Support",
+    description: "Templates with embedded barcodes or QR codes encoding item numbers, serial numbers, or URLs, generated directly from NetSuite field data.",
+  },
+  {
+    icon: Palette,
+    title: "Multi-Brand & Subsidiary Templates",
+    description: "Conditional layout switching based on subsidiary, customer class, or transaction type, so one template handles multiple brands without manual selection.",
+  },
+  {
+    icon: CheckSquare,
+    title: "Conditional Sections",
+    description: "Sections that appear or hide based on data, such as a payment instructions block only for overdue invoices, or a returns policy footer only for certain customer groups.",
+  },
+];
+
+const HOW_IT_WORKS = [
+  {
+    step: "01",
+    title: "We start from your existing document design",
+    description:
+      "We review your current invoice, PO, or statement format and use it as the baseline. You don't need to specify the layout in FreeMarker; you describe the output and we build to match it.",
+  },
+  {
+    step: "02",
+    title: "Built in FreeMarker, tested against edge cases",
+    description:
+      "Full conditional logic, dynamic sections, and sublist loops are built against real records in Sandbox. We specifically test edge cases: transactions with no line items, unusually long descriptions, and customers with non-standard address formats.",
+  },
+  {
+    step: "03",
+    title: "All field references are documented",
+    description:
+      "Every field reference in the template is documented so future changes are easy to find and update. If a field is renamed or moved in a future release, the relevant line in the template is immediately locatable.",
+  },
+];
+
+const WHY_SP = [
+  {
+    icon: ShieldCheck,
+    title: "Oracle-Certified",
+    description:
+      "NetSuite SuiteCloud Developer II and Administrator Professional certifications. Verified technical credentials, not self-declared experience.",
+  },
+  {
+    icon: CheckSquare,
+    title: "Edge Cases Covered",
+    description:
+      "Templates are tested against real edge cases before deployment: zero-line transactions, long item descriptions, non-standard address formats. Templates that work on every record, not just the clean ones.",
+  },
+  {
+    icon: Users,
+    title: "Direct Access",
+    description:
+      "You communicate directly with the person doing the work. No ticket system, no account manager as an intermediary.",
+  },
+  {
+    icon: Award,
+    title: "Enterprise Expertise, SMB Price",
+    description:
+      "The same depth of NetSuite expertise large companies staff internally, available without the overhead of a full-time hire or an enterprise consulting contract.",
+  },
+];
 
 const FAQ = [
   {
@@ -29,20 +136,11 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Advanced PDF Templates",
+  title: "NetSuite Advanced PDF Templates | SuitePacific",
   description:
     "Custom NetSuite Advanced PDF/HTML templates: branded invoices, statements, purchase orders, and packing slips with conditional sections, dynamic layouts, and barcode support.",
   alternates: { canonical: "/netsuite-advanced-pdf-templates" },
 };
-
-const TEMPLATE_TYPES = [
-  { icon: FileText, title: "Invoices & Statements", description: "Branded customer-facing documents with conditional payment terms, multi-currency formatting, and dynamic logo and address blocks per subsidiary." },
-  { icon: SplitSquareHorizontal, title: "Purchase Orders", description: "Vendor-facing POs with conditional approval signature blocks, line-level notes, and custom formatting that matches your procurement process." },
-  { icon: Layers, title: "Packing Slips & Fulfillments", description: "Warehouse and shipping documents with item descriptions, quantities, lot/serial numbers, and bin locations laid out for efficient picking." },
-  { icon: Barcode, title: "Barcode & QR Code Support", description: "Templates with embedded barcodes or QR codes encoding item numbers, serial numbers, or URLs, generated directly from NetSuite field data." },
-  { icon: Palette, title: "Multi-Brand & Subsidiary Templates", description: "Conditional layout switching based on subsidiary, customer class, or transaction type, so one template handles multiple brands without manual selection." },
-  { icon: CheckSquare, title: "Conditional Sections", description: "Sections that appear or hide based on data, such as a payment instructions block only for overdue invoices, or a returns policy footer only for certain customer groups." },
-];
 
 export default function AdvancedPdfTemplatesPage() {
   return (
@@ -64,58 +162,101 @@ export default function AdvancedPdfTemplatesPage() {
           align="left"
         />
 
-        <div className="prose prose-blue mt-12 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
-          <h2>Why standard NetSuite templates fall short</h2>
-          <p>
-            NetSuite’s standard PDF templates handle simple layouts well but break down quickly
-            when documents need conditional sections, complex line-level formatting, multi-brand
-            logos, or anything beyond a basic table. The Advanced PDF/HTML template engine
-            (built on FreeMarker) is significantly more capable, but it requires knowing the
-            template language, understanding how NetSuite exposes transaction and sublist data
-            in that context, and testing against real records that include edge cases.
-          </p>
-          <p>
-            The result of getting it right is a document that generates correctly every time,
-            reflects your brand, and requires no manual touch-up before being sent. See our{" "}
-            <Link href="/blog/advanced-pdf-template-mistakes">Advanced PDF template mistakes guide</Link>{" "}
-            for the most common issues we find and fix.
-          </p>
+        <p className="mt-6 text-sm text-brand-400">
+          NetSuite's standard PDF templates break down quickly when documents need conditional
+          sections, complex line-level formatting, or multi-brand logos. The Advanced PDF/HTML
+          template engine (built on FreeMarker) is significantly more capable, but requires knowing
+          the template language and testing against real records with edge cases. See our{" "}
+          <Link href="/blog/advanced-pdf-template-mistakes" className="text-accent hover:underline">
+            Advanced PDF template mistakes guide
+          </Link>{" "}
+          for the most common issues we find and fix.
+        </p>
 
-          <h2>Templates we build</h2>
+        <div className="mt-6">
+          <Button href="/contact">Book a Free Consultation</Button>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {TEMPLATE_TYPES.map((item) => (
-            <Card key={item.title} className="p-5 flex items-start gap-4">
-              <IconBadge icon={item.icon} />
-              <div>
+        {/* Pain points */}
+        <div className="mt-14" data-section="pain-points">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Common situations that bring people here</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            {PAIN_POINTS.map((item) => (
+              <Card key={item.title} className="p-5 flex flex-col gap-3">
+                <IconBadge icon={item.icon} />
                 <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
-                <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
-              </div>
-            </Card>
-          ))}
+                <p className="text-sm text-brand-400">{item.description}</p>
+              </Card>
+            ))}
+          </div>
         </div>
 
-        <div className="prose prose-blue mt-12 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
-          <h2>How we approach template work</h2>
-          <p>
-            We build and test against real records in your sandbox before any template is
-            deployed, including edge cases: transactions with zero line items, unusually long
-            descriptions, and customers with non-standard address formats. If you have existing
-            templates that work for most records but fail on specific customers or transaction
-            types, diagnosing and fixing those is work we take on regularly.
+        {/* Template types */}
+        <div className="mt-14" data-section="template-types">
+          <h2 className="text-lg font-semibold text-brand-900 mb-1">Templates we build</h2>
+          <p className="text-sm text-brand-400 mb-6">
+            Any document with a Print button in NetSuite can be templated with full brand control.
           </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {TEMPLATE_TYPES.map((item) => (
+              <Card key={item.title} className="p-5 flex items-start gap-4">
+                <IconBadge icon={item.icon} />
+                <div>
+                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
+                  <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* How it works */}
+        <div className="mt-14" data-section="how-it-works">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">How we approach template work</h2>
+          <div className="space-y-4">
+            {HOW_IT_WORKS.map((item) => (
+              <div key={item.step} className="flex items-start gap-5">
+                <span className="text-xs font-semibold text-accent bg-accent/10 rounded-full h-7 w-7 flex items-center justify-center shrink-0 mt-0.5">
+                  {item.step}
+                </span>
+                <div>
+                  <p className="font-semibold text-brand-900 text-sm">{item.title}</p>
+                  <p className="mt-0.5 text-sm text-brand-400">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 text-sm text-brand-400">
+            If you have existing templates that work for most records but fail on specific
+            transaction types or customers, diagnosing and fixing those is work we take on regularly.
+          </p>
+        </div>
+
+        {/* Why SuitePacific */}
+        <div className="mt-14" data-section="why-suitepacific">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why SuitePacific</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {WHY_SP.map((item) => (
+              <Card key={item.title} className="p-5 flex items-start gap-4">
+                <IconBadge icon={item.icon} />
+                <div>
+                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
+                  <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
 
         <ServiceFaqSection items={FAQ} />
 
-        <div className="mt-14 pt-10 border-t border-brand-50 text-center">
-          <p className="text-brand-900 font-semibold">Need professional NetSuite documents?</p>
+        <div className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
+          <p className="text-brand-900 font-semibold text-lg">Need professional NetSuite documents?</p>
           <p className="mt-2 text-sm text-brand-400">
-            Tell us what you need the output to look like and we’ll build it.
+            Tell us what you need the output to look like and we will build it.
           </p>
-          <div className="mt-6">
-            <Button href="/contact">Book a Free Consultation</Button>
+          <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
+            <LeadForm />
           </div>
         </div>
       </div>

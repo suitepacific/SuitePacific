@@ -1,18 +1,125 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Gauge, Trash2, ShieldCheck, Settings2, Search, Zap } from "lucide-react";
+import {
+  Gauge, Trash2, ShieldCheck, Settings2, Search, Zap,
+  AlertCircle, Wrench, HelpCircle,
+  Users, Award,
+} from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
 import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
+import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
+
+const PAIN_POINTS = [
+  {
+    icon: Gauge,
+    title: "Pages and dashboards are getting slower.",
+    description:
+      "What used to load instantly now takes seconds. Portlet searches, heavy scripts running on every record load, and accumulated customizations add up over time.",
+  },
+  {
+    icon: AlertCircle,
+    title: "Scripts are hitting governance limits.",
+    description:
+      "Unexpected governance limit errors on Scheduled or Map/Reduce scripts, particularly as data volume has grown since the scripts were originally written.",
+  },
+  {
+    icon: HelpCircle,
+    title: "Nobody knows what is safe to change.",
+    description:
+      "Hundreds of custom fields, old workflows, and scripts from previous developers. Touching any of it risks breaking something. Nobody knows which ones are still active.",
+  },
+];
+
+const OPTIMIZATION_AREAS = [
+  {
+    icon: Gauge,
+    title: "Performance Tuning",
+    description: "Identifying and fixing the specific searches, scripts, and dashboard configurations causing slow page loads and sluggish account performance.",
+  },
+  {
+    icon: Trash2,
+    title: "Legacy Cleanup",
+    description: "Removing or deactivating unused custom fields, forms, saved searches, and scripts that have accumulated since go-live and are slowing the account down.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Script Governance Review",
+    description: "Auditing scheduled and Map/Reduce scripts for governance unit consumption, yield behavior, and error handling to prevent queue backups and unexpected failures.",
+  },
+  {
+    icon: Settings2,
+    title: "Configuration Cleanup",
+    description: "Reviewing and simplifying custom record definitions, workflow configurations, and role permissions that have grown complex or inconsistent over time.",
+  },
+  {
+    icon: Search,
+    title: "Saved Search Optimization",
+    description: "Rebuilding heavy saved searches to filter on indexed criteria first, reducing database load and improving load times on dashboards and portlets.",
+  },
+  {
+    icon: Zap,
+    title: "Workflow Consolidation",
+    description: "Identifying duplicate or conflicting workflows and User Event scripts that are fighting each other, and consolidating logic into a single, maintainable mechanism.",
+  },
+];
+
+const HOW_IT_WORKS = [
+  {
+    step: "01",
+    title: "We audit before touching anything",
+    description:
+      "Every custom field, script deployment, workflow, saved search, and form is reviewed for actual usage before any change is made. Active scripts and searches don't always have obvious users; we verify before deactivating.",
+  },
+  {
+    step: "02",
+    title: "Sandbox verification before every change",
+    description:
+      "Nothing is deactivated, modified, or removed without confirming the change is safe in a Sandbox environment first. We do not run cleanup changes directly in production.",
+  },
+  {
+    step: "03",
+    title: "Documented output, not just a cleaner account",
+    description:
+      "The engagement closes with a record of what was changed, what was deactivated versus deleted, and why. Future work on the account starts from a known baseline rather than re-auditing from scratch.",
+  },
+];
+
+const WHY_SP = [
+  {
+    icon: ShieldCheck,
+    title: "Oracle-Certified",
+    description:
+      "NetSuite SuiteCloud Developer II and Administrator Professional certifications. Verified technical credentials, not self-declared experience.",
+  },
+  {
+    icon: Search,
+    title: "Audit Before Action",
+    description:
+      "Nothing is deactivated or removed without verifying it is actually unused. We check every active field reference, search, and script dependency before touching anything.",
+  },
+  {
+    icon: Users,
+    title: "Direct Access",
+    description:
+      "You communicate directly with the person doing the work. No ticket system, no account manager as an intermediary.",
+  },
+  {
+    icon: Award,
+    title: "Enterprise Expertise, SMB Price",
+    description:
+      "The same depth of NetSuite expertise large companies staff internally, available without the overhead of a full-time hire or an enterprise consulting contract.",
+  },
+];
 
 const FAQ = [
   {
     question: "How long does an account optimization engagement take?",
-    answer: "A structured audit covering custom fields, saved searches, workflows, script deployments, roles, and forms typically takes two to three weeks. Remediation runs alongside the audit. Total time depends on how much has accumulated since go-live, accounts live for three or more years typically have more to address.",
+    answer: "A structured audit covering custom fields, saved searches, workflows, script deployments, roles, and forms typically takes two to three weeks. Remediation runs alongside the audit. Total time depends on how much has accumulated since go-live; accounts live for three or more years typically have more to address.",
   },
   {
     question: "Will the cleanup affect live users?",
@@ -29,20 +136,11 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Account Optimization",
+  title: "NetSuite Account Optimization | SuitePacific",
   description:
     "NetSuite account optimization and performance tuning: cleanup of legacy configurations, unused scripts and fields, slow saved searches, and governance issues without affecting live operations.",
   alternates: { canonical: "/netsuite-account-optimization" },
 };
-
-const OPTIMIZATION_AREAS = [
-  { icon: Gauge, title: "Performance Tuning", description: "Identifying and fixing the specific searches, scripts, and dashboard configurations causing slow page loads and sluggish account performance." },
-  { icon: Trash2, title: "Legacy Cleanup", description: "Removing or deactivating unused custom fields, forms, saved searches, and scripts that have accumulated since go-live and are slowing the account down." },
-  { icon: ShieldCheck, title: "Script Governance Review", description: "Auditing scheduled and Map/Reduce scripts for governance unit consumption, yield behavior, and error handling to prevent queue backups and unexpected failures." },
-  { icon: Settings2, title: "Configuration Cleanup", description: "Reviewing and simplifying custom record definitions, workflow configurations, and role permissions that have grown complex or inconsistent over time." },
-  { icon: Search, title: "Saved Search Optimization", description: "Rebuilding heavy saved searches to filter on indexed criteria first, reducing database load and improving load times on dashboards and portlets." },
-  { icon: Zap, title: "Workflow Consolidation", description: "Identifying duplicate or conflicting workflows and User Event scripts that are fighting each other, and consolidating logic into a single, maintainable mechanism." },
-];
 
 export default function AccountOptimizationPage() {
   return (
@@ -64,63 +162,107 @@ export default function AccountOptimizationPage() {
           align="left"
         />
 
-        <div className="prose prose-blue mt-12 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
-          <h2>Why accounts drift over time</h2>
-          <p>
-            NetSuite accounts that have been live for a few years accumulate technical debt in
-            the same way any software system does. Scripts written in a hurry, custom fields
-            added for a project that ended, saved searches nobody cleaned up, workflows that
-            predate a process change, none of these cause an immediate outage, but they add up
-            to an account that loads slowly, behaves inconsistently, and is increasingly
-            difficult for anyone to understand.
-          </p>
-          <p>
-            Account optimization is the work of identifying what’s actually causing the problem
-            and fixing it, rather than adding more on top. See our{" "}
-            <Link href="/blog/netsuite-account-performance">NetSuite performance guide</Link> for the
-            specific things we check first when a client’s account is sluggish.
-          </p>
+        <p className="mt-6 text-sm text-brand-400">
+          NetSuite accounts that have been live for a few years accumulate technical debt the same
+          way any software system does: scripts added in a hurry, custom fields from projects that
+          ended, workflows that predate a process change. None of it causes an immediate outage,
+          but it adds up to an account that loads slowly and is increasingly difficult to manage.
+          See our{" "}
+          <Link href="/blog/netsuite-account-performance" className="text-accent hover:underline">
+            NetSuite account performance guide
+          </Link>{" "}
+          for the specific things we check first.
+        </p>
 
-          <h2>What we address</h2>
+        <div className="mt-6">
+          <Button href="/contact">Book a Free Consultation</Button>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {OPTIMIZATION_AREAS.map((item) => (
-            <Card key={item.title} className="p-5 flex items-start gap-4">
-              <IconBadge icon={item.icon} />
-              <div>
+        {/* Pain points */}
+        <div className="mt-14" data-section="pain-points">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Common situations that bring people here</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            {PAIN_POINTS.map((item) => (
+              <Card key={item.title} className="p-5 flex flex-col gap-3">
+                <IconBadge icon={item.icon} />
                 <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
-                <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
-              </div>
-            </Card>
-          ))}
+                <p className="text-sm text-brand-400">{item.description}</p>
+              </Card>
+            ))}
+          </div>
         </div>
 
-        <div className="prose prose-blue mt-12 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
-          <h2>How we approach optimization work</h2>
-          <p>
-            All changes are built and verified in a sandbox account before touching production.
-            We don’t delete or deactivate anything without understanding whether it’s actually
-            unused, since active scripts and searches don’t always have obvious users. The output
-            is an account that performs better and is easier to maintain, along with documentation
-            of what was changed and why.
+        {/* What we address */}
+        <div className="mt-14" data-section="optimization-areas">
+          <h2 className="text-lg font-semibold text-brand-900 mb-1">What we address</h2>
+          <p className="text-sm text-brand-400 mb-6">
+            Account optimization is the work of finding what is actually causing the problem and fixing it, rather than adding more on top.
           </p>
-          <p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {OPTIMIZATION_AREAS.map((item) => (
+              <Card key={item.title} className="p-5 flex items-start gap-4">
+                <IconBadge icon={item.icon} />
+                <div>
+                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
+                  <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* How it works */}
+        <div className="mt-14" data-section="how-it-works">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">How we approach optimization work</h2>
+          <div className="space-y-4">
+            {HOW_IT_WORKS.map((item) => (
+              <div key={item.step} className="flex items-start gap-5">
+                <span className="text-xs font-semibold text-accent bg-accent/10 rounded-full h-7 w-7 flex items-center justify-center shrink-0 mt-0.5">
+                  {item.step}
+                </span>
+                <div>
+                  <p className="font-semibold text-brand-900 text-sm">{item.title}</p>
+                  <p className="mt-0.5 text-sm text-brand-400">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 text-sm text-brand-400">
             Optimization work often surfaces areas where new development would help, such as
             a cleaner script replacing four conflicting workflows. If that comes up, we scope
-            it separately rather than bundling unrelated work into an optimization engagement.
+            it separately. For ongoing account maintenance after the initial cleanup, see our{" "}
+            <Link href="/netsuite-post-go-live-support" className="text-accent hover:underline">
+              post-go-live support model
+            </Link>
+            .
           </p>
+        </div>
+
+        {/* Why SuitePacific */}
+        <div className="mt-14" data-section="why-suitepacific">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why SuitePacific</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {WHY_SP.map((item) => (
+              <Card key={item.title} className="p-5 flex items-start gap-4">
+                <IconBadge icon={item.icon} />
+                <div>
+                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
+                  <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
 
         <ServiceFaqSection items={FAQ} />
 
-        <div className="mt-14 pt-10 border-t border-brand-50 text-center">
-          <p className="text-brand-900 font-semibold">Is your NetSuite account getting slower or harder to manage?</p>
+        <div className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
+          <p className="text-brand-900 font-semibold text-lg">Is your NetSuite account getting slower or harder to manage?</p>
           <p className="mt-2 text-sm text-brand-400">
-            Tell us what you’re seeing and we’ll identify what’s causing it.
+            Tell us what you are seeing and we will identify what is causing it.
           </p>
-          <div className="mt-6">
-            <Button href="/contact">Book a Free Consultation</Button>
+          <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
+            <LeadForm />
           </div>
         </div>
       </div>

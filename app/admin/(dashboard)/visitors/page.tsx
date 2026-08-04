@@ -1,4 +1,4 @@
-import { MapPin, Clock, Compass } from "lucide-react";
+import { MapPin, Clock, Compass, ArrowRight } from "lucide-react";
 import { getVisitorSessions } from "@/lib/admin-data";
 
 function formatDuration(ms: number) {
@@ -22,6 +22,50 @@ function formatTimeIST(date: Date) {
   });
 }
 
+function SectionPath({
+  sections,
+  exitSection,
+}: {
+  sections: string[];
+  exitSection: string | null;
+}) {
+  if (sections.length === 0) {
+    return <span className="text-brand-300 text-xs">No sections tracked</span>;
+  }
+
+  return (
+    <div className="space-y-1.5">
+      <div className="flex flex-wrap items-center gap-1">
+        {sections.map((s, i) => {
+          const isExit = s === exitSection;
+          return (
+            <span key={`${s}-${i}`} className="inline-flex items-center gap-1">
+              <span
+                className={`px-2 py-0.5 rounded-full text-xs whitespace-nowrap font-medium ${
+                  isExit
+                    ? "bg-accent/10 text-accent ring-1 ring-accent/30"
+                    : "bg-brand-50 text-brand-600"
+                }`}
+              >
+                {s}
+              </span>
+              {i < sections.length - 1 && (
+                <ArrowRight className="h-3 w-3 text-brand-200 shrink-0" />
+              )}
+            </span>
+          );
+        })}
+      </div>
+      <p className="text-xs text-brand-300">
+        {sections.length} section{sections.length !== 1 ? "s" : ""}
+        {exitSection && exitSection !== sections[sections.length - 1] && (
+          <> &middot; exited at <span className="text-accent">{exitSection}</span></>
+        )}
+      </p>
+    </div>
+  );
+}
+
 export default async function VisitorsPage() {
   const sessions = await getVisitorSessions();
 
@@ -37,67 +81,58 @@ export default async function VisitorsPage() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-brand-50 text-left text-brand-400">
-                <th className="px-5 py-3 font-medium">Time</th>
-                <th className="px-5 py-3 font-medium">Page</th>
-                <th className="px-5 py-3 font-medium">Source</th>
-                <th className="px-5 py-3 font-medium">Location</th>
-                <th className="px-5 py-3 font-medium">Duration</th>
+                <th className="px-5 py-3 font-medium whitespace-nowrap">Time</th>
+                <th className="px-5 py-3 font-medium whitespace-nowrap">Page</th>
+                <th className="px-5 py-3 font-medium whitespace-nowrap">Source</th>
+                <th className="px-5 py-3 font-medium whitespace-nowrap">Location</th>
+                <th className="px-5 py-3 font-medium whitespace-nowrap">Duration</th>
                 <th className="px-5 py-3 font-medium">Sections viewed</th>
-                <th className="px-5 py-3 font-medium">Exited at</th>
               </tr>
             </thead>
             <tbody>
               {sessions.length === 0 && (
                 <tr>
-                  <td colSpan={7} className="px-5 py-6 text-brand-300 text-center">
+                  <td colSpan={6} className="px-5 py-6 text-brand-300 text-center">
                     No visitor sessions recorded yet.
                   </td>
                 </tr>
               )}
               {sessions.map((session) => (
-                <tr key={session.id} className="border-b border-brand-50 last:border-0 align-top">
-                  <td className="px-5 py-3 text-brand-400 whitespace-nowrap">
+                <tr key={session.id} className="border-b border-brand-50 last:border-0 align-top hover:bg-brand-50/30 transition-colors">
+                  <td className="px-5 py-3 text-brand-400 whitespace-nowrap text-xs">
                     {formatTimeIST(session.createdAt)} IST
                   </td>
-                  <td className="px-5 py-3 text-brand-900 font-medium whitespace-nowrap">{session.path}</td>
+                  <td className="px-5 py-3 text-brand-900 font-medium whitespace-nowrap max-w-[220px]">
+                    <span className="block truncate text-xs" title={session.path}>
+                      {session.path}
+                    </span>
+                  </td>
                   <td className="px-5 py-3 text-brand-700 whitespace-nowrap">
-                    <span className="inline-flex items-center gap-1.5">
-                      <Compass className="h-3.5 w-3.5 text-brand-300" />
+                    <span className="inline-flex items-center gap-1.5 text-xs">
+                      <Compass className="h-3.5 w-3.5 text-brand-300 shrink-0" />
                       {session.source ?? "Direct / Unknown"}
                     </span>
                     {session.campaign && (
                       <div className="text-xs text-brand-300 mt-0.5">{session.campaign}</div>
                     )}
                   </td>
-                  <td className="px-5 py-3 text-brand-700">
-                    <span className="inline-flex items-center gap-1.5">
-                      <MapPin className="h-3.5 w-3.5 text-brand-300" />
+                  <td className="px-5 py-3 text-brand-700 whitespace-nowrap">
+                    <span className="inline-flex items-center gap-1.5 text-xs">
+                      <MapPin className="h-3.5 w-3.5 text-brand-300 shrink-0" />
                       {formatLocation(session.city, session.region, session.country)}
                     </span>
                   </td>
                   <td className="px-5 py-3 text-brand-700 whitespace-nowrap">
-                    <span className="inline-flex items-center gap-1.5">
-                      <Clock className="h-3.5 w-3.5 text-brand-300" />
+                    <span className="inline-flex items-center gap-1.5 text-xs">
+                      <Clock className="h-3.5 w-3.5 text-brand-300 shrink-0" />
                       {formatDuration(session.durationMs)}
                     </span>
                   </td>
-                  <td className="px-5 py-3 text-brand-700">
-                    <div className="flex flex-wrap gap-1 max-w-xs">
-                      {session.sectionsViewed.length === 0 && (
-                        <span className="text-brand-300">None</span>
-                      )}
-                      {session.sectionsViewed.map((sectionId) => (
-                        <span
-                          key={sectionId}
-                          className="px-2 py-0.5 rounded-full bg-brand-50 text-brand-700 text-xs whitespace-nowrap"
-                        >
-                          {sectionId}
-                        </span>
-                      ))}
-                    </div>
-                  </td>
-                  <td className="px-5 py-3 text-brand-700 whitespace-nowrap">
-                    {session.exitSection ?? <span className="text-brand-300">—</span>}
+                  <td className="px-5 py-3 min-w-[320px]">
+                    <SectionPath
+                      sections={session.sectionsViewed}
+                      exitSection={session.exitSection}
+                    />
                   </td>
                 </tr>
               ))}

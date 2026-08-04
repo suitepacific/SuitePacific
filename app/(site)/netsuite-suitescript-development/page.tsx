@@ -1,18 +1,109 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { GitBranch, Layers3, Timer, MousePointerClick, Activity, PanelsTopLeft } from "lucide-react";
+import {
+  GitBranch, Layers3, Timer, MousePointerClick, Activity, PanelsTopLeft,
+  AlertCircle, Wrench, AlertTriangle,
+  ShieldCheck, Gauge, Users, Award,
+} from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
 import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
+import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
+
+const PAIN_POINTS = [
+  {
+    icon: AlertCircle,
+    title: "Standard configuration has a ceiling.",
+    description:
+      "Workflows can't fire on CSV imports. Formula fields can't reference other record types. There's a business rule that simply cannot be enforced without code.",
+  },
+  {
+    icon: Wrench,
+    title: "Existing scripts are failing.",
+    description:
+      "Governance limit errors on Scheduled Scripts, User Events firing on every save whether needed or not, or SuiteScript 1.0 code nobody has touched or understands.",
+  },
+  {
+    icon: AlertTriangle,
+    title: "The developer who built them is gone.",
+    description:
+      "Undocumented scripts doing things nobody fully understands. No way to tell which ones are still active, which are broken, or what breaks if one is removed.",
+  },
+];
+
+const SCRIPT_TYPES = [
+  { icon: Activity, title: "User Event Scripts", description: "Automatic logic that runs before or after a record is saved, validated, or loaded, for field defaults, validation rules, and cross-record updates." },
+  { icon: MousePointerClick, title: "Client Scripts", description: "Real-time field-level logic directly on the data entry form: instant validation, conditional field visibility, and guided data entry." },
+  { icon: Timer, title: "Scheduled Scripts", description: "Background jobs that run on a defined schedule, for recurring data tasks, batch updates, and automated maintenance processes." },
+  { icon: Layers3, title: "Map/Reduce Scripts", description: "High-volume data processing without hitting governance limits, handling thousands of records reliably in background queues." },
+  { icon: PanelsTopLeft, title: "Suitelets", description: "Custom pages and tools built directly inside NetSuite: internal portals, approval interfaces, and data entry tools outside the standard record model." },
+  { icon: GitBranch, title: "RESTlets", description: "Custom API endpoints on your NetSuite account for integrating with external systems, webhooks, or custom data exchange." },
+];
+
+const HOW_IT_WORKS = [
+  {
+    step: "01",
+    title: "Scoped before any code is written",
+    description:
+      "We map the exact trigger, the input records and fields, the expected output, and the edge cases. A written spec is agreed before development starts.",
+  },
+  {
+    step: "02",
+    title: "Built and tested in Sandbox",
+    description:
+      "Every script is tested against your real record types and representative data volumes. Governance consumption is verified at production scale, not just a single test record.",
+  },
+  {
+    step: "03",
+    title: "Deployed and monitored",
+    description:
+      "Production deployment happens outside business hours. We monitor the first full execution cycle and document what the script does, which records it touches, and what would break if it were removed.",
+  },
+];
+
+const WHEN_YOU_NEED = [
+  "A business rule that needs to fire on CSV imports, API saves, and manual saves identically",
+  "A Scheduled script failing at production volume that needs to be moved to Map/Reduce",
+  "NetSuite needs to push or pull data from an external system",
+  "A calculation too complex for formula fields that requires conditional logic across records",
+  "A custom interface or approval dashboard inside NetSuite",
+];
+
+const WHY_SP = [
+  {
+    icon: ShieldCheck,
+    title: "Oracle-Certified",
+    description:
+      "NetSuite SuiteCloud Developer II and Administrator Professional certifications. Verified technical credentials, not self-declared experience.",
+  },
+  {
+    icon: Gauge,
+    title: "Sandbox-First Builds",
+    description:
+      "Every script is built and tested in Sandbox against your real record types and data volumes before going near Production. Governance limits checked at scale.",
+  },
+  {
+    icon: Users,
+    title: "Direct Access",
+    description:
+      "You communicate directly with the person doing the work. No ticket system, no account manager as an intermediary.",
+  },
+  {
+    icon: Award,
+    title: "Enterprise Expertise, SMB Price",
+    description:
+      "The same depth of NetSuite expertise large companies staff internally, available without the overhead of a full-time hire or an enterprise consulting contract.",
+  },
+];
 
 const FAQ = [
   {
     question: "Do you work on scripts an existing developer built?",
-    answer: "Yes. Inheriting a customized account with undocumented scripts is common. We audit what's there, document what each script controls, and extend or fix it without breaking what's working.",
+    answer: "Yes. Inheriting a customized account with undocumented scripts is common. We audit what is there, document what each script controls, and extend or fix it without breaking what is working.",
   },
   {
     question: "Will custom scripts break when NetSuite updates?",
@@ -24,7 +115,7 @@ const FAQ = [
   },
   {
     question: "How long does a typical SuiteScript project take?",
-    answer: "A focused script, a User Event for a validation rule, a Scheduled script for a recurring data update, typically takes one to two weeks from scoping to sandbox-tested delivery. We scope each project before starting so the timeline is agreed upfront.",
+    answer: "A focused script, a User Event for a validation rule or a Scheduled script for a recurring data update, typically takes one to two weeks from scoping to sandbox-tested delivery. We scope each project before starting so the timeline is agreed upfront.",
   },
   {
     question: "How do you handle scripts that are hitting governance limits?",
@@ -36,25 +127,16 @@ const FAQ = [
   },
   {
     question: "What happens after the script is deployed?",
-    answer: "We monitor the first production run, confirm the script is executing correctly in the execution log, and make any adjustments based on real production data. After that, scripts we build are on a month-to-month retainer, if something breaks or needs to be adjusted after a NetSuite release, we handle it.",
+    answer: "We monitor the first production run, confirm the script is executing correctly in the execution log, and make any adjustments based on real production data. Scripts we build are covered for adjustments if a NetSuite release changes something or your business process changes.",
   },
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite SuiteScript Development",
+  title: "NetSuite SuiteScript Development | SuitePacific",
   description:
     "Custom SuiteScript 2.x development for NetSuite: User Event scripts, Client scripts, Scheduled scripts, Map/Reduce, and Suitelets built and tested in sandbox before touching production.",
   alternates: { canonical: "/netsuite-suitescript-development" },
 };
-
-const SCRIPT_TYPES = [
-  { icon: Activity, title: "User Event Scripts", description: "Automatic logic that runs before or after a record is saved, validated, or loaded, for field defaults, validation rules, and cross-record updates." },
-  { icon: MousePointerClick, title: "Client Scripts", description: "Real-time field-level logic directly on the data entry form: instant validation, conditional field visibility, and guided data entry." },
-  { icon: Timer, title: "Scheduled Scripts", description: "Background jobs that run on a defined schedule, for recurring data tasks, batch updates, and automated maintenance processes." },
-  { icon: Layers3, title: "Map/Reduce Scripts", description: "High-volume data processing without hitting governance limits, handling thousands of records reliably in background queues." },
-  { icon: PanelsTopLeft, title: "Suitelets", description: "Custom pages and tools built directly inside NetSuite, internal portals, approval interfaces, and data entry tools outside the standard record model." },
-  { icon: GitBranch, title: "RESTlets", description: "Custom API endpoints on your NetSuite account for integrating with external systems, webhooks, or custom data exchange." },
-];
 
 export default function SuiteScriptDevelopmentPage() {
   return (
@@ -72,208 +154,132 @@ export default function SuiteScriptDevelopmentPage() {
           as="h1"
           eyebrow="SuiteScript Development"
           title="NetSuite SuiteScript Development"
-          subtitle="Custom scripts that extend NetSuite beyond what standard configuration can reach, built and tested in sandbox before touching your live account."
+          subtitle="Custom scripts that extend NetSuite beyond what standard configuration can reach, built and tested in Sandbox before touching your live account."
           align="left"
         />
 
-        <div className="prose prose-blue mt-12 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
-          <h2>What SuiteScript actually covers</h2>
-          <p>
-            SuiteScript is NetSuite’s built-in JavaScript development platform. It lets you add
-            custom logic that runs inside NetSuite itself, on the records and data your team
-            already uses, without needing an external system or middleware layer. The right script
-            in the right place can automate something that currently takes your team an hour,
-            enforce a business rule that NetSuite’s native configuration can’t enforce, or build
-            an entirely new workflow tailored to how your process actually works.
-          </p>
-          <p>
-            SuiteScript 2.x (the current version) covers several distinct script types, each
-            suited to a different kind of task. Most production accounts need a mix of them.
-          </p>
+        <p className="mt-6 text-sm text-brand-400">
+          SuiteScript is NetSuite's built-in JavaScript development platform. When configuration
+          runs out, a script in the right place automates what currently takes an hour, enforces
+          a rule that workflows cannot, or connects NetSuite to an external system. See our{" "}
+          <Link href="/blog/suitescript-best-practices" className="text-accent hover:underline">
+            SuiteScript best practices guide
+          </Link>{" "}
+          and{" "}
+          <Link href="/blog/netsuite-script-governance-limit" className="text-accent hover:underline">
+            governance limit error guide
+          </Link>{" "}
+          for background.
+        </p>
 
-          <h2>Script types we build</h2>
+        <div className="mt-6">
+          <Button href="/contact">Book a Free Consultation</Button>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {SCRIPT_TYPES.map((item) => (
-            <Card key={item.title} className="p-5 flex items-start gap-4">
-              <IconBadge icon={item.icon} />
-              <div>
+        {/* Pain points */}
+        <div className="mt-14" data-section="pain-points">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Common situations that bring people here</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            {PAIN_POINTS.map((item) => (
+              <Card key={item.title} className="p-5 flex flex-col gap-3">
+                <IconBadge icon={item.icon} />
                 <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
-                <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
-              </div>
-            </Card>
-          ))}
+                <p className="text-sm text-brand-400">{item.description}</p>
+              </Card>
+            ))}
+          </div>
         </div>
 
-        <div className="prose prose-blue mt-12 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
-          <h2>How we approach SuiteScript work</h2>
-          <p>
-            Every script is built and tested in a sandbox account before it touches production.
-            We write against SuiteScript 2.1, use module-based patterns that survive NetSuite’s
-            twice-yearly releases, and document what each script does and why, so the next
-            developer who looks at it isn’t starting from scratch. If you already have scripts
-            in your account that need to be debugged, refactored, or extended, that’s work we
-            take on regularly as well.
+        {/* Script types */}
+        <div className="mt-14" data-section="script-types">
+          <h2 className="text-lg font-semibold text-brand-900 mb-1">Script types we build</h2>
+          <p className="text-sm text-brand-400 mb-6">
+            Most production accounts need a mix of these, each suited to a different kind of task.
           </p>
-          <p>
-            For a deeper look at how we write scripts that hold up over time, see our{" "}
-            <Link href="/blog/suitescript-best-practices">SuiteScript best practices guide</Link>.
-            If you&apos;re troubleshooting a live script, our guide to{" "}
-            <Link href="/blog/netsuite-script-governance-limit">
-              NetSuite governance limit errors
-            </Link>{" "}
-            covers every common cause and the architectural patterns that fix them permanently.
-          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {SCRIPT_TYPES.map((item) => (
+              <Card key={item.title} className="p-5 flex items-start gap-4">
+                <IconBadge icon={item.icon} />
+                <div>
+                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
+                  <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
 
-          <h2>Who this is for</h2>
-          <p>
-            Companies already live on NetSuite that have hit the ceiling of what standard
-            configuration can do, or inherited a customized account they don’t fully understand
-            and need help extending or cleaning up. We don’t handle NetSuite implementations;
+        {/* When you need a script */}
+        <div className="mt-14" data-section="when-config-runs-out">
+          <h2 className="text-lg font-semibold text-brand-900 mb-4">When configuration runs out</h2>
+          <p className="text-sm text-brand-400 mb-5">
+            Standard NetSuite configuration covers a lot. These are the consistent patterns where a script becomes necessary:
+          </p>
+          <ul className="space-y-3">
+            {WHEN_YOU_NEED.map((item) => (
+              <li key={item} className="flex items-start gap-3 text-sm text-brand-600">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent shrink-0 mt-2" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* How it works */}
+        <div className="mt-14" data-section="how-it-works">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">How we approach SuiteScript work</h2>
+          <div className="space-y-4">
+            {HOW_IT_WORKS.map((item) => (
+              <div key={item.step} className="flex items-start gap-5">
+                <span className="text-xs font-semibold text-accent bg-accent/10 rounded-full h-7 w-7 flex items-center justify-center shrink-0 mt-0.5">
+                  {item.step}
+                </span>
+                <div>
+                  <p className="font-semibold text-brand-900 text-sm">{item.title}</p>
+                  <p className="mt-0.5 text-sm text-brand-400">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 text-sm text-brand-400">
+            For teams that need ongoing development capacity rather than project-by-project work,
             see our{" "}
-            <Link href="/netsuite-post-go-live-support">post-go-live support overview</Link> for
-            context on where SuiteScript work typically fits. If you’re evaluating options,
-            our{" "}
-            <Link href="/hire-netsuite-developer">guide to hiring a NetSuite developer</Link>{" "}
-            covers what to look for, what different engagement models cost, and what questions
-            to ask before you commit.
+            <Link href="/netsuite-post-go-live-support" className="text-accent hover:underline">
+              managed support model
+            </Link>
+            . For the Map/Reduce architecture that handles high-volume scripts, see our{" "}
+            <Link href="/blog/netsuite-map-reduce-script-guide" className="text-accent hover:underline">
+              Map/Reduce guide
+            </Link>
+            .
           </p>
+        </div>
 
-          <h2>When you know you need a script</h2>
-          <p>
-            Standard NetSuite configuration covers a lot: workflows, saved searches, formula
-            fields, approval routing, custom records. But there are consistent patterns where
-            configuration runs out and a script becomes necessary:
-          </p>
-          <ul>
-            <li>
-              <strong>A business rule is being bypassed by imports or API saves.</strong> NetSuite
-              workflows fire on all save paths, but their condition model has limits. A SuiteScript{" "}
-              <code>beforeSubmit</code> function enforces a rule identically whether the save came
-              from a user clicking Submit, a CSV import, a REST API call, or another script.
-            </li>
-            <li>
-              <strong>A Scheduled Script is failing at production volume.</strong> A script that
-              worked fine in sandbox with 200 records hits governance limits in production with
-              8,000. Migrating to a Map/Reduce script handles the full volume with parallel
-              processing, often completing in 5–10 minutes what was taking 45 minutes to fail.
-            </li>
-            <li>
-              <strong>NetSuite needs to talk to another system.</strong> Pushing Sales Orders to a
-              3PL, receiving webhook updates from a payment processor, syncing customer records
-              to a CRM, these require RESTlets or Scheduled Scripts that call external APIs.
-              There is no configuration path for this.
-            </li>
-            <li>
-              <strong>A calculation is too complex for a formula field.</strong> Formula fields
-              support SQL-style expressions, but anything requiring conditional logic across
-              multiple records, dynamic lookups, or branching conditions needs a script.
-            </li>
-            <li>
-              <strong>You need a custom interface inside NetSuite.</strong> Suitelets build fully
-              custom pages that live inside NetSuite’s chrome, approval dashboards, data entry
-              tools, admin utilities, without exposing data to external systems.
-            </li>
-          </ul>
-
-          <h2>Common SuiteScript projects</h2>
-          <p>These are representative examples of the kinds of work we build:</p>
-          <ul>
-            <li>
-              <strong>Vendor bill validation</strong>, A <code>beforeSubmit</code> User Event
-              script that checks a vendor bill against an approved PO before allowing it to post,
-              enforcing a three-way match without modifying the approval workflow. Any discrepancy
-              above a threshold blocks the save with a specific error message.
-            </li>
-            <li>
-              <strong>Overnight inventory sync</strong>, A Map/Reduce script that runs nightly,
-              reads inventory levels from a 3PL via their API, and updates item quantity fields in
-              NetSuite. Handles 12,000+ SKUs in a single scheduled run.
-            </li>
-            <li>
-              <strong>Project margin recalculation</strong>, A Scheduled Script that recalculates
-              the margin on all open project records based on actual hours logged versus the
-              original estimate, and flags projects where margin has fallen below the threshold.
-            </li>
-            <li>
-              <strong>Custom PDF documents</strong>, Suitelets that generate branded output from
-              NetSuite data, packing slips with QR codes, custom quote formats, certificate
-              documents, pulling from custom records and standard transactions.
-            </li>
-            <li>
-              <strong>Bulk field migration</strong>, A one-time Map/Reduce script to migrate
-              data from a legacy custom field to a new structure across 20,000 records, running
-              in a sandbox first to confirm the logic before touching production.
-            </li>
-          </ul>
-
-          <h2>How the build process works</h2>
-          <p>
-            Every project follows the same structure regardless of size. The first step is a
-            scoping call where we map the exact trigger (what event causes the script to run),
-            the input (which records and fields), the output (what the script does), and the
-            edge cases that need handling. Most scoping calls take 30–60 minutes and produce a
-            written spec both sides agree on before a line of code is written.
-          </p>
-          <p>
-            Development and testing happen entirely in a sandbox account. We test against the
-            full range of cases, the expected path, boundary conditions, and the edge cases most
-            likely to appear in production. Scripts are reviewed for governance efficiency before
-            deployment: any loop containing a record load or search call gets restructured. Any
-            script that touches a high-volume record type gets tested with production-scale data
-            counts.
-          </p>
-          <p>
-            Deployment to production is done in a scheduled maintenance window with a written
-            rollback plan. After go-live, we monitor the first full execution cycle, for a
-            Scheduled Script, that means the first overnight run; for a User Event, that means
-            watching the execution log on the first batch of production record saves.
-          </p>
-          <p>
-            Scripts are documented inline and with an external reference that covers: what the
-            script does, which record type and entry points it’s deployed on, which fields it
-            reads and writes, and the business rule it enforces. That documentation ships with
-            the script so the next developer who looks at it doesn’t have to reverse-engineer
-            the intent.
-          </p>
-
-          <h2>What to expect</h2>
-          <p>
-            A focused, single-purpose script, a validation rule, a scheduled data sync, a
-            one-time migration, typically takes one to two weeks from scoping to production
-            deployment. More complex projects with multiple script types, external API
-            integrations, or large data migrations run two to four weeks depending on the number
-            of edge cases and the external system’s API reliability.
-          </p>
-          <p>
-            We work on a month-to-month basis, which means scripts we build are covered for
-            adjustments if NetSuite’s twice-yearly release changes something, or if your business
-            process changes and the script needs to adapt. No long-term contracts, no retainer
-            minimums for small adjustments. For teams that want ongoing development capacity
-            rather than project-by-project work, see our{" "}
-            <Link href="/netsuite-post-go-live-support">managed support model</Link>.
-          </p>
-          <p>
-            For the technical background on what makes SuiteScript projects succeed or fail
-            at scale, our guide to{" "}
-            <Link href="/blog/netsuite-map-reduce-script-guide">
-              Map/Reduce script architecture
-            </Link>{" "}
-            covers the parallel processing model in detail, including the governance limits
-            that apply at each stage and the design patterns that prevent limit failures.
-          </p>
+        {/* Why SuitePacific */}
+        <div className="mt-14" data-section="why-suitepacific">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why SuitePacific</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {WHY_SP.map((item) => (
+              <Card key={item.title} className="p-5 flex items-start gap-4">
+                <IconBadge icon={item.icon} />
+                <div>
+                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
+                  <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
 
         <ServiceFaqSection items={FAQ} />
 
-        <div className="mt-14 pt-10 border-t border-brand-50 text-center">
-          <p className="text-brand-900 font-semibold">Need a custom NetSuite script?</p>
+        <div className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
+          <p className="text-brand-900 font-semibold text-lg">Need a custom NetSuite script?</p>
           <p className="mt-2 text-sm text-brand-400">
-            Tell us what you’re trying to automate or fix and we’ll scope it out.
+            Tell us what you are trying to automate or fix and we will scope it out.
           </p>
-          <div className="mt-6">
-            <Button href="/contact">Book a Free Consultation</Button>
+          <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
+            <LeadForm />
           </div>
         </div>
       </div>

@@ -1,39 +1,37 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Globe, ArrowLeftRight, Cloud, Database, RefreshCcw, FileCode2 } from "lucide-react";
+import {
+  Globe, ArrowLeftRight, Cloud, Database, RefreshCcw, FileCode2,
+  AlertCircle, Wrench, AlertTriangle,
+  ShieldCheck, Zap, Users, Award,
+} from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
 import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
+import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
 
-const FAQ = [
+const PAIN_POINTS = [
   {
-    question: "What is the difference between a RESTlet and SuiteTalk?",
-    answer:
-      "RESTlets are custom API endpoints you build inside NetSuite using SuiteScript. They give you complete control over the data structure, validation logic, and what gets created or updated on the NetSuite side. SuiteTalk is Oracle's native web service layer that exposes standard NetSuite records directly, no custom code required, but no flexibility beyond what the standard API supports. For most custom integrations, RESTlets are the right choice because you can build exactly the interface your external system needs.",
+    icon: AlertCircle,
+    title: "Data transfer between systems is still manual.",
+    description:
+      "Someone exports from NetSuite, formats a spreadsheet, and imports it elsewhere every week. Hours of work that also introduces human error every time.",
   },
   {
-    question: "Do you work with middleware platforms like Celigo or Boomi?",
-    answer:
-      "We can, but we don't depend on them. Middleware platforms are worth using when a pre-built connector exists for your system and the data mapping is straightforward. For complex business logic, multi-step validation, or integrations where you need precise control over error handling and retry behaviour, building directly against NetSuite's APIs produces a more maintainable result. We'll tell you honestly which approach fits your situation.",
+    icon: Wrench,
+    title: "The existing integration keeps breaking.",
+    description:
+      "An upstream API changed, a field mapping is wrong, or the sync stops working and nobody notices until the data is already out of sync.",
   },
   {
-    question: "How do you handle integration failures?",
-    answer:
-      "Every integration we build includes error logging, alerting when something fails, and a clear path to retry or reprocess records without needing a developer involved. We don't build integrations that fail silently. You'll know when a sync didn't complete and why.",
-  },
-  {
-    question: "Can you integrate NetSuite with our 3PL?",
-    answer:
-      "Yes. 3PL integrations typically sync purchase orders, item receipts, sales orders, fulfillment confirmations, and inventory adjustments. The implementation depends on what your 3PL exposes, REST API, SFTP file exchange, or EDI, and we build to match that.",
-  },
-  {
-    question: "Can you take over an existing integration that's broken or needs changes?",
-    answer:
-      "Yes. We review what's there first, document how it works, and identify why it's failing before making any changes. Inheriting undocumented integrations is common and something we handle regularly.",
+    icon: AlertTriangle,
+    title: "Failures don't surface until the damage is done.",
+    description:
+      "No alerting, no retry logic, no error log. The integration appears to run but records are missing or duplicated, and you find out days later.",
   },
 ];
 
@@ -76,6 +74,91 @@ const INTEGRATION_TYPES = [
   },
 ];
 
+const COMMON_SYSTEMS = [
+  "3PL providers: purchase orders, item receipts, sales orders, fulfillment confirmations, and inventory adjustments",
+  "E-commerce platforms: order import, inventory sync, customer creation, and fulfillment status updates from Shopify, WooCommerce, and similar platforms",
+  "CRM systems: customer and lead sync between Salesforce, HubSpot, and NetSuite",
+  "Payment gateways: payment status, reconciliation, and transaction import",
+  "EDI and supply chain: purchase orders, advance ship notices, invoices, and acknowledgements in structured formats",
+  "Internal tools: custom-built applications, legacy databases, and internal APIs that need to exchange data with NetSuite",
+];
+
+const HOW_IT_WORKS = [
+  {
+    step: "01",
+    title: "We map the data flow first",
+    description:
+      "Before writing code, we document what records move, in what direction, triggered by what event, with what validation rules. This makes the integration auditable and means the logic is not buried inside scripts only the original developer understands.",
+  },
+  {
+    step: "02",
+    title: "Every failure surface is logged",
+    description:
+      "We build error logging into every integration: specific messages when a sync fails, alerts when something doesn't complete, and a retry path that doesn't require a developer to intervene. Nothing fails silently.",
+  },
+  {
+    step: "03",
+    title: "Tested against real data before production",
+    description:
+      "All integrations are built and tested in Sandbox with actual API connections and representative data volumes. For high-volume sync, we use Map/Reduce scripts to handle load without hitting governance limits.",
+  },
+];
+
+const WHY_SP = [
+  {
+    icon: ShieldCheck,
+    title: "Oracle-Certified",
+    description:
+      "NetSuite SuiteCloud Developer II and Administrator Professional certifications. Verified technical credentials, not self-declared experience.",
+  },
+  {
+    icon: Zap,
+    title: "Error-First Design",
+    description:
+      "Explicit error logging, failure alerting, and retry paths are built in from the start, not added later. You will know when a sync fails and exactly why.",
+  },
+  {
+    icon: Users,
+    title: "Direct Access",
+    description:
+      "You communicate directly with the person doing the work. No ticket system, no account manager as an intermediary.",
+  },
+  {
+    icon: Award,
+    title: "Enterprise Expertise, SMB Price",
+    description:
+      "The same depth of NetSuite expertise large companies staff internally, available without the overhead of a full-time hire or an enterprise consulting contract.",
+  },
+];
+
+const FAQ = [
+  {
+    question: "What is the difference between a RESTlet and SuiteTalk?",
+    answer:
+      "RESTlets are custom API endpoints you build inside NetSuite using SuiteScript. They give you complete control over the data structure, validation logic, and what gets created or updated on the NetSuite side. SuiteTalk is Oracle's native web service layer that exposes standard NetSuite records directly, no custom code required, but no flexibility beyond what the standard API supports. For most custom integrations, RESTlets are the right choice because you can build exactly the interface your external system needs.",
+  },
+  {
+    question: "Do you work with middleware platforms like Celigo or Boomi?",
+    answer:
+      "We can, but we don't depend on them. Middleware platforms are worth using when a pre-built connector exists for your system and the data mapping is straightforward. For complex business logic, multi-step validation, or integrations where you need precise control over error handling and retry behaviour, building directly against NetSuite's APIs produces a more maintainable result. We'll tell you honestly which approach fits your situation.",
+  },
+  {
+    question: "How do you handle integration failures?",
+    answer:
+      "Every integration we build includes error logging, alerting when something fails, and a clear path to retry or reprocess records without needing a developer involved. We don't build integrations that fail silently. You'll know when a sync didn't complete and why.",
+  },
+  {
+    question: "Can you integrate NetSuite with our 3PL?",
+    answer:
+      "Yes. 3PL integrations typically sync purchase orders, item receipts, sales orders, fulfillment confirmations, and inventory adjustments. The implementation depends on what your 3PL exposes, REST API, SFTP file exchange, or EDI, and we build to match that.",
+  },
+  {
+    question: "Can you take over an existing integration that's broken or needs changes?",
+    answer:
+      "Yes. We review what's there first, document how it works, and identify why it's failing before making any changes. Inheriting undocumented integrations is common and something we handle regularly.",
+  },
+];
+
 export const metadata: Metadata = {
   title: "NetSuite Integrations | SuitePacific",
   description:
@@ -103,111 +186,117 @@ export default function NetSuiteIntegrationsPage() {
           align="left"
         />
 
-        <div className="prose prose-blue mt-12 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
-          <h2>When NetSuite needs to talk to other systems</h2>
-          <p>
-            Most businesses running NetSuite don&apos;t run NetSuite alone. There&apos;s a 3PL
-            managing warehouse operations, a Shopify store taking orders, a Salesforce CRM tracking
-            customers, or a payment processor handling transactions, and data needs to flow between
-            them accurately and automatically.
-          </p>
-          <p>
-            A well-built integration removes the manual step of exporting from one system and
-            importing into another, eliminates the discrepancies that come from doing that by hand,
-            and gives both systems a consistent view of the data that matters. A poorly built one
-            fails silently, creates duplicate records, or leaves your team reconciling spreadsheets
-            to find what didn&apos;t sync.
-          </p>
-          <p>
-            The difference is almost always in how errors are handled, how clearly the integration
-            is documented, and whether it was tested against real data before going live.
-          </p>
+        <p className="mt-6 text-sm text-brand-400">
+          Most businesses running NetSuite don&apos;t run it alone. When data needs to flow
+          between NetSuite and a 3PL, an e-commerce platform, or a CRM, the difference between
+          a well-built integration and a poorly built one is almost always in error handling,
+          documentation, and whether it was tested against real data before going live.
+        </p>
 
-          <h2>Integration approaches we build</h2>
+        <div className="mt-6">
+          <Button href="/contact">Book a Free Consultation</Button>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {INTEGRATION_TYPES.map((item) => (
-            <Card key={item.title} className="p-5 flex items-start gap-4">
-              <IconBadge icon={item.icon} />
-              <div>
+        {/* Pain points */}
+        <div className="mt-14" data-section="pain-points">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Common situations that bring people here</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            {PAIN_POINTS.map((item) => (
+              <Card key={item.title} className="p-5 flex flex-col gap-3">
+                <IconBadge icon={item.icon} />
                 <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
-                <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
-              </div>
-            </Card>
-          ))}
+                <p className="text-sm text-brand-400">{item.description}</p>
+              </Card>
+            ))}
+          </div>
         </div>
 
-        <div className="prose prose-blue mt-12 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
-          <h2>Common systems we integrate with NetSuite</h2>
-          <ul>
-            <li>
-              <strong>3PL providers</strong>, purchase orders, item receipts, sales orders,
-              fulfillment confirmations, and inventory adjustments
-            </li>
-            <li>
-              <strong>E-commerce platforms</strong>, order import, inventory sync, customer
-              creation, and fulfillment status updates from Shopify, WooCommerce, and similar
-              platforms
-            </li>
-            <li>
-              <strong>CRM systems</strong>, customer and lead sync between Salesforce, HubSpot,
-              and NetSuite
-            </li>
-            <li>
-              <strong>Payment gateways</strong>, payment status, reconciliation, and transaction
-              import
-            </li>
-            <li>
-              <strong>EDI and supply chain</strong>, purchase orders, advance ship notices,
-              invoices, and acknowledgements in structured EDI formats
-            </li>
-            <li>
-              <strong>Internal business systems</strong>, custom-built tools, legacy databases,
-              and internal APIs that need to exchange data with NetSuite
-            </li>
+        {/* Integration types */}
+        <div className="mt-14" data-section="integration-types">
+          <h2 className="text-lg font-semibold text-brand-900 mb-1">Integration approaches we build</h2>
+          <p className="text-sm text-brand-400 mb-6">
+            The right approach depends on what systems you are connecting and what data needs to move.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {INTEGRATION_TYPES.map((item) => (
+              <Card key={item.title} className="p-5 flex items-start gap-4">
+                <IconBadge icon={item.icon} />
+                <div>
+                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
+                  <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Common systems */}
+        <div className="mt-14" data-section="common-systems">
+          <h2 className="text-lg font-semibold text-brand-900 mb-4">Common systems we integrate with NetSuite</h2>
+          <ul className="space-y-3">
+            {COMMON_SYSTEMS.map((item) => (
+              <li key={item} className="flex items-start gap-3 text-sm text-brand-600">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent shrink-0 mt-2" />
+                {item}
+              </li>
+            ))}
           </ul>
+        </div>
 
-          <h2>How we approach integration work</h2>
-          <p>
-            Before writing any code, we map the data flow: what records are created or updated,
-            in what direction, triggered by what event, and with what validation rules. This makes
-            the integration auditable and means the logic isn&apos;t buried inside undocumented
-            scripts that only the original developer understands.
+        {/* How it works */}
+        <div className="mt-14" data-section="how-it-works">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">How we approach integration work</h2>
+          <div className="space-y-4">
+            {HOW_IT_WORKS.map((item) => (
+              <div key={item.step} className="flex items-start gap-5">
+                <span className="text-xs font-semibold text-accent bg-accent/10 rounded-full h-7 w-7 flex items-center justify-center shrink-0 mt-0.5">
+                  {item.step}
+                </span>
+                <div>
+                  <p className="font-semibold text-brand-900 text-sm">{item.title}</p>
+                  <p className="mt-0.5 text-sm text-brand-400">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 text-sm text-brand-400">
+            For integrations that require custom endpoints on the NetSuite side, see our{" "}
+            <Link href="/netsuite-suitescript-development" className="text-accent hover:underline">
+              SuiteScript development page
+            </Link>
+            . For ongoing integration maintenance after initial build, our{" "}
+            <Link href="/netsuite-post-go-live-support" className="text-accent hover:underline">
+              post-go-live support model
+            </Link>{" "}
+            covers that.
           </p>
-          <p>
-            All integrations are tested against a sandbox account before production deployment.
-            We build in error logging so failures surface as specific, actionable messages rather
-            than silent gaps in your data. For high-volume integrations, we use{" "}
-            <Link href="/netsuite-suitescript-development">Map/Reduce scripts</Link> to distribute
-            the processing load and avoid governance limit errors.
-          </p>
-          <p>
-            If you have an existing integration that&apos;s unreliable, undocumented, or needs to
-            be extended, we take those on as well, starting with a documented review of what&apos;s
-            already there before making any changes.
-          </p>
+        </div>
 
-          <h2>Who this is for</h2>
-          <p>
-            Companies already live on NetSuite that need to connect it to an external system, or
-            that have an existing integration causing data problems and need it rebuilt or repaired.
-            If you&apos;re still in your implementation phase, your implementation partner should
-            handle initial integration setup. See our{" "}
-            <Link href="/netsuite-post-go-live-support">post-go-live support overview</Link> for
-            context on where integration work typically fits after go-live.
-          </p>
+        {/* Why SuitePacific */}
+        <div className="mt-14" data-section="why-suitepacific">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why SuitePacific</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {WHY_SP.map((item) => (
+              <Card key={item.title} className="p-5 flex items-start gap-4">
+                <IconBadge icon={item.icon} />
+                <div>
+                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
+                  <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
 
         <ServiceFaqSection items={FAQ} />
 
-        <div className="mt-14 pt-10 border-t border-brand-50 text-center">
-          <p className="text-brand-900 font-semibold">Need to connect NetSuite to another system?</p>
+        <div className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
+          <p className="text-brand-900 font-semibold text-lg">Need to connect NetSuite to another system?</p>
           <p className="mt-2 text-sm text-brand-400">
-            Tell us what you need to integrate and we&apos;ll map out the right approach.
+            Tell us what you need to integrate and we will map out the right approach.
           </p>
-          <div className="mt-6">
-            <Button href="/contact">Book a Free Consultation</Button>
+          <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
+            <LeadForm />
           </div>
         </div>
       </div>

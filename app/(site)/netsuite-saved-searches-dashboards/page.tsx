@@ -1,13 +1,120 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Search, LayoutDashboard, BarChart3, Filter, Table, Users } from "lucide-react";
+import {
+  Search, LayoutDashboard, BarChart3, Filter, Table, Users,
+  AlertCircle, Clock, AlertTriangle,
+  ShieldCheck, Award,
+} from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
 import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
+import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
+
+const PAIN_POINTS = [
+  {
+    icon: AlertCircle,
+    title: "Every useful report starts with an Excel export.",
+    description:
+      "The data is in NetSuite but getting it into a usable format requires an export, a pivot table, and ten minutes of cleanup every time it's needed.",
+  },
+  {
+    icon: Clock,
+    title: "Reports are always one step behind.",
+    description:
+      "Manually pulled reports are out of date by the time they reach the person who needs them. The team is making decisions on yesterday's numbers.",
+  },
+  {
+    icon: AlertTriangle,
+    title: "Existing saved searches return wrong results.",
+    description:
+      "Searches built at go-live that nobody has touched since, returning data from old record types, inactive items, or date ranges that no longer make sense.",
+  },
+];
+
+const REPORTING_TYPES = [
+  {
+    icon: Search,
+    title: "Saved Searches",
+    description: "Targeted searches using criteria, formulas, summary types, and available filters to surface exactly what your team needs, updated live from current data.",
+  },
+  {
+    icon: Filter,
+    title: "Exception Searches",
+    description: "Searches designed to return zero results when everything is working, flagging only the records that need attention: overdue approvals, missing fields, or out-of-tolerance values.",
+  },
+  {
+    icon: LayoutDashboard,
+    title: "Role-Based Dashboards",
+    description: "Home page dashboards customized per role so each user sees the KPIs and shortcuts relevant to their job without wading through irrelevant data.",
+  },
+  {
+    icon: BarChart3,
+    title: "KPI Portlets & Snapshots",
+    description: "Real-time key metric widgets displayed on dashboards, pulling from live saved searches and updating without any manual refresh or export.",
+  },
+  {
+    icon: Table,
+    title: "Matrix Reports & Summaries",
+    description: "Period-comparison reports, subtotaled summaries, and pivot-style breakdowns built natively in NetSuite so the numbers don't have to live in a spreadsheet.",
+  },
+  {
+    icon: Users,
+    title: "Published Searches for Teams",
+    description: "Searches built once and published to all relevant roles, so the whole team is working from the same definition rather than maintaining individual copies.",
+  },
+];
+
+const HOW_IT_WORKS = [
+  {
+    step: "01",
+    title: "We start with the business question, not the search builder",
+    description:
+      "What does your team need to see to do their job? What data are people currently pulling into Excel because it doesn't exist in NetSuite? We define the output before touching a single filter.",
+  },
+  {
+    step: "02",
+    title: "We build, test, and publish",
+    description:
+      "Searches are built against real records in your account, tested for accuracy, and published to the right roles. Dashboard portlets are configured and assigned so users see the right data on login.",
+  },
+  {
+    step: "03",
+    title: "We organize and document",
+    description:
+      "We clean up duplicate searches, document what each search does and who it's for, and build a dashboard setup that reflects how the business actually runs today, not how it ran at go-live.",
+  },
+];
+
+const WHY_SP = [
+  {
+    icon: ShieldCheck,
+    title: "Oracle-Certified",
+    description:
+      "NetSuite SuiteCloud Developer II and Administrator Professional certifications. Verified technical credentials, not self-declared experience.",
+  },
+  {
+    icon: BarChart3,
+    title: "Output Focused",
+    description:
+      "We start from the business question, not the search builder. The result is a search your team actually uses, built around the data they need to make decisions.",
+  },
+  {
+    icon: Users,
+    title: "Direct Access",
+    description:
+      "You communicate directly with the person doing the work. No ticket system, no account manager as an intermediary.",
+  },
+  {
+    icon: Award,
+    title: "Enterprise Expertise, SMB Price",
+    description:
+      "The same depth of NetSuite expertise large companies staff internally, available without the overhead of a full-time hire or an enterprise consulting contract.",
+  },
+];
 
 const FAQ = [
   {
@@ -29,20 +136,11 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Saved Searches & Dashboards",
+  title: "NetSuite Saved Searches & Dashboards | SuitePacific",
   description:
     "Custom NetSuite saved searches, dashboards, and reports: role-based dashboards, formula fields, KPI portlets, and exception searches that surface what your team needs without exporting to spreadsheets.",
   alternates: { canonical: "/netsuite-saved-searches-dashboards" },
 };
-
-const REPORTING_TYPES = [
-  { icon: Search, title: "Saved Searches", description: "Targeted searches using criteria, formulas, summary types, and available filters to surface exactly what your team needs, updated live from current data." },
-  { icon: Filter, title: "Exception Searches", description: "Searches designed to return zero results when everything is working, flagging only the records that need attention: overdue approvals, missing fields, or out-of-tolerance values." },
-  { icon: LayoutDashboard, title: "Role-Based Dashboards", description: "Home page dashboards customized per role so each user sees the KPIs and shortcuts relevant to their job without wading through irrelevant data." },
-  { icon: BarChart3, title: "KPI Portlets & Snapshots", description: "Real-time key metric widgets displayed on dashboards, pulling from live saved searches and updating without any manual refresh or export." },
-  { icon: Table, title: "Matrix Reports & Summaries", description: "Period-comparison reports, subtotaled summaries, and pivot-style breakdowns built natively in NetSuite so the numbers don’t have to live in a spreadsheet." },
-  { icon: Users, title: "Published Searches for Teams", description: "Searches built once and published to all relevant roles, so the whole team is working from the same definition rather than maintaining individual copies." },
-];
 
 export default function SavedSearchesDashboardsPage() {
   return (
@@ -64,60 +162,97 @@ export default function SavedSearchesDashboardsPage() {
           align="left"
         />
 
-        <div className="prose prose-blue mt-12 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
-          <h2>What saved searches actually replace</h2>
-          <p>
-            Most teams that rely heavily on Excel exports are doing it because nobody set up the
-            right saved search. NetSuite’s saved search engine is genuinely powerful: formula
-            fields support SQL-like expressions, summary types provide live subtotals and counts,
-            and available filters let a single search serve an entire department’s reporting needs
-            without building one search per user or date range. The problem is usually that
-            nobody had time to build them properly after go-live.
-          </p>
-          <p>
-            Well-built dashboards take this further, putting the right searches directly on each
-            user’s home page as live portlets, so the number they need is visible the moment they
-            log in. Read our{" "}
-            <Link href="/blog/netsuite-saved-search-tips">NetSuite saved search tips</Link> for a look
-            at the techniques we use most often.
-          </p>
+        <p className="mt-6 text-sm text-brand-400">
+          Most teams that rely on Excel exports are doing it because the right saved search was
+          never built. NetSuite's search engine supports formula fields, summary types, cross-record
+          joins, and live dashboard portlets. The problem is usually that nobody had time to build
+          them properly after go-live. See our{" "}
+          <Link href="/blog/netsuite-saved-search-tips" className="text-accent hover:underline">
+            NetSuite saved search tips
+          </Link>{" "}
+          for the techniques we use most often.
+        </p>
 
-          <h2>What we build</h2>
+        <div className="mt-6">
+          <Button href="/contact">Book a Free Consultation</Button>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {REPORTING_TYPES.map((item) => (
-            <Card key={item.title} className="p-5 flex items-start gap-4">
-              <IconBadge icon={item.icon} />
-              <div>
+        {/* Pain points */}
+        <div className="mt-14" data-section="pain-points">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Common situations that bring people here</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            {PAIN_POINTS.map((item) => (
+              <Card key={item.title} className="p-5 flex flex-col gap-3">
+                <IconBadge icon={item.icon} />
                 <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
-                <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
-              </div>
-            </Card>
-          ))}
+                <p className="text-sm text-brand-400">{item.description}</p>
+              </Card>
+            ))}
+          </div>
         </div>
 
-        <div className="prose prose-blue mt-12 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
-          <h2>Who this is for</h2>
-          <p>
-            Finance teams pulling data into Excel for every close, operations managers who don’t
-            know where to look when something breaks, and NetSuite administrators inheriting an
-            account full of searches nobody has touched or documented in two years. We build from
-            scratch and we clean up existing libraries: removing duplicates, fixing searches that
-            return wrong results, and building a dashboard setup that actually reflects how the
-            business runs today.
+        {/* Reporting types */}
+        <div className="mt-14" data-section="reporting-types">
+          <h2 className="text-lg font-semibold text-brand-900 mb-1">What we build</h2>
+          <p className="text-sm text-brand-400 mb-6">
+            From single operational searches to a full dashboard rebuild for every role in the account.
           </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {REPORTING_TYPES.map((item) => (
+              <Card key={item.title} className="p-5 flex items-start gap-4">
+                <IconBadge icon={item.icon} />
+                <div>
+                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
+                  <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* How it works */}
+        <div className="mt-14" data-section="how-it-works">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">How we approach this work</h2>
+          <div className="space-y-4">
+            {HOW_IT_WORKS.map((item) => (
+              <div key={item.step} className="flex items-start gap-5">
+                <span className="text-xs font-semibold text-accent bg-accent/10 rounded-full h-7 w-7 flex items-center justify-center shrink-0 mt-0.5">
+                  {item.step}
+                </span>
+                <div>
+                  <p className="font-semibold text-brand-900 text-sm">{item.title}</p>
+                  <p className="mt-0.5 text-sm text-brand-400">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Why SuitePacific */}
+        <div className="mt-14" data-section="why-suitepacific">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why SuitePacific</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {WHY_SP.map((item) => (
+              <Card key={item.title} className="p-5 flex items-start gap-4">
+                <IconBadge icon={item.icon} />
+                <div>
+                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
+                  <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
 
         <ServiceFaqSection items={FAQ} />
 
-        <div className="mt-14 pt-10 border-t border-brand-50 text-center">
-          <p className="text-brand-900 font-semibold">Still pulling NetSuite data into Excel?</p>
+        <div className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
+          <p className="text-brand-900 font-semibold text-lg">Still pulling NetSuite data into Excel?</p>
           <p className="mt-2 text-sm text-brand-400">
-            Tell us what you need to see and we’ll build it inside NetSuite instead.
+            Tell us what you need to see and we will build it inside NetSuite instead.
           </p>
-          <div className="mt-6">
-            <Button href="/contact">Book a Free Consultation</Button>
+          <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
+            <LeadForm />
           </div>
         </div>
       </div>
