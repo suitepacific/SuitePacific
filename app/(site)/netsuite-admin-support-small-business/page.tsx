@@ -222,7 +222,7 @@ export default function NetSuiteAdminSupportSmallBusinessPage() {
         </div>
 
         {/* Pain Points */}
-        <div className="mt-14">
+        <div className="mt-14" data-section="pain-points">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
             The situation most small businesses are in
           </h2>
@@ -238,7 +238,7 @@ export default function NetSuiteAdminSupportSmallBusinessPage() {
         </div>
 
         {/* What we handle */}
-        <div className="mt-14">
+        <div className="mt-14" data-section="admin-areas">
           <h2 className="text-lg font-semibold text-brand-900 mb-1">What we handle</h2>
           <p className="text-sm text-brand-400 mb-6">
             Day-to-day administration that keeps your NetSuite account current with your business.
@@ -257,7 +257,7 @@ export default function NetSuiteAdminSupportSmallBusinessPage() {
         </div>
 
         {/* How it works */}
-        <div className="mt-14">
+        <div className="mt-14" data-section="how-it-works">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">How it works</h2>
           <div className="space-y-4">
             {HOW_IT_WORKS.map((item) => (
@@ -275,7 +275,7 @@ export default function NetSuiteAdminSupportSmallBusinessPage() {
         </div>
 
         {/* Comparison */}
-        <div className="mt-14">
+        <div className="mt-14" data-section="comparison">
           <h2 className="text-lg font-semibold text-brand-900">
             Full-time admin vs. SuitePacific
           </h2>
@@ -322,7 +322,7 @@ export default function NetSuiteAdminSupportSmallBusinessPage() {
         </div>
 
         {/* Why SuitePacific */}
-        <div className="mt-14">
+        <div className="mt-14" data-section="why-suitepacific">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
             Why small businesses choose SuitePacific
           </h2>
@@ -367,7 +367,7 @@ export default function NetSuiteAdminSupportSmallBusinessPage() {
         <ServiceFaqSection items={FAQ} />
 
         {/* Inline form */}
-        <div className="mt-14 pt-10 border-t border-brand-50">
+        <div className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
           <p className="text-brand-900 font-semibold text-lg">
             Ready to stop managing NetSuite yourself?
           </p>

@@ -178,7 +178,7 @@ export default function NetSuiteConsultingServicesPage() {
         </div>
 
         {/* Services grid */}
-        <div className="mt-14">
+        <div className="mt-14" data-section="services">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {SERVICES.map((service) => (
@@ -198,7 +198,7 @@ export default function NetSuiteConsultingServicesPage() {
         </div>
 
         {/* How it works */}
-        <div className="mt-14">
+        <div className="mt-14" data-section="how-it-works">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">How engagements work</h2>
           <div className="space-y-4">
             {HOW_IT_WORKS.map((item) => (
@@ -220,7 +220,7 @@ export default function NetSuiteConsultingServicesPage() {
         </div>
 
         {/* Who this is for */}
-        <div className="mt-14">
+        <div className="mt-14" data-section="who-its-for">
           <h2 className="text-lg font-semibold text-brand-900 mb-4">Who this is for</h2>
           <p className="text-sm text-brand-400 mb-5">
             Companies that went live on NetSuite and need technical work their internal team
@@ -245,7 +245,7 @@ export default function NetSuiteConsultingServicesPage() {
         </div>
 
         {/* Specialist advantage */}
-        <div className="mt-14 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
+        <div className="mt-14 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6" data-section="specialist-advantage">
           <h2 className="font-semibold text-brand-900 text-base mb-3">
             What a NetSuite specialist brings that a generalist does not
           </h2>
@@ -263,7 +263,7 @@ export default function NetSuiteConsultingServicesPage() {
         <ServiceFaqSection items={FAQ} />
 
         {/* Inline form */}
-        <div className="mt-14 pt-10 border-t border-brand-50">
+        <div className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
           <p className="text-brand-900 font-semibold text-lg">Need a NetSuite consulting team?</p>
           <p className="mt-2 text-sm text-brand-400">
             Tell us what you are working with and what you need. We will let you know exactly how
