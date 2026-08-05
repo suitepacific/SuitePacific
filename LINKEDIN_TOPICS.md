@@ -38,6 +38,9 @@ Update this file every time a new post is published. No topic should repeat.
 | 30 | Custom GL Plug-in doesn't execute on every transaction — Journal Entry has 7 documented exceptions including intercompany, statistical, reversing, and voiding journals | SuiteScript / Accounting |
 | 31 | SuiteQL default sort changed in 2026.2 from tranDisplayName to tranDate — queries without ORDER BY may return records in a different order | SuiteQL / Release Notes |
 | 32 | FSM 2026.07.1 mobile changes: status counter (app-level shows all 4 statuses; task-level shows Draft + Error only), persistent offline banner, sync error with retry, smarter navigation bar with "Unsaved Draft" label | Field Service Management |
+| 33 | Suitelet vs RESTlet: Suitelets serve HTML to browsers (no auth required from the browser), RESTlets serve JSON to systems (always requires TBA or OAuth 2.0) — pick by who is calling it | SuiteScript |
+| 34 | NLAuth retires in 2027.1, new TBA integrations also end in 2027.1, existing TBA ends 2028.1 — migrate to OAuth 2.0 with PKCE now | Release Notes / Security |
+| 35 | record.load() standard vs dynamic mode — governance cost is identical; difference is behavior: standard mode sets values directly, dynamic mode simulates the UI and triggers field sourcing | SuiteScript |
 
 ---
 
@@ -57,10 +60,8 @@ Update this file every time a new post is published. No topic should repeat.
 - Workflow
 
 ## Topics available (not yet covered)
-- record.load() dynamic mode vs standard mode
 - Script Parameters vs hardcoded values
 - N/cache module for performance
-- Suitelet vs RESTlet — when to use each
 - SuiteQL vs Saved Search — when SQL is cleaner than the search UI
 - Promise.all() for parallel async calls in SuiteScript 2.x
 - Governance limits by script type (Scheduled 1,000 / Map/Reduce 10,000 / Suitelet 1,000 etc.)

@@ -23,7 +23,7 @@ export async function generateMetadata({
   const resource = await getResourceBySlug(slug);
   if (!resource) return {};
   return {
-    title: `${resource.title} | SuitePacific`,
+    title: `${resource.title}`,
     description: resource.description,
     alternates: { canonical: `/resources/${slug}` },
     openGraph: {

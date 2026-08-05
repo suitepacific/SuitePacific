@@ -188,10 +188,16 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Admin Support for Small Business | SuitePacific",
+  title: "NetSuite Admin Support for Small Business",
   description:
     "NetSuite administration for small businesses on a fixed monthly retainer. User management, roles, custom fields, saved searches, and workflow automation without hiring a full-time admin.",
   alternates: { canonical: "/netsuite-admin-support-small-business" },
+  openGraph: {
+    title: "NetSuite Admin Support for Small Business",
+    description: "NetSuite administration for small businesses on a fixed monthly retainer. User management, roles, custom fields, saved searches, and workflow automation without hiring a full-time admin.",
+    url: "https://suitepacific.com/netsuite-admin-support-small-business",
+    type: "website",
+  },
 };
 
 export default function NetSuiteAdminSupportSmallBusinessPage() {

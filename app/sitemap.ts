@@ -20,6 +20,7 @@ const SERVICE_PAGES = [
   "/netsuite-post-go-live-support",
   "/netsuite-implementation-partner-vs-managed-support",
   "/netsuite-consulting-services",
+  "/netsuite-admin-support-small-business",
   "/suitecompare",
 ];
 

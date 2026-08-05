@@ -136,10 +136,16 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Advanced PDF Templates | SuitePacific",
+  title: "NetSuite Advanced PDF Templates",
   description:
     "Custom NetSuite Advanced PDF/HTML templates: branded invoices, statements, purchase orders, and packing slips with conditional sections, dynamic layouts, and barcode support.",
   alternates: { canonical: "/netsuite-advanced-pdf-templates" },
+  openGraph: {
+    title: "NetSuite Advanced PDF Templates",
+    description: "Custom NetSuite Advanced PDF/HTML templates: branded invoices, statements, purchase orders, and packing slips with conditional sections, dynamic layouts, and barcode support.",
+    url: "https://suitepacific.com/netsuite-advanced-pdf-templates",
+    type: "website",
+  },
 };
 
 export default function AdvancedPdfTemplatesPage() {

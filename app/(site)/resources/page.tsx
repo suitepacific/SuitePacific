@@ -9,7 +9,7 @@ import { SITE_URL } from "@/lib/content";
 import { getAllResources, RESOURCE_CATEGORIES } from "@/lib/resources";
 
 export const metadata: Metadata = {
-  title: "NetSuite Resources | SuitePacific",
+  title: "NetSuite Resources",
   description:
     "Practical NetSuite reference articles: SuiteScript best practices, performance optimization, workflow automation, saved searches, and administration guides for post-go-live accounts.",
   alternates: { canonical: "/resources" },

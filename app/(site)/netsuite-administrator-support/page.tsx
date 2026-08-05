@@ -158,10 +158,16 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Administrator Support | SuitePacific",
+  title: "NetSuite Administrator Support",
   description:
     "Ongoing NetSuite administrator support for post-go-live accounts: user management, roles and permissions, custom fields, saved searches, period management, and data imports.",
   alternates: { canonical: "/netsuite-administrator-support" },
+  openGraph: {
+    title: "NetSuite Administrator Support",
+    description: "Ongoing NetSuite administrator support for post-go-live accounts: user management, roles and permissions, custom fields, saved searches, period management, and data imports.",
+    url: "https://suitepacific.com/netsuite-administrator-support",
+    type: "website",
+  },
 };
 
 export default function NetSuiteAdministratorSupportPage() {

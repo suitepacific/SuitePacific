@@ -136,10 +136,16 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Account Optimization | SuitePacific",
+  title: "NetSuite Account Optimization",
   description:
     "NetSuite account optimization and performance tuning: cleanup of legacy configurations, unused scripts and fields, slow saved searches, and governance issues without affecting live operations.",
   alternates: { canonical: "/netsuite-account-optimization" },
+  openGraph: {
+    title: "NetSuite Account Optimization",
+    description: "NetSuite account optimization and performance tuning: governance limit fixes, script audits, workflow consolidation, saved search cleanup, and technical debt reduction for live accounts.",
+    url: "https://suitepacific.com/netsuite-account-optimization",
+    type: "website",
+  },
 };
 
 export default function AccountOptimizationPage() {

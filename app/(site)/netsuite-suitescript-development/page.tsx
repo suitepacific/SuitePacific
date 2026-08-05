@@ -132,10 +132,16 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite SuiteScript Development | SuitePacific",
+  title: "NetSuite SuiteScript Development",
   description:
     "Custom SuiteScript 2.x development for NetSuite: User Event scripts, Client scripts, Scheduled scripts, Map/Reduce, and Suitelets built and tested in sandbox before touching production.",
   alternates: { canonical: "/netsuite-suitescript-development" },
+  openGraph: {
+    title: "NetSuite SuiteScript Development",
+    description: "Custom SuiteScript 2.x development for NetSuite: User Event scripts, Client scripts, Scheduled scripts, Map/Reduce, and Suitelets built and tested in sandbox before touching production.",
+    url: "https://suitepacific.com/netsuite-suitescript-development",
+    type: "website",
+  },
 };
 
 export default function SuiteScriptDevelopmentPage() {

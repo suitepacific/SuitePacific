@@ -22,7 +22,7 @@ export async function generateMetadata({
   const cs = getCaseStudy(slug);
   if (!cs) return {};
   return {
-    title: `${cs.title} | SuitePacific`,
+    title: `${cs.title}`,
     description: cs.metaDescription,
     alternates: { canonical: `/case-studies/${slug}` },
   };

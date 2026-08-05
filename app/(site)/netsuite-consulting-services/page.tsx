@@ -141,10 +141,16 @@ const WHO_ITS_FOR = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Consulting Services | SuitePacific",
+  title: "NetSuite Consulting Services",
   description:
     "NetSuite consulting services for post-go-live companies: SuiteScript development, workflow automation, integrations, reporting, and ongoing technical support. No long-term contracts.",
   alternates: { canonical: "/netsuite-consulting-services" },
+  openGraph: {
+    title: "NetSuite Consulting Services",
+    description: "NetSuite consulting services for post-go-live companies: SuiteScript development, workflow automation, integrations, reporting, and ongoing technical support. No long-term contracts.",
+    url: "https://suitepacific.com/netsuite-consulting-services",
+    type: "website",
+  },
 };
 
 export default function NetSuiteConsultingServicesPage() {

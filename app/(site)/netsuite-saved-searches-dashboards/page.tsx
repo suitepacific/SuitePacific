@@ -136,10 +136,16 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Saved Searches & Dashboards | SuitePacific",
+  title: "NetSuite Saved Searches & Dashboards",
   description:
     "Custom NetSuite saved searches, dashboards, and reports: role-based dashboards, formula fields, KPI portlets, and exception searches that surface what your team needs without exporting to spreadsheets.",
   alternates: { canonical: "/netsuite-saved-searches-dashboards" },
+  openGraph: {
+    title: "NetSuite Saved Searches & Dashboards",
+    description: "Custom NetSuite saved searches, dashboards, and reports: role-based dashboards, formula fields, KPI portlets, and exception searches that surface what your team needs without exporting to spreadsheets.",
+    url: "https://suitepacific.com/netsuite-saved-searches-dashboards",
+    type: "website",
+  },
 };
 
 export default function SavedSearchesDashboardsPage() {

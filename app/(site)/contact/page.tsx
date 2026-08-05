@@ -18,7 +18,7 @@ const TRUST_BADGES = [
 ];
 
 export const metadata: Metadata = {
-  title: "Contact SuitePacific | Book a Free NetSuite Consultation",
+  title: { absolute: "Contact SuitePacific | Book a Free NetSuite Consultation" },
   description:
     "Get in touch with SuitePacific for NetSuite post-go-live support, SuiteScript development, workflow automation, and integrations. Book a free consultation, no long-term contracts.",
   alternates: { canonical: "/contact" },

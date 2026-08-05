@@ -5,7 +5,7 @@ import { logoutScAction } from "@/app/suitecompare/actions";
 import { ShieldCheck, LogOut } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Import Doctor | SuitePacific",
+  title: { absolute: "Import Doctor | SuitePacific" },
   robots: { index: false, follow: false },
 };
 

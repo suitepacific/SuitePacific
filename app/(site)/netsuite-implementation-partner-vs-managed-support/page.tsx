@@ -31,6 +31,12 @@ export const metadata: Metadata = {
   description:
     "The difference between a NetSuite implementation partner and an ongoing managed support team, and how to know which one your business needs right now.",
   alternates: { canonical: "/netsuite-implementation-partner-vs-managed-support" },
+  openGraph: {
+    title: "NetSuite Implementation Partner vs. Managed Support",
+    description: "Understanding the difference between NetSuite implementation partners and managed services providers: what each covers, when you need each, and how to choose the right model for your business.",
+    url: "https://suitepacific.com/netsuite-implementation-partner-vs-managed-support",
+    type: "website",
+  },
 };
 
 const IMPLEMENTATION_PARTNER = [
