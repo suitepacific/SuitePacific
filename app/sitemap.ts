@@ -5,23 +5,24 @@ import { getAllCaseStudySlugs } from "@/lib/case-studies";
 import { getAllResourceSlugs } from "@/lib/resources";
 
 const SITE_LAUNCH_DATE = new Date("2026-06-01");
+const SEO_REFRESH_DATE = new Date("2026-08-05");
 
-const SERVICE_PAGES = [
-  "/hire-netsuite-developer",
-  "/partners",
-  "/contact",
-  "/netsuite-integrations",
-  "/netsuite-suitescript-development",
-  "/netsuite-workflow-automation",
-  "/netsuite-saved-searches-dashboards",
-  "/netsuite-advanced-pdf-templates",
-  "/netsuite-administrator-support",
-  "/netsuite-account-optimization",
-  "/netsuite-post-go-live-support",
-  "/netsuite-implementation-partner-vs-managed-support",
-  "/netsuite-consulting-services",
-  "/netsuite-admin-support-small-business",
-  "/suitecompare",
+const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
+  { path: "/hire-netsuite-developer", lastModified: SEO_REFRESH_DATE },
+  { path: "/partners", lastModified: SITE_LAUNCH_DATE },
+  { path: "/contact", lastModified: SITE_LAUNCH_DATE },
+  { path: "/netsuite-integrations", lastModified: SEO_REFRESH_DATE },
+  { path: "/netsuite-suitescript-development", lastModified: SEO_REFRESH_DATE },
+  { path: "/netsuite-workflow-automation", lastModified: SEO_REFRESH_DATE },
+  { path: "/netsuite-saved-searches-dashboards", lastModified: SEO_REFRESH_DATE },
+  { path: "/netsuite-advanced-pdf-templates", lastModified: SEO_REFRESH_DATE },
+  { path: "/netsuite-administrator-support", lastModified: SEO_REFRESH_DATE },
+  { path: "/netsuite-account-optimization", lastModified: SEO_REFRESH_DATE },
+  { path: "/netsuite-post-go-live-support", lastModified: SEO_REFRESH_DATE },
+  { path: "/netsuite-implementation-partner-vs-managed-support", lastModified: SEO_REFRESH_DATE },
+  { path: "/netsuite-consulting-services", lastModified: SEO_REFRESH_DATE },
+  { path: "/netsuite-admin-support-small-business", lastModified: SEO_REFRESH_DATE },
+  { path: "/suitecompare", lastModified: new Date("2026-07-19") },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -30,7 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const resourceSlugs = getAllResourceSlugs();
 
   return [
-    { url: SITE_URL, lastModified: SITE_LAUNCH_DATE, changeFrequency: "monthly", priority: 1 },
+    { url: SITE_URL, lastModified: SEO_REFRESH_DATE, changeFrequency: "monthly", priority: 1 },
     {
       url: `${SITE_URL}/blog`,
       lastModified: posts.length > 0 ? new Date(posts[0].date) : SITE_LAUNCH_DATE,
@@ -49,9 +50,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.7,
     },
-    ...SERVICE_PAGES.map((path) => ({
+    ...SERVICE_PAGES.map(({ path, lastModified }) => ({
       url: `${SITE_URL}${path}`,
-      lastModified: SITE_LAUNCH_DATE,
+      lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),

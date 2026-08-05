@@ -190,11 +190,11 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Admin Support for Small Business",
   description:
-    "NetSuite administration for small businesses on a fixed monthly retainer. User management, roles, custom fields, saved searches, and workflow automation without hiring a full-time admin.",
+    "Fractional NetSuite administrator for small businesses: user management, roles, custom fields, saved searches, and workflow automation on a fixed monthly retainer. No full-time hire needed.",
   alternates: { canonical: "/netsuite-admin-support-small-business" },
   openGraph: {
     title: "NetSuite Admin Support for Small Business",
-    description: "NetSuite administration for small businesses on a fixed monthly retainer. User management, roles, custom fields, saved searches, and workflow automation without hiring a full-time admin.",
+    description: "Fractional NetSuite administrator for small businesses: user management, roles, custom fields, saved searches, and workflow automation on a fixed monthly retainer. No full-time hire needed.",
     url: "https://suitepacific.com/netsuite-admin-support-small-business",
     type: "website",
   },
@@ -217,9 +217,9 @@ export default function NetSuiteAdminSupportSmallBusinessPage() {
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading
           as="h1"
-          eyebrow="NetSuite Administration"
+          eyebrow="Fractional NetSuite Administrator"
           title="NetSuite Admin Support for Small Business"
-          subtitle="Your fractional NetSuite administrator. Predictable monthly support without the cost or commitment of a full-time hire."
+          subtitle="Enterprise-grade NetSuite administration on a fixed monthly retainer built for SMBs. No full-time hire, no long-term contracts."
           align="left"
         />
 

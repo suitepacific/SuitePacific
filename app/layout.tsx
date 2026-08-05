@@ -33,12 +33,14 @@ export const metadata: Metadata = {
     url: "https://suitepacific.com",
     siteName: "SuitePacific",
     type: "website",
+    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "SuitePacific" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "SuitePacific: Post-Go-Live NetSuite Support",
     description:
       "Your dedicated NetSuite team for ongoing enhancements, custom development, workflow automation, and expert support after go-live.",
+    images: ["/og-default.png"],
   },
   robots: { index: true, follow: true },
 };
