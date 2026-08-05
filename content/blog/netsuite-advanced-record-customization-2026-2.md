@@ -81,3 +81,5 @@ Advanced Record Customization is most relevant for:
 If your account does not use AI integrations yet, this feature has no immediate impact. But as AI connectivity with NetSuite expands, accurate record descriptions will become more important.
 
 For step-by-step instructions on using ARC, see [How to Use Advanced Record Customization (ARC) in NetSuite](/resources/netsuite-advanced-record-customization).
+
+Keeping your NetSuite account configuration current as features expand is part of what [SuitePacific's post-go-live support](/netsuite-post-go-live-support) covers.

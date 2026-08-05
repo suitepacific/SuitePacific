@@ -71,3 +71,5 @@ This feature is most relevant for:
 - Accounts that currently write off small underpayments manually
 
 If your reconciliation process involves frequent small adjustments between payment amounts and invoice totals, this feature is worth reviewing once your account is on the 2026.2 release.
+
+If you need help evaluating whether this feature applies to your reconciliation workflow, [SuitePacific's post-go-live support](/netsuite-post-go-live-support) covers release review and ongoing account maintenance.

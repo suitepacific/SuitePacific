@@ -110,3 +110,5 @@ All of these changes are on the Match Bank Data page at:
 If you access bank reconciliation through a different path, look for the same page. The Match Suggestions subtab and renamed elements will appear once your account is on the 2026.2 release.
 
 For a focused guide on using the new Match Suggestions tab, see [How to Use the Match Suggestions Tab in NetSuite Bank Reconciliation](/resources/netsuite-bank-reconciliation-match-suggestions).
+
+If you need help reviewing your account after the 2026.2 release, [SuitePacific's post-go-live support](/netsuite-post-go-live-support) covers release review and account maintenance.

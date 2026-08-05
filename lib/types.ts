@@ -52,6 +52,7 @@ export type BlogPostMeta = {
   title: string;
   description: string;
   date: string;
+  updated?: string;
   tags: string[];
   readingTime: string;
   calloutText?: string;

@@ -438,6 +438,8 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: "Advanced PDF Templates", href: "/netsuite-advanced-pdf-templates" },
       { label: "NetSuite Integrations", href: "/netsuite-integrations" },
       { label: "Administrator Support", href: "/netsuite-administrator-support" },
+      { label: "Admin Support for SMBs", href: "/netsuite-admin-support-small-business" },
+      { label: "NetSuite Consulting", href: "/netsuite-consulting-services" },
       { label: "Account Optimization", href: "/netsuite-account-optimization" },
       { label: "Post-Go-Live Support", href: "/netsuite-post-go-live-support" },
     ],

@@ -1,0 +1,251 @@
+{
+  "summary": {
+    "health_score": 68,
+    "business_type": "B2B Professional Services — NetSuite post-go-live consulting",
+    "top_findings": [
+      "13 blog posts under 800 words (thin content risk)",
+      "6 blog/resource slug duplicates splitting ranking signals — redirects shipped",
+      "Blog articles open with context sentences, not direct answers (AI citability gap)",
+      "Zero blog support for integrations and administrator support service pages",
+      "No Reddit/YouTube presence (primary off-site AI citation signals missing)"
+    ],
+    "quick_wins": [
+      "Duplicate SuiteQL post redirected — fixed",
+      "6 blog/resource identical-slug redirects — fixed",
+      "BlogPosting + TechArticle image property added — all posts now qualify for Article rich results",
+      "7 release-note posts with no service links — fixed with closing paragraphs",
+      "robots.txt with explicit AI crawler allow rules — fixed",
+      "LeadForm Company field made optional — friction reduced",
+      "llms.txt expanded to 36 blog posts + 14 FAQ pairs"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 82,
+      "what_works": [
+        "Strong security headers (HSTS, CSP, X-Frame-Options, X-Content-Type-Options)",
+        "Sitemap with 87 URLs and per-page lastModified dates",
+        "robots.txt with explicit AI crawler allow rules",
+        "www and trailing-slash redirects in place",
+        "All canonical tags correct on inner pages"
+      ],
+      "findings": [
+        {
+          "title": "No X-Robots-Tag HTTP header for noindex routes",
+          "severity": "Low",
+          "description": "Admin, SuiteCompare, and Import Doctor routes have robots meta noindex but no HTTP header equivalent",
+          "recommendation": "Add X-Robots-Tag: noindex header in next.config.ts headers() for /admin/*, /suitecompare/*, /importDetector/*"
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 72,
+      "what_works": [
+        "Strong content volume (36 blogs + 30 resources) for a 2-month domain",
+        "Oracle certification credentialing in JSON-LD",
+        "Source citations (NetSuite release notes) in all 2026.2 posts",
+        "Top traffic post (NLAuth) now has 2 service page inline links"
+      ],
+      "findings": [
+        {
+          "title": "13 of 36 blog posts under 800 words (thin content)",
+          "severity": "Critical",
+          "description": "Mostly 2026.2 release-note micro-posts: currency-context (456w), bill-capture (480w), sales-order (571w), payment-adjustments (632w), project-health (680w), passkey-second-factor (698w), advanced-record-customization (716w), rest-batch-sequential (736w), suiteql-bound-parameters (740w), payment-runs (779w). Each too thin for passage indexing.",
+          "recommendation": "Expand each to 1,000+ words, or consolidate blog/resource pairs into one comprehensive page"
+        },
+        {
+          "title": "Blog articles open with context sentences, not direct answers",
+          "severity": "High",
+          "description": "All priority posts fail the AI citability test — actionable fact arrives 40-60 words in after scene-setting",
+          "recommendation": "Rewrite openers for 5 priority posts: NLAuth, User Event vs Client, Best Practices, Post-Go-Live Checklist, Workflow Mistakes. Pattern: direct answer (15-25 words) first, context second."
+        },
+        {
+          "title": "No content targeting CFO/Controller search intent",
+          "severity": "Medium",
+          "description": "Zero posts for 'reduce NetSuite close time', 'NetSuite financial reporting', 'when to hire NetSuite consultant'",
+          "recommendation": "Write 2 CFO-intent posts in Month 2"
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 78,
+      "what_works": [
+        "BlogPosting image property now present — all posts qualify for Article rich results",
+        "TechArticle image property added to resources pages",
+        "ProfessionalService scoped to homepage only",
+        "WebSite schema on homepage",
+        "BreadcrumbList correct on all inner pages"
+      ],
+      "findings": [
+        {
+          "title": "/blog listing page has zero JSON-LD",
+          "severity": "Medium",
+          "description": "No BreadcrumbList or ItemList on the blog index page",
+          "recommendation": "Add BreadcrumbJsonLd and an ItemList of recent posts to app/(site)/blog/page.tsx"
+        },
+        {
+          "title": "Service pages have no Service-type schema",
+          "severity": "Medium",
+          "description": "Only BreadcrumbList + FAQPage on service pages. No schema.org/Service entity signals.",
+          "recommendation": "Create ServiceJsonLd component, apply to /hire-netsuite-developer first"
+        }
+      ]
+    },
+    {
+      "name": "SXO",
+      "score": 52,
+      "what_works": [
+        "hire-netsuite-developer form now at position ~4/15 (was 14/15)",
+        "Company field in LeadForm now optional",
+        "Case study social proof cards on hire page"
+      ],
+      "findings": [
+        {
+          "title": "Every service page CTA button exits the page to /contact",
+          "severity": "Critical",
+          "description": "User loses scroll context and lands on generic form. Should anchor to inline form.",
+          "recommendation": "Change Button href='/contact' to href='#contact' and add id='contact' to each page's LeadForm wrapper"
+        },
+        {
+          "title": "4 service pages have only 1 form, placed after FAQ",
+          "severity": "High",
+          "description": "post-go-live, consulting, SuiteScript, and admin pages each have a single LeadForm at the very bottom",
+          "recommendation": "Add mid-page LeadForm after the 'What we cover' section on each of the 4 pages"
+        },
+        {
+          "title": "No pricing context anywhere",
+          "severity": "High",
+          "description": "CFOs cannot self-qualify. Competitors state '$3,000-$10,000/month' explicitly.",
+          "recommendation": "Add one honest paragraph on engagement model and starting scope — not a fixed price, just context"
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness (GEO)",
+      "score": 52,
+      "what_works": [
+        "robots.txt with explicit AI crawler allow rules",
+        "Server-side rendered — JSON-LD visible to AI crawlers",
+        "llms.txt with full blog index, 14 FAQ pairs, RSL 1.0 licensing",
+        "Strong schema coverage (ProfessionalService, WebSite, BlogPosting)"
+      ],
+      "findings": [
+        {
+          "title": "No Reddit or YouTube presence",
+          "severity": "High",
+          "description": "Reddit correlates strongly with AI citations; YouTube is the #1 off-site signal (~0.737 correlation). SuitePacific has neither.",
+          "recommendation": "Start with Reddit r/netsuite: 2-3 expert technical answers per week. YouTube is longer-term."
+        },
+        {
+          "title": "Blog H2 headings are declarative, not question-format",
+          "severity": "High",
+          "description": "AI intent-matching favors H2s that mirror user queries. 'What a Client Script actually is' should be 'When should you use a Client Script in NetSuite?'",
+          "recommendation": "Convert 3-5 H2s per priority article to question format. Content doesn't change."
+        }
+      ]
+    },
+    {
+      "name": "Content Clusters",
+      "score": 58,
+      "what_works": [
+        "SuiteScript cluster has 4 blog spokes + service page",
+        "FreeMarker PDF guide appearing in SERP for advanced PDF queries",
+        "Release-note posts now all link to service pages"
+      ],
+      "findings": [
+        {
+          "title": "Integrations cluster has zero blog spokes",
+          "severity": "Critical",
+          "description": "No blog content for 'NetSuite RESTlet', 'NetSuite OAuth setup', 'how to integrate NetSuite'. Service page /netsuite-integrations invisible to organic discovery.",
+          "recommendation": "First post: 'How to Build a NetSuite RESTlet in SuiteScript 2.x'"
+        },
+        {
+          "title": "Administrator support cluster has zero blog spokes",
+          "severity": "High",
+          "description": "Both /netsuite-administrator-support and /netsuite-admin-support-small-business have no blog funnel",
+          "recommendation": "First post: 'NetSuite User Roles and Permissions: A Setup Guide'"
+        },
+        {
+          "title": "No hub-level blog posts in any cluster",
+          "severity": "High",
+          "description": "Service pages don't rank for informational queries. Buyers searching 'netsuite saved searches guide' see Forvis Mazars, AnchorGroup, YRK — not SuitePacific, despite 2 relevant spokes.",
+          "recommendation": "Write 'NetSuite Saved Searches: Complete Guide' as first hub post — aggregates both existing spokes and targets the broad head keyword"
+        }
+      ]
+    },
+    {
+      "name": "Backlinks",
+      "score": 25,
+      "what_works": [
+        "66 content pages is a strong link-attraction surface",
+        "Entity schema well-formed for when links arrive",
+        "Time-sensitive release-note content (FSM, NLAuth) has short distribution window"
+      ],
+      "findings": [
+        {
+          "title": "Zero referring domains — domain not yet in Common Crawl",
+          "severity": "Critical",
+          "description": "Domain launched June 2026; Common Crawl most recent release is Jan-Mar 2026. No backlink data available from any source.",
+          "recommendation": "Priority link-building: NetSuite/AppSource directory listings, Reddit expert answers, client site mentions. Set up Moz free tier for DA tracking."
+        },
+        {
+          "title": "Zero outbound source citations in release-note posts",
+          "severity": "Medium",
+          "description": "All 2026.2 posts reference NetSuite release notes but don't link to Oracle's source URLs",
+          "recommendation": "Add one primary-source outbound link per release-note post (NetSuite Help Center or release notes PDF)"
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "Week 1",
+        "items": [
+          "Add mid-page LeadForm to post-go-live, consulting, SuiteScript, admin support pages",
+          "Change CTA buttons to anchor links (#contact) on all service pages",
+          "Add Service-type JSON-LD to /hire-netsuite-developer",
+          "Add ItemList + BreadcrumbList to /blog listing page"
+        ]
+      },
+      {
+        "name": "Phase 2: Content & Citability",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "Rewrite article openers for 5 priority posts (direct answer first)",
+          "Convert declarative H2s to question-format headings",
+          "Write first integrations cluster post: 'How to Build a NetSuite RESTlet'",
+          "Write first admin support cluster post: 'NetSuite User Roles and Permissions Guide'"
+        ]
+      },
+      {
+        "name": "Phase 3: Authority & Off-Site",
+        "timeframe": "Month 2",
+        "items": [
+          "Establish Reddit r/netsuite presence (2-3 expert answers/week for 4 weeks)",
+          "Add outbound Oracle source citations to release-note posts",
+          "Create OG image (1200x630 PNG at /public/og-default.png)",
+          "Write 'NetSuite 2026.2: What Changed for Post-Go-Live Accounts' hub post",
+          "Write 'NetSuite Saved Searches: Complete Guide' hub post"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring",
+        "timeframe": "Ongoing",
+        "items": [
+          "Set up Moz free tier for DA/PA tracking after next Common Crawl release",
+          "Add `updated` frontmatter when significantly revising blog posts",
+          "Run /seo-audit again in 6 weeks to measure score change"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}

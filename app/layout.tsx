@@ -17,7 +17,6 @@ export const metadata: Metadata = {
   },
   description:
     "SuitePacific helps companies get more from NetSuite after go-live: SuiteScript development, workflow automation, saved searches & dashboards, advanced PDF templates, and ongoing optimization.",
-  alternates: { canonical: "/" },
   keywords: [
     "NetSuite support",
     "SuiteScript development",

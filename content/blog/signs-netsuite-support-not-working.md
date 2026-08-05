@@ -155,10 +155,10 @@ For comparison: a support relationship that's working looks like this.
 
 Your partner knows your account without being reminded. Changes are built in sandbox and tested before production, without exception. When a NetSuite release is coming, you hear about it in advance, not after. Routine requests get handled without formal SOWs. If you have a question, you hear back the same day. And you have a clear picture of what's running in your account, because it was documented.
 
-If that description sounds like a higher standard than what you're currently experiencing, it's worth knowing it's the baseline, not a premium.
+If that description sounds like a higher standard than what you're currently experiencing, it's worth knowing it's the baseline, not a premium. For a breakdown of what [NetSuite post-go-live support](/netsuite-post-go-live-support) should include, that page covers the service model in detail.
 
 ## What to do next
 
 If several of these signs match your current engagement, the practical next step is a conversation, not a commitment. We work with post-go-live NetSuite accounts exclusively. We do not require long-term contracts. And the first thing we do with any new account is actually read it, before suggesting anything.
 
-Tell us what's going on in your account. We'll let you know honestly what we see and what we'd do about it.
+[Tell us what's going on in your account](/contact). We'll let you know honestly what we see and what we'd do about it.

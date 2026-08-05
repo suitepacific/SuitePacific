@@ -55,6 +55,43 @@ const nextConfig: NextConfig = {
         destination: "/:path+",
         statusCode: 301,
       },
+      // Duplicate content: shorter Jul-21 post redirects to the comprehensive Aug-2 version
+      {
+        source: "/blog/netsuite-suiteql-default-sort-change",
+        destination: "/blog/netsuite-suiteql-sort-change-2026-2",
+        statusCode: 301,
+      },
+      // Blog/resource slug duplicates — redirect resource short versions to blog full versions
+      {
+        source: "/resources/netsuite-user-event-vs-client-script",
+        destination: "/blog/netsuite-user-event-vs-client-script",
+        statusCode: 301,
+      },
+      {
+        source: "/resources/netsuite-rest-batch-sequential",
+        destination: "/blog/netsuite-rest-batch-sequential",
+        statusCode: 301,
+      },
+      {
+        source: "/resources/netsuite-suiteql-bound-parameters",
+        destination: "/blog/netsuite-suiteql-bound-parameters",
+        statusCode: 301,
+      },
+      {
+        source: "/resources/netsuite-sales-order-fulfillment-list",
+        destination: "/blog/netsuite-sales-order-fulfillment-list",
+        statusCode: 301,
+      },
+      {
+        source: "/resources/netsuite-currency-context-custom-fields",
+        destination: "/blog/netsuite-currency-context-custom-fields",
+        statusCode: 301,
+      },
+      {
+        source: "/resources/netsuite-suitetax-term-discounts",
+        destination: "/blog/netsuite-suitetax-term-discounts",
+        statusCode: 301,
+      },
     ];
   },
 };

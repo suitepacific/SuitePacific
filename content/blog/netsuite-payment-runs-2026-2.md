@@ -99,3 +99,5 @@ Payment Runs is most useful for AP teams that process a high volume of vendor pa
 For NetSuite administrators: Payment Runs supports custom roles and permissions, so you can define exactly who has access to each stage of the workflow before rolling it out.
 
 Payment Runs is new in 2026.2. If you do not see it in your account, confirm that your account has been upgraded to the 2026.2 release.
+
+If you need help configuring Payment Runs or reviewing your account after the 2026.2 release, [SuitePacific's post-go-live support](/netsuite-post-go-live-support) covers release review and ongoing account maintenance.

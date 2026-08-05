@@ -1,0 +1,58 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /suitecompare/
+Disallow: /importDetector/
+Disallow: /partner-portal/
+Disallow: /api/
+
+# Explicit allow for AI crawlers
+User-agent: GPTBot
+Allow: /
+Disallow: /admin
+Disallow: /suitecompare/
+Disallow: /importDetector/
+Disallow: /partner-portal/
+Disallow: /api/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /admin
+Disallow: /suitecompare/
+Disallow: /importDetector/
+Disallow: /partner-portal/
+Disallow: /api/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin
+Disallow: /suitecompare/
+Disallow: /importDetector/
+Disallow: /partner-portal/
+Disallow: /api/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin
+Disallow: /suitecompare/
+Disallow: /importDetector/
+Disallow: /partner-portal/
+Disallow: /api/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /admin
+Disallow: /suitecompare/
+Disallow: /importDetector/
+Disallow: /partner-portal/
+Disallow: /api/
+
+User-agent: CCBot
+Allow: /
+Disallow: /admin
+Disallow: /suitecompare/
+Disallow: /importDetector/
+Disallow: /partner-portal/
+Disallow: /api/
+
+Sitemap: https://suitepacific.com/sitemap.xml

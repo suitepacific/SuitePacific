@@ -59,6 +59,7 @@ export default async function ResourcePage({
             "@type": "TechArticle",
             headline: resource.title,
             description: resource.description,
+            image: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png`, width: 1200, height: 630 },
             datePublished: resource.publishedAt,
             dateModified: resource.publishedAt,
             author: { "@type": "Organization", name: LEGAL_NAME },

@@ -68,9 +68,9 @@ export function BlogPostingJsonLd({ post }: { post: BlogPostMeta }) {
     "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
-    image: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png`, width: 1200, height: 630 },
+    image: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png` },
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updated ?? post.date,
     author: { "@type": "Organization", name: LEGAL_NAME },
     publisher: {
       "@type": "Organization",

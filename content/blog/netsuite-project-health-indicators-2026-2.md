@@ -70,3 +70,5 @@ Why it matters: unbilled charges represent revenue that has been earned but not 
 The five new indicators appear in the project health section of the project record in NetSuite. They are new in 2026.2 and will appear automatically on project records once your account is on the 2026.2 release.
 
 For a reference guide to what each indicator tracks and how to read it, see [The 5 New Project Health Indicators in NetSuite 2026.2](/resources/netsuite-project-health-indicators).
+
+If you need help keeping your NetSuite account current after releases, [SuitePacific's post-go-live support](/netsuite-post-go-live-support) covers release review and ongoing account maintenance.

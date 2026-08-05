@@ -78,3 +78,5 @@ These are two separate use cases. If you are already using passkeys for full pas
 If you want to use your passkey as a second factor in NetSuite, you do not need to do anything extra. The change works automatically once you have a FIDO2-compliant passkey set up in your account. If you have not set one up yet, see [How to Enable Passkeys in NetSuite](/resources/netsuite-passkeys) for the setup steps.
 
 If you are a NetSuite administrator and want to control whether this feature is available to your users, check your account's authentication settings in NetSuite Setup.
+
+NetSuite authentication configuration for your user base is covered under [SuitePacific's NetSuite administrator support](/netsuite-administrator-support).

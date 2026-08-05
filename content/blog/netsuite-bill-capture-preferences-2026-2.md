@@ -68,3 +68,5 @@ If your account uses Bill Capture and either Save Tax As or Save Shipping Cost A
 Check the settings now and set them to the correct explicit option if you want captured tax or shipping data to flow through to your bills.
 
 For a step-by-step guide to reviewing and updating these settings, see [How to Review Your NetSuite Bill Capture Preferences After the 2026.2 Update](/resources/netsuite-bill-capture-preferences).
+
+If you need help reviewing your Bill Capture configuration or other account settings after 2026.2, [SuitePacific's post-go-live support](/netsuite-post-go-live-support) covers release review and ongoing account maintenance.

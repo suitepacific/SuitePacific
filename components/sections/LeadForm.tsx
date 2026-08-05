@@ -75,13 +75,12 @@ export function LeadForm() {
         </div>
         <div>
           <label htmlFor="company" className="block text-sm font-medium text-brand-700 mb-1.5">
-            Company
+            Company <span className="text-brand-300 font-normal">(optional)</span>
           </label>
           <input
             id="company"
             name="company"
             type="text"
-            required
             className="w-full rounded-lg border border-brand-100 px-3.5 py-2.5 text-sm text-brand-900 placeholder:text-brand-300 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:border-accent"
             placeholder="Acme Inc."
           />
