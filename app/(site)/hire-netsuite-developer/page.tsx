@@ -426,6 +426,13 @@ export default function HireNetSuiteDeveloperPage() {
           </div>
         </div>
 
+        {/* Mid-page lead capture */}
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
+          <p className="text-brand-900 font-semibold">Ready to get started?</p>
+          <p className="mt-1 text-sm text-brand-400 mb-6">Tell us what you need. We respond within one business day.</p>
+          <LeadForm />
+        </div>
+
         {/* Freelancer vs Partner vs SuitePacific, moved up */}
         <div className="mt-14">
           <h2 className="text-lg font-semibold text-brand-900">Freelancer vs. Consulting Firm vs. SuitePacific</h2>

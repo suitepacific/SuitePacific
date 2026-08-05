@@ -71,6 +71,8 @@ OAuth 2.0 is what NetSuite recommends. It takes more setup but is the long-term 
 
 For both options, the starting point is the same: create an Integration Record in NetSuite at **Setup > Integration > Manage Integrations > New**, and generate credentials from there.
 
+If you need outside help with the migration, [SuitePacific's NetSuite integration service](/netsuite-integrations) covers OAuth 2.0 rebuilds for existing NLAuth and TBA integrations.
+
 ## What to do if you use TBA
 
 If you have existing TBA integrations, you have more runway. They will continue working until TBA is fully retired, which is tentatively planned for 2028.1. However:
@@ -96,3 +98,5 @@ If you are already using OAuth 2.0 Authorization Code Grant Flow, PKCE (Proof Ke
 Start your audit now. Find every integration that uses NLAuth or was built with TBA credentials, and map out which ones need to move to OAuth 2.0 and by when.
 
 If you need help migrating your integrations, see [How to Migrate NetSuite Integrations from NLAuth to Token-Based Authentication](/resources/netsuite-nlauth-to-tba-migration).
+
+If you want a developer to handle the migration and ongoing integration work, see [how to hire a NetSuite developer](/hire-netsuite-developer).

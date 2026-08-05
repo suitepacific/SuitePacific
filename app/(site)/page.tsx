@@ -12,12 +12,15 @@ import { Insights } from "@/components/sections/Insights";
 import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { getAllPosts } from "@/lib/blog";
+import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
 
 export default async function Home() {
   const posts = await getAllPosts().catch(() => []);
 
   return (
     <main>
+      <OrganizationJsonLd />
+      <WebSiteJsonLd />
       <Hero />
       <PainPoints />
       <Timeline />

@@ -169,11 +169,11 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Post-Go-Live Support",
   description:
-    "Ongoing NetSuite support for live accounts: SuiteScript development, workflow automation, integrations, reporting, and administration after your implementation partner's work is done.",
+    "Ongoing NetSuite managed services and post-go-live support: SuiteScript development, workflow automation, integrations, reporting, and administration after your implementation partner's work is done.",
   alternates: { canonical: "/netsuite-post-go-live-support" },
   openGraph: {
     title: "NetSuite Post-Go-Live Support",
-    description: "Ongoing NetSuite support for live accounts: SuiteScript development, workflow automation, integrations, reporting, and administration after your implementation partner's work is done.",
+    description: "Ongoing NetSuite managed services and post-go-live support: SuiteScript development, workflow automation, integrations, reporting, and administration after your implementation partner's work is done.",
     url: "https://suitepacific.com/netsuite-post-go-live-support",
     type: "website",
   },
