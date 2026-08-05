@@ -23,7 +23,7 @@ Mixing up which type belongs where is one of the most common sources of missing 
   <rect x="0" y="0" width="320" height="168" rx="9" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
   <rect x="0" y="0" width="320" height="30" rx="9" fill="#0b1f4d"/>
   <rect x="0" y="20" width="320" height="10" fill="#0b1f4d"/>
-  <text x="160" y="20" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">User Event Script — server-side</text>
+  <text x="160" y="20" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">User Event Script: server-side</text>
   <text x="160" y="50" text-anchor="middle" font-size="9" font-weight="700" fill="#14306b">Fires on every save, regardless of source:</text>
   <rect x="16" y="58" width="288" height="14" rx="3" fill="#d7e0f3"/>
   <text x="160" y="69" text-anchor="middle" font-size="8.5" fill="#14306b">UI save by a logged-in user</text>
@@ -40,21 +40,21 @@ Mixing up which type belongs where is one of the most common sources of missing 
   <rect x="360" y="0" width="320" height="168" rx="9" fill="#fffbeb" stroke="#fde68a" stroke-width="1.5"/>
   <rect x="360" y="0" width="320" height="30" rx="9" fill="#92400e"/>
   <rect x="360" y="20" width="320" height="10" fill="#92400e"/>
-  <text x="520" y="20" text-anchor="middle" font-size="10" font-weight="700" fill="#fef9c3">Client Script — browser-side</text>
+  <text x="520" y="20" text-anchor="middle" font-size="10" font-weight="700" fill="#fef9c3">Client Script: browser-side</text>
   <text x="520" y="50" text-anchor="middle" font-size="9" font-weight="700" fill="#713f12">Fires only when user is in the UI:</text>
   <rect x="376" y="58" width="288" height="14" rx="3" fill="#fde68a" opacity="0.5"/>
   <text x="520" y="69" text-anchor="middle" font-size="8.5" fill="#92400e">UI save (only this one, nothing else)</text>
   <rect x="376" y="76" width="288" height="14" rx="3" fill="#d1fae5" opacity="0.5"/>
-  <text x="520" y="87" text-anchor="middle" font-size="8.5" fill="#6b7280">CSV import — Client script does NOT fire</text>
+  <text x="520" y="87" text-anchor="middle" font-size="8.5" fill="#6b7280">CSV import: Client script does NOT fire</text>
   <rect x="376" y="94" width="288" height="14" rx="3" fill="#d1fae5" opacity="0.5"/>
-  <text x="520" y="105" text-anchor="middle" font-size="8.5" fill="#6b7280">REST/SOAP API — Client script does NOT fire</text>
+  <text x="520" y="105" text-anchor="middle" font-size="8.5" fill="#6b7280">REST/SOAP API: Client script does NOT fire</text>
   <rect x="376" y="112" width="288" height="14" rx="3" fill="#d1fae5" opacity="0.5"/>
-  <text x="520" y="123" text-anchor="middle" font-size="8.5" fill="#6b7280">Workflow — Client script does NOT fire</text>
+  <text x="520" y="123" text-anchor="middle" font-size="8.5" fill="#6b7280">Workflow: Client script does NOT fire</text>
   <rect x="376" y="130" width="288" height="14" rx="3" fill="#d1fae5" opacity="0.5"/>
-  <text x="520" y="141" text-anchor="middle" font-size="8.5" fill="#6b7280">Script save — Client script does NOT fire</text>
+  <text x="520" y="141" text-anchor="middle" font-size="8.5" fill="#6b7280">Script save: Client script does NOT fire</text>
   <text x="520" y="160" text-anchor="middle" font-size="8" font-weight="700" fill="#92400e">Field change reactions · UI helpers · live validation</text>
 </svg>
-<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">If the logic must run every time a record is saved — use User Event. If it reacts to user interaction in the form — use Client Script.</figcaption>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">If the logic must run every time a record is saved: use User Event. If it reacts to user interaction in the form: use Client Script.</figcaption>
 </figure>
 
 ## User Event scripts: server-side, always runs

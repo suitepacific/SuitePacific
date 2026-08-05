@@ -24,7 +24,7 @@ export default async function AdminReferralDetailPage({ params }: { params: Prom
 
   const globalDefaultRate = globalSetting ? parseFloat(globalSetting.value) || 10 : 10;
 
-  // Duplicate detection — warn if another non-archived referral shares company/email/website
+  // Duplicate detection - warn if another non-archived referral shares company/email/website
   const duplicateClauses = [
     { companyName: { equals: referral.companyName, mode: "insensitive" as const } },
     ...(referral.contactEmail ? [{ contactEmail: { equals: referral.contactEmail, mode: "insensitive" as const } }] : []),

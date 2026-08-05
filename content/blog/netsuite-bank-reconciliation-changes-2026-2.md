@@ -12,7 +12,7 @@ If you do bank reconciliation in NetSuite, the Match Bank Data page looks differ
   <defs>
     <marker id="brc-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#4f7fff"/></marker>
   </defs>
-  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">MATCH BANK DATA PAGE — KEY CHANGES IN 2026.2</text>
+  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">MATCH BANK DATA PAGE: KEY CHANGES IN 2026.2</text>
   <!-- Before: old Review tab -->
   <rect x="0" y="22" width="290" height="116" rx="9" fill="#f8f9fc" stroke="#d7e0f3" stroke-width="1.5"/>
   <rect x="0" y="22" width="290" height="26" rx="9" fill="#4f6fb0"/>

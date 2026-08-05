@@ -26,7 +26,7 @@ Each change looked harmless on its own. Together, they transformed a simple oper
   <defs>
     <marker id="ssp-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#4f6fb0"/></marker>
   </defs>
-  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">HOW A SEARCH GETS SLOW — ACCUMULATION PATTERN</text>
+  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">HOW A SEARCH GETS SLOW: ACCUMULATION PATTERN</text>
   <!-- Stage 1 -->
   <rect x="0" y="24" width="128" height="54" rx="7" fill="#eef2fb" stroke="#4ade80" stroke-width="2"/>
   <text x="64" y="43" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Simple search</text>

@@ -9,7 +9,7 @@ function toFlag(code: string): string {
 }
 
 function fmt(d: Date | null | undefined) {
-  if (!d) return "—";
+  if (!d) return "-";
   return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 }
 
@@ -145,7 +145,7 @@ export default async function SuiteCompareUsersPage({ searchParams }: Props) {
                           <span>{toFlag(u.signupCountry)}</span>
                           <span>{u.signupCity ? `${u.signupCity}, ` : ""}{u.signupCountry}</span>
                         </span>
-                      ) : "—"}
+                      ) : "-"}
                     </td>
                   </tr>
                 );

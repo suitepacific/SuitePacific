@@ -183,7 +183,7 @@ export default async function AttentionPage() {
                           <p className="text-xs text-brand-400 mt-0.5">{owner.email}</p>
                         </>
                       ) : (
-                        <span className="text-brand-400 text-xs">—</span>
+                        <span className="text-brand-400 text-xs">-</span>
                       )}
                     </td>
                     <td className="px-5 py-3.5">
@@ -231,7 +231,7 @@ export default async function AttentionPage() {
             <CreditCard className="h-4 w-4" />,
             "text-amber-500",
             "Past-due accounts",
-            "Payment overdue — service interruption pending if not resolved.",
+            "Payment overdue - service interruption pending if not resolved.",
             pastDueOrgs
           )}
 
@@ -284,7 +284,7 @@ export default async function AttentionPage() {
                             <p className="text-xs text-brand-400 mt-0.5">{u.email}</p>
                           </td>
                           <td className="px-5 py-3.5 text-brand-400 text-xs">{fmtDate(f.createdAt)}</td>
-                          <td className="px-5 py-3.5 text-xs text-red-500">{f.errorMsg ?? "—"}</td>
+                          <td className="px-5 py-3.5 text-xs text-red-500">{f.errorMsg ?? "-"}</td>
                         </tr>
                       );
                     })}

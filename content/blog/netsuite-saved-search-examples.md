@@ -9,7 +9,7 @@ Most teams know they should be using saved searches more than they do. The gap i
 
 <figure style="margin:1.75rem 0">
 <svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
-  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">10 SEARCHES — BY TEAM AND PURPOSE</text>
+  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">10 SEARCHES: BY TEAM AND PURPOSE</text>
   <!-- Row 1: Finance -->
   <rect x="0" y="24" width="215" height="52" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
   <text x="107" y="43" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Finance / AR</text>
@@ -58,7 +58,7 @@ This is the AR aging search most finance teams eventually build, but commonly bu
 Add a Days Overdue formula column and sort descending. The goal is to surface the most overdue amounts, not just the largest balances. Published as a dashboard portlet for the collections team, this search replaces the weekly "who do we chase today" spreadsheet.
 
 ```
-Formula column — Days Overdue:
+Formula column: Days Overdue:
   Formula (Numeric):  {today} - {duedate}
   Label:              Days Overdue
   Sort:               Descending
@@ -98,7 +98,7 @@ Criteria filter:
   Formula (Numeric):  {preferredstocklevel} - {quantityonhand} - {quantityonorder}
   Condition:          greater than 0
 
-Formula column — Units to Order:
+Formula column: Units to Order:
   Formula (Numeric):  {preferredstocklevel} - {quantityonhand} - {quantityonorder}
   Label:              Units to Order
 ```
@@ -116,7 +116,7 @@ Expense report queues fall off the radar faster than any other approval type bec
 Add a Days Pending formula column and sort descending. Any expense report sitting more than five business days usually means either the notification was missed or the approver doesn't know they're the assigned approver for that employee's expense type.
 
 ```
-Formula column — Days Pending:
+Formula column: Days Pending:
   Formula (Numeric):  {today} - {createddate}
   Label:              Days Pending
   Sort:               Descending
@@ -150,7 +150,7 @@ This one is more for administrators than finance users. When a script or workflo
 The AP equivalent of the AR aging search. Add a Days Until Due formula column and sort ascending so the most urgent bills appear first. Negative values mean the bill is already past due.
 
 ```
-Formula column — Days Until Due:
+Formula column: Days Until Due:
   Formula (Numeric):  {duedate} - {today}
   Label:              Days Until Due
   Sort:               Ascending  (negative = already past due)
@@ -169,7 +169,7 @@ Essential for any professional services or project-based business tracking time 
 Add a formula column grouping by week to see which weeks have unbilled time. Time entries older than 60 days that are still marked unbilled usually need to either be invoiced or written off as non-billable.
 
 ```
-Formula column — Week:
+Formula column: Week:
   Formula (Date):   TRUNC({date}, 'IW')
   Label:            Week Starting
   Summary type:     Group
@@ -184,7 +184,7 @@ Formula column — Week:
 Add a Percent Over Budget formula column and sort descending by variance. The `NULLIF` prevents a divide-by-zero error on projects with no estimated cost entered.
 
 ```
-Formula column — % Over Budget:
+Formula column: % Over Budget:
   Formula (Numeric):  ROUND(({actualcost} - {estimatedcost}) / NULLIF({estimatedcost}, 0) * 100, 1)
   Label:              % Over Budget
   Sort:               Descending

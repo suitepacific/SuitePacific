@@ -9,7 +9,7 @@ The most common SuiteScript problem we see when we take over a NetSuite account 
 
 <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:10px;overflow:hidden;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <div style="background:#14532d;padding:0.7rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem">
-<span style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#4ade80"></span><span style="font-size:0.68rem;font-weight:700;color:#dcfce7;letter-spacing:0.08em">SUITESCRIPT 2.x BEST PRACTICES — QUICK REFERENCE</span></span>
+<span style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#4ade80"></span><span style="font-size:0.68rem;font-weight:700;color:#dcfce7;letter-spacing:0.08em">SUITESCRIPT 2.x BEST PRACTICES: QUICK REFERENCE</span></span>
 </div>
 <div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 1.25rem;border-bottom:1px solid #bbf7d0">
 <span style="color:#16a34a;flex-shrink:0;font-size:0.85rem;margin-top:1px">✓</span>

@@ -32,7 +32,7 @@ This is one of the more dangerous limitations in SuiteScript because it fails si
   <rect x="0" y="0" width="320" height="124" rx="9" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
   <rect x="0" y="0" width="320" height="28" rx="9" fill="#991b1b"/>
   <rect x="0" y="18" width="320" height="10" fill="#991b1b"/>
-  <text x="160" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#fee2e2">search.run() — hard 4,000-record ceiling</text>
+  <text x="160" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#fee2e2">search.run(): hard 4,000-record ceiling</text>
   <!-- Bar showing data -->
   <rect x="16" y="36" width="288" height="16" rx="3" fill="#bbf7d0"/>
   <text x="120" y="48" font-size="8" fill="#14532d">records 1–3,999 returned</text>
@@ -47,7 +47,7 @@ This is one of the more dangerous limitations in SuiteScript because it fails si
   <rect x="360" y="0" width="320" height="124" rx="9" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
   <rect x="360" y="0" width="320" height="28" rx="9" fill="#14532d"/>
   <rect x="360" y="18" width="320" height="10" fill="#14532d"/>
-  <text x="520" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#dcfce7">search.runPaged() — no ceiling</text>
+  <text x="520" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#dcfce7">search.runPaged(): no ceiling</text>
   <!-- Full bar -->
   <rect x="376" y="36" width="288" height="16" rx="3" fill="#bbf7d0"/>
   <text x="520" y="48" text-anchor="middle" font-size="8" fill="#14532d">all matching records returned (unlimited)</text>

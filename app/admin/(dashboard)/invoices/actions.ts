@@ -145,7 +145,7 @@ export async function createInvoiceAction(_prev: unknown, formData: FormData) {
   } catch (e: unknown) {
     const code = (e as { code?: string })?.code;
     if (code === "P2002") {
-      // Unique constraint on invoiceNumber — regenerate and retry once
+      // Unique constraint on invoiceNumber - regenerate and retry once
       invoiceNumber = await nextInvoiceNumber(customer.company);
       invoice = await prisma.invoice.create({
         data: {

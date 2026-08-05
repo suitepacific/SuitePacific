@@ -25,7 +25,7 @@ Its job is simple: tell NetSuite what records need to be processed. Return a dat
   <rect x="0" y="0" width="320" height="152" rx="9" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
   <rect x="0" y="0" width="320" height="28" rx="9" fill="#991b1b"/>
   <rect x="0" y="18" width="320" height="10" fill="#991b1b"/>
-  <text x="160" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#fee2e2">getInputData() — wrong pattern</text>
+  <text x="160" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#fee2e2">getInputData(): wrong pattern</text>
   <rect x="16" y="36" width="288" height="18" rx="4" fill="#fca5a5" opacity="0.7"/>
   <text x="160" y="49" text-anchor="middle" font-size="8.5" fill="#7f1d1d">Run search inside getInputData()</text>
   <line x1="160" y1="54" x2="160" y2="64" stroke="#ef4444" stroke-width="1.5" marker-end="url(#gid-arrow-r)"/>
@@ -40,7 +40,7 @@ Its job is simple: tell NetSuite what records need to be processed. Return a dat
   <rect x="360" y="0" width="320" height="152" rx="9" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
   <rect x="360" y="0" width="320" height="28" rx="9" fill="#14532d"/>
   <rect x="360" y="18" width="320" height="10" fill="#14532d"/>
-  <text x="520" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#dcfce7">getInputData() — correct pattern</text>
+  <text x="520" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#dcfce7">getInputData(): correct pattern</text>
   <rect x="376" y="36" width="288" height="18" rx="4" fill="#bbf7d0" stroke="#4ade80" stroke-width="1"/>
   <text x="520" y="49" text-anchor="middle" font-size="8.5" font-weight="700" fill="#14532d">return search.load({ id: '...' })</text>
   <line x1="520" y1="54" x2="520" y2="68" stroke="#16a34a" stroke-width="1.5" marker-end="url(#gid-arrow-g)"/>

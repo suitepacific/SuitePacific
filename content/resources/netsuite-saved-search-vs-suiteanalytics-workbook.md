@@ -30,7 +30,7 @@ Using the wrong one is one of the most common causes of slow month-end reporting
   <rect x="0" y="68" width="300" height="76" rx="8" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
   <rect x="0" y="68" width="300" height="26" rx="8" fill="#0b1f4d"/>
   <rect x="0" y="84" width="300" height="10" fill="#0b1f4d"/>
-  <text x="150" y="84" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">Saved Search — operational</text>
+  <text x="150" y="84" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">Saved Search: operational</text>
   <text x="150" y="103" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Queries live data in real time</text>
   <text x="150" y="116" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Dashboard portlets · workflow triggers</text>
   <text x="150" y="129" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Approval queues · exception alerts</text>

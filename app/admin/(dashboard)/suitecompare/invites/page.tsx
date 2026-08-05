@@ -251,7 +251,7 @@ export default async function InvitesPage() {
                               <p className="text-xs text-brand-400 mt-0.5">{inviter.email}</p>
                             </>
                           ) : (
-                            <span className="text-brand-300 text-xs">—</span>
+                            <span className="text-brand-300 text-xs">-</span>
                           )}
                         </td>
                         <td className="px-5 py-3.5 text-brand-400 text-xs whitespace-nowrap">{fmtDate(invite.createdAt)}</td>

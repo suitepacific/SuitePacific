@@ -73,7 +73,7 @@ export default async function AdminInvoiceDetailPage({ params }: { params: Promi
           <p className="text-sm font-medium text-brand-900">
             {invoice.dueDate
               ? new Date(invoice.dueDate).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })
-              : "—"}
+              : "-"}
           </p>
         </div>
       </div>

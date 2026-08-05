@@ -42,7 +42,7 @@ export function SendInviteForm() {
 
         {/* Name */}
         <div>
-          <label className="block text-xs font-medium text-brand-600 mb-1.5">Name <span className="text-brand-300 font-normal">(optional — for personalized email)</span></label>
+          <label className="block text-xs font-medium text-brand-600 mb-1.5">Name <span className="text-brand-300 font-normal">(optional - for personalized email)</span></label>
           <input
             name="name"
             type="text"

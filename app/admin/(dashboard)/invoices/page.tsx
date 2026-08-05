@@ -104,7 +104,7 @@ export default async function AdminInvoicesPage({
                     {new Date(inv.issueDate).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
                   </td>
                   <td className="px-5 py-3 text-brand-400">
-                    {inv.dueDate ? new Date(inv.dueDate).toLocaleDateString("en-US", { month: "short", day: "numeric" }) : "—"}
+                    {inv.dueDate ? new Date(inv.dueDate).toLocaleDateString("en-US", { month: "short", day: "numeric" }) : "-"}
                   </td>
                   <td className="px-5 py-3 font-semibold text-brand-900">
                     {inv.currency} {inv.total.toFixed(2)}

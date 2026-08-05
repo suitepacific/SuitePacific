@@ -76,7 +76,7 @@ export function AdminTicketUpdateForm({ id, defaults }: Props) {
         <div>
           <label className="block text-xs text-brand-500 mb-1">Internal Notes</label>
           <textarea name="internalNotes" rows={4} defaultValue={defaults.internalNotes}
-            placeholder="Private notes — not visible to the client"
+            placeholder="Private notes - not visible to the client"
             className={`${inp} resize-none`} />
         </div>
 

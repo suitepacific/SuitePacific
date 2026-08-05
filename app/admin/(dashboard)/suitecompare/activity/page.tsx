@@ -147,7 +147,7 @@ export default async function ActivityPage() {
         time: c.createdAt,
         userName: u?.name ?? "Unknown",
         userId: c.userId,
-        detail: `Compared ${c.scriptId}${c.status === "failed" && c.errorMsg ? ` — ${c.errorMsg}` : ""}`,
+        detail: `Compared ${c.scriptId}${c.status === "failed" && c.errorMsg ? ` - ${c.errorMsg}` : ""}`,
       };
     }),
 

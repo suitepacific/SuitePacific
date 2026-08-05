@@ -57,7 +57,7 @@ To see the exact XML data model for a specific transaction, open the template ed
   <text x="637" y="46" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">PDF</text>
   <text x="637" y="62" text-anchor="middle" font-size="8" fill="#d7e0f3">NetSuite renderer</text>
   <!-- Footnote -->
-  <text x="340" y="96" text-anchor="middle" font-size="8" fill="#8aa2d6">The template references data as ${record.fieldId} — field names match the XML data model, not the UI label.</text>
+  <text x="340" y="96" text-anchor="middle" font-size="8" fill="#8aa2d6">The template references data as ${record.fieldId}: field names match the XML data model, not the UI label.</text>
 </svg>
 </figure>
 

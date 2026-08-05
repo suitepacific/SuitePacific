@@ -19,7 +19,7 @@ This feature is available on the REST SuiteQL endpoint as of NetSuite 2026.2.
   <rect x="0" y="0" width="320" height="148" rx="9" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
   <rect x="0" y="0" width="320" height="28" rx="9" fill="#991b1b"/>
   <rect x="0" y="18" width="320" height="10" fill="#991b1b"/>
-  <text x="160" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#fee2e2">String interpolation — unsafe</text>
+  <text x="160" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#fee2e2">String interpolation: unsafe</text>
   <rect x="12" y="34" width="296" height="34" rx="4" fill="#1e0505" stroke="#7f1d1d" stroke-width="1"/>
   <text x="160" y="48" text-anchor="middle" font-size="7.5" fill="#fca5a5" font-family="monospace">WHERE custbody_status = '${statusValue}'</text>
   <text x="160" y="61" text-anchor="middle" font-size="7.5" fill="#f87171" font-family="monospace">// statusValue comes from user input</text>
@@ -32,7 +32,7 @@ This feature is available on the REST SuiteQL endpoint as of NetSuite 2026.2.
   <rect x="360" y="0" width="320" height="148" rx="9" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
   <rect x="360" y="0" width="320" height="28" rx="9" fill="#14532d"/>
   <rect x="360" y="18" width="320" height="10" fill="#14532d"/>
-  <text x="520" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#dcfce7">Bound parameters — safe</text>
+  <text x="520" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#dcfce7">Bound parameters: safe</text>
   <rect x="372" y="34" width="296" height="34" rx="4" fill="#052e16" stroke="#166534" stroke-width="1"/>
   <text x="520" y="48" text-anchor="middle" font-size="7.5" fill="#86efac" font-family="monospace">WHERE custbody_status = ?</text>
   <text x="520" y="61" text-anchor="middle" font-size="7.5" fill="#4ade80" font-family="monospace">params: [statusValue]</text>

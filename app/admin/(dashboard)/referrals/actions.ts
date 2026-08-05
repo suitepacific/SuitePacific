@@ -93,7 +93,7 @@ export async function updateReferralAction(_prev: unknown, formData: FormData) {
     },
   });
 
-  // Activity log — only log meaningful changes
+  // Activity log - only log meaningful changes
   const activities: Promise<void>[] = [];
   if (existing.status !== status) {
     activities.push(
@@ -107,7 +107,7 @@ export async function updateReferralAction(_prev: unknown, formData: FormData) {
   }
   if (existing.commissionStatus !== commissionStatus && commissionStatus) {
     if (commissionStatus === "PAYABLE") {
-      activities.push(logActivity(id, "payment_received", "Client invoice payment received — commission is now payable", "admin"));
+      activities.push(logActivity(id, "payment_received", "Client invoice payment received - commission is now payable", "admin"));
     } else if (commissionStatus === "PAID") {
       activities.push(
         logActivity(

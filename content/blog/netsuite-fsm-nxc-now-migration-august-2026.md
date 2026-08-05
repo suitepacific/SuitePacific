@@ -9,7 +9,7 @@ If your NetSuite Field Service Management configuration uses `nxc_now()` express
 
 Automatic migration sounds like the safe option. It is not a reason to skip review.
 
-Oracle migrates the expressions into a copied configuration record and stores the result for you to inspect. If the migrated expressions contain errors, if checkbox conditions were not carried over correctly, or if date and time values are formatted incorrectly after migration, the problems will appear in your live field operation after August 11 — not before, unless you review the migration in Sandbox first.
+Oracle migrates the expressions into a copied configuration record and stores the result for you to inspect. If the migrated expressions contain errors, if checkbox conditions were not carried over correctly, or if date and time values are formatted incorrectly after migration, the problems will appear in your live field operation after August 11: not before, unless you review the migration in Sandbox first.
 
 **Not sure whether your FSM configuration uses nxc_now() or how to find the migrated record?** SuitePacific helps NetSuite customers review FSM configurations before bundle updates. [Contact us](/contact) and we will work through your Sandbox environment with you before August 11.
 
@@ -54,7 +54,7 @@ If any migrated expression produces values in a different format, FSM Mobile wil
 
 **Complex expressions**
 
-Simple uses of `nxc_now()` — for example, setting a date field to the current date when a task is completed — migrate cleanly. Expressions that use `nxc_now()` as part of a more complex condition, concatenation, or calculation are the ones most likely to need adjustment after migration.
+Simple uses of `nxc_now()`: for example, setting a date field to the current date when a task is completed: migrate cleanly. Expressions that use `nxc_now()` as part of a more complex condition, concatenation, or calculation are the ones most likely to need adjustment after migration.
 
 <figure style="margin:1.75rem 0">
 <svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
@@ -132,7 +132,7 @@ You can verify this by searching for `nxc_now` within your FSM Configuration rec
 ## Frequently asked questions
 
 **Will nxc_now() stop working after August 11?**
-Oracle's documentation for 2026.07.1 indicates that existing `nxc_now()` expressions are automatically migrated. The practical question is whether the migrated versions work correctly — which is why reviewing the migrated record in Sandbox is essential.
+Oracle's documentation for 2026.07.1 indicates that existing `nxc_now()` expressions are automatically migrated. The practical question is whether the migrated versions work correctly: which is why reviewing the migrated record in Sandbox is essential.
 
 **What if I find errors in the migrated record after August 11?**
 If Production upgrades on August 11 and you later find that migrated expressions are incorrect, you can update the migrated configuration record directly in Production. The corrections will take effect when technicians next sync the mobile app. However, any tasks completed in the window between August 11 and the correction may have incorrect field values from the broken expressions.

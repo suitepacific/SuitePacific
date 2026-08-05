@@ -15,10 +15,10 @@ const TYPES = [
 ];
 
 const PRIORITIES = [
-  { value: "LOW", label: "Low — not urgent" },
-  { value: "NORMAL", label: "Normal — standard timeline" },
-  { value: "HIGH", label: "High — impacting operations" },
-  { value: "URGENT", label: "Urgent — blocking production" },
+  { value: "LOW", label: "Low - not urgent" },
+  { value: "NORMAL", label: "Normal - standard timeline" },
+  { value: "HIGH", label: "High - impacting operations" },
+  { value: "URGENT", label: "Urgent - blocking production" },
 ];
 
 export default function NewTicketPage() {

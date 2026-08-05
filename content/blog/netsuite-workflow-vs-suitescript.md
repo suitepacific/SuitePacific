@@ -166,7 +166,7 @@ define(['N/error', 'N/search'], (error, search) => {
 });
 ```
 
-This fires on every save path — UI, CSV import, REST API call, another script — which is exactly what a financial control requires. A SuiteFlow condition cannot load related records, compute a derived value, or throw a blocking error in one step.
+This fires on every save path: UI, CSV import, REST API call, another script: which is exactly what a financial control requires. A SuiteFlow condition cannot load related records, compute a derived value, or throw a blocking error in one step.
 
 **Send a weekly summary email to all active customers** → SuiteScript Scheduled Script or Map/Reduce. This is a scheduled bulk operation with no per-record trigger.
 
@@ -218,7 +218,7 @@ function afterSubmit(context) {
 
 // Fix option 2: Check if the field already has the target value
 function afterSubmit(context) {
-    // Don't write if the field is already set — avoids the second save entirely
+    // Don't write if the field is already set: avoids the second save entirely
     if (context.newRecord.getValue('custbody_processed')) return;
 
     record.submitFields({

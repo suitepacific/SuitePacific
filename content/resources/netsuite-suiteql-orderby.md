@@ -20,7 +20,7 @@ Queries that already include `ORDER BY` are not affected. This change also appli
 
 <div style="background:#fefce8;border:1px solid #fde68a;border-radius:10px;overflow:hidden;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <div style="background:#78350f;padding:0.7rem 1.25rem;display:flex;align-items:center;gap:8px">
-<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fbbf24"></span><span style="font-size:0.68rem;font-weight:700;color:#fef9c3;letter-spacing:0.08em">DEFAULT SORT CHANGE — ACTION REQUIRED</span>
+<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fbbf24"></span><span style="font-size:0.68rem;font-weight:700;color:#fef9c3;letter-spacing:0.08em">DEFAULT SORT CHANGE: ACTION REQUIRED</span>
 </div>
 <div style="padding:0.65rem 1.25rem;border-bottom:1px solid #fde68a">
 <div style="font-size:0.8rem;font-weight:600;color:#713f12;margin-bottom:4px">SELECT ... FROM Transaction WHERE ... (no ORDER BY)</div>

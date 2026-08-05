@@ -118,7 +118,7 @@ define(['N/record', 'N/search', 'N/log'], function(record, search, log) {
   {
     scriptType: "scheduled",
     sandbox: `/**
- * Invoice Email Sender — Scheduled Script
+ * Invoice Email Sender - Scheduled Script
  * Sends overdue invoice reminders to customers.
  */
 define(['N/search', 'N/email', 'N/runtime'], function(search, email, runtime) {
@@ -135,7 +135,7 @@ define(['N/search', 'N/email', 'N/runtime'], function(search, email, runtime) {
       email.send({
         author: runtime.getCurrentUser().id,
         recipients: [customerId],
-        subject: 'Invoice Overdue — Action Required',
+        subject: 'Invoice Overdue - Action Required',
         body: 'Your invoice #' + invoiceId + ' for $' + amount + ' is overdue. Please remit payment.'
       });
     });
@@ -145,7 +145,7 @@ define(['N/search', 'N/email', 'N/runtime'], function(search, email, runtime) {
 
 });`,
     production: `/**
- * Invoice Email Sender — Scheduled Script
+ * Invoice Email Sender - Scheduled Script
  * Sends overdue invoice reminders to customers.
  * Batched to stay within governance limits.
  */
@@ -176,7 +176,7 @@ define(['N/search', 'N/email', 'N/runtime', 'N/log'], function(search, email, ru
           email.sendBulk({
             author: runtime.getCurrentUser().id,
             recipients: [customerId],
-            subject: 'Invoice Overdue (' + daysOverdue + ' days) — Action Required',
+            subject: 'Invoice Overdue (' + daysOverdue + ' days) - Action Required',
             body: 'Your invoice #' + invoiceId + ' for $' + amount + ' is ' + daysOverdue + ' days overdue.',
             templateId: TEMPLATE_ID,
             relatedTransactionId: invoiceId
@@ -195,7 +195,7 @@ define(['N/search', 'N/email', 'N/runtime', 'N/log'], function(search, email, ru
   {
     scriptType: "mapreduce",
     sandbox: `/**
- * Sales Order Approval — Map/Reduce Script
+ * Sales Order Approval - Map/Reduce Script
  * Routes high-value sales orders to the approval queue.
  */
 define(['N/search', 'N/record', 'N/log'], function(search, record, log) {
@@ -233,7 +233,7 @@ define(['N/search', 'N/record', 'N/log'], function(search, record, log) {
 
 });`,
     production: `/**
- * Sales Order Approval — Map/Reduce Script
+ * Sales Order Approval - Map/Reduce Script
  * Routes high-value sales orders to the approval queue.
  * Reduce stage added to handle concurrent approval routing.
  */
@@ -271,7 +271,7 @@ define(['N/search', 'N/record', 'N/workflow', 'N/log'], function(search, record,
         params: { custworkflow_amount: data.amount }
       });
 
-      log.audit({ title: 'Approval triggered', details: 'SO ' + soId + ' — $' + data.amount });
+      log.audit({ title: 'Approval triggered', details: 'SO ' + soId + ' - $' + data.amount });
     } catch (e) {
       log.error({ title: 'Workflow trigger failed for SO ' + soId, details: e.message });
     }
@@ -370,7 +370,7 @@ define(['N/record', 'N/search', 'N/runtime', 'N/log'], function(record, search, 
     try {
       validateRequest(requestBody);
     } catch (e) {
-      log.error({ title: 'Product Sync RESTlet — Auth/Validation', details: e.message });
+      log.error({ title: 'Product Sync RESTlet - Auth/Validation', details: e.message });
       return { error: e.message, code: 400 };
     }
 
@@ -417,7 +417,7 @@ define(['N/record', 'N/search', 'N/runtime', 'N/log'], function(record, search, 
   {
     scriptType: "suitelet",
     sandbox: `/**
- * Invoice PDF Helper — Suitelet
+ * Invoice PDF Helper - Suitelet
  * Generates a custom invoice PDF and returns it inline.
  */
 define(['N/render', 'N/record', 'N/https'], function(render, record, https) {
@@ -445,7 +445,7 @@ define(['N/render', 'N/record', 'N/https'], function(render, record, https) {
 
 });`,
     production: `/**
- * Invoice PDF Helper — Suitelet
+ * Invoice PDF Helper - Suitelet
  * Generates a custom invoice PDF and returns it inline.
  * Added template selection, error handling, and access control.
  */

@@ -27,7 +27,7 @@ The 2026.07.1 update addresses this by adding persistent, visible status indicat
 
 After the update, technicians will see a numeric counter at the top of their task list showing how many records have an active status: pending sync, draft, error, or offline. The same counter appears on each individual task.
 
-This means that if a technician has three records with sync errors, they will see that immediately when they open the task list — without having to open each task to find out.
+This means that if a technician has three records with sync errors, they will see that immediately when they open the task list: without having to open each task to find out.
 
 When a record has more than one status at the same time, the app shows the most critical one. The priority order is:
 
@@ -56,7 +56,7 @@ Once the retry succeeds, the error icon clears automatically. If the record stil
 
 ### Navigation bar improvements
 
-The navigation bar across the top of the mobile app will now show the name of the current mobile tab alongside the title field of the record being viewed. For example, if a technician is viewing a work order called "HVAC Service — Building 4," the navigation bar will show the tab name and that record title together.
+The navigation bar across the top of the mobile app will now show the name of the current mobile tab alongside the title field of the record being viewed. For example, if a technician is viewing a work order called "HVAC Service: Building 4," the navigation bar will show the tab name and that record title together.
 
 Records that have not been saved yet will show "Unsaved Draft" in the navigation bar. This distinguishes uncommitted records from saved ones, which was previously a source of confusion when technicians were not certain whether they had completed a save action.
 
@@ -68,7 +68,7 @@ Records that have not been saved yet will show "Unsaved Draft" in the navigation
   <!-- Nav bar -->
   <rect x="200" y="12" width="280" height="34" rx="8" fill="#0b1f4d"/>
   <rect x="200" y="34" width="280" height="12" fill="#0b1f4d"/>
-  <text x="340" y="33" text-anchor="middle" font-size="9" fill="white" font-weight="600">Work Orders  ·  HVAC Service — Building 4</text>
+  <text x="340" y="33" text-anchor="middle" font-size="9" fill="white" font-weight="600">Work Orders  ·  HVAC Service: Building 4</text>
   <!-- Status counter badge -->
   <rect x="430" y="16" width="40" height="18" rx="9" fill="#ef4444"/>
   <text x="450" y="29" text-anchor="middle" font-size="9" fill="white" font-weight="700">3 ⚠</text>
@@ -78,7 +78,7 @@ Records that have not been saved yet will show "Unsaved Draft" in the navigation
   <text x="225" y="83" font-size="8" fill="#6b7280">Assigned · 9:00 AM</text>
   <rect x="210" y="100" width="260" height="38" rx="6" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
   <text x="225" y="115" font-size="9" fill="#0b1f4d" font-weight="600">WO-1039 · Roof Unit Inspection</text>
-  <text x="225" y="128" font-size="8" fill="#dc2626">⚠ Sync error — tap to retry</text>
+  <text x="225" y="128" font-size="8" fill="#dc2626">⚠ Sync error: tap to retry</text>
   <rect x="210" y="145" width="260" height="38" rx="6" fill="white" stroke="#e5e7eb" stroke-width="1"/>
   <text x="225" y="160" font-size="9" fill="#0b1f4d" font-weight="600">WO-1037 · Filter Replacement</text>
   <text x="225" y="173" font-size="8" fill="#6b7280">Draft · Unsaved</text>
@@ -117,8 +117,8 @@ Project tasks are not affected by this change. Project task completion remains a
 The single most useful thing you can do before August 11 is give your field team a brief explanation of what they will see on the first morning after the update. A short message covering the following is enough:
 
 - The task list will now show a counter of records with active statuses
-- An offline banner will appear at the bottom of the screen when there is no connection — this is normal and not a malfunction
-- Records with sync errors will show a visible icon — tap the record and use the retry option
+- An offline banner will appear at the bottom of the screen when there is no connection: this is normal and not a malfunction
+- Records with sync errors will show a visible icon: tap the record and use the retry option
 - The navigation bar will now show the current tab name and record title
 - Records that have not been saved will show "Unsaved Draft" in the navigation bar
 

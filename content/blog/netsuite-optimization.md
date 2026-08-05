@@ -13,7 +13,7 @@ A NetSuite optimization is a cleanup pass on a live account. No re-implementatio
 
 <figure style="margin:1.75rem 0">
 <svg viewBox="0 0 680 148" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
-  <text x="340" y="13" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">AUDIT AREAS — LIVE ACCOUNT OPTIMIZATION</text>
+  <text x="340" y="13" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">AUDIT AREAS: LIVE ACCOUNT OPTIMIZATION</text>
   <!-- Row 1: 3 boxes -->
   <rect x="0" y="22" width="206" height="54" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
   <text x="103" y="43" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b">Custom Fields</text>

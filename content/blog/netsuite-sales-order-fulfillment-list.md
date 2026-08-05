@@ -18,7 +18,7 @@ NetSuite 2026.2 changes this. You can now start order fulfillment directly from 
   <rect x="0" y="0" width="290" height="116" rx="9" fill="#f8f9fc" stroke="#d7e0f3" stroke-width="1.5"/>
   <rect x="0" y="0" width="290" height="26" rx="9" fill="#4f6fb0"/>
   <rect x="0" y="16" width="290" height="10" fill="#4f6fb0"/>
-  <text x="145" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">Before 2026.2 — per order</text>
+  <text x="145" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">Before 2026.2: per order</text>
   <text x="145" y="42" text-anchor="middle" font-size="8.5" fill="#14306b">① Open sales order list</text>
   <text x="145" y="56" text-anchor="middle" font-size="8.5" fill="#14306b">② Click into order (page load)</text>
   <text x="145" y="70" text-anchor="middle" font-size="8.5" fill="#14306b">③ Start fulfillment from inside record</text>
@@ -31,7 +31,7 @@ NetSuite 2026.2 changes this. You can now start order fulfillment directly from 
   <rect x="382" y="0" width="298" height="116" rx="9" fill="#eef2fb" stroke="#4f7fff" stroke-width="2"/>
   <rect x="382" y="0" width="298" height="26" rx="9" fill="#0b1f4d"/>
   <rect x="382" y="16" width="298" height="10" fill="#0b1f4d"/>
-  <text x="531" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">After 2026.2 — from list</text>
+  <text x="531" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb">After 2026.2: from list</text>
   <text x="531" y="42" text-anchor="middle" font-size="8.5" fill="#14306b">① Open sales order list</text>
   <text x="531" y="56" text-anchor="middle" font-size="8.5" fill="#14306b">② Trigger fulfillment from row</text>
   <text x="531" y="70" text-anchor="middle" font-size="8.5" fill="#14306b">③ Complete fulfillment</text>

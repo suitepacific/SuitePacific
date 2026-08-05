@@ -13,12 +13,12 @@ import {
 } from "./actions";
 
 function fmt(d: Date | null | undefined) {
-  if (!d) return "—";
+  if (!d) return "-";
   return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", hour: "2-digit", minute: "2-digit" });
 }
 
 function fmtDate(d: Date | null | undefined) {
-  if (!d) return "—";
+  if (!d) return "-";
   return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 }
 
@@ -186,7 +186,7 @@ export default async function ScUserDetailPage({ params }: Props) {
             {row("Last login", fmt(user.lastLoginAt))}
             {row("Location", user.signupCountry
               ? <span className="flex items-center gap-1.5 justify-end">{toFlag(user.signupCountry)}{user.signupCity ? `${user.signupCity}, ` : ""}{user.signupCountry}</span>
-              : "—"
+              : "-"
             )}
             {viaAdminInvite && (
               <>
@@ -211,7 +211,7 @@ export default async function ScUserDetailPage({ params }: Props) {
           )
         )}
 
-        {/* Seat grid — full width */}
+        {/* Seat grid - full width */}
         {org && (
           <div className="lg:col-span-2">
             <div className="bg-white rounded-2xl border border-brand-50 shadow-soft overflow-hidden">
@@ -312,7 +312,7 @@ export default async function ScUserDetailPage({ params }: Props) {
           </div>
         )}
 
-        {/* Billing & Access — full width */}
+        {/* Billing & Access - full width */}
         {org && (
           <div className="lg:col-span-2">
             <div className="bg-white rounded-2xl border border-brand-50 shadow-soft overflow-hidden">

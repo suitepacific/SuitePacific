@@ -45,7 +45,7 @@ export default function NewInvoicePage() {
         // Prefill monthly retainer for MONTHLY/HYBRID billing
         if ((d.billingType === "MONTHLY" || d.billingType === "HYBRID") && d.monthlyRate) {
           const month = new Date().toLocaleString("en-US", { month: "long", year: "numeric" });
-          setManualItems([{ description: `Monthly Retainer — ${month}`, quantity: "1", unitPrice: String(d.monthlyRate) }]);
+          setManualItems([{ description: `Monthly Retainer - ${month}`, quantity: "1", unitPrice: String(d.monthlyRate) }]);
         } else {
           setManualItems([]);
         }
@@ -119,7 +119,7 @@ export default function NewInvoicePage() {
               onChange={(e) => setCustomerId(e.target.value)} className={inp}>
               <option value="">Select customer</option>
               {customers.map((c) => (
-                <option key={c.id} value={c.id}>{c.company} — {c.name}</option>
+                <option key={c.id} value={c.id}>{c.company} - {c.name}</option>
               ))}
             </select>
           </div>
@@ -226,7 +226,7 @@ export default function NewInvoicePage() {
                   <div className="col-span-6">
                     <input type="text" value={item.description}
                       onChange={(e) => updateManualItem(i, "description", e.target.value)}
-                      placeholder="e.g. Monthly Retainer — July 2026" className={inp} />
+                      placeholder="e.g. Monthly Retainer - July 2026" className={inp} />
                   </div>
                   <div className="col-span-2">
                     <input type="number" value={item.quantity} step="0.01" min="0.01"

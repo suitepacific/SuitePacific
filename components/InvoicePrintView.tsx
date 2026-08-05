@@ -19,7 +19,7 @@ function fmtDate(d: Date | string) {
 
 export function InvoicePrintView({ invoice }: { invoice: InvoiceWithItems }) {
   useEffect(() => {
-    document.title = `Invoice ${invoice.invoiceNumber} — ${invoice.customer.company}`;
+    document.title = `Invoice ${invoice.invoiceNumber} - ${invoice.customer.company}`;
   }, [invoice]);
 
   return (
@@ -33,7 +33,7 @@ export function InvoicePrintView({ invoice }: { invoice: InvoiceWithItems }) {
         body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
       `}</style>
 
-      {/* Print button — hidden when printing */}
+      {/* Print button - hidden when printing */}
       <div className="no-print fixed top-4 right-4 flex gap-2 z-10">
         <button
           onClick={() => window.print()}

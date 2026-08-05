@@ -18,7 +18,7 @@ From 2026.2, you can initiate fulfillment directly from the sales order list wit
   <defs>
     <marker id="sof-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#4f6fb0"/></marker>
   </defs>
-  <text x="340" y="13" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">FULFILLMENT FROM THE LIST — 4 STEPS (2026.2+)</text>
+  <text x="340" y="13" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">FULFILLMENT FROM THE LIST: 4 STEPS (2026.2+)</text>
   <rect x="0" y="22" width="150" height="50" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
   <text x="75" y="43" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">① Navigate</text>
   <text x="75" y="57" text-anchor="middle" font-size="8" fill="#4f6fb0">Transactions > Sales</text>

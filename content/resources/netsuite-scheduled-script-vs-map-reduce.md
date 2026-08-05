@@ -21,7 +21,7 @@ SuiteScript provides two script types designed for processing records in batch: 
   <rect x="0" y="0" width="320" height="176" rx="9" fill="#eef2fb" stroke="#b2c2e6" stroke-width="1.5"/>
   <rect x="0" y="0" width="320" height="30" rx="9" fill="#0b1f4d"/>
   <rect x="0" y="20" width="320" height="10" fill="#0b1f4d"/>
-  <text x="160" y="19" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb" letter-spacing="0.04em">SCHEDULED SCRIPT — Single Thread</text>
+  <text x="160" y="19" text-anchor="middle" font-size="10" font-weight="700" fill="#eef2fb" letter-spacing="0.04em">SCHEDULED SCRIPT: Single Thread</text>
   <!-- Sequential flow -->
   <rect x="20" y="42" width="280" height="22" rx="5" fill="#14306b"/>
   <text x="160" y="57" text-anchor="middle" font-size="9" font-weight="700" fill="#eef2fb">Start</text>
@@ -37,10 +37,10 @@ SuiteScript provides two script types designed for processing records in batch: 
   <rect x="360" y="0" width="320" height="176" rx="9" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
   <rect x="360" y="0" width="320" height="30" rx="9" fill="#14532d"/>
   <rect x="360" y="20" width="320" height="10" fill="#14532d"/>
-  <text x="520" y="19" text-anchor="middle" font-size="10" font-weight="700" fill="#dcfce7" letter-spacing="0.04em">MAP/REDUCE — Distributed Stages</text>
+  <text x="520" y="19" text-anchor="middle" font-size="10" font-weight="700" fill="#dcfce7" letter-spacing="0.04em">MAP/REDUCE: Distributed Stages</text>
   <!-- Stages -->
   <rect x="400" y="42" width="240" height="18" rx="4" fill="#166534"/>
-  <text x="520" y="55" text-anchor="middle" font-size="8.5" font-weight="700" fill="#dcfce7">getInputData() — define workload</text>
+  <text x="520" y="55" text-anchor="middle" font-size="8.5" font-weight="700" fill="#dcfce7">getInputData(): define workload</text>
   <line x1="520" y1="60" x2="520" y2="70" stroke="#16a34a" stroke-width="1.5" marker-end="url(#smr-arrow-g)"/>
   <!-- 3 parallel map boxes -->
   <rect x="375" y="70" width="70" height="16" rx="3" fill="#bbf7d0" stroke="#4ade80" stroke-width="1"/>
@@ -52,10 +52,10 @@ SuiteScript provides two script types designed for processing records in batch: 
   <text x="650" y="82" text-anchor="middle" font-size="7.5" fill="#4f6fb0">parallel</text>
   <line x1="520" y1="86" x2="520" y2="96" stroke="#16a34a" stroke-width="1.5" marker-end="url(#smr-arrow-g)"/>
   <rect x="400" y="96" width="240" height="18" rx="4" fill="#bbf7d0" stroke="#4ade80" stroke-width="1"/>
-  <text x="520" y="109" text-anchor="middle" font-size="8.5" fill="#14532d">reduce() — aggregate by key</text>
+  <text x="520" y="109" text-anchor="middle" font-size="8.5" fill="#14532d">reduce(): aggregate by key</text>
   <line x1="520" y1="114" x2="520" y2="124" stroke="#16a34a" stroke-width="1.5" marker-end="url(#smr-arrow-g)"/>
   <rect x="400" y="124" width="240" height="18" rx="4" fill="#166534"/>
-  <text x="520" y="137" text-anchor="middle" font-size="8.5" font-weight="700" fill="#dcfce7">summarize() — completion</text>
+  <text x="520" y="137" text-anchor="middle" font-size="8.5" font-weight="700" fill="#dcfce7">summarize(): completion</text>
   <text x="520" y="155" text-anchor="middle" font-size="8" fill="#16a34a">Each map() gets its own governance budget</text>
   <text x="520" y="168" text-anchor="middle" font-size="8" font-weight="600" fill="#14532d">Best for: thousands of records, batch scale</text>
 </svg>

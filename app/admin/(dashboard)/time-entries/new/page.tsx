@@ -48,7 +48,7 @@ export default function NewTimeEntryPage() {
               className={inp}>
               <option value="">Select customer</option>
               {customers.map((c) => (
-                <option key={c.id} value={c.id}>{c.company} — {c.name}</option>
+                <option key={c.id} value={c.id}>{c.company} - {c.name}</option>
               ))}
             </select>
           </div>
@@ -88,7 +88,7 @@ export default function NewTimeEntryPage() {
               Description <span className="text-red-500">*</span>
             </label>
             <textarea id="description" name="description" required rows={3}
-              placeholder="What was done — this appears on the invoice"
+              placeholder="What was done - this appears on the invoice"
               className={`${inp} resize-none`} />
           </div>
 
@@ -104,8 +104,8 @@ export default function NewTimeEntryPage() {
             <div>
               <label className={lbl}>Billable</label>
               <select name="isBillable" className={inp}>
-                <option value="true">Yes — billable</option>
-                <option value="false">No — internal</option>
+                <option value="true">Yes - billable</option>
+                <option value="false">No - internal</option>
               </select>
             </div>
           </div>

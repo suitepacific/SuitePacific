@@ -9,11 +9,11 @@ If your NetSuite account uses Bill Capture to process vendor bills, two preferen
 
 <div style="background:#fefce8;border:1px solid #fde68a;border-radius:10px;overflow:hidden;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <div style="background:#78350f;padding:0.7rem 1.25rem;display:flex;align-items:center;gap:8px">
-<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fbbf24"></span><span style="font-size:0.68rem;font-weight:700;color:#fef9c3;letter-spacing:0.08em">BILL CAPTURE PREFERENCES — BEHAVIOR CHANGE IN 2026.2</span>
+<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fbbf24"></span><span style="font-size:0.68rem;font-weight:700;color:#fef9c3;letter-spacing:0.08em">BILL CAPTURE PREFERENCES: BEHAVIOR CHANGE IN 2026.2</span>
 </div>
 <div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.65rem 1.25rem;border-bottom:1px solid #fde68a">
 <div style="flex:1">
-<span style="font-size:0.8rem;font-weight:600;color:#713f12;display:block">Save Tax As — blank value</span>
+<span style="font-size:0.8rem;font-weight:600;color:#713f12;display:block">Save Tax As: blank value</span>
 <div style="display:flex;gap:1.5rem;margin-top:4px">
 <span style="font-size:0.76rem;color:#92400e"><strong>Before 2026.2:</strong> undefined behavior</span>
 <span style="font-size:0.76rem;color:#14532d"><strong>After 2026.2:</strong> maps to <strong>No Tax</strong></span>
@@ -22,7 +22,7 @@ If your NetSuite account uses Bill Capture to process vendor bills, two preferen
 </div>
 <div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.65rem 1.25rem">
 <div style="flex:1">
-<span style="font-size:0.8rem;font-weight:600;color:#713f12;display:block">Save Shipping Cost As — blank value</span>
+<span style="font-size:0.8rem;font-weight:600;color:#713f12;display:block">Save Shipping Cost As: blank value</span>
 <div style="display:flex;gap:1.5rem;margin-top:4px">
 <span style="font-size:0.76rem;color:#92400e"><strong>Before 2026.2:</strong> undefined behavior</span>
 <span style="font-size:0.76rem;color:#14532d"><strong>After 2026.2:</strong> maps to <strong>No Shipping Cost</strong></span>

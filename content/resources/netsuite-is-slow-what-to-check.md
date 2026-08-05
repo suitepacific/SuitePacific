@@ -19,7 +19,7 @@ Before assuming the issue requires an upgrade or re-implementation, check these 
 
 <figure style="margin:1.75rem 0">
 <svg viewBox="0 0 680 148" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
-  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">FIVE AREAS TO CHECK — IN THIS ORDER</text>
+  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">FIVE AREAS TO CHECK: IN THIS ORDER</text>
   <!-- Row 1: 3 boxes -->
   <rect x="0" y="22" width="206" height="54" rx="7" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
   <text x="103" y="41" text-anchor="middle" font-size="9.5" font-weight="700" fill="#991b1b">① Dashboard Searches</text>

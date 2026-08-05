@@ -20,7 +20,7 @@ Token-Based Authentication (TBA) is the most direct migration path for existing 
   <defs>
     <marker id="nlm-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#4f6fb0"/></marker>
   </defs>
-  <text x="340" y="13" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">NLAUTH TO TBA MIGRATION — FIVE STEPS</text>
+  <text x="340" y="13" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">NLAUTH TO TBA MIGRATION: FIVE STEPS</text>
   <!-- Step boxes -->
   <rect x="0" y="22" width="120" height="54" rx="6" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
   <text x="60" y="43" text-anchor="middle" font-size="8.5" font-weight="700" fill="#14306b">① Audit</text>
@@ -48,7 +48,7 @@ Token-Based Authentication (TBA) is the most direct migration path for existing 
   <text x="620" y="68" text-anchor="middle" font-size="7.5" fill="#8aa2d6">confirm before 2027.1</text>
   <!-- Deadline bar -->
   <rect x="0" y="88" width="680" height="22" rx="5" fill="#fef2f2" stroke="#fca5a5" stroke-width="1"/>
-  <text x="340" y="103" text-anchor="middle" font-size="8.5" font-weight="700" fill="#991b1b">Hard deadline: NetSuite 2027.1 — all NLAuth integrations stop working. Test in sandbox before production cutover.</text>
+  <text x="340" y="103" text-anchor="middle" font-size="8.5" font-weight="700" fill="#991b1b">Hard deadline: NetSuite 2027.1: all NLAuth integrations stop working. Test in sandbox before production cutover.</text>
 </svg>
 </figure>
 

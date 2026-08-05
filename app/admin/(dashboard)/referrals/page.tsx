@@ -104,7 +104,7 @@ export default async function AdminReferralsPage({
                     )}
                   </td>
                   <td className="px-5 py-3 text-brand-500">{r.partner.name}</td>
-                  <td className="px-5 py-3 text-brand-500">{r.assignedTo ?? <span className="text-brand-200">—</span>}</td>
+                  <td className="px-5 py-3 text-brand-500">{r.assignedTo ?? <span className="text-brand-200">-</span>}</td>
                   <td className="px-5 py-3">
                     <ReferralStatusBadge status={r.status} />
                   </td>
@@ -119,7 +119,7 @@ export default async function AdminReferralsPage({
                         )}
                       </div>
                     ) : (
-                      <span className="text-brand-300">—</span>
+                      <span className="text-brand-300">-</span>
                     )}
                   </td>
                   <td className="px-5 py-3 text-brand-400">

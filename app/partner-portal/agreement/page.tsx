@@ -18,7 +18,7 @@ export default async function AgreementPage() {
         </p>
 
         <div className="bg-white rounded-2xl border border-brand-100 p-6 mb-6 space-y-4 text-sm text-brand-700 max-h-80 overflow-y-auto">
-          <p className="font-semibold text-brand-900">SuitePacific Referral Partner Program — Terms</p>
+          <p className="font-semibold text-brand-900">SuitePacific Referral Partner Program - Terms</p>
           <p>By participating in the SuitePacific Partner Program, you agree to the following:</p>
           <ol className="list-decimal pl-5 space-y-2">
             <li>You will only refer companies that have expressed genuine interest in NetSuite services.</li>

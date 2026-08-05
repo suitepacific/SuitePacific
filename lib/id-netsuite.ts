@@ -1,4 +1,4 @@
-// NetSuite Import Doctor — REST Record Metadata Catalog access.
+// NetSuite Import Doctor - REST Record Metadata Catalog access.
 // Reuses the OAuth 1.0 TBA signing already proven by SuiteCompare (lib/sc-netsuite.ts)
 // rather than re-implementing HMAC signing for a second product.
 import { oauthHeader, nsBase, type NsCredentials } from "./sc-netsuite";

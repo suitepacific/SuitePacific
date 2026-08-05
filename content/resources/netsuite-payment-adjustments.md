@@ -13,7 +13,7 @@ NetSuite 2026.2 introduces automation for three types of payment discrepancies t
 
 <figure style="margin:1.75rem 0">
 <svg viewBox="0 0 680 110" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
-  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">THREE PAYMENT DISCREPANCY TYPES — AUTO-ADJUSTED IN 2026.2</text>
+  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">THREE PAYMENT DISCREPANCY TYPES: AUTO-ADJUSTED IN 2026.2</text>
   <rect x="0" y="22" width="206" height="74" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
   <rect x="0" y="22" width="206" height="26" rx="7" fill="#0b1f4d"/>
   <rect x="0" y="38" width="206" height="10" fill="#0b1f4d"/>

@@ -31,7 +31,7 @@ In a script that runs once, the overhead is negligible. In a Scheduled Script ch
   <rect x="0" y="0" width="320" height="156" rx="9" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
   <rect x="0" y="0" width="320" height="28" rx="9" fill="#991b1b"/>
   <rect x="0" y="18" width="320" height="10" fill="#991b1b"/>
-  <text x="160" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#fee2e2" letter-spacing="0.03em">record.load() — full record</text>
+  <text x="160" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#fee2e2" letter-spacing="0.03em">record.load(): full record</text>
   <rect x="16" y="36" width="288" height="13" rx="3" fill="#fca5a5" opacity="0.6"/>
   <text x="160" y="47" text-anchor="middle" font-size="8" fill="#7f1d1d">All body fields (every field on the record type)</text>
   <rect x="16" y="53" width="288" height="13" rx="3" fill="#fca5a5" opacity="0.6"/>
@@ -47,15 +47,15 @@ In a script that runs once, the overhead is negligible. In a Scheduled Script ch
   <rect x="360" y="0" width="320" height="156" rx="9" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
   <rect x="360" y="0" width="320" height="28" rx="9" fill="#14532d"/>
   <rect x="360" y="18" width="320" height="10" fill="#14532d"/>
-  <text x="520" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#dcfce7" letter-spacing="0.03em">search.lookupFields() — targeted read</text>
+  <text x="520" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#dcfce7" letter-spacing="0.03em">search.lookupFields(): targeted read</text>
   <rect x="376" y="36" width="288" height="13" rx="3" fill="#d1fae5" opacity="0.4"/>
-  <text x="520" y="47" text-anchor="middle" font-size="8" fill="#6b7280">body fields — not loaded</text>
+  <text x="520" y="47" text-anchor="middle" font-size="8" fill="#6b7280">body fields: not loaded</text>
   <rect x="376" y="53" width="288" height="13" rx="3" fill="#d1fae5" opacity="0.4"/>
-  <text x="520" y="64" text-anchor="middle" font-size="8" fill="#6b7280">line items — not loaded</text>
+  <text x="520" y="64" text-anchor="middle" font-size="8" fill="#6b7280">line items: not loaded</text>
   <rect x="376" y="70" width="288" height="13" rx="3" fill="#d1fae5" opacity="0.4"/>
-  <text x="520" y="81" text-anchor="middle" font-size="8" fill="#6b7280">addresses — not loaded</text>
+  <text x="520" y="81" text-anchor="middle" font-size="8" fill="#6b7280">addresses: not loaded</text>
   <rect x="376" y="87" width="288" height="13" rx="3" fill="#d1fae5" opacity="0.4"/>
-  <text x="520" y="98" text-anchor="middle" font-size="8" fill="#6b7280">metadata — not loaded</text>
+  <text x="520" y="98" text-anchor="middle" font-size="8" fill="#6b7280">metadata: not loaded</text>
   <rect x="376" y="107" width="288" height="13" rx="3" fill="#4ade80" opacity="0.6"/>
   <text x="520" y="118" text-anchor="middle" font-size="8" font-weight="700" fill="#14532d">→ returned: status, entity, amount ✓</text>
   <text x="520" y="143" text-anchor="middle" font-size="8.5" font-weight="700" fill="#14532d">Governance: fraction of record.load()</text>

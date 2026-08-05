@@ -21,7 +21,7 @@ export function encrypt(plaintext: string): string {
 export function decrypt(stored: string): string {
   if (!stored.startsWith("v1:")) {
     // A value without the v1: prefix was stored before encryption was introduced.
-    // Reject it so credentials aren't silently used as plaintext — the user must
+    // Reject it so credentials aren't silently used as plaintext - the user must
     // re-save their credentials to re-encrypt them.
     throw new Error(
       "Stored credential is not encrypted. Please re-enter your TBA credentials to continue."

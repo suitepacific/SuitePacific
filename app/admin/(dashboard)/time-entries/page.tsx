@@ -104,7 +104,7 @@ export default async function AdminTimeEntriesPage({
                       <Link href={`/admin/tickets/${e.ticketId}`} className="text-xs text-brand-400 hover:text-accent truncate max-w-[150px] block">
                         {e.ticket.title}
                       </Link>
-                    ) : <span className="text-brand-200">—</span>}
+                    ) : <span className="text-brand-200">-</span>}
                   </td>
                   <td className="px-5 py-3">
                     <span className={`font-medium ${e.isBillable ? "text-brand-900" : "text-brand-300"}`}>
@@ -123,7 +123,7 @@ export default async function AdminTimeEntriesPage({
                       </Link>
                     ) : e.isBillable ? (
                       <span className="text-xs text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full">Unbilled</span>
-                    ) : <span className="text-brand-200">—</span>}
+                    ) : <span className="text-brand-200">-</span>}
                   </td>
                   <td className="px-5 py-3">
                     {!e.invoiceItem && (

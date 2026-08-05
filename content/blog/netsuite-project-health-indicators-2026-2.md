@@ -11,7 +11,7 @@ Here is what each one tracks.
 
 <figure style="margin:1.75rem 0">
 <svg viewBox="0 0 680 156" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
-  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">5 NEW PROJECT HEALTH INDICATORS — 2026.2</text>
+  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">5 NEW PROJECT HEALTH INDICATORS: 2026.2</text>
   <rect x="0" y="22" width="206" height="58" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
   <text x="103" y="43" text-anchor="middle" font-size="9.5" font-weight="700" fill="#14306b">Time Overrun</text>
   <text x="103" y="57" text-anchor="middle" font-size="8" fill="#4f6fb0">Actual hours exceed planned</text>

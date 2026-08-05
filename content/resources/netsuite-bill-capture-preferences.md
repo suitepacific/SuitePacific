@@ -18,14 +18,14 @@ Before 2026.2, leaving these fields blank produced undefined behavior. After the
 
 <div style="background:#fefce8;border:1px solid #fde68a;border-radius:10px;overflow:hidden;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <div style="background:#78350f;padding:0.7rem 1.25rem;display:flex;align-items:center;gap:8px">
-<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fbbf24"></span><span style="font-size:0.68rem;font-weight:700;color:#fef9c3;letter-spacing:0.08em">BILL CAPTURE PREFERENCES — CHECK BOTH FIELDS</span>
+<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fbbf24"></span><span style="font-size:0.68rem;font-weight:700;color:#fef9c3;letter-spacing:0.08em">BILL CAPTURE PREFERENCES: CHECK BOTH FIELDS</span>
 </div>
 <div style="padding:0.65rem 1.25rem;border-bottom:1px solid #fde68a">
-<div style="font-size:0.8rem;font-weight:600;color:#713f12">Save Tax As — if currently blank</div>
+<div style="font-size:0.8rem;font-weight:600;color:#713f12">Save Tax As: if currently blank</div>
 <div style="font-size:0.76rem;color:#92400e;margin-top:3px">Now maps to <strong>No Tax</strong>. Captured tax amounts will be discarded. Set explicitly if tax should be captured.</div>
 </div>
 <div style="padding:0.65rem 1.25rem;border-bottom:1px solid #fde68a;background:#fffbeb">
-<div style="font-size:0.8rem;font-weight:600;color:#713f12">Save Shipping Cost As — if currently blank</div>
+<div style="font-size:0.8rem;font-weight:600;color:#713f12">Save Shipping Cost As: if currently blank</div>
 <div style="font-size:0.76rem;color:#92400e;margin-top:3px">Now maps to <strong>No Shipping Cost</strong>. Captured shipping amounts will be discarded. Set explicitly if shipping should be captured.</div>
 </div>
 <div style="padding:0.65rem 1.25rem;background:#fffbeb;font-size:0.78rem;color:#713f12">

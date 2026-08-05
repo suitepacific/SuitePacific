@@ -66,7 +66,7 @@ export default function NewPartnerPage() {
 
           <div>
             <label htmlFor="commissionRate" className={lbl}>
-              Commission Rate % <span className={opt}>(optional — overrides global default)</span>
+              Commission Rate % <span className={opt}>(optional - overrides global default)</span>
             </label>
             <input id="commissionRate" name="commissionRate" type="number" step="0.01" min="0" max="100"
               placeholder="e.g. 10" className={inp} />

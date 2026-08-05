@@ -18,9 +18,9 @@ const DEAL_STATUSES: { value: ReferralStatus; label: string }[] = [
 ];
 
 const COMMISSION_STATUSES: { value: CommissionStatus; label: string }[] = [
-  { value: "PENDING_PAYMENT", label: "Pending Payment — deal won, awaiting invoice payment" },
-  { value: "PAYABLE",         label: "Payable — client paid the invoice" },
-  { value: "PAID",            label: "Paid — commission sent to partner" },
+  { value: "PENDING_PAYMENT", label: "Pending Payment - deal won, awaiting invoice payment" },
+  { value: "PAYABLE",         label: "Payable - client paid the invoice" },
+  { value: "PAID",            label: "Paid - commission sent to partner" },
 ];
 
 const CURRENCIES = ["USD", "CAD", "AUD", "GBP", "EUR", "INR", "SGD", "NZD"];
@@ -129,7 +129,7 @@ export function ReferralUpdateForm({
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label htmlFor="internalNotes" className={lbl}>
-              Internal Notes <span className="text-xs text-red-500 font-normal">— not visible to partner</span>
+              Internal Notes <span className="text-xs text-red-500 font-normal">- not visible to partner</span>
             </label>
             <textarea id="internalNotes" name="internalNotes" rows={3} defaultValue={currentInternalNotes ?? ""}
               placeholder="Budget concerns, competitor notes, follow-up reminders…"
@@ -137,7 +137,7 @@ export function ReferralUpdateForm({
           </div>
           <div>
             <label htmlFor="partnerNotes" className={lbl}>
-              Partner Notes <span className="text-xs text-brand-400 font-normal">— visible to partner</span>
+              Partner Notes <span className="text-xs text-brand-400 font-normal">- visible to partner</span>
             </label>
             <textarea id="partnerNotes" name="partnerNotes" rows={3} defaultValue={currentPartnerNotes ?? ""}
               placeholder="Updates the partner should know about…"
@@ -199,7 +199,7 @@ export function ReferralUpdateForm({
               <label htmlFor="commissionStatus" className={lbl}>Commission Status</label>
               <select id="commissionStatus" name="commissionStatus" value={commissionStatus}
                 onChange={(e) => setCommissionStatus(e.target.value as CommissionStatus | "")} className={sel}>
-                <option value="">— Select status —</option>
+                <option value="">- Select status -</option>
                 {COMMISSION_STATUSES.map((s) => <option key={s.value} value={s.value}>{s.label}</option>)}
               </select>
             </div>
@@ -219,7 +219,7 @@ export function ReferralUpdateForm({
                     <select id="paymentMethod" name="paymentMethod"
                       defaultValue={currentPaymentMethod ?? ""}
                       className={`${sel} bg-white`}>
-                      <option value="">— Select —</option>
+                      <option value="">- Select -</option>
                       {PAYMENT_METHODS.map((m) => <option key={m.value} value={m.value}>{m.label}</option>)}
                     </select>
                   </div>

@@ -29,7 +29,7 @@ SuiteFlow makes it easy to build a workflow and easy to build one that breaks in
 <div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.65rem 1.25rem;border-bottom:1px solid #fde68a">
 <span style="color:#b45309;font-size:0.85rem;flex-shrink:0;margin-top:1px">⚠</span>
 <div style="flex:1">
-<span style="font-size:0.8rem;font-weight:600;color:#713f12;display:block">No state diagram — nobody can explain what the workflow actually does</span>
+<span style="font-size:0.8rem;font-weight:600;color:#713f12;display:block">No state diagram: nobody can explain what the workflow actually does</span>
 <span style="font-size:0.76rem;color:#92400e;line-height:1.4;display:block;margin-top:2px">The workflow editor is not documentation. A 6-state workflow with no diagram is a change risk.</span>
 </div>
 </div>
@@ -48,7 +48,7 @@ SuiteFlow makes it easy to build a workflow and easy to build one that breaks in
 </div>
 </div>
 <div style="padding:0.6rem 1.25rem;background:#fef9c3;border-top:1px solid #fde68a;font-size:0.78rem;color:#713f12">
-Most of these accumulate gradually. None of them cause obvious failures at first — they surface months later when the account grows or someone inherits the workflow library.
+Most of these accumulate gradually. None of them cause obvious failures at first: they surface months later when the account grows or someone inherits the workflow library.
 </div>
 </div>
 

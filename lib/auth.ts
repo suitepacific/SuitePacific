@@ -92,7 +92,7 @@ export async function verifySessionToken(token: string | undefined): Promise<boo
   return Number.isFinite(expires) && Date.now() < expires;
 }
 
-// Call at the start of every admin server action — middleware only protects pages, not direct action POSTs
+// Call at the start of every admin server action - middleware only protects pages, not direct action POSTs
 export async function requireAdmin(): Promise<void> {
   const cookieStore = await cookies();
   const token = cookieStore.get(ADMIN_SESSION_COOKIE)?.value;

@@ -40,7 +40,7 @@ This increases governance unit usage, slows execution, and is one of the most co
   <rect x="0" y="0" width="320" height="152" rx="9" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
   <rect x="0" y="0" width="320" height="26" rx="9" fill="#991b1b"/>
   <rect x="0" y="16" width="320" height="10" fill="#991b1b"/>
-  <text x="160" y="17" text-anchor="middle" font-size="10" font-weight="700" fill="#fee2e2">Loop with record.load() — 1,000 loads</text>
+  <text x="160" y="17" text-anchor="middle" font-size="10" font-weight="700" fill="#fee2e2">Loop with record.load(): 1,000 loads</text>
   <rect x="16" y="34" width="288" height="18" rx="4" fill="#0b1f4d"/>
   <text x="160" y="47" text-anchor="middle" font-size="9" font-weight="700" fill="#eef2fb">Saved search returns 1,000 IDs</text>
   <line x1="160" y1="52" x2="160" y2="60" stroke="#ef4444" stroke-width="1.5" marker-end="url(#loop-arrow)"/>
@@ -58,7 +58,7 @@ This increases governance unit usage, slows execution, and is one of the most co
   <rect x="360" y="0" width="320" height="152" rx="9" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
   <rect x="360" y="0" width="320" height="26" rx="9" fill="#14532d"/>
   <rect x="360" y="16" width="320" height="10" fill="#14532d"/>
-  <text x="520" y="17" text-anchor="middle" font-size="10" font-weight="700" fill="#dcfce7">Search columns — 0 extra loads</text>
+  <text x="520" y="17" text-anchor="middle" font-size="10" font-weight="700" fill="#dcfce7">Search columns: 0 extra loads</text>
   <rect x="376" y="34" width="288" height="18" rx="4" fill="#166534"/>
   <text x="520" y="47" text-anchor="middle" font-size="9" font-weight="700" fill="#dcfce7">Search returns 1,000 rows with columns</text>
   <line x1="520" y1="52" x2="520" y2="60" stroke="#16a34a" stroke-width="1.5" marker-end="url(#loop-arrow-g)"/>
@@ -69,11 +69,11 @@ This increases governance unit usage, slows execution, and is one of the most co
   <text x="520" y="74" text-anchor="middle" font-size="8" fill="#14532d">result[1]</text>
   <rect x="576" y="62" width="88" height="16" rx="3" fill="#bbf7d0"/>
   <text x="620" y="74" text-anchor="middle" font-size="8" fill="#14532d">result[2] …</text>
-  <text x="520" y="96" text-anchor="middle" font-size="8" fill="#14532d">result.getValue('entity') — already there</text>
+  <text x="520" y="96" text-anchor="middle" font-size="8" fill="#14532d">result.getValue('entity'): already there</text>
   <text x="520" y="110" text-anchor="middle" font-size="8" fill="#14532d">No additional operation needed</text>
   <text x="520" y="132" text-anchor="middle" font-size="8.5" font-weight="700" fill="#14532d">0 extra record loads · governance intact</text>
 </svg>
-<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Include the fields you need as search columns. The data is already in the result — no loop record load required.</figcaption>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Include the fields you need as search columns. The data is already in the result: no loop record load required.</figcaption>
 </figure>
 
 ## The fix: design your search to return what you need

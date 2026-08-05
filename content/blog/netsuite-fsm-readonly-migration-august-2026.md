@@ -59,7 +59,7 @@ The important default to understand: if none of these properties are set on a ta
   <text x="150" y="108" text-anchor="middle" font-size="9" fill="#6b7280">Single property blocks all editing</text>
   <text x="150" y="123" text-anchor="middle" font-size="9" fill="#6b7280">Cannot distinguish create / edit / delete</text>
   <rect x="20" y="140" width="260" height="36" rx="6" fill="#fee2e2" stroke="#fca5a5" stroke-width="1"/>
-  <text x="150" y="163" text-anchor="middle" font-size="9" fill="#991b1b">⚠ Retired in 2026.07.1 — will have no effect after August 11</text>
+  <text x="150" y="163" text-anchor="middle" font-size="9" fill="#991b1b">⚠ Retired in 2026.07.1: will have no effect after August 11</text>
   <!-- Arrow -->
   <text x="330" y="102" text-anchor="middle" font-size="22" fill="#6b7280">→</text>
   <!-- After column -->
@@ -109,7 +109,7 @@ Specifically:
 - Attempt to edit a record on a tab that had the restriction
 - Confirm that the tab-level `edit: false` property blocks the action as expected
 - Confirm that tabs with no restriction properties set allow all three actions
-- Test create, edit, and delete separately on each affected tab — do not assume that one test covers all three
+- Test create, edit, and delete separately on each affected tab: do not assume that one test covers all three
 
 Do not only verify that the mobile app loads correctly. Verify that the permission boundaries you expect are actually enforced.
 

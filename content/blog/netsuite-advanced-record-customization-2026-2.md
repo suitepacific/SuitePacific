@@ -9,7 +9,7 @@ NetSuite 2026.2 adds a new section called **Advanced Record Customization**, acc
 
 <figure style="margin:1.75rem 0">
 <svg viewBox="0 0 680 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
-  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">ADVANCED RECORD CUSTOMIZATION (ARC) — 2026.2</text>
+  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">ADVANCED RECORD CUSTOMIZATION (ARC): 2026.2</text>
   <!-- Menu path -->
   <rect x="200" y="22" width="280" height="22" rx="5" fill="#060f26" stroke="#4f7fff" stroke-width="1.5"/>
   <text x="340" y="37" text-anchor="middle" font-size="8.5" font-weight="700" fill="#8aa2d6" font-family="monospace">Customization > Advanced Record Customization</text>

@@ -77,7 +77,7 @@ export default async function PortalReferralsPage() {
                           )}
                         </div>
                       ) : (
-                        <span className="text-brand-300 text-xs">—</span>
+                        <span className="text-brand-300 text-xs">-</span>
                       )}
                     </td>
                     <td className="px-6 py-4 text-brand-400">

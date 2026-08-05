@@ -19,7 +19,7 @@ The Match Bank Data page in NetSuite 2026.2 has a new **Match Suggestions** subt
   <rect x="0" y="0" width="270" height="120" rx="9" fill="#f8f9fc" stroke="#d7e0f3" stroke-width="1.5"/>
   <rect x="0" y="0" width="270" height="24" rx="9" fill="#4f6fb0"/>
   <rect x="0" y="14" width="270" height="10" fill="#4f6fb0"/>
-  <text x="135" y="16" text-anchor="middle" font-size="9.5" font-weight="700" fill="#eef2fb">Before 2026.2 — Review subtab</text>
+  <text x="135" y="16" text-anchor="middle" font-size="9.5" font-weight="700" fill="#eef2fb">Before 2026.2: Review subtab</text>
   <text x="135" y="40" text-anchor="middle" font-size="8.5" fill="#14306b">List of unmatched bank lines</text>
   <text x="135" y="55" text-anchor="middle" font-size="8.5" fill="#14306b">No suggested action structure</text>
   <text x="135" y="70" text-anchor="middle" font-size="8.5" fill="#14306b">AR only</text>
@@ -28,7 +28,7 @@ The Match Bank Data page in NetSuite 2026.2 has a new **Match Suggestions** subt
   <rect x="352" y="0" width="328" height="120" rx="9" fill="#eef2fb" stroke="#4f7fff" stroke-width="2"/>
   <rect x="352" y="0" width="328" height="24" rx="9" fill="#0b1f4d"/>
   <rect x="352" y="14" width="328" height="10" fill="#0b1f4d"/>
-  <text x="516" y="16" text-anchor="middle" font-size="9.5" font-weight="700" fill="#eef2fb">After 2026.2 — Match Suggestions</text>
+  <text x="516" y="16" text-anchor="middle" font-size="9.5" font-weight="700" fill="#eef2fb">After 2026.2: Match Suggestions</text>
   <text x="516" y="38" text-anchor="middle" font-size="8.5" fill="#14306b">Five actions per unmatched bank line:</text>
   <text x="516" y="53" text-anchor="middle" font-size="8" fill="#4f6fb0">Match Transaction · Review Match Options</text>
   <text x="516" y="67" text-anchor="middle" font-size="8" fill="#4f6fb0">Apply Payment · Review Payment Options · Create</text>

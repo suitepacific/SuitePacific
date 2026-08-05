@@ -129,7 +129,7 @@ export function AdminSidebar() {
         />
       )}
 
-      {/* Sidebar — fixed overlay on mobile, static flex child on desktop */}
+      {/* Sidebar - fixed overlay on mobile, static flex child on desktop */}
       <aside
         className={[
           "fixed inset-y-0 left-0 z-50 w-60 bg-white border-r border-brand-50 flex flex-col",

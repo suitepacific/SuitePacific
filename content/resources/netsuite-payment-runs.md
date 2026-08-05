@@ -27,7 +27,7 @@ NetSuite processes the payments using the Bulk Processing Framework. After proce
   <defs>
     <marker id="pr-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#4f6fb0"/></marker>
   </defs>
-  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">PAYMENT RUN — FOUR-STAGE WORKFLOW</text>
+  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">PAYMENT RUN: FOUR-STAGE WORKFLOW</text>
   <!-- Stage 1 -->
   <rect x="0" y="24" width="144" height="64" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
   <rect x="0" y="24" width="144" height="24" rx="7" fill="#0b1f4d"/>

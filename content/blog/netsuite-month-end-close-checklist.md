@@ -59,7 +59,7 @@ Generic month-end close advice is easy to find. What's harder to find is what's 
   <!-- Footer -->
   <text x="0" y="148" font-size="9" fill="#8aa2d6">Do not lock before reconciliation is clean. Subledger periods must be locked before the All Transactions period.</text>
 </svg>
-<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">The sequence matters. Running process jobs after reconciliation — or locking before them — produces unreliable financials.</figcaption>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">The sequence matters. Running process jobs after reconciliation: or locking before them: produces unreliable financials.</figcaption>
 </figure>
 
 ## 1. Check for transactions with mismatched dates and posting periods

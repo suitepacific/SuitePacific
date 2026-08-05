@@ -18,10 +18,10 @@ That parallelism only holds if each `map()` invocation can complete its work wit
   <defs>
     <marker id="mri-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#4f6fb0"/></marker>
   </defs>
-  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">EACH map() IS ISOLATED — NO SHARED STATE</text>
+  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">EACH map() IS ISOLATED: NO SHARED STATE</text>
   <!-- getInputData source -->
   <rect x="240" y="22" width="200" height="26" rx="6" fill="#060f26" stroke="#4f7fff" stroke-width="1.5"/>
-  <text x="340" y="39" text-anchor="middle" font-size="9.5" font-weight="700" fill="#eef2fb">getInputData() — 1,000 items</text>
+  <text x="340" y="39" text-anchor="middle" font-size="9.5" font-weight="700" fill="#eef2fb">getInputData(): 1,000 items</text>
   <!-- Arrows to 4 map boxes -->
   <line x1="280" y1="48" x2="90" y2="72" stroke="#4f6fb0" stroke-width="1.5" marker-end="url(#mri-arrow)"/>
   <line x1="315" y1="48" x2="240" y2="72" stroke="#4f6fb0" stroke-width="1.5" marker-end="url(#mri-arrow)"/>

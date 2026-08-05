@@ -9,7 +9,7 @@ When a client tells us their account "got slow," it's almost never one cause. Us
 
 <div style="background:#060f26;border-radius:10px;overflow:hidden;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <div style="background:#0b1f4d;padding:0.7rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem">
-<span style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#f97316"></span><span style="font-size:0.68rem;font-weight:700;color:#eef2fb;letter-spacing:0.08em">PERFORMANCE DIAGNOSTIC — CHECK IN THIS ORDER</span></span>
+<span style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#f97316"></span><span style="font-size:0.68rem;font-weight:700;color:#eef2fb;letter-spacing:0.08em">PERFORMANCE DIAGNOSTIC: CHECK IN THIS ORDER</span></span>
 </div>
 <div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.65rem 1.25rem;border-bottom:1px solid #0d1f3c">
 <span style="font-size:0.68rem;font-weight:700;color:#4f7fff;background:#0b1f4d;width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">1</span>

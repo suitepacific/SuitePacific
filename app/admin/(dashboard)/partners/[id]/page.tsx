@@ -71,7 +71,7 @@ export default async function AdminPartnerDetailPage({ params }: { params: Promi
         <StatCard label="Win Rate"
           value={partner.referrals.length > 0
             ? `${Math.round(partner.referrals.filter((r) => r.status === "WON").length / partner.referrals.length * 100)}%`
-            : "—"}
+            : "-"}
         />
         <StatCard label="Commission"
           value={totalCommission > 0 ? `$${totalCommission.toFixed(2)}` : "$0"} />

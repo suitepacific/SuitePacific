@@ -19,7 +19,7 @@ export default async function CustomerAgreementPage() {
         </p>
 
         <div className="bg-white rounded-2xl border border-brand-100 p-6 mb-6 space-y-4 text-sm text-brand-700 max-h-80 overflow-y-auto">
-          <p className="font-semibold text-brand-900">SuitePacific Client Portal — Terms of Use</p>
+          <p className="font-semibold text-brand-900">SuitePacific Client Portal - Terms of Use</p>
           <ol className="list-decimal pl-5 space-y-2">
             <li>This portal is provided exclusively for active SuitePacific clients. Access is non-transferable.</li>
             <li>All information shared through the portal is confidential and subject to your service agreement with SuitePacific.</li>

@@ -67,7 +67,7 @@ export function oauthHeader(
 
 // 1234567_SB2 → https://1234567-sb2.suitetalk.api.netsuite.com
 export function nsBase(nsAccountId: string): string {
-  // Validate format before building URL — blocks SSRF via crafted account IDs
+  // Validate format before building URL - blocks SSRF via crafted account IDs
   if (!/^\d+(_SB\d+)?$/i.test(nsAccountId.trim())) {
     throw new Error("Invalid NetSuite Account ID format (expected e.g. 1234567 or 1234567_SB2).");
   }
@@ -94,7 +94,7 @@ function soapPassportXml(creds: NsCredentials): string {
   </soapenv:Header>`;
 }
 
-// Low-level SOAP get — returns raw XML response string.
+// Low-level SOAP get - returns raw XML response string.
 async function soapGet(creds: NsCredentials, internalId: string, recordType: string): Promise<string> {
   const endpoint = `${nsBase(creds.nsEnvAccountId)}/services/NetSuitePort_2023_2`;
   const envelope = `<?xml version="1.0" encoding="utf-8"?>
@@ -151,7 +151,7 @@ export async function fetchScriptContent(
 ): Promise<string> {
   const base = nsBase(creds.nsEnvAccountId);
 
-  // Step 1: SuiteQL — resolve script ID → file internal ID
+  // Step 1: SuiteQL - resolve script ID → file internal ID
   const suiteqlUrl = `${base}/services/rest/query/v1/suiteql?limit=1`;
   const suiteqlRes = await fetch(suiteqlUrl, {
     method: "POST",
@@ -225,7 +225,7 @@ export async function fetchScriptMeta(
   return { name: String(row.name), scriptType: normalizeScriptType(String(row.scripttype)) };
 }
 
-// Quick validation call — queries Script table with limit 1.
+// Quick validation call - queries Script table with limit 1.
 // Returns cleanly on success, throws a user-readable error on failure.
 export async function testCredentials(creds: NsCredentials): Promise<void> {
   const base = nsBase(creds.nsEnvAccountId);

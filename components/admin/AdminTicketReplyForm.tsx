@@ -36,7 +36,7 @@ export function AdminTicketReplyForm({ ticketId }: { ticketId: string }) {
           name="body"
           rows={5}
           required
-          placeholder={isInternal ? "Private note — not visible to the client…" : "Reply to the client…"}
+          placeholder={isInternal ? "Private note - not visible to the client…" : "Reply to the client…"}
           className="w-full rounded-xl border border-brand-200 px-4 py-3 text-sm text-brand-900 placeholder:text-brand-300 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent resize-none"
         />
         {state?.error && (

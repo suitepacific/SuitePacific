@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 
 const EMAIL_RE = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
 
-// Email delivery happens client-side (see LeadForm.tsx) — FormSubmit sits behind
+// Email delivery happens client-side (see LeadForm.tsx) - FormSubmit sits behind
 // Cloudflare, which challenges server-to-server requests from Vercel's IPs with a
 // JS challenge page that a backend can never solve. This route only persists the lead.
 export async function POST(request: NextRequest) {
