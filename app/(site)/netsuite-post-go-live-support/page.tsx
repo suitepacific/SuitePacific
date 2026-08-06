@@ -17,7 +17,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
 import { Button } from "@/components/ui/Button";
-import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
@@ -189,6 +189,12 @@ export default function PostGoLiveSupportPage() {
         ]}
       />
       <FaqJsonLd items={FAQ} />
+      <ServiceJsonLd
+        name="NetSuite Post-Go-Live Support"
+        description="Ongoing development, automation, and support for companies already live on NetSuite. Covers SuiteScript, workflow automation, saved searches, PDF templates, and configuration."
+        url={`${SITE_URL}/netsuite-post-go-live-support`}
+        serviceType="NetSuite Managed Support"
+      />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading

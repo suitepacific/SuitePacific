@@ -180,6 +180,18 @@ export const SERVICES: Service[] = [
     description: "Responsive, senior-level support for the day-to-day issues that come up after launch.",
     href: "/netsuite-post-go-live-support",
   },
+  {
+    icon: Headset,
+    title: "Admin Support for SMBs",
+    description: "Enterprise-grade NetSuite administration on a fixed monthly retainer, built for small and mid-sized businesses.",
+    href: "/netsuite-admin-support-small-business",
+  },
+  {
+    icon: Layers3,
+    title: "NetSuite Consulting",
+    description: "End-to-end consulting for post-go-live customization, integration, and optimization.",
+    href: "/netsuite-consulting-services",
+  },
 ];
 
 export const COMPARISON_CONS: string[] = [
@@ -447,6 +459,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     title: "Resources",
     links: [
+      { label: "SuiteCompare", href: "/suitecompare" },
       { label: "NetSuite Resources", href: "/resources" },
       { label: "Blog", href: "/blog" },
       { label: "Case Studies", href: "/case-studies" },

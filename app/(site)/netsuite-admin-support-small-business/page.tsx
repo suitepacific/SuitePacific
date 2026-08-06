@@ -18,7 +18,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
 import { Button } from "@/components/ui/Button";
-import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
@@ -213,6 +213,12 @@ export default function NetSuiteAdminSupportSmallBusinessPage() {
         ]}
       />
       <FaqJsonLd items={FAQ} />
+      <ServiceJsonLd
+        name="NetSuite Admin Support for Small Business"
+        description="Enterprise-grade NetSuite administration on a fixed monthly retainer for small and mid-sized businesses."
+        url={`${SITE_URL}/netsuite-admin-support-small-business`}
+        serviceType="NetSuite Administration"
+      />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading

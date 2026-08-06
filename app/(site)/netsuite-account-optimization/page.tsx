@@ -9,7 +9,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
 import { Button } from "@/components/ui/Button";
-import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
@@ -158,6 +158,12 @@ export default function AccountOptimizationPage() {
         ]}
       />
       <FaqJsonLd items={FAQ} />
+      <ServiceJsonLd
+        name="NetSuite Account Optimization"
+        description="NetSuite account cleanup, legacy configuration review, and performance optimization for post-go-live accounts."
+        url={`${SITE_URL}/netsuite-account-optimization`}
+        serviceType="NetSuite Optimization"
+      />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading

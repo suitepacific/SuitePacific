@@ -9,7 +9,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
 import { Button } from "@/components/ui/Button";
-import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
@@ -158,6 +158,12 @@ export default function SavedSearchesDashboardsPage() {
         ]}
       />
       <FaqJsonLd items={FAQ} />
+      <ServiceJsonLd
+        name="NetSuite Saved Searches & Dashboards"
+        description="Custom saved searches and role-based dashboards that surface the data your team needs directly inside NetSuite."
+        url={`${SITE_URL}/netsuite-saved-searches-dashboards`}
+        serviceType="NetSuite Analytics"
+      />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading

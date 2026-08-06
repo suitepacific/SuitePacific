@@ -19,7 +19,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
 import { Button } from "@/components/ui/Button";
-import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
@@ -358,6 +358,12 @@ export default function HireNetSuiteDeveloperPage() {
         ]}
       />
       <FaqJsonLd items={FAQ} />
+      <ServiceJsonLd
+        name="Hire a NetSuite Developer"
+        description="Hire experienced NetSuite SuiteScript developers for ongoing support or project-based customization work."
+        url={`${SITE_URL}/hire-netsuite-developer`}
+        serviceType="NetSuite Development"
+      />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
 

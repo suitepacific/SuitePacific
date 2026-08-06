@@ -5,6 +5,8 @@ import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Badge } from "@/components/ui/Badge";
 import { getAllPosts } from "@/lib/blog";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { SITE_URL } from "@/lib/content";
 
 export const revalidate = 60;
 
@@ -20,6 +22,12 @@ export default async function BlogIndexPage() {
 
   return (
     <main className="pt-32 pb-24 sm:pt-40 sm:pb-32">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: SITE_URL },
+          { name: "Blog", url: `${SITE_URL}/blog` },
+        ]}
+      />
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <SectionHeading
           as="h1"
