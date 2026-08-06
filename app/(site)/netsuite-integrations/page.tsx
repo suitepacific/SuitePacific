@@ -300,6 +300,25 @@ export default function NetSuiteIntegrationsPage() {
           </div>
         </div>
 
+        {/* Related reading */}
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
+          <p className="text-sm font-semibold text-brand-900 mb-3">From the blog</p>
+          <ul className="space-y-2.5">
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-nlauth-tba-end-of-support" className="text-accent hover:underline">
+                NLAuth end of support: migrating to Token-Based Authentication
+              </Link>{" "}
+              covers what changes when NLAuth is deprecated and how to migrate existing integrations.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-rest-batch-sequential" className="text-accent hover:underline">
+                NetSuite REST Web Services sequential batch processing
+              </Link>{" "}
+              explains when to use sequential vs. parallel batch operations in REST integrations.
+            </li>
+          </ul>
+        </div>
+
         <ServiceFaqSection items={FAQ} />
 
         <div className="mt-14 pt-10 border-t border-brand-50" data-section="contact">

@@ -305,6 +305,31 @@ export default function PostGoLiveSupportPage() {
           </div>
         </div>
 
+        {/* Related reading */}
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
+          <p className="text-sm font-semibold text-brand-900 mb-3">Related reading</p>
+          <ul className="space-y-2.5">
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-post-go-live-checklist" className="text-accent hover:underline">
+                NetSuite post-go-live checklist
+              </Link>{" "}
+              covers what should be in place in the months after implementation.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/signs-netsuite-support-not-working" className="text-accent hover:underline">
+                8 signs your NetSuite support isn&apos;t working
+              </Link>{" "}
+              identifies the patterns that indicate a support relationship needs to change.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-month-end-close-checklist" className="text-accent hover:underline">
+                NetSuite month-end close checklist
+              </Link>{" "}
+              walks through the steps for a clean period close in NetSuite.
+            </li>
+          </ul>
+        </div>
+
         <ServiceFaqSection items={FAQ} />
 
         {/* Inline form */}

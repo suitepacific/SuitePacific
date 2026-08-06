@@ -91,3 +91,5 @@ If you have existing REST batch integrations that relied on operations running i
 Review any batch integrations where order might matter and update them to use sequential processing where appropriate.
 
 Sequential batch processing is available in NetSuite REST Web Services as of 2026.2. If you are building new integrations that use batch operations with dependencies between steps, this is now the correct approach.
+
+If you are working with REST Web Services using Token-Based Authentication, see our guide on the [NLAuth deprecation and TBA migration timeline](/blog/netsuite-nlauth-tba-end-of-support) for what changes ahead. For help designing or maintaining NetSuite integrations, [SuitePacific's integration services](/netsuite-integrations) cover REST, RESTlet, and scheduled sync approaches.

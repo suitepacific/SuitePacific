@@ -71,3 +71,5 @@ This change is most useful for:
 If your fulfillment process is already automated through SuiteScript or workflow, or if you process a low volume of orders, this change has less impact.
 
 The feature is available in NetSuite 2026.2. Navigate to your sales order list to see the fulfillment action available directly from there.
+
+If you are looking to go further and automate order fulfillment entirely, [NetSuite workflow automation](/netsuite-workflow-automation) covers how SuiteFlow and SuiteScript can eliminate the manual steps in order processing workflows.

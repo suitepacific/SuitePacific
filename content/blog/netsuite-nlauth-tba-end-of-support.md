@@ -118,3 +118,5 @@ A: Yes, but TBA is only a temporary solution. TBA is more secure than NLAuth and
 
 **Q: Does the NLAuth retirement affect RESTlet integrations specifically?**
 A: Yes. RESTlets are the most common place NLAuth is used because NLAuth was the easiest authentication method to implement for RESTlet calls. Any RESTlet that currently receives requests authenticated with NLAuth will stop receiving those requests when 2027.1 hits. The RESTlet itself does not need to be rewritten, only the authentication method the calling system uses to reach it.
+
+If you need help auditing your current integrations or planning the migration, [SuitePacific's NetSuite integrations services](/netsuite-integrations) cover RESTlet, REST Web Services, and OAuth 2.0 migration work.

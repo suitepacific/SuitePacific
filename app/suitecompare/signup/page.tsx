@@ -1,12 +1,12 @@
 "use client";
 
-import { useActionState } from "react";
+import { Suspense, useActionState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { GitCompare, Loader2 } from "lucide-react";
 import { signupScAction } from "@/app/suitecompare/actions";
 
-export default function SuiteCompareSignupPage() {
+function SignupForm() {
   const searchParams = useSearchParams();
   const inviteToken = searchParams.get("invite") ?? "";
   const [state, formAction, isPending] = useActionState(signupScAction, {});
@@ -110,5 +110,13 @@ export default function SuiteCompareSignupPage() {
         </p>
       </div>
     </div>
+  );
+}
+
+export default function SuiteCompareSignupPage() {
+  return (
+    <Suspense>
+      <SignupForm />
+    </Suspense>
   );
 }

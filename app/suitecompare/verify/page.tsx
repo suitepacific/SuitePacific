@@ -1,11 +1,11 @@
 "use client";
 
-import { useActionState, useEffect, useRef, useState } from "react";
+import { Suspense, useActionState, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { GitCompare, Loader2, MailCheck, RefreshCw } from "lucide-react";
+import { Loader2, MailCheck, RefreshCw } from "lucide-react";
 import { verifyOtpAction, resendOtpAction } from "@/app/suitecompare/actions";
 
-export default function VerifyPage() {
+function VerifyForm() {
   const searchParams = useSearchParams();
   const email = searchParams.get("email") ?? "";
 
@@ -123,5 +123,13 @@ export default function VerifyPage() {
         </p>
       </div>
     </div>
+  );
+}
+
+export default function VerifyPage() {
+  return (
+    <Suspense>
+      <VerifyForm />
+    </Suspense>
   );
 }
