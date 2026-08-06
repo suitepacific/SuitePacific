@@ -2,6 +2,7 @@
 title: "NetSuite Payment Runs: A New AP Workflow for Paying Multiple Vendors at Once"
 description: "NetSuite 2026.2 introduces Payment Runs, an AP feature that lets you prepare, review, approve, and process multiple vendor payments in a single workflow instead of one bill at a time."
 date: "2026-07-21"
+updated: "2026-08-05"
 tags: ["Accounting", "Administration", "NetSuite Tips"]
 ---
 

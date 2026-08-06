@@ -2,6 +2,7 @@
 title: "NetSuite Is Retiring NLAuth and TBA: What Developers Need to Do Before 2027.1"
 description: "NetSuite 2026.2 confirms end of support for NLAuth in 2027.1 and new TBA integrations in 2027.1, with full TBA retirement tentatively planned for 2028.1. Here is what you need to know and what to do now."
 date: "2026-07-21"
+updated: "2026-08-05"
 tags: ["Authentication", "SuiteScript", "Security"]
 ---
 

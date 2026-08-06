@@ -2,6 +2,7 @@
 title: "NetSuite Advanced Record Customization: A New Place to Manage AI Descriptions for Your Records"
 description: "NetSuite 2026.2 introduces Advanced Record Customization (ARC), a centralized area under Customization where you can view, create, update, compare, and revert AI descriptions for standard and custom record types."
 date: "2026-07-21"
+updated: "2026-08-05"
 tags: ["Administration", "Customization", "NetSuite Tips"]
 ---
 

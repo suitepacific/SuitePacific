@@ -2,6 +2,7 @@
 title: "8 Signs Your NetSuite Support Isn't Working"
 description: "If your NetSuite customizations break on every release, your partner takes days to respond, or nobody in the engagement actually knows your account, these are signs the support relationship isn't structured to serve you."
 date: "2026-07-24"
+updated: "2026-08-05"
 tags: ["Post-Go-Live", "NetSuite", "Administration"]
 calloutText: "Recognizing some of these? Tell us what's happening in your account."
 ---

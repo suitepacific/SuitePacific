@@ -2,6 +2,7 @@
 title: "NetSuite Bank Reconciliation Changed Significantly in 2026.2: What Is Different"
 description: "NetSuite 2026.2 overhauled the Match Bank Data page with a new Match Suggestions subtab, renamed tabs and buttons, filter chips, and audit columns. Here is everything that changed."
 date: "2026-07-21"
+updated: "2026-08-05"
 tags: ["Banking", "Accounting", "Administration"]
 ---
 

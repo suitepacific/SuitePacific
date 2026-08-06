@@ -2,6 +2,7 @@
 title: "NetSuite Passkeys Can Now Replace Your Authenticator App: What Changed in 2026.2"
 description: "NetSuite 2026.2 lets users with FIDO2-compliant passkeys use them as a second authentication factor. Here is what changed, what FIDO2-compliant means, and what administrators need to know."
 date: "2026-07-21"
+updated: "2026-08-05"
 tags: ["Authentication", "Security", "Administration"]
 ---
 

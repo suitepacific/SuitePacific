@@ -2,6 +2,7 @@
 title: "NetSuite 2026.2 Adds 5 New Project Health Indicators: What Each One Tracks"
 description: "NetSuite 2026.2 introduces five new project health indicators covering time overruns, overdue tasks, resource gaps, project margin, and unbilled charges. Here is what each one measures and why it matters."
 date: "2026-07-21"
+updated: "2026-08-05"
 tags: ["Projects", "Administration", "NetSuite Tips"]
 ---
 

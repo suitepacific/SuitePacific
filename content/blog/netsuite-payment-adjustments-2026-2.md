@@ -2,6 +2,7 @@
 title: "NetSuite 2026.2 Can Now Automate Payment Adjustments for Bank Fees and Underpayments"
 description: "NetSuite 2026.2 introduces automated payment adjustments for bank fees, convenience fees, and underpayments directly from customer payment and customer deposit records, removing the need for manual adjustment entries."
 date: "2026-07-21"
+updated: "2026-08-05"
 tags: ["Accounting", "Administration", "NetSuite Tips"]
 ---
 

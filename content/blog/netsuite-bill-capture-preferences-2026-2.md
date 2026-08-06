@@ -2,6 +2,7 @@
 title: "NetSuite Bill Capture Preferences Changed in 2026.2: What Blank Values Now Mean"
 description: "NetSuite 2026.2 changed how Bill Capture handles blank fields. A blank Save Tax As now maps to No Tax, and a blank Save Shipping Cost As maps to No Shipping Cost. Here is what changed and where to check your settings."
 date: "2026-07-21"
+updated: "2026-08-05"
 tags: ["Administration", "Accounting", "AP"]
 ---
 

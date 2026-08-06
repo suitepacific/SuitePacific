@@ -41,6 +41,7 @@ Update this file every time a new post is published. No topic should repeat.
 | 33 | Suitelet vs RESTlet: Suitelets serve HTML to browsers (no auth required from the browser), RESTlets serve JSON to systems (always requires TBA or OAuth 2.0) — pick by who is calling it | SuiteScript |
 | 34 | NLAuth retires in 2027.1, new TBA integrations also end in 2027.1, existing TBA ends 2028.1 — migrate to OAuth 2.0 with PKCE now | Release Notes / Security |
 | 35 | record.load() standard vs dynamic mode — governance cost is identical; difference is behavior: standard mode sets values directly, dynamic mode simulates the UI and triggers field sourcing | SuiteScript |
+| 36 | Custom fields: Store Value vs Source From — Store Value ON = snapshot at transaction time; Store Value OFF = live value derived from source record on every view; affects historical accuracy and SuiteQL queryability | Admin / SuiteScript |
 
 ---
 
@@ -76,7 +77,6 @@ Update this file every time a new post is published. No topic should repeat.
 - reduce() in Map/Reduce — when you actually need it vs when you don't
 - summarize() in Map/Reduce — error handling and completion reporting
 - NetSuite sandbox vs production — what does and does not refresh
-- Custom fields: Store Value vs Source From
 - Inline editing — what triggers User Events and what does not
 - Mass update vs Saved Search + SuiteScript update loop
 - Email alerts vs workflow email actions vs SuiteScript email send
