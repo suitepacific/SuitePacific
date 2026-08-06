@@ -388,7 +388,7 @@ export default function HireNetSuiteDeveloperPage() {
 
         {/* Above the fold CTA */}
         <div className="mt-6">
-          <Button href="/contact">Book a Free Consultation</Button>
+          <Button href="#contact">Book a Free Consultation</Button>
         </div>
 
         {/* Social proof, real outcomes */}
@@ -724,7 +724,7 @@ export default function HireNetSuiteDeveloperPage() {
         <ServiceFaqSection items={FAQ} />
 
         {/* Inline contact form */}
-        <div className="mt-14 pt-10 border-t border-brand-50">
+        <div id="contact" className="mt-14 pt-10 border-t border-brand-50">
           <p className="text-brand-900 font-semibold text-lg">Ready to hire a NetSuite developer?</p>
           <p className="mt-2 text-sm text-brand-400">
             Tell us what you need. We respond within one business day.

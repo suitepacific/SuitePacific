@@ -180,7 +180,7 @@ export default function NetSuiteConsultingServicesPage() {
         </p>
 
         <div className="mt-6">
-          <Button href="/contact">Book a Free Consultation</Button>
+          <Button href="#contact">Book a Free Consultation</Button>
         </div>
 
         {/* Services grid */}
@@ -269,7 +269,7 @@ export default function NetSuiteConsultingServicesPage() {
         <ServiceFaqSection items={FAQ} />
 
         {/* Inline form */}
-        <div className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
+        <div id="contact" className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
           <p className="text-brand-900 font-semibold text-lg">Need a NetSuite consulting team?</p>
           <p className="mt-2 text-sm text-brand-400">
             Tell us what you are working with and what you need. We will let you know exactly how

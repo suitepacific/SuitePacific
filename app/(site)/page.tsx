@@ -13,6 +13,12 @@ import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { getAllPosts } from "@/lib/blog";
 import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
+import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/content";
+
+export const metadata: Metadata = {
+  alternates: { canonical: SITE_URL },
+};
 
 export default async function Home() {
   const posts = await getAllPosts().catch(() => []);

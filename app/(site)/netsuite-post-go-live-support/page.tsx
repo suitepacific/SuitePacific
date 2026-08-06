@@ -206,7 +206,7 @@ export default function PostGoLiveSupportPage() {
         </p>
 
         <div className="mt-6">
-          <Button href="/contact">Book a Free Consultation</Button>
+          <Button href="#contact">Book a Free Consultation</Button>
         </div>
 
         {/* Pain points */}
@@ -302,7 +302,7 @@ export default function PostGoLiveSupportPage() {
         <ServiceFaqSection items={FAQ} />
 
         {/* Inline form */}
-        <div className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
+        <div id="contact" className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
           <p className="text-brand-900 font-semibold text-lg">Already live on NetSuite?</p>
           <p className="mt-2 text-sm text-brand-400">
             Tell us what is not working or what you need built next. We will respond within one

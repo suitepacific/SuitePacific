@@ -33,6 +33,7 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.date,
       url: `${SITE_URL}/blog/${post.slug}`,
+      images: [{ url: "/og-default.png", width: 1200, height: 630 }],
     },
   };
 }

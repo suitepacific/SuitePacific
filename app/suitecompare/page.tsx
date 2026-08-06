@@ -27,6 +27,16 @@ export const metadata: Metadata = {
   title: "SuiteCompare: One-Click NetSuite Environment Comparison",
   description:
     "Stop logging into two NetSuite accounts to compare scripts. SuiteCompare fetches Production and Sandbox SuiteScript files by Script ID and diffs them in one click.",
+  alternates: { canonical: "https://suitepacific.com/suitecompare" },
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: "SuiteCompare: One-Click NetSuite Environment Comparison",
+    description:
+      "Stop logging into two NetSuite accounts to compare scripts. SuiteCompare fetches Production and Sandbox SuiteScript files by Script ID and diffs them in one click.",
+    url: "https://suitepacific.com/suitecompare",
+    type: "website",
+    images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+  },
 };
 
 const OLD_STEPS = [
@@ -126,6 +136,46 @@ export default async function SuiteCompareHomePage() {
   return (
     <>
       <Nav />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "@id": "https://suitepacific.com/suitecompare#software",
+            name: "SuiteCompare",
+            description:
+              "Compare NetSuite Production and Sandbox SuiteScript files side-by-side in one click. Diff scripts, review deployment status, and understand any customization without switching tabs.",
+            url: "https://suitepacific.com/suitecompare",
+            applicationCategory: "BusinessApplication",
+            operatingSystem: "Web",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+              description: "Free plan available, no credit card required",
+            },
+            provider: {
+              "@type": "Organization",
+              name: "SuitePacific, LLC",
+              url: "https://suitepacific.com",
+            },
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://suitepacific.com" },
+              { "@type": "ListItem", position: 2, name: "SuiteCompare", item: "https://suitepacific.com/suitecompare" },
+            ],
+          }),
+        }}
+      />
       <main className="pt-32 pb-24 sm:pt-40 sm:pb-32">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
 

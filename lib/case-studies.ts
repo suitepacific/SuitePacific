@@ -4,6 +4,7 @@ export type CaseStudyData = {
   slug: string;
   title: string;
   metaDescription: string;
+  publishedAt: string;
   tags: string[];
   relatedServices: { label: string; href: string }[];
   cardChallenge: string;
@@ -19,6 +20,7 @@ export const CASE_STUDIES_DETAIL: CaseStudyData[] = [
   {
     slug: "project-performance-dashboard",
     title: "Custom Project Performance Dashboard",
+    publishedAt: "2026-06-01",
     metaDescription:
       "How SuitePacific built a custom NetSuite dashboard consolidating actual hours, budgeted effort, and project progress into a single real-time view for project managers.",
     tags: ["Saved Searches", "Dashboards"],
@@ -48,6 +50,7 @@ export const CASE_STUDIES_DETAIL: CaseStudyData[] = [
   {
     slug: "vendor-quotation-management",
     title: "Vendor Quotation Management Solution",
+    publishedAt: "2026-06-01",
     metaDescription:
       "How SuitePacific built a custom NetSuite quotation workflow that centralized vendor quotes, enabled side-by-side comparison, and converted accepted quotes directly to purchase orders.",
     tags: ["SuiteScript", "Workflow Automation"],
@@ -77,6 +80,7 @@ export const CASE_STUDIES_DETAIL: CaseStudyData[] = [
   {
     slug: "sales-order-approval-workflow",
     title: "Intelligent Sales Order Approval Workflow",
+    publishedAt: "2026-06-01",
     metaDescription:
       "How SuitePacific built a configurable NetSuite SuiteFlow workflow that automatically flags low-margin sales orders and routes them to the appropriate approver based on margin thresholds.",
     tags: ["Workflow Automation"],
@@ -106,6 +110,7 @@ export const CASE_STUDIES_DETAIL: CaseStudyData[] = [
   {
     slug: "invoice-processing-automation",
     title: "High-Volume Invoice Processing Automation",
+    publishedAt: "2026-06-01",
     metaDescription:
       "How SuitePacific built a NetSuite Map/Reduce script to automate batch invoice generation, turning a multi-day manual process into an overnight scheduled run with exception reporting.",
     tags: ["SuiteScript"],
@@ -135,6 +140,7 @@ export const CASE_STUDIES_DETAIL: CaseStudyData[] = [
   {
     slug: "advanced-pdf-document-automation",
     title: "Advanced PDF Document Automation",
+    publishedAt: "2026-06-01",
     metaDescription:
       "How SuitePacific rebuilt NetSuite invoice, purchase order, and statement templates using FreeMarker to handle multi-subsidiary headers, barcode generation, and conditional formatting.",
     tags: ["Advanced PDF Templates"],
@@ -164,6 +170,7 @@ export const CASE_STUDIES_DETAIL: CaseStudyData[] = [
   {
     slug: "operational-reporting",
     title: "Operational Reporting & Business Intelligence",
+    publishedAt: "2026-06-01",
     metaDescription:
       "How SuitePacific built role-based NetSuite dashboards and saved searches for operations and finance teams, replacing weekly manual exports with real-time visibility into the data that mattered.",
     tags: ["Saved Searches", "Dashboards"],

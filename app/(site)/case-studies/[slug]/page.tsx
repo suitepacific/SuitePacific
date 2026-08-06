@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
-import { SITE_URL } from "@/lib/content";
+import { SITE_URL, LEGAL_NAME } from "@/lib/content";
 import { CASE_STUDIES_DETAIL, getCaseStudy, getAllCaseStudySlugs } from "@/lib/case-studies";
 
 export function generateStaticParams() {
@@ -57,10 +57,13 @@ export default async function CaseStudyPage({
             "@type": "Article",
             headline: cs.title,
             description: cs.metaDescription,
-            author: { "@type": "Organization", name: "SuitePacific" },
+            image: { "@type": "ImageObject", url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 },
+            datePublished: cs.publishedAt,
+            dateModified: cs.publishedAt,
+            author: { "@type": "Organization", name: LEGAL_NAME },
             publisher: {
               "@type": "Organization",
-              name: "SuitePacific",
+              name: LEGAL_NAME,
               logo: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png` },
             },
             mainEntityOfPage: {
