@@ -5,7 +5,11 @@ date: "2026-06-18"
 tags: ["SuiteScript", "Development"]
 ---
 
-The most common SuiteScript problem we see when we take over a NetSuite account isn't bad code. It's code that worked fine in isolation but breaks the moment the business changes around it, or silently stops working after a release. Here's what we check first, and what we build differently.
+The most common SuiteScript problem we see when we take over a NetSuite account isn't bad code. It's code that worked fine in isolation but breaks the moment the business changes around it, or silently stops working after a release.
+
+SuiteScript 2.x customizations fail in predictable ways. Hard-coded internal IDs that differ between sandbox and production. Business logic in Client Scripts that never runs during CSV imports or API saves. Record loads inside search loops that consume governance units and hit limits at volume. External API calls with no error handling that throw unhandled exceptions on every timeout. These are not edge cases. They are the standard failure modes of scripts that were tested on 50 records in sandbox and deployed to production on 5,000.
+
+Here is what we check first, and what we build differently.
 
 <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:10px;overflow:hidden;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <div style="background:#14532d;padding:0.7rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem">
@@ -83,3 +87,17 @@ A comment that says `// loop through line items` adds nothing; the code already 
 ---
 
 Most of the SuiteScript "bugs" we get called in for aren't really bugs. They're customizations that made a reasonable assumption that stopped being true as the business changed. This kind of cleanup is core to our [SuiteScript development service](/netsuite-suitescript-development). If you've got scripts nobody on your team wants to touch anymore, [book a free consultation](/#contact) and we'll take a look at what's actually going on. For related reading, see [5 Common NetSuite Workflow Automation Mistakes](/blog/workflow-automation-mistakes) and [NetSuite User Event Scripts vs Client Scripts](/blog/netsuite-user-event-vs-client-script).
+
+## Frequently asked questions
+
+**Q: What is the most common SuiteScript performance problem?**
+A: Loading records or running searches inside a loop. Every `record.load()` call costs 10 governance units. Every `search.lookupFields()` call costs 1. Running either inside a loop that iterates hundreds of times hits governance limits and causes slow or failed scripts. The fix is to run one batched search before the loop starts and iterate over the in-memory results instead.
+
+**Q: Why shouldn't you hard-code internal IDs in SuiteScript?**
+A: Internal IDs differ between sandbox and production environments. A customer, item, or subsidiary that has internal ID 42 in sandbox will have a different internal ID in production. Scripts that hard-code IDs work in sandbox but fail silently or throw errors in production. Use saved search IDs or script parameters to resolve references instead of embedding numeric IDs directly in code.
+
+**Q: What is the difference between beforeSubmit and afterSubmit in a User Event script?**
+A: beforeSubmit fires after the user clicks Save but before the record is written to the database. It is where validation and field modification belong, because you can still throw an error to block the save or change field values before they are committed. afterSubmit fires after the record has been written to the database. It is where cross-record updates, notifications, and anything that depends on the record having a committed ID belong. Validation in afterSubmit cannot block a bad save.
+
+**Q: How do SuiteScript governance limits work?**
+A: NetSuite gives each script execution a budget of governance units. Scheduled Scripts get 10,000 units, Suitelet and User Event scripts get 1,000 units per execution. Each API call, record load, and search consumes a portion of that budget. When the budget is exhausted, the script throws a governance exception and stops. Scripts that run fine on small data sets in sandbox can exhaust governance on large data sets in production, which is why testing at realistic volume matters before deploying to a live account.

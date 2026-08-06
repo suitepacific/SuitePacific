@@ -10,7 +10,7 @@ NLAuth is one of the oldest authentication methods in NetSuite. It works by pass
 
 NetSuite is ending it.
 
-The 2026.2 release notes confirm two changes coming in 2027.1 and one tentatively planned for 2028.1.
+The 2026.2 release notes confirm two changes coming in 2027.1 and one tentatively planned for 2028.1. Any integration still using NLAuth at that point stops working. Any new integration built with Token-Based Authentication (TBA) from 2027.1 onward will be blocked. If your account has RESTlets, custom integrations, or third-party connections that authenticate with NLAuth or TBA credentials, you need an audit and a migration plan before that deadline.
 
 <figure style="margin:1.75rem 0">
 <svg viewBox="0 0 680 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
@@ -101,3 +101,20 @@ Start your audit now. Find every integration that uses NLAuth or was built with 
 If you need help migrating your integrations, see [How to Migrate NetSuite Integrations from NLAuth to Token-Based Authentication](/resources/netsuite-nlauth-to-tba-migration).
 
 If you want a developer to handle the migration and ongoing integration work, see [how to hire a NetSuite developer](/hire-netsuite-developer).
+
+## Frequently asked questions
+
+**Q: What is NLAuth in NetSuite?**
+A: NLAuth (NetSuite Login Authentication) is an authentication method that passes a NetSuite account ID, email address, and password directly in the HTTP Authorization header of each API request. It was the original authentication method for RESTlets and is still widely used in older integrations. NetSuite is retiring it because it requires sharing a user's login credentials with the integration, which creates a security risk if those credentials are compromised.
+
+**Q: When is NLAuth being retired?**
+A: As of NetSuite 2027.1, all NLAuth integrations stop working. This is a hard deadline, not a warning. The 2026.2 release notes confirmed this. Additionally, new TBA integrations cannot be created from 2027.1. Existing TBA integrations continue working until a tentative retirement in 2028.1.
+
+**Q: What should replace NLAuth?**
+A: OAuth 2.0 is NetSuite's recommended replacement. Specifically, OAuth 2.0 with PKCE (Proof Key for Code Exchange) is the current standard, and PKCE will be required for the Authorization Code Grant Flow as of 2027.1. OAuth 2.0 does not require sharing user credentials and supports machine-to-machine integrations through the Client Credentials flow.
+
+**Q: Can I migrate from NLAuth to TBA instead of going straight to OAuth 2.0?**
+A: Yes, but TBA is only a temporary solution. TBA is more secure than NLAuth and the migration is straightforward. However, new TBA integrations will be blocked from 2027.1, and existing TBA is tentatively being retired in 2028.1. Migrating to TBA now buys time but you will need to migrate again to OAuth 2.0. If you have capacity, migrate directly to OAuth 2.0.
+
+**Q: Does the NLAuth retirement affect RESTlet integrations specifically?**
+A: Yes. RESTlets are the most common place NLAuth is used because NLAuth was the easiest authentication method to implement for RESTlet calls. Any RESTlet that currently receives requests authenticated with NLAuth will stop receiving those requests when 2027.1 hits. The RESTlet itself does not need to be rewritten, only the authentication method the calling system uses to reach it.

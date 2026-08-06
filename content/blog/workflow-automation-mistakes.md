@@ -5,7 +5,11 @@ date: "2026-06-25"
 tags: ["Workflow Automation", "SuiteFlow"]
 ---
 
-SuiteFlow makes it easy to build a workflow and easy to build one that breaks in ways that are hard to diagnose later. Here are the five mistakes we find most often when we inherit a client's workflow library.
+SuiteFlow makes it easy to build a workflow and easy to build one that breaks in ways that are hard to diagnose later.
+
+NetSuite SuiteFlow workflows trigger on record saves and can be configured to fire on any combination of create, edit, and delete events. The most common failure modes are not caused by SuiteFlow bugs but by workflow design decisions that seem reasonable in isolation: triggering on every save instead of only when a relevant field changes, duplicating business logic across multiple workflows with no single source of truth, and letting workflows and User Event scripts modify the same field without a defined execution order.
+
+These five mistakes appear consistently when we review workflow libraries inherited from previous developers or built incrementally over several years. Each one has a straightforward fix once it is identified.
 
 <div style="background:#fefce8;border:1px solid #fde68a;border-radius:10px;overflow:hidden;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <div style="background:#854d0e;padding:0.7rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem">
@@ -75,3 +79,20 @@ If a workflow sets a field's value in `afterSubmit` and a User Event script also
 ---
 
 Workflow problems are rarely about SuiteFlow itself. They're about logic that grew organically over a few years without anyone stepping back to look at the whole picture. Untangling this is part of our [workflow automation service](/netsuite-workflow-automation). If your approval process has become something only one person fully understands, [book a free consultation](/#contact) and we'll help you untangle it. For related reading, see [SuiteScript Best Practices](/blog/suitescript-best-practices) and [Why Your NetSuite Account Feels Slow and What Actually Fixes It](/blog/netsuite-account-performance).
+
+## Frequently asked questions
+
+**Q: What is NetSuite SuiteFlow?**
+A: SuiteFlow is NetSuite's built-in workflow automation engine. It lets you automate business processes on NetSuite records, such as approval routing, status transitions, and field updates, without writing SuiteScript code. Workflows are configured through a visual state diagram editor and trigger on record events such as create, edit, and delete. SuiteFlow runs server-side and fires regardless of how a record is saved.
+
+**Q: Why do NetSuite workflows trigger unexpectedly or fire too often?**
+A: The most common cause is a workflow configured to run on every record save rather than only when a relevant field changes. If a workflow triggers on any edit, it fires on every save, including unrelated changes like fixing a typo in a memo field. The fix is to add a field-changed condition so the workflow only runs when the field it acts on has actually changed.
+
+**Q: Can a SuiteFlow workflow and a SuiteScript User Event script conflict with each other?**
+A: Yes. If both a workflow and a User Event script write to the same field on the same record, the execution order between them is not always deterministic, and one will silently overwrite the other's value. This produces inconsistent field values that are difficult to diagnose because they do not fail on every save. The fix is to consolidate the logic into one mechanism rather than letting two compete for the same field.
+
+**Q: How do you document a complex SuiteFlow workflow?**
+A: The workflow editor itself is not documentation. Once a workflow has more than four or five states, it becomes difficult to understand at a glance what it actually does. A simple state diagram showing each state, what triggers a transition, and what action fires per state is the minimum documentation a workflow should have. This turns a future change request from a two-hour reverse-engineering exercise into a short review.
+
+**Q: Are workflow email actions reliable for time-sensitive notifications?**
+A: Not always. Workflow email actions run in the workflow engine's processing queue, which can back up under load. For notifications where timing matters, such as alerting accounts payable within minutes of a large bill being approved, a scheduled or Map/Reduce SuiteScript with explicit, monitored execution is more reliable than a workflow action that depends on queue availability.

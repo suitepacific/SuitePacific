@@ -7,6 +7,8 @@ tags: ["SuiteScript", "Development"]
 
 The most common SuiteScript question from teams inheriting a customized NetSuite account is some version of: "Why does this logic only work sometimes?" Nine times out of ten, the answer is that someone put server-side business logic in a Client script, or vice versa. Understanding the difference between the two isn't just academic - it determines whether your customization works reliably or only when someone manually saves a record from the UI.
 
+A User Event script runs on NetSuite's servers and fires on every record save, regardless of how the save happened: UI, CSV import, REST API call, workflow action, or another script. A Client Script runs in the browser and only fires when a user is actively working with a record form in NetSuite's web interface. The save path determines which one runs, and putting logic in the wrong type is one of the most common causes of intermittent NetSuite customization failures.
+
 <div style="overflow-x:auto;margin:2rem 0">
 <table style="width:100%;border-collapse:collapse;font-size:0.85rem;font-family:system-ui,-apple-system,sans-serif;min-width:480px">
 <thead>
@@ -139,3 +141,20 @@ If you are not sure, default to User Event. A server-side script that runs more 
 ---
 
 This is one of the fundamentals we review when auditing inherited NetSuite accounts, misplaced logic between Client and User Event scripts is one of the most consistent sources of "it works sometimes" bugs. If your account has customizations that behave intermittently, [book a consultation](/contact) and we can identify whether script placement is the cause. For related reading, see [SuiteScript Best Practices](/blog/suitescript-best-practices), [5 Common NetSuite Workflow Automation Mistakes](/blog/workflow-automation-mistakes), and our [SuiteScript development service](/netsuite-suitescript-development).
+
+## Frequently asked questions
+
+**Q: What is a User Event script in NetSuite?**
+A: A User Event script is a server-side SuiteScript 2.x script that runs when a record is created, edited, or deleted in NetSuite. It fires regardless of how the save was triggered: a user saving through the UI, a CSV import, a REST API call, a workflow action, or another script. User Event scripts have three entry points: beforeLoad (before the record is displayed), beforeSubmit (before the record is written to the database), and afterSubmit (after the record is saved).
+
+**Q: What is a Client Script in NetSuite?**
+A: A Client Script is a browser-side SuiteScript 2.x script that runs in the user's web browser while they are actively working with a NetSuite record form. It fires in response to user actions such as opening a form (pageInit), changing a field value (fieldChanged), or clicking Save (saveRecord). Client Scripts do not run during CSV imports, API saves, workflow actions, or any save that does not involve a user interacting with the record form directly.
+
+**Q: When should I use a User Event script instead of a Client Script?**
+A: Use a User Event script when the logic must run every time the record is saved, regardless of how the save happens. Business rules, data validation that must be enforced, cross-record updates, and audit logging all belong in User Event scripts. Use a Client Script when the logic is specific to the interactive form experience: real-time field validation, dynamic field visibility, and auto-populating fields based on user input.
+
+**Q: Why doesn't my Client Script fire on CSV imports or API saves?**
+A: Client Scripts run in the browser. A CSV import and an API save do not involve a browser or a user interacting with a form, so the Client Script has no context in which to run. This is expected behavior, not a bug. If the logic must run on every save path, it needs to be in a User Event script's beforeSubmit or afterSubmit entry point instead.
+
+**Q: Can a User Event script and Client Script work on the same record type?**
+A: Yes, and this is the recommended pattern for comprehensive customizations. The Client Script handles real-time UX for users working in the form: instant field validation, dynamic visibility, guided data entry. The User Event script enforces the underlying business rule on every save as a server-side backstop. The two work together: the Client Script improves the experience, and the User Event script guarantees correctness regardless of the save path.
