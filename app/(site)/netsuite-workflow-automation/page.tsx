@@ -265,6 +265,31 @@ export default function WorkflowAutomationPage() {
           </div>
         </div>
 
+        {/* Related reading */}
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
+          <p className="text-sm font-semibold text-brand-900 mb-3">From the blog</p>
+          <ul className="space-y-2.5">
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/workflow-automation-mistakes" className="text-accent hover:underline">
+                5 common NetSuite workflow automation mistakes
+              </Link>{" "}
+              covers the failure patterns that cause workflows to fire at the wrong time or conflict with scripts.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-workflow-vs-suitescript" className="text-accent hover:underline">
+                NetSuite Workflow vs SuiteScript
+              </Link>{" "}
+              explains when to use SuiteFlow versus a script, and when both tools need to work together.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-approval-workflow-setup" className="text-accent hover:underline">
+                How to build an approval workflow in NetSuite SuiteFlow
+              </Link>{" "}
+              walks through states, transitions, role-restricted approval buttons, and email notifications.
+            </li>
+          </ul>
+        </div>
+
         <ServiceFaqSection items={FAQ} />
 
         <div className="mt-14 pt-10 border-t border-brand-50" data-section="contact">

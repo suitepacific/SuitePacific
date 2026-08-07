@@ -316,6 +316,12 @@ export default function NetSuiteIntegrationsPage() {
               </Link>{" "}
               explains when to use sequential vs. parallel batch operations in REST integrations.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-restlet-vs-rest-web-services" className="text-accent hover:underline">
+                NetSuite RESTlet vs REST Web Services
+              </Link>{" "}
+              covers when to build a custom RESTlet versus using the built-in REST API, including authentication differences.
+            </li>
           </ul>
         </div>
 

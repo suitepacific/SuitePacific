@@ -283,6 +283,31 @@ export default function SuiteScriptDevelopmentPage() {
           </div>
         </div>
 
+        {/* Related reading */}
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
+          <p className="text-sm font-semibold text-brand-900 mb-3">From the blog</p>
+          <ul className="space-y-2.5">
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/suitescript-best-practices" className="text-accent hover:underline">
+                SuiteScript best practices
+              </Link>{" "}
+              covers the eight patterns that prevent the most common production failures in SuiteScript 2.x.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-map-reduce-script-guide" className="text-accent hover:underline">
+                NetSuite Map/Reduce script guide
+              </Link>{" "}
+              explains the five stages, governance limits, and a complete deployable example for bulk processing jobs.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-advanced-pdf-data-model" className="text-accent hover:underline">
+                NetSuite Advanced PDF template data model
+              </Link>{" "}
+              covers how to access header fields, line items, entity data, and amounts in FreeMarker templates.
+            </li>
+          </ul>
+        </div>
+
         <ServiceFaqSection items={FAQ} />
 
         <div id="contact" className="mt-14 pt-10 border-t border-brand-50" data-section="contact">

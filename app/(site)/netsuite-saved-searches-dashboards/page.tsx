@@ -256,6 +256,31 @@ export default function SavedSearchesDashboardsPage() {
           </div>
         </div>
 
+        {/* Related reading */}
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
+          <p className="text-sm font-semibold text-brand-900 mb-3">From the blog</p>
+          <ul className="space-y-2.5">
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-saved-search-examples" className="text-accent hover:underline">
+                NetSuite saved search examples for finance and operations teams
+              </Link>{" "}
+              includes ten ready-to-use searches for common reporting needs across AR, AP, inventory, and sales.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-saved-search-tips" className="text-accent hover:underline">
+                NetSuite saved search tips
+              </Link>{" "}
+              covers summary types, dashboard portlets, and scheduling searches as email reports.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-saved-search-formula-examples" className="text-accent hover:underline">
+                NetSuite saved search formula examples
+              </Link>{" "}
+              explains date math, CASE WHEN conditionals, null handling, and number formatting using Oracle SQL formulas.
+            </li>
+          </ul>
+        </div>
+
         <ServiceFaqSection items={FAQ} />
 
         <div className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
