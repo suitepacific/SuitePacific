@@ -57,18 +57,18 @@ const LS_VISITORS = "admin_lastViewedVisitors";
 export function AdminSidebar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [newLeads, setNewLeads] = useState(false);
-  const [newVisitors, setNewVisitors] = useState(false);
+  const [newLeads, setNewLeads] = useState(0);
+  const [newVisitors, setNewVisitors] = useState(0);
 
   // Mark section as seen when navigating to it
   useEffect(() => {
     if (pathname.startsWith("/admin/leads")) {
       localStorage.setItem(LS_LEADS, String(Date.now()));
-      setNewLeads(false);
+      setNewLeads(0);
     }
     if (pathname.startsWith("/admin/visitors")) {
       localStorage.setItem(LS_VISITORS, String(Date.now()));
-      setNewVisitors(false);
+      setNewVisitors(0);
     }
   }, [pathname]);
 
@@ -84,8 +84,8 @@ export function AdminSidebar() {
         );
         if (!res.ok) return;
         const data = await res.json();
-        setNewLeads(data.newLeads > 0);
-        setNewVisitors(data.newVisitors > 0);
+        setNewLeads(data.newLeads);
+        setNewVisitors(data.newVisitors);
       } catch {
         // silently ignore network errors
       }
@@ -115,9 +115,9 @@ export function AdminSidebar() {
       <nav className="flex-1 px-3 space-y-1">
         {LINKS.map((link) => {
           const active = link.exact ? pathname === link.href : pathname.startsWith(link.href);
-          const showDot =
-            (link.href === "/admin/leads" && newLeads) ||
-            (link.href === "/admin/visitors" && newVisitors);
+          const count =
+            link.href === "/admin/leads" ? newLeads :
+            link.href === "/admin/visitors" ? newVisitors : 0;
           const dotColor = link.href === "/admin/leads" ? "red" : "orange";
           return (
             <Link
@@ -132,7 +132,14 @@ export function AdminSidebar() {
             >
               <link.icon className="h-4 w-4 shrink-0" />
               {link.label}
-              {showDot && <PingDot color={dotColor} />}
+              {count > 0 && (
+                <span className="ml-auto flex items-center gap-1.5">
+                  <span className={`text-xs font-semibold tabular-nums ${dotColor === "red" ? "text-red-500" : "text-orange-400"}`}>
+                    {count > 99 ? "99+" : count}
+                  </span>
+                  <PingDot color={dotColor} />
+                </span>
+              )}
             </Link>
           );
         })}

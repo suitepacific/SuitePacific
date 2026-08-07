@@ -22,22 +22,30 @@ function StatCard({
   label,
   value,
   sub,
-  hasNew,
+  newCount = 0,
   dotColor = "red",
 }: {
   icon: typeof Eye;
   label: string;
   value: number;
   sub?: string;
-  hasNew?: boolean;
+  newCount?: number;
   dotColor?: "red" | "orange";
 }) {
+  const countColor = dotColor === "red" ? "text-red-500" : "text-orange-400";
   return (
     <div className="bg-white rounded-2xl border border-brand-50 shadow-soft p-6">
       <div className="flex items-center justify-between">
         <Icon className="h-4 w-4 text-brand-400" />
         <div className="flex items-center gap-2">
-          {hasNew && <PingDot color={dotColor} />}
+          {newCount > 0 && (
+            <>
+              <span className={`text-xs font-semibold tabular-nums ${countColor}`}>
+                +{newCount > 99 ? "99+" : newCount} new
+              </span>
+              <PingDot color={dotColor} />
+            </>
+          )}
           {sub && <span className="text-xs text-brand-300">{sub}</span>}
         </div>
       </div>
@@ -58,7 +66,8 @@ export function DashboardStatCards({
   leads7d: number;
   totalLeads: number;
 }) {
-  const [newLeads, setNewLeads] = useState(false);
+  const [newLeads, setNewLeads] = useState(0);
+  const [newVisitors, setNewVisitors] = useState(0);
 
   useEffect(() => {
     async function check() {
@@ -71,7 +80,8 @@ export function DashboardStatCards({
         );
         if (!res.ok) return;
         const data = await res.json();
-        setNewLeads(data.newLeads > 0);
+        setNewLeads(data.newLeads);
+        setNewVisitors(data.newVisitors);
       } catch {
         // ignore network errors
       }
@@ -83,14 +93,14 @@ export function DashboardStatCards({
 
   return (
     <div className="mt-8 grid sm:grid-cols-3 gap-4">
-      <StatCard icon={Eye} label="Page views (7 days)" value={views7d} />
+      <StatCard icon={Eye} label="Page views (7 days)" value={views7d} newCount={newVisitors} dotColor="orange" />
       <StatCard icon={TrendingUp} label="Page views (30 days)" value={views30d} />
       <StatCard
         icon={Users}
         label="Leads (7 days)"
         value={leads7d}
         sub={`${totalLeads} total`}
-        hasNew={newLeads}
+        newCount={newLeads}
         dotColor="red"
       />
     </div>
