@@ -55,10 +55,15 @@ const nextConfig: NextConfig = {
         destination: "/:path+",
         statusCode: 301,
       },
-      // Duplicate content: shorter Jul-21 post redirects to the comprehensive Aug-2 version
+      // Duplicate content: shorter posts redirect to the comprehensive canonical versions
       {
         source: "/blog/netsuite-suiteql-default-sort-change",
         destination: "/blog/netsuite-suiteql-sort-change-2026-2",
+        statusCode: 301,
+      },
+      {
+        source: "/blog/netsuite-passkeys-mfa-2026-2",
+        destination: "/blog/netsuite-passkey-second-factor-2026-2",
         statusCode: 301,
       },
       // Blog/resource slug duplicates — redirect resource short versions to blog full versions
