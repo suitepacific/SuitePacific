@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page {
+    size: A4;
+    margin: 22mm 18mm 25mm 18mm;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-size: 9pt;
+      color: #6b7280;
+      font-family: 'DejaVu Serif', 'Times New Roman', Georgia, serif;
+    }
+    @bottom-left {
+      content: "Confidential";
+      font-size: 7pt;
+      color: #d6d3cc;
+      font-family: 'DejaVu Serif', 'Times New Roman', Georgia, serif;
+    }
+    @bottom-right {
+      content: "suitepacific.com Google SEO Report";
+      font-size: 8pt;
+      color: #cbd5e1;
+      font-family: 'DejaVu Serif', 'Times New Roman', Georgia, serif;
+    }
+  }
+
+  @page :first {
+    margin: 0;
+    @bottom-left { content: none; }
+    @bottom-center { content: none; }
+    @bottom-right { content: none; }
+  }
+
+  @page toc {
+    @bottom-center {
+      content: counter(page);
+      font-size: 9pt;
+      color: #6b7280;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Times New Roman', 'DejaVu Serif', Georgia, serif;
+    font-size: 10pt;
+    line-height: 1.55;
+    color: #1e293b;
+    background: white;
+  }
+
+  /* ─── Title Page (Clean White) ─── */
+  .title-page {
+    page: first;
+    width: 210mm;
+    height: 297mm;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #1a1a2e;
+    position: relative;
+    padding: 50mm 30mm 40mm 30mm;
+    border-top: 6mm solid #1e3a5f;
+  }
+
+  .title-page .badge {
+    background: #f7f6f3;
+    border: 1px solid #d6d3cc;
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 9pt;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15mm;
+    color: #1e3a5f;
+  }
+
+  .title-page h1 {
+    font-size: 28pt;
+    font-weight: bold;
+    margin-bottom: 5mm;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    color: #1a1a2e;
+  }
+
+  .title-page .subtitle {
+    font-size: 13pt;
+    color: #6b7280;
+    margin-bottom: 12mm;
+    font-weight: 300;
+  }
+
+  .title-page .url {
+    font-size: 12pt;
+    color: #1e3a5f;
+    margin-bottom: 15mm;
+    padding: 4mm 8mm;
+    border: 1px solid #d6d3cc;
+    border-radius: 6px;
+    background: #faf9f7;
+  }
+
+  .title-page .score-box {
+    background: #faf9f7;
+    border: 2px solid #d6d3cc;
+    border-radius: 12px;
+    padding: 6mm 12mm;
+    margin-bottom: 15mm;
+  }
+
+  .title-page .score-number {
+    font-size: 42pt;
+    font-weight: bold;
+    color: #1e3a5f;
+    line-height: 1;
+  }
+
+  .title-page .score-label {
+    font-size: 10pt;
+    color: #6b7280;
+    margin-top: 2mm;
+  }
+
+  .title-page .meta {
+    font-size: 9pt;
+    color: #6b7280;
+    margin-top: 8mm;
+    padding-top: 5mm;
+    border-top: 1px solid #d6d3cc;
+  }
+
+  .title-page .meta span {
+    margin: 0 8px;
+  }
+
+  /* ─── Table of Contents ─── */
+  .toc-page {
+    page: toc;
+    page-break-before: always;
+  }
+
+  .toc-page h2 {
+    font-size: 18pt;
+    color: #1e3a5f;
+    margin-bottom: 8mm;
+    padding-bottom: 3mm;
+    border-bottom: 2px solid #1e3a5f;
+  }
+
+  .toc-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .toc-list li {
+    padding: 2mm 0;
+    border-bottom: 1px solid #f1f5f9;
+    overflow: hidden;
+  }
+
+  .toc-list li.toc-section {
+    font-weight: bold;
+    font-size: 11pt;
+    padding-top: 4mm;
+    color: #0f172a;
+  }
+
+  .toc-list li.toc-sub {
+    padding-left: 8mm;
+    font-size: 9.5pt;
+    color: #475569;
+  }
+
+  .toc-score {
+    display: inline-block;
+    float: right;
+    padding: 1px 8px;
+    border-radius: 10px;
+    font-size: 9pt;
+    font-weight: bold;
+    color: white;
+  }
+
+  .score-good { background: #2d6a4f; }
+  .score-warn { background: #d4740e; }
+  .score-bad { background: #c53030; }
+
+  /* ─── Section Styles ─── */
+  div.section {
+    page-break-before: always;
+  }
+
+  .section-header {
+    background: #faf9f7;
+    border-left: 4px solid #1e3a5f;
+    padding: 5mm 6mm;
+    margin-bottom: 6mm;
+    page-break-after: avoid;
+  }
+
+  .section-header h2 {
+    font-size: 16pt;
+    color: #0f172a;
+    margin-bottom: 1mm;
+  }
+
+  .section-header .section-score {
+    font-size: 12pt;
+    font-weight: bold;
+    float: right;
+    margin-top: -6mm;
+  }
+
+  h3 {
+    font-size: 12pt;
+    color: #1e3a5f;
+    margin-top: 6mm;
+    margin-bottom: 3mm;
+    padding-bottom: 1.5mm;
+    border-bottom: 1px solid #d6d3cc;
+    page-break-after: avoid;
+  }
+
+  h4 {
+    font-size: 10.5pt;
+    color: #334155;
+    margin-top: 4mm;
+    margin-bottom: 2mm;
+    page-break-after: avoid;
+  }
+
+  p {
+    margin-bottom: 3mm;
+    color: #334155;
+  }
+
+  .highlight {
+    background: #fef3c7;
+    border-left: 3px solid #d4740e;
+    padding: 3mm 4mm;
+    margin: 4mm 0;
+    font-size: 9.5pt;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  .critical-box {
+    background: #fef2f2;
+    border-left: 3px solid #c53030;
+    padding: 3mm 4mm;
+    margin: 4mm 0;
+    font-size: 9.5pt;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  .success-box {
+    background: #f0fdf4;
+    border-left: 3px solid #2d6a4f;
+    padding: 3mm 4mm;
+    margin: 4mm 0;
+    font-size: 9.5pt;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  /* ─── Tables ─── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 4mm 0 6mm 0;
+    font-size: 9pt;
+  }
+
+  thead th {
+    background: #f7f6f3;
+    color: #0f172a;
+    font-weight: bold;
+    padding: 3mm 4mm;
+    text-align: left;
+    border-bottom: 2px solid #d6d3cc;
+    font-size: 9pt;
+  }
+
+  tbody td {
+    padding: 2.5mm 3mm;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: top;
+  }
+
+  tbody tr:nth-child(even) {
+    background: #fdfcfa;
+  }
+
+  .status-pass {
+    color: #2d6a4f;
+    font-weight: bold;
+  }
+
+  .status-fail {
+    color: #c53030;
+    font-weight: bold;
+  }
+
+  .status-warn {
+    color: #d4740e;
+    font-weight: bold;
+  }
+
+  .status-partial {
+    color: #4a5568;
+    font-weight: bold;
+  }
+
+  /* ─── Charts ─── */
+  .chart-container {
+    text-align: center;
+    margin: 4mm 0;
+  }
+
+  .chart-container img {
+    max-width: 100%;
+    max-height: 120mm;
+    height: auto;
+  }
+
+  .chart-caption {
+    font-size: 8.5pt;
+    color: #6b7280;
+    font-style: italic;
+    margin-top: 2mm;
+    text-align: center;
+  }
+
+  .chart-half {
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+    text-align: center;
+    margin: 2mm 0;
+  }
+
+  .chart-half img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* ─── Two column layout ─── */
+  .two-col {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    margin: 3mm 0;
+  }
+
+  .two-col .col {
+    display: table-cell;
+    vertical-align: top;
+    padding: 0 2mm;
+  }
+
+  .four-col {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    margin: 3mm 0;
+  }
+
+  .four-col .col {
+    display: table-cell;
+    vertical-align: top;
+    padding: 0 1.5mm;
+  }
+
+  /* ─── Metric Cards ─── */
+  .metric-card {
+    background: #faf9f7;
+    border: 1px solid #d6d3cc;
+    border-radius: 6px;
+    padding: 2.5mm 3mm;
+    text-align: center;
+    margin: 2mm 0;
+  }
+
+  .metric-card .value {
+    font-size: 14pt;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+  .metric-card .label {
+    font-size: 7.5pt;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 1mm;
+  }
+
+  /* ─── Action Plan ─── */
+  .action-item {
+    background: #faf9f7;
+    border-radius: 4px;
+    padding: 3mm 4mm;
+    margin: 3mm 0;
+    border-left: 3px solid #cbd5e1;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  .action-item.critical {
+    border-left-color: #c53030;
+    background: #fdf2f2;
+  }
+
+  .action-item.high {
+    border-left-color: #d4740e;
+    background: #fdf8ef;
+  }
+
+  .action-item.medium {
+    border-left-color: #1e3a5f;
+    background: #f0f4f8;
+  }
+
+  .action-item.low {
+    border-left-color: #94a3b8;
+  }
+
+  .action-item h4 {
+    margin-top: 0;
+    margin-bottom: 1.5mm;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .action-item .effort {
+    font-size: 8.5pt;
+    color: #64748b;
+    float: right;
+  }
+
+  .priority-tag {
+    display: inline-block;
+    padding: 0.5mm 3mm;
+    border-radius: 3px;
+    font-size: 8pt;
+    font-weight: bold;
+    color: white;
+    margin-right: 2mm;
+    vertical-align: middle;
+  }
+
+  .priority-critical { background: #c53030; }
+  .priority-high { background: #d4740e; }
+  .priority-medium { background: #1e3a5f; }
+  .priority-low { background: #94a3b8; }
+
+  /* ─── Code blocks ─── */
+  .code-block {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 3mm 4mm;
+    border-radius: 4px;
+    font-family: 'DejaVu Sans Mono', monospace;
+    font-size: 8pt;
+    line-height: 1.6;
+    margin: 3mm 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  /* ─── Divider ─── */
+  .divider {
+    border: none;
+    border-top: 1px solid #d6d3cc;
+    margin: 5mm 0;
+  }
+
+  /* ─── Roadmap ─── */
+  .roadmap-phase {
+    background: #faf9f7;
+    border-radius: 6px;
+    padding: 4mm 5mm;
+    margin: 4mm 0;
+    border: 1px solid #d6d3cc;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  .roadmap-phase h4 {
+    margin-top: 0;
+    border-bottom: none;
+    color: #1e3a5f;
+  }
+
+  .roadmap-phase ul {
+    margin: 2mm 0 0 5mm;
+    padding: 0;
+  }
+
+  .roadmap-phase li {
+    margin-bottom: 1.5mm;
+    font-size: 9.5pt;
+    color: #334155;
+  }
+
+  /* ─── Lists ─── */
+  ul {
+    margin-left: 5mm;
+    margin-bottom: 3mm;
+  }
+
+  li {
+    margin-bottom: 1.5mm;
+  }
+
+  /* ─── Data freshness ─── */
+  .data-freshness {
+    font-size: 8pt;
+    color: #6b7280;
+    font-style: italic;
+    margin-top: 4mm;
+    padding-top: 2mm;
+    border-top: 1px solid #d6d3cc;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ======================================================= TITLE PAGE === -->
+<div class="title-page">
+  <div class="badge">Full SEO Audit Report</div>
+  <h1>suitepacific.com</h1>
+  <div class="subtitle">Prepared by Claude SEO</div>
+  <div class="score-box">
+    <div class="score-number">71<span style="font-size: 20pt; color: #94a3b8;">/100</span></div>
+    <div class="score-label">SEO Health Score</div>
+  </div>
+  <div class="meta">
+    <span>August 07, 2026</span>
+    <span>Full Audit</span>
+  </div>
+</div>
+
+
+<!-- ======================================================= TABLE OF CONTENTS === -->
+<div class="toc-page">
+  <h2>Table of Contents</h2>
+  <ul class="toc-list">
+    <li class="toc-section"><span>1. Executive Summary</span></li>
+    <li class="toc-sub"><span>Key Metrics, Critical Issues &amp; Quick Wins</span></li>
+    <li class="toc-section"><span>2. Audit Categories</span></li>
+    <li class="toc-sub"><span>What Works</span></li>
+    <li class="toc-sub"><span>Findings by Severity</span></li>
+    <li class="toc-section"><span>3. Action Plan</span></li>
+    <li class="toc-sub"><span>Phased Roadmap</span></li>
+    <li class="toc-section"><span>4. Data Sources &amp; Methodology</span></li>
+  </ul>
+</div>
+
+
+<!-- ======================================================= 1. EXECUTIVE SUMMARY === -->
+<div class="section">
+  <div class="section-header">
+    <h2>1. Executive Summary</h2>
+  </div>
+
+  <p>This report presents a comprehensive SEO audit of <strong>suitepacific.com</strong> for a <strong>B2B Professional Services — NetSuite post-go-live support, custom SuiteScript development, workflow automation, integrations, saved searches, advanced PDF templates, administrator support. Target buyer: CFO, Controller, ERP Manager, NetSuite Admin at companies with 50-500 employees already live on NetSuite.</strong> site, generated on August 07, 2026. Findings combine technical, content, schema, performance, visual, and search-readiness evidence as available.</p>
+
+  <div class="two-col">
+    <div class="col">
+      <div class="metric-card">
+        <div class="value" style="color: #d4740e;">71/100</div>
+        <div class="label">SEO Health Score</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="critical-box">
+    <strong>Critical Issues Found:</strong>
+    <ol>
+      <li><strong>Info:</strong> og:image missing on all 12 service pages — social share cards render as text-only</li>
+      <li><strong>Info:</strong> CTA buttons on 4 of 5 service pages exit to /contact instead of anchoring to an in-page form</li>
+      <li><strong>Info:</strong> Homepage title cannibalizes the /netsuite-post-go-live-support dedicated service page</li>
+      <li><strong>Info:</strong> 8 blog posts are internal link dead-ends routing only to /contact with no service page</li>
+      <li><strong>Info:</strong> /netsuite-consulting-services (highest-value page) has zero blog post support</li>
+    </ol>
+  </div>
+
+  <div class="success-box">
+    <strong>Quick Wins:</strong>
+    <ol>
+      <li>Add images: [{url: &#x27;/og-default.png&#x27;, width: 1200, height: 630}] to all 12 service page openGraph blocks</li>
+      <li>Fix resource TechArticle schema image: logo-icon.png (256x256) declared as 1200x630 — change to og-default.png in resources/[slug]/page.tsx line 63</li>
+      <li>Add alternates.canonical + og:image to /suitecompare page metadata</li>
+      <li>Rephrase H2 headings to question format on 5 priority posts for AI citation eligibility</li>
+      <li>Add service page links to 8 blog posts currently routing only to /contact</li>
+    </ol>
+  </div>
+
+</div>
+
+<!-- ======================================================= 2. AUDIT CATEGORIES === -->
+<div class="section">
+  <div class="section-header">
+    <h2>2. Audit Categories</h2>
+  </div>
+
+  <h3>2.1 Technical SEO</h3>
+  <p><strong>Score:</strong> <span class="status-pass">84/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>Full SSR on all pages — content in initial HTML, no JavaScript rendering dependency</li>
+    <li>Security headers: HSTS preload (730 days), nosniff, Referrer-Policy, Permissions-Policy</li>
+    <li>Sitemap: 94 URLs, all 200 OK, all with accurate lastmod, declared in robots.txt</li>
+    <li>Canonical tags present on all content pages</li>
+    <li>Redirect chains: HTTP to HTTPS in one hop, www to non-www in one hop, no multi-hop chains</li>
+    <li>TTFB: 60-83ms (Vercel CDN HIT on all audited pages)</li>
+    <li>AI crawlers explicitly named in robots.txt with Allow: /</li>
+    <li>llms.txt: present, complete (35/35 blog posts indexed), 15+ FAQ pairs, RSL 1.0 licensed</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>og:image missing on all 12 service pages <span class="status-warn">High</span></h4>
+    <p>Every service page defines its own openGraph metadata block without an images key. Next.js App Router replaces (not merges) the root layout openGraph, stripping the og-default.png fallback. All 12 service pages render text-only social cards. Confirmed missing via source code review and live HTTP header inspection.</p>
+    <p><strong>Recommendation:</strong> Add images: [{ url: &#x27;https://suitepacific.com/og-default.png&#x27;, width: 1200, height: 630 }] to every service page openGraph block. Consider extracting a shared defaultOpenGraph constant in lib/seo.ts to prevent future recurrence.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>/suitecompare marketing page missing canonical and og:image <span class="status-warn">High</span></h4>
+    <p>The /suitecompare product landing page is correctly indexed (robots: index, follow override in page.tsx) and in the sitemap, but lacks an alternates.canonical self-reference and an og:image.</p>
+    <p><strong>Recommendation:</strong> Add alternates: { canonical: &#x27;https://suitepacific.com/suitecompare&#x27; } and openGraph images to app/suitecompare/page.tsx metadata.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No IndexNow implementation <span class="status-warn">Medium</span></h4>
+    <p>No IndexNow key file found. With 6-12 new posts per month, Bing indexing relies entirely on crawl discovery. IndexNow primarily benefits Bing Copilot citation freshness.</p>
+    <p><strong>Recommendation:</strong> Generate a UUID key, place it at /public/[key].txt, ping api.indexnow.org on each deploy or publish event.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>CSP frame-ancestors &#x27;none&#x27; conflicts with X-Frame-Options: SAMEORIGIN <span class="status-warn">Medium</span></h4>
+    <p>Two headers express contradictory framing policies. Modern browsers follow CSP; XFO is redundant and inconsistent.</p>
+    <p><strong>Recommendation:</strong> Align both headers: either frame-ancestors &#x27;none&#x27; + X-Frame-Options: DENY, or frame-ancestors &#x27;self&#x27; + X-Frame-Options: SAMEORIGIN.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>CSP script-src contains unsafe-inline and unsafe-eval <span class="status-warn">Medium</span></h4>
+    <p>These directives negate XSS protection. Next.js 15 App Router supports nonce-based CSP to eliminate both.</p>
+    <p><strong>Recommendation:</strong> Implement nonce-based CSP via Next.js middleware.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>X-XSS-Protection header is deprecated <span class="status-warn">Low</span></h4>
+    <p>X-XSS-Protection: 1; mode=block is not recognized by modern browsers and can cause regressions on legacy environments.</p>
+    <p><strong>Recommendation:</strong> Set X-XSS-Protection: 0 per OWASP. A properly scoped CSP replaces its function.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Case study sitemap lastmod values all share one date <span class="status-warn">Low</span></h4>
+    <p>All 6 case studies carry lastmod: 2026-06-01 (a batch date, not individual modification dates). Google uses lastmod for re-crawl scheduling.</p>
+    <p><strong>Recommendation:</strong> Derive sitemap lastmod from each case study&#x27;s actual publication date field.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.2 Content Quality</h3>
+  <p><strong>Score:</strong> <span class="status-warn">72/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>Technical accuracy is high throughout — NetSuite-specific nuances are correct</li>
+    <li>39 blog posts and 30 resource pages covering practitioner-level topics</li>
+    <li>Quick Answer boxes on 12 posts (134-167 word self-contained answers)</li>
+    <li>FAQ sections on 12 posts with structured Q&amp;A format</li>
+    <li>All posts under 3 months old — within the AI freshness citation window</li>
+    <li>LeadFormLight placed before content and at the bottom on all blog/resource pages</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Two blog posts still under 900 prose words <span class="status-warn">High</span></h4>
+    <p>netsuite-payment-runs-2026-2 (~882 words) and netsuite-bank-reconciliation-changes-2026-2 (~923 words) are the only remaining thin posts. These are 2026.2 release posts that were expanded in the prior round but didn&#x27;t reach 1000 words.</p>
+    <p><strong>Recommendation:</strong> Expand both posts to 1000+ prose words by adding a before/after configuration scenario, common edge cases, and an FAQ section.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>5 blog posts with zero internal links <span class="status-warn">High</span></h4>
+    <p>netsuite-payment-adjustments-2026-2, netsuite-payment-runs-2026-2, netsuite-rest-batch-sequential, netsuite-sales-order-fulfillment-list, and signs-netsuite-support-not-working have no internal links. The signs post is the most critical gap: high commercial-intent with no link to /netsuite-post-go-live-support.</p>
+    <p><strong>Recommendation:</strong> Add at minimum one service page link and one related post link per zero-link post.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Opening paragraphs bury the direct answer <span class="status-warn">High</span></h4>
+    <p>High-intent posts open with narrative hooks rather than direct answers. AI systems extract the first 1-2 sentences of a passage for citations. Posts affected: netsuite-saved-search-tips, netsuite-workflow-vs-suitescript, signs-netsuite-support-not-working, netsuite-month-end-close-checklist, workflow-automation-mistakes.</p>
+    <p><strong>Recommendation:</strong> Rewrite the first paragraph of these 5 posts to deliver the direct answer before framing.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>11 blog/resource near-duplicate pairs may split topical authority <span class="status-warn">High</span></h4>
+    <p>Eleven blog/resource pairs cover the same NetSuite topic (blog: what changed; resource: how to do it). Individual pages range from 450-900 prose words. Where content overlaps more than 70%, consider consolidating or adding canonical.</p>
+    <p><strong>Recommendation:</strong> Verify each pair has genuinely distinct intent. Where overlap exceeds 70%, consolidate or ensure each piece stands alone at 700+ prose words.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Oracle certifications invisible in visible content <span class="status-warn">Medium</span></h4>
+    <p>Certifications are in the OrganizationJsonLd award array and one hire page card title, not in visible prose on primary service pages. Google quality raters look for verifiable credentials in visible content.</p>
+    <p><strong>Recommendation:</strong> Add a brief credential callout to the hero section of /netsuite-post-go-live-support and /netsuite-suitescript-development.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>FSM cluster has no hub linking all four posts together <span class="status-warn">Medium</span></h4>
+    <p>Four FSM posts cover the August 2026 bundle update with no page linking to all four. Individual posts link to /contact only — zero link equity flows to any service page.</p>
+    <p><strong>Recommendation:</strong> Create a short FSM pillar post, or link all four posts to /netsuite-administrator-support as an interim solution.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No CFO/Controller-targeted content <span class="status-warn">Low</span></h4>
+    <p>All 69 content pages target NetSuite admins and developers. CFO and Controller personas are not addressed.</p>
+    <p><strong>Recommendation:</strong> Add 2-3 posts per quarter targeting finance-leader search intent. Lead with business outcome framing.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.3 On-Page SEO</h3>
+  <p><strong>Score:</strong> <span class="status-warn">63/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>Title tags present on all pages</li>
+    <li>Meta descriptions present on all pages</li>
+    <li>H1 tags present on all pages</li>
+    <li>Blog posts have descriptive, keyword-rich titles</li>
+    <li>Breadcrumb navigation present across site</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Homepage title cannibalizes /netsuite-post-go-live-support <span class="status-warn">High</span></h4>
+    <p>Homepage title &#x27;SuitePacific: Post-Go-Live NetSuite Support &amp; Optimization&#x27; directly targets the same keyword cluster as the dedicated service page. The homepage likely outranks the dedicated page, sending commercial traffic to the wrong destination.</p>
+    <p><strong>Recommendation:</strong> Revise homepage title to a brand-hub statement. Give /netsuite-post-go-live-support full keyword ownership.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Meta descriptions over 160 characters on service pages <span class="status-warn">Medium</span></h4>
+    <p>Service page meta descriptions range 182-202 characters. Google truncates at ~160 characters, reducing CTR from the truncation point.</p>
+    <p><strong>Recommendation:</strong> Trim service page meta descriptions to 150-160 characters. Front-load the primary benefit.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Blog posts lack H3 sub-headings for granular passage indexing <span class="status-warn">Medium</span></h4>
+    <p>All posts use only H2 headings. Posts over 1,500 words covering 3+ subtopics per H2 would benefit from H3 sub-sections for passage-level indexing.</p>
+    <p><strong>Recommendation:</strong> Add H3 headings to posts over 1,500 words. Priority: netsuite-workflow-vs-suitescript, netsuite-map-reduce-script-guide, netsuite-saved-search-examples.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Blog post titles over 60 characters (SERP truncation) <span class="status-warn">Low</span></h4>
+    <p>All checked blog post titles exceed 60 characters (70-92 range) due to &#x27;| SuitePacific&#x27; suffix. Google truncates at ~60 characters in most SERPs.</p>
+    <p><strong>Recommendation:</strong> Where title + &#x27; | SuitePacific&#x27; exceeds 65 characters, shorten the title itself. Low priority — cosmetic, not a ranking factor.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.4 Schema / Structured Data</h3>
+  <p><strong>Score:</strong> <span class="status-warn">72/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>BlogPosting schema on all 35 blog posts with correct dateModified (uses updated field when available)</li>
+    <li>TechArticle schema on all 30 resource pages</li>
+    <li>Service schema on all 11 service pages with BreadcrumbList</li>
+    <li>ProfessionalService + WebSite + FAQPage on homepage</li>
+    <li>SoftwareApplication on /suitecompare</li>
+    <li>Article schema on all 6 case study pages</li>
+    <li>ItemList schema on case studies index</li>
+    <li>All @context use https://schema.org, all dates are ISO 8601, all URLs are absolute</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Resource TechArticle schema image: logo-icon.png (256x256) declared as 1200x630 <span class="status-warn">Medium</span></h4>
+    <p>app/(site)/resources/[slug]/page.tsx line 63 sets the TechArticle image to logo-icon.png with width: 1200, height: 630. The actual file is 256x256. Google validates image dimensions for Article rich results; a 256px-wide image fails the 1200px minimum and blocks all 30 resource pages from image-enhanced rich results.</p>
+    <p><strong>Recommendation:</strong> Change image URL to og-default.png (confirmed 1200x630) in app/(site)/resources/[slug]/page.tsx line 63.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Article/TechArticle/BlogPosting missing url property <span class="status-warn">Low</span></h4>
+    <p>mainEntityOfPage provides the WebPage @id, but article entities should also carry a url property. Affects BlogPostingJsonLd (components/seo/JsonLd.tsx), case study Article, and TechArticle in resources/[slug]/page.tsx.</p>
+    <p><strong>Recommendation:</strong> Add url: absolute-canonical-url to each article block. Three one-line additions.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Publisher logo ImageObject missing width and height <span class="status-warn">Low</span></h4>
+    <p>The publisher.logo ImageObject in BlogPosting, Article, and TechArticle blocks declares url: logo-icon.png with no width or height. Actual dimensions are 256x256.</p>
+    <p><strong>Recommendation:</strong> Add width: 256, height: 256 to all three publisher logo declarations.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>/netsuite-implementation-partner-vs-managed-support missing Article schema <span class="status-warn">Low</span></h4>
+    <p>This long-form comparison guide has only BreadcrumbList and FAQPage. No Article schema means it is ineligible for Article rich results.</p>
+    <p><strong>Recommendation:</strong> Add an inline Article block using og-default.png as the image.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Blog and Resources index pages missing collection schema <span class="status-warn">Low</span></h4>
+    <p>/blog has only BreadcrumbList. /resources has only BreadcrumbList.</p>
+    <p><strong>Recommendation:</strong> Add Blog schema to /blog and CollectionPage schema to /resources.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>ProfessionalService missing @id anchor <span class="status-warn">Low</span></h4>
+    <p>OrganizationJsonLd has no @id, so service pages cannot reference the organization entity by ID. Limits Google&#x27;s entity graph connection.</p>
+    <p><strong>Recommendation:</strong> Add &#x27;@id&#x27;: &#x27;https://suitepacific.com/#organization&#x27; to OrganizationJsonLd.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>FAQPage no longer produces Google rich results (info only) <span class="status-warn">Info</span></h4>
+    <p>Google retired FAQ rich results for all sites on May 7, 2026. FAQPage blocks are harmless but produce no SERP feature.</p>
+    <p><strong>Recommendation:</strong> No action needed. Do not remove existing blocks.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.5 Performance (CWV)</h3>
+  <p><strong>Score:</strong> <span class="status-warn">75/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>TTFB: 60-83ms (Vercel CDN HIT across all pages)</li>
+    <li>Total response time: 90-155ms</li>
+    <li>Brotli compression active</li>
+    <li>Font preloaded: Inter WOFF2 in &lt;head&gt;</li>
+    <li>Hero image preloaded with imageSrcSet for responsive sizes</li>
+    <li>SSR: all content in initial HTML, no hydration delay for content</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>No Lighthouse/CWV lab data — PSI API rate limited during audit <span class="status-warn">Info</span></h4>
+    <p>PageSpeed Insights API returned rate limit errors during this audit. TTFB and response time data is from direct curl measurements (CDN-cached responses). Lab CWV scores (LCP, INP, CLS) are not available.</p>
+    <p><strong>Recommendation:</strong> Run PageSpeed Insights manually at https://pagespeed.web.dev. Configure GOOGLE_API_KEY for future automated CWV measurement.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>13 JavaScript chunks loaded on homepage <span class="status-warn">Low</span></h4>
+    <p>The homepage HTML references 13 JS chunk files loaded async. This is standard for Next.js App Router code splitting. No blocking scripts detected.</p>
+    <p><strong>Recommendation:</strong> Verify with Lighthouse that LCP is not delayed by any chunk. No action until Lighthouse confirms an issue.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.6 AI Search Readiness (GEO)</h3>
+  <p><strong>Score:</strong> <span class="status-warn">56/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>AI crawlers explicitly allowed: GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot all have named User-Agent blocks with Allow: /</li>
+    <li>Full SSR — content accessible without JavaScript to all AI crawlers</li>
+    <li>llms.txt: present, complete (35/35 blog posts indexed), 15+ FAQ pairs, RSL 1.0 licensed</li>
+    <li>Quick Answer boxes on 12 posts (134-167 words, self-contained)</li>
+    <li>All 35 posts under 3 months old — within the 3x AI citation boost window</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Zero question-based H2 headings across all 35 posts <span class="status-warn">High</span></h4>
+    <p>All posts use declarative H2s. AI systems match section headings against user queries. Question headings (&#x27;When should you use a Client Script?&#x27;) match directly; declarative headings (&#x27;What a Client Script actually is&#x27;) require the AI to infer intent.</p>
+    <p><strong>Recommendation:</strong> Rephrase H2s on 5 priority posts to question format: netsuite-workflow-vs-suitescript, netsuite-map-reduce-script-guide, netsuite-user-event-vs-client-script, suitescript-best-practices, netsuite-post-go-live-checklist.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Blog post openers too short for AI citation (40-85 words vs 134-167 optimal) <span class="status-warn">High</span></h4>
+    <p>~44% of AI citations come from the first 30% of a page. Current openers are narrative hooks, not answer blocks. Posts without Quick Answer boxes have no self-contained citable passage near the top.</p>
+    <p><strong>Recommendation:</strong> For the 23 posts without Quick Answer boxes, add a 130-160 word Quick Summary block immediately after the first paragraph.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>SVG diagram content not accessible to AI crawlers <span class="status-warn">Medium</span></h4>
+    <p>Technical posts embed inline SVGs with text elements. AI crawlers (GPTBot, ClaudeBot, PerplexityBot) do not parse SVG text. Every insight locked inside an SVG is uncitable. Approximately 10-15 diagrams affected.</p>
+    <p><strong>Recommendation:</strong> Add a plain-text figcaption after each SVG diagram stating the key conclusion in 1-2 sentences.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No Reddit or YouTube brand presence <span class="status-warn">Medium</span></h4>
+    <p>YouTube mentions correlate 0.737 with AI citation rates (Ahrefs 75K-brand study, strongest single off-site signal). Reddit correlates at 0.46+. Both are absent.</p>
+    <p><strong>Recommendation:</strong> Start with r/NetSuite (~45,000 members): answer 2-3 SuiteScript/workflow questions per week using genuine expertise.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.7 Images</h3>
+  <p><strong>Score:</strong> <span class="status-fail">48/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>og-default.png exists and is correct dimensions (1200x630 PNG)</li>
+    <li>Blog post and resource page openGraph correctly reference og-default.png</li>
+    <li>Hero image preloaded with imageSrcSet for responsive delivery</li>
+    <li>BlogPosting schema uses og-default.png at 1200x630 (correct)</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>og:image missing on all 12 service pages <span class="status-warn">High</span></h4>
+    <p>Service pages define openGraph without an images field. Social shares render text-only cards.</p>
+    <p><strong>Recommendation:</strong> Add images: [{url: &#x27;https://suitepacific.com/og-default.png&#x27;, width: 1200, height: 630}] to each service page openGraph block.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Resource TechArticle schema uses wrong image with wrong dimensions <span class="status-warn">Medium</span></h4>
+    <p>logo-icon.png (256x256) declared as 1200x630 in TechArticle schema. Blocks Article rich result eligibility for 30 resource pages.</p>
+    <p><strong>Recommendation:</strong> Change to og-default.png in app/(site)/resources/[slug]/page.tsx line 63.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No per-page unique OG images for blog posts <span class="status-warn">Low</span></h4>
+    <p>All 39 blog posts use the same og-default.png as their social card, reducing CTR differentiation when shared on LinkedIn.</p>
+    <p><strong>Recommendation:</strong> Low priority. Generate per-post OG images after main og:image gaps are fixed. Next.js supports dynamic OG image generation via app/og/route.tsx.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.8 Search Experience (SXO)</h3>
+  <p><strong>Score:</strong> <span class="status-warn">50/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>LeadFormLight correctly placed before and after content on all blog/resource pages</li>
+    <li>/hire-netsuite-developer has mid-page form — best-structured service page</li>
+    <li>Case studies accessible from primary navigation</li>
+    <li>Service pages correctly typed for their target queries</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>CTA buttons on 4 of 5 service pages exit to /contact <span class="status-warn">Critical</span></h4>
+    <p>Book a Free Consultation buttons on /netsuite-consulting-services, /netsuite-post-go-live-support, /netsuite-suitescript-development, /netsuite-workflow-automation link to /contact. Visitors leave the page before any form is reached. /hire-netsuite-developer correctly has mid-page LeadForm and is the conversion benchmark.</p>
+    <p><strong>Recommendation:</strong> Add an in-page LeadForm (or LeadFormLight) mid-page on each of these four service pages. Change button href to #contact anchoring to the form.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Homepage title competes with /netsuite-post-go-live-support <span class="status-warn">High</span></h4>
+    <p>Homepage title includes &#x27;Post-Go-Live NetSuite Support&#x27; — the exact keyword cluster the dedicated service page targets. The homepage absorbs ranking signals that should flow to the dedicated page.</p>
+    <p><strong>Recommendation:</strong> Revise homepage title to a brand hub statement. Make /netsuite-post-go-live-support the sole ranking target for that cluster.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Case studies lack numeric outcomes and industry context <span class="status-warn">High</span></h4>
+    <p>All 6 case studies describe qualitative improvements with no metrics (time saved, error rates, headcount avoided). Bottom-of-funnel CFOs and IT Directors need quantified proof.</p>
+    <p><strong>Recommendation:</strong> Add one quantified outcome per case study. Add client industry and approximate company size.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>/netsuite-consulting-services targets implementation-SERP — wrong intent match <span class="status-warn">High</span></h4>
+    <p>Top SERP results for &#x27;netsuite consulting services&#x27; are all implementation-partner pages. SuitePacific leads with &#x27;we do not handle initial implementations&#x27; — valid differentiation but reduces topical match.</p>
+    <p><strong>Recommendation:</strong> Target long-tail post-implementation variants: &#x27;netsuite managed services consulting&#x27;, &#x27;outsourced netsuite team&#x27;. Lead with capabilities before the scope qualifier.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Mobile Services nav requires 3-4 taps to reach service pages <span class="status-warn">Medium</span></h4>
+    <p>The Services nav item links to /#services (homepage anchor), not a dropdown of service pages. Mobile visitors must navigate to homepage, scroll to services section, then tap a service card.</p>
+    <p><strong>Recommendation:</strong> Convert Services to a dropdown (like Products) listing the 6 core service pages directly.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.9 Topic Clusters</h3>
+  <p><strong>Score:</strong> <span class="status-warn">58/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>7 identifiable topic clusters matching service pages</li>
+    <li>3 healthy clusters with bidirectional hub-spoke linking: Saved Searches, Workflow Automation, Integrations</li>
+    <li>SuiteScript cluster has 9 spokes — strongest spoke count on the site</li>
+    <li>Cross-cluster post (netsuite-workflow-vs-suitescript) correctly links to both hubs</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>/netsuite-consulting-services has zero blog support <span class="status-warn">Critical</span></h4>
+    <p>The highest-value service page has no blog posts pointing to it. No editorial link equity flows to this page. &#x27;How to choose a netsuite consulting partner&#x27; and related queries are entirely uncovered.</p>
+    <p><strong>Recommendation:</strong> Write &#x27;How to Choose a NetSuite Consulting Partner for Long-Term Support&#x27; as the first spoke. Highest-ROI new content investment.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>8 blog posts are internal link dead-ends (link only to /contact) <span class="status-warn">High</span></h4>
+    <p>All 4 FSM posts, netsuite-suiteql-bound-parameters, netsuite-suiteql-sort-change-2026-2, netsuite-currency-context-custom-fields, and netsuite-suitetax-term-discounts route to /contact or a resource page with no service page destination.</p>
+    <p><strong>Recommendation:</strong> FSM posts: add link to /netsuite-administrator-support (interim). SuiteQL posts: add link to /netsuite-suitescript-development. Currency/SuiteTax posts: add link to /netsuite-administrator-support.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>netsuite-advanced-pdf-data-model links to wrong hub <span class="status-warn">High</span></h4>
+    <p>This post links to /netsuite-suitescript-development but belongs in the PDF Templates cluster and should link to /netsuite-advanced-pdf-templates. The hub correctly points to this post; the spoke does not reciprocate.</p>
+    <p><strong>Recommendation:</strong> Update the internal service page link in netsuite-advanced-pdf-data-model to /netsuite-advanced-pdf-templates.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>11 release note posts lack a 2026.2 hub post <span class="status-warn">High</span></h4>
+    <p>11 posts cover individual 2026.2 features but no hub post exists for &#x27;netsuite 2026.2 release notes&#x27; (real search volume). These 11 posts route to /netsuite-post-go-live-support; the hub never links back to any of them.</p>
+    <p><strong>Recommendation:</strong> Create a &#x27;NetSuite 2026.2: Full Release Notes Summary&#x27; hub post. Gives all 11 feature posts a proper internal link target and creates a high-value page for a direct search demand query.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Multiple hub pages have gaps in outbound spoke links <span class="status-warn">Medium</span></h4>
+    <p>/netsuite-suitescript-development does not link to user-event-vs-client-script, workflow-vs-suitescript, or suiteql posts. /netsuite-advanced-pdf-templates does not link to freemarker-pdf-guide. /netsuite-post-go-live-support does not link to netsuite-support-partner-evaluation. /netsuite-account-optimization does not link to netsuite-optimization.</p>
+    <p><strong>Recommendation:</strong> Add outbound blog links from each hub to all confirmed spokes.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.10 Backlinks</h3>
+  <p><strong>Score:</strong> <span class="status-fail">0/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>Strong content foundation: 39 blog posts + 30 resources creates a large link-attraction surface</li>
+    <li>Timely technical posts (2026.2 release, NLAuth deprecation, FSM update) have natural citation windows</li>
+    <li>ProfessionalService entity schema in place to anchor trust once links arrive</li>
+    <li>LinkedIn company page present</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Zero referring domains in any available database <span class="status-warn">Critical</span></h4>
+    <p>Domain not found in Common Crawl cc-main-2026-jan-feb-mar (expected — site launched June 2026, 3 months after the crawl). No Moz, Bing, or DataForSEO data available. Backlink Health Score: INSUFFICIENT DATA (0 of 7 factors). Building 5-10 referring domains before the next CC quarterly release is the highest-impact off-site action.</p>
+    <p><strong>Recommendation:</strong> Priority: (1) Oracle/NetSuite partner directories (G2, Clutch, Oracle AppSource) — free, DA 70-90+, followed links. (2) SuiteAnswers community answers with citation links. (3) r/NetSuite genuine contributions. (4) ERP publication guest posts on NLAuth deprecation (timely, newsworthy).</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No outbound citations in any blog or resource content <span class="status-warn">Medium</span></h4>
+    <p>None of the 69 content pages link to Oracle documentation, NetSuite Help Center, or any external source. Posts covering official release notes cite no primary source URLs.</p>
+    <p><strong>Recommendation:</strong> Add one authoritative outbound link per release-note post linking to the Oracle Help Center or official release notes page.</p>
+  </div>
+  <hr class="divider">
+</div>
+
+<!-- ======================================================= 3. ACTION PLAN === -->
+<div class="section">
+  <div class="section-header">
+    <h2>3. Action Plan</h2>
+  </div>
+
+  <div class="roadmap-phase">
+    <h4>Phase 1: Critical Fixes <span class="effort">This week</span></h4>
+    <ul>
+      <li>Add og:image to all 12 service pages (add images: [{url: og-default.png, width: 1200, height: 630}] to each openGraph block) — 12 files, ~1 line each</li>
+      <li>Fix resource TechArticle schema image: change logo-icon.png to og-default.png in app/(site)/resources/[slug]/page.tsx line 63</li>
+      <li>Add canonical + og:image to /suitecompare page metadata in app/suitecompare/page.tsx</li>
+      <li>Add mid-page LeadForm to: netsuite-consulting-services, netsuite-post-go-live-support, netsuite-suitescript-development, netsuite-workflow-automation (4 service pages)</li>
+      <li>Revise homepage title to brand-hub statement — end the cannibalization of /netsuite-post-go-live-support</li>
+      <li>Fix netsuite-advanced-pdf-data-model: change service link to /netsuite-advanced-pdf-templates</li>
+      <li>Add service page links to 8 blog post dead-ends (FSM posts to /netsuite-administrator-support; SuiteQL posts to /netsuite-suitescript-development; currency/tax posts to /netsuite-administrator-support)</li>
+    </ul>
+  </div>
+  <div class="roadmap-phase">
+    <h4>Phase 2: High-Impact Improvements <span class="effort">Next 2 weeks</span></h4>
+    <ul>
+      <li>Rephrase H2 headings to question format on 5 priority posts: netsuite-workflow-vs-suitescript, netsuite-map-reduce-script-guide, netsuite-user-event-vs-client-script, suitescript-best-practices, netsuite-post-go-live-checklist</li>
+      <li>Add Quick Summary blocks (130-160 words) to the 23 posts without Quick Answer boxes</li>
+      <li>Add figcaption text after each SVG diagram (10-15 diagrams, 1-2 sentences each)</li>
+      <li>Rewrite opening paragraphs of 5 posts to lead with direct answers: signs-netsuite-support-not-working, netsuite-saved-search-tips, netsuite-workflow-vs-suitescript, netsuite-month-end-close-checklist, workflow-automation-mistakes</li>
+      <li>Expand netsuite-payment-runs-2026-2 and netsuite-bank-reconciliation-changes-2026-2 to 1000+ prose words</li>
+      <li>Update hub pages to add missing outbound spoke links (suitescript-development, pdf-templates, post-go-live-support, account-optimization hubs)</li>
+      <li>Add quantified outcome + industry context to all 6 case studies</li>
+      <li>Trim service page meta descriptions to 150-160 characters</li>
+    </ul>
+  </div>
+  <div class="roadmap-phase">
+    <h4>Phase 3: Content and Authority <span class="effort">Month 2</span></h4>
+    <ul>
+      <li>Write &#x27;NetSuite 2026.2: Full Release Notes Summary&#x27; hub post (gives 11 feature posts a proper internal link target)</li>
+      <li>Write &#x27;How to Choose a NetSuite Consulting Partner for Long-Term Support&#x27; (first spoke for /netsuite-consulting-services)</li>
+      <li>Write &#x27;NetSuite FSM: Administrator Setup and Maintenance Guide&#x27; (interim pillar for 4 orphaned FSM posts)</li>
+      <li>Add schema fixes: url property on articles, publisher logo dimensions, Article schema on implementation-partner-vs-managed-support, Blog entity on /blog, ProfessionalService @id</li>
+      <li>Create Clutch.co and G2 profile listings for first referring domain links</li>
+      <li>Add IndexNow key and publish-time ping for Bing indexing freshness</li>
+      <li>Establish r/NetSuite participation (2-3 genuine answers per week)</li>
+      <li>Add 2 CFO/Controller-targeted posts (month-end close outcomes framing, AR reporting guide)</li>
+      <li>Convert Services nav item to dropdown with direct service page links</li>
+    </ul>
+  </div>
+  <div class="roadmap-phase">
+    <h4>Phase 4: Monitoring and Iteration <span class="effort">Ongoing</span></h4>
+    <ul>
+      <li>Configure GOOGLE_API_KEY for CrUX/PageSpeed Insights in automated audits</li>
+      <li>Configure Moz API (free tier, 2,500 rows/month) for backlink profile tracking</li>
+      <li>Add updated: frontmatter to posts as they are refreshed</li>
+      <li>Re-run SEO audit after Phase 1-3 completions to measure score improvements</li>
+      <li>Monitor AI Overview appearances for target queries using Search Console</li>
+      <li>Implement nonce-based CSP to eliminate unsafe-inline/unsafe-eval</li>
+      <li>Align CSP frame-ancestors with X-Frame-Options, set X-XSS-Protection: 0</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ======================================================= DATA SOURCES & METHODOLOGY === -->
+<div class="section" style="text-align: center; padding-top: 15mm;">
+  <hr class="divider">
+  <h3 style="text-align: left;">Data Sources &amp; Methodology</h3>
+  <table>
+    <thead>
+      <tr><th>Source</th><th>Description</th><th>Update Frequency</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>PageSpeed Insights API</td>
+          <td>Lighthouse lab audit (mobile emulation, Moto G Power, slow 4G)</td>
+          <td>Real-time</td></tr>
+      <tr><td>Chrome UX Report (CrUX)</td>
+          <td>28-day rolling field data from real Chrome users</td>
+          <td>Daily ~04:00 UTC</td></tr>
+      <tr><td>CrUX History API</td>
+          <td>25-week p75 trend data per metric</td>
+          <td>Weekly</td></tr>
+      <tr><td>Google Search Console</td>
+          <td>Search Analytics (clicks, impressions, CTR, position)</td>
+          <td>2-3 day lag</td></tr>
+      <tr><td>URL Inspection API</td>
+          <td>Per-URL index status, coverage state, crawl info</td>
+          <td>Real-time (2,000/day)</td></tr>
+    </tbody>
+  </table>
+  <p style="color: #94a3b8; font-size: 9pt; margin-top: 5mm;">
+    Report generated by Claude SEO &mdash; Google SEO Intelligence Skill &mdash; August 07, 2026<br>
+    Methodology based on Google Web Vitals thresholds, Search Console documentation, and Lighthouse scoring algorithms.
+  </p>
+</div>
+
+</body>
+</html>

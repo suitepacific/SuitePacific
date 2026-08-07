@@ -145,6 +145,7 @@ export const metadata: Metadata = {
     description: "Custom NetSuite SuiteFlow workflow automation: approval routing, email notifications, status transitions, and process automation built and tested in sandbox before production deployment.",
     url: "https://suitepacific.com/netsuite-workflow-automation",
     type: "website",
+    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
   },
 };
 
@@ -187,7 +188,7 @@ export default function WorkflowAutomationPage() {
         </p>
 
         <div className="mt-6">
-          <Button href="/contact">Book a Free Consultation</Button>
+          <Button href="#contact">Book a Free Consultation</Button>
         </div>
 
         {/* Pain points */}

@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       "Stop logging into two NetSuite accounts to compare scripts. SuiteCompare fetches Production and Sandbox SuiteScript files by Script ID and diffs them in one click.",
     url: "https://suitepacific.com/suitecompare",
     type: "website",
-    images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
   },
 };
 

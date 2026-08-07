@@ -148,3 +148,5 @@ The 2026.07.1 release notes are available in SuiteAnswers answer ID 1047018. The
 Reviewing FSM configuration expressions, identifying checkbox conditions that may not have migrated correctly, testing the mobile app in Sandbox, and confirming the migration is correct before August 11 is technical work that requires FSM experience.
 
 If your team is not certain how to locate or evaluate the migrated configuration record, [contact SuitePacific](/contact). We work with NetSuite customers through FSM bundle updates and can help you validate this specific migration before it affects your Production environment.
+
+For more on how SuitePacific supports FSM configuration and post-upgrade validation, see the [NetSuite administrator support service](/netsuite-administrator-support).

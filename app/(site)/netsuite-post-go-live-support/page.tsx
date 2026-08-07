@@ -176,6 +176,7 @@ export const metadata: Metadata = {
     description: "Ongoing NetSuite managed services and post-go-live support: SuiteScript development, workflow automation, integrations, reporting, and administration after your implementation partner's work is done.",
     url: "https://suitepacific.com/netsuite-post-go-live-support",
     type: "website",
+    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
   },
 };
 
@@ -326,6 +327,12 @@ export default function PostGoLiveSupportPage() {
                 NetSuite month-end close checklist
               </Link>{" "}
               walks through the steps for a clean period close in NetSuite.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-support-partner-evaluation" className="text-accent hover:underline">
+                How to evaluate a NetSuite support partner
+              </Link>{" "}
+              covers what to look for when selecting an ongoing support provider after go-live.
             </li>
           </ul>
         </div>

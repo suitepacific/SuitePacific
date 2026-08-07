@@ -5,11 +5,12 @@ export function OrganizationJsonLd() {
   const data = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
+    "@id": `${SITE_URL}/#organization`,
     name: LEGAL_NAME,
     alternateName: "SuitePacific",
     url: SITE_URL,
-    logo: `${SITE_URL}/logo-icon.png`,
-    image: `${SITE_URL}/logo-icon.png`,
+    logo: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png`, width: 256, height: 256 },
+    image: `${SITE_URL}/og-default.png`,
     description:
       "SuitePacific is a boutique, post-go-live NetSuite support team providing SuiteScript development, workflow automation, saved searches and dashboards, advanced PDF templates, and ongoing account optimization. SuitePacific is the right fit for businesses that are already live on NetSuite and need an ongoing technical team, not for businesses still selecting an implementation partner.",
     address: { "@type": "PostalAddress", addressRegion: "Wyoming", addressCountry: "US" },
@@ -66,6 +67,7 @@ export function BlogPostingJsonLd({ post }: { post: BlogPostMeta }) {
   const data = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    url: `${SITE_URL}/blog/${post.slug}`,
     headline: post.title,
     description: post.description,
     image: { "@type": "ImageObject", url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 },
@@ -75,7 +77,7 @@ export function BlogPostingJsonLd({ post }: { post: BlogPostMeta }) {
     publisher: {
       "@type": "Organization",
       name: LEGAL_NAME,
-      logo: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png` },
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png`, width: 256, height: 256 },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}` },
   };

@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
-import { SITE_URL } from "@/lib/content";
+import { SITE_URL, LEGAL_NAME } from "@/lib/content";
 
 const FAQ = [
   {
@@ -36,6 +36,7 @@ export const metadata: Metadata = {
     description: "Understanding the difference between NetSuite implementation partners and managed services providers: what each covers, when you need each, and how to choose the right model for your business.",
     url: "https://suitepacific.com/netsuite-implementation-partner-vs-managed-support",
     type: "website",
+    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
   },
 };
 
@@ -68,6 +69,26 @@ export default function ComparisonPage() {
         ]}
       />
       <FaqJsonLd items={FAQ} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            url: `${SITE_URL}/netsuite-implementation-partner-vs-managed-support`,
+            headline: "NetSuite Implementation Partner vs. Managed Support",
+            description: "The difference between a NetSuite implementation partner and an ongoing managed support team, and how to know which one your business needs right now.",
+            image: { "@type": "ImageObject", url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 },
+            author: { "@type": "Organization", name: LEGAL_NAME },
+            publisher: {
+              "@type": "Organization",
+              name: LEGAL_NAME,
+              logo: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png`, width: 256, height: 256 },
+            },
+            mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/netsuite-implementation-partner-vs-managed-support` },
+          }),
+        }}
+      />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading

@@ -48,7 +48,17 @@ export const SITE_URL = "https://suitepacific.com";
 export const LEGAL_NAME = "SuitePacific, LLC";
 
 export const NAV_LINKS: NavLink[] = [
-  { label: "Services", href: "/#services" },
+  {
+    label: "Services",
+    children: [
+      { label: "Post-Go-Live Support", href: "/netsuite-post-go-live-support", description: "Ongoing support, fixes, and improvements after implementation." },
+      { label: "SuiteScript Development", href: "/netsuite-suitescript-development", description: "Custom scripts for logic that standard configuration cannot handle." },
+      { label: "NetSuite Consulting", href: "/netsuite-consulting-services", description: "Technical consulting for post-go-live NetSuite accounts." },
+      { label: "Administrator Support", href: "/netsuite-administrator-support", description: "Role configuration, permission management, and account maintenance." },
+      { label: "Workflow Automation", href: "/netsuite-workflow-automation", description: "Approval workflows, notifications, and SuiteFlow automation." },
+      { label: "Hire a NetSuite Developer", href: "/hire-netsuite-developer", description: "Dedicated NetSuite developer, no long-term contracts." },
+    ],
+  },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Resources", href: "/resources" },
   { label: "Blog", href: "/blog" },

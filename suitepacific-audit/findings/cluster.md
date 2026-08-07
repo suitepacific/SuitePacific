@@ -1,481 +1,487 @@
 # Semantic Topic Cluster Analysis: SuitePacific
 
 **Audit date:** 2026-08-07
-**Scope:** 35 blog posts, 7 service hub pages
-**Methodology:** Content-topic alignment, SERP overlap sampling (10 representative keyword pairs),
-internal link graph traversal from source files.
+**Scope:** 39 blog posts, 30 resource pages, 12 service hub pages
+**Methodology:** Frontmatter extraction from all 39 blog `.md` files, internal link graph
+traversal from source, SERP sampling for 6 keyword pairs, hub page source inspection for
+outbound spoke links.
 
 ---
 
 ## 1. Cluster Map
 
-Seven service pages serve as pillar hubs. Each hub's cluster score reflects how many confirmed
-spokes have bidirectional links (hub-to-spoke AND spoke-to-hub).
+Seven topic clusters are identifiable from the 39 blog posts. Two clusters (FSM, 2026.2
+Release Notes) lack a dedicated hub page. Posts marked `[cross-cluster]` belong semantically
+to two clusters and carry bidirectional service page links to both.
 
 ### Cluster 1: SuiteScript Development
 
 **Hub:** `/netsuite-suitescript-development`
-**Primary keyword:** netsuite suitescript development
-**Hub links to spokes:** 3 of 4 (missing freemarker and workflow-vs links)
-**Cluster health:** Strong (4 confirmed spokes, good interlinking)
+**Cluster health:** Strong spoke count, thin hub outbound coverage
 
-| Spoke | Post | Spoke-to-Hub | Hub-to-Spoke | SERP Overlap (est.) |
-|---|---|---|---|---|
-| S1-1 | /blog/suitescript-best-practices | Yes | Yes | -- (pillar-adjacent) |
-| S1-2 | /blog/netsuite-user-event-vs-client-script | Yes | No | 1 shared w/ S1-1 |
-| S1-3 | /blog/netsuite-map-reduce-script-guide | Yes | Yes | 4 shared w/ S1-4 |
-| S1-4 | /blog/netsuite-script-governance-limit | Yes | Yes | 4 shared w/ S1-3 |
+| Post slug | Spoke-to-hub | Hub-to-spoke | Notes |
+|---|---|---|---|
+| suitescript-best-practices | Yes | Yes | Anchor spoke |
+| netsuite-user-event-vs-client-script | Yes | No | Hub missing outbound link |
+| netsuite-map-reduce-script-guide | Yes | Yes | |
+| netsuite-script-governance-limit | Yes | Yes | |
+| netsuite-workflow-vs-suitescript | Yes (+ workflow hub) | No | Cross-cluster |
+| netsuite-nlauth-tba-end-of-support | No (-> integrations) | No | Belongs in integrations cluster |
+| netsuite-suiteql-bound-parameters | No (-> resource only) | No | Missing service link |
+| netsuite-suiteql-sort-change-2026-2 | No (-> /contact only) | No | Orphaned from hub |
+| netsuite-advanced-pdf-data-model | Wrong hub linked | Yes | Links to suitescript, should link to PDF hub |
 
-**Supplementary spokes** (link to hub but are cross-cluster):
-- /blog/netsuite-workflow-vs-suitescript (links to both SuiteScript and Workflow hubs)
-- /blog/netsuite-suiteql-sort-change-2026-2 (no hub link yet; should be routed here)
-
-**Internal link gap:** `/netsuite-suitescript-development` does not link to
-`/blog/netsuite-user-event-vs-client-script` despite that post being in top-5 SERP results
-for "netsuite user event vs client script" (confirmed via SERP check).
+**Hub outbound gaps:** user-event-vs-client-script, workflow-vs-suitescript, suiteql posts,
+nlauth-tba, restlet-vs-rest.
 
 ---
 
 ### Cluster 2: Workflow Automation
 
 **Hub:** `/netsuite-workflow-automation`
-**Primary keyword:** netsuite workflow automation
-**Hub links to spokes:** 1 of 2
-**Cluster health:** Thin (only 2 spokes; hub links to only 1)
+**Cluster health:** Complete for current spokes; thin at 3 posts
 
-| Spoke | Post | Spoke-to-Hub | Hub-to-Spoke | SERP Overlap (est.) |
-|---|---|---|---|---|
-| S2-1 | /blog/workflow-automation-mistakes | Yes | Yes | -- (pillar-adjacent) |
-| S2-2 | /blog/netsuite-workflow-vs-suitescript | Yes (both hubs) | No | 2 shared w/ S2-1 |
+| Post slug | Spoke-to-hub | Hub-to-spoke | Notes |
+|---|---|---|---|
+| workflow-automation-mistakes | Yes | Yes | Anchor spoke |
+| netsuite-approval-workflow-setup | Yes | Yes | |
+| netsuite-workflow-vs-suitescript | Yes (+ suitescript hub) | Yes | Cross-cluster |
+| netsuite-sales-order-fulfillment-list | Yes | No | Tangential; order mgmt angle |
 
-**Gap:** Only 2 blog posts support this hub. No post exists covering approval workflow setup,
-notification triggers, or workflow conditions, which are the top informational sub-topics under
-this service.
+**Hub outbound gaps:** sales-order-fulfillment-list not linked from hub.
 
 ---
 
 ### Cluster 3: Advanced PDF Templates
 
 **Hub:** `/netsuite-advanced-pdf-templates`
-**Primary keyword:** netsuite advanced pdf templates
-**Hub links to spokes:** 1 of 2
-**Cluster health:** Thin (2 spokes; hub links to only 1)
+**Cluster health:** Correct 3-post cluster; hub outbound links are incomplete
 
-| Spoke | Post | Spoke-to-Hub | Hub-to-Spoke | SERP Overlap (est.) |
-|---|---|---|---|---|
-| S3-1 | /blog/advanced-pdf-template-mistakes | Yes | Yes | -- (pillar-adjacent) |
-| S3-2 | /blog/netsuite-freemarker-pdf-guide | Yes | No | 3 shared w/ S3-1 |
-
-SuitePacific ranks in top-5 SERP for "netsuite advanced pdf template freemarker guide" (confirmed).
-The hub page does not link to `/blog/netsuite-freemarker-pdf-guide` despite that post being a
-confirmed traffic driver. This is a missed authority pass.
-
-**Gap:** No post covers PDF template data model, multi-subsidiary templating, or barcode/logo
-techniques, which are common support requests and high-value informational sub-topics.
-
----
-
-### Cluster 4: Integrations
-
-**Hub:** `/netsuite-integrations`
-**Primary keyword:** netsuite integrations
-**Hub links to spokes:** 0
-**Cluster health:** Critical gap (zero confirmed spokes with bidirectional links)
-
-No blog post was written for this hub. Three developer-adjacent posts partially serve the topic
-but are not routed to the hub:
-
-| Post | Relationship | Spoke-to-Hub | Hub-to-Spoke |
+| Post slug | Spoke-to-hub | Hub-to-spoke | Notes |
 |---|---|---|---|
-| /blog/netsuite-nlauth-tba-end-of-support | Auth migration for integrations | Yes (1 link) | No |
-| /blog/netsuite-rest-batch-sequential | REST Web Services feature | No | No |
-| /blog/netsuite-suiteql-bound-parameters | SuiteQL REST security | No | No |
+| advanced-pdf-template-mistakes | Yes | Yes | Anchor spoke |
+| netsuite-freemarker-pdf-guide | Yes | No | Hub missing outbound link |
+| netsuite-advanced-pdf-data-model | No (links to wrong hub) | Yes | Links to /netsuite-suitescript-development; should link to PDF hub |
 
-The hub page has zero internal links pointing to any blog content. This is the most structurally
-isolated service page on the site.
+**Hub outbound gaps:** freemarker-pdf-guide missing from hub.
+**Wrong link:** netsuite-advanced-pdf-data-model links to `/netsuite-suitescript-development`
+instead of `/netsuite-advanced-pdf-templates`. Hub correctly points to it; spoke does not
+reciprocate.
 
 ---
 
-### Cluster 5: Saved Searches and Dashboards
+### Cluster 4: Saved Searches and Dashboards
 
 **Hub:** `/netsuite-saved-searches-dashboards`
-**Primary keyword:** netsuite saved searches dashboards
-**Hub links to spokes:** 1 of 2
-**Cluster health:** Moderate (2 confirmed spokes; hub links to only 1; both spokes rank)
+**Cluster health:** Healthy; all bidirectional links confirmed
 
-| Spoke | Post | Spoke-to-Hub | Hub-to-Spoke | SERP Overlap (est.) |
-|---|---|---|---|---|
-| S5-1 | /blog/netsuite-saved-search-tips | Yes | Yes | -- (pillar-adjacent) |
-| S5-2 | /blog/netsuite-saved-search-examples | Yes | No | 5 shared w/ S5-1 |
+| Post slug | Spoke-to-hub | Hub-to-spoke | Notes |
+|---|---|---|---|
+| netsuite-saved-search-tips | Yes | Yes | Anchor spoke |
+| netsuite-saved-search-examples | Yes | Yes | |
+| netsuite-saved-search-formula-examples | Inferred Yes | Yes | Hub links to it; pattern matches |
 
-SuitePacific ranks in top-7 SERP for both "netsuite saved search tips" and "netsuite saved search
-examples" (confirmed). Estimated 5 shared URLs between these two posts, placing them firmly in the
-same cluster (threshold: 4-6 = same cluster). Hub page does not link to S5-2.
-
-**Gap:** No post covers saved search formulas, conditional summary columns, or dashboard portlet
-setup, which are the next tier of user needs in this topic area.
+SERP overlap observation: "netsuite saved search tips" and "netsuite saved search examples"
+share at least 3 top-10 URLs (Cleverence, NetSuite.com, SuitePacific's own tips post appears
+in both). Estimated overlap score: 4-5. These belong in the same cluster and are correctly
+grouped.
 
 ---
 
-### Cluster 6: Post-Go-Live Support
+### Cluster 5a: Post-Go-Live Support
 
 **Hub:** `/netsuite-post-go-live-support`
-**Primary keyword:** netsuite post go live support
-**Hub links to spokes:** 0
-**Cluster health:** Moderate coverage, broken hub (3 confirmed spokes but hub links to none)
+**Cluster health:** Strong; hub missing 1 newer spoke
 
-| Spoke | Post | Spoke-to-Hub | Hub-to-Spoke | SERP Overlap (est.) |
-|---|---|---|---|---|
-| S6-1 | /blog/netsuite-post-go-live-checklist | Yes | No | -- (pillar-adjacent) |
-| S6-2 | /blog/signs-netsuite-support-not-working | Yes | No | 2 shared w/ S6-1 |
-| S6-3 | /blog/netsuite-month-end-close-checklist | Yes | No | 2 shared w/ S6-1 |
+| Post slug | Spoke-to-hub | Hub-to-spoke | Notes |
+|---|---|---|---|
+| netsuite-post-go-live-checklist | Yes | Yes | Anchor spoke |
+| signs-netsuite-support-not-working | Yes | Yes | |
+| netsuite-month-end-close-checklist | Yes | Yes | |
+| netsuite-support-partner-evaluation | Yes | No | Newer post; hub not yet updated |
 
-The hub page contains no links to any blog content. All three spokes link to the hub, but the
-authority flow is one-directional. This is the second most structurally weak cluster after
-Integrations.
-
-**False routing problem:** 8 release-note posts (bank reconciliation, bill capture, payment
-adjustments, payment runs, advanced record customization, project health indicators, passkey
-second factor, sales order fulfillment) all link to `/netsuite-post-go-live-support` as their
-default hub anchor even though their content is not about post-go-live support. This dilutes
-the thematic signal of those outbound links.
+**2026.2 release posts routed here (not a dedicated cluster):**
+netsuite-bank-reconciliation-changes-2026-2, netsuite-bill-capture-preferences-2026-2,
+netsuite-payment-adjustments-2026-2, netsuite-payment-runs-2026-2,
+netsuite-project-health-indicators-2026-2, netsuite-advanced-record-customization-2026-2
+all link to this hub. Hub does not link back to any of them.
 
 ---
 
-### Cluster 7: Account Optimization
+### Cluster 5b: Account Optimization
 
 **Hub:** `/netsuite-account-optimization`
-**Primary keyword:** netsuite account optimization
-**Hub links to spokes:** 1 of 2
-**Cluster health:** Moderate (2 confirmed spokes; hub links to 1)
+**Cluster health:** Thin; 2 spokes, hub missing one
 
-| Spoke | Post | Spoke-to-Hub | Hub-to-Spoke | SERP Overlap (est.) |
-|---|---|---|---|---|
-| S7-1 | /blog/netsuite-account-performance | Yes | Yes | -- (pillar-adjacent) |
-| S7-2 | /blog/netsuite-optimization | Yes | No | 4 shared w/ S7-1 |
-
-SuitePacific ranks in top-7 SERP for "netsuite account optimization performance slow" (confirmed).
-Estimated 4 shared URLs between these two posts (epiqinfo, anchorgroup, randgroup, stockton10),
-placing them firmly in the same cluster. Hub page does not link to S7-2.
-
----
-
-## 2. SERP Overlap Matrix (sampled pairs)
-
-Scoring: 7-10 = same post candidate, 4-6 = same cluster, 2-3 = interlink, 0-1 = separate.
-
-| Keyword A | Keyword B | Est. Shared URLs | Decision |
+| Post slug | Spoke-to-hub | Hub-to-spoke | Notes |
 |---|---|---|---|
-| netsuite saved search tips | netsuite saved search examples | 5 | Same cluster |
-| netsuite account performance | netsuite account optimization audit | 4 | Same cluster |
-| netsuite map reduce script | netsuite governance limit suitescript | 4 | Same cluster |
-| netsuite advanced pdf template mistakes | netsuite freemarker pdf guide | 3 | Same cluster |
-| netsuite workflow automation mistakes | netsuite workflow vs suitescript | 2 | Interlink |
-| netsuite suitescript best practices | netsuite user event vs client script | 1 | Interlink |
-| netsuite post go live checklist | netsuite month end close checklist | 2 | Interlink |
-| netsuite post go live checklist | signs netsuite support not working | 2 | Interlink |
-| netsuite suitescript development | netsuite workflow automation | 1 | Cross-cluster optional |
-| netsuite integrations rest api | netsuite suitescript rest batch | 1 | Cross-cluster optional |
+| netsuite-account-performance | Yes | Yes | Anchor spoke |
+| netsuite-optimization | Yes | No | Hub not updated to include this post |
 
 ---
 
-## 3. Orphaned Blog Posts
+### Cluster 6: Integrations
 
-Posts with no clear hub alignment or incorrectly routed to a catch-all hub.
+**Hub:** `/netsuite-integrations`
+**Cluster health:** Moderate; hub-to-spoke links complete, but cluster is thin
 
-### 3a. True Orphans (no hub link of any kind)
-
-| Post | Topic | Recommended Action |
-|---|---|---|
-| /blog/netsuite-2026-2-finance-updates | 2026.2 release aggregator | Create a /netsuite-release-notes hub or treat as cross-linker; add links to payment-runs and bank-reconciliation posts |
-| /blog/netsuite-passkeys-mfa-2026-2 | Security/admin | Near-duplicate of passkey-second-factor post; consolidate or 301 |
-| /blog/netsuite-suiteql-sort-change-2026-2 | SuiteQL query behavior | Route to Cluster 1 (SuiteScript); add link to /netsuite-suitescript-development |
-| /blog/netsuite-rest-batch-sequential | REST Web Services | Route to Cluster 4 (Integrations); add link to /netsuite-integrations |
-| /blog/netsuite-suiteql-bound-parameters | REST SuiteQL security | Route to Cluster 4 (Integrations); add link to /netsuite-integrations |
-| /blog/netsuite-sales-order-fulfillment-list | Order management | No hub covers order management; link to /netsuite-workflow-automation as closest match |
-| /blog/netsuite-suitetax-term-discounts | SuiteTax accounting | No hub; link to /netsuite-account-optimization as closest match |
-| /blog/netsuite-currency-context-custom-fields | Custom fields/admin | No hub; link to /netsuite-account-optimization |
-| /blog/netsuite-project-health-indicators-2026-2 | Project management | No hub; no close match |
-
-### 3b. FSM Sub-Cluster (4 posts, no hub)
-
-All four FSM posts are topically coherent with each other but have no corresponding service page.
-They form an island cluster that earns no hub authority.
-
-| Post | Topic |
-|---|---|
-| /blog/netsuite-fsm-bundle-update-august-2026 | FSM 2026.07.1 production changes |
-| /blog/netsuite-fsm-mobile-changes-august-2026 | FSM mobile app UI changes |
-| /blog/netsuite-fsm-nxc-now-migration-august-2026 | nxc_now() migration guide |
-| /blog/netsuite-fsm-readonly-migration-august-2026 | readonly resource-level migration |
-
-These four posts interlink well with each other but pass no authority to any service page.
-Either add a landing page for FSM consulting or add a sentence in each linking to the closest
-hub (/netsuite-workflow-automation for configuration/migration posts).
-
-### 3c. False-Routed Posts (linked to wrong hub)
-
-Eight release-note posts link to /netsuite-post-go-live-support as a fallback hub. This is
-semantically incorrect: these posts cover specific feature changes, not support service needs.
-
-| Post | Current Hub Link | Better Target |
-|---|---|---|
-| /blog/netsuite-bank-reconciliation-changes-2026-2 | /netsuite-post-go-live-support | /netsuite-account-optimization |
-| /blog/netsuite-bill-capture-preferences-2026-2 | /netsuite-post-go-live-support | /netsuite-account-optimization |
-| /blog/netsuite-payment-adjustments-2026-2 | /netsuite-post-go-live-support | /netsuite-workflow-automation |
-| /blog/netsuite-payment-runs-2026-2 | /netsuite-post-go-live-support | /netsuite-workflow-automation |
-| /blog/netsuite-advanced-record-customization-2026-2 | /netsuite-post-go-live-support | /netsuite-account-optimization |
-| /blog/netsuite-passkey-second-factor-2026-2 | /netsuite-administrator-support | /netsuite-post-go-live-support |
-| /blog/netsuite-project-health-indicators-2026-2 | /netsuite-post-go-live-support | none (no matching hub) |
-| /blog/netsuite-sales-order-fulfillment-list | none | /netsuite-workflow-automation |
-
----
-
-## 4. Cannibalization Check
-
-### Critical: Passkey Duplicate
-
-| Post A | Post B | Risk |
-|---|---|---|
-| /blog/netsuite-passkeys-mfa-2026-2 | /blog/netsuite-passkey-second-factor-2026-2 | HIGH |
-
-Both posts cover the same feature: FIDO2 passkeys satisfying the MFA requirement in NetSuite 2026.2.
-They target near-identical keywords ("netsuite passkeys mfa 2026" vs "netsuite passkey second factor
-2026"). The content audit separately flagged a SuiteQL duplicate (netsuite-suiteql-default-sort-change
-vs netsuite-suiteql-sort-change-2026-2) that has already been noted as critical.
-
-**Action:** 301-redirect the shorter passkeys-mfa post to the longer passkey-second-factor post, or
-consolidate into a single definitive page. Review which has more GSC impressions before choosing the
-surviving URL.
-
-### Low-Level Overlap (monitor, do not consolidate now)
-
-| Post A | Post B | Overlap |
-|---|---|---|
-| /blog/netsuite-account-performance | /blog/netsuite-optimization | Partial: both cover performance; distinct angles (diagnostic vs audit procedure) |
-| /blog/netsuite-saved-search-tips | /blog/netsuite-saved-search-examples | Partial: both about saved searches; tips vs examples framing is differentiated |
-| /blog/netsuite-payment-runs-2026-2 | /blog/netsuite-2026-2-finance-updates | Partial: finance updates post summarizes payment runs; distinct enough |
-
-These are not cannibalization risks at current depth. Monitor GSC for keyword overlap after
-indexing stabilizes.
-
----
-
-## 5. Service Pages Without Sufficient Blog Support
-
-| Hub | Confirmed Spokes | Minimum Needed | Status |
+| Post slug | Spoke-to-hub | Hub-to-spoke | Notes |
 |---|---|---|---|
-| /netsuite-integrations | 0 (3 partial) | 3 | Critical gap |
-| /netsuite-workflow-automation | 2 | 3 | Thin |
-| /netsuite-advanced-pdf-templates | 2 | 3 | Thin |
-| /netsuite-saved-searches-dashboards | 2 | 3 | Thin |
-| /netsuite-account-optimization | 2 | 3 | Thin |
-| /netsuite-suitescript-development | 4 | 3 | Adequate |
-| /netsuite-post-go-live-support | 3 | 3 | Adequate (hub linking broken) |
+| netsuite-nlauth-tba-end-of-support | Yes | Yes | Also links to /hire-netsuite-developer |
+| netsuite-restlet-vs-rest-web-services | Yes | Yes | |
+| netsuite-rest-batch-sequential | Yes | Yes | |
 
 ---
 
-## 6. Internal Link Improvement Recommendations
+### Cluster 7: Field Service Management (NO HUB PAGE)
 
-Ranked by expected authority impact.
+**Hub:** None
+**Cluster health:** 4 posts with nowhere to link except /contact
 
-### P1: Fix broken hub-to-spoke links (quick wins, no new content required)
+| Post slug | Spoke-to-hub | Hub-to-spoke | Notes |
+|---|---|---|---|
+| netsuite-fsm-bundle-update-august-2026 | No hub | N/A | Links to /contact only |
+| netsuite-fsm-mobile-changes-august-2026 | No hub | N/A | Links to /contact only |
+| netsuite-fsm-nxc-now-migration-august-2026 | No hub | N/A | Links to /contact only |
+| netsuite-fsm-readonly-migration-august-2026 | No hub | N/A | Links to /contact only |
 
-| Hub Page | Add Link To | Rationale |
-|---|---|---|
-| /netsuite-advanced-pdf-templates | /blog/netsuite-freemarker-pdf-guide | Spoke ranks; hub passes no authority back |
-| /netsuite-workflow-automation | /blog/netsuite-workflow-vs-suitescript | Spoke links to hub; hub does not reciprocate |
-| /netsuite-saved-searches-dashboards | /blog/netsuite-saved-search-examples | Spoke ranks and links to hub; no reciprocal |
-| /netsuite-account-optimization | /blog/netsuite-optimization | Spoke links to hub; hub does not reciprocate |
-| /netsuite-suitescript-development | /blog/netsuite-user-event-vs-client-script | Spoke ranks top-5; hub missing this link |
+These posts share high topical coherence (all August 2026 bundle update coverage) but have
+no internal destination beyond the contact form. Zero link equity flows to any service page.
 
-### P2: Fix hub pages with zero blog links
+---
 
-| Hub Page | Action |
+### Unclustered: 2026.2 Release Notes (NO DEDICATED HUB)
+
+11 posts cover individual 2026.2 features but no hub post exists to aggregate them:
+
+| Post slug | Routes to |
 |---|---|
-| /netsuite-post-go-live-support | Add links to at minimum: post-go-live-checklist, signs-support-not-working, month-end-close-checklist |
-| /netsuite-integrations | Add links to: nlauth-tba-end-of-support, rest-batch-sequential, suiteql-bound-parameters (as interim measure until dedicated spoke content exists) |
+| netsuite-2026-2-finance-updates | /contact only |
+| netsuite-bank-reconciliation-changes-2026-2 | /netsuite-post-go-live-support |
+| netsuite-bill-capture-preferences-2026-2 | /netsuite-post-go-live-support |
+| netsuite-payment-adjustments-2026-2 | /netsuite-post-go-live-support |
+| netsuite-payment-runs-2026-2 | /netsuite-post-go-live-support |
+| netsuite-passkey-second-factor-2026-2 | /netsuite-administrator-support |
+| netsuite-project-health-indicators-2026-2 | /netsuite-post-go-live-support |
+| netsuite-advanced-record-customization-2026-2 | /netsuite-post-go-live-support |
+| netsuite-currency-context-custom-fields | Resource only, no service page |
+| netsuite-suitetax-term-discounts | Resource only, no service page |
+| netsuite-sales-order-fulfillment-list | /netsuite-workflow-automation |
 
-### P3: Fix false-routed spoke-to-hub links
+The finance summary post (netsuite-2026-2-finance-updates) is the natural hub candidate for
+this group but currently sends traffic to /contact rather than linking to a service page or
+aggregating the feature posts.
 
-Replace the catch-all `/netsuite-post-go-live-support` links in release-note posts with
-contextually accurate targets:
+---
 
-- bank-reconciliation, bill-capture, advanced-record-customization, currency-context: change hub
-  link from post-go-live to /netsuite-account-optimization
-- payment-adjustments, payment-runs: change hub link from post-go-live to /netsuite-workflow-automation
+## 2. Hub Page Mapping
 
-### P4: Route orphans to nearest hub
+| Service hub | Supported by blog posts | Hub links back to blog | Gap rating |
+|---|---|---|---|
+| /netsuite-suitescript-development | 4 confirmed bidirectional spokes; 5 additional spoke-to-hub | 4 of ~9 eligible posts | Partial gap |
+| /netsuite-workflow-automation | 3 confirmed bidirectional; 1 tangential | 3 of 4 | Healthy |
+| /netsuite-advanced-pdf-templates | 1 bidirectional; 2 partial | 1 of 3 | Partial gap |
+| /netsuite-saved-searches-dashboards | 3 bidirectional | 3 of 3 | Healthy |
+| /netsuite-post-go-live-support | 3 bidirectional + 6 inbound-only from 2026.2 posts | 3 of ~10 relevant | Partial gap |
+| /netsuite-account-optimization | 1 bidirectional; 1 spoke-to-hub only | 1 of 2 | Thin |
+| /netsuite-integrations | 3 bidirectional | 3 of 3 | Healthy |
+| /netsuite-administrator-support | 1 spoke-to-hub (passkey post) | 0 | Gap |
+| /netsuite-consulting-services | 0 | 0 | Complete gap |
+| /hire-netsuite-developer | 1 cross-reference (nlauth post) | 0 | Complete gap |
+| /netsuite-admin-support-small-business | 0 | 0 | Complete gap |
+| /netsuite-implementation-partner-vs-managed-support | 0 | 0 | Complete gap |
 
-| Post | Add Link To |
-|---|---|
-| /blog/netsuite-suiteql-sort-change-2026-2 | /netsuite-suitescript-development |
-| /blog/netsuite-rest-batch-sequential | /netsuite-integrations |
-| /blog/netsuite-suiteql-bound-parameters | /netsuite-integrations |
-| /blog/netsuite-sales-order-fulfillment-list | /netsuite-workflow-automation |
-| /blog/netsuite-suitetax-term-discounts | /netsuite-account-optimization |
-| /blog/netsuite-currency-context-custom-fields | /netsuite-account-optimization |
-| /blog/netsuite-fsm-bundle-update-august-2026 | /netsuite-workflow-automation |
-| /blog/netsuite-fsm-nxc-now-migration-august-2026 | /netsuite-workflow-automation |
-| /blog/netsuite-fsm-readonly-migration-august-2026 | /netsuite-workflow-automation |
+---
 
-### P5: Add cross-cluster spoke-to-spoke links (recommended)
+## 3. Content and Hub Gaps
 
-| From | To | Rationale |
+### Gap A: FSM has 4 posts, no service page
+
+Four FSM posts were published in July-August 2026 covering the 2026.07.1 bundle update.
+None link to a service page. Link equity from these posts (which have genuine search interest
+for "netsuite FSM" queries) flows nowhere useful. Options:
+
+- Create a `/netsuite-field-service-management` or `/netsuite-fsm-support` service page
+  that the 4 posts can link to.
+- Alternatively, link FSM posts to `/netsuite-administrator-support` as the closest
+  existing proxy while a dedicated page is developed.
+
+### Gap B: 2026.2 cluster lacks a hub post
+
+11 feature posts cover 2026.2 changes. No hub post exists for "netsuite 2026.2 release
+notes" which has real search volume. The summary post (netsuite-2026-2-finance-updates)
+covers only the finance subset and sends users to /contact. A proper hub post would:
+
+- Target "netsuite 2026.2 release notes" / "netsuite 2026.2 what's new"
+- Link out to all 11 feature posts
+- Link back to /netsuite-post-go-live-support and /netsuite-consulting-services
+- Allow 11 feature posts to link back to it instead of /contact
+
+### Gap C: /netsuite-consulting-services has zero blog support
+
+No blog post targets queries like "netsuite consulting services", "netsuite consultant",
+"how to choose a netsuite consultant", or "netsuite managed services". This page receives
+no link equity from editorial content. It is also the most commercially valuable page on
+the site for top-of-funnel consulting leads.
+
+### Gap D: /hire-netsuite-developer has one indirect mention
+
+Only the nlauth-tba-end-of-support post cross-references this page. No post is written
+specifically to support "hire netsuite developer" queries, which are high-intent commercial
+terms.
+
+### Gap E: /netsuite-administrator-support is under-linked
+
+Only the passkey-second-factor-2026-2 post links here. The 11 2026.2 feature posts that
+are admin-facing (record customization, currency fields, bill capture, SuiteTax) link to
+/netsuite-post-go-live-support instead. /netsuite-administrator-support receives almost no
+link signal from editorial content.
+
+### Gap F: /netsuite-account-optimization hub outbound links are thin
+
+The hub links to netsuite-account-performance but not to netsuite-optimization. The account
+optimization cluster is the thinnest properly-structured cluster with only 2 posts.
+
+---
+
+## 4. Cannibalization Risks
+
+### Risk 1: netsuite-optimization vs netsuite-account-performance (HIGH)
+
+Both posts target the "slow/broken NetSuite account" SERP space.
+
+- netsuite-account-performance: "Why Your NetSuite Account Feels Slow (and What Actually
+  Fixes It)" - diagnostic framing, informational intent
+- netsuite-optimization: "NetSuite Account Optimization: What to Audit and Fix on a Live
+  Account" - prescriptive framing, commercial intent
+
+SERP check: "netsuite slow account performance fix optimization" returns the same competitor
+set for both queries: Kimberlite, Coefficient, DeveloperStroop, Stockton10. SuitePacific's
+account-performance post appears in this SERP. Both posts likely compete for the same page
+1 slot on "netsuite account slow" variants.
+
+**Mitigation:** The intent separation (diagnostic vs. audit) is real but thin. Ensure the
+title and H1 of each post makes the distinction explicit. netsuite-account-performance
+should own "why is netsuite slow"; netsuite-optimization should own "netsuite account audit"
+or "netsuite optimization checklist". Both should cross-link to each other rather than
+competing for the same anchor text at the service page.
+
+---
+
+### Risk 2: signs-netsuite-support-not-working vs netsuite-support-partner-evaluation (MODERATE)
+
+Both target the "bad netsuite partner" and "switch netsuite partner" SERP space.
+
+- signs-netsuite-support-not-working: problem-aware content (8 failure signs)
+- netsuite-support-partner-evaluation: solution-aware content (how to evaluate a new partner)
+
+SERP check: "signs netsuite support not working partner evaluation" returns CrossCountry,
+OpenTeq, TheVested, SuiteCentric - all of which cover both angles in the same post. Google
+may conflate the two SuitePacific posts.
+
+**Mitigation:** The buyer journey differentiation is legitimate. Ensure the two posts link
+to each other with directional anchor text ("if you've identified the problem, here's how
+to evaluate a replacement" and vice versa). Monitor search console for keyword overlap
+between these two URLs.
+
+---
+
+### Risk 3: netsuite-suiteql-bound-parameters blog vs resource (MILD)
+
+- Blog: "Bound Parameters in NetSuite REST SuiteQL: What They Are and Why You Should Use Them"
+- Resource: "How to Use Bound Parameters in NetSuite REST SuiteQL"
+
+The blog post already links to the resource page. Intent differentiation (awareness vs.
+how-to) is clear. No action needed beyond ensuring the blog post does not rank for
+"how to use" queries that the resource page should own.
+
+---
+
+### Risk 4: netsuite-rest-batch-sequential blog vs resource (MILD)
+
+Same pattern as Risk 3. Blog explains the feature, resource shows the steps. Blog links to
+resource. Acceptable.
+
+---
+
+### Risk 5: netsuite-saved-search-tips vs netsuite-saved-search-examples (MILD)
+
+SERP overlap is 4-5 shared URLs. The posts are distinct (best practices vs. templates) but
+close enough that Google could choose either for a "netsuite saved search" query.
+
+**Mitigation:** Already cross-linked. Confirm that the formula-examples post is also
+cross-linked. No consolidation needed; the three posts collectively own more SERP real
+estate than one combined post would.
+
+---
+
+## 5. Internal Linking Assessment
+
+### Posts with no service page link (link equity dead-ends)
+
+These 8 posts reach a dead-end at /contact or a resource page without passing equity to any
+service hub:
+
+| Post | Missing link | Recommended target |
 |---|---|---|
-| /blog/netsuite-workflow-vs-suitescript | /blog/workflow-automation-mistakes | Same cluster; no current link |
-| /blog/netsuite-workflow-vs-suitescript | /blog/suitescript-best-practices | Cross-cluster; SERP overlap signal |
-| /blog/netsuite-map-reduce-script-guide | /blog/suitescript-best-practices | Same cluster; no current link |
-| /blog/netsuite-suiteql-sort-change-2026-2 | /blog/netsuite-suiteql-bound-parameters | Same developer sub-topic |
-| /blog/netsuite-rest-batch-sequential | /blog/netsuite-nlauth-tba-end-of-support | Both REST/auth migration concerns |
-| /blog/netsuite-optimization | /blog/netsuite-account-performance | Both in same cluster; no current link |
+| netsuite-fsm-bundle-update-august-2026 | Service page | /netsuite-administrator-support (interim) |
+| netsuite-fsm-mobile-changes-august-2026 | Service page | /netsuite-administrator-support (interim) |
+| netsuite-fsm-nxc-now-migration-august-2026 | Service page | /netsuite-administrator-support (interim) |
+| netsuite-fsm-readonly-migration-august-2026 | Service page | /netsuite-administrator-support (interim) |
+| netsuite-suiteql-bound-parameters | Service page | /netsuite-suitescript-development |
+| netsuite-suiteql-sort-change-2026-2 | Service page | /netsuite-suitescript-development |
+| netsuite-currency-context-custom-fields | Service page | /netsuite-administrator-support |
+| netsuite-suitetax-term-discounts | Service page | /netsuite-administrator-support or /netsuite-post-go-live-support |
+
+### Posts linked to the wrong hub
+
+| Post | Current link | Correct link |
+|---|---|---|
+| netsuite-advanced-pdf-data-model | /netsuite-suitescript-development | /netsuite-advanced-pdf-templates |
+| netsuite-2026-2-finance-updates | /contact | /netsuite-post-go-live-support or /netsuite-consulting-services |
+
+### Hub pages not linking back to known spokes
+
+| Hub | Missing outbound links to blog |
+|---|---|
+| /netsuite-suitescript-development | user-event-vs-client-script, workflow-vs-suitescript, suiteql posts |
+| /netsuite-advanced-pdf-templates | freemarker-pdf-guide |
+| /netsuite-post-go-live-support | netsuite-support-partner-evaluation |
+| /netsuite-account-optimization | netsuite-optimization |
+| /netsuite-administrator-support | passkey-second-factor-2026-2 (links to hub; hub does not return the link) |
+| /netsuite-consulting-services | No blog links at all |
+| /hire-netsuite-developer | No blog links at all |
+
+### Posts with strong bidirectional linking (benchmark)
+
+These posts demonstrate the correct hub-spoke pattern and can serve as the template for
+fixing gaps:
+
+- suitescript-best-practices <-> /netsuite-suitescript-development
+- workflow-automation-mistakes <-> /netsuite-workflow-automation
+- netsuite-saved-search-tips <-> /netsuite-saved-searches-dashboards
+- netsuite-post-go-live-checklist <-> /netsuite-post-go-live-support
+- netsuite-nlauth-tba-end-of-support <-> /netsuite-integrations
 
 ---
 
-## 7. Content Gap Analysis
+## 6. Recommended New Blog Posts
 
-### Gap 1: Integrations cluster has no purpose-built blog support (Critical)
+Five posts that would close the most impactful content gaps:
 
-The /netsuite-integrations service page is the only hub with zero topically-aligned blog posts.
-Integrations is a competitive keyword space (brokenrubik, houseblend, getknit.dev rank strongly).
-The three developer posts that exist (REST batch, SuiteQL bound params, NLAuth) are too narrow
-and too technical to rank for integration buyer-journey queries.
+### New Post 1: "NetSuite 2026.2: Full Release Notes Summary"
+**Priority:** High
+**Target hub:** No dedicated hub exists; this post becomes the hub for the 11 feature posts
+**Intent:** Informational (release awareness) with commercial CTA to post-go-live support
+**Rationale:** "netsuite 2026.2 release notes" and "netsuite 2026.2 what's new" have real
+search volume. 11 existing feature posts would link back to this hub instead of /contact.
+The summary post (netsuite-2026-2-finance-updates) covers only finance; this new post covers
+all 11 2026.2 topics and links to the finance post and all other feature posts.
+**Target service page:** /netsuite-post-go-live-support and /netsuite-consulting-services
 
-Missing topics with commercial value:
-- "NetSuite RESTlet vs REST Web Services: Which Integration Approach to Use" (decision-guide intent)
-- "NetSuite Celigo Integration Setup: What to Know Before You Start" (tool-specific, high volume)
-- "How to Build a NetSuite Integration Without a Developer" (iPaaS/Celigo/native-only angle)
+### New Post 2: "How to Choose a NetSuite Consulting Partner for Long-Term Support"
+**Priority:** High
+**Target hub:** /netsuite-consulting-services (currently has zero blog support)
+**Intent:** Commercial (comparing options, evaluating partners)
+**Rationale:** /netsuite-consulting-services is the highest-value service page on the site
+and receives zero link equity from editorial content. This post complements the existing
+"signs-netsuite-support-not-working" and "netsuite-support-partner-evaluation" posts by
+addressing the earlier consideration stage ("what model do I even want?") rather than
+the evaluation stage.
+**SERP target:** "netsuite consulting partner", "netsuite managed services vs consulting"
+**Cross-links to:** netsuite-support-partner-evaluation, signs-netsuite-support-not-working,
+netsuite-post-go-live-checklist
 
-### Gap 2: Workflow cluster is thin on how-to content
+### New Post 3: "NetSuite Field Service Management: Administrator Setup and Maintenance Guide"
+**Priority:** Medium-High
+**Target hub:** No hub page; this post acts as an interim pillar for FSM content
+**Intent:** Informational/Commercial (covers setup decisions that lead to support requests)
+**Rationale:** 4 FSM posts exist with no internal destination. This pillar post gives them
+somewhere to link (mandatory spoke-to-hub links currently impossible). If a
+/netsuite-field-service-management service page is created later, this post transitions
+into a spoke.
+**Immediate action:** Publish this post, then update all 4 FSM posts to link to it.
+**Target service page link within post:** /netsuite-administrator-support
 
-The existing two workflow posts (mistakes + vs-SuiteScript) are both comparative/diagnostic.
-There is nothing that teaches workflow setup, which is the most common entry-point query.
+### New Post 4: "NetSuite Integration Options: When to Use SuiteScript, REST, RESTlet, or a Platform"
+**Priority:** Medium
+**Target hub:** /netsuite-integrations
+**Intent:** Commercial (decision guide)
+**Rationale:** The integrations hub currently has 3 spokes (nlauth, restlet-vs-rest,
+rest-batch-sequential) but no broad decision-guide post covering the full integration
+landscape including third-party iPaaS options (Celigo, Boomi). This gap leaves "netsuite
+integration options" and "netsuite api options" queries unaddressed. This post would serve
+as the cluster's conceptual anchor.
+**Cross-links to:** netsuite-restlet-vs-rest-web-services, netsuite-rest-batch-sequential,
+netsuite-nlauth-tba-end-of-support
 
-Missing topics:
-- "How to Build a NetSuite Approval Workflow with SuiteFlow" (Informational, high volume)
-- "NetSuite Workflow Conditions and Triggers: A Field-Level Guide" (Informational, developer/admin)
-
-### Gap 3: Saved searches cluster lacks formula depth
-
-The two existing posts (tips + examples) cover surface-level usage. The high-engagement sub-topic
-of saved search formulas has no dedicated post; competitors (yrkconsulting, cleverence) rank for it.
-
-Missing topic:
-- "NetSuite Saved Search Formulas: Date Math, CASE WHEN, and Column Calculations" (Informational)
-
-### Gap 4: Account optimization has no specific audit-procedure content
-
-The two existing posts (account performance + optimization guide) are both diagnostic. No post
-walks through a structured cleanup procedure by category (custom fields, workflows, scripts,
-saved searches).
-
-Missing topic:
-- "NetSuite Custom Field Audit: How to Find and Remove Unused Fields Without Breaking Anything"
-  (Informational, high specificity)
-
-### Gap 5: Post-go-live cluster lacks a buyer-facing trust piece
-
-The existing posts (checklist + signs-not-working + month-end-close) target users who already
-have support problems. There is no post addressing the decision to switch support partners, which
-is the highest-commercial-intent query in this cluster.
-
-Missing topic:
-- "What to Look for When Choosing a NetSuite Post-Go-Live Support Partner" (Commercial intent)
-
----
-
-## 8. Recommended New Blog Posts (Priority Order)
-
-These five posts would each fill a structural gap in an underserved cluster.
-
-### New Post 1: NetSuite Integrations
-
-**Title:** NetSuite RESTlet vs REST Web Services: Which Integration Approach to Use
-**Target keyword:** netsuite restlet vs rest web services
-**Intent:** Informational (decision guide)
-**Hub:** /netsuite-integrations
-**Word count target:** 1,500-1,800 words
-**Rationale:** The Integrations hub has zero blog support. This post covers the primary decision
-that any developer or admin faces before building an integration. It would be the first confirmed
-spoke for the most isolated hub on the site. Internal links: to /netsuite-integrations (hub),
-/blog/netsuite-rest-batch-sequential, /blog/netsuite-nlauth-tba-end-of-support.
-
-### New Post 2: NetSuite Workflow Automation
-
-**Title:** How to Build a NetSuite Approval Workflow with SuiteFlow: Step-by-Step
-**Target keyword:** netsuite approval workflow setup suiteflow
-**Intent:** Informational
-**Hub:** /netsuite-workflow-automation
-**Word count target:** 1,500-1,800 words
-**Rationale:** The workflow cluster has only 2 diagnostic posts and no how-to content. Approval
-workflow is the most common workflow use case and the highest-volume sub-topic in SuiteFlow
-searches. Internal links: to /netsuite-workflow-automation (hub),
-/blog/workflow-automation-mistakes, /blog/netsuite-workflow-vs-suitescript.
-
-### New Post 3: Saved Searches and Dashboards
-
-**Title:** NetSuite Saved Search Formulas: CASE WHEN, Date Math, and Column Calculations
-**Target keyword:** netsuite saved search formulas
-**Intent:** Informational
-**Hub:** /netsuite-saved-searches-dashboards
-**Word count target:** 1,500-1,800 words
-**Rationale:** Competitors (yrkconsulting "25+ formula examples", cleverence) rank for this
-query. The cluster has no formula-depth content. This would be the third spoke for the saved
-searches hub, meeting the minimum threshold. Internal links: to /netsuite-saved-searches-dashboards
-(hub), /blog/netsuite-saved-search-tips, /blog/netsuite-saved-search-examples.
-
-### New Post 4: Advanced PDF Templates
-
-**Title:** NetSuite Advanced PDF Template Data Model: How to Access Sublists, Related Records,
-and Multi-Currency Fields
-**Target keyword:** netsuite advanced pdf template data model sublists
-**Intent:** Informational
-**Hub:** /netsuite-advanced-pdf-templates
-**Word count target:** 1,500-1,800 words
-**Rationale:** Both existing PDF posts cover mistakes and FreeMarker syntax. No post covers the
-data model, which is the most common point of failure when developers try to access sublist fields
-or related-record data in templates. This closes a technical depth gap that competitors have not
-filled well. Internal links: to /netsuite-advanced-pdf-templates (hub),
-/blog/netsuite-freemarker-pdf-guide, /blog/advanced-pdf-template-mistakes.
-
-### New Post 5: Post-Go-Live Support
-
-**Title:** How to Evaluate a NetSuite Post-Go-Live Support Partner: 7 Questions to Ask
-**Target keyword:** netsuite post go live support partner
-**Intent:** Commercial
-**Hub:** /netsuite-post-go-live-support
-**Word count target:** 1,200-1,500 words
-**Rationale:** The three existing posts in this cluster all target informational intent (checklist,
-diagnosis, month-end process). This post targets commercial intent and would attract readers who
-are actively evaluating support options. It is the natural conversion-funnel entry point for the
-service page. Internal links: to /netsuite-post-go-live-support (hub),
-/blog/signs-netsuite-support-not-working, /blog/netsuite-post-go-live-checklist.
+### New Post 5: "NetSuite Workflow Audit: How to Find and Disable Automations That Are Firing Too Often"
+**Priority:** Medium
+**Target hub:** /netsuite-workflow-automation
+**Intent:** Informational with commercial hook (audit reveals need for cleanup work)
+**Rationale:** The workflow cluster has only 2 pure workflow posts (automation-mistakes,
+approval-workflow-setup). A third post targeting the audit/cleanup angle adds a funnel stage
+between "awareness of problems" and "hire someone". The resource page
+netsuite-workflow-entry-conditions.md already covers entry conditions; this blog post
+addresses the broader question of identifying which workflows are causing performance drag.
+**Cross-links to:** workflow-automation-mistakes, netsuite-approval-workflow-setup,
+netsuite-account-performance, netsuite-optimization
+**Target service page:** /netsuite-workflow-automation
 
 ---
 
-## 9. Validation Checklist
+## 7. SERP Overlap Observations
 
-- [x] No two posts share the same primary keyword (passkey duplicate flagged in Section 4)
-- [ ] Every spoke has at least 3 incoming internal links planned (most have 1-2; fix via P3/P4 actions)
-- [x] Every confirmed spoke links to the pillar (true for all 14 mapped spokes)
-- [ ] Pillar links to every spoke (5 hubs missing at least 1 spoke link; 2 hubs link to zero spokes)
-- [ ] No orphan pages (20 posts currently orphaned or false-routed)
-- [x] Template selection matches intent (all blog posts use informational template; commercial post TBD)
-- [x] Word count targets are within specification (spoke: 1,200-1,800; pillar: service pages are adequate)
-- [ ] Total cluster size within constraints (Integrations at 0 spokes violates minimum; Workflow and PDF at 2)
-- [x] SERP overlap data supports groupings (all same-cluster pairs have estimated 3-5 shared URLs)
+Six keyword pairs were searched directly. Observations are documented below. Full pairwise
+matrix for 39 posts was not computed (741 pairs); clusters below threshold 4 were flagged
+based on topical distance.
+
+| Keyword pair | Shared top-10 URLs (observed) | Assignment |
+|---|---|---|
+| "netsuite saved search tips" / "netsuite saved search examples" | 3+ (Cleverence, NetSuite.com, SuitePacific tips post) | Same cluster |
+| "netsuite slow account performance" / "netsuite account optimization audit" | Same competitor set (Kimberlite, Coefficient, DeveloperStroop, Stockton10) | Same cluster; cannibalization risk flagged |
+| "netsuite workflow vs suitescript which to use" / workflow content | Salto, WealthyLike, DeveloperStroop, TheNetSuitePro | Cross-cluster; separate posts warranted |
+| "netsuite post go live checklist 90 days" | AnchorGroup, ProteloInc, EpiqInfo, AlphaBold | Same cluster; SuitePacific ranks here |
+| "signs netsuite support not working partner evaluation" | CrossCountry, OpenTeq, TheVested, SuiteCentric | Moderate overlap; separate posts acceptable with differentiated titles |
+| "netsuite suitescript best practices upgrade safe" | Tvarana, TheNetSuitePro, SuiteScript docs, SuitePacific | Same cluster; SuitePacific ranks at position 7 |
 
 ---
 
-## Summary Scorecard
+## 8. Pre-Delivery Validation Summary
 
-| Cluster | Spokes | Hub Links to Spokes | Orphans Routed In | Priority |
-|---|---|---|---|---|
-| SuiteScript Development | 4 | 3/4 | 1 needed | Medium |
-| Workflow Automation | 2 | 1/2 | 3 recommended | High |
-| Advanced PDF Templates | 2 | 1/2 | 0 | High |
-| Integrations | 0 | 0/0 | 3 partial | Critical |
-| Saved Searches | 2 | 1/2 | 0 | High |
-| Post-Go-Live Support | 3 | 0/3 | 0 | High |
-| Account Optimization | 2 | 1/2 | 3 recommended | Medium |
-| FSM (no hub) | 4 | 0 | -- | Low |
+| Check | Status |
+|---|---|
+| No two posts share the same primary keyword | Pass (minor proximity on optimization vs. account-performance) |
+| Every spoke links to pillar (mandatory) | Fail: 8 spokes missing service page links |
+| Pillar links to every spoke (mandatory) | Fail: Multiple hubs missing outbound spoke links |
+| No orphan pages in link matrix | Fail: 4 FSM posts are functional orphans (only /contact) |
+| Template selection matches intent | Pass |
+| 2026.2 posts have a hub post | Fail: No hub post exists; finance summary post is incomplete proxy |
+| /netsuite-consulting-services has blog support | Fail: Zero spokes |
+| FSM cluster has a hub destination | Fail: No hub page |
+
+---
+
+## Summary of Actionable Findings
+
+**Fix immediately (internal link corrections, no new content required):**
+
+1. Update netsuite-advanced-pdf-data-model to link to `/netsuite-advanced-pdf-templates`
+   instead of `/netsuite-suitescript-development`.
+2. Add service page links to 8 posts currently routing to /contact or resource pages only
+   (see Section 5 table; all FSM posts -> /netsuite-administrator-support as interim target,
+   suiteql posts -> /netsuite-suitescript-development, currency/suitetax posts ->
+   /netsuite-administrator-support).
+3. Update netsuite-2026-2-finance-updates to link to `/netsuite-post-go-live-support`.
+4. Update hub pages to add missing outbound spoke links: /netsuite-suitescript-development
+   (user-event, suiteql posts), /netsuite-advanced-pdf-templates (freemarker guide),
+   /netsuite-post-go-live-support (support-partner-evaluation),
+   /netsuite-account-optimization (netsuite-optimization post).
+
+**New content to close structural gaps (in priority order):**
+
+1. "NetSuite 2026.2: Full Release Notes Summary" - gives 11 feature posts a hub to link to
+2. "How to Choose a NetSuite Consulting Partner" - first spoke for /netsuite-consulting-services
+3. "NetSuite FSM: Administrator Setup and Maintenance Guide" - interim pillar for 4 FSM posts
+4. "NetSuite Integration Options: When to Use SuiteScript, REST, RESTlet, or a Platform"
+5. "NetSuite Workflow Audit: How to Find Automations That Fire Too Often"

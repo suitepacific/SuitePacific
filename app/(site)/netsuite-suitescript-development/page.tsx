@@ -134,13 +134,14 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite SuiteScript Development",
   description:
-    "Custom SuiteScript 2.x development for NetSuite: User Event scripts, Client scripts, Scheduled scripts, Map/Reduce, and Suitelets built and tested in sandbox before touching production.",
+    "SuiteScript 2.x development for NetSuite: User Event, Client, Scheduled, Map/Reduce, and Suitelet scripts built and tested before touching production.",
   alternates: { canonical: "/netsuite-suitescript-development" },
   openGraph: {
     title: "NetSuite SuiteScript Development",
-    description: "Custom SuiteScript 2.x development for NetSuite: User Event scripts, Client scripts, Scheduled scripts, Map/Reduce, and Suitelets built and tested in sandbox before touching production.",
+    description: "SuiteScript 2.x development for NetSuite: User Event, Client, Scheduled, Map/Reduce, and Suitelet scripts built and tested before touching production.",
     url: "https://suitepacific.com/netsuite-suitescript-development",
     type: "website",
+    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
   },
 };
 
@@ -304,6 +305,30 @@ export default function SuiteScriptDevelopmentPage() {
                 NetSuite Advanced PDF template data model
               </Link>{" "}
               covers how to access header fields, line items, entity data, and amounts in FreeMarker templates.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-user-event-vs-client-script" className="text-accent hover:underline">
+                User Event vs. Client Script in NetSuite
+              </Link>{" "}
+              explains which script type to use for each automation scenario and why the choice affects governance.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-workflow-vs-suitescript" className="text-accent hover:underline">
+                NetSuite Workflow vs. SuiteScript
+              </Link>{" "}
+              covers when SuiteFlow is enough and when a script is the only way to reach the result you need.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-suiteql-bound-parameters" className="text-accent hover:underline">
+                SuiteQL bound parameters
+              </Link>{" "}
+              explains how to use parameterized queries to prevent injection and improve query reliability.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-suiteql-sort-change-2026-2" className="text-accent hover:underline">
+                NetSuite 2026.2 SuiteQL sort order change
+              </Link>{" "}
+              covers the implicit sort removal that affects queries returning large result sets in 2026.2.
             </li>
           </ul>
         </div>

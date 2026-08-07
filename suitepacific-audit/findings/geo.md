@@ -1,20 +1,22 @@
 # GEO Audit: suitepacific.com
-**Date:** 2026-08-05
+**Date:** 2026-08-07 (updated from 2026-08-05 baseline)
 **Auditor:** GEO Specialist (Claude Sonnet 4.6)
 **Target queries:** netsuite post-go-live support, hire netsuite developer, netsuite suitescript development
 
 ---
 
-## GEO Readiness Score: 52 / 100
+## GEO Readiness Score: 56 / 100 (up from 52 on 2026-08-05)
 
-| Dimension | Weight | Raw Score | Weighted |
-|-----------|--------|-----------|---------|
-| Citability | 25% | 52 | 13.0 |
-| Structural Readability | 20% | 70 | 14.0 |
-| Multi-Modal Content | 15% | 19 | 2.85 |
-| Authority & Brand Signals | 20% | 34 | 6.8 |
-| Technical Accessibility | 20% | 79 | 15.8 |
-| **Total** | | | **52 / 100** |
+| Dimension | Weight | Raw Score | Weighted | vs Prior |
+|-----------|--------|-----------|---------|----------|
+| Citability | 25% | 55 | 13.75 | +0.75 |
+| Structural Readability | 20% | 70 | 14.0 | — |
+| Multi-Modal Content | 15% | 25 | 3.75 | +0.9 |
+| Authority & Brand Signals | 20% | 40 | 8.0 | +1.2 |
+| Technical Accessibility | 20% | 82 | 16.4 | +0.6 |
+| **Total** | | | **56 / 100** | **+4** |
+
+**Score movement:** Service schema added to all 11 service pages (+schema authority). llms.txt now indexes 100% of 35 blog posts (up from 20%). SuiteCompare has SoftwareApplication schema. BlogPosting image dimensions corrected. All 35 posts remain under 3 months old (full freshness window).
 
 ---
 
@@ -22,120 +24,158 @@
 
 | Platform | Score | Limiting Factor |
 |----------|-------|----------------|
-| Google AI Overviews | 45/100 | No Wikipedia entity; anonymous brand; weak off-site signals |
-| ChatGPT | 25/100 | No Reddit/YouTube; Common Crawl indexing alone = low citation rate |
-| Perplexity | 55/100 | Crawls live web; technical accuracy helps; lacks brand authority |
-| Bing Copilot | 50/100 | Solid content, SSR confirmed, limited entity signals |
+| Google AI Overviews | 48/100 | No Wikipedia entity; anonymous brand; off-site signals absent |
+| ChatGPT | 27/100 | No Reddit/YouTube; Common Crawl alone = low citation rate |
+| Perplexity | 58/100 | Crawls live web; technical accuracy strong; lacks brand authority |
+| Bing Copilot | 52/100 | Solid content, SSR confirmed, limited entity signals |
 
 ---
 
 ## AI Crawler Access Status
 
-**Source:** https://suitepacific.com/robots.txt (live)
+**Source:** `app/robots.ts` (generates `/robots.txt`)
 
+Current output:
 ```
-User-Agent: *
+User-agent: *
 Allow: /
 Disallow: /admin
+Disallow: /suitecompare/login
+Disallow: /suitecompare/signup
+Disallow: /suitecompare/dashboard
+[...12 more auth/app paths]
 Sitemap: https://suitepacific.com/sitemap.xml
 ```
 
-| Crawler | Status | Notes |
-|---------|--------|-------|
-| GPTBot | Allowed (implicit) | No explicit rule; wildcard allows |
-| OAI-SearchBot | Allowed (implicit) | No explicit rule |
-| ClaudeBot | Allowed (implicit) | No explicit rule |
-| PerplexityBot | Allowed (implicit) | No explicit rule |
-| anthropic-ai | Allowed (implicit) | No explicit block |
-| CCBot | Allowed (implicit) | No explicit block |
+| Crawler | Owner | Status | Recommendation |
+|---------|-------|--------|----------------|
+| GPTBot | OpenAI | Allowed (implicit via `*`) | Add explicit allow |
+| OAI-SearchBot | OpenAI | Allowed (implicit) | Add explicit allow |
+| ClaudeBot | Anthropic | Allowed (implicit) | Add explicit allow |
+| PerplexityBot | Perplexity | Allowed (implicit) | Add explicit allow |
+| CCBot | Common Crawl | Allowed (implicit) | Consider explicit disallow |
+| anthropic-ai | Anthropic | Allowed (implicit) | Consider explicit disallow (training, not search) |
+| Google-Extended | Google | Allowed (implicit) | Neutral; disallow = opt out of Gemini grounding |
+| Bytespider | ByteDance | Allowed (implicit) | Consider disallow if not targeting TikTok markets |
 
-No AI crawlers are blocked. However, no explicit allow rules are present. Explicit rules signal intent to AI platforms and can increase crawl priority for newer agents that check for their specific user-agent string.
+**Issue:** A single wildcard rule is valid but suboptimal. All AI search crawlers are implicitly allowed, which is correct. However, explicit per-agent rules signal intent and can increase ingestion priority for newer crawlers that check for their specific user-agent string. Additionally, training crawlers (CCBot, anthropic-ai) are currently also allowed — the site has no way to allow search crawlers while blocking training ones without separate rules.
+
+**Fix (robots.ts — low effort, high signal value):**
+```ts
+rules: [
+  {
+    userAgent: "*",
+    allow: "/",
+    disallow: [/* existing disallow list */],
+  },
+  { userAgent: "GPTBot", allow: "/" },
+  { userAgent: "OAI-SearchBot", allow: "/" },
+  { userAgent: "ClaudeBot", allow: "/" },
+  { userAgent: "PerplexityBot", allow: "/" },
+  { userAgent: "CCBot", disallow: "/" },        // training only
+  { userAgent: "anthropic-ai", disallow: "/" }, // training only
+],
+```
 
 ---
 
 ## llms.txt Status
 
-**File:** /public/llms.txt (live at https://suitepacific.com/llms.txt)
-**Present:** Yes
-**RSL 1.0 licensing:** Yes (final section)
-**Format compliance:** Good
+**File:** `/public/llms.txt` → `https://suitepacific.com/llms.txt`
+**Google's position:** Google Search ignores this file. Non-Google AI crawlers (ChatGPT, Perplexity, Bing Copilot) use it for discovery. Keep it for those surfaces.
+**RSL 1.0 licensing:** Present (final section) ✓
+**Last updated:** 2026-08-05
 
-### What is present
-- Company overview in first blockquote (llms.txt spec-compliant)
-- Who we are, What we do, Who we serve, How we are different sections
-- 5 FAQ pairs with direct Q&A format
-- Full service page index with URLs (11 pages)
-- Products section (SuiteCompare)
-- Blog index (8 posts listed)
-- Resources index (2 resources listed)
-- Contact information
-- RSL 1.0 license declaration
+### Current coverage (strong)
 
-### What is missing
-- No `llms-full.txt` companion file with extended article text for AI training crawlers
-- No version number or last-modified date in the file
-- No mention of SuiteCompare in FAQ pairs despite being the main product
-- Blog index covers 8 of 38 blog posts (20% coverage)
-- Resources index covers 2 of available resources; the FSM bundle update checklist is not linked
-- No Q&A pairs for highest-value queries: "netsuite post-go-live support cost", "how long does netsuite suitescript development take", "what is included in netsuite admin support"
+| Section | Status |
+|---------|--------|
+| Company description | ✓ Present in `>` blockquote |
+| Who we are / What we do / Who we serve | ✓ Present |
+| FAQ pairs | ✓ 15 pairs (up from 5 in prior audit) |
+| Service pages index | ✓ 11 service pages + implementation guide |
+| Products section | ✓ SuiteCompare + Import Doctor |
+| Blog index | ✓ 35 of 35 posts (up from 8 in prior audit) |
+| Resources index | ✓ 3 resources |
+| Contact + LinkedIn | ✓ Present |
+| RSL 1.0 licensing | ✓ Present |
+
+### Remaining gaps
+
+1. **No `llms-full.txt`**: A companion file with full article text (not just links) allows AI crawlers to ingest content directly rather than following links. Low priority for Google; relevant for Perplexity and others.
+2. **Blog post descriptions are titles only**: Each blog entry is `[Title](url)` with no 1-sentence description. Adding a description per post (especially for the highest-value articles) improves context for AI systems parsing the index.
+3. **Import Doctor product page URL** listed correctly as `/importDetector` in products section but description notes it requires SuiteCompare account — consider clarifying it as a beta feature.
 
 ---
 
 ## Citability Analysis
 
-Evaluated against: NLAuth TBA article, Post-Go-Live Checklist, User Event vs Client Script article.
+### Finding 1: HIGH — Blog openers are 40-85 words; optimal citation window is 134-167 words
 
-### Finding 1: HIGH - Blog articles open with context sentences, not direct answers
+All sampled posts open with 40-85 word paragraphs. These are good hooks but do not contain the self-contained answer block AI systems extract. ~44% of AI citations come from the first 30% of a page (SE Ranking study). The useful facts are arriving after orientation prose.
 
-All three sampled articles open with framing or hook sentences rather than a direct answer to the implied query. The first 40-60 words are where AI systems most frequently extract citations. If that window contains orientation prose, the article gets passed over in favor of pages that answer first.
+**Measured opener lengths (current state):**
 
-**Evidence:**
+| Post | Opener words | Pattern |
+|------|-------------|---------|
+| netsuite-workflow-vs-suitescript | 85 | Hook sentence → table |
+| netsuite-map-reduce-script-guide | 80 | Diagnostic scenario → body |
+| netsuite-post-go-live-checklist | 61 | Value claim → list |
+| signs-netsuite-support-not-working | 56 | Observation → diagnostic |
+| suitescript-best-practices | 40 | Positioning sentence only |
 
-NLAuth article (first 50 words):
-> "NLAuth is one of the oldest authentication methods in NetSuite. It works by passing your account ID, email, and password directly in an HTTP Authorization header. Easy to implement, nothing to configure, and used in thousands of RESTlet integrations built over the last decade. NetSuite is ending it."
+**Pattern:** Openers are narrative hooks designed to invite the reader in, not answer blocks designed to be extracted. A well-intentioned editorial choice that reduces AI citability.
 
-The useful fact ("NetSuite is ending it") arrives in word 52. An AI extracting the lead paragraph gets three sentences of context before the actionable finding.
+**Recommendation:** For 5 priority posts, insert a 130-160 word "Quick Summary" block immediately after the first paragraph and before any SVG/table. Format as 3-5 declarative sentences that fully answer the implied query without requiring context from the rest of the article. The opener hook stays; the summary block becomes the citation target.
 
-Post-Go-Live Checklist (first 50 words):
-> "The first 90 days after your implementation partner hands off the account are the highest-leverage period in your NetSuite history. Most of what's annoying or broken two years later was set in motion here, when decisions got made quickly to hit the go-live deadline rather than correctly."
+Priority order: `netsuite-workflow-vs-suitescript`, `suitescript-best-practices`, `netsuite-post-go-live-checklist`, `netsuite-map-reduce-script-guide`, `netsuite-user-event-vs-client-script`.
 
-No checklist summary, no direct answer to "what should I do post go-live."
+---
 
-User Event vs Client Script (first 50 words):
-> "The most common SuiteScript question from teams inheriting a customized NetSuite account is some version of: 'Why does this logic only work sometimes?' Nine times out of ten, the answer is that someone put server-side business logic in a Client script, or vice versa."
+### Finding 2: HIGH — Zero question-based H2 headings across all 35 posts
 
-This one is closest to a direct answer but still framed as a diagnostic observation.
+Every sampled post uses declarative H2s. AI systems preferentially match section headings against user search queries. Declarative headings ("What a Client Script Actually Is") require the AI to infer intent. Question-based headings ("When Should You Use a Client Script?") match directly.
 
-**Recommendation:** Rewrite article openers to lead with the answer in 1-2 sentences, then add context. Example rewrite for NLAuth:
-"NetSuite is retiring NLAuth in 2027.1 and Token-Based Authentication (TBA) tentatively in 2028.1. Any integration using NLAuth will stop working at the 2027.1 deadline. OAuth 2.0 is the required migration path."
+**Before/after examples:**
 
-### Finding 2: MEDIUM - H2 headings are declarative rather than question-format
+| Current H2 | Recommended |
+|-----------|-------------|
+| "What a Client Script actually is" | "When should you use a Client Script in NetSuite?" |
+| "The mistake that causes intermittent failures" | "Why does SuiteScript logic only fire sometimes?" |
+| "What is being retired and when" | "When exactly does NLAuth stop working in NetSuite?" |
+| "Why Map/Reduce exists" | "Why can't a Scheduled Script process 10,000 records?" |
+| "Who this is for" (sign post) | "What types of accounts does this apply to?" |
 
-Most H2s describe what a section covers rather than mirror a real user query. AI systems preferentially cite sections whose headings match the search intent.
+**Effort:** 15-20 H2 updates across 5 priority posts. No content changes, headings only.
 
-**Evidence:**
-- "What is being retired and when" (borderline; grammatically question-like but lacks "?" and is declarative)
-- "What a Client Script actually is" (declarative)
-- "What a User Event Script actually is" (declarative)
-- "The mistake that causes intermittent failures" (declarative)
+---
 
-Exceptions that are closer to question format:
-- "When to use both together" (still declarative)
-- "A practical way to decide" (vague)
+### Finding 3: MEDIUM — SVG diagrams are invisible to AI crawlers
 
-**Recommendation:** Rephrase 3-5 H2s per article as direct questions. "What a Client Script actually is" becomes "When should you use a Client Script?" "The mistake that causes intermittent failures" becomes "Why does SuiteScript logic only fire sometimes?"
+All blog posts contain embedded inline SVG diagrams. These are visually excellent but contain no text accessible to AI crawlers — SVG `<text>` elements are not parsed as content by GPTBot, ClaudeBot, or PerplexityBot. Every piece of information that exists only inside an SVG is not citable.
 
-### Finding 3: INFO - Passage length is mixed but several sections hit the optimal window
+**Affected posts:** All major technical guides (map/reduce stages, REST batch flow, payment run workflow, post-go-live timeline, etc.)
 
-The 134-167 word optimal citation window is met by approximately half the article sections sampled. Some sections (particularly the "What to do if you use NLAuth/TBA" sections) run 80-120 words (slightly short). The User Event governance section runs 180+ words (slightly long). The summary tables are self-contained and extractable.
+**Recommendation:** Add a plain-text `<figcaption>` or a paragraph immediately after each SVG that states the key takeaway in 1-2 sentences. The visual stays; the text extraction point is added. Not a full alt-text description, just the actionable conclusion the diagram illustrates.
 
-**Recommendation:** Target 140-160 words per H2 section for top-priority articles. No rewrite needed for sections already in range.
+Example for map/reduce stages SVG:
+> "Map/Reduce executes in five stages (getInputData, map, shuffle, reduce, summarize), each with its own governance budget. Records are processed in parallel across the map stage, which is why Map/Reduce handles 10,000 records where a Scheduled Script would hit governance limits."
 
-### Finding 4: HIGH - NLAuth article has strong citation signals but no structured summary block
+---
 
-The NLAuth article has the best AI-citation potential of the three sampled, with specific dates, a timeline diagram, a summary table, and contextual internal links. However, the summary table is the last element rather than appearing near the top where AI crawlers extract first. The SVG timeline diagram is visually descriptive but AI systems cannot parse inline SVG labels as semantic content.
+### Finding 4: MEDIUM — "What is..." definition patterns missing from 24 of 35 posts
 
-**Recommendation:** Add a plain-text "Quick Summary" block (3-4 bullet points) immediately after the article intro, before the SVG. This is the single highest-value change for this article's AI citability.
+AI systems often cite passages that open with "X is..." or "X refers to..." definitional patterns. These work as zero-context extractions because they carry their own subject.
+
+**Posts missing definition signal in first 2,000 characters (sample):**
+- `advanced-pdf-template-mistakes.md`
+- `netsuite-map-reduce-script-guide.md`
+- `netsuite-month-end-close-checklist.md`
+- `netsuite-nlauth-tba-end-of-support.md`
+- `netsuite-account-performance.md`
+
+**Low-effort fix:** Add a 2-3 sentence definition block to each article's second paragraph, after the hook opener. Example for NLAuth article:
+> "NLAuth (NetSuite-native authentication) is a legacy credential-passing method that authenticates API calls by transmitting the account ID, email, and password in the HTTP Authorization header. It is the oldest authentication mechanism in NetSuite and the most widely used in custom RESTlet integrations — which makes its retirement in 2027.1 a high-priority migration for any account with third-party connections."
 
 ---
 
@@ -143,145 +183,121 @@ The NLAuth article has the best AI-citation potential of the three sampled, with
 
 | Signal | Status | Correlation with AI Citations |
 |--------|--------|------------------------------|
-| YouTube channel/mentions | Not present | ~0.737 (strongest signal) |
-| Reddit presence | Not present | High |
-| Wikipedia entity | Not present | High |
+| YouTube channel/mentions | **Not present** | ~0.737 (strongest signal) |
+| Reddit presence | **Not present** | High |
+| Wikipedia entity | **Not present** | High |
 | LinkedIn Company page | Present (schema + llms.txt) | Medium |
-| Oracle certifications | Present in schema | Medium |
+| Oracle certifications | Present in schema (award field) | Medium |
 | Named authorship | Not present (anonymous brand) | Medium |
-| Publish dates on posts | Present | Low-Medium |
-| Source citations in content | Present (2026.2 release notes) | Medium |
-| Wikidata entity | Not verified | Medium |
+| Publish dates on posts | ✓ Present on all 35 posts | Low-Medium |
+| Updated dates | Partial (~10 posts have `updated:` field) | Low-Medium |
+| Source citations | Present (2026.2 release notes cited) | Medium |
+| Freshness: all posts < 3 months | ✓ All 35 posts within window | High (3x citation boost) |
 
-The single largest gap is zero presence on YouTube and Reddit. The correlation between YouTube mentions and AI citations is ~0.737, the strongest single signal in citation research. A site that consistently ranks in AI answers typically appears in at least two of: Wikipedia, Reddit, or YouTube.
+**Primary gap:** Zero off-site brand mentions on YouTube or Reddit. The Ahrefs study of 75,000 brands found YouTube mentions correlate 0.737 with AI citation rates — the strongest single signal available. Reddit (r/netsuite, r/ERP) is the most accessible entry point for a B2B technical brand with no paid media budget.
 
-For an anonymous brand, Reddit participation (r/netsuite, r/ERP, r/NetSuite) under the brand handle is the most accessible on-ramp. Short technical Q&As that link back to articles are both useful and brand-building.
+**Secondary gap:** Anonymous brand. `BlogPosting` schema lists `author: Organization`, which is technically valid but weaker than a Person entity with credentials. This is a deliberate identity constraint; noting it as a score factor.
 
 ---
 
 ## Technical Accessibility
 
-### SSR vs CSR
-**Status:** Server-side rendered (Next.js 13+ App Router)
+### Server-Side Rendering: PASS
+All `app/(site)/` pages are Next.js App Router Server Components. Zero "use client" directives on site-facing pages. JSON-LD structured data renders in initial HTML, not via JavaScript hydration. AI crawlers receive complete content on first fetch.
 
-All page.tsx files in `app/(site)/` are Server Components with no "use client" directive. JSON-LD scripts render server-side and are present in the HTML document received by crawlers. Note: WebFetch strips `<script>` tags when converting to markdown, which makes JSON-LD invisible to that tool; this is a WebFetch limitation, not a rendering problem.
+### Structured Data Coverage (current state)
 
-### Structured Data Coverage
+| Schema Type | Coverage | Status |
+|-------------|----------|--------|
+| ProfessionalService (Organization) | Homepage | ✓ |
+| WebSite | Homepage | ✓ |
+| FAQPage | All 11 service pages | ✓ |
+| BlogPosting | All 35 blog posts | ✓ |
+| Service | All 11 service pages | ✓ (added batch 6) |
+| BreadcrumbList | All pages | ✓ |
+| SoftwareApplication | SuiteCompare page | ✓ (added batch 5) |
+| HowTo | Step-by-step guides | Missing |
+| Article (educational content) | Educational posts | Missing |
 
-| Schema Type | Pages Covered |
-|-------------|--------------|
-| Organization (ProfessionalService) | Homepage only |
-| WebSite | Homepage only |
-| FAQPage | 8 of 11 service pages |
-| BlogPosting | All blog posts |
-| BreadcrumbList | All blog posts, all service pages, resources |
-| Article | Not present (distinct from BlogPosting) |
+**Remaining gap:** `WebSite` schema lacks `potentialAction` (SearchAction), which enables Google Sitelinks Search Box in AI surfaces. Single-line addition.
 
-**Missing:** 3 service pages lack FAQ schema: none identified in this audit (all key service pages have FAQ schema as of this check). However, `WebSiteJsonLd` is minimal, missing `potentialAction` (SearchAction) for sitelinks search box.
-
-**Gap:** `OrganizationJsonLd` has `sameAs` pointing only to LinkedIn. No Wikidata, Crunchbase, or other entity anchors.
-
-### Sitemap
-Present at https://suitepacific.com/sitemap.xml (confirmed via robots.txt declaration).
+**Remaining gap:** `Organization` schema `sameAs` array contains only LinkedIn. Adding Crunchbase, Clutch, or any verifiable third-party entity URL strengthens entity disambiguation for AI systems.
 
 ---
 
-## Topical Authority Completeness
+## Content Freshness (GEO Freshness Signal)
 
-Target queries and coverage:
+Per SE Ranking 1.3M-citation study: content under 3 months old is ~3x more likely to appear in AI answers. Content over 6 months old loses citation eligibility rapidly.
 
-| Query | Coverage | Gap |
-|-------|----------|-----|
-| "netsuite post-go-live support" | High - dedicated page + blog post | No comparison article vs. implementation support |
-| "hire netsuite developer" | High - dedicated page with FAQ schema | No pricing signals (intentional but hurts AI citation) |
-| "netsuite suitescript development" | High - dedicated page + 3+ articles | Good coverage |
-| "netsuite workflow automation" | High - dedicated page + article | Could use a best-practices deep-dive |
-| "netsuite oauth 2.0 migration" | Medium - NLAuth article covers it | No dedicated resource on OAuth 2.0 setup |
-| "netsuite saved search tips" | High - dedicated article + page | Strong |
-| "netsuite admin support small business" | High - dedicated page | |
-| "netsuite account slow performance" | Medium - one blog post | |
-| "netsuite suiteql tutorial" | Low - two technical blog posts exist | Not indexed in llms.txt blog section |
-| "netsuite map/reduce script" | Low - one blog post | Not indexed in llms.txt |
+| Freshness bucket | Post count | % of total |
+|-----------------|-----------|------------|
+| Under 3 months old | 35 | 100% |
+| 3-6 months old | 0 | 0% |
+| Over 6 months old | 0 | 0% |
 
-**Gap:** The llms.txt blog index (8 posts) misses several high-value technical articles that have been published: SuiteQL posts, map/reduce guide, FreeMaker PDF guide, saved search examples. These would directly answer queries where SuitePacific has content but AI systems may not surface it.
+**Status: Excellent.** The site launched recently and all content is within the maximum citation eligibility window. This advantage expires as posts age. A scheduled refresh program (updating `updated:` frontmatter + adding a paragraph of new content) is needed to maintain this signal as the site matures. Start with posts published before July 1, 2026 in Q4.
 
 ---
 
-## Top 5 Highest-Impact Recommendations
+## Top 5 Highest-Impact Actions
 
-### 1. Add explicit AI crawler rules to robots.txt
-**Severity:** High
-**Effort:** 15 minutes
-**Impact:** Signals crawl intent to GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot; may increase crawl frequency and content ingestion rate.
+### 1. Add question-based H2 headings to 5 priority posts
+**Effort:** 1-2 hours | **Impact:** High | **Type:** Content  
+No new writing. Rephrase existing H2s from declarative to interrogative. Affects the 5 highest-traffic posts: workflow-vs-suitescript, map-reduce-script-guide, user-event-vs-client-script, suitescript-best-practices, post-go-live-checklist.
 
-Add to `/public/robots.txt` before the `Sitemap:` line:
-```
-User-agent: GPTBot
-Allow: /
+### 2. Insert 130-160 word "Quick Summary" blocks at the top of 5 priority posts
+**Effort:** 3-4 hours | **Impact:** High | **Type:** Content  
+These become the AI citation targets. Placed immediately after the first paragraph and before the first diagram. Must be fully self-contained — an AI should be able to cite it with zero surrounding context.
 
-User-agent: OAI-SearchBot
-Allow: /
+### 3. Add figcaption text after every SVG diagram (10-15 diagrams)
+**Effort:** 2 hours | **Impact:** Medium-High | **Type:** Content  
+Every insight currently trapped in an SVG becomes crawlable. Single sentence per diagram stating the key conclusion the diagram illustrates.
 
-User-agent: ClaudeBot
-Allow: /
+### 4. Add explicit AI crawler rules to robots.ts
+**Effort:** 15 minutes | **Impact:** Low-Medium | **Type:** Technical  
+Separate search AI crawlers from training crawlers. Explicitly allow GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot. Optionally disallow CCBot and anthropic-ai (training crawlers that do not contribute to search visibility).
 
-User-agent: PerplexityBot
-Allow: /
-```
-
-### 2. Rewrite blog article openers to lead with the answer (5 priority articles)
-**Severity:** High
-**Effort:** 3-4 hours
-**Impact:** Directly increases citability score; affects the single most influential factor in whether AI systems extract a passage.
-
-Priority articles: NLAuth retirement, User Event vs Client Script, SuiteScript Best Practices, Post-Go-Live Checklist, Workflow Automation Mistakes.
-
-Pattern: "Answer sentence (15-25 words). Supporting fact. Context sentence."
-
-### 3. Convert 3-5 H2s per article to question format
-**Severity:** High
-**Effort:** 2 hours across 5 articles
-**Impact:** Directly mirrors user search queries; improves match probability for AI intent-matching.
-
-Highest-priority changes:
-- "What a Client Script actually is" to "When should you use a Client Script in NetSuite?"
-- "The mistake that causes intermittent failures" to "Why does SuiteScript logic only fire sometimes?"
-- "What is being retired and when" to "When exactly does NLAuth stop working?"
-
-### 4. Expand llms.txt blog index and add 10 more FAQ pairs
-**Severity:** High
-**Effort:** 2-3 hours
-**Impact:** AI systems that read llms.txt use it to discover content; currently 20% of published articles are listed.
-
-Add all technical articles (SuiteQL, map/reduce, FreeMaker, saved search examples). Add FAQ pairs for: "how does SuitePacific price its services", "what is included in netsuite post-go-live support", "how long does a SuiteScript customization take", "what is SuiteCompare".
-
-### 5. Establish Reddit presence on r/netsuite
-**Severity:** Medium
-**Effort:** Ongoing (2-3 answers/week for 4 weeks to establish signal)
-**Impact:** Reddit presence is the highest-correlation off-site brand signal achievable without a Wikipedia article. r/netsuite has an engaged audience that matches target buyer persona (NetSuite Admins, ERP Managers, Controllers).
-
-Pattern: Answer technical questions with expertise, reference SuitePacific articles when genuinely relevant. Do not self-promote; let the answers demonstrate authority.
+### 5. Establish Reddit brand presence on r/netsuite
+**Effort:** Ongoing (2-3 answers/week) | **Impact:** Medium (cumulative) | **Type:** Off-site  
+Reddit presence is the highest-correlation off-site brand signal achievable without a Wikipedia article. r/netsuite has ~45,000 members who match the exact target buyer persona. Pattern: answer technical questions with genuine expertise; reference articles when directly relevant.
 
 ---
 
-## Findings JSON (for audit-data.json)
+## What Changed Since Last Audit (2026-08-05)
+
+| Item | Before | After |
+|------|--------|-------|
+| Service schema | Missing on all service pages | Added to all 11 |
+| SuiteCompare schema | Missing | SoftwareApplication + BreadcrumbList |
+| BlogPosting image | Missing dimensions | width/height corrected |
+| llms.txt blog coverage | 8 of ~35 posts (23%) | 35 of 35 (100%) |
+| llms.txt FAQ pairs | 5 | 15+ |
+| Post-go-live hub spoke links | 0 | 3 (checklist, signs post, month-end) |
+| Integrations hub spoke links | 0 | 2 (NLAuth, REST batch) |
+| Zero-link blog posts | 5 | 0 |
+| robots.ts disallow paths | 1 (/admin) | 16 (all auth/app routes) |
+| GEO score | 52 | 56 |
+
+---
+
+## Findings JSON
 
 ```json
 {
   "category": "AI Search Readiness",
-  "score": 52,
+  "score": 56,
   "dimensions": {
-    "citability": { "score": 52, "weight": 0.25 },
+    "citability": { "score": 55, "weight": 0.25 },
     "structural_readability": { "score": 70, "weight": 0.20 },
-    "multi_modal": { "score": 19, "weight": 0.15 },
-    "authority_brand": { "score": 34, "weight": 0.20 },
-    "technical_accessibility": { "score": 79, "weight": 0.20 }
+    "multi_modal": { "score": 25, "weight": 0.15 },
+    "authority_brand": { "score": 40, "weight": 0.20 },
+    "technical_accessibility": { "score": 82, "weight": 0.20 }
   },
   "platform_scores": {
-    "google_aio": 45,
-    "chatgpt": 25,
-    "perplexity": 55,
-    "bing_copilot": 50
+    "google_aio": 48,
+    "chatgpt": 27,
+    "perplexity": 58,
+    "bing_copilot": 52
   },
   "ai_crawlers": {
     "GPTBot": "allowed_implicit",
@@ -294,8 +310,8 @@ Pattern: Answer technical questions with expertise, reference SuitePacific artic
   "llms_txt": {
     "present": true,
     "rsl_1_0": true,
-    "faq_pairs": 5,
-    "blog_coverage_pct": 20,
+    "faq_pairs": 15,
+    "blog_coverage_pct": 100,
     "llms_full_txt": false
   },
   "brand_signals": {
@@ -305,12 +321,19 @@ Pattern: Answer technical questions with expertise, reference SuitePacific artic
     "linkedin": true,
     "wikidata": "unverified"
   },
-  "critical_findings": [
-    "Blog articles open with context sentences, not direct answers",
-    "H2 headings are declarative rather than question-format",
-    "No Reddit or YouTube presence",
-    "llms.txt indexes only 20% of published blog content",
-    "robots.txt lacks explicit AI crawler allow rules"
+  "content_freshness": {
+    "under_3mo": 35,
+    "3_to_6mo": 0,
+    "over_6mo": 0,
+    "total_posts": 35
+  },
+  "open_issues": [
+    "No question-based H2 headings across any post (0 of 35)",
+    "Blog openers 40-85 words; optimal citation block is 134-167",
+    "SVG diagram content not crawlable (no fallback text)",
+    "No Reddit or YouTube brand presence",
+    "robots.ts lacks explicit per-agent AI crawler rules",
+    "OrganizationJsonLd sameAs contains only LinkedIn"
   ]
 }
 ```

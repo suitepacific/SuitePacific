@@ -119,3 +119,5 @@ A: Values in the params array are passed as strings and NetSuite handles the typ
 A: For queries with dynamic values, especially those where any value comes from user input or external sources, converting to bound parameters is recommended. For queries with only hardcoded values, the injection risk is low, but bound parameters still improve readability.
 
 For step-by-step guidance on converting existing SuiteQL queries to use bound parameters, see [How to Use Bound Parameters in NetSuite REST SuiteQL](/resources/netsuite-suiteql-bound-parameters).
+
+For help reviewing or rewriting SuiteQL queries in your account, see SuitePacific's [NetSuite SuiteScript development service](/netsuite-suitescript-development).

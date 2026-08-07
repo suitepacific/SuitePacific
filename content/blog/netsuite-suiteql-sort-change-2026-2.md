@@ -171,3 +171,5 @@ The SuiteQL behavior change is included in the NetSuite 2026.2 release notes. Re
 Auditing SuiteScript implementations for implicit sort dependencies, particularly across scheduled and Map/Reduce scripts that process large transaction volumes, is the kind of technical review that prevents production issues before they appear.
 
 If your NetSuite account recently upgraded to 2026.2 and you want to verify that your SuiteQL queries are not affected by this change, [contact SuitePacific](/contact). We can review your scripts and identify any queries that need an explicit sort order added.
+
+For help identifying and updating affected SuiteQL queries in your scripts, see SuitePacific's [NetSuite SuiteScript development service](/netsuite-suitescript-development).

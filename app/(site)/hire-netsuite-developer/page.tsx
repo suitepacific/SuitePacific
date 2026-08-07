@@ -338,13 +338,14 @@ const FREELANCER_ROWS = [
 export const metadata: Metadata = {
   title: "Hire a NetSuite Developer",
   description:
-    "Hire an experienced, Oracle-certified NetSuite developer for SuiteScript, workflow automation, integrations, and ongoing post-go-live support. No long-term contracts. Senior expertise at boutique rates.",
+    "Hire an Oracle-certified NetSuite developer for SuiteScript development, workflow automation, integrations, and post-go-live support. No long-term contracts.",
   alternates: { canonical: "/hire-netsuite-developer" },
   openGraph: {
     title: "Hire a NetSuite Developer",
-    description: "Hire an experienced, Oracle-certified NetSuite developer for SuiteScript, workflow automation, integrations, and ongoing post-go-live support. No long-term contracts. Senior expertise at boutique rates.",
+    description: "Hire an Oracle-certified NetSuite developer for SuiteScript development, workflow automation, integrations, and post-go-live support. No long-term contracts.",
     url: "https://suitepacific.com/hire-netsuite-developer",
     type: "website",
+    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
   },
 };
 

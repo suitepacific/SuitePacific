@@ -36,6 +36,19 @@ export default async function ResourcesIndexPage({
           { name: "Resources", url: `${SITE_URL}/resources` },
         ]}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            url: `${SITE_URL}/resources`,
+            name: "NetSuite Resources",
+            description: "Practical NetSuite reference articles: SuiteScript best practices, performance optimization, workflow automation, saved searches, and administration guides for post-go-live accounts.",
+            publisher: { "@type": "Organization", name: "SuitePacific", "@id": `${SITE_URL}/#organization` },
+          }),
+        }}
+      />
 
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <SectionHeading

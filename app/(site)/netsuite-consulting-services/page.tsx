@@ -143,13 +143,14 @@ const WHO_ITS_FOR = [
 export const metadata: Metadata = {
   title: "NetSuite Consulting Services",
   description:
-    "NetSuite consulting services for post-go-live companies: SuiteScript development, workflow automation, integrations, reporting, and ongoing technical support. No long-term contracts.",
+    "NetSuite consulting for post-go-live companies: SuiteScript development, workflow automation, integrations, reporting, and ongoing technical support.",
   alternates: { canonical: "/netsuite-consulting-services" },
   openGraph: {
     title: "NetSuite Consulting Services",
-    description: "NetSuite consulting services for post-go-live companies: SuiteScript development, workflow automation, integrations, reporting, and ongoing technical support. No long-term contracts.",
+    description: "NetSuite consulting for post-go-live companies: SuiteScript development, workflow automation, integrations, reporting, and ongoing technical support.",
     url: "https://suitepacific.com/netsuite-consulting-services",
     type: "website",
+    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
   },
 };
 

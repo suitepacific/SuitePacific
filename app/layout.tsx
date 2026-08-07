@@ -12,7 +12,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://suitepacific.com"),
   title: {
-    default: "SuitePacific: Post-Go-Live NetSuite Support & Optimization",
+    default: "SuitePacific: NetSuite Support and Custom Development",
     template: "%s | SuitePacific",
   },
   description:
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "NetSuite developer",
   ],
   openGraph: {
-    title: "SuitePacific: Post-Go-Live NetSuite Support",
+    title: "SuitePacific: NetSuite Support and Custom Development",
     description:
       "Your dedicated NetSuite team for ongoing enhancements, custom development, workflow automation, and expert support after go-live.",
     url: "https://suitepacific.com",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SuitePacific: Post-Go-Live NetSuite Support",
+    title: "SuitePacific: NetSuite Support and Custom Development",
     description:
       "Your dedicated NetSuite team for ongoing enhancements, custom development, workflow automation, and expert support after go-live.",
     images: ["/og-default.png"],

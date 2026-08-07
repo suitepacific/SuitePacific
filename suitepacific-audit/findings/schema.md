@@ -1,370 +1,294 @@
 # Schema / Structured Data Audit — SuitePacific
 
 **Audit date:** 2026-08-07
-**Pages audited:** 8 (see page-by-page section)
-**Fetch method:** Raw HTML + JSON-LD block extraction (server-rendered Next.js, Playwright not needed)
-**Source verified:** `components/seo/JsonLd.tsx` + per-page inline blocks
+**Source:** Static code analysis of `components/seo/JsonLd.tsx` + all `app/(site)/*/page.tsx` files
+**Method:** Full codebase read — server-rendered Next.js, no Playwright needed
+**Pages audited:** Homepage, 10 service pages, blog index, 3 blog posts, case studies index, case study detail, resources index, resource detail, /suitecompare, /contact
+
+**Score: 72 / 100**
 
 ---
 
-## Summary Table
+## Score Breakdown
 
-| Severity | Count | Finding |
-|----------|-------|---------|
-| Critical | 2 | Case study Article missing `datePublished`, `image`; /suitecompare has zero schema |
-| High | 1 | BlogPosting `image` ImageObject missing `width`/`height` on all blog posts |
-| Medium | 2 | Service pages missing Service schema; blog index has no schema |
-| Low | 2 | Resources index missing ItemList; WebSite missing potentialAction |
-| Info | 1 | FAQPage on 5 pages produces no Google rich result (retired May 7, 2026) |
-| Pass | 8 | See passing checks section |
+| Category | Points |
+|----------|--------|
+| Schema breadth (page type coverage) | 28 / 35 |
+| Schema correctness (valid types, required fields) | 22 / 25 |
+| Recommended property completeness | 14 / 25 |
+| Technical hygiene (@context, URLs, dates) | 8 / 10 |
+| Missed rich-result opportunities | 0 / 5 |
 
----
+**What earns this score:** Every public page type (service, blog, case study, resource, product) has at least one structured data block. All @context values use `https://schema.org`, all URLs are absolute, all dates are ISO 8601. The foundation is solid.
 
-## Page-by-Page Detection
-
-| Page | Blocks | Types detected |
-|------|--------|----------------|
-| `/` (homepage) | 3 | ProfessionalService + OfferCatalog, WebSite, FAQPage |
-| `/blog/netsuite-user-event-vs-client-script` | 2 | BlogPosting, BreadcrumbList |
-| `/blog/netsuite-nlauth-tba-end-of-support` | 2 | BlogPosting, BreadcrumbList |
-| `/netsuite-suitescript-development` | 2 | BreadcrumbList, FAQPage |
-| `/netsuite-post-go-live-support` | 2 | BreadcrumbList, FAQPage |
-| `/case-studies/advanced-pdf-document-automation` | 2 | BreadcrumbList, Article |
-| `/resources/netsuite-beforesubmit-vs-aftersubmit` | 2 | TechArticle, BreadcrumbList |
-| `/suitecompare` | 0 | **None** |
+**What holds it back:** One image dimension bug on resource pages, the WebSite block is missing its SearchAction, FAQPage is deployed across 12+ pages despite producing no Google SERP feature since May 2026, several article types are missing `url`, and the publisher logo ImageObject lacks dimensions in all article schemas.
 
 ---
 
-## Critical Findings
+## Schema Inventory by Page Type
+
+### Homepage (`/`)
+
+| Block | @type | Size |
+|-------|-------|------|
+| Block 1 | ProfessionalService (with nested PostalAddress, OfferCatalog, Offer, Service) | ~2,883 bytes |
+| Block 2 | WebSite | ~148 bytes |
+| Block 3 | FAQPage (with Question, Answer) | ~6,440 bytes |
+
+**Source:** `app/(site)/page.tsx` imports `OrganizationJsonLd`, `WebSiteJsonLd` from `components/seo/JsonLd.tsx`; the `Faq` section component independently emits `FaqJsonLd`.
+
+**ProfessionalService — validation:**
+- @context: `https://schema.org` ✅
+- @type: `ProfessionalService` ✅ (valid LocalBusiness subtype)
+- name: `"SuitePacific, LLC"` (LEGAL_NAME constant) ✅
+- alternateName: `"SuitePacific"` ✅
+- url: `"https://suitepacific.com"` (absolute) ✅
+- logo: absolute URL ✅
+- image: same as logo (256x256 JPEG) — acceptable for Organization, not ideal for Article contexts
+- description: present, non-placeholder ✅
+- address.PostalAddress: addressRegion + addressCountry only — missing streetAddress, postalCode, addressLocality (recommended, not required)
+- areaServed: `"US"` ✅
+- sameAs: LinkedIn URL (absolute) ✅
+- knowsAbout: array of 6 NetSuite topics ✅
+- award: 2 certification strings — semantically imprecise (see Low finding below)
+- hasOfferCatalog: OfferCatalog > Offer > Service (7 pairs) ✅
+- MISSING @id: no `"@id": "https://suitepacific.com/#organization"` anchor
+
+**WebSite — validation:**
+- @context: `https://schema.org` ✅
+- @type: `WebSite` ✅
+- @id: `"https://suitepacific.com/#website"` ✅
+- name: `"SuitePacific"` ✅
+- url: `"https://suitepacific.com"` ✅
+- MISSING potentialAction (SearchAction) — see Medium finding below
+
+**FAQPage — validation:**
+- @context: `https://schema.org` ✅
+- @type: `FAQPage` ✅ (structurally valid)
+- mainEntity: array of Question/Answer ✅ (correct nesting)
+- STATUS: No Google SERP benefit — FAQ rich results retired May 7, 2026. See Info finding.
 
 ---
 
-### [Critical] Case study Article missing `datePublished`, `dateModified`, and `image`
+### Service pages (10 pages)
 
-**Source:** `app/(site)/case-studies/[slug]/page.tsx` lines 52-72 (inline script block)
+All 10 service pages share the same three-block pattern:
 
-The live Article block for `/case-studies/advanced-pdf-document-automation` is:
+| Block | @type | Status |
+|-------|-------|--------|
+| BreadcrumbList | BreadcrumbList | ✅ |
+| FAQPage | FAQPage | Info (no SERP value) |
+| Service | Service | ✅ with gaps |
 
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Advanced PDF Document Automation",
-  "description": "How SuitePacific rebuilt NetSuite invoice, purchase order, and statement templates...",
-  "author": { "@type": "Organization", "name": "SuitePacific" },
-  "publisher": { "@type": "Organization", "name": "SuitePacific", "logo": { ... } },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://suitepacific.com/case-studies/..." }
-}
-```
+**Pages confirmed:** `/hire-netsuite-developer`, `/netsuite-consulting-services`, `/netsuite-suitescript-development`, `/netsuite-workflow-automation`, `/netsuite-saved-searches-dashboards`, `/netsuite-advanced-pdf-templates`, `/netsuite-account-optimization`, `/netsuite-administrator-support`, `/netsuite-post-go-live-support`, `/netsuite-integrations`, `/netsuite-admin-support-small-business`
 
-Three properties required by Google for Article rich results are absent:
-- `image` (ImageObject with url, width, height): **missing**
-- `datePublished`: **missing**
-- `dateModified`: **missing**
+**Service — validation (per-page):**
+- @context: `https://schema.org` ✅
+- @type: `Service` ✅
+- name: page-specific (e.g., "NetSuite SuiteScript Development") ✅
+- description: page-specific ✅
+- url: absolute, page-specific ✅
+- serviceType: page-specific ✅
+- provider: ProfessionalService with name (LEGAL_NAME) and url (SITE_URL) ✅
+- areaServed: `"US"` ✅
+- MISSING: `offers`, `category`, `availableChannel`, `termsOfService` (recommended, not required)
 
-Additionally the author/publisher `name` is `"SuitePacific"` instead of `"SuitePacific, LLC"` (the value `LEGAL_NAME` resolves to in `lib/content.ts`). Every other schema block on the site uses `LEGAL_NAME`. The case study block hardcodes a shorter string.
+**BreadcrumbList — validation:**
+- 2-level breadcrumb: Home > [Page Name] ✅
+- All items use absolute URLs ✅
+- 1-based positions, no gaps ✅
 
-**Fix — replace the inline block in `app/(site)/case-studies/[slug]/page.tsx`:**
-
-```tsx
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Article",
-      headline: cs.title,
-      description: cs.metaDescription,
-      image: {
-        "@type": "ImageObject",
-        url: `${SITE_URL}/logo-icon.png`,
-        width: 1200,
-        height: 630,
-      },
-      datePublished: cs.publishedAt ?? "2026-01-01",
-      dateModified: cs.updatedAt ?? cs.publishedAt ?? "2026-01-01",
-      author: { "@type": "Organization", name: LEGAL_NAME },
-      publisher: {
-        "@type": "Organization",
-        name: LEGAL_NAME,
-        logo: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png` },
-      },
-      mainEntityOfPage: {
-        "@type": "WebPage",
-        "@id": `${SITE_URL}/case-studies/${slug}`,
-      },
-    }),
-  }}
-/>
-```
-
-This also requires `publishedAt` and optionally `updatedAt` fields on the `CaseStudy` data type (in `lib/case-studies.ts`). If the data model has no dates, add them as static string fields on each case study object. Use ISO 8601 date strings (`"2026-01-01"` format). Import `LEGAL_NAME` alongside `SITE_URL`.
+**Exception:** `/netsuite-implementation-partner-vs-managed-support` has BreadcrumbList + FAQPage but NO ServiceJsonLd. This is a comparison/guide page — Article schema would fit better than Service schema (see Low finding).
 
 ---
 
-### [Critical] /suitecompare has zero schema markup
+### Blog index (`/blog`)
 
-**Evidence:** Live fetch of `https://suitepacific.com/suitecompare` returned 0 JSON-LD blocks. Source confirmed: `app/suitecompare/page.tsx` has no JSON-LD, no structured data of any kind.
+| Block | @type | Status |
+|-------|-------|--------|
+| BreadcrumbList | BreadcrumbList | ✅ |
 
-This is the product marketing page for SuiteCompare. It describes a SaaS tool with pricing, features, and a free tier. Without `SoftwareApplication` schema, Google has no structured signal about what the product is, its pricing model, or its operating environment.
-
-**Fix — add two blocks to `app/suitecompare/page.tsx`:**
-
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "@id": "https://suitepacific.com/suitecompare#software",
-  "name": "SuiteCompare",
-  "description": "Compare NetSuite Production and Sandbox SuiteScript files side-by-side in one click. Diff scripts, review deployment status, and understand any customization without switching tabs.",
-  "url": "https://suitepacific.com/suitecompare",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD",
-    "description": "Free plan available, no credit card required"
-  },
-  "provider": {
-    "@type": "Organization",
-    "name": "SuitePacific, LLC",
-    "url": "https://suitepacific.com"
-  }
-}
-```
-
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://suitepacific.com"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "SuiteCompare",
-      "item": "https://suitepacific.com/suitecompare"
-    }
-  ]
-}
-```
-
-Both blocks can be emitted as `<script type="application/ld+json">` tags at the top of the page JSX, consistent with the rest of the site. A `SoftwareApplicationJsonLd` component in `JsonLd.tsx` would keep this pattern centralized, but an inline block is equally valid.
+No CollectionPage or Blog entity block. See Low finding.
 
 ---
 
-## High Findings
+### Blog post (`/blog/[slug]`)
+
+| Block | @type | Status |
+|-------|-------|--------|
+| BlogPosting | BlogPosting | ✅ with minor gaps |
+| BreadcrumbList | BreadcrumbList | ✅ |
+
+**Source:** `components/seo/JsonLd.tsx` `BlogPostingJsonLd` component
+
+**BlogPosting — validation:**
+- @context: `https://schema.org` ✅
+- @type: `BlogPosting` ✅
+- headline: `post.title` ✅
+- description: `post.description` ✅
+- image: ImageObject with `url: og-default.png` (confirmed 1200x630 PNG), `width: 1200`, `height: 630` ✅
+- datePublished: ISO 8601 from `post.date` ✅ (e.g., `"2026-06-29"`)
+- dateModified: `post.updated ?? post.date` — correctly uses updated field when available ✅
+- author: Organization with LEGAL_NAME ✅
+- publisher: Organization with LEGAL_NAME + logo ImageObject ✅
+- mainEntityOfPage: WebPage with @id (absolute URL) ✅
+- MISSING: `url` property on the BlogPosting itself
+- MISSING: publisher.logo width/height (see Low finding)
+- MISSING: `inLanguage`, `keywords`, `articleSection` (recommended)
+
+**BreadcrumbList:** 3-level (Home > Blog > Post), absolute URLs, 1-based positions ✅
 
 ---
 
-### [High] BlogPosting `image` missing `width` and `height`
+### Case studies index (`/case-studies`)
 
-**Source:** `components/seo/JsonLd.tsx` line 71:
+| Block | @type | Status |
+|-------|-------|--------|
+| BreadcrumbList | BreadcrumbList | ✅ |
+| ItemList | ItemList | ✅ |
 
-```ts
-image: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png` },
-```
+**ItemList — validation:**
+- name: `"NetSuite Case Studies"` ✅
+- itemListElement: ListItem with position, url, name for each case study ✅
+- URLs are absolute ✅
+- No @id on the ItemList itself (low priority)
 
-No `width` or `height` properties are present. Google's Article rich result documentation requires the image to be at minimum 1200px wide (`width: 1200`) and recommends a 16:9 ratio. Without declared dimensions the crawler cannot confirm eligibility.
+---
 
-Confirmed on both live blog posts fetched:
-- `/blog/netsuite-user-event-vs-client-script`: no width/height
-- `/blog/netsuite-nlauth-tba-end-of-support`: no width/height
+### Case study detail (`/case-studies/[slug]`)
 
-The resource page TechArticle (`resources/[slug]/page.tsx` line 62) already includes dimensions correctly:
+| Block | @type | Status |
+|-------|-------|--------|
+| BreadcrumbList | BreadcrumbList | ✅ |
+| Article | Article | ✅ with minor gaps |
+
+**Source:** Inline `<script>` block in `app/(site)/case-studies/[slug]/page.tsx`
+
+**Article — validation:**
+- @context: `https://schema.org` ✅
+- @type: `Article` ✅
+- headline: `cs.title` ✅
+- description: `cs.metaDescription` ✅
+- image: ImageObject with `og-default.png`, `width: 1200`, `height: 630` ✅
+- datePublished: `cs.publishedAt` in ISO 8601 format ✅ (e.g., `"2026-06-01"`)
+- dateModified: `cs.publishedAt` (same as datePublished — acceptable) ✅
+- author: Organization with LEGAL_NAME ✅
+- publisher: Organization with LEGAL_NAME + logo ImageObject ✅
+- mainEntityOfPage: WebPage with absolute @id ✅
+- MISSING: `url` property on the Article itself
+- MISSING: publisher.logo width/height (see Low finding)
+
+**Note:** All case studies share `"publishedAt": "2026-06-01"`. As new case studies are added, use the actual publication date.
+
+**BreadcrumbList:** 3-level (Home > Case Studies > Title), absolute URLs ✅
+
+---
+
+### Resources index (`/resources`)
+
+| Block | @type | Status |
+|-------|-------|--------|
+| BreadcrumbList | BreadcrumbList | ✅ |
+
+No CollectionPage or ItemList. The page renders 30 resources filtered by category. See Low finding.
+
+---
+
+### Resource detail (`/resources/[slug]`)
+
+| Block | @type | Status |
+|-------|-------|--------|
+| TechArticle | TechArticle | Has image dimension bug |
+| BreadcrumbList | BreadcrumbList | ✅ |
+
+**Source:** Inline `<script>` block in `app/(site)/resources/[slug]/page.tsx`
+
+**TechArticle — validation:**
+- @context: `https://schema.org` ✅
+- @type: `TechArticle` ✅ (excellent — more specific than Article for technical reference content)
+- headline: `resource.title` ✅
+- description: `resource.description` ✅
+- image: `{ "@type": "ImageObject", url: "${SITE_URL}/logo-icon.png", width: 1200, height: 630 }` — **BUG**: `logo-icon.png` is a 256x256 JPEG. Declared dimensions `1200x630` do not match the actual file. Google will fetch and reject this image for rich results.
+- datePublished: ISO 8601 ✅
+- dateModified: same as datePublished ✅
+- author: Organization with LEGAL_NAME ✅
+- publisher: Organization with LEGAL_NAME + logo ImageObject ✅
+- mainEntityOfPage: WebPage with absolute @id ✅
+- MISSING: `url` property on the TechArticle itself
+- MISSING: publisher.logo width/height (see Low finding)
+- MISSING: `inLanguage`, `proficiencyLevel` (recommended for TechArticle)
+
+**BreadcrumbList:** 3-level (Home > Resources > Title), absolute URLs ✅
+
+---
+
+### /suitecompare
+
+| Block | @type | Status |
+|-------|-------|--------|
+| SoftwareApplication | SoftwareApplication | ✅ |
+| BreadcrumbList | BreadcrumbList | ✅ |
+
+**SoftwareApplication — validation:**
+- @context: `https://schema.org` ✅
+- @type: `SoftwareApplication` ✅
+- @id: `"https://suitepacific.com/suitecompare#software"` ✅
+- name: `"SuiteCompare"` ✅
+- description: present ✅
+- url: absolute ✅
+- applicationCategory: `"BusinessApplication"` ✅
+- operatingSystem: `"Web"` ✅
+- offers: Offer with price `"0"`, priceCurrency `"USD"`, description ✅
+- provider: Organization with LEGAL_NAME + url ✅
+- MISSING: `screenshot`, `featureList`, `softwareVersion` (recommended)
+- MISSING: `aggregateRating` (requires real reviews — do not fabricate)
+
+---
+
+### /contact
+
+| Block | @type | Status |
+|-------|-------|--------|
+| BreadcrumbList | BreadcrumbList | ✅ |
+
+No additional schema needed for a contact page. Appropriate coverage.
+
+---
+
+## Findings
+
+---
+
+### [Medium] Resource TechArticle declares wrong image dimensions
+
+**File:** `app/(site)/resources/[slug]/page.tsx` line 63
+
+**Current code:**
 ```ts
 image: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png`, width: 1200, height: 630 },
 ```
 
-**Fix — one-line change in `components/seo/JsonLd.tsx` line 71:**
+**Problem:** `logo-icon.png` is a 256x256 JPEG (confirmed via `file` command). The declared `width: 1200, height: 630` does not match the actual file. Google fetches the image to verify dimensions; when the actual pixel count is below 1200px wide, Article rich result eligibility is denied.
+
+Blog posts and case studies correctly use `og-default.png` (confirmed 1200x630 PNG). Resources should use the same image.
+
+**Fix — one-line change in `app/(site)/resources/[slug]/page.tsx`:**
 
 ```ts
 // Before
-image: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png` },
+image: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png`, width: 1200, height: 630 },
 
 // After
-image: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png`, width: 1200, height: 630 },
+image: { "@type": "ImageObject", url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 },
 ```
 
-Note: `logo-icon.png` is likely a small icon, not a 1200px image. The declared dimensions signal to Google what the intended display size is, but Google will fetch and verify the actual file dimensions. If `logo-icon.png` is genuinely smaller than 1200px wide, a dedicated OG image per post would be the correct long-term fix. For now, adding dimensions is the minimum required change, and if Google rejects the image due to actual pixel size, the warning will appear in Search Console.
-
 ---
 
-## Medium Findings
+### [Medium] WebSite schema missing `potentialAction` (SearchAction)
 
----
+**File:** `components/seo/JsonLd.tsx` `WebSiteJsonLd` function
 
-### [Medium] Service pages have no Service-type schema
-
-**Evidence:** Both service pages audited emit only BreadcrumbList + FAQPage. No `Service` type describes the page subject.
-
-- `/netsuite-suitescript-development`: BreadcrumbList + FAQPage only
-- `/netsuite-post-go-live-support`: BreadcrumbList + FAQPage only
-
-The homepage `ProfessionalService` block includes a `hasOfferCatalog` that lists services by name, but individual service pages carry no per-page entity markup. Google sees these pages as content pages without explicit service signals.
-
-**Fix — add a `ServiceJsonLd` component to `JsonLd.tsx`:**
-
-```ts
-export function ServiceJsonLd({
-  name,
-  description,
-  url,
-  serviceType,
-}: {
-  name: string;
-  description: string;
-  url: string;
-  serviceType: string;
-}) {
-  const data = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name,
-    description,
-    url,
-    serviceType,
-    provider: {
-      "@type": "ProfessionalService",
-      name: LEGAL_NAME,
-      url: SITE_URL,
-    },
-    areaServed: "US",
-  };
-  return (
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
-  );
-}
-```
-
-Then add it to each service page. Example for `/netsuite-suitescript-development/page.tsx`:
-
-```tsx
-<ServiceJsonLd
-  name="NetSuite SuiteScript Development"
-  description="Custom SuiteScript 2.x development for post-go-live NetSuite accounts, including User Event scripts, Client scripts, Scheduled scripts, Map/Reduce scripts, RESTlets, and Suitelets."
-  url={`${SITE_URL}/netsuite-suitescript-development`}
-  serviceType="SuiteScript Development"
-/>
-```
-
-Example for `/netsuite-post-go-live-support/page.tsx`:
-
-```tsx
-<ServiceJsonLd
-  name="NetSuite Post-Go-Live Support"
-  description="Ongoing development, automation, and support for companies already live on NetSuite. Covers SuiteScript, workflow automation, saved searches, PDF templates, and configuration."
-  url={`${SITE_URL}/netsuite-post-go-live-support`}
-  serviceType="NetSuite Managed Support"
-/>
-```
-
-Apply the same pattern to all other service pages (`/netsuite-account-optimization`, `/netsuite-workflow-automation`, `/netsuite-advanced-pdf-templates`, `/netsuite-saved-searches-dashboards`, `/netsuite-integrations`, `/hire-netsuite-developer`).
-
----
-
-### [Medium] Blog index /blog has no schema
-
-**Evidence:** The `/blog` page was audited in the previous audit run and found to emit 0 JSON-LD blocks. Source confirms no `JsonLd` components are imported in `app/(site)/blog/page.tsx`.
-
-**Fix — add BreadcrumbList at minimum, ItemList for full coverage:**
-
-```tsx
-// Minimum fix (BreadcrumbList only)
-<BreadcrumbJsonLd
-  items={[
-    { name: "Home", url: SITE_URL },
-    { name: "Blog", url: `${SITE_URL}/blog` },
-  ]}
-/>
-```
-
-For fuller coverage, add an ItemList block listing canonical post URLs. This is lower-complexity than a full ItemList with titles and descriptions, but signals the collection to Google.
-
----
-
-## Low Findings
-
----
-
-### [Low] Resources index /resources missing ItemList
-
-**Evidence:** The `/resources` page (audited previously) emits only a BreadcrumbList. The page renders a filterable list of resource articles but carries no ItemList or CollectionPage.
-
-**Recommendation:** Add an `ItemList` block to `app/(site)/resources/page.tsx` listing the URLs of all resources. Lower priority than the blog index fix because resources already have strong individual TechArticle blocks.
-
----
-
-### [Low] WebSite schema missing potentialAction (SearchAction)
-
-**Evidence:** The `WebSiteJsonLd` component emits only `@type`, `@id`, `name`, and `url`. No `potentialAction` with a `SearchAction` is present.
-
-**Recommendation:** Skip for now. The Sitelinks Searchbox rich result is only useful if the site has a functional search endpoint. If internal search is added in the future, add a `SearchAction` then.
-
----
-
-## Info Findings
-
----
-
-### [Info] FAQPage on 5 pages: no Google SERP benefit
-
-**Affected pages:**
-- Homepage: 18 questions
-- `/netsuite-suitescript-development`: 7 questions
-- `/netsuite-post-go-live-support`: 5 questions
-- Other service pages (not audited in this run but using the same `FaqJsonLd` component)
-
-Google retired FAQ rich results for all sites on May 7, 2026. These blocks are structurally valid JSON-LD (correct `@context`, all `Question` items have `acceptedAnswer`, no placeholder text). They produce no SERP feature. Any benefit for AI/GEO crawlers is unconfirmed.
-
-**Recommendation:** No action required. Do not remove (not harmful, zero cost to retain). Do not add new FAQPage blocks where absent.
-
----
-
-## Passing Checks
-
----
-
-### [Pass] TechArticle on /resources/[slug] now includes image with dimensions
-
-`app/(site)/resources/[slug]/page.tsx` line 62:
-```ts
-image: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png`, width: 1200, height: 630 },
-```
-
-All required TechArticle properties are present: `headline`, `description`, `image` (with dimensions), `datePublished`, `dateModified`, `author` (Organization, LEGAL_NAME), `publisher` (with nested logo ImageObject), `mainEntityOfPage`. Confirmed live on `/resources/netsuite-beforesubmit-vs-aftersubmit`.
-
----
-
-### [Pass] BlogPosting has all required fields except image dimensions
-
-Both blog posts confirmed live with: `headline`, `description`, `image` (url present), `datePublished`, `dateModified`, `author` (Organization), `publisher` (with logo), `mainEntityOfPage`. The only gap is image dimensions (tracked above as High).
-
-Note: `/blog/netsuite-nlauth-tba-end-of-support` correctly has `dateModified: "2026-08-05"` distinct from `datePublished: "2026-07-21"`, showing the `post.updated` field is wired correctly.
-
----
-
-### [Pass] ProfessionalService schema is solid
-
-Homepage Block 1 validates cleanly:
-- `@context: "https://schema.org"` (https, not http)
-- `@type: "ProfessionalService"` (valid LocalBusiness subtype)
-- `name`, `url`, `logo`, `image`, `description`, `address` (PostalAddress), `areaServed`, `sameAs`, `knowsAbout`, `award` all present
-- `hasOfferCatalog` with 7 Offer/Service pairs matching current services
-- All URLs absolute
-
-Minor recommendation (not blocking): add `"@id": "https://suitepacific.com/#organization"` to enable cross-page entity anchoring. Currently no page references back to this entity by ID.
-
----
-
-### [Pass] WebSite schema correct
-
+**Current output:**
 ```json
 {
   "@context": "https://schema.org",
@@ -375,43 +299,287 @@ Minor recommendation (not blocking): add `"@id": "https://suitepacific.com/#orga
 }
 ```
 
-`@id` anchor present. Scoped to homepage only.
+A `potentialAction` with a `SearchAction` enables the Sitelinks Searchbox rich result in Google SERPs — when users search for `suitepacific.com`, Google can display a search box directing queries to the site's own search.
+
+The site does not currently have a `/search` endpoint. This is a two-part task: add a search results page, then add the SearchAction.
+
+**Fix — add search endpoint first, then update `WebSiteJsonLd`:**
+
+```ts
+export function WebSiteJsonLd() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
+    name: "SuitePacific",
+    url: SITE_URL,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+
+  return (
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+  );
+}
+```
+
+Do not add this until a functional `/search?q=` page exists. Adding a SearchAction pointing to a non-functional URL produces a validation error in Google Search Console.
 
 ---
 
-### [Pass] BreadcrumbList correct across all pages
+### [Low] Article/TechArticle/BlogPosting all missing `url` property
 
-All BreadcrumbList blocks audited pass validation:
+**Affected files:**
+- `components/seo/JsonLd.tsx` (`BlogPostingJsonLd`) — `url` not set
+- `app/(site)/case-studies/[slug]/page.tsx` — `url` not set on Article block
+- `app/(site)/resources/[slug]/page.tsx` — `url` not set on TechArticle block
 
-| Page | Levels | Item format |
-|------|--------|-------------|
-| Blog post | 3 (Home > Blog > Post) | Absolute URLs, 1-based position |
-| Resource article | 3 (Home > Resources > Article) | Absolute URLs, 1-based position |
-| Service pages | 2 (Home > Service) | Absolute URLs, 1-based position |
-| Case study | 3 (Home > Case Studies > Study) | Absolute URLs, 1-based position |
+The `mainEntityOfPage` provides the `@id` of the WebPage entity, but the Article/BlogPosting itself should also carry `url` pointing to its canonical URL. These are distinct properties with different semantic roles.
 
-No `ListItem` position gaps, no relative URLs, no missing `name` or `item` fields.
+**Fix — add `url` to each article block:**
+
+In `components/seo/JsonLd.tsx` `BlogPostingJsonLd`:
+```ts
+url: `${SITE_URL}/blog/${post.slug}`,
+```
+
+In `app/(site)/case-studies/[slug]/page.tsx`:
+```ts
+url: `${SITE_URL}/case-studies/${slug}`,
+```
+
+In `app/(site)/resources/[slug]/page.tsx`:
+```ts
+url: `${SITE_URL}/resources/${slug}`,
+```
 
 ---
 
-### [Pass] @context and URL hygiene: all clean
+### [Low] Publisher logo ImageObject missing `width` and `height`
 
-All 15 JSON-LD blocks across 7 pages use `"@context": "https://schema.org"` (https). All `url`, `item`, `@id`, and `mainEntityOfPage` values are absolute URLs rooted at `https://suitepacific.com`. No placeholder text detected in any block.
+**Affected files:**
+- `components/seo/JsonLd.tsx` line 79 (`BlogPostingJsonLd`)
+- `app/(site)/case-studies/[slug]/page.tsx` publisher logo
+- `app/(site)/resources/[slug]/page.tsx` publisher logo
+
+**Current code (representative):**
+```ts
+publisher: {
+  "@type": "Organization",
+  name: LEGAL_NAME,
+  logo: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png` },
+},
+```
+
+The publisher logo ImageObject should declare width and height. Google's Article documentation recommends the logo be no taller than 60px. Dimensions should reflect the actual file.
+
+`logo-icon.png` is 256x256. Since Google publisher logos are displayed small, a square crop is fine, but the dimensions should match reality.
+
+**Fix:**
+```ts
+logo: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png`, width: 256, height: 256 },
+```
+
+Apply in `BlogPostingJsonLd`, the case study inline block, and the resource inline block.
+
+---
+
+### [Low] `/netsuite-implementation-partner-vs-managed-support` has no Article schema
+
+**Current:** BreadcrumbList + FAQPage only. No content-type schema.
+
+This is a long-form comparison guide — not a service offering page — so `Service` schema is inappropriate here. `Article` schema is the correct type and enables the Article rich result.
+
+**Fix — add an inline Article block to `app/(site)/netsuite-implementation-partner-vs-managed-support/page.tsx`:**
+
+```tsx
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: "NetSuite Implementation Partner vs. Managed Support",
+      description:
+        "A practical guide to understanding the difference between a NetSuite implementation partner and a post-go-live managed support provider, and how to choose the right engagement model.",
+      image: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/og-default.png`,
+        width: 1200,
+        height: 630,
+      },
+      datePublished: "2026-06-01",
+      dateModified: "2026-06-01",
+      author: { "@type": "Organization", name: LEGAL_NAME },
+      publisher: {
+        "@type": "Organization",
+        name: LEGAL_NAME,
+        logo: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png`, width: 256, height: 256 },
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/netsuite-implementation-partner-vs-managed-support`,
+      },
+      url: `${SITE_URL}/netsuite-implementation-partner-vs-managed-support`,
+    }),
+  }}
+/>
+```
+
+Import `SITE_URL` and `LEGAL_NAME` at the top of the file.
+
+---
+
+### [Low] Blog index `/blog` missing CollectionPage/Blog schema
+
+**Current:** BreadcrumbList only. No entity block describes the page as a blog or collection.
+
+**Fix — add a `CollectionPage` or `Blog` block to `app/(site)/blog/page.tsx`:**
+
+```tsx
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "@id": `${SITE_URL}/blog`,
+      name: "NetSuite Tips & Tricks Blog",
+      description:
+        "Practical NetSuite tips, SuiteScript best practices, and workflow automation advice for teams managing NetSuite after go-live.",
+      url: `${SITE_URL}/blog`,
+      publisher: {
+        "@type": "Organization",
+        name: LEGAL_NAME,
+        url: SITE_URL,
+      },
+    }),
+  }}
+/>
+```
+
+---
+
+### [Low] Resources index `/resources` missing CollectionPage schema
+
+Same pattern as blog index. Add a `CollectionPage` block to `app/(site)/resources/page.tsx`.
+
+Lower priority than blog because individual resource pages already have strong TechArticle schema; this gap doesn't affect per-article indexing.
+
+---
+
+### [Low] ProfessionalService missing `@id` anchor
+
+**Current:** The `OrganizationJsonLd` block has no `@id` property, so no other page on the site can reference this entity by ID.
+
+**Fix — add to `OrganizationJsonLd` in `components/seo/JsonLd.tsx`:**
+
+```ts
+"@id": `${SITE_URL}/#organization`,
+```
+
+Then all per-page Service blocks can reference it:
+```ts
+provider: {
+  "@type": "ProfessionalService",
+  "@id": `${SITE_URL}/#organization`,
+},
+```
+
+This enables Google's entity graph to connect service pages back to the homepage organization entity.
+
+---
+
+### [Low] `award` used for certifications (semantically imprecise)
+
+**Current `OrganizationJsonLd`:**
+```ts
+award: [
+  "Oracle NetSuite Certified SuiteCloud Developer II",
+  "Oracle NetSuite Certified Administrator Professional",
+],
+```
+
+Schema.org `award` is intended for recognition conferred by a third party (Webby Award, Best Place to Work, etc.). Certifications are better expressed with `hasCredential` using `EducationalOccupationalCredential`.
+
+**Preferred alternative:**
+```ts
+hasCredential: [
+  {
+    "@type": "EducationalOccupationalCredential",
+    name: "Oracle NetSuite Certified SuiteCloud Developer II",
+    credentialCategory: "certification",
+    recognizedBy: { "@type": "Organization", name: "Oracle" },
+  },
+  {
+    "@type": "EducationalOccupationalCredential",
+    name: "Oracle NetSuite Certified Administrator Professional",
+    credentialCategory: "certification",
+    recognizedBy: { "@type": "Organization", name: "Oracle" },
+  },
+],
+```
+
+No functional SERP impact from this change — low priority, purely semantic correctness.
+
+---
+
+### [Info] FAQPage on 12+ pages: no Google SERP benefit since May 7, 2026
+
+**Affected pages:**
+- Homepage (via `Faq` section component > `FaqJsonLd`)
+- All 10 service pages individually (each imports and uses `FaqJsonLd`)
+- `/netsuite-implementation-partner-vs-managed-support`
+
+Google retired FAQ rich results for all sites on May 7, 2026. These blocks are structurally valid JSON-LD: correct `@context`, all `Question` items have `acceptedAnswer`, no placeholder text. They produce no SERP feature.
+
+**Recommendation:** No action required. Do not remove existing blocks (they are harmless and have zero maintenance cost). Do not add new FAQPage blocks to pages where they are currently absent. Any AI/GEO crawler benefit is unconfirmed.
+
+---
+
+## Passing Checks
+
+| Check | Result |
+|-------|--------|
+| All @context values use `https://schema.org` (not http) | ✅ Pass — all 15+ blocks correct |
+| All URLs are absolute | ✅ Pass — no relative URLs in any block |
+| All dates are ISO 8601 | ✅ Pass — `"2026-06-01"` format throughout |
+| BlogPosting image uses og-default.png (1200x630) | ✅ Pass — confirmed real file dimensions |
+| Case study Article image uses og-default.png (1200x630) | ✅ Pass |
+| BlogPosting dateModified uses `post.updated` when present | ✅ Pass — wired correctly in `BlogPostingJsonLd` |
+| BreadcrumbList on all public pages | ✅ Pass — 2- or 3-level on every audited page |
+| BreadcrumbList positions are 1-based, no gaps | ✅ Pass |
+| Service schema on all 10 service pages | ✅ Pass |
+| BlogPosting on all blog posts | ✅ Pass |
+| Article on all case study detail pages | ✅ Pass |
+| TechArticle on all resource detail pages | ✅ Pass |
+| SoftwareApplication on /suitecompare | ✅ Pass |
+| No deprecated types in use (no HowTo, SpecialAnnouncement, etc.) | ✅ Pass |
+| author/publisher uses LEGAL_NAME (`"SuitePacific, LLC"`) consistently | ✅ Pass |
+| No placeholder text in any block | ✅ Pass |
 
 ---
 
 ## Priority Action List
 
-1. **Critical — fix in current sprint:** Add `image`, `datePublished`, `dateModified` to the Article block in `app/(site)/case-studies/[slug]/page.tsx`. Also change hardcoded `"SuitePacific"` to `LEGAL_NAME`. Requires adding date fields to the `CaseStudy` data model in `lib/case-studies.ts`.
+1. **Medium — fix soon:** Change `logo-icon.png` to `og-default.png` in the TechArticle image on `app/(site)/resources/[slug]/page.tsx`. One-line change. This unblocks Article rich result eligibility for 30 resource pages.
 
-2. **Critical — fix in current sprint:** Add `SoftwareApplication` and `BreadcrumbList` JSON-LD to `app/suitecompare/page.tsx`. Two static `<script>` blocks, no data model changes needed.
+2. **Low — next sprint:** Add `url` property to BlogPosting (`components/seo/JsonLd.tsx`), Article (case study page), and TechArticle (resource page). Three one-line additions.
 
-3. **High — fix alongside #1/#2:** Add `width: 1200, height: 630` to the `image` ImageObject in `BlogPostingJsonLd` in `components/seo/JsonLd.tsx`. One-line change.
+3. **Low — next sprint:** Fix publisher logo ImageObject dimensions in all three article blocks: change to `width: 256, height: 256` to match the actual 256x256 `logo-icon.png` file.
 
-4. **Medium — next sprint:** Create `ServiceJsonLd` in `JsonLd.tsx` and add it to each of the 8 service pages.
+4. **Low — next sprint:** Add Article schema to `/netsuite-implementation-partner-vs-managed-support`. Use `og-default.png` for the image.
 
-5. **Medium — next sprint:** Add `BreadcrumbJsonLd` (and optionally an ItemList block) to `app/(site)/blog/page.tsx`.
+5. **Low — backlog:** Add Blog entity block to `/blog` index page. Add CollectionPage block to `/resources` index page.
 
-6. **Low — backlog:** Add ItemList to `app/(site)/resources/page.tsx`.
+6. **Low — backlog:** Add `@id` to `OrganizationJsonLd` and update Service blocks to reference it.
 
-7. **Info — no action:** FAQPage blocks can remain as-is everywhere they exist.
+7. **Medium — when search is built:** Add `potentialAction`/SearchAction to `WebSiteJsonLd`. Do not add before a functional `/search?q=` endpoint exists.
+
+8. **Info — no action:** FAQPage blocks can remain as-is everywhere they exist.

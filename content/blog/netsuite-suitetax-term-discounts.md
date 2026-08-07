@@ -99,3 +99,5 @@ A: The settings affect payments processed after both are enabled. Transactions a
 A: Accounting Preferences require Administrator access. Nexus settings are configured under your tax engine setup and also require Administrator or appropriate accounting role access.
 
 For step-by-step setup instructions, see [How to Enable Tax on Term Discounts in NetSuite SuiteTax](/resources/netsuite-suitetax-term-discounts).
+
+For help configuring SuiteTax settings or resolving tax-related issues in your NetSuite account, see SuitePacific's [NetSuite administrator support service](/netsuite-administrator-support).

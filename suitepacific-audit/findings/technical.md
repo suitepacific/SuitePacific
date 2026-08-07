@@ -1,349 +1,309 @@
 # Technical SEO Audit: suitepacific.com
 
 **Audit date:** 2026-08-07
-**Audited pages:** /, /blog, /blog/netsuite-2026-2-finance-updates, /blog/netsuite-saved-search-tips, /netsuite-suitescript-development, /resources/netsuite-beforesubmit-vs-aftersubmit, /suitecompare, /case-studies
-**Platform:** Next.js App Router on Vercel
-**Score:** 67 / 100
+**Platform:** Next.js App Router, Vercel CDN
+**Audited pages:** /, /blog, /suitecompare, /hire-netsuite-developer, /netsuite-consulting-services, /netsuite-suitescript-development, /contact, /netsuite-admin-support-small-business, /netsuite-post-go-live-support, /case-studies/project-performance-dashboard, /resources/netsuite-beforesubmit-vs-aftersubmit, /blog/netsuite-2026-2-finance-updates, /blog/netsuite-optimization, /blog/suitescript-best-practices, /blog/netsuite-saved-search-tips
+**Score:** 84 / 100
 
 ---
 
-## What Changed Since the Previous Audit
+## Resolved Since Previous Audit
 
-Items that were fixed:
-- `og-default.png` now returns HTTP 200 (previous H1 resolved).
+All seven issues from the prior audit that had a direct fix available are confirmed resolved:
 
-New regressions introduced since previous audit:
-- Homepage canonical tag is now absent entirely (the root-layout `alternates` removal that fixed C1 left the homepage without any canonical).
-- `/suitecompare` marketing page now carries `noindex, nofollow` (was previously `index, follow`; the auth-page fix appears to have been applied to the wrong page).
+| Prior ID | Issue | Evidence |
+|----------|-------|----------|
+| C1 | Homepage missing canonical tag | `/` now returns `<link rel="canonical" href="https://suitepacific.com">` |
+| C2 | /suitecompare marketing page had `noindex, nofollow` | `/suitecompare` returns no robots meta tag; page is indexable |
+| H1 (partial) | og:image missing on blog and resource pages | Blog posts and resource pages now carry `og:image: https://suitepacific.com/og-default.png` |
+| H2 | BlogPosting schema using 36x36 logo icon as image | BlogPosting `image` now `{"url":"https://suitepacific.com/og-default.png","width":1200,"height":630}` |
+| H3 | /suitecompare nav link absent from server-rendered HTML | `/suitecompare` confirmed present in static HTML via direct href extraction |
+| H4 | /netsuite-admin-support-small-business and /netsuite-consulting-services orphaned | Both URLs found in homepage internal link graph (22 total internal hrefs confirmed) |
+| M1 | robots.txt missing SuiteCompare auth paths and /importDetector | robots.txt now covers all 12 SuiteCompare sub-paths plus /importDetector for both wildcard and AI-crawler agents |
 
 ---
 
-## Summary of Issues by Severity
+## Summary of Current Issues
 
 | Severity | Count |
 |----------|-------|
-| Critical | 2 |
-| High | 4 |
-| Medium | 4 |
-| Low | 2 |
-| Info | 8 |
-
----
-
-## Critical
-
-### C1: Homepage has no canonical tag
-
-**Finding:** `https://suitepacific.com/` has no `<link rel="canonical">` tag anywhere in its HTML. Every other audited page (blog posts, resource pages, service pages) carries a correct self-referencing canonical. The homepage is the only page where the tag is absent.
-
-**Evidence:**
-```
-curl -s https://suitepacific.com/ | grep -i canonical
-# returns: (empty)
-```
-
-All other spot-checked pages return their own canonical:
-```
-/blog/netsuite-2026-2-finance-updates → canonical: https://suitepacific.com/blog/netsuite-2026-2-finance-updates
-/netsuite-suitescript-development     → canonical: https://suitepacific.com/netsuite-suitescript-development
-/resources/netsuite-beforesubmit-vs-aftersubmit → canonical: https://suitepacific.com/resources/netsuite-beforesubmit-vs-aftersubmit
-```
-
-**Root cause:** The previous audit identified that `app/layout.tsx` was setting `alternates: { canonical: "/" }` at the root, bleeding the homepage canonical onto all sub-pages. When that key was removed to fix the bleed, no homepage-specific canonical was added in `app/(site)/page.tsx`, leaving the homepage canonical-free.
-
-**Impact:** Google may treat `https://suitepacific.com`, `https://suitepacific.com/`, and potentially `https://www.suitepacific.com` as three separate URL variants and split PageRank among them. The sitemap declares `https://suitepacific.com` (no trailing slash); the server responds at `https://suitepacific.com/` (trailing slash); without a canonical, Google chooses its preferred form independently.
-
-**Fix:**
-```ts
-// app/(site)/page.tsx — add to existing metadata export
-export const metadata: Metadata = {
-  // ... existing title, description, openGraph ...
-  alternates: { canonical: "https://suitepacific.com" },
-};
-```
-
----
-
-### C2: /suitecompare marketing page has noindex, nofollow but is listed in sitemap
-
-**Finding:** `https://suitepacific.com/suitecompare` is a fully server-rendered product marketing page with high commercial value. It currently responds with `<meta name="robots" content="noindex, nofollow"/>`, which instructs Google not to index the page and not to follow any links on it. The same URL is declared in `sitemap.xml` at priority 0.8.
-
-**Evidence:**
-```
-curl -s https://suitepacific.com/suitecompare | grep -i robots
-# returns: <meta name="robots" content="noindex, nofollow"/>
-```
-
-Page title confirms this is the public-facing product page:
-```
-<title>SuiteCompare: One-Click NetSuite Environment Comparison | SuitePacific</title>
-```
-
-Body content excerpt confirms full marketing copy is present:
-```
-"Stop logging into two NetSuite accounts just to compare one script. Compare Production and Sandbox in one click..."
-```
-
-**Root cause:** The `noindex` fix intended for `/suitecompare/login` and other auth pages (identified as H2 in the previous audit) appears to have been applied at the wrong scope — likely in `app/suitecompare/layout.tsx` or `app/suitecompare/page.tsx` rather than isolated to the auth sub-routes.
-
-**Impact:** This is the primary commercial landing page for SuiteCompare. Google cannot index it, cannot follow its links, and cannot credit any ranking signals to it. The sitemap entry telling Google to crawl the page while the page's meta tag tells Google not to index it is a direct contradiction that Google resolves in favor of the meta tag.
-
-**Fix:** Remove the `robots: { index: false, follow: false }` (or equivalent) from `app/suitecompare/page.tsx` (and from `app/suitecompare/layout.tsx` if it is set there). Add noindex only to the auth-flow pages:
-```ts
-// app/suitecompare/login/page.tsx
-export const metadata: Metadata = {
-  title: "Log In",
-  robots: { index: false, follow: false },
-};
-
-// Repeat for: signup, forgot-password, reset-password, activate, invite, verify
-```
+| High | 2 |
+| Medium | 3 |
+| Low | 3 |
 
 ---
 
 ## High
 
-### H1: og:image missing on all content pages (blog, resources, service pages)
+### H1: og:image absent on all service pages (12 URLs)
 
-**Finding:** Blog posts, resource pages, and service pages all omit `<meta property="og:image">`. The homepage inherits the default og:image from the root layout correctly, but individual content pages define their own `openGraph` metadata block without including an `images` key, which causes Next.js to replace (not merge) the root layout's OG data, stripping the image.
+**Finding:** Every service and product page is missing `<meta property="og:image">`. Blog posts, resource pages, case studies, and the homepage all carry `og-default.png` correctly. The fix applied since the previous audit reached content pages but did not reach the service page template.
 
-**Evidence — all three content-page types verified:**
+**Affected URLs (all confirmed via HEAD + HTML fetch):**
 ```
-/blog/netsuite-2026-2-finance-updates       → og:image: MISSING
-/resources/netsuite-beforesubmit-vs-aftersubmit → og:image: MISSING
-/netsuite-suitescript-development           → og:image: MISSING
-/blog/netsuite-saved-search-tips            → og:image: MISSING
+/hire-netsuite-developer
+/netsuite-suitescript-development
+/netsuite-consulting-services
+/netsuite-integrations
+/netsuite-workflow-automation
+/netsuite-saved-searches-dashboards
+/netsuite-advanced-pdf-templates
+/netsuite-administrator-support
+/netsuite-account-optimization
+/netsuite-post-go-live-support
+/netsuite-implementation-partner-vs-managed-support
+/netsuite-admin-support-small-business
 ```
 
-Contrast with homepage (which does not override openGraph):
-```
-/ → og:image: https://suitepacific.com/og-default.png (present, 1200x630)
-```
+Also missing on `/suitecompare` (covered separately in H2 below).
 
-**Impact:** Every blog post, resource, and service page shared on LinkedIn, Twitter/X, Slack, iMessage, or WhatsApp renders a plain-text card with no image. CTR on social shares is substantially lower without an image. Additionally, `og:image` is used by Google as a fallback image source for article rich results.
+**Impact:** Any of these pages shared on LinkedIn, Slack, iMessage, or WhatsApp renders a blank card. Service pages are the highest-conversion URLs on the site -- they are the destination for paid search, organic rankings, and referral traffic. A missing social image is especially damaging here compared to blog content.
 
-**Fix:** Two equally valid options:
+**Root cause pattern:** Service pages define their own `openGraph` metadata object in `generateMetadata()` or `export const metadata`. When a child page defines `openGraph` without an `images` key, Next.js replaces (not merges) the root-layout openGraph block, and the root-layout `images` fallback is lost.
 
-Option A (per-page frontmatter, preferred for unique images per post):
+**Fix:** In each service page's metadata, add the `images` key to the existing `openGraph` block:
 ```ts
-// In the metadata generator for blog/resource pages, add:
 openGraph: {
-  title: post.title,
-  description: post.description,
-  url: `https://suitepacific.com/blog/${post.slug}`,
-  type: "article",
-  images: [{ url: post.ogImage ?? "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+  title: "...",
+  description: "...",
+  url: "https://suitepacific.com/hire-netsuite-developer",
+  type: "website",
+  images: [
+    { url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 },
+  ],
 },
 ```
-
-Option B (global fallback via root layout, no per-page changes needed):
-Move the `og:image` fallback into a `metadataBase`-relative format and ensure child pages either omit `openGraph.images` (inherits root) or always include it.
+The fastest approach is a shared `defaultOpenGraph` constant in `lib/seo.ts` with the `images` array pre-populated, then spread it into every page's `openGraph` block.
 
 ---
 
-### H2: BlogPosting schema uses logo-icon.png as article image
+### H2: /suitecompare missing canonical tag
 
-**Finding:** Every blog post's `BlogPosting` JSON-LD block declares the article image as `https://suitepacific.com/logo-icon.png`, which is a 36x36 brand icon, not an article illustration.
+**Finding:** `https://suitepacific.com/suitecompare` has no `<link rel="canonical">` in its HTML. Every other audited page -- including all blog posts, resource pages, case studies, and service pages -- carries a correct self-referencing canonical.
 
-**Evidence — from `/blog/netsuite-2026-2-finance-updates`:**
-```json
-{
-  "@type": "BlogPosting",
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://suitepacific.com/logo-icon.png"
-  },
-  "author": { "@type": "Organization", "name": "SuitePacific, LLC" },
-  "datePublished": "2026-08-02"
-}
+**Evidence:**
+```
+curl -s https://suitepacific.com/suitecompare | grep -i canonical
+# returns: (empty)
 ```
 
-**Impact:** Google requires a minimum image width of 1200px for a blog post to be eligible for rich result display (article cards, Top Stories, Google Discover). A 36x36px icon fails this requirement. All 35 blog posts in the sitemap are currently excluded from image-enhanced rich results in Google Search.
+Contrast with a service page:
+```
+curl -s https://suitepacific.com/hire-netsuite-developer | grep -i canonical
+# returns: <link rel="canonical" href="https://suitepacific.com/hire-netsuite-developer"/>
+```
 
-**Fix:** Replace the logo URL with the default OG image (1200x630) as a baseline, and optionally support per-article images via frontmatter:
+**Secondary issue on same page:** og:image is also absent on /suitecompare (same pattern as H1 service pages, even though /suitecompare is a product page rather than a service page).
+
+**Impact:** /suitecompare is the primary commercial landing page for the SuiteCompare product. Without a canonical, Google independently chooses which URL form to treat as canonical -- typically not a problem for a simple URL, but it means Google is making that decision rather than the site declaring it. The page is listed in the sitemap at `https://suitepacific.com/suitecompare`; without a matching canonical declaration, the sitemap hint is weaker.
+
+**Root cause:** The noindex fix applied in the previous round likely removed the `metadata` export from `app/suitecompare/page.tsx` entirely (or replaced it with a minimal stub), losing both the canonical and the openGraph block.
+
+**Fix:**
 ```ts
-image: {
-  "@type": "ImageObject",
-  url: post.image ?? "https://suitepacific.com/og-default.png",
-  width: 1200,
-  height: 630,
-},
+// app/suitecompare/page.tsx
+export const metadata: Metadata = {
+  title: "SuiteCompare: One-Click NetSuite Environment Comparison | SuitePacific",
+  description: "...",
+  alternates: { canonical: "https://suitepacific.com/suitecompare" },
+  openGraph: {
+    title: "SuiteCompare",
+    url: "https://suitepacific.com/suitecompare",
+    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+  },
+};
 ```
-Declare actual pixel dimensions only after verifying them.
-
----
-
-### H3: Nav Products dropdown link to /suitecompare is not in server-rendered HTML
-
-**Finding:** The navigation `<Products>` dropdown uses `useState` to toggle visibility. The `<Link href="/suitecompare">` element is added to the DOM only after the user clicks the Products button — it is absent from the initial server-rendered HTML.
-
-**Evidence:**
-```
-curl -s https://suitepacific.com/ | grep -i suitecompare
-# returns: (empty)
-```
-
-**Impact:** Googlebot does not simulate user interactions such as hover or click events. The primary crawl path from the homepage to `/suitecompare` does not exist in static HTML. With C2 now forcing noindex on the page (see above), this is temporarily moot — but once C2 is fixed, the SuiteCompare page will rely entirely on the sitemap for PageRank delivery rather than internal links.
-
-**Fix:** Render dropdown link anchors in static HTML using CSS for show/hide. Alternatively, add a static `<a href="/suitecompare">` in the footer or homepage body independent of the nav interaction model.
-
----
-
-### H4: Two service pages orphaned — no internal links pointing to them
-
-**Finding:** `/netsuite-admin-support-small-business` and `/netsuite-consulting-services` are present in `sitemap.xml` but are not linked from any rendered HTML on the site. No `<a href>` pointing to either URL exists in the homepage, blog listing, resources listing, footer, or any other crawlable page.
-
-**Evidence:**
-```
-curl -s https://suitepacific.com/ | grep -i "admin-support-small-business\|consulting-services"
-# returns: (empty)
-```
-
-**Impact:** Both pages receive zero internal PageRank from the link graph. They are discoverable only via the sitemap. This substantially limits their ability to rank for their target keywords.
-
-**Fix:** Add both pages to the homepage services section or to the site navigation. They represent genuine service offerings and should be reachable through normal site navigation.
 
 ---
 
 ## Medium
 
-### M1: robots.txt Disallow list does not cover auth or app routes
+### M1: No IndexNow protocol implemented
 
-**Finding:** The live `robots.txt` contains a single `Disallow: /admin`. Suitecompare auth pages (`/suitecompare/login`, `/suitecompare/signup`, etc.) and the Import Doctor at `/importDetector` are open to all crawlers.
+**Finding:** No IndexNow key file exists at any standard path. The site publishes 6-12 new blog and resource posts per month. Without IndexNow, new content relies entirely on Googlebot's scheduled crawl and Bing's own discovery, which for a relatively new domain may take days to weeks.
 
 **Evidence:**
 ```
-User-Agent: *
-Allow: /
-Disallow: /admin
-Sitemap: https://suitepacific.com/sitemap.xml
+HEAD https://suitepacific.com/indexnow     -> 404
+HEAD https://suitepacific.com/indexnow.txt -> 404
 ```
 
-**Recommendation:** Extend `app/robots.ts` to include:
+**Impact:** Primarily affects Bing and Yandex indexing speed. Google has its own equivalent (via Search Console URL inspection), but IndexNow is the fastest path for Bing which, through Microsoft's AI search integrations, is a relevant channel for a B2B SaaS and services audience.
+
+**Fix:** Generate a UUID hex string as the key (e.g., `a3f9...`). Place a file `/public/a3f9....txt` whose sole content is that key string. Then on each new publish, send:
 ```
-Disallow: /admin
-Disallow: /suitecompare/login
-Disallow: /suitecompare/signup
-Disallow: /suitecompare/forgot-password
-Disallow: /suitecompare/reset-password
-Disallow: /suitecompare/activate
-Disallow: /suitecompare/invite
-Disallow: /suitecompare/verify
-Disallow: /suitecompare/dashboard
-Disallow: /suitecompare/accounts
-Disallow: /suitecompare/compare
-Disallow: /suitecompare/scripts
-Disallow: /suitecompare/settings
-Disallow: /importDetector
+GET https://api.indexnow.org/indexnow?url=https://suitepacific.com/blog/[slug]&key=a3f9...
 ```
-The `noindex` on auth pages (C2 fix) and Disallow in robots.txt are complementary; both are needed.
+This can be automated with a Vercel deploy hook, a post-build script, or an `on-demand-revalidation` pattern that pings IndexNow after ISR cache updates.
 
 ---
 
-### M2: No IndexNow protocol implemented
+### M2: CSP frame-ancestors conflicts with X-Frame-Options
 
-**Finding:** No IndexNow key file exists in `/public`. With 6-12 new blog and resource posts published per month, all new content relies on Googlebot's regular crawl schedule and Bing's own discovery.
+**Finding:** The `Content-Security-Policy` header declares `frame-ancestors 'none'` while the `X-Frame-Options` header declares `SAMEORIGIN`. These are contradictory instructions.
 
-**Evidence:** `curl -sI https://suitepacific.com/indexnow.txt` returns HTTP 404. No key file at any common path.
-
-**Recommendation:** Generate a UUID hex string as the IndexNow key, place it at `/public/[key].txt` with the key as its only content, and ping `https://api.indexnow.org/indexnow?url=https://suitepacific.com/blog/[slug]&key=[key]` on each new publish. A Vercel deploy hook or post-build script can automate submission. This primarily accelerates Bing indexing.
-
----
-
-### M3: CSP frame-ancestors conflicts with X-Frame-Options
-
-**Finding:** The Content-Security-Policy header includes `frame-ancestors 'none'` while the `X-Frame-Options` header is set to `SAMEORIGIN`. These are contradictory: CSP says no framing allowed by anyone; X-Frame-Options says same-origin framing is permitted. Modern browsers give precedence to CSP.
-
-**Evidence (live headers):**
+**Evidence (live headers on all pages):**
 ```
 content-security-policy: ... frame-ancestors 'none'; ...
 x-frame-options: SAMEORIGIN
 ```
 
-**Impact:** Purely a security configuration inconsistency. Not a direct SEO issue, but inconsistent headers are a flag in security audits and create confusion about intended policy.
+**Impact:** Modern browsers give precedence to the CSP `frame-ancestors` directive and ignore `X-Frame-Options`. The net result is that framing is blocked by everyone (including the same origin), which is the stricter of the two policies -- so there is no security vulnerability. The inconsistency is a configuration debt item and will appear as a flag in any security audit.
 
-**Recommendation:** Decide on the intended framing policy. If no framing should ever be allowed, keep `frame-ancestors 'none'` in CSP and change `X-Frame-Options` to `DENY`. If same-origin framing should be allowed, change `frame-ancestors 'self'` in CSP and keep `X-Frame-Options: SAMEORIGIN`.
+**Fix:** Align both headers to the intended policy. If no framing should be allowed: keep `frame-ancestors 'none'` in CSP and change `X-Frame-Options` to `DENY`. If same-origin framing is desired (e.g., for future dashboard embeds): change CSP to `frame-ancestors 'self'` and keep `X-Frame-Options: SAMEORIGIN`.
 
 ---
 
-### M4: CSP script-src includes unsafe-inline and unsafe-eval
+### M3: CSP script-src includes unsafe-inline and unsafe-eval
 
-**Finding:** `script-src 'self' 'unsafe-inline' 'unsafe-eval'` in the CSP header eliminates the XSS injection protection that CSP is designed to provide. A properly scoped CSP is one of the most effective defenses against reflected and stored XSS attacks.
+**Finding:** The CSP header includes `script-src 'self' 'unsafe-inline' 'unsafe-eval'`. Both `unsafe-inline` and `unsafe-eval` are the primary directives that CSP exists to restrict; their inclusion eliminates XSS protection for injected scripts.
 
-**Evidence:** Header present on all audited pages.
+**Evidence (live header):**
+```
+content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; ...
+```
 
-**Recommendation:** This is a medium-term improvement. Next.js 14+ App Router supports nonce-based CSP via middleware, which allows `unsafe-inline` and `unsafe-eval` to be removed while maintaining full Next.js functionality. The current security posture is otherwise strong (HSTS preload, nosniff, Referrer-Policy, Permissions-Policy all in place). Implement nonce-based CSP as a deliberate security hardening task, not a rushed fix.
+**Impact:** Not a direct ranking factor, but a meaningful security gap. If any reflected or stored XSS vector exists on the site, the CSP offers no containment.
+
+**Recommendation:** Next.js 14+ App Router supports nonce-based CSP via middleware. Implementing nonces removes the need for `unsafe-inline` while keeping all Next.js functionality intact. Treat this as a deliberate hardening task, not an urgent fix -- the current HSTS preload, nosniff, and Referrer-Policy headers already represent a strong baseline.
 
 ---
 
 ## Low
 
-### L1: X-XSS-Protection header is present but deprecated
+### L1: X-XSS-Protection header present but deprecated
 
-**Finding:** All pages return `x-xss-protection: 1; mode=block`. Chrome removed its XSS auditor in 2019; the header is not recognized by any major modern browser. In certain legacy configurations it can introduce regressions.
+**Finding:** `x-xss-protection: 1; mode=block` is present on all pages. Chrome removed its XSS auditor in 2019. The header is not recognized by any major modern browser, and in certain edge cases can cause regressions in legacy IE/Edge configurations.
 
-**Recommendation:** Set `X-XSS-Protection: 0` in `next.config.ts` per current OWASP guidance. A properly implemented CSP (M4) is the modern replacement.
-
----
-
-### L2: All resource pages share one lastmod date; case studies share another
-
-**Finding:** All 24 resource pages in the sitemap carry `lastmod: 2026-07-14T00:00:00.000Z`. All 6 case studies carry `lastmod: 2026-06-01T00:00:00.000Z`. These appear to be batch-publish dates rather than individual modification dates. Individual resource publication dates differ (e.g., `/resources/netsuite-beforesubmit-vs-aftersubmit` has `article:published_time: 2026-07-04`).
-
-**Impact:** Google's documentation notes it prioritizes `lastmod` for re-crawl decisions. When many pages share the same lastmod, Googlebot treats them as equally fresh or equally stale, which is not accurate.
-
-**Recommendation:** Derive `lastmod` from each content file's actual publication/modification date (the same date used for `article:published_time`), not from a batch-process date. Blog posts already do this correctly.
+**Fix:** Set `X-XSS-Protection: 0` in `next.config.ts` per current OWASP guidance. A properly scoped CSP (M3 above) is the modern replacement.
 
 ---
 
-## Info (passes)
+### L2: Case study sitemap lastmod values all share the same date
 
-### I1: Crawlability — robots.txt and sitemap pass
+**Finding:** All six case study pages in the sitemap carry `lastmod: 2026-06-01`, which appears to be the initial batch-publish date rather than per-page modification dates.
 
-robots.txt is accessible (HTTP 200), well-formed, and correctly declares the sitemap. `sitemap.xml` is accessible (HTTP 200), valid XML urlset format (no index needed at 90 URLs), and all 90 entries returned HTTP 200 when spot-checked. `changefreq` values are present but Google ignores them in favor of `lastmod` — not a functional issue, just noise (could be removed).
+**Evidence:**
+```
+/case-studies/project-performance-dashboard   -> lastmod: 2026-06-01
+/case-studies/vendor-quotation-management     -> lastmod: 2026-06-01
+/case-studies/sales-order-approval-workflow   -> lastmod: 2026-06-01
+/case-studies/invoice-processing-automation   -> lastmod: 2026-06-01
+/case-studies/advanced-pdf-document-automation -> lastmod: 2026-06-01
+/case-studies/operational-reporting           -> lastmod: 2026-06-01
+```
 
-### I2: Sitemap structure and lastmod coverage pass for blog content
+Note: Resource pages have been fixed since the previous audit -- they now carry individual dates (2026-07-01 through 2026-07-27) accurately reflecting per-page publish dates.
 
-Blog posts carry individual, accurate `lastmod` dates ranging from 2026-06-10 through 2026-08-02, reflecting actual publish dates. The sitemap is not split into an index (appropriate for 90 URLs). No duplicate URLs detected. No trailing-slash variants in the sitemap.
+**Impact:** Google uses `lastmod` to prioritize re-crawl frequency. Identical dates signal no recent changes, which is accurate for case studies that have not been updated -- so this is lower priority than if the dates were inaccurate. If any case study is substantially updated, the lastmod should reflect that actual date.
 
-### I3: Canonical tags correct on all content pages except homepage
+**Fix:** Derive `lastmod` from the case study content file's modification date, the same approach now used for blog and resource pages.
 
-Verified correct self-referencing canonicals on: two blog posts (old and recent), one resource page, one service page. The canonical is the sole exception at the homepage level (C1 above).
+---
 
-### I4: Redirect chains clean — no hops detected
+### L3: robots.txt AI-crawler block omits three paths present in the wildcard block
 
-- `http://suitepacific.com/` resolves to `https://suitepacific.com/` in a single 308 hop.
-- `https://www.suitepacific.com/` resolves to `https://suitepacific.com/` in a single 301 hop.
-- `/blog/` (trailing slash) redirects to `/blog` in a single 308 hop.
-- No multi-hop chains observed.
+**Finding:** The wildcard `User-Agent: *` block includes `Disallow: /admin`, `Disallow: /customer-portal`, and `Disallow: /partner-portal`. The AI-crawler block (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot) does not include these three paths.
 
-### I5: No crawl traps from URL parameters
+**Evidence (live robots.txt):**
+```
+User-Agent: GPTBot
+User-Agent: OAI-SearchBot
+User-Agent: ClaudeBot
+User-Agent: PerplexityBot
+Allow: /
+Disallow: /suitecompare/login
+[... 11 SuiteCompare/importDetector paths ...]
+# /admin, /customer-portal, /partner-portal NOT listed here
 
-`/blog?page=2` returns HTTP 200 but renders `<link rel="canonical" href="https://suitepacific.com/blog"/>`, correctly consolidating any paginated or parameterized variants to the canonical listing. UTM parameters do not produce separate server-side routes in Next.js.
+User-Agent: *
+Allow: /
+Disallow: /admin
+Disallow: /suitecompare/login
+[... additional paths ...]
+Disallow: /customer-portal
+Disallow: /partner-portal
+```
 
-### I6: Server rendering confirmed — no JavaScript dependency for indexable content
+**Impact:** Low. These routes are protected by application-level auth middleware, so AI crawlers that do access them would receive a login redirect rather than indexable content. However, defense in depth calls for robots.txt and application auth to agree.
 
-All audited pages are server-rendered or ISR-served. Full page content, meta tags, and JSON-LD blocks are present in raw `curl` responses. Googlebot does not need to execute JavaScript to read any indexable content. `X-Nextjs-Prerender: 1` header confirms ISR is active on key pages. `X-Vercel-Cache: HIT` on homepage confirms CDN delivery.
+**Fix:** Add `Disallow: /admin`, `Disallow: /customer-portal`, and `Disallow: /partner-portal` to the AI-crawler block in `app/robots.ts`.
 
-### I7: Structured data present on all page types
+---
 
-- Homepage: `ProfessionalService`, `WebSite`, `FAQPage` — three valid JSON-LD blocks.
-- Blog posts: `BlogPosting`, `BreadcrumbList` — two valid JSON-LD blocks. (Image issue flagged in H2.)
-- Resource pages: `TechArticle`, `BreadcrumbList` — two valid JSON-LD blocks.
-- Service pages: `BreadcrumbList`, `FAQPage` — two valid JSON-LD blocks.
-- No malformed JSON in any audited block.
+## Info (Passes)
 
-### I8: Security headers — strong baseline
+### I1: Crawlability -- robots.txt and sitemap
 
-HSTS: `max-age=63072000; includeSubDomains; preload` (730 days, preload-eligible). `X-Content-Type-Options: nosniff`. `Referrer-Policy: strict-origin-when-cross-origin`. `Permissions-Policy: camera=(), microphone=(), geolocation=()`. Brotli compression active. No mixed-content issues detected. The frame-ancestors/X-Frame-Options conflict is noted in M3.
+robots.txt is accessible (HTTP 200), well-formed, and explicitly allows AI crawlers (`GPTBot`, `OAI-SearchBot`, `ClaudeBot`, `PerplexityBot`) to access all public content while blocking all application sub-routes for both AI and general crawlers. The sitemap is declared. `sitemap.xml` is accessible (HTTP 200), single-urlset format appropriate for 94 URLs (well under the 50,000-URL limit). All 10 spot-checked sitemap URLs returned HTTP 200. No sitemap index is needed at this scale.
 
-### I9: No hreflang needed
+### I2: Redirect chains -- all clean
+
+No multi-hop chains detected on any tested URL. Key results:
+```
+http://suitepacific.com/         -> 308 -> https://suitepacific.com/  (1 hop, Vercel default)
+https://suitepacific.com/        -> 200 direct
+https://suitepacific.com/blog    -> 200 direct
+https://suitepacific.com/hire-netsuite-developer  -> 200 direct
+https://suitepacific.com/netsuite-consulting-services -> 200 direct
+https://suitepacific.com/contact -> 200 direct
+https://suitepacific.com/suitecompare -> 200 direct
+```
+Vercel's HTTP-to-HTTPS redirect uses 308 (Permanent Redirect with method preservation) rather than 301. Google Search and Bing treat 308 identically to 301 for ranking signal transfer. No action needed.
+
+### I3: Canonical tags -- correct on all audited pages except /suitecompare
+
+Homepage, all four blog posts spot-checked, all two resource pages spot-checked, and all service pages carry correct self-referencing canonical tags. /suitecompare is the sole exception (flagged in H2). Canonical form is consistently without trailing slash, matching the sitemap URL format.
+
+### I4: Sitemap lastmod coverage -- complete
+
+All 94 sitemap entries carry `lastmod` values. Blog posts have individual per-post dates (2026-06-10 through 2026-08-07). Resource pages have individual per-resource dates (2026-07-01 through 2026-07-27). Case study dates are batch (flagged in L2). No `changefreq` or `priority` elements present -- both are optional and ignored by Google; their absence is correct.
+
+### I5: Server rendering -- full SSR confirmed
+
+All audited pages return complete HTML including meta tags, structured data, and body content in the raw HTTP response. Response header `X-Nextjs-Prerender: 1` confirms ISR is active. Googlebot does not need to execute JavaScript to read any indexable content on the site.
+
+### I6: CDN cache TTL -- appropriate
+
+`X-Nextjs-Stale-Time: 300` (5-minute stale-while-revalidate window) is present on all pages. For a B2B professional services site whose content changes on a publish-to-publish basis rather than continuously, 5 minutes is appropriate. It ensures warm cache delivery on repeated requests while allowing fresh content to propagate within minutes of a deploy or ISR revalidation.
+
+### I7: Structured data -- present on all page types, all valid JSON
+
+| Page type | Schema types detected |
+|-----------|----------------------|
+| Homepage | ProfessionalService, WebSite |
+| Service pages | BreadcrumbList, FAQPage, Service |
+| Blog posts | BlogPosting (image: og-default.png 1200x630, fixed), BreadcrumbList |
+| Resource pages | TechArticle, BreadcrumbList |
+| Case studies | (to be verified in schema audit) |
+
+No malformed JSON detected in any audited block. No Person schema on any page (correct per brand policy).
+
+### I8: Security headers -- strong baseline
+
+```
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+permissions-policy: camera=(), microphone=(), geolocation=()
+```
+HSTS is preload-eligible (730-day max-age, includeSubDomains, preload flag present). No mixed-content issues detected. Brotli compression active. CSP inconsistencies flagged in M2/M3 but do not affect the strong baseline established by the above headers.
+
+### I9: Mobile viewport
+
+`<meta name="viewport" content="width=device-width, initial-scale=1">` present on all audited pages.
+
+### I10: No hreflang needed
 
 The site is English-only with no regional variants. Absence of hreflang is correct.
 
-### I10: llms.txt present
+### I11: llms.txt present and well-structured
 
-`https://suitepacific.com/llms.txt` returns HTTP 200 with correct `Content-Type: text/plain`. AI crawler management is in place for GPTBot, ClaudeBot, and similar. The file is not referenced in `robots.txt`, which is a cosmetic gap (L3 from previous audit) with no SEO impact.
+`https://suitepacific.com/llms.txt` returns HTTP 200, `Content-Type: text/plain`. Content accurately describes the business, service scope, and ideal client profile. AI crawler management is in place for all four major AI crawlers.
+
+### I12: Trailing slash consistency
+
+All 94 sitemap URLs use the no-trailing-slash format (e.g., `https://suitepacific.com/blog`, not `https://suitepacific.com/blog/`). The homepage entry is `https://suitepacific.com` (no trailing slash, no path segment). Canonical tags follow the same convention. No trailing-slash redirect chains detected.
 
 ---
 
@@ -351,22 +311,16 @@ The site is English-only with no regional variants. Absence of hreflang is corre
 
 Ordered by estimated search impact:
 
-1. **[Critical — C2]** Remove `noindex, nofollow` from `/suitecompare` marketing page. Isolate noindex to auth sub-routes only (`/suitecompare/login`, `/suitecompare/signup`, etc.). Remove `/suitecompare` from sitemap is NOT needed; the sitemap entry is correct.
+1. **[High -- H1]** Add `images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }]` to the `openGraph` block in every service page's metadata. Create a shared `defaultOpenGraph` constant in `lib/seo.ts` to apply this in one change across all 12 affected pages.
 
-2. **[Critical — C1]** Add `alternates: { canonical: "https://suitepacific.com" }` to `app/(site)/page.tsx` metadata. Do not add it to the root layout.
+2. **[High -- H2]** Add `alternates: { canonical: "https://suitepacific.com/suitecompare" }` and a complete `openGraph` block (including `images`) to `app/suitecompare/page.tsx`. The page is indexable and in the sitemap; it needs its canonical and social metadata restored.
 
-3. **[High — H1]** Add `images` to the `openGraph` block in blog, resource, and service page metadata generators. Use `og-default.png` as the fallback value (1200x630, file already exists). This single change fixes social cards for all 94 content pages simultaneously.
+3. **[Medium -- M1]** Implement IndexNow: generate a UUID hex key, place it at `/public/[key].txt`, and ping `https://api.indexnow.org/indexnow` on each new blog or resource publish. Primary benefit is Bing indexing speed.
 
-4. **[High — H2]** Update the `BlogPosting` schema image URL to use `og-default.png` (or a per-post frontmatter field) instead of `logo-icon.png`. Set accurate dimensions. This makes all 35 blog posts eligible for image-enhanced rich results.
+4. **[Medium -- M2]** Align `frame-ancestors` in CSP with `X-Frame-Options`. If no framing is intended, set `X-Frame-Options: DENY` to match CSP's `frame-ancestors 'none'`.
 
-5. **[High — H4]** Add `/netsuite-admin-support-small-business` and `/netsuite-consulting-services` to the homepage services grid and/or footer navigation.
+5. **[Low -- L1]** Set `X-XSS-Protection: 0` in `next.config.ts` security headers.
 
-6. **[High — H3]** Render the `/suitecompare` nav link in static HTML (CSS show/hide or a static anchor in the footer) so it is reachable via internal links without JavaScript interaction.
+6. **[Low -- L2]** Update case study sitemap `lastmod` values to reflect individual content dates rather than the 2026-06-01 batch date.
 
-7. **[Medium — M1]** Extend `app/robots.ts` Disallow list to cover all suitecompare auth paths, the dashboard subtree, and `/importDetector`.
-
-8. **[Medium — M2]** Implement IndexNow: key file in `/public`, automated ping on new publishes.
-
-9. **[Medium — M3]** Align `frame-ancestors` in CSP with `X-Frame-Options`. Decide on one policy and make both headers consistent.
-
-10. **[Low — L2]** Update resource and case study sitemap `lastmod` values to reflect individual content file dates rather than batch dates.
+7. **[Low -- L3]** Add `Disallow: /admin`, `Disallow: /customer-portal`, `Disallow: /partner-portal` to the AI-crawler block in `app/robots.ts`.

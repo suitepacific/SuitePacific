@@ -94,3 +94,5 @@ A: NetSuite 2026.2 added it to Transaction Body Fields, Transaction Column Field
 A: Open each currency-type custom field under Customization &gt; Lists, Records, and Fields and review the Currency Context setting. Accounts with large numbers of custom fields may want to prioritize fields that appear on transaction sublists or entity records used in multi-currency transactions.
 
 For step-by-step instructions on configuring the Currency Context setting on a custom field, see [How to Set Currency Context on NetSuite Currency Custom Fields](/resources/netsuite-currency-context-custom-fields).
+
+For help auditing or configuring custom fields in your NetSuite account, see SuitePacific's [NetSuite administrator support service](/netsuite-administrator-support).

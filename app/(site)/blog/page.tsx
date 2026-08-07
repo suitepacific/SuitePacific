@@ -28,6 +28,19 @@ export default async function BlogIndexPage() {
           { name: "Blog", url: `${SITE_URL}/blog` },
         ]}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            url: `${SITE_URL}/blog`,
+            name: "NetSuite Tips & Tricks Blog",
+            description: "Practical NetSuite tips, SuiteScript best practices, and workflow automation advice for teams managing NetSuite after go-live.",
+            publisher: { "@type": "Organization", name: "SuitePacific", "@id": `${SITE_URL}/#organization` },
+          }),
+        }}
+      />
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <SectionHeading
           as="h1"

@@ -132,3 +132,5 @@ The full 2026.07.1 release notes are available in SuiteAnswers answer ID 1047018
 Reviewing FSM Configuration for retired properties, translating business requirements into the new mobile tab permission model, and validating the result in Sandbox before August 11 is exactly the kind of work SuitePacific does for NetSuite customers in the post-go-live phase.
 
 If your team does not have an FSM-experienced administrator available before August 11, [reach out to us](/contact). We will work through your configuration, identify what needs to change, and make sure your technicians have the right access when Production updates.
+
+For more on how SuitePacific handles post-go-live configuration and administrator support, see the [NetSuite administrator support service](/netsuite-administrator-support).

@@ -169,6 +169,7 @@ export const metadata: Metadata = {
     description: "Custom NetSuite integrations: RESTlet-based connections, scheduled sync scripts, and API integrations connecting NetSuite to e-commerce platforms, 3PLs, payment processors, and custom applications.",
     url: "https://suitepacific.com/netsuite-integrations",
     type: "website",
+    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
   },
 };
 
@@ -206,7 +207,7 @@ export default function NetSuiteIntegrationsPage() {
         </p>
 
         <div className="mt-6">
-          <Button href="/contact">Book a Free Consultation</Button>
+          <Button href="#contact">Book a Free Consultation</Button>
         </div>
 
         {/* Pain points */}
@@ -327,7 +328,7 @@ export default function NetSuiteIntegrationsPage() {
 
         <ServiceFaqSection items={FAQ} />
 
-        <div className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
+        <div id="contact" className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
           <p className="text-brand-900 font-semibold text-lg">Need to connect NetSuite to another system?</p>
           <p className="mt-2 text-sm text-brand-400">
             Tell us what you need to integrate and we will map out the right approach.

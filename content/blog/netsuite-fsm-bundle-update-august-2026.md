@@ -227,3 +227,5 @@ Log a support case with Oracle immediately and document the business impact. In 
 This update includes configuration changes that require administrator action before and after the Production upgrade, not just passive testing. The removal of the `readonly` resource-level rule, the `nxc_now()` migration review, and the mobile user license reporting change are all items that need to be addressed regardless of whether your Sandbox testing surfaces any issues.
 
 SuitePacific works with NetSuite customers through the post-go-live phase: reviewing configurations, validating bundle updates, resolving issues that emerge after upgrades, and making sure nothing falls through the gap between Sandbox and Production. If you are not certain your team has the time or expertise to work through the 2026.07.1 changes before August 11, reach out to us and we will take it from there.
+
+For more on how SuitePacific approaches bundle updates and ongoing configuration reviews, see the [NetSuite administrator support service](/netsuite-administrator-support).

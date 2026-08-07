@@ -197,6 +197,7 @@ export const metadata: Metadata = {
     description: "Fractional NetSuite administrator for small businesses: user management, roles, custom fields, saved searches, and workflow automation on a fixed monthly retainer. No full-time hire needed.",
     url: "https://suitepacific.com/netsuite-admin-support-small-business",
     type: "website",
+    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
   },
 };
 

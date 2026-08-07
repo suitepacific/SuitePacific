@@ -145,6 +145,7 @@ export const metadata: Metadata = {
     description: "NetSuite account optimization and performance tuning: governance limit fixes, script audits, workflow consolidation, saved search cleanup, and technical debt reduction for live accounts.",
     url: "https://suitepacific.com/netsuite-account-optimization",
     type: "website",
+    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
   },
 };
 
@@ -187,7 +188,7 @@ export default function AccountOptimizationPage() {
         </p>
 
         <div className="mt-6">
-          <Button href="/contact">Book a Free Consultation</Button>
+          <Button href="#contact">Book a Free Consultation</Button>
         </div>
 
         {/* Pain points */}
@@ -266,9 +267,28 @@ export default function AccountOptimizationPage() {
           </div>
         </div>
 
+        {/* Related reading */}
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
+          <p className="text-sm font-semibold text-brand-900 mb-3">From the blog</p>
+          <ul className="space-y-2.5">
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-account-performance" className="text-accent hover:underline">
+                NetSuite account performance guide
+              </Link>{" "}
+              covers the specific areas we check first when an account becomes slow or difficult to manage.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-optimization" className="text-accent hover:underline">
+                NetSuite optimization guide
+              </Link>{" "}
+              walks through the key levers for improving performance, reducing technical debt, and simplifying customizations.
+            </li>
+          </ul>
+        </div>
+
         <ServiceFaqSection items={FAQ} />
 
-        <div className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
+        <div id="contact" className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
           <p className="text-brand-900 font-semibold text-lg">Is your NetSuite account getting slower or harder to manage?</p>
           <p className="mt-2 text-sm text-brand-400">
             Tell us what you are seeing and we will identify what is causing it.

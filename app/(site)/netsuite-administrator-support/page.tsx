@@ -167,6 +167,7 @@ export const metadata: Metadata = {
     description: "Ongoing NetSuite administrator support for post-go-live accounts: user management, roles and permissions, custom fields, saved searches, period management, and data imports.",
     url: "https://suitepacific.com/netsuite-administrator-support",
     type: "website",
+    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
   },
 };
 
@@ -209,7 +210,7 @@ export default function NetSuiteAdministratorSupportPage() {
         </p>
 
         <div className="mt-6">
-          <Button href="/contact">Book a Free Consultation</Button>
+          <Button href="#contact">Book a Free Consultation</Button>
         </div>
 
         {/* Pain points */}
@@ -304,9 +305,22 @@ export default function NetSuiteAdministratorSupportPage() {
           </div>
         </div>
 
+        {/* Related reading */}
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
+          <p className="text-sm font-semibold text-brand-900 mb-3">From the blog</p>
+          <ul className="space-y-2.5">
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-passkey-second-factor-2026-2" className="text-accent hover:underline">
+                NetSuite passkey and second factor changes in 2026.2
+              </Link>{" "}
+              covers the authentication requirement changes NetSuite administrators need to act on before the 2026.2 upgrade.
+            </li>
+          </ul>
+        </div>
+
         <ServiceFaqSection items={FAQ} />
 
-        <div className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
+        <div id="contact" className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
           <p className="text-brand-900 font-semibold text-lg">Need someone to keep your NetSuite account current?</p>
           <p className="mt-2 text-sm text-brand-400">
             Tell us what has been piling up and we will tell you how we would approach it.

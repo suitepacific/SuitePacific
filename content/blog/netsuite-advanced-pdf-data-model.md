@@ -198,7 +198,7 @@ For showing a shipping address section only when it differs from the billing add
 
 ---
 
-Advanced PDF template development is a specialized skill that sits at the intersection of FreeMarker syntax, NetSuite's print data model, and CSS layout for printed output. Our [NetSuite SuiteScript and customization service](/netsuite-suitescript-development) covers template development alongside SuiteScript work. For background on how the FreeMarker rendering pipeline works end to end, see [FreeMarker PDF Guide](/blog/netsuite-freemarker-pdf-guide).
+Advanced PDF template development is a specialized skill that sits at the intersection of FreeMarker syntax, NetSuite's print data model, and CSS layout for printed output. Our [NetSuite Advanced PDF Templates service](/netsuite-advanced-pdf-templates) covers template development, layout, and FreeMarker customization. For background on how the FreeMarker rendering pipeline works end to end, see [FreeMarker PDF Guide](/blog/netsuite-freemarker-pdf-guide).
 
 ## Frequently asked questions
 
