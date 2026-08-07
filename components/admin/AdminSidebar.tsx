@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -40,9 +40,60 @@ const LINKS = [
   { href: "/admin/settings", label: "Settings", icon: Settings, exact: false },
 ];
 
+function PingDot({ color }: { color: "red" | "orange" }) {
+  const base = color === "red" ? "bg-red-500" : "bg-orange-400";
+  const ping = color === "red" ? "bg-red-400" : "bg-orange-300";
+  return (
+    <span className="relative flex h-2 w-2 ml-auto shrink-0">
+      <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${ping}`} />
+      <span className={`relative inline-flex rounded-full h-2 w-2 ${base}`} />
+    </span>
+  );
+}
+
+const LS_LEADS = "admin_lastViewedLeads";
+const LS_VISITORS = "admin_lastViewedVisitors";
+
 export function AdminSidebar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [newLeads, setNewLeads] = useState(false);
+  const [newVisitors, setNewVisitors] = useState(false);
+
+  // Mark section as seen when navigating to it
+  useEffect(() => {
+    if (pathname.startsWith("/admin/leads")) {
+      localStorage.setItem(LS_LEADS, String(Date.now()));
+      setNewLeads(false);
+    }
+    if (pathname.startsWith("/admin/visitors")) {
+      localStorage.setItem(LS_VISITORS, String(Date.now()));
+      setNewVisitors(false);
+    }
+  }, [pathname]);
+
+  // Fetch new-counts on mount and every 60s
+  useEffect(() => {
+    async function check() {
+      const leadsSince = localStorage.getItem(LS_LEADS) ?? "0";
+      const visitorsSince = localStorage.getItem(LS_VISITORS) ?? "0";
+      try {
+        const res = await fetch(
+          `/api/admin/new-counts?leadsSince=${leadsSince}&visitorsSince=${visitorsSince}`,
+          { cache: "no-store" }
+        );
+        if (!res.ok) return;
+        const data = await res.json();
+        setNewLeads(data.newLeads > 0);
+        setNewVisitors(data.newVisitors > 0);
+      } catch {
+        // silently ignore network errors
+      }
+    }
+    check();
+    const id = setInterval(check, 60_000);
+    return () => clearInterval(id);
+  }, []);
 
   const SidebarContent = () => (
     <>
@@ -64,6 +115,10 @@ export function AdminSidebar() {
       <nav className="flex-1 px-3 space-y-1">
         {LINKS.map((link) => {
           const active = link.exact ? pathname === link.href : pathname.startsWith(link.href);
+          const showDot =
+            (link.href === "/admin/leads" && newLeads) ||
+            (link.href === "/admin/visitors" && newVisitors);
+          const dotColor = link.href === "/admin/leads" ? "red" : "orange";
           return (
             <Link
               key={link.href}
@@ -77,6 +132,7 @@ export function AdminSidebar() {
             >
               <link.icon className="h-4 w-4 shrink-0" />
               {link.label}
+              {showDot && <PingDot color={dotColor} />}
             </Link>
           );
         })}

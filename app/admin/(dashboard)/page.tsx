@@ -1,10 +1,14 @@
 import Link from "next/link";
 import { Eye, TrendingUp, Users, ArrowRight } from "lucide-react";
 import { getAnalyticsSummary } from "@/lib/admin-data";
+import { prisma } from "@/lib/prisma";
 
 export default async function AdminDashboardPage() {
   const { views7d, views30d, totalLeads, leads7d, topPages, recentLeads } =
     await getAnalyticsSummary();
+
+  const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
+  const newLeads24h = await prisma.leadSubmission.count({ where: { createdAt: { gt: oneDayAgo } } });
 
   const maxPageViews = Math.max(1, ...topPages.map((p) => p.count));
 
@@ -16,7 +20,7 @@ export default async function AdminDashboardPage() {
       <div className="mt-8 grid sm:grid-cols-3 gap-4">
         <StatCard icon={Eye} label="Page views (7 days)" value={views7d} />
         <StatCard icon={TrendingUp} label="Page views (30 days)" value={views30d} />
-        <StatCard icon={Users} label="Leads (7 days)" value={leads7d} sub={`${totalLeads} total`} />
+        <StatCard icon={Users} label="Leads (7 days)" value={leads7d} sub={`${totalLeads} total`} hasNew={newLeads24h > 0} />
       </div>
 
       <div className="mt-8 grid lg:grid-cols-2 gap-6">
@@ -70,17 +74,27 @@ function StatCard({
   label,
   value,
   sub,
+  hasNew,
 }: {
   icon: typeof Eye;
   label: string;
   value: number;
   sub?: string;
+  hasNew?: boolean;
 }) {
   return (
-    <div className="bg-white rounded-2xl border border-brand-50 shadow-soft p-6">
+    <div className="bg-white rounded-2xl border border-brand-50 shadow-soft p-6 relative">
       <div className="flex items-center justify-between">
         <Icon className="h-4 w-4 text-brand-400" />
-        {sub && <span className="text-xs text-brand-300">{sub}</span>}
+        <div className="flex items-center gap-2">
+          {hasNew && (
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500" />
+            </span>
+          )}
+          {sub && <span className="text-xs text-brand-300">{sub}</span>}
+        </div>
       </div>
       <div className="mt-3 text-2xl font-semibold text-brand-900">{value}</div>
       <div className="text-sm text-brand-400">{label}</div>
