@@ -44,6 +44,7 @@ Most teams know they should be using saved searches more than they do. The gap i
   <rect x="0" y="162" width="680" height="32" rx="6" fill="#f0f4ff" stroke="#d7e0f3" stroke-width="1"/>
   <text x="340" y="181" text-anchor="middle" font-size="8.5" fill="#4f6fb0">Each search includes the specific criteria fields, formula columns, and summary settings that make it work correctly.</text>
 </svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Ten saved search examples organized by team: Finance/AR (overdue invoices, vendor aging, unbilled time entries), Sales/CRM (orders pending approval), Operations, and Management reporting.</figcaption>
 </figure>
 
 ## 1. Overdue open invoices by customer

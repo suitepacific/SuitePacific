@@ -56,6 +56,7 @@ You add whatever payables belong together, review them as a batch, get approvals
   <text x="586" y="55" text-anchor="middle" font-size="8.5" fill="#8aa2d6">Bulk Processing Framework</text>
   <text x="586" y="68" text-anchor="middle" font-size="8.5" fill="#8aa2d6">All payments execute</text>
 </svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Payment Run four-stage workflow in NetSuite: Prepare (add bills, credits, and journal entries), Review (full batch visible before committing), Approve, and Pay.</figcaption>
 </figure>
 
 ## How the workflow works

@@ -34,6 +34,7 @@ Here is what each one tracks.
   <text x="520" y="126" text-anchor="middle" font-size="8" fill="#4f6fb0">Approved charges not yet invoiced</text>
   <text x="520" y="140" text-anchor="middle" font-size="8" fill="#4f6fb0">Catch billing gaps before close</text>
 </svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Five new Project Health Indicators in NetSuite 2026.2: Time Overrun (actual hours exceed planned), Overdue Tasks, Budget Overrun, Unassigned Tasks, and At-Risk Milestones.</figcaption>
 </figure>
 
 ## 1. Planned vs. Actual Time Overrun

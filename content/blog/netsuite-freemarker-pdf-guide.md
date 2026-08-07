@@ -59,6 +59,7 @@ To see the exact XML data model for a specific transaction, open the template ed
   <!-- Footnote -->
   <text x="340" y="96" text-anchor="middle" font-size="8" fill="#8aa2d6">The template references data as ${record.fieldId}: field names match the XML data model, not the UI label.</text>
 </svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">FreeMarker PDF rendering pipeline in NetSuite: transaction record and related records are serialized into an XML data model, then processed by the FreeMarker template, and rendered as a PDF output.</figcaption>
 </figure>
 
 ## The core FreeMarker syntax

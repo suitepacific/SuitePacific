@@ -37,6 +37,7 @@ NetSuite 2026.2 adds a new section called **Advanced Record Customization**, acc
   <text x="620" y="103" text-anchor="middle" font-size="8" fill="#4f6fb0">NetSuite default</text>
   <text x="340" y="124" text-anchor="middle" font-size="8" fill="#8aa2d6">AI descriptions tell NetSuite's AI Connector what each record type is used for. More accurate descriptions produce more relevant AI output.</text>
 </svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Advanced Record Customization (ARC) in 2026.2 lets administrators view the current record description and create a new AI-generated description up to 280 characters, accessible at Customization &gt; Advanced Record Customization.</figcaption>
 </figure>
 
 ## What Advanced Record Customization is

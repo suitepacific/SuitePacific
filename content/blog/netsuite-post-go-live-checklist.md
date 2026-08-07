@@ -53,6 +53,7 @@ The first 90 days after your implementation partner hands off the account are th
   <!-- footer -->
   <text x="0" y="136" font-size="9" fill="#8aa2d6">Most two-year-old account debt was optional to fix at go-live. The first 90 days are when it costs least to get things right.</text>
 </svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">First 90 days post-go-live: Days 1-30 cover foundation tasks (documentation, role audits, exception searches), Days 31-60 focus on verification and reporting, and Days 61-90 are for automating the manual steps surfaced in the first period close.</figcaption>
 </figure>
 
 ## 1. What documentation should you get from your implementation partner at handoff?

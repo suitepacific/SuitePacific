@@ -38,6 +38,7 @@ NetSuite 2026.2 changes this. You can now start order fulfillment directly from 
   <text x="531" y="87" text-anchor="middle" font-size="8" fill="#14306b">Repeat ②-③ without leaving the list</text>
   <text x="531" y="104" text-anchor="middle" font-size="8" font-weight="600" fill="#16a34a">Fewer page loads for batch processing</text>
 </svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Before 2026.2, fulfilling multiple orders required opening each record individually. The 2026.2 fulfillment list lets warehouse staff initiate and complete fulfillments directly from the list view without navigating into each order.</figcaption>
 </figure>
 
 ## What changed
