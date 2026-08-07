@@ -37,6 +37,11 @@ Here is what each one tracks.
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Five new Project Health Indicators in NetSuite 2026.2: Time Overrun (actual hours exceed planned), Overdue Tasks, Budget Overrun, Unassigned Tasks, and At-Risk Milestones.</figcaption>
 </figure>
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite 2026.2 adds five new project health indicators to the project record: Planned vs. Actual Time Overrun, which flags when actual hours exceed planned hours; Overdue Tasks, which tracks tasks past their due date that are not complete; Project Resource Coverage for Remaining Work, which checks whether current resource availability covers the remaining work within the project timeline; Project Margin Indicator, which compares revenue against costs to show current profitability; and Unbilled Approved Charges, which flags approved charges not yet invoiced. All five appear in the project health section of the project record automatically once the account is on 2026.2, with no configuration required. They are designed to surface schedule, resource, financial, and billing risks without requiring a manager to manually review every task and transaction across each project in the account.</p>
+</div>
+
 ## 1. Planned vs. Actual Time Overrun
 
 This indicator compares the hours originally planned for a project against the hours actually logged. When actual time logged exceeds the planned hours, the indicator flags an overrun.
@@ -72,5 +77,22 @@ Why it matters: unbilled charges represent revenue that has been earned but not 
 The five new indicators appear in the project health section of the project record in NetSuite. They are new in 2026.2 and will appear automatically on project records once your account is on the 2026.2 release.
 
 For a reference guide to what each indicator tracks and how to read it, see [The 5 New Project Health Indicators in NetSuite 2026.2](/resources/netsuite-project-health-indicators).
+
+## Frequently asked questions
+
+**Q: Do I need to configure anything to see these indicators?**
+A: No. The five new indicators appear automatically on project records once the account is on the 2026.2 release. No additional setup or configuration is required.
+
+**Q: Where exactly on the project record do these indicators appear?**
+A: They appear in the project health section of the project record, alongside the existing project health indicators that were already available before 2026.2.
+
+**Q: Do the indicators update in real time?**
+A: Project health indicators reflect the current state of the project data in NetSuite. They update as task statuses, time entries, charges, and billing records are updated in the account.
+
+**Q: Can these indicators be included in saved searches or dashboards?**
+A: Project health indicator values can be referenced in saved searches on the project record type where they appear as fields. Check the saved search field picker for project searches to see which indicator values are available as searchable fields in your account.
+
+**Q: Who can see project health indicators?**
+A: Visibility follows NetSuite's standard role and permission model for project records. Users with access to view project records can see the health indicators on those records.
 
 If you need help keeping your NetSuite account current after releases, [SuitePacific's post-go-live support](/netsuite-post-go-live-support) covers release review and ongoing account maintenance.

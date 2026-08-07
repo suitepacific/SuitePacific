@@ -2,6 +2,7 @@
 title: "NetSuite REST Web Services Now Supports Sequential Batch Processing"
 description: "NetSuite 2026.2 adds sequential processing for batch operations in REST Web Services. This means batch requests can now execute in order, which matters when one operation depends on the result of another."
 date: "2026-07-21"
+updated: "2026-08-07"
 tags: ["SuiteScript", "Authentication", "NetSuite Tips"]
 ---
 
@@ -57,6 +58,11 @@ NetSuite 2026.2 adds **sequential processing** for batch operations. When you us
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Sequential processing makes dependency order explicit rather than assumed. Use it when later operations reference results from earlier ones.</figcaption>
 </figure>
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite 2026.2 adds sequential processing as an option for batch operations in REST Web Services. Before this release, the execution order of operations in a batch was not guaranteed. Sequential processing ensures operations execute in the order you specify, with each completing before the next begins. This matters for batch workflows where one operation depends on the result of another: for example, creating a customer record first, then creating a sales order for that customer, then applying a payment. In a parallel batch, the sales order creation might execute before the customer exists and fail. Sequential processing makes the dependency order explicit and reliable. Use sequential processing when operations have dependencies between them; use parallel processing when operations are completely independent and throughput matters more than order. The REST Web Services batch endpoint is the same for both modes.</p>
+</div>
+
 ## Why order matters in batch operations
 
 Many batch workflows involve operations that depend on each other. A common example:
@@ -91,5 +97,19 @@ If you have existing REST batch integrations that relied on operations running i
 Review any batch integrations where order might matter and update them to use sequential processing where appropriate.
 
 Sequential batch processing is available in NetSuite REST Web Services as of 2026.2. If you are building new integrations that use batch operations with dependencies between steps, this is now the correct approach.
+
+## Frequently asked questions
+
+**Q: Is sequential processing the new default, or does it need to be explicitly requested?**
+A: Sequential processing is an explicit option you set at the batch request level. Parallel processing remains available. You specify which mode to use when constructing the batch request.
+
+**Q: What happens if one operation fails in a sequential batch?**
+A: In a sequential batch, a failure in one operation can prevent subsequent operations from running since later steps may depend on earlier results. Build error handling into your integration to determine how to handle partial batch failures, including whether to retry, skip, or roll back.
+
+**Q: Does sequential processing affect how long the batch takes to complete?**
+A: Yes. Sequential processing takes longer than parallel because each operation must complete before the next begins. For operations with no dependencies, parallel processing is faster. Sequential is the correct choice when correctness depends on order, not when you want performance.
+
+**Q: Can I mix sequential and parallel operations within the same batch?**
+A: The sequential vs. parallel mode applies to the batch as a whole. If you have a mix of dependent and independent operations, group the dependent ones in a sequential batch and the independent ones in separate parallel batches.
 
 If you are working with REST Web Services using Token-Based Authentication, see our guide on the [NLAuth deprecation and TBA migration timeline](/blog/netsuite-nlauth-tba-end-of-support) for what changes ahead. For help designing or maintaining NetSuite integrations, [SuitePacific's integration services](/netsuite-integrations) cover REST, RESTlet, and scheduled sync approaches.

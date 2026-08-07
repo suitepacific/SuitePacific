@@ -40,6 +40,11 @@ NetSuite 2026.2 changes this.
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Requires a FIDO2-compliant passkey: Face ID, Touch ID, Windows Hello, or a hardware security key.</figcaption>
 </figure>
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite 2026.2 allows users with a FIDO2-compliant passkey to use it as a second authentication factor, not just for passwordless login. If your account requires two-factor authentication and you have a passkey set up using Face ID, Touch ID, Windows Hello, or a FIDO2-certified hardware security key, that passkey can now satisfy the 2FA requirement without requiring an authenticator app code. The feature works automatically once a qualifying passkey is configured in the user's account. A 3-month fallback remains: even with a passkey as the second factor, NetSuite prompts for an authenticator app code every three months as a built-in security check, so keep the authenticator app installed. Administrators can disable the passkey-as-2FA feature at the account level. This change is separate from the passwordless login feature also added in 2026.2, which uses the passkey to replace both the password and 2FA prompt entirely.</p>
+</div>
+
 ## What changed
 
 Users who have a FIDO2-compliant passkey configured in their NetSuite account can now use that passkey as a second factor, not just as a passwordless login method.
@@ -79,5 +84,22 @@ These are two separate use cases. If you are already using passkeys for full pas
 If you want to use your passkey as a second factor in NetSuite, you do not need to do anything extra. The change works automatically once you have a FIDO2-compliant passkey set up in your account. If you have not set one up yet, see [How to Enable Passkeys in NetSuite](/resources/netsuite-passkeys) for the setup steps.
 
 If you are a NetSuite administrator and want to control whether this feature is available to your users, check your account's authentication settings in NetSuite Setup.
+
+## Frequently asked questions
+
+**Q: Can a passkey be used as both the first and second factor in the same login?**
+A: NetSuite 2026.2 has two separate passkey features that cover different scenarios. Passwordless login uses the passkey in place of both password and 2FA. The passkey-as-2FA feature applies when users log in with a password and need a second factor. These are separate configurations.
+
+**Q: Do all users automatically get this capability after 2026.2?**
+A: Users need a FIDO2-compliant passkey already configured in their account. If a passkey was set up using Face ID, Touch ID, or Windows Hello, it will work as a second factor automatically once the account is on 2026.2 and the feature is enabled.
+
+**Q: What if a user's passkey stops working or is on a lost device?**
+A: The 3-month authenticator app fallback means users with passkeys still need their authenticator app available as a backup. Keep it installed and maintain access to backup codes so there is always a fallback path into the account.
+
+**Q: Can administrators disable this feature for specific users rather than the entire account?**
+A: The administrator control for this feature is at the account level, not the individual user level. Disabling it reverts all users to the standard authenticator app prompt for 2FA.
+
+**Q: Does this change affect the 2FA requirement for administrator accounts?**
+A: Administrator accounts are still subject to 2FA requirements. A FIDO2-compliant passkey can satisfy the 2FA requirement for an administrator account when the feature is enabled at the account level.
 
 NetSuite authentication configuration for your user base is covered under [SuitePacific's NetSuite administrator support](/netsuite-administrator-support).

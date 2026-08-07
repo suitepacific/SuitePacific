@@ -2,6 +2,7 @@
 title: "Why Your NetSuite Account Feels Slow (and What Actually Fixes It)"
 description: "The most common, fixable causes of a slow NetSuite account: bloated saved searches, unyielding scheduled scripts, and metadata nobody cleaned up, with what to check first."
 date: "2026-06-29"
+updated: "2026-08-07"
 tags: ["Performance", "Account Optimization"]
 ---
 
@@ -56,6 +57,11 @@ None of these require an infrastructure upgrade. All of them are configuration c
 </div>
 </div>
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A slow NetSuite account is almost always caused by fixable configuration issues, not infrastructure limits. Check in this order: dashboard portlet searches with complex joins and formula columns, which run on every page load for every user on a role; Scheduled or Map/Reduce scripts that do not yield governance properly before hitting limits, which back up the entire script queue; workflows and User Event scripts with no entry conditions, firing on every record save including irrelevant ones; years of unused custom fields, forms, and saved searches that add metadata overhead on every load; and saved searches that apply formula filters after loading too many rows, rather than filtering at the criteria level. None of these require an infrastructure upgrade. All are configuration issues. Start with dashboard portlet searches because they execute more frequently than any other search in the account.</p>
+</div>
+
 ## 1. Dashboards loading saved searches with too many joined fields
 
 A saved search with several formula columns and joins two or three tables deep is fine running once. Put it on a dashboard that five people load every morning, and that same search runs repeatedly against live data, every time. Start by auditing whatever saved searches are pinned to dashboards and home pages, since those run far more often than anyone realizes, and trim or rebuild the heaviest ones first.
@@ -77,5 +83,19 @@ Every custom field, custom form, and saved search adds to the metadata NetSuite 
 A search that loads a broad set of records and then filters with a formula or summary calculation is doing far more work than one that filters with indexed criteria fields first. Moving date ranges, statuses, and other simple conditions into the actual search criteria, instead of relying on formula filters or filtering visually after the fact, is usually a quick fix with a real, noticeable difference in load time.
 
 ---
+
+## Frequently asked questions
+
+**Q: How do I find which scripts are causing performance issues?**
+A: Check the Script Execution Log in NetSuite, available under Customization &gt; Scripting &gt; Script Execution Log. Filter by date, script type, and execution status to identify scripts that are failing, timing out, or running more frequently than expected.
+
+**Q: How do I identify which dashboard portlet searches are the slowest?**
+A: Run the search in isolation using the saved search editor and note the time to return results. Portlet searches with joins to multiple related record types and several formula columns are the most likely candidates. Compare the load time with and without the portlet assigned to the dashboard.
+
+**Q: How do I find unused custom fields in a NetSuite account?**
+A: Go to Customization &gt; Lists, Records, and Fields and review each field type. Fields that do not appear on any active transaction form and have not been updated recently are candidates for deactivation rather than deletion. Deactivating preserves the data while removing the load overhead.
+
+**Q: Will removing unused workflows break anything?**
+A: Deactivate workflows rather than delete them initially. An inactive workflow does not run but can be reactivated if needed. Before deactivating, confirm the workflow has not been used recently by checking its execution history.
 
 Account performance issues are almost always fixable without an upgrade or a re-implementation, just a focused look at what's actually running and how often. This kind of cleanup is part of our [account optimization service](/netsuite-account-optimization). If your account has gotten noticeably slower over time, [book a free consultation](/#contact) and we'll help you find out why. For related reading, see [10 NetSuite Saved Search Tips Every Finance Team Should Know](/blog/netsuite-saved-search-tips) and [NetSuite Account Optimization: What to Audit and Fix on a Live Account](/blog/netsuite-optimization).

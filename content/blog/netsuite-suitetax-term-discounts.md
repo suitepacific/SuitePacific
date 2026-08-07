@@ -2,6 +2,7 @@
 title: "NetSuite SuiteTax Now Handles Tax on Term Discounts: How to Enable It"
 description: "NetSuite 2026.2 adds support for tax adjustments on term discounts in SuiteTax. Two settings control this: one in Accounting Preferences and one at the nexus level. Here is what they do and how to turn them on."
 date: "2026-07-21"
+updated: "2026-08-07"
 tags: ["Accounting", "Administration", "SuiteTax"]
 ---
 
@@ -34,6 +35,11 @@ NetSuite 2026.2 adds a formal mechanism for this.
 <div style="padding:0.65rem 1.25rem;background:#f0f4ff;border-top:1px solid #d7e0f3;font-size:0.78rem;color:#4f6fb0">
 Both settings are required. Enabling only one does not produce the correct tax adjustment.
 </div>
+</div>
+
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite 2026.2 adds formal support for tax adjustments on term discounts in SuiteTax through two settings that must both be enabled. The first, Create Adjustment Transactions for Term Discounts, is in Accounting Preferences at Setup &gt; Accounting &gt; Accounting Preferences. It tells NetSuite to generate an adjustment transaction when a term discount is applied on a purchase. The second, Include Tax When Calculating Term Discount, is a nexus-level setting that controls whether tax is recalculated on the discounted amount for that jurisdiction. Both settings are required: enabling only one produces incomplete results. Once both are enabled, when a payment applies a term discount, NetSuite creates an adjustment so that tax is calculated on the amount actually paid rather than the gross invoice total. The feature applies to SuiteTax accounts only and is most relevant for businesses in jurisdictions where the taxable base is the amount actually paid, not the gross invoice amount.</p>
 </div>
 
 ## What the new settings do
@@ -71,5 +77,25 @@ This feature is most relevant for:
 - Finance teams in tax jurisdictions where the tax base is the amount paid, not the invoice amount
 
 If your account does not use term discounts on purchase transactions, this change has no effect and no action is needed.
+
+## Frequently asked questions
+
+**Q: Does this feature work with the legacy NetSuite tax engine?**
+A: No. The term discount tax adjustment feature requires SuiteTax. It does not apply to accounts using the legacy tax engine.
+
+**Q: What does the adjustment transaction look like?**
+A: When a term discount is taken and both settings are enabled, NetSuite creates an adjustment entry that accounts for the tax difference between the gross invoice amount and the discounted amount paid. This keeps your tax liability accurate for the payment actually received.
+
+**Q: Do both settings need to be enabled at the same time?**
+A: Yes. Enabling Create Adjustment Transactions for Term Discounts without enabling Include Tax When Calculating Term Discount at the nexus level produces incomplete results. Both are required for the full behavior.
+
+**Q: Does this apply to all nexuses, or only specific ones?**
+A: The nexus-level setting gives you per-jurisdiction control. You enable Include Tax When Calculating Term Discount on each nexus where term discount tax adjustments should apply.
+
+**Q: What happens to existing transactions before the settings are enabled?**
+A: The settings affect payments processed after both are enabled. Transactions already paid and closed before enabling the settings are not retroactively adjusted.
+
+**Q: Who can configure these settings?**
+A: Accounting Preferences require Administrator access. Nexus settings are configured under your tax engine setup and also require Administrator or appropriate accounting role access.
 
 For step-by-step setup instructions, see [How to Enable Tax on Term Discounts in NetSuite SuiteTax](/resources/netsuite-suitetax-term-discounts).

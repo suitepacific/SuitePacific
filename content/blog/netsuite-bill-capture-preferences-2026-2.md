@@ -35,6 +35,11 @@ Action required: check your Bill Capture Preferences at Setup > Accounting > Bil
 </div>
 </div>
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Two Bill Capture preference fields changed behavior in NetSuite 2026.2. A blank Save Tax As field now explicitly maps to No Tax, and a blank Save Shipping Cost As field now explicitly maps to No Shipping Cost. Previously, a blank value produced undefined behavior. Bills captured after the 2026.2 upgrade with these fields blank will have their tax and shipping cost data discarded. To review your settings, go to Setup &gt; Accounting &gt; Bill Capture Preferences and check both fields. If either is blank and you expect captured tax or shipping amounts to appear on vendor bills, set an explicit value now. The 2026.2 release also introduces new gross and net options for these preferences, providing more control over whether captured amounts are treated as tax-inclusive or tax-exclusive when the bill is saved in NetSuite.</p>
+</div>
+
 ## What changed
 
 NetSuite Bill Capture uses two preferences that control how captured bill data is saved:
@@ -69,5 +74,35 @@ If your account uses Bill Capture and either Save Tax As or Save Shipping Cost A
 Check the settings now and set them to the correct explicit option if you want captured tax or shipping data to flow through to your bills.
 
 For a step-by-step guide to reviewing and updating these settings, see [How to Review Your NetSuite Bill Capture Preferences After the 2026.2 Update](/resources/netsuite-bill-capture-preferences).
+
+## What gross and net options mean for captured amounts
+
+Along with the blank value change, NetSuite 2026.2 adds new gross and net options to Bill Capture Preferences.
+
+**Gross amounts** include tax as part of the total. If a captured bill shows a line amount that already includes tax, treating it as gross means NetSuite backs the tax out of that total rather than adding tax on top.
+
+**Net amounts** exclude tax. If a captured bill shows line amounts as pre-tax figures, treating them as net means NetSuite applies the appropriate tax rate on top of the captured amount.
+
+The correct choice depends on how your vendors present amounts on their bills and how your tax setup is configured. Bills from vendors in jurisdictions that quote prices inclusive of tax typically map to a gross treatment. Bills quoting pre-tax amounts map to net. Review these options in Bill Capture Preferences alongside the blank value changes.
+
+## Frequently asked questions
+
+**Q: Does the blank value change affect bills that were already captured before the 2026.2 upgrade?**
+A: No. Bills already captured and saved before the upgrade are not retroactively affected. The behavior change applies to bills captured after the account is on 2026.2.
+
+**Q: What is Bill Capture in NetSuite?**
+A: Bill Capture is a NetSuite feature that uses OCR and AI extraction to read vendor bill documents and populate NetSuite vendor bill records automatically, reducing manual data entry.
+
+**Q: If Save Tax As was blank before 2026.2, what was happening to captured tax amounts?**
+A: The behavior was undefined before 2026.2, meaning results could vary. From 2026.2, the behavior is explicit: a blank value equals No Tax.
+
+**Q: Does this preference apply per subsidiary in a OneWorld account?**
+A: Check the Bill Capture Preferences screen in your account for any subsidiary-specific options. OneWorld accounts may have configuration available at the subsidiary level.
+
+**Q: How do I know whether to use gross or net for captured amounts?**
+A: It depends on how your vendors quote amounts on their invoices. If line amounts on captured bills already include tax, use gross. If they are pre-tax base amounts, use net. When in doubt, consult your tax advisor for the correct treatment in your jurisdiction.
+
+**Q: Will this change affect the automatic matching between captured bills and purchase orders?**
+A: The matching logic in Bill Capture is separate from how tax and shipping amounts are saved. Tax and shipping preference changes affect how those amounts flow to the bill record, not whether the bill matches a purchase order.
 
 If you need help reviewing your Bill Capture configuration or other account settings after 2026.2, [SuitePacific's post-go-live support](/netsuite-post-go-live-support) covers release review and ongoing account maintenance.

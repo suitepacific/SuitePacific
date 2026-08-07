@@ -41,6 +41,11 @@ NetSuite 2026.2 introduces **Automating Payment Adjustments**, which handles the
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">All three types are handled from the customer payment or customer deposit record, not a separate adjustment workflow.</figcaption>
 </figure>
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite 2026.2 introduces automated payment adjustment handling for three types of discrepancies: bank fees deducted from payments by the bank before deposit, convenience fees charged on certain payment methods, and small underpayments within a configurable write-off threshold. These adjustments are handled directly from the customer payment or customer deposit record, removing the need for separate manual journal entries to clear each discrepancy. AR teams that regularly process payments with bank fees or write off small underpayments benefit most: fewer manual transactions, cleaner reconciliation, and less follow-up when payment amounts differ slightly from invoice totals. The feature is available on customer payment and customer deposit records in NetSuite 2026.2. No separate workflow or module is required: the adjustment handling is built into the existing payment record in NetSuite.</p>
+</div>
+
 ## What types of adjustments are covered
 
 The automation handles three types of payment discrepancies:
@@ -72,5 +77,25 @@ This feature is most relevant for:
 - Accounts that currently write off small underpayments manually
 
 If your reconciliation process involves frequent small adjustments between payment amounts and invoice totals, this feature is worth reviewing once your account is on the 2026.2 release.
+
+## Frequently asked questions
+
+**Q: Where are the adjustment thresholds configured?**
+A: Adjustment thresholds, such as the maximum underpayment amount eligible for automatic write-off, are configured in your payment adjustment settings in NetSuite. Review these settings after upgrading to 2026.2 to confirm thresholds match your reconciliation policy.
+
+**Q: What GL account does an automated payment adjustment post to?**
+A: The GL account depends on how each adjustment type is configured. Bank fees typically post to a bank charge or processing fee expense account. Underpayment write-offs typically post to a bad debt or write-off account. Confirm the GL account mapping in your account configuration to ensure adjustments post to the correct accounts before enabling the feature in production.
+
+**Q: Does this replace the manual journal entry process entirely?**
+A: For adjustments within the configured scope (bank fees, convenience fees, underpayments within threshold), yes. Adjustments outside the automated scope, such as large underpayments, still require manual handling.
+
+**Q: Is an audit trail created for automated adjustments?**
+A: Yes. Automated adjustments create transactions in NetSuite that appear in the account's transaction history, providing a full audit trail for each adjustment.
+
+**Q: Does this work for all payment methods?**
+A: The feature applies to discrepancies handled through customer payment and customer deposit records. Review the applicable payment method configuration in your account to confirm which payment types are covered.
+
+**Q: Do I need to set anything up before the automated adjustments work?**
+A: Review your account's payment adjustment settings after upgrading to 2026.2 to confirm thresholds and GL account mappings are correct for your reconciliation process before relying on the automation.
 
 If you need help evaluating whether this feature applies to your reconciliation workflow, [SuitePacific's post-go-live support](/netsuite-post-go-live-support) covers release review and ongoing account maintenance.

@@ -40,6 +40,11 @@ NetSuite 2026.2 adds a new section called **Advanced Record Customization**, acc
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Advanced Record Customization (ARC) in 2026.2 lets administrators view the current record description and create a new AI-generated description up to 280 characters, accessible at Customization &gt; Advanced Record Customization.</figcaption>
 </figure>
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Advanced Record Customization (ARC) is a new section in NetSuite 2026.2, found at Customization &gt; Advanced Record Customization, that gives administrators a central place to manage AI descriptions for standard and custom record types. An AI description is a short text up to 280 characters that tells NetSuite's AI Connector Service what a record type is used for in the account. ARC lets administrators view the current description, create a new one, update an existing one, compare a custom description against the NetSuite default or a partner description, and revert to the original if needed. Custom descriptions set in ARC apply at the account level and override both the default NetSuite descriptions and any descriptions added by partner bundles. The feature is most relevant for accounts using AI integrations built on NetSuite's AI Connector Service or MCP (Model Context Protocol). More accurate record descriptions produce more relevant AI responses for that record type.</p>
+</div>
+
 ## What Advanced Record Customization is
 
 Advanced Record Customization (ARC) is a new area in NetSuite for managing AI-level metadata on record types. In 2026.2, its primary function is managing AI descriptions.
@@ -83,5 +88,25 @@ Advanced Record Customization is most relevant for:
 If your account does not use AI integrations yet, this feature has no immediate impact. But as AI connectivity with NetSuite expands, accurate record descriptions will become more important.
 
 For step-by-step instructions on using ARC, see [How to Use Advanced Record Customization (ARC) in NetSuite](/resources/netsuite-advanced-record-customization).
+
+## How to write a good AI description
+
+A good AI description for a record type names what that record is specifically used for in your account, not just what the record type is in general. NetSuite's default description for the Opportunity record type describes it in general sales terms. If your account uses Opportunity records for internal project tracking rather than external sales, a description that reflects that distinction will produce more relevant AI responses.
+
+The 280-character limit is enough for a clear, specific description. A good format is: who creates this record, when they create it, and what it represents in your business process. For example: "Created by project managers when a new client engagement is confirmed. Tracks scope, timeline, and assigned resources for a fixed-fee implementation project."
+
+## Frequently asked questions
+
+**Q: Do I need special permissions to access Advanced Record Customization?**
+A: Administrator access is required to create or update AI descriptions for record types in ARC.
+
+**Q: What happens if I revert a custom description?**
+A: Reverting replaces the custom description with the original NetSuite default for that record type, or the partner description if one was installed with a bundle. You can create a new custom description again at any time.
+
+**Q: Does ARC affect all users in the account?**
+A: Yes. AI descriptions set in ARC apply at the account level, affecting any AI integration that reads record descriptions for that NetSuite account.
+
+**Q: Does setting an AI description change how the record type looks or behaves in NetSuite?**
+A: No. AI descriptions are metadata read by AI integrations. They do not change the record type's fields, forms, layout, or behavior in the standard NetSuite interface.
 
 Keeping your NetSuite account configuration current as features expand is part of what [SuitePacific's post-go-live support](/netsuite-post-go-live-support) covers.

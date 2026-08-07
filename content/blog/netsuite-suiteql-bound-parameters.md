@@ -2,6 +2,7 @@
 title: "Bound Parameters in NetSuite REST SuiteQL: What They Are and Why You Should Use Them"
 description: "NetSuite 2026.2 adds support for bound parameters in REST SuiteQL queries. They prevent injection vulnerabilities by separating query logic from query values. Here is how they work and when to use them."
 date: "2026-07-21"
+updated: "2026-08-07"
 tags: ["SuiteScript", "SuiteQL", "Security"]
 ---
 
@@ -34,6 +35,11 @@ NetSuite 2026.2 adds support for **bound parameters** in REST SuiteQL queries. I
 </svg>
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Bound parameters parse the query once, then substitute values safely. The <code>?</code> placeholder is never interpreted as SQL.</figcaption>
 </figure>
+
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Bound parameters in NetSuite REST SuiteQL separate query structure from query values by replacing dynamic values in the SQL string with ? placeholders and passing the actual values in a separate params array. Available from NetSuite 2026.2 on the REST SuiteQL endpoint at POST /services/rest/query/v1/suiteql. The request body takes a q field with the query containing ? placeholders and a params array where each value maps positionally to a placeholder. NetSuite substitutes each placeholder with the corresponding params value, treating it as data rather than SQL. This prevents injection vulnerabilities where a crafted value could otherwise alter the query structure. The primary benefit is security: values in params cannot change the query structure regardless of what they contain. A secondary benefit is clarity: query logic and query values are readable separately. Use bound parameters whenever query values come from dynamic sources such as user input, request parameters, or values fetched at runtime.</p>
+</div>
 
 ## The problem with inline values
 
@@ -94,5 +100,22 @@ The `params` array maps positionally to the `?` placeholders in the query. The f
 ## The practical default
 
 Even for queries where injection risk seems low, using bound parameters is a good habit. It makes the intent of the query clearer (logic is separate from values), simplifies testing (you can change values without touching the query string), and eliminates an entire class of vulnerability without any meaningful cost.
+
+## Frequently asked questions
+
+**Q: Do bound parameters work in SuiteScript as well as direct REST calls?**
+A: Bound parameters are a feature of the REST SuiteQL endpoint. When making calls to this endpoint from SuiteScript using the N/https module, you pass the same JSON body format with q and params fields and bound parameters work the same way.
+
+**Q: Can I use multiple placeholders in the same query?**
+A: Yes. Each ? in the query maps positionally to the corresponding element in the params array. The first ? gets params[0], the second gets params[1], and so on. You can use as many placeholders as your query requires.
+
+**Q: Is there a performance difference between bound and inline queries?**
+A: Bound parameters parse the query structure once and substitute values separately, which is generally comparable to string interpolation for typical query lengths. The main benefit is security and readability, not performance.
+
+**Q: Do bound parameters work with all SuiteQL data types?**
+A: Values in the params array are passed as strings and NetSuite handles the type conversion based on the query context. For date values and numeric comparisons, pass the value as a string in the format expected by the query.
+
+**Q: Should I rewrite existing SuiteQL queries to use bound parameters?**
+A: For queries with dynamic values, especially those where any value comes from user input or external sources, converting to bound parameters is recommended. For queries with only hardcoded values, the injection risk is low, but bound parameters still improve readability.
 
 For step-by-step guidance on converting existing SuiteQL queries to use bound parameters, see [How to Use Bound Parameters in NetSuite REST SuiteQL](/resources/netsuite-suiteql-bound-parameters).
