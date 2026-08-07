@@ -2,6 +2,7 @@
 title: "NetSuite User Event Scripts vs Client Scripts: Which One to Use and When"
 description: "The practical difference between NetSuite User Event scripts and Client scripts, when to use each, and the common mistake that puts critical business logic in the wrong place."
 date: "2026-07-02"
+updated: "2026-08-07"
 tags: ["SuiteScript", "Development"]
 ---
 
@@ -48,7 +49,7 @@ A User Event script runs on NetSuite's servers and fires on every record save, r
 </table>
 </div>
 
-## What a Client Script actually is
+## When should you use a Client Script in NetSuite?
 
 A Client script runs in the user's browser while they are actively working with a record. It executes in response to user actions: opening a form, changing a field value, clicking a button, or submitting a record from the UI. The key word is "browser" - the script lives and runs on the client side, which means it only fires when a human is interacting with the form through NetSuite's web interface.
 
@@ -60,7 +61,7 @@ Client scripts are the right tool for:
 
 The `pageInit`, `fieldChanged`, `saveRecord`, and `validateField` entry points are all Client script functions - each one named for the user action that triggers it.
 
-## What a User Event Script actually is
+## When should you use a User Event Script instead?
 
 A User Event script runs on NetSuite's server, not in the browser. It fires when a record is created, edited, or deleted - regardless of how that action happened. Whether the record was saved by a user clicking Submit in the UI, by a CSV import, by a workflow action, by a RESTlet call, or by another SuiteScript script, the User Event script runs every single time.
 
@@ -73,7 +74,7 @@ User Event scripts are the right tool for:
 
 The `beforeLoad`, `beforeSubmit`, and `afterSubmit` entry points cover the three moments in a record's save lifecycle where you might need to intervene.
 
-## The mistake that causes intermittent failures
+## Why does SuiteScript business logic only fire sometimes?
 
 Putting critical business logic in a Client script seems reasonable at first. You add a `saveRecord` function that validates a field, it works perfectly in testing, and you move on. Then six months later someone imports 500 records via CSV and none of the validation ran. Or a workflow creates records and the expected logic never fires. Or an integration pushes data via RESTlet and the field that should have been auto-populated is blank.
 
@@ -81,13 +82,13 @@ The Client script was not broken. It worked exactly as designed - it ran when a 
 
 If a business rule must always apply - a required field check, a margin threshold validation, a status transition rule - it belongs in a User Event `beforeSubmit`. If it's about making the form easier to use, it belongs in a Client script. Knowing which is which before writing a line of code prevents the category of bugs that are hardest to diagnose because they don't fail consistently.
 
-## When to use both together
+## When do you need both a Client Script and a User Event Script?
 
 The two script types are not mutually exclusive. A well-designed customization often uses both: a Client script handles the real-time UX (instant feedback, dynamic fields, guided entry) while a User Event script enforces the underlying business rule on the server as a backstop. The Client script improves the experience for users working in the UI; the User Event script guarantees correctness regardless of how the record gets saved.
 
 This is especially important for validation logic. The Client script can catch and flag an error before the user submits, giving them a clear message in the moment. The User Event `beforeSubmit` catches the same error if the record comes in any other way, rejecting it with a meaningful error rather than letting bad data silently pass through.
 
-## The beforeLoad entry point
+## What is the beforeLoad entry point and when should you use it?
 
 User Event scripts have a third entry point that doesn't fit neatly into the "before or after save" framing: `beforeLoad`. This runs before a record is displayed to the user in the browser, it fires when the record is opened for view or edit, not when it's saved.
 
@@ -98,7 +99,7 @@ Use `beforeLoad` for:
 
 The important distinction: `beforeLoad` fires on view and edit modes, not on create. If the logic needs to run when a new record is opened in create mode, check `context.type === context.UserEventType.CREATE` inside the function before executing.
 
-## Checking context.type to control when scripts fire
+## How do you prevent a User Event Script from firing on imports and API saves?
 
 User Event scripts fire on every create, edit, delete, and copy of a record, but most scripts only need to run in some of those situations. The `context.type` check is how you scope execution:
 
@@ -113,7 +114,7 @@ The full set of types available on the context object: `CREATE`, `EDIT`, `DELETE
 
 The `XEDIT` type identifies mass updates. Scripts that perform additional record loads inside the function can hit governance limits during a mass update even if they run cleanly on single-record edits. If your script will ever run during a bulk update process, test it explicitly at volume.
 
-## Governance limits on server-side scripts
+## What governance limits apply to User Event Scripts?
 
 Client scripts run in the browser and are not subject to NetSuite's server-side governance limits. A Client script that makes multiple record loads inside a `fieldChanged` handler is a user experience performance problem, slow, but it will not be stopped by the platform.
 
@@ -121,7 +122,7 @@ User Event scripts run server-side and consume governance units. A `beforeSubmit
 
 The practical rule: never assume a script that runs cleanly on one record will scale linearly to hundreds. Test at the actual volume it will encounter, especially before a large import or integration push.
 
-## Debugging with the Script Execution Log
+## How do you debug a User Event Script that isn't firing as expected?
 
 When a User Event or Client script behaves unexpectedly, the Script Execution Log is the first place to check. It is at Customization > Scripting > Script Execution Log. Filter by script name and date to see recent executions, including any errors thrown, the user who triggered the execution, and the record that was being processed.
 
@@ -129,7 +130,7 @@ For Client scripts, `console.log()` outputs appear in the browser's developer to
 
 The most common cause of intermittent failures is a field value that resolves correctly when a user saves from the UI but resolves to null or an empty string during API saves, imports, or copy operations. Adding `log.debug()` calls at key decision points to log the actual runtime values is faster than trying to reproduce the exact conditions that caused the failure.
 
-## A practical way to decide
+## How do you decide whether to use a Client Script or User Event Script?
 
 Before writing a script, ask one question: does this logic need to run when the record is saved via API, import, or workflow, not just when a user clicks Submit in the browser?
 

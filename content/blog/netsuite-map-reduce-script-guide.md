@@ -2,6 +2,7 @@
 title: "NetSuite Map/Reduce Scripts: A Complete Guide with Working Examples"
 description: "How SuiteScript Map/Reduce works, when to use it over a Scheduled Script, what happens in each of the five stages, and a full deployable example you can adapt."
 date: "2026-07-18"
+updated: "2026-08-07"
 tags: ["SuiteScript", "Map/Reduce", "Performance", "Development"]
 ---
 
@@ -9,7 +10,7 @@ The first time most NetSuite developers encounter Map/Reduce is when a Scheduled
 
 This guide covers every stage of the Map/Reduce lifecycle, how to structure each one correctly, the governance limits that apply at each stage, and a complete working example that ties it all together.
 
-## Why Map/Reduce exists
+## Why can't a Scheduled Script handle large record volumes?
 
 A Scheduled Script processes records one at a time in a single execution thread. Record A finishes, then record B, then record C. If there are 10,000 records and each requires a search and a record load, the script runs all 10,000 sequentially until it either completes or exhausts its governance budget.
 
@@ -17,7 +18,7 @@ Map/Reduce breaks that workload into individual units and processes them in para
 
 The tradeoff: Map/Reduce requires a specific structure that Scheduled Scripts don't. You cannot share state between records the way you might in a loop. Each unit of work must be fully self-contained. Once that constraint is understood and embraced, the performance gains are significant and the framework becomes straightforward.
 
-## When to choose Map/Reduce over other script types
+## When should you use Map/Reduce instead of a Scheduled Script?
 
 **Use Map/Reduce when:**
 - You're processing more than a few hundred records and a Scheduled Script would need to yield and restart multiple times
@@ -36,7 +37,7 @@ The tradeoff: Map/Reduce requires a specific structure that Scheduled Scripts do
 
 The practical threshold: if your Scheduled Script currently needs more than one or two `task.rescheduleScript()` calls to complete a full run, it's a strong candidate for Map/Reduce.
 
-## The five stages
+## What are the five stages of a Map/Reduce script?
 
 Map/Reduce scripts have five stages. Each stage runs in its own execution context with its own governance budget, which is why Map/Reduce can handle workloads that would destroy a single-execution Scheduled Script.
 
@@ -273,7 +274,7 @@ First, if you don't iterate the error iterators, errors disappear silently. A `m
 
 Second, `summarize()` retries up to three times if it throws an error. Write it defensively, wrap the body in a try/catch if you're doing anything beyond logging, and log errors before the logic that might throw, not after.
 
-## Governance limits by stage
+## What governance limits apply at each Map/Reduce stage?
 
 Each stage runs in a separate context with a separate governance budget:
 
@@ -290,7 +291,7 @@ For `map()` at 1,000 units per invocation: a typical operation, one `record.load
 
 For a full breakdown of what each NetSuite operation costs in governance units, see [Governance Limit Exceeded: Causes and Fixes](/blog/netsuite-script-governance-limit).
 
-## A complete, deployable example
+## What does a complete Map/Reduce script look like?
 
 This script finds all customers with one or more invoices 90+ days overdue, groups the invoices by customer, and sends one consolidated email per customer. It demonstrates all five stages working together:
 
@@ -396,7 +397,7 @@ define(['N/search', 'N/record', 'N/email', 'N/log'], function(search, record, em
 
 To deploy: go to Customization > Scripting > Scripts > New, set the type to Map/Reduce, upload the file, then create a deployment. The script can be triggered manually from the deployment record or scheduled to run automatically.
 
-## Monitoring a running job
+## How do you monitor a Map/Reduce script while it is running?
 
 After triggering a deployment, the status appears on the deployment record itself:
 
@@ -409,7 +410,7 @@ The execution log (on the deployment's Execution Log tab) shows every `log.audit
 
 One practical note: Map/Reduce jobs run concurrently with other scripted processes in your account. NetSuite limits how many Map/Reduce workers can run simultaneously per account. If multiple Map/Reduce scripts are active at the same time, they share the available worker pool and run more slowly. Schedule heavy jobs during off-peak hours when other scripted activity is low.
 
-## Key design principles, summarized
+## What are the key design rules for reliable Map/Reduce scripts?
 
 - `getInputData()` returns a Search or Query object, it defines work, it does not do work
 - `map()` processes one item and writes one or more key-value pairs forward, it does not share state with other invocations
