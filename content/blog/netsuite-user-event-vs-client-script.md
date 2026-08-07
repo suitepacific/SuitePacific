@@ -10,6 +10,11 @@ The most common SuiteScript question from teams inheriting a customized NetSuite
 
 A User Event script runs on NetSuite's servers and fires on every record save, regardless of how the save happened: UI, CSV import, REST API call, workflow action, or another script. A Client Script runs in the browser and only fires when a user is actively working with a record form in NetSuite's web interface. The save path determines which one runs, and putting logic in the wrong type is one of the most common causes of intermittent NetSuite customization failures.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A Client Script runs in the user's browser and fires only when a user is actively working with a NetSuite record form, covering pageInit, fieldChanged, and saveRecord events. A User Event Script runs on NetSuite's servers and fires every time a record is created, edited, or deleted, regardless of whether a user triggered the save. This includes CSV imports, REST API calls, workflow actions, and saves from other scripts. Any business logic in a Client Script silently skips when records are saved outside the UI. Validation rules, required field enforcement, cross-record updates, and calculations that must apply to every save path belong in a User Event Script's beforeSubmit or afterSubmit entry point. Logic that is purely about the interactive form experience, such as real-time field validation, dynamic field visibility, or auto-populating fields, belongs in a Client Script. When uncertain, default to User Event: a missed save is harder to diagnose than a governance concern.</p>
+</div>
+
 <div style="overflow-x:auto;margin:2rem 0">
 <table style="width:100%;border-collapse:collapse;font-size:0.85rem;font-family:system-ui,-apple-system,sans-serif;min-width:480px">
 <thead>

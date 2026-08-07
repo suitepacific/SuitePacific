@@ -10,6 +10,11 @@ The first time most NetSuite developers encounter Map/Reduce is when a Scheduled
 
 This guide covers every stage of the Map/Reduce lifecycle, how to structure each one correctly, the governance limits that apply at each stage, and a complete working example that ties it all together.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A Map/Reduce script is a SuiteScript 2.x script type built for processing large record volumes in parallel. Unlike a Scheduled Script, which works through records one at a time in a single thread, Map/Reduce distributes work across multiple concurrent workers that NetSuite manages automatically. A job that would take a Scheduled Script 45 minutes to finish serially can complete in five to eight minutes with Map/Reduce. The framework has five stages: getInputData defines the record set, map processes each record independently, shuffle groups records by key, reduce aggregates grouped records, and summarize handles final reporting and error logging. Use Map/Reduce when a job processes more than a few hundred records, when records can be processed independently of each other, or when you need automatic retry handling at the individual record level so that a failure on one record does not abort the entire job.</p>
+</div>
+
 ## Why can't a Scheduled Script handle large record volumes?
 
 A Scheduled Script processes records one at a time in a single execution thread. Record A finishes, then record B, then record C. If there are 10,000 records and each requires a search and a record load, the script runs all 10,000 sequentially until it either completes or exhausts its governance budget.

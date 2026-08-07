@@ -8,6 +8,11 @@ tags: ["Post-Go-Live", "NetSuite"]
 
 The first 90 days after your implementation partner hands off the account are the highest-leverage period in your NetSuite history. Most of what's annoying or broken two years later was set in motion here, when decisions got made quickly to hit the go-live deadline rather than correctly. Here's what to prioritize before the implementation team is too far gone to ask.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The seven highest-priority items for the first 90 days after NetSuite go-live are: collecting documentation from the implementation team before they move on, auditing user roles and permissions for access that is broader than it needs to be, building exception saved searches that surface data quality problems while they are still small, setting up dashboards that reflect what each user group actually needs to see when they log in, documenting deployed customizations in plain language so the account is maintainable without the original developer, recreating the reports your team relied on in the previous system, and tracking every manual step during the first period close. Most of the debt in a mature NetSuite account was created in this window. Addressing these seven items in the first 90 days prevents the problems that become expensive and disruptive to untangle two years later.</p>
+</div>
+
 <figure style="margin:1.75rem 0">
 <svg viewBox="0 0 680 148" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
   <defs>

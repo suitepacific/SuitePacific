@@ -10,6 +10,11 @@ One of the most common questions on NetSuite implementation projects is some ver
 
 Here's a practical decision guide, organized around what each tool is actually designed for.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">SuiteFlow and SuiteScript are both NetSuite automation tools, but they solve different problems. SuiteFlow is a state-machine tool built for sequential business processes: approval routing, status tracking, and logic that non-developers need to maintain without touching code. It provides a visual audit trail of where each record is in a process and built-in multi-level approval support. SuiteScript is JavaScript-based code with direct access to all record types, external APIs, and bulk operations. It handles complex validation logic, cross-record updates, and large-volume processing through Scheduled Scripts and Map/Reduce jobs. The two tools overlap on simple automations such as field updates on save or email notifications. The decision comes down to who maintains the logic and how complex it is. When the process has defined states and non-developers need visibility, use SuiteFlow. When it requires computation, guaranteed enforcement on all save paths, or bulk processing, use SuiteScript.</p>
+</div>
+
 <div style="overflow-x:auto;margin:2rem 0;border-radius:10px;overflow:hidden;border:1px solid #d7e0f3">
 <table style="width:100%;border-collapse:collapse;font-size:0.875rem;font-family:system-ui,-apple-system,sans-serif;min-width:480px">
 <thead>

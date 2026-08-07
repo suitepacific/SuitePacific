@@ -12,6 +12,11 @@ SuiteScript 2.x customizations fail in predictable ways. Hard-coded internal IDs
 
 Here is what we check first, and what we build differently.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The eight SuiteScript 2.x practices that prevent the most common production failures are: use Map/Reduce instead of Scheduled Scripts for bulk jobs of more than a few hundred records; never hard-code internal IDs because they differ between sandbox and production; wrap external calls and risky operations in try/catch because timeouts and governance errors are routine; keep configuration values in script parameters or setup records rather than in code; place validation in beforeSubmit and cross-record updates in afterSubmit; batch searches before loops rather than calling inside them, since one search returning 500 rows costs less than 500 individual lookupFields calls; log key decision points at debug level and reserve error logging for things that need action; and document the business reason behind non-obvious code, not what the code does. A script that ignores these practices typically works on 50 records in sandbox and fails at 5,000 in production.</p>
+</div>
+
 <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:10px;overflow:hidden;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <div style="background:#14532d;padding:0.7rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem">
 <span style="display:flex;align-items:center;gap:8px"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#4ade80"></span><span style="font-size:0.68rem;font-weight:700;color:#dcfce7;letter-spacing:0.08em">SUITESCRIPT 2.x BEST PRACTICES: QUICK REFERENCE</span></span>
