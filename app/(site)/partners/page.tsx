@@ -67,9 +67,9 @@ const WHY_PARTNER = [
   },
   {
     icon: CheckCircle2,
-    title: "Oracle-Certified technical team",
+    title: "NetSuite-Certified technical team",
     description:
-      "Every engagement is delivered by Oracle-certified NetSuite professionals. When you refer a client to SuitePacific, you're sending them to a team with verified technical credentials.",
+      "Every engagement is delivered by NetSuite-certified professionals. When you refer a client to SuitePacific, you're sending them to a team with verified technical credentials.",
   },
   {
     icon: Zap,

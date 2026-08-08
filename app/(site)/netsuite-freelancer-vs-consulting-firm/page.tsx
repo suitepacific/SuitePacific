@@ -183,7 +183,7 @@ export default function FreelancerVsConsultingFirmPage() {
         <div className="mt-8 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <LeadFormLight />
         </div>
-        <p className="mt-3 text-xs text-brand-400">Oracle-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
+        <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
 
         {/* Intro */}
         <div className="prose prose-blue mt-10 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">

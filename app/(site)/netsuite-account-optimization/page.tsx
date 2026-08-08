@@ -91,7 +91,7 @@ const HOW_IT_WORKS = [
 const WHY_SP = [
   {
     icon: ShieldCheck,
-    title: "Oracle-Certified",
+    title: "NetSuite-Certified",
     description:
       "NetSuite SuiteCloud Developer II and Administrator Professional certifications. Verified technical credentials, not self-declared experience.",
   },
@@ -177,7 +177,7 @@ export default function AccountOptimizationPage() {
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <LeadFormLight />
         </div>
-        <p className="mt-3 text-xs text-brand-400">Oracle-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
+        <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
 
         <p className="mt-6 text-sm text-brand-400">
           NetSuite accounts that have been live for a few years accumulate technical debt the same

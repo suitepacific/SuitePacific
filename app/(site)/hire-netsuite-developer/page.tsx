@@ -199,7 +199,7 @@ const RED_FLAGS = [
 const WHY_SUITEPACIFIC = [
   {
     icon: ShieldCheck,
-    title: "Oracle-Certified Expertise",
+    title: "NetSuite-Certified Expertise",
     description:
       "Our developers hold Oracle NetSuite SuiteCloud Developer II and Administrator Professional certifications, verified technical knowledge, not self-declared.",
   },
@@ -338,11 +338,11 @@ const FREELANCER_ROWS = [
 export const metadata: Metadata = {
   title: "Hire a NetSuite Developer",
   description:
-    "Hire an Oracle-certified NetSuite developer for SuiteScript development, workflow automation, integrations, and post-go-live support. No long-term contracts.",
+    "Hire a NetSuite-certified developer for SuiteScript development, workflow automation, integrations, and post-go-live support. No long-term contracts.",
   alternates: { canonical: "/hire-netsuite-developer" },
   openGraph: {
     title: "Hire a NetSuite Developer",
-    description: "Hire an Oracle-certified NetSuite developer for SuiteScript development, workflow automation, integrations, and post-go-live support. No long-term contracts.",
+    description: "Hire a NetSuite-certified developer for SuiteScript development, workflow automation, integrations, and post-go-live support. No long-term contracts.",
     url: "https://suitepacific.com/hire-netsuite-developer",
     type: "website",
     images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
@@ -373,7 +373,7 @@ export default function HireNetSuiteDeveloperPage() {
           as="h1"
           eyebrow="NetSuite Development"
           title="Hire a NetSuite Developer"
-          subtitle="Oracle-Certified NetSuite Developers for Customization, Automation, Integrations & Ongoing Support"
+          subtitle="NetSuite-Certified Developers for Customization, Automation, Integrations & Ongoing Support"
           align="left"
         />
 
@@ -383,7 +383,7 @@ export default function HireNetSuiteDeveloperPage() {
             Looking to hire a NetSuite developer who can work on your existing NetSuite account?
             Whether you need a custom SuiteScript, workflow automation, advanced PDF templates,
             integrations with third-party systems, or ongoing post-go-live support, SuitePacific
-            provides experienced Oracle-certified NetSuite developers who become an extension of
+            provides experienced NetSuite-certified developers who become an extension of
             your team.
           </p>
           <p>
@@ -551,7 +551,7 @@ export default function HireNetSuiteDeveloperPage() {
             Many businesses are unsure whether they need an administrator or a developer. Here&apos;s the practical difference:
           </p>
           <div className="mt-5 rounded-2xl border border-brand-100 overflow-hidden">
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2">
               <div className="bg-brand-50/60 p-4 sm:p-5">
                 <p className="font-semibold text-brand-900 text-sm mb-3">NetSuite Administrator</p>
                 {ADMIN_ROWS.map((r) => (

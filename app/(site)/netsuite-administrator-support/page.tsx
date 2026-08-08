@@ -97,7 +97,7 @@ const HOW_IT_WORKS = [
 const COMPARE_ROWS = [
   { label: "Cost", fullTime: "Full-time salary + benefits + overhead", sp: "Dedicated monthly support sized to the account" },
   { label: "Availability", fullTime: "One person, one schedule", sp: "Same or next business day on most requests" },
-  { label: "Expertise", fullTime: "Varies by hire", sp: "Oracle-certified Administrator Professional" },
+  { label: "Expertise", fullTime: "Varies by hire", sp: "NetSuite-certified, Administrator Professional" },
   { label: "Continuity", fullTime: "Knowledge leaves with the employee", sp: "Account context retained across all requests" },
   { label: "Scalability", fullTime: "Headcount tied to workload changes", sp: "Hours scale up or down month to month" },
   { label: "Coverage", fullTime: "Admin only", sp: "Admin + development when requirements go beyond configuration" },
@@ -106,7 +106,7 @@ const COMPARE_ROWS = [
 const WHY_SP = [
   {
     icon: ShieldCheck,
-    title: "Oracle-Certified",
+    title: "NetSuite-Certified",
     description:
       "NetSuite SuiteCloud Developer II and Administrator Professional certifications. Verified technical credentials, not self-declared experience.",
   },
@@ -201,7 +201,7 @@ export default function NetSuiteAdministratorSupportPage() {
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <LeadFormLight />
         </div>
-        <p className="mt-3 text-xs text-brand-400">Oracle-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
+        <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
 
         <p className="mt-6 text-sm text-brand-400">
           When a new department is added, a role needs to change, or month-end closes with a period
