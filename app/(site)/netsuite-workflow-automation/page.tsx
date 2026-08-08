@@ -8,10 +8,9 @@ import {
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
-import { LeadForm } from "@/components/sections/LeadForm";
+import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 
 const PAIN_POINTS = [
@@ -175,21 +174,23 @@ export default function WorkflowAutomationPage() {
           align="left"
         />
 
+        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <LeadFormLight />
+        </div>
+        <p className="mt-3 text-xs text-brand-400">Oracle-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
+
         <p className="mt-6 text-sm text-brand-400">
           A well-built workflow removes the need for someone to manually check whether an approval
           has been sitting for three days, remember to send a notification when a status changes, or
           update three related records every time a transaction closes. Done incorrectly, workflows
           that double-trigger or conflict with scripts create problems that are difficult to diagnose.
+          SuitePacific designs, builds, and maintains these automations for post-go-live NetSuite accounts.
           See our{" "}
           <Link href="/blog/workflow-automation-mistakes" className="text-accent hover:underline">
             workflow automation mistakes guide
           </Link>{" "}
           for the most common failure modes.
         </p>
-
-        <div className="mt-6">
-          <Button href="#contact">Book a Free Consultation</Button>
-        </div>
 
         {/* Pain points */}
         <div className="mt-14" data-section="pain-points">
@@ -292,16 +293,6 @@ export default function WorkflowAutomationPage() {
         </div>
 
         <ServiceFaqSection items={FAQ} />
-
-        <div className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
-          <p className="text-brand-900 font-semibold text-lg">Have a manual process that should be automated?</p>
-          <p className="mt-2 text-sm text-brand-400">
-            Tell us what it is and we will tell you whether SuiteFlow, a script, or both is the right fit.
-          </p>
-          <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
-            <LeadForm />
-          </div>
-        </div>
       </div>
     </main>
   );

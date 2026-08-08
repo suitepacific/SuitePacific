@@ -640,16 +640,16 @@ export default function HireNetSuiteDeveloperPage() {
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-5">
           {[
             {
-              title: "Hourly",
-              description: "Ideal for small enhancements, troubleshooting, or a one-off task with a defined scope.",
+              title: "On Demand",
+              description: "Flexible access to NetSuite expertise for smaller tasks, troubleshooting, or questions as they come up. Pay only for what you use.",
             },
             {
-              title: "Fixed-Price Project",
+              title: "Project Basis",
               description: "Best for clearly defined requirements with a fixed scope and a known deliverable.",
             },
             {
-              title: "Monthly Retainer",
-              description: "Suitable for organizations that require continuous development, enhancements, and technical support.",
+              title: "Dedicated Monthly Support",
+              description: "Ongoing development, fixes, administration, and account upkeep. Most clients with regular NetSuite needs choose this model.",
               highlight: true,
             },
           ].map((model) => (
@@ -665,8 +665,7 @@ export default function HireNetSuiteDeveloperPage() {
           ))}
         </div>
         <p className="mt-4 text-sm text-brand-400">
-          Many clients prefer a monthly retained-hours model because it provides predictable access
-          to experienced NetSuite developers without committing to a long-term contract.
+          Most clients with ongoing NetSuite needs choose dedicated monthly support: predictable access to experienced developers, applied to whatever comes up each month, with no long-term contract.
         </p>
 
         {/* Our Development Process */}

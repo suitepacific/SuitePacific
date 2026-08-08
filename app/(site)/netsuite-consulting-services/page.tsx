@@ -9,46 +9,38 @@ import {
   Gauge,
   ShieldCheck,
   Headphones,
+  AlertCircle,
+  RefreshCcw,
+  Wrench,
+  Users,
+  Award,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
-import { LeadForm } from "@/components/sections/LeadForm";
+import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 
-const FAQ = [
+const PAIN_POINTS = [
   {
-    question: "What is the difference between a NetSuite consulting firm and an implementation partner?",
-    answer:
-      "Implementation partners handle go-live projects: initial configuration, data migration, and training. Consulting firms like SuitePacific work with companies already live on NetSuite, handling the ongoing technical work that follows: custom scripts, automation, integrations, optimization, and support as the business grows and changes.",
+    icon: AlertCircle,
+    title: "Your implementation partner's scope ended at go-live.",
+    description:
+      "The team that built your account was scoped for go-live only. Ongoing development, fixes, and new customizations after that were never part of the engagement.",
   },
   {
-    question: "Can you work alongside our internal NetSuite administrator?",
-    answer:
-      "Yes, and this is common. Internal admins handle day-to-day configuration and user questions. We handle the development work that requires SuiteScript, complex automation, or external integrations: the technical layer that goes beyond what configuration can reach.",
+    icon: RefreshCcw,
+    title: "Technical work is piling up with nowhere to go.",
+    description:
+      "Scripts need updating, automations need building, old customizations nobody understands are breaking. Without a dedicated technical team, the backlog grows.",
   },
   {
-    question: "Do you work with companies that already have a managed services provider?",
-    answer:
-      "Yes. We take over accounts from other providers regularly, and we also work alongside existing support arrangements when the scope is defined clearly. Transitions involve a documented handoff of active customizations and known issues.",
-  },
-  {
-    question: "How is consulting work scoped and priced?",
-    answer:
-      "Project work is scoped before anything is built: a brief spec covering the trigger, the logic, the output, and the edge cases, agreed before work starts. Ongoing engagements work on a monthly retained hours model applied to whatever comes up. Both options are month-to-month with no long-term contract.",
-  },
-  {
-    question: "Can you take over scripts and automations built by a previous developer?",
-    answer:
-      "Yes, and this is one of the most common starting points. We review the existing code, document what it does, identify any issues, and take ownership of ongoing maintenance and improvements. We read the account first; you do not need to brief us on the full history before work can begin.",
-  },
-  {
-    question: "Which industries do you work with?",
-    answer:
-      "We work across industries: professional services, e-commerce, manufacturing, software, and non-profit. NetSuite's customization layer behaves the same regardless of vertical; the business rules change but the technical approach does not.",
+    icon: Wrench,
+    title: "A generalist is not a substitute for a specialist.",
+    description:
+      "NetSuite has its own governance model, a twice-yearly release cycle, and a scripting environment unlike standard JavaScript. A developer learning it does so at your expense.",
   },
 ];
 
@@ -132,12 +124,64 @@ const HOW_IT_WORKS = [
   },
 ];
 
-const WHO_ITS_FOR = [
-  "A customization backlog that has grown faster than the capacity to address it",
-  "Scripts or workflows from a prior developer that nobody currently understands",
-  "A new business requirement (new product line, acquisition, new sales channel) that needs NetSuite changes",
-  "A performance or reliability problem that has been tolerated too long",
-  "An implementation partner whose scope ended at go-live and is no longer available",
+const WHY_SP = [
+  {
+    icon: ShieldCheck,
+    title: "Oracle-Certified",
+    description:
+      "NetSuite SuiteCloud Developer II and Administrator Professional certifications. Verified technical credentials, not self-declared experience.",
+  },
+  {
+    icon: Users,
+    title: "Direct Access",
+    description:
+      "You communicate directly with the person doing the work. No ticket system, no account manager as an intermediary.",
+  },
+  {
+    icon: RefreshCcw,
+    title: "Context Retained",
+    description:
+      "We maintain ongoing knowledge of your account. Each request builds on the last without re-discovery or briefing a new developer.",
+  },
+  {
+    icon: Award,
+    title: "NetSuite-Only Focus",
+    description:
+      "We work exclusively in NetSuite. No other platforms, no generalist web development. Every hour goes into solving NetSuite problems.",
+  },
+];
+
+const FAQ = [
+  {
+    question: "What is the difference between a NetSuite consulting firm and an implementation partner?",
+    answer:
+      "Implementation partners handle go-live projects: initial configuration, data migration, and training. Consulting firms like SuitePacific work with companies already live on NetSuite, handling the ongoing technical work that follows: custom scripts, automation, integrations, optimization, and support as the business grows and changes.",
+  },
+  {
+    question: "Can you work alongside our internal NetSuite administrator?",
+    answer:
+      "Yes, and this is common. Internal admins handle day-to-day configuration and user questions. We handle the development work that requires SuiteScript, complex automation, or external integrations: the technical layer that goes beyond what configuration can reach.",
+  },
+  {
+    question: "Do you work with companies that already have a managed services provider?",
+    answer:
+      "Yes. We take over accounts from other providers regularly, and we also work alongside existing support arrangements when the scope is defined clearly. Transitions involve a documented handoff of active customizations and known issues.",
+  },
+  {
+    question: "How is consulting work scoped and priced?",
+    answer:
+      "SuitePacific offers three engagement models: dedicated monthly support (hours applied to whatever comes up each month), on-demand access for occasional requests without a monthly commitment, and project-based engagements for defined builds with an agreed scope and deliverable. All are month-to-month with no long-term contract.",
+  },
+  {
+    question: "Can you take over scripts and automations built by a previous developer?",
+    answer:
+      "Yes, and this is one of the most common starting points. We review the existing code, document what it does, identify any issues, and take ownership of ongoing maintenance and improvements. We read the account first; you do not need to brief us on the full history before work can begin.",
+  },
+  {
+    question: "Which industries do you work with?",
+    answer:
+      "We work across industries: professional services, e-commerce, manufacturing, software, and non-profit. NetSuite's customization layer behaves the same regardless of vertical; the business rules change but the technical approach does not.",
+  },
 ];
 
 export const metadata: Metadata = {
@@ -180,19 +224,44 @@ export default function NetSuiteConsultingServicesPage() {
           align="left"
         />
 
+        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <LeadFormLight />
+        </div>
+        <p className="mt-3 text-xs text-brand-400">Oracle-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
+
         <p className="mt-6 text-sm text-brand-400">
           Implementation partners get you to go-live. Once that engagement closes, the ongoing
           technical work (new customizations, integrations, automation, fixes) needs a different
-          kind of partner. That is where a consulting firm fits.
+          kind of partner. SuitePacific is that firm. We work exclusively with companies already
+          live on NetSuite, handling the ongoing technical work that continues after implementation.
         </p>
 
-        <div className="mt-6">
-          <Button href="#contact">Book a Free Consultation</Button>
+        {/* Pain points */}
+        <div className="mt-14" data-section="pain-points">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">
+            The situation post-go-live companies are in
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            {PAIN_POINTS.map((item) => (
+              <Card key={item.title} className="p-5 flex flex-col gap-3">
+                <IconBadge icon={item.icon} />
+                <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
+                <p className="text-sm text-brand-400">{item.description}</p>
+              </Card>
+            ))}
+          </div>
+          <p className="mt-5 text-sm text-brand-400">
+            Not live yet? See our{" "}
+            <Link href="/netsuite-implementation-partner-vs-managed-support" className="text-accent hover:underline">
+              implementation partner vs. managed support guide
+            </Link>
+            {" "}instead.
+          </p>
         </div>
 
-        {/* Services grid */}
+        {/* What we handle */}
         <div className="mt-14" data-section="services">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Services</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">What we handle</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {SERVICES.map((service) => (
               <Link key={service.href} href={service.href} className="group">
@@ -212,7 +281,7 @@ export default function NetSuiteConsultingServicesPage() {
 
         {/* How it works */}
         <div className="mt-14" data-section="how-it-works">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">How engagements work</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">How it works</h2>
           <div className="space-y-4">
             {HOW_IT_WORKS.map((item) => (
               <div key={item.step} className="flex items-start gap-5">
@@ -227,65 +296,27 @@ export default function NetSuiteConsultingServicesPage() {
             ))}
           </div>
           <p className="mt-5 text-sm text-brand-400">
-            Most clients mix both models: project work for defined builds, ongoing retained hours
-            for everything else. Both are month-to-month with no minimum commitment.
+            Most clients mix models: dedicated monthly support for ongoing work, project-based for defined builds, and on-demand for occasional requests. All are month-to-month with no minimum commitment.
           </p>
         </div>
 
-        {/* Who this is for */}
-        <div className="mt-14" data-section="who-its-for">
-          <h2 className="text-lg font-semibold text-brand-900 mb-4">Who this is for</h2>
-          <p className="text-sm text-brand-400 mb-5">
-            Companies that went live on NetSuite and need technical work their internal team
-            cannot handle alone. The typical situation is some combination of:
-          </p>
-          <ul className="space-y-3">
-            {WHO_ITS_FOR.map((item) => (
-              <li key={item} className="flex items-start gap-3 text-sm text-brand-600">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent shrink-0 mt-2" />
-                {item}
-              </li>
+        {/* Why SuitePacific */}
+        <div className="mt-14" data-section="why-suitepacific">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why companies choose SuitePacific</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {WHY_SP.map((item) => (
+              <Card key={item.title} className="p-5 flex items-start gap-4">
+                <IconBadge icon={item.icon} />
+                <div>
+                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
+                  <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
+                </div>
+              </Card>
             ))}
-          </ul>
-          <p className="mt-5 text-sm text-brand-400">
-            If you have not gone live yet and are looking for an implementation partner, that is a
-            different engagement; we do not handle initial implementations. See our{" "}
-            <Link href="/netsuite-implementation-partner-vs-managed-support" className="text-accent hover:underline">
-              implementation partner vs. managed support guide
-            </Link>{" "}
-            for context.
-          </p>
-        </div>
-
-        {/* Specialist advantage */}
-        <div className="mt-14 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6" data-section="specialist-advantage">
-          <h2 className="font-semibold text-brand-900 text-base mb-3">
-            What a NetSuite specialist brings that a generalist does not
-          </h2>
-          <p className="text-sm text-brand-400">
-            NetSuite has a deep API surface, a governance model, a twice-yearly release cycle that
-            introduces platform changes, and a scripting environment with its own behavior distinct
-            from standard JavaScript. A developer encountering all of that for the first time does
-            so at your expense. A specialist has already solved the common problems: governance
-            limit failures, script deployment conflicts, workflow execution order, the behavioral
-            differences between Sandbox and Production. We work exclusively in NetSuite. No other
-            platforms, no generalist web development.
-          </p>
+          </div>
         </div>
 
         <ServiceFaqSection items={FAQ} />
-
-        {/* Inline form */}
-        <div id="contact" className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
-          <p className="text-brand-900 font-semibold text-lg">Need a NetSuite consulting team?</p>
-          <p className="mt-2 text-sm text-brand-400">
-            Tell us what you are working with and what you need. We will let you know exactly how
-            we can help.
-          </p>
-          <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
-            <LeadForm />
-          </div>
-        </div>
       </div>
     </main>
   );

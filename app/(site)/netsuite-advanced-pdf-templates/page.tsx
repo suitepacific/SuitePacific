@@ -8,10 +8,9 @@ import {
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
-import { LeadForm } from "@/components/sections/LeadForm";
+import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 
 const PAIN_POINTS = [
@@ -175,20 +174,22 @@ export default function AdvancedPdfTemplatesPage() {
           align="left"
         />
 
+        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <LeadFormLight />
+        </div>
+        <p className="mt-3 text-xs text-brand-400">Oracle-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
+
         <p className="mt-6 text-sm text-brand-400">
           NetSuite&apos;s standard PDF templates break down quickly when documents need conditional
           sections, complex line-level formatting, or multi-brand logos. The Advanced PDF/HTML
           template engine (built on FreeMarker) is significantly more capable, but requires knowing
-          the template language and testing against real records with edge cases. See our{" "}
+          the template language and testing against real records with edge cases. SuitePacific
+          builds and maintains these templates for post-go-live NetSuite accounts. See our{" "}
           <Link href="/blog/advanced-pdf-template-mistakes" className="text-accent hover:underline">
             Advanced PDF template mistakes guide
           </Link>{" "}
           for the most common issues we find and fix.
         </p>
-
-        <div className="mt-6">
-          <Button href="#contact">Book a Free Consultation</Button>
-        </div>
 
         {/* Pain points */}
         <div className="mt-14" data-section="pain-points">
@@ -287,16 +288,6 @@ export default function AdvancedPdfTemplatesPage() {
         </div>
 
         <ServiceFaqSection items={FAQ} />
-
-        <div id="contact" className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
-          <p className="text-brand-900 font-semibold text-lg">Need professional NetSuite documents?</p>
-          <p className="mt-2 text-sm text-brand-400">
-            Tell us what you need the output to look like and we will build it.
-          </p>
-          <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
-            <LeadForm />
-          </div>
-        </div>
       </div>
     </main>
   );

@@ -8,10 +8,9 @@ import {
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
-import { LeadForm } from "@/components/sections/LeadForm";
+import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 
 const PAIN_POINTS = [
@@ -175,20 +174,22 @@ export default function SavedSearchesDashboardsPage() {
           align="left"
         />
 
+        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <LeadFormLight />
+        </div>
+        <p className="mt-3 text-xs text-brand-400">Oracle-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
+
         <p className="mt-6 text-sm text-brand-400">
           Most teams that rely on Excel exports are doing it because the right saved search was
           never built. NetSuite&apos;s search engine supports formula fields, summary types, cross-record
           joins, and live dashboard portlets. The problem is usually that nobody had time to build
-          them properly after go-live. See our{" "}
+          them properly after go-live. SuitePacific builds these searches and dashboards for
+          post-go-live NetSuite accounts. See our{" "}
           <Link href="/blog/netsuite-saved-search-tips" className="text-accent hover:underline">
             NetSuite saved search tips
           </Link>{" "}
           for the techniques we use most often.
         </p>
-
-        <div className="mt-6">
-          <Button href="#contact">Book a Free Consultation</Button>
-        </div>
 
         {/* Pain points */}
         <div className="mt-14" data-section="pain-points">
@@ -283,16 +284,6 @@ export default function SavedSearchesDashboardsPage() {
         </div>
 
         <ServiceFaqSection items={FAQ} />
-
-        <div id="contact" className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
-          <p className="text-brand-900 font-semibold text-lg">Still pulling NetSuite data into Excel?</p>
-          <p className="mt-2 text-sm text-brand-400">
-            Tell us what you need to see and we will build it inside NetSuite instead.
-          </p>
-          <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
-            <LeadForm />
-          </div>
-        </div>
       </div>
     </main>
   );

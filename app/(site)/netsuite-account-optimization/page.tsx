@@ -8,10 +8,9 @@ import {
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
-import { LeadForm } from "@/components/sections/LeadForm";
+import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 
 const PAIN_POINTS = [
@@ -175,21 +174,24 @@ export default function AccountOptimizationPage() {
           align="left"
         />
 
+        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <LeadFormLight />
+        </div>
+        <p className="mt-3 text-xs text-brand-400">Oracle-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
+
         <p className="mt-6 text-sm text-brand-400">
           NetSuite accounts that have been live for a few years accumulate technical debt the same
           way any software system does: scripts added in a hurry, custom fields from projects that
           ended, workflows that predate a process change. None of it causes an immediate outage,
           but it adds up to an account that loads slowly and is increasingly difficult to manage.
+          SuitePacific handles this cleanup for live NetSuite accounts, auditing before touching
+          anything and documenting every change.
           See our{" "}
           <Link href="/blog/netsuite-account-performance" className="text-accent hover:underline">
             NetSuite account performance guide
           </Link>{" "}
           for the specific things we check first.
         </p>
-
-        <div className="mt-6">
-          <Button href="#contact">Book a Free Consultation</Button>
-        </div>
 
         {/* Pain points */}
         <div className="mt-14" data-section="pain-points">
@@ -287,16 +289,6 @@ export default function AccountOptimizationPage() {
         </div>
 
         <ServiceFaqSection items={FAQ} />
-
-        <div id="contact" className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
-          <p className="text-brand-900 font-semibold text-lg">Is your NetSuite account getting slower or harder to manage?</p>
-          <p className="mt-2 text-sm text-brand-400">
-            Tell us what you are seeing and we will identify what is causing it.
-          </p>
-          <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
-            <LeadForm />
-          </div>
-        </div>
       </div>
     </main>
   );

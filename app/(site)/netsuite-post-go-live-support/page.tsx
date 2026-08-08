@@ -16,10 +16,9 @@ import {
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
-import { LeadForm } from "@/components/sections/LeadForm";
+import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 
 const PAIN_POINTS = [
@@ -103,14 +102,6 @@ const HOW_IT_WORKS = [
   },
 ];
 
-const WHO_ITS_FOR = [
-  "Companies past go-live without a dedicated technical team for ongoing changes",
-  "Accounts with a backlog of requests that have accumulated since implementation",
-  "Teams with scripts or workflows from a previous developer that nobody currently understands",
-  "Organizations that recently parted ways with their managed services provider",
-  "Businesses that need both administration and development handled by the same team",
-];
-
 const WHY_SP = [
   {
     icon: ShieldCheck,
@@ -147,7 +138,7 @@ const FAQ = [
   {
     question: "How is support billed?",
     answer:
-      "We work on a monthly retainer: a fixed block of hours applied to whatever work comes up that month. This works better than per-ticket billing for accounts that have a steady but unpredictable stream of customization and development requests.",
+      "SuitePacific offers three engagement models: dedicated monthly support (a fixed block of hours applied to whatever comes up each month), on-demand access for occasional requests without a monthly commitment, and project-based engagements for defined builds with an agreed scope. Accounts with a steady stream of development and configuration needs typically choose dedicated monthly support; it provides consistent access without the overhead of scoping each individual request.",
   },
   {
     question: "Do you require a long-term contract?",
@@ -206,15 +197,17 @@ export default function PostGoLiveSupportPage() {
           align="left"
         />
 
+        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <LeadFormLight />
+        </div>
+        <p className="mt-3 text-xs text-brand-400">Oracle-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
+
         <p className="mt-6 text-sm text-brand-400">
           Implementation partners are scoped for go-live. Once that engagement closes, the
-          ongoing technical work has nowhere to go. Post-go-live support fills that gap on a
-          continuous basis rather than as a new project each time something is needed.
+          ongoing technical work has nowhere to go. SuitePacific fills that gap: ongoing
+          development, automation, and support for companies already live on NetSuite, as the
+          account continues to grow and change after implementation.
         </p>
-
-        <div className="mt-6">
-          <Button href="#contact">Book a Free Consultation</Button>
-        </div>
 
         {/* Pain points */}
         <div className="mt-14" data-section="pain-points">
@@ -230,6 +223,14 @@ export default function PostGoLiveSupportPage() {
               </Card>
             ))}
           </div>
+          <p className="mt-5 text-sm text-brand-400">
+            If you have not gone live yet and are looking for an implementation partner, that is
+            a different engagement. See{" "}
+            <Link href="/netsuite-implementation-partner-vs-managed-support" className="text-accent hover:underline">
+              implementation partner vs. managed support
+            </Link>{" "}
+            for that distinction.
+          </p>
         </div>
 
         {/* What we cover */}
@@ -269,30 +270,9 @@ export default function PostGoLiveSupportPage() {
           </div>
         </div>
 
-        {/* Who this is for */}
-        <div className="mt-14" data-section="who-its-for">
-          <h2 className="text-lg font-semibold text-brand-900 mb-4">Who this is for</h2>
-          <ul className="space-y-3">
-            {WHO_ITS_FOR.map((item) => (
-              <li key={item} className="flex items-start gap-3 text-sm text-brand-600">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent shrink-0 mt-2" />
-                {item}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-5 text-sm text-brand-400">
-            If you have not gone live yet and are looking for an implementation partner, that is
-            a different engagement. See{" "}
-            <Link href="/netsuite-implementation-partner-vs-managed-support" className="text-accent hover:underline">
-              implementation partner vs. managed support
-            </Link>{" "}
-            for that distinction.
-          </p>
-        </div>
-
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why SuitePacific</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why companies choose SuitePacific</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">
@@ -338,18 +318,6 @@ export default function PostGoLiveSupportPage() {
         </div>
 
         <ServiceFaqSection items={FAQ} />
-
-        {/* Inline form */}
-        <div id="contact" className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
-          <p className="text-brand-900 font-semibold text-lg">Already live on NetSuite?</p>
-          <p className="mt-2 text-sm text-brand-400">
-            Tell us what is not working or what you need built next. We will respond within one
-            business day.
-          </p>
-          <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
-            <LeadForm />
-          </div>
-        </div>
       </div>
     </main>
   );

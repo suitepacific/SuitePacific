@@ -8,10 +8,9 @@ import {
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
-import { LeadForm } from "@/components/sections/LeadForm";
+import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 
 const PAIN_POINTS = [
@@ -95,11 +94,13 @@ const HOW_IT_WORKS = [
   },
 ];
 
-const WHO_ITS_FOR = [
-  "Companies live on NetSuite without a dedicated internal NetSuite administrator",
-  "Internal admins who are stretched across other responsibilities and need technical backup",
-  "Teams with a backlog of configuration requests that have accumulated since go-live",
-  "Accounts where access and roles have not been reviewed since implementation",
+const COMPARE_ROWS = [
+  { label: "Cost", fullTime: "Full-time salary + benefits + overhead", sp: "Dedicated monthly support sized to the account" },
+  { label: "Availability", fullTime: "One person, one schedule", sp: "Same or next business day on most requests" },
+  { label: "Expertise", fullTime: "Varies by hire", sp: "Oracle-certified Administrator Professional" },
+  { label: "Continuity", fullTime: "Knowledge leaves with the employee", sp: "Account context retained across all requests" },
+  { label: "Scalability", fullTime: "Headcount tied to workload changes", sp: "Hours scale up or down month to month" },
+  { label: "Coverage", fullTime: "Admin only", sp: "Admin + development when requirements go beyond configuration" },
 ];
 
 const WHY_SP = [
@@ -197,21 +198,24 @@ export default function NetSuiteAdministratorSupportPage() {
           align="left"
         />
 
+        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <LeadFormLight />
+        </div>
+        <p className="mt-3 text-xs text-brand-400">Oracle-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
+
         <p className="mt-6 text-sm text-brand-400">
           When a new department is added, a role needs to change, or month-end closes with a period
           lock question, that work falls to whoever is available. NetSuite administrator support
           covers the ongoing configuration that keeps the account current with the business, without
-          requiring custom development. For situations where requirements go beyond configuration,
+          requiring custom development. SuitePacific provides this for live NetSuite accounts
+          on a month-to-month basis, with most requests handled same or next business day.
+          For situations where requirements go beyond configuration,
           see our{" "}
           <Link href="/netsuite-suitescript-development" className="text-accent hover:underline">
             SuiteScript development page
           </Link>
           .
         </p>
-
-        <div className="mt-6">
-          <Button href="#contact">Book a Free Consultation</Button>
-        </div>
 
         {/* Pain points */}
         <div className="mt-14" data-section="pain-points">
@@ -264,34 +268,41 @@ export default function NetSuiteAdministratorSupportPage() {
           </div>
         </div>
 
-        {/* Who this is for */}
-        <div className="mt-14" data-section="who-its-for">
-          <h2 className="text-lg font-semibold text-brand-900 mb-4">Who this is for</h2>
-          <ul className="space-y-3">
-            {WHO_ITS_FOR.map((item) => (
-              <li key={item} className="flex items-start gap-3 text-sm text-brand-600">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent shrink-0 mt-2" />
-                {item}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-5 text-sm text-brand-400">
+        {/* Comparison table */}
+        <div className="mt-14" data-section="comparison">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Full-time admin vs. SuitePacific</h2>
+          <div className="overflow-x-auto rounded-xl border border-brand-100">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-brand-100 bg-brand-50/40">
+                  <th className="py-3 px-4 text-left font-semibold text-brand-900 w-1/4"></th>
+                  <th className="py-3 px-4 text-left font-semibold text-brand-600">Full-time admin</th>
+                  <th className="py-3 px-4 text-left font-semibold text-accent">SuitePacific</th>
+                </tr>
+              </thead>
+              <tbody>
+                {COMPARE_ROWS.map((row, i) => (
+                  <tr key={row.label} className={i % 2 === 0 ? "bg-white" : "bg-brand-50/20"}>
+                    <td className="py-3 px-4 font-semibold text-brand-900">{row.label}</td>
+                    <td className="py-3 px-4 text-brand-400">{row.fullTime}</td>
+                    <td className="py-3 px-4 text-brand-700">{row.sp}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 text-sm text-brand-400">
             Administration work is typically part of a broader{" "}
             <Link href="/netsuite-post-go-live-support" className="text-accent hover:underline">
               post-go-live support engagement
             </Link>
-            , alongside any development work the account requires. For accounts that have
-            accumulated technical debt, see{" "}
-            <Link href="/netsuite-account-optimization" className="text-accent hover:underline">
-              account optimization
-            </Link>
-            .
+            , alongside development work the account requires.
           </p>
         </div>
 
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why SuitePacific</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why companies choose SuitePacific</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">
@@ -319,16 +330,6 @@ export default function NetSuiteAdministratorSupportPage() {
         </div>
 
         <ServiceFaqSection items={FAQ} />
-
-        <div id="contact" className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
-          <p className="text-brand-900 font-semibold text-lg">Need someone to keep your NetSuite account current?</p>
-          <p className="mt-2 text-sm text-brand-400">
-            Tell us what has been piling up and we will tell you how we would approach it.
-          </p>
-          <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
-            <LeadForm />
-          </div>
-        </div>
       </div>
     </main>
   );

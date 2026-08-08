@@ -8,10 +8,9 @@ import {
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
-import { LeadForm } from "@/components/sections/LeadForm";
+import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 
 const PAIN_POINTS = [
@@ -171,10 +170,17 @@ export default function SuiteScriptDevelopmentPage() {
           align="left"
         />
 
+        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <LeadFormLight />
+        </div>
+        <p className="mt-3 text-xs text-brand-400">Oracle-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
+
         <p className="mt-6 text-sm text-brand-400">
           SuiteScript is NetSuite&apos;s built-in JavaScript development platform. When configuration
           runs out, a script in the right place automates what currently takes an hour, enforces
-          a rule that workflows cannot, or connects NetSuite to an external system. See our{" "}
+          a rule that workflows cannot, or connects NetSuite to an external system. SuitePacific
+          builds and maintains these scripts for post-go-live NetSuite accounts, Sandbox-tested
+          against your real record types before touching Production. See our{" "}
           <Link href="/blog/suitescript-best-practices" className="text-accent hover:underline">
             SuiteScript best practices guide
           </Link>{" "}
@@ -184,10 +190,6 @@ export default function SuiteScriptDevelopmentPage() {
           </Link>{" "}
           for background.
         </p>
-
-        <div className="mt-6">
-          <Button href="#contact">Book a Free Consultation</Button>
-        </div>
 
         {/* Pain points */}
         <div className="mt-14" data-section="pain-points">
@@ -224,7 +226,7 @@ export default function SuiteScriptDevelopmentPage() {
 
         {/* When you need a script */}
         <div className="mt-14" data-section="when-config-runs-out">
-          <h2 className="text-lg font-semibold text-brand-900 mb-4">When configuration runs out</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-4">When configuration isn&apos;t enough</h2>
           <p className="text-sm text-brand-400 mb-5">
             Standard NetSuite configuration covers a lot. These are the consistent patterns where a script becomes necessary:
           </p>
@@ -240,7 +242,7 @@ export default function SuiteScriptDevelopmentPage() {
 
         {/* How it works */}
         <div className="mt-14" data-section="how-it-works">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">How we approach SuiteScript work</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">How it works</h2>
           <div className="space-y-4">
             {HOW_IT_WORKS.map((item) => (
               <div key={item.step} className="flex items-start gap-5">
@@ -270,7 +272,7 @@ export default function SuiteScriptDevelopmentPage() {
 
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why SuitePacific</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why companies choose SuitePacific</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">
@@ -334,16 +336,6 @@ export default function SuiteScriptDevelopmentPage() {
         </div>
 
         <ServiceFaqSection items={FAQ} />
-
-        <div id="contact" className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
-          <p className="text-brand-900 font-semibold text-lg">Need a custom NetSuite script?</p>
-          <p className="mt-2 text-sm text-brand-400">
-            Tell us what you are trying to automate or fix and we will scope it out.
-          </p>
-          <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
-            <LeadForm />
-          </div>
-        </div>
       </div>
     </main>
   );

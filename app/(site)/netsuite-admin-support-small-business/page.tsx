@@ -17,10 +17,9 @@ import {
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
-import { LeadForm } from "@/components/sections/LeadForm";
+import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 
 const PAIN_POINTS = [
@@ -87,7 +86,7 @@ const COMPARE_ROWS = [
   {
     label: "Cost",
     full_time: "Salary + benefits + overhead",
-    sp: "Monthly retainer, pay for what you use",
+    sp: "Dedicated monthly support, sized to your account",
   },
   {
     label: "Commitment",
@@ -97,7 +96,7 @@ const COMPARE_ROWS = [
   {
     label: "Coverage",
     full_time: "40 hours per week whether needed or not",
-    sp: "Fixed monthly retainer sized to your account",
+    sp: "Hours sized to your account; nothing more when admin is light",
   },
   {
     label: "Expertise",
@@ -155,7 +154,7 @@ const WHY_SP = [
     icon: Award,
     title: "Enterprise Expertise, SMB Price",
     description:
-      "A certified NetSuite administrator on a fixed monthly retainer. The same depth of expertise large companies pay salaries for, at a cost that fits a growing business.",
+      "Dedicated monthly support giving you a certified NetSuite administrator. The same depth of expertise large companies pay salaries for, at a cost that fits a growing business.",
   },
 ];
 
@@ -166,9 +165,9 @@ const FAQ = [
       "Same business day for most requests. Complex configuration changes that need scoping are addressed within 24 to 48 hours.",
   },
   {
-    question: "How is the monthly retainer structured?",
+    question: "How does dedicated monthly support work?",
     answer:
-      "We agree on a fixed monthly retainer sized to your account's typical volume of administration work. The retainer covers whatever comes up that month: user changes, configuration requests, period questions, saved searches. Month-to-month, no minimum commitment.",
+      "We agree on a fixed block of hours sized to your account's typical volume of administration work. Those hours cover whatever comes up that month: user changes, configuration requests, period questions, saved searches. Month-to-month, no minimum commitment.",
   },
   {
     question: "Can you also help with development work if we need it?",
@@ -190,11 +189,11 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Admin Support for Small Business",
   description:
-    "Fractional NetSuite administrator for small businesses: user management, roles, custom fields, saved searches, and workflow automation on a fixed monthly retainer. No full-time hire needed.",
+    "Fractional NetSuite administrator for small businesses: user management, roles, custom fields, saved searches, and workflow automation through dedicated monthly support. No full-time hire needed.",
   alternates: { canonical: "/netsuite-admin-support-small-business" },
   openGraph: {
     title: "NetSuite Admin Support for Small Business",
-    description: "Fractional NetSuite administrator for small businesses: user management, roles, custom fields, saved searches, and workflow automation on a fixed monthly retainer. No full-time hire needed.",
+    description: "Fractional NetSuite administrator for small businesses: user management, roles, custom fields, saved searches, and workflow automation through dedicated monthly support. No full-time hire needed.",
     url: "https://suitepacific.com/netsuite-admin-support-small-business",
     type: "website",
     images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
@@ -216,7 +215,7 @@ export default function NetSuiteAdminSupportSmallBusinessPage() {
       <FaqJsonLd items={FAQ} />
       <ServiceJsonLd
         name="NetSuite Admin Support for Small Business"
-        description="Enterprise-grade NetSuite administration on a fixed monthly retainer for small and mid-sized businesses."
+        description="Enterprise-grade NetSuite administration through dedicated monthly support for small and mid-sized businesses."
         url={`${SITE_URL}/netsuite-admin-support-small-business`}
         serviceType="NetSuite Administration"
       />
@@ -226,13 +225,21 @@ export default function NetSuiteAdminSupportSmallBusinessPage() {
           as="h1"
           eyebrow="Fractional NetSuite Administrator"
           title="NetSuite Admin Support for Small Business"
-          subtitle="Enterprise-grade NetSuite administration on a fixed monthly retainer built for SMBs. No full-time hire, no long-term contracts."
+          subtitle="Enterprise-grade NetSuite administration through dedicated monthly support built for SMBs. No full-time hire, no long-term contracts."
           align="left"
         />
 
-        <div className="mt-6">
-          <Button href="#contact">Book a Free Consultation</Button>
+        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <LeadFormLight />
         </div>
+        <p className="mt-3 text-xs text-brand-400">Oracle-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
+
+        <p className="mt-6 text-sm text-brand-400">
+          SuitePacific provides certified NetSuite administration through dedicated monthly
+          support for companies that went live on NetSuite but do not have a dedicated internal
+          administrator. Most requests are handled same or next business day. No ticketing
+          system, no account managers, no long-term contracts.
+        </p>
 
         {/* Pain Points */}
         <div className="mt-14" data-section="pain-points">
@@ -366,7 +373,7 @@ export default function NetSuiteAdminSupportSmallBusinessPage() {
               <Link href="/netsuite-post-go-live-support" className="text-accent hover:underline">
                 Post-Go-Live Support
               </Link>{" "}
-              combines administration and development under a single ongoing retainer.
+              combines administration and development under one dedicated monthly support model.
             </li>
             <li className="text-sm text-brand-400">
               <Link href="/netsuite-account-optimization" className="text-accent hover:underline">
@@ -378,19 +385,6 @@ export default function NetSuiteAdminSupportSmallBusinessPage() {
         </div>
 
         <ServiceFaqSection items={FAQ} />
-
-        {/* Inline form */}
-        <div id="contact" className="mt-14 pt-10 border-t border-brand-50" data-section="contact">
-          <p className="text-brand-900 font-semibold text-lg">
-            Ready to stop managing NetSuite yourself?
-          </p>
-          <p className="mt-2 text-sm text-brand-400">
-            Tell us what your account looks like and what has been piling up. We will tell you how we would approach it.
-          </p>
-          <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-6 sm:p-8 shadow-soft">
-            <LeadForm />
-          </div>
-        </div>
       </div>
     </main>
   );
