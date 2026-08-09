@@ -4,8 +4,13 @@ import { prisma } from "@/lib/prisma";
 import { resolveTrafficSource } from "@/lib/traffic-source";
 import { SITE_URL } from "@/lib/content";
 
+const BOT_UA = /bot|crawler|spider|crawl|googlebot|bingbot|yandexbot|baiduspider|duckduckbot|slurp|semrush|ahrefs|moz\.com|prerender|headlesschrome/i;
+
 export async function POST(request: NextRequest) {
   try {
+    const ua = request.headers.get("user-agent") ?? "";
+    if (BOT_UA.test(ua)) return NextResponse.json({ ok: true });
+
     const { path, referrer, durationMs, sectionsViewed, exitSection, utmSource, utmMedium, utmCampaign, gclid } =
       await request.json();
 
