@@ -3,12 +3,14 @@ import Link from "next/link";
 import {
   Cpu,
   BarChart2,
-  Zap,
-  CheckCircle2,
-  ShieldCheck,
+  FileText,
   Users,
+  MessageSquare,
+  Code,
+  CheckCircle2,
+  Zap,
+  XCircle,
   Clock,
-  Award,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
@@ -18,178 +20,182 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 
-const WHAT_IT_COVERS = [
+const SIX_AREAS = [
   {
-    icon: Cpu,
-    title: "SuiteScript and customization review",
-    description:
-      "Every custom script in your account is reviewed for governance limit exposure, deprecated API usage, upgrade risk, and performance issues. Scripts that will break in the next release or are already consuming excessive governance units are flagged before they become urgent.",
+    icon: Users,
+    area: "Business processes",
+    review: "Order-to-Cash, Procure-to-Pay, Finance, and Operations workflows",
+    identify: "Where employees repeatedly read, classify, copy, or decide: the strongest AI automation candidates",
   },
   {
-    icon: Zap,
-    title: "Workflow and automation audit",
-    description:
-      "SuiteFlow workflows are reviewed for overly broad entry conditions, redundant steps, conflicting transitions, and configurations that historically break after platform upgrades. Workflows that fire more often than intended are identified and documented.",
+    icon: Code,
+    area: "Existing customizations",
+    review: "User Event scripts, Map/Reduce, Suitelets, RESTlets, workflows, saved searches",
+    identify: "Where N/llm or N/documentCapture can enhance or replace parts of existing logic",
+  },
+  {
+    icon: FileText,
+    area: "Documents",
+    review: "Vendor invoices, customer POs, receipts, shipping documents, order emails",
+    identify: "Document extraction opportunities using NetSuite's N/documentCapture module",
   },
   {
     icon: BarChart2,
-    title: "Saved searches and dashboards",
-    description:
-      "Saved searches are reviewed for formula errors returning wrong results, missing filters causing performance problems, and broken joins after schema changes. Dashboard KPI portlets pulling from broken searches are flagged alongside the underlying search issue.",
+    area: "Data and reporting",
+    review: "Saved searches, SuiteQL queries, workbooks, reports, recurring Excel exports",
+    identify: "Questions employees ask repeatedly that AI could answer from live NetSuite data",
   },
   {
-    icon: CheckCircle2,
-    title: "Configuration and governance review",
-    description:
-      "Account configuration is reviewed for role permission issues, unused custom fields consuming space, form layouts inconsistent with current processes, and subsidiary or currency settings that have drifted from the original implementation design.",
+    icon: MessageSquare,
+    area: "Support and operations",
+    review: "Recurring support issues, workflow failures, unexplained script errors",
+    identify: "AI-assisted troubleshooting that routes diagnosis findings to a consultant",
+  },
+  {
+    icon: Cpu,
+    area: "AI architecture",
+    review: "NetSuite AI features, SuiteScript AI APIs, AI Connector Service availability",
+    identify: "Which implementation path fits each opportunity: native NetSuite, SuiteScript, or external AI",
   },
 ];
 
-const WHAT_IT_FINDS = [
+const SCORE_EXAMPLES = [
   {
-    title: "Scripts approaching governance limits",
-    description: "Scheduled and Map/Reduce scripts consuming a high percentage of their governance budget, likely to fail under increased data volume.",
+    opportunity: "Vendor invoice extraction",
+    aiFit: "9/10",
+    impact: "9/10",
+    complexity: "4/10",
+    recommendation: "Implement",
+    pillClass: "bg-accent/10 text-accent",
   },
   {
-    title: "Deprecated API usage",
-    description: "Scripts using NetSuite APIs that Oracle has deprecated or scheduled for removal, which will break silently after an upcoming upgrade.",
+    opportunity: "Customer PO to Sales Order",
+    aiFit: "9/10",
+    impact: "9/10",
+    complexity: "5/10",
+    recommendation: "Implement",
+    pillClass: "bg-accent/10 text-accent",
   },
   {
-    title: "Workflow entry condition problems",
-    description: "Workflows with entry conditions so broad they fire on every record save, or conditions so narrow they miss the records they were designed to catch.",
+    opportunity: "Natural-language reporting",
+    aiFit: "8/10",
+    impact: "8/10",
+    complexity: "5/10",
+    recommendation: "Pilot",
+    pillClass: "bg-brand-100 text-brand-600",
   },
   {
-    title: "Saved search formula errors",
-    description: "Saved searches using formulas that return incorrect results due to wrong field references, incorrect join types, or logic errors introduced during setup.",
+    opportunity: "Script documentation generator",
+    aiFit: "8/10",
+    impact: "6/10",
+    complexity: "2/10",
+    recommendation: "Quick win",
+    pillClass: "bg-brand-50 text-brand-500",
   },
   {
-    title: "Orphaned customizations",
-    description: "Scripts, workflows, and fields that are no longer connected to any active business process but remain active and consuming resources.",
-  },
-  {
-    title: "Configuration drift",
-    description: "Role permissions, form layouts, and account settings that have diverged from the original implementation design in ways that create user experience or data quality problems.",
+    opportunity: "Predictive sales forecasting",
+    aiFit: "6/10",
+    impact: "7/10",
+    complexity: "9/10",
+    recommendation: "Defer",
+    pillClass: "bg-brand-50 text-brand-400",
   },
 ];
 
 const HOW_IT_WORKS = [
   {
     step: "01",
-    title: "Account access and systematic review",
+    title: "Discovery session",
     description:
-      "We connect to your NetSuite account and read scripts, workflows, saved searches, and configuration as they exist. No documentation required from you — we review the account directly. The review typically takes one to two business days depending on account complexity.",
+      "One structured call covering your business processes, active customizations, document workflows, reporting patterns, and recurring support issues. We map what exists before reviewing the account directly.",
   },
   {
     step: "02",
-    title: "AI-assisted analysis and pattern recognition",
+    title: "Account and process review",
     description:
-      "AI analyzes what we have collected, identifies risk patterns across your customizations, cross-references against known upgrade issues and governance limit thresholds, and generates a structured findings inventory. Issues that would take days to surface manually are identified systematically.",
+      "We review your SuiteScripts, workflows, saved searches, and document-heavy processes. For each area, we identify specific opportunities where Oracle's AI APIs or an external AI model could deliver measurable improvement.",
   },
   {
     step: "03",
-    title: "Prioritized findings report",
+    title: "Findings and recommendations session",
     description:
-      "The deliverable is a written report with all findings ranked by severity, a specific recommended action for each issue, an estimated effort to resolve it, and a prioritized order of what to address first. Delivered within two to three business days after account access is provided.",
+      "We deliver the written report and walk through the scored opportunities, recommended implementation sequence, and technical approach for each priority item. Implementation of the highest-priority items is the natural next step.",
   },
 ];
 
-const WHY_GET_ASSESSMENT = [
+const NOT_IN_SCOPE = [
+  "NetSuite performance or governance audit",
+  "Accounting configuration or functional review",
+  "Security or access control audit",
+  "Full code review of all existing scripts",
+  "Complete data quality audit",
+  "AI implementation (the assessment precedes implementation, which is a separate engagement)",
+];
+
+const WHY_SP = [
   {
-    icon: ShieldCheck,
-    title: "Know what you are inheriting",
+    icon: CheckCircle2,
+    title: "SuiteCloud Developer II certified",
     description:
-      "Companies starting a new support engagement often discover significant technical debt from the original implementation. The assessment establishes a clear baseline before any retainer work begins.",
+      "Every AI opportunity identified maps to a specific implementation layer. SuiteScript is the primary vehicle for NetSuite AI integrations, and the credential verifies the platform knowledge behind each recommendation.",
   },
   {
     icon: Zap,
-    title: "Reduce upgrade risk",
+    title: "Oracle's AI APIs are live now",
     description:
-      "NetSuite releases twice per year. Scripts using deprecated APIs and workflows with fragile configurations are most likely to break on upgrade day. The assessment identifies these before the upgrade arrives.",
+      "N/llm, N/documentCapture, and the AI Connector Service are available in the current NetSuite release. Recommendations are grounded in what can be built today, not a future-state platform.",
   },
   {
-    icon: Award,
-    title: "Fixed scope, fixed deliverable",
+    icon: Users,
+    title: "Direct access to the assessor",
     description:
-      "The assessment is a one-time engagement with a defined scope and a written deliverable. No retainer required. The findings report stands on its own and can be used to prioritize work with any consulting firm.",
+      "You communicate with the consultant conducting the review and building the recommendations. There is no intermediary between the person reviewing your account and the person presenting the findings.",
   },
   {
     icon: Clock,
-    title: "Fast turnaround",
+    title: "Fixed scope, no retainer required",
     description:
-      "Two to three business days from account access to findings report. For accounts approaching an upgrade window or experiencing recurring issues, the assessment can be completed quickly enough to act on the findings before the next release.",
-  },
-];
-
-const COMPARISON_ROWS = [
-  {
-    aspect: "Coverage scope",
-    manual: "Reviewer time limits coverage — typically samples scripts and selected workflows rather than the full account",
-    aiAssisted: "All active scripts, workflows, saved searches, and configuration items reviewed systematically",
-  },
-  {
-    aspect: "Review time",
-    manual: "3-5 business days for a partial account review",
-    aiAssisted: "1-2 business days for full account coverage regardless of account size",
-  },
-  {
-    aspect: "Issue detection",
-    manual: "Depends on reviewer experience with specific issue types; varies across accounts",
-    aiAssisted: "Cross-referenced against known risk patterns, deprecated API lists, and governance limit thresholds",
-  },
-  {
-    aspect: "Output format",
-    manual: "Notes and verbal recommendations; format varies by reviewer",
-    aiAssisted: "Written report with every finding categorized by area, ranked by severity, and assigned an estimated effort",
-  },
-  {
-    aspect: "Consistency",
-    manual: "Same account reviewed twice may surface different issues depending on reviewer focus",
-    aiAssisted: "Same analysis framework applied to every account; findings inventory is repeatable",
-  },
-  {
-    aspect: "Prioritization",
-    manual: "Reviewer judgment determines what to highlight; highest-risk items may not surface first",
-    aiAssisted: "All findings ranked by severity so highest-risk issues appear at the top of the report",
+      "The assessment is a contained engagement. No ongoing retainer needed to start. If implementation follows, that is a separate scope based on the prioritized findings.",
   },
 ];
 
 const FAQ = [
   {
-    question: "What does a NetSuite AI optimization assessment include?",
+    question: "Who is the NetSuite AI Optimization Assessment for?",
     answer:
-      "The assessment covers four areas of a live NetSuite account: SuiteScript customizations (governance limit exposure, deprecated API usage, upgrade risk), SuiteFlow workflows (entry condition efficiency, redundant steps, upgrade fragility), saved searches and dashboards (formula errors, performance problems, broken joins), and account configuration (role permissions, custom fields, form layouts, subsidiary settings). The deliverable is a prioritized findings report with all issues identified, a recommended action for each, and an estimated resolution effort.",
+      "Companies already live on NetSuite with established business processes, active customizations, and meaningful document volume (invoices, POs, receipts). The assessment is most valuable when there are existing SuiteScripts, recurring reporting workflows, and patterns of manual work that have built up since go-live. It is not appropriate for companies still in implementation.",
   },
   {
-    question: "How long does a NetSuite account assessment take?",
+    question: "What does the fixed-scope engagement include?",
     answer:
-      "Account review typically takes one to two business days depending on the number of active scripts, workflows, and saved searches in the account. The findings report is delivered within two to three business days of account access being provided. Total elapsed time from kickoff to report delivery is typically three to five business days.",
+      "One discovery session, review of key business processes and selected customizations, review of document-heavy workflows and reporting patterns, identification and scoring of AI opportunities across six areas, a written report of 10 to 15 pages, and a final recommendations session. The deliverable is a specific list of AI opportunities found in your account, not a generic overview of what AI can do for NetSuite.",
   },
   {
-    question: "What is the deliverable from a NetSuite optimization assessment?",
+    question: "What NetSuite AI capabilities does the assessment account for?",
     answer:
-      "The deliverable is a written findings report. It lists every issue identified, categorized by area (scripts, workflows, searches, configuration), ranked by severity (critical, high, medium, low), with a specific recommended action and estimated effort for each. The report is structured so issues can be addressed in priority order, either independently or as the starting scope for an ongoing support engagement.",
+      "Oracle's current platform includes SuiteScript AI APIs (N/llm for LLM calls from within SuiteScript, N/documentCapture for structured extraction from invoices, receipts, and contracts), native AI features (Text Enhance, Bill Capture, Intelligent Forecasting), and the AI Connector Service, which supports custom tools that can retrieve NetSuite data or perform SuiteScript-supported operations through compatible external AI clients. The assessment identifies which capability is appropriate for each opportunity.",
   },
   {
-    question: "Is the assessment a one-time engagement or the start of a retainer?",
+    question: "What is the difference between this and a standard NetSuite account review?",
     answer:
-      "The assessment is a standalone, fixed-scope engagement. No retainer is required. The findings report belongs to you and can be used to guide work with any consulting firm. That said, most assessments identify enough issues to justify an ongoing engagement, and many clients move into a retainer after reviewing the findings. That decision comes after the report, not before.",
+      "A standard account review looks for technical debt: governance limit exposures, deprecated APIs, misconfigured workflows. An AI Optimization Assessment looks for opportunity: which manual processes could be automated, which existing scripts could incorporate AI logic, which document workflows could use extraction instead of manual entry. The two can overlap, but the question being asked is different. If you need a technical health check, that is a separate service.",
   },
   {
-    question: "How is an AI-assisted assessment different from a standard account review?",
+    question: "What happens after the assessment?",
     answer:
-      "A standard manual review depends on the reviewer spending time in each area of the account, which limits how many scripts, workflows, and searches can be reviewed in a given timeframe. AI-assisted analysis allows the full inventory of customizations to be processed systematically, cross-referenced against known risk patterns, and prioritized by severity before the human reviewer focuses their attention. The result is broader coverage with more consistent issue detection across the full account.",
+      "The scored opportunity roadmap identifies quick wins, strategic implementations, and items to defer. For most accounts, one or two high-priority opportunities are clear implementation candidates. SuitePacific can implement those directly under a standard retainer or fixed project scope. The assessment findings become the implementation brief.",
   },
 ];
 
 export const metadata: Metadata = {
   title: "NetSuite AI Optimization Assessment",
   description:
-    "A structured AI-assisted review of your live NetSuite account. Identifies script risks, workflow inefficiencies, saved search errors, and configuration issues. Fixed-scope, one-time engagement with a prioritized findings report.",
+    "Identifies where AI can improve your live NetSuite account across processes, customizations, documents, and reporting. Fixed-scope engagement with scored findings and implementation roadmap.",
   alternates: { canonical: "/netsuite-ai-optimization-assessment" },
   openGraph: {
     title: "NetSuite AI Optimization Assessment",
     description:
-      "A structured AI-assisted review of your live NetSuite account. Identifies script risks, workflow inefficiencies, saved search errors, and configuration issues. Fixed-scope, one-time engagement with a prioritized findings report.",
+      "Identifies where AI can improve your live NetSuite account across processes, customizations, documents, and reporting. Fixed-scope engagement with scored findings and implementation roadmap.",
     url: `${SITE_URL}/netsuite-ai-optimization-assessment`,
     type: "website",
     images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
@@ -202,13 +208,14 @@ export default function NetSuiteAiOptimizationAssessmentPage() {
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: SITE_URL },
+          { name: "NetSuite AI Integration", url: `${SITE_URL}/netsuite-ai-integration` },
           { name: "NetSuite AI Optimization Assessment", url: `${SITE_URL}/netsuite-ai-optimization-assessment` },
         ]}
       />
       <FaqJsonLd items={FAQ} />
       <ServiceJsonLd
         name="NetSuite AI Optimization Assessment"
-        description="AI-assisted review of a live NetSuite account covering scripts, workflows, saved searches, and configuration. Delivers a prioritized findings report with recommended actions."
+        description="Fixed-scope consulting engagement that reviews a live NetSuite environment across six areas to identify specific AI implementation opportunities, score them, and deliver a prioritized roadmap."
         url={`${SITE_URL}/netsuite-ai-optimization-assessment`}
         serviceType="NetSuite Consulting"
       />
@@ -218,77 +225,62 @@ export default function NetSuiteAiOptimizationAssessmentPage() {
           as="h1"
           eyebrow="AI Assessment"
           title="NetSuite AI Optimization Assessment"
-          subtitle="A structured review of your live NetSuite account using AI-assisted analysis. Identifies script risks, workflow inefficiencies, saved search errors, and configuration issues accumulated since go-live."
+          subtitle="A structured review of your live NetSuite environment to identify specific opportunities where AI can reduce manual work, improve processes, and accelerate development. The findings become the implementation roadmap."
           align="left"
         />
 
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <LeadFormLight />
         </div>
-        <p className="mt-3 text-xs text-brand-400">SuiteCloud Developer II certified · Fixed-scope engagement · Prioritized findings report · 2-3 business days</p>
+        <p className="mt-3 text-xs text-brand-400">Fixed-scope engagement · Scored opportunity report · Recommendations session included · SuiteCloud Developer II certified</p>
 
         <p className="mt-3 text-xs text-brand-300">Last updated August 2026</p>
 
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            A NetSuite AI optimization assessment is a structured review of a live NetSuite
-            account using AI-assisted analysis to identify problems that accumulate after
-            go-live. The assessment covers four areas: SuiteScript customizations (governance
-            limit exposure, deprecated APIs, upgrade risk), SuiteFlow workflows (inefficient
-            entry conditions, redundant steps, upgrade fragility), saved searches and dashboards
-            (formula errors, performance problems, missing filters), and account configuration
-            (role permissions, custom field usage, form layouts). The deliverable is a
-            prioritized findings report with issues ranked by severity, recommended actions,
-            and estimated effort to fix. The assessment is a fixed-scope, one-time engagement
-            with no retainer requirement, completed in two to three business days. Most accounts
-            live two or more years have accumulated enough technical debt that the assessment
-            findings justify several months of subsequent work.
+            A NetSuite AI Optimization Assessment is a fixed-scope consulting engagement that
+            reviews your live NetSuite environment to identify specific opportunities where AI
+            can reduce manual work, accelerate development, or improve existing processes. The
+            assessment covers six areas: business processes (where employees repeatedly read,
+            classify, copy, or decide), existing customizations (SuiteScripts and workflows
+            that could incorporate Oracle&apos;s AI APIs), documents (invoices, POs, and other
+            inputs processed manually), reporting (questions employees ask repeatedly that AI
+            could answer from live data), support patterns (recurring issues AI-assisted
+            diagnostics could address), and AI architecture (which implementation path fits
+            each opportunity). Oracle&apos;s current platform supports this directly: SuiteScript
+            includes N/llm and N/documentCapture APIs, and the AI Connector Service supports
+            custom tools for external AI clients. Each finding is scored on AI fit, business
+            impact, and implementation complexity. The deliverable is a prioritized opportunity
+            roadmap with implementation estimates, not a list of generic AI possibilities.
           </p>
         </div>
 
         <p className="mt-6 text-sm text-brand-400">
-          Live NetSuite accounts accumulate technical debt quietly. Scripts developed during
-          implementation drift toward governance limits. Workflows built for one business
-          process get repurposed for another. Saved searches return wrong results because
-          a formula was never corrected. An AI-assisted assessment surfaces what has
-          accumulated so it can be addressed in priority order.
+          The assessment answers one question: where can AI realistically improve this
+          client&apos;s existing NetSuite environment, and what would it take to implement it?
+          Every opportunity identified references an actual process, script, workflow, or
+          document from your account. The scored findings become the implementation brief.
         </p>
 
-        {/* What it covers */}
-        <div className="mt-14" data-section="what-it-covers">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">What does a NetSuite AI optimization assessment cover?</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {WHAT_IT_COVERS.map((item) => (
-              <Card key={item.title} className="p-5 flex items-start gap-4">
-                <IconBadge icon={item.icon} />
-                <div>
-                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
-                  <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Comparison */}
-        <div className="mt-14" data-section="comparison">
-          <h2 className="text-lg font-semibold text-brand-900 mb-5">How does AI-assisted NetSuite assessment compare to a standard account review?</h2>
+        {/* Six areas */}
+        <div className="mt-14" data-section="six-areas">
+          <h2 className="text-lg font-semibold text-brand-900 mb-5">What does the assessment cover?</h2>
           <div className="overflow-x-auto rounded-2xl border border-brand-100">
             <table className="w-full text-sm min-w-[520px]">
               <thead>
                 <tr className="border-b border-brand-100 bg-brand-50/50">
-                  <th className="text-left p-4 font-semibold text-brand-900 w-1/3"></th>
-                  <th className="text-left p-4 font-semibold text-brand-400">Standard account review</th>
-                  <th className="text-left p-4 font-semibold text-accent">AI-assisted assessment</th>
+                  <th className="text-left p-4 font-semibold text-brand-900 w-1/4">Area</th>
+                  <th className="text-left p-4 font-semibold text-brand-700">What we review</th>
+                  <th className="text-left p-4 font-semibold text-brand-700">What we identify</th>
                 </tr>
               </thead>
               <tbody>
-                {COMPARISON_ROWS.map((row, i) => (
-                  <tr key={row.aspect} className={i < COMPARISON_ROWS.length - 1 ? "border-b border-brand-100" : ""}>
-                    <td className="p-4 font-medium text-brand-700 align-top">{row.aspect}</td>
-                    <td className="p-4 text-brand-400 align-top">{row.manual}</td>
-                    <td className="p-4 text-brand-700 align-top">{row.aiAssisted}</td>
+                {SIX_AREAS.map((row, i) => (
+                  <tr key={row.area} className={i < SIX_AREAS.length - 1 ? "border-b border-brand-100" : ""}>
+                    <td className="p-4 font-medium text-brand-700 align-top">{row.area}</td>
+                    <td className="p-4 text-brand-400 align-top">{row.review}</td>
+                    <td className="p-4 text-brand-400 align-top">{row.identify}</td>
                   </tr>
                 ))}
               </tbody>
@@ -296,26 +288,32 @@ export default function NetSuiteAiOptimizationAssessmentPage() {
           </div>
         </div>
 
-        {/* What it finds */}
-        <div className="mt-14" data-section="what-it-finds">
-          <h2 className="text-lg font-semibold text-brand-900 mb-1">What issues does a NetSuite account assessment typically find?</h2>
-          <p className="text-sm text-brand-400 mb-6">
-            The specific findings vary by account, but these categories appear consistently
-            across live accounts that have been running for two or more years.
-          </p>
-          <div className="space-y-3">
-            {WHAT_IT_FINDS.map((item) => (
-              <div key={item.title} className="rounded-2xl border border-brand-100 bg-brand-50/30 p-4">
-                <p className="font-semibold text-brand-900 text-sm">{item.title}</p>
-                <p className="mt-1 text-sm text-brand-400">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* How it works */}
         <div className="mt-14" data-section="how-it-works">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">How does a NetSuite AI optimization assessment work?</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-4">How does the assessment engagement work?</h2>
+          <div className="overflow-x-auto pb-2 mb-6">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-2 sm:gap-0">
+              <div className="rounded-xl border border-brand-100 bg-brand-50/30 px-4 py-3 text-center flex-1">
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-brand-400 mb-1">Step 1</p>
+                <p className="text-sm font-medium text-brand-700">Discovery session</p>
+              </div>
+              <div className="hidden sm:flex items-center justify-center px-2 text-brand-300 text-base">›</div>
+              <div className="rounded-xl border border-brand-100 bg-brand-50/30 px-4 py-3 text-center flex-1">
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-brand-400 mb-1">Step 2</p>
+                <p className="text-sm font-medium text-brand-700">Account and process review</p>
+              </div>
+              <div className="hidden sm:flex items-center justify-center px-2 text-brand-300 text-base">›</div>
+              <div className="rounded-xl border border-brand-100 bg-brand-50/30 px-4 py-3 text-center flex-1">
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-brand-400 mb-1">Step 3</p>
+                <p className="text-sm font-medium text-brand-700">Opportunity scoring</p>
+              </div>
+              <div className="hidden sm:flex items-center justify-center px-2 text-brand-300 text-base">›</div>
+              <div className="rounded-xl border border-accent/20 bg-accent/5 px-4 py-3 text-center flex-1">
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-accent mb-1">Deliverable</p>
+                <p className="text-sm font-medium text-brand-700">Scored roadmap and session</p>
+              </div>
+            </div>
+          </div>
           <div className="space-y-4">
             {HOW_IT_WORKS.map((item) => (
               <div key={item.step} className="flex items-start gap-5">
@@ -331,22 +329,76 @@ export default function NetSuiteAiOptimizationAssessmentPage() {
           </div>
         </div>
 
-        {/* Mid-page CTA */}
+        {/* Scorecard */}
+        <div className="mt-14" data-section="scorecard">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">How are AI opportunities scored?</h2>
+          <p className="text-sm text-brand-400 mb-5">
+            Every opportunity is rated on three dimensions and placed into one of four categories.
+            The scoring makes the roadmap actionable rather than aspirational.
+          </p>
+          <div className="overflow-x-auto rounded-2xl border border-brand-100">
+            <table className="w-full text-sm min-w-[560px]">
+              <thead>
+                <tr className="border-b border-brand-100 bg-brand-50/50">
+                  <th className="text-left p-4 font-semibold text-brand-900">Opportunity</th>
+                  <th className="text-left p-4 font-semibold text-brand-700">AI fit</th>
+                  <th className="text-left p-4 font-semibold text-brand-700">Impact</th>
+                  <th className="text-left p-4 font-semibold text-brand-700">Complexity</th>
+                  <th className="text-left p-4 font-semibold text-brand-700">Recommendation</th>
+                </tr>
+              </thead>
+              <tbody>
+                {SCORE_EXAMPLES.map((row, i) => (
+                  <tr key={row.opportunity} className={i < SCORE_EXAMPLES.length - 1 ? "border-b border-brand-100" : ""}>
+                    <td className="p-4 font-medium text-brand-700 align-top">{row.opportunity}</td>
+                    <td className="p-4 text-brand-400 align-top">{row.aiFit}</td>
+                    <td className="p-4 text-brand-400 align-top">{row.impact}</td>
+                    <td className="p-4 text-brand-400 align-top">{row.complexity}</td>
+                    <td className="p-4 align-top">
+                      <span className={`inline-block text-xs font-semibold px-2 py-0.5 rounded-full ${row.pillClass}`}>
+                        {row.recommendation}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3 text-xs text-brand-300">Example scorecard. Actual opportunities are specific to your account.</p>
+        </div>
+
+        {/* Mid CTA */}
         <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
-          <p className="text-sm font-semibold text-brand-900 mb-1">Get a clear picture of your account&apos;s current state</p>
+          <p className="text-sm font-semibold text-brand-900 mb-1">Ready to map your AI opportunities?</p>
           <p className="text-sm text-brand-400 mb-4">
-            Tell us how long your account has been live and the types of issues you
-            have been seeing. We will explain what the assessment would cover for
-            your specific setup.
+            Tell us about your NetSuite environment and the kinds of manual work that surface
+            most often. We will explain what the assessment covers and what to expect.
           </p>
           <LeadFormLight />
         </div>
 
-        {/* Why get an assessment */}
-        <div className="mt-14" data-section="why-assessment">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why do companies get a NetSuite account optimization assessment?</h2>
+        {/* Not in scope */}
+        <div className="mt-14" data-section="not-in-scope">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">What is not included in the assessment?</h2>
+          <p className="text-sm text-brand-400 mb-5">
+            The assessment stays focused on one question: where can AI improve this account?
+            These are separate services that fall outside its scope:
+          </p>
+          <div className="space-y-2">
+            {NOT_IN_SCOPE.map((item) => (
+              <div key={item} className="flex items-start gap-3 text-sm text-brand-400">
+                <XCircle className="h-4 w-4 text-brand-200 shrink-0 mt-0.5" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Why SuitePacific */}
+        <div className="mt-14" data-section="why-suitepacific">
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why have the assessment done by SuitePacific?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {WHY_GET_ASSESSMENT.map((item) => (
+            {WHY_SP.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">
                 <IconBadge icon={item.icon} />
                 <div>
@@ -363,28 +415,28 @@ export default function NetSuiteAiOptimizationAssessmentPage() {
           <p className="text-sm font-semibold text-brand-900 mb-3">Related reading</p>
           <ul className="space-y-2.5">
             <li className="text-sm text-brand-400">
-              <Link href="/netsuite-account-optimization" className="text-accent hover:underline">
-                NetSuite account optimization
-              </Link>{" "}
-              covers ongoing optimization work that typically follows an assessment.
-            </li>
-            <li className="text-sm text-brand-400">
               <Link href="/netsuite-ai-integration" className="text-accent hover:underline">
                 NetSuite AI integration
               </Link>{" "}
-              covers the broader range of AI services available for live NetSuite accounts.
+              covers Oracle&apos;s native AI features and the custom SuiteScript integrations the assessment evaluates.
             </li>
             <li className="text-sm text-brand-400">
-              <Link href="/blog/netsuite-account-performance" className="text-accent hover:underline">
-                Why your NetSuite account feels slow and what actually fixes it
+              <Link href="/netsuite-ai-invoice-processing" className="text-accent hover:underline">
+                NetSuite AI invoice processing
               </Link>{" "}
-              identifies the most common performance root causes an assessment surfaces.
+              is one of the most common high-scoring opportunities assessments identify.
             </li>
             <li className="text-sm text-brand-400">
-              <Link href="/netsuite-managed-support" className="text-accent hover:underline">
-                NetSuite managed support
+              <Link href="/netsuite-ai-reporting" className="text-accent hover:underline">
+                NetSuite AI reporting
               </Link>{" "}
-              covers the retainer engagement that many accounts move into after completing an assessment.
+              covers natural-language analysis of live NetSuite data, another frequent assessment finding.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-suitescript-development" className="text-accent hover:underline">
+                NetSuite SuiteScript development
+              </Link>{" "}
+              covers how SuiteScript is used to implement the AI integrations the assessment identifies.
             </li>
           </ul>
         </div>
@@ -392,11 +444,10 @@ export default function NetSuiteAiOptimizationAssessmentPage() {
         <ServiceFaqSection items={FAQ} />
 
         <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
-          <p className="text-sm font-semibold text-brand-900 mb-1">Ready to see what is in your account?</p>
+          <p className="text-sm font-semibold text-brand-900 mb-1">Start with the assessment</p>
           <p className="text-sm text-brand-400 mb-4">
-            Tell us how long your account has been live and what kinds of issues
-            have been coming up. We will explain what an assessment would find
-            for an account like yours.
+            Tell us about your NetSuite environment. We will review what exists and identify
+            where AI can deliver the most measurable improvement.
           </p>
           <LeadFormLight />
         </div>

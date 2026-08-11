@@ -9,6 +9,7 @@ import {
   Users,
   Clock,
   RefreshCcw,
+  XCircle,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
@@ -21,82 +22,112 @@ import { SITE_URL } from "@/lib/content";
 const WHAT_IT_HANDLES = [
   {
     icon: FileText,
-    title: "Non-standard invoice formats",
+    title: "Non-standard and complex invoice formats",
     description:
-      "Vendor invoices that use non-standard layouts, custom field arrangements, or formats that Oracle Bill Capture cannot reliably extract. AI document models are trained to read any structured document layout, not just recognized templates.",
+      "Vendor invoices with varied layouts, multi-page structures, or processing requirements that go beyond your current invoice capture setup. Designed to handle a range of invoice layouts, including those that require custom extraction or processing logic.",
   },
   {
     icon: CheckCircle2,
     title: "Line-item extraction and PO matching",
     description:
-      "AI extracts individual line items from invoices, including description, quantity, unit price, and GL code, then validates each line against the corresponding purchase order in NetSuite. Mismatches are flagged before the bill record is created.",
+      "AI extracts individual invoice lines, including descriptions, quantities, unit prices, and other available fields, then SuiteScript validates them against the relevant vendor, purchase order, item, and accounting rules in NetSuite. Mismatches are flagged before a bill record is created.",
   },
   {
     icon: AlertCircle,
-    title: "Exception routing and human review",
+    title: "Confidence-based exception routing",
     description:
-      "When AI extraction confidence falls below threshold, or when a line item does not match a PO or vendor master record, the invoice is routed to a review queue rather than processed automatically. No unreviewed exceptions reach the bill record.",
+      "Invoices that fail configured validation or confidence thresholds are routed for human review rather than automatically creating a bill. The review queue shows extracted data pre-filled so the reviewer corrects only the fields that failed, not the full invoice.",
   },
   {
-    icon: RefreshCcw,
-    title: "Multi-format and multi-vendor handling",
+    icon: Zap,
+    title: "Custom business logic",
     description:
-      "Different vendors use different invoice layouts. The integration handles multiple vendors with different formats through a single processing pipeline. New vendor formats are added without rebuilding the integration.",
+      "SuiteScript handles the decisions AI cannot: which NetSuite vendor matches, which PO lines apply, what happens when quantities differ, whether a bill should be held or created, and who reviews it. This is where NetSuite expertise matters as much as AI extraction.",
   },
 ];
 
 const BILL_CAPTURE_COMPARISON = [
   {
-    aspect: "Invoice formats supported",
-    billCapture: "Standard vendor templates Oracle has trained on",
-    aiProcessing: "Any vendor layout, including non-standard and handwritten",
+    aspect: "Purpose",
+    billCapture: "Native invoice capture in NetSuite",
+    aiProcessing: "Custom AI-assisted invoice processing",
   },
   {
-    aspect: "Line-item extraction",
-    billCapture: "Basic extraction on supported formats",
-    aiProcessing: "Full line-item extraction with PO matching and validation",
+    aspect: "Invoice extraction",
+    billCapture: "Native Bill Capture extraction",
+    aiProcessing: "Custom extraction tailored to the client's workflow",
+  },
+  {
+    aspect: "Vendor-specific configuration",
+    billCapture: "Bill Capture templates supported",
+    aiProcessing: "Custom processing rules and validation",
+  },
+  {
+    aspect: "Line-item processing",
+    billCapture: "Native invoice and PO capabilities",
+    aiProcessing: "Custom line extraction and PO and item validation",
+  },
+  {
+    aspect: "Business rules",
+    billCapture: "NetSuite configuration",
+    aiProcessing: "Custom SuiteScript logic",
   },
   {
     aspect: "Exception handling",
-    billCapture: "Failed extractions require manual entry",
-    aiProcessing: "Exceptions routed to review queue with extracted partial data pre-filled",
+    billCapture: "Native Bill Capture review workflow",
+    aiProcessing: "Custom confidence thresholds and exception routing",
   },
   {
-    aspect: "Multi-vendor support",
-    billCapture: "Depends on vendor being in Oracle's training set",
-    aiProcessing: "All vendors handled; new formats added to the pipeline",
+    aspect: "Custom fields",
+    billCapture: "Based on supported configuration",
+    aiProcessing: "Can populate account-specific custom fields",
   },
   {
-    aspect: "PO matching",
-    billCapture: "Header-level matching on supported vendors",
-    aiProcessing: "Line-item-level matching against NetSuite PO records",
+    aspect: "Workflow integration",
+    billCapture: "NetSuite native workflow",
+    aiProcessing: "Custom SuiteScript and workflow integration",
   },
   {
-    aspect: "Configuration",
-    billCapture: "Configured within NetSuite setup",
-    aiProcessing: "Custom SuiteScript integration built for your account",
+    aspect: "Architecture",
+    billCapture: "Native NetSuite feature",
+    aiProcessing: "N/documentCapture and SuiteScript, as appropriate",
+  },
+  {
+    aspect: "Best fit",
+    billCapture: "Standard invoice capture requirements",
+    aiProcessing: "Complex or highly customized AP workflows",
   },
 ];
 
 const HOW_IT_WORKS = [
   {
     step: "01",
-    title: "Invoice format audit",
+    title: "Invoice format and workflow audit",
     description:
-      "We collect samples of the vendor invoices your AP team processes, identify format variations across vendors, and assess what Oracle Bill Capture handles versus what requires custom AI extraction. This determines the scope of the integration.",
+      "We collect 10 to 30 representative vendor invoice samples from your AP team, covering different vendors and format variations. We assess what your current setup handles and where gaps exist. This determines the scope and design of the integration.",
   },
   {
     step: "02",
     title: "Integration design and build",
     description:
-      "We design the document extraction prompt, build the SuiteScript integration that calls the AI extraction API, configure PO matching logic, and set up exception routing. All development is done in your Sandbox account before Production is touched.",
+      "We design the document extraction logic using Oracle's N/documentCapture API, build the SuiteScript integration that handles field and line-item extraction, configure PO and vendor matching logic, and set up confidence-based exception routing. All development is done in your Sandbox account before Production is touched.",
   },
   {
     step: "03",
     title: "Validation testing and Production deployment",
     description:
-      "We test against real invoice samples from your vendor set, validate that extracted data matches NetSuite records for vendors, POs, and items, and measure extraction accuracy before deployment. Production deployment happens only after validation passes.",
+      "We test against the representative invoice sample set, validate that extracted data aligns with NetSuite records for vendors, POs, and items, and measure extraction accuracy across header, line, and totals fields. Production deployment happens only after validation passes.",
   },
+];
+
+const GOOD_FIT = [
+  "Your AP team manually keys invoice data into NetSuite",
+  "Vendors use many different invoice layouts",
+  "Invoice line items require manual entry or PO matching",
+  "Bill Capture requires significant manual correction before bills can be created",
+  "You need custom validation logic before a Vendor Bill is created",
+  "You want invoices with low confidence or mismatched lines routed for review rather than auto-created",
+  "Your invoices need to populate account-specific custom fields",
 ];
 
 const WHY_SP = [
@@ -114,9 +145,9 @@ const WHY_SP = [
   },
   {
     icon: RefreshCcw,
-    title: "Maintained under retainer",
+    title: "Ongoing support available",
     description:
-      "AI invoice processing integrations require ongoing maintenance as vendor invoice formats change and AI extraction APIs update. The integration can be maintained under a monthly retainer without separate project scopes for each change.",
+      "Vendor invoice formats change, AI extraction APIs update, and new vendors are added over time. Ongoing support for the integration is available as your AP workflow, vendor formats, NetSuite configuration, and AI services evolve.",
   },
   {
     icon: Clock,
@@ -130,39 +161,39 @@ const FAQ = [
   {
     question: "What is the difference between NetSuite AI invoice processing and Oracle Bill Capture?",
     answer:
-      "Oracle Bill Capture is a built-in NetSuite feature that uses machine learning to extract data from vendor invoices in formats Oracle has trained on. It works well for common vendor invoice layouts from recognized suppliers. AI invoice processing is a custom SuiteScript integration that calls an external AI document extraction API, which can handle any vendor invoice format regardless of whether Oracle has seen it before. AI invoice processing also supports line-item PO matching, configurable exception routing, and multi-vendor handling in a single pipeline. The two can run in parallel: Bill Capture for vendors it handles reliably, custom AI processing for the remainder.",
+      "Oracle Bill Capture is NetSuite's native invoice capture feature. It supports Bill Capture templates for specific vendor and subsidiary combinations, partial billing, and PO matching for invoices it processes. AI invoice processing is a custom SuiteScript integration built around Oracle's N/documentCapture API. It adds custom extraction logic, custom validation rules, custom PO and line-item matching, and configurable exception routing for AP workflows that require more than the current native setup provides. The two can work alongside each other: native Bill Capture for invoices your current setup handles well, custom AI processing for those that require additional extraction, validation, or business logic.",
   },
   {
     question: "Which vendor invoice formats can AI invoice processing handle?",
     answer:
-      "AI document extraction models are trained on a broad range of document layouts and can extract structured data from most vendor invoice formats, including PDFs, scanned documents, multi-page invoices, and invoices with non-standard field arrangements. Highly unusual formats (handwritten-only, image-only with no text layer) may require additional model configuration. We test against your actual vendor invoice samples before confirming extraction accuracy, so you know what the integration handles before it goes to Production.",
+      "The integration is designed to handle a range of vendor invoice layouts, including non-standard, multi-page, and complex invoice formats. Oracle's N/documentCapture module supports field extraction, table extraction, text extraction, document classification, and extraction confidence levels for invoice documents. The confidence levels are used to determine whether an invoice passes automatically or is routed for review. We test against your representative invoice samples before confirming what the integration handles, so extraction accuracy is measured against your actual vendor set before Production deployment.",
   },
   {
     question: "Does AI invoice processing create NetSuite bill records automatically?",
     answer:
-      "Yes, for invoices that pass validation. The integration extracts invoice data, validates it against NetSuite vendor master records, PO records, and item catalog, and creates or populates a bill record. Invoices where extraction confidence is below threshold, or where a line item does not match a PO, are routed to an exception queue for human review rather than processed automatically. The exception queue shows the extracted data pre-filled so the reviewer only needs to correct the specific fields that failed, not re-enter the full invoice.",
+      "Yes, for invoices that pass validation. The integration extracts invoice data, validates it against NetSuite vendor records, purchase orders, and item catalog, applies account-specific business rules, and creates a bill record. Invoices that fail configured validation or confidence thresholds are routed to a review queue rather than processed automatically. The review queue shows the extracted data pre-filled so the reviewer corrects only the fields that failed, not the full invoice.",
   },
   {
     question: "How long does it take to build a NetSuite AI invoice processing integration?",
     answer:
-      "For a standard integration covering a defined set of vendor formats, the build typically takes two to three weeks from invoice sample collection to Sandbox testing complete. Production deployment follows after validation. Timeline depends on the number of vendor formats, the complexity of PO matching rules, and how many exception routing workflows are configured. We scope the engagement after reviewing your vendor invoice samples and AP workflow.",
+      "For a defined scope covering a representative set of vendor formats, the build typically takes two to three weeks from invoice sample collection to Sandbox testing complete. Production deployment follows after validation. Timeline depends on the number of vendor formats, the complexity of PO and line-item matching rules, and how many exception routing workflows are configured. We scope the engagement after reviewing 10 to 30 representative invoice samples from your vendor set.",
   },
   {
     question: "Is AI invoice processing a one-time build or an ongoing service?",
     answer:
-      "The initial integration is a one-time build scoped as a project. Maintenance is ongoing: vendor invoice formats change, AI extraction APIs update, and new vendors are added over time. Maintenance is best handled under a monthly retainer, which allows format additions and extraction logic adjustments to be made as they arise without a separate project scope for each change.",
+      "The initial integration is a one-time build scoped as a project. Ongoing support is available separately: vendor invoice formats change, AI extraction APIs update, and new vendors are added over time. Ongoing maintenance is best handled under a monthly retainer, which allows format additions and extraction logic adjustments to be made as they arise without a separate project scope for each change.",
   },
 ];
 
 export const metadata: Metadata = {
   title: "NetSuite AI Invoice Processing",
   description:
-    "Custom AI integration that extracts vendor invoice data and populates NetSuite bill records automatically. Handles formats Oracle Bill Capture cannot process, with line-item PO matching and exception routing. Built on SuiteScript with Sandbox testing.",
+    "Extend NetSuite invoice automation with AI-powered extraction, line-item validation, PO matching, and exception routing. Custom SuiteScript integration built on Oracle's N/documentCapture. SuiteCloud Developer II certified.",
   alternates: { canonical: "/netsuite-ai-invoice-processing" },
   openGraph: {
     title: "NetSuite AI Invoice Processing",
     description:
-      "Custom AI integration that extracts vendor invoice data and populates NetSuite bill records automatically. Handles formats Oracle Bill Capture cannot process, with line-item PO matching and exception routing. Built on SuiteScript with Sandbox testing.",
+      "Extend NetSuite invoice automation with AI-powered extraction, line-item validation, PO matching, and exception routing. Custom SuiteScript integration built on Oracle's N/documentCapture. SuiteCloud Developer II certified.",
     url: `${SITE_URL}/netsuite-ai-invoice-processing`,
     type: "website",
     images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
@@ -181,7 +212,7 @@ export default function NetSuiteAiInvoiceProcessingPage() {
       <FaqJsonLd items={FAQ} />
       <ServiceJsonLd
         name="NetSuite AI Invoice Processing"
-        description="Custom SuiteScript integration using AI document extraction to populate NetSuite bill records from vendor invoices, with PO matching and exception routing."
+        description="Custom SuiteScript integration using Oracle's N/documentCapture API to extend NetSuite invoice automation with AI extraction, line-item validation, PO matching, and exception routing."
         url={`${SITE_URL}/netsuite-ai-invoice-processing`}
         serviceType="NetSuite Integration"
       />
@@ -191,45 +222,49 @@ export default function NetSuiteAiInvoiceProcessingPage() {
           as="h1"
           eyebrow="AI Invoice Processing"
           title="NetSuite AI Invoice Processing"
-          subtitle="AI that reads vendor invoices and populates NetSuite bill records automatically. Handles formats and vendor layouts that Oracle Bill Capture cannot process reliably."
+          subtitle="Extend NetSuite invoice automation with AI-powered extraction, validation, PO matching, and exception handling built on SuiteScript and Oracle's N/documentCapture API."
           align="left"
         />
 
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <LeadFormLight />
         </div>
-        <p className="mt-3 text-xs text-brand-400">SuiteCloud Developer II certified · SuiteScript-based · Sandbox testing · Line-item PO matching</p>
+        <p className="mt-3 text-xs text-brand-400">SuiteCloud Developer II certified · SuiteScript-based · Sandbox testing · Custom PO and line-item validation</p>
 
         <p className="mt-3 text-xs text-brand-300">Last updated August 2026</p>
 
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            NetSuite AI invoice processing is a custom integration that uses AI to extract
-            data from vendor invoices and populate NetSuite bill records automatically.
-            It goes beyond Oracle&apos;s built-in Bill Capture, which handles standard invoice
-            formats from recognized vendors. AI invoice processing handles non-standard
-            layouts, multi-page invoices, complex line-item structures, and vendor formats
-            that Bill Capture cannot reliably extract. The integration is built as a
-            SuiteScript that calls an AI document extraction API, validates the extracted
-            data against NetSuite records (vendor master, purchase orders, item catalog),
-            and creates or populates a bill record. Exceptions, where AI confidence is
-            below threshold or line items do not match a PO, are flagged for human review
-            rather than processed automatically. The result is a significant reduction in
-            manual AP data entry without eliminating human oversight on edge cases.
+            NetSuite AI invoice processing is a custom SuiteScript integration that extends
+            NetSuite&apos;s AP workflow with AI-powered invoice data extraction, line-item
+            validation, PO matching, and exception routing. The integration uses Oracle&apos;s
+            N/documentCapture API, available since NetSuite 2025.2, which supports field
+            extraction, table extraction, document classification, and extraction confidence
+            levels for invoice documents. Extracted data passes through validation: header
+            fields are checked against vendor master records, line items are validated
+            against purchase orders and item records, and account-specific business rules
+            are applied via SuiteScript. Invoices that fail configured validation or
+            confidence thresholds are routed for human review rather than automatically
+            creating a bill. The integration complements NetSuite&apos;s native invoice capture
+            by adding custom extraction logic, validation rules, and exception handling for
+            AP workflows that require more than the current setup provides.
           </p>
         </div>
 
         <p className="mt-6 text-sm text-brand-400">
-          Oracle&apos;s Bill Capture works well for vendors it has been trained on. For the
-          rest of the vendor set, data entry is still manual. AI invoice processing closes
-          that gap: any vendor invoice format, line-item extraction, PO matching, and
-          exception routing, built as a SuiteScript integration specific to your account.
+          SuitePacific builds custom AI-assisted invoice processing workflows for NetSuite
+          customers whose AP requirements go beyond their current invoice capture setup.
+          The solution can extract invoice data, process line items, validate vendors and
+          purchase orders, apply account-specific business rules, and route exceptions for
+          human review before a Vendor Bill is created. Oracle&apos;s N/documentCapture module
+          provides the extraction foundation; SuiteScript handles the NetSuite-specific
+          validation and workflow logic that makes the solution specific to your account.
         </p>
 
         {/* What it handles */}
         <div className="mt-14" data-section="what-it-handles">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">What does NetSuite AI invoice processing handle?</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">What does AI invoice processing add to NetSuite?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHAT_IT_HANDLES.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">
@@ -245,14 +280,18 @@ export default function NetSuiteAiInvoiceProcessingPage() {
 
         {/* Comparison table */}
         <div className="mt-14" data-section="comparison">
-          <h2 className="text-lg font-semibold text-brand-900 mb-5">What is the difference between NetSuite AI invoice processing and Oracle Bill Capture?</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">Oracle Bill Capture vs. SuitePacific AI Invoice Processing</h2>
+          <p className="text-sm text-brand-400 mb-5">
+            Oracle provides the foundation. SuitePacific customizes the extraction,
+            validation, and exception handling around it.
+          </p>
           <div className="overflow-x-auto rounded-2xl border border-brand-100">
             <table className="w-full text-sm min-w-[520px]">
               <thead>
                 <tr className="border-b border-brand-100 bg-brand-50/50">
                   <th className="text-left p-4 font-semibold text-brand-900 w-1/3"></th>
-                  <th className="text-left p-4 font-semibold text-brand-900">Oracle Bill Capture</th>
-                  <th className="text-left p-4 font-semibold text-accent">AI Invoice Processing</th>
+                  <th className="text-left p-4 font-semibold text-brand-700">Oracle Bill Capture</th>
+                  <th className="text-left p-4 font-semibold text-accent">SuitePacific AI Processing</th>
                 </tr>
               </thead>
               <tbody>
@@ -270,33 +309,38 @@ export default function NetSuiteAiInvoiceProcessingPage() {
 
         {/* How it works */}
         <div className="mt-14" data-section="how-it-works">
-          <h2 className="text-lg font-semibold text-brand-900 mb-5">How does NetSuite AI invoice processing work?</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-4">How does the integration process invoices?</h2>
 
           <div className="overflow-x-auto pb-2 mb-6">
             <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-2 sm:gap-0">
-              <div className="rounded-xl border border-brand-100 bg-brand-50/30 px-4 py-3 text-center flex-1">
+              <div className="rounded-xl border border-brand-100 bg-brand-50/30 px-3 py-3 text-center flex-1">
                 <p className="text-[10px] font-semibold uppercase tracking-wide text-brand-400 mb-1">Input</p>
-                <p className="text-sm font-medium text-brand-700">Vendor invoice (any format)</p>
+                <p className="text-xs font-medium text-brand-700">Vendor invoice</p>
               </div>
-              <div className="hidden sm:flex items-center justify-center px-2 text-brand-300 text-base">›</div>
-              <div className="rounded-xl border border-brand-100 bg-brand-50/30 px-4 py-3 text-center flex-1">
+              <div className="hidden sm:flex items-center justify-center px-1.5 text-brand-300 text-base">›</div>
+              <div className="rounded-xl border border-brand-100 bg-brand-50/30 px-3 py-3 text-center flex-1">
                 <p className="text-[10px] font-semibold uppercase tracking-wide text-brand-400 mb-1">Step 1</p>
-                <p className="text-sm font-medium text-brand-700">AI document extraction</p>
+                <p className="text-xs font-medium text-brand-700">AI extraction (N/documentCapture)</p>
               </div>
-              <div className="hidden sm:flex items-center justify-center px-2 text-brand-300 text-base">›</div>
-              <div className="rounded-xl border border-brand-100 bg-brand-50/30 px-4 py-3 text-center flex-1">
+              <div className="hidden sm:flex items-center justify-center px-1.5 text-brand-300 text-base">›</div>
+              <div className="rounded-xl border border-brand-100 bg-brand-50/30 px-3 py-3 text-center flex-1">
                 <p className="text-[10px] font-semibold uppercase tracking-wide text-brand-400 mb-1">Step 2</p>
-                <p className="text-sm font-medium text-brand-700">Validation: vendor · PO · items</p>
+                <p className="text-xs font-medium text-brand-700">Confidence and data validation</p>
               </div>
-              <div className="hidden sm:flex items-center justify-center px-2 text-brand-300 text-base">›</div>
+              <div className="hidden sm:flex items-center justify-center px-1.5 text-brand-300 text-base">›</div>
+              <div className="rounded-xl border border-brand-100 bg-brand-50/30 px-3 py-3 text-center flex-1">
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-brand-400 mb-1">Step 3</p>
+                <p className="text-xs font-medium text-brand-700">Vendor, PO, and item matching</p>
+              </div>
+              <div className="hidden sm:flex items-center justify-center px-1.5 text-brand-300 text-base">›</div>
               <div className="flex flex-col gap-2 flex-1">
-                <div className="rounded-xl border border-accent/20 bg-accent/5 px-4 py-3 text-center">
+                <div className="rounded-xl border border-accent/20 bg-accent/5 px-3 py-3 text-center">
                   <p className="text-[10px] font-semibold uppercase tracking-wide text-accent mb-1">Pass</p>
-                  <p className="text-sm font-medium text-brand-700">Bill record created</p>
+                  <p className="text-xs font-medium text-brand-700">Vendor Bill created</p>
                 </div>
-                <div className="rounded-xl border border-brand-200 bg-brand-50/50 px-4 py-3 text-center">
+                <div className="rounded-xl border border-brand-200 bg-brand-50/50 px-3 py-3 text-center">
                   <p className="text-[10px] font-semibold uppercase tracking-wide text-brand-400 mb-1">Exception</p>
-                  <p className="text-sm font-medium text-brand-500">Human review queue</p>
+                  <p className="text-xs font-medium text-brand-500">Human review queue</p>
                 </div>
               </div>
             </div>
@@ -319,18 +363,50 @@ export default function NetSuiteAiInvoiceProcessingPage() {
 
         {/* Mid-page CTA */}
         <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
-          <p className="text-sm font-semibold text-brand-900 mb-1">How many vendor invoice formats does your AP team handle manually?</p>
+          <p className="text-sm font-semibold text-brand-900 mb-1">What does your AP team handle manually today?</p>
           <p className="text-sm text-brand-400 mb-4">
-            Tell us about your vendor invoice volume and the formats Bill Capture
-            does not handle. We will explain what an AI invoice processing
-            integration would cover for your specific AP workflow.
+            Tell us about your vendor invoice volume and where your current setup
+            requires manual intervention. We will explain what a custom AI invoice
+            processing integration would cover for your specific AP workflow.
           </p>
           <LeadFormLight />
         </div>
 
+        {/* When is this right for you */}
+        <div className="mt-14" data-section="when-appropriate">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">When is AI invoice processing the right fit?</h2>
+          <p className="text-sm text-brand-400 mb-5">
+            This service is designed for AP workflows with specific requirements
+            that go beyond your current NetSuite setup. It is not the right
+            answer for every AP team.
+          </p>
+          <div className="rounded-2xl border border-brand-100 bg-white p-5 mb-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Good fit</p>
+            <ul className="space-y-2">
+              {GOOD_FIT.map((item) => (
+                <li key={item} className="flex items-start gap-2.5 text-sm text-brand-400">
+                  <CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-2xl border border-brand-100 bg-brand-50/30 p-5">
+            <p className="text-xs font-semibold uppercase tracking-wide text-brand-400 mb-3">Probably not needed</p>
+            <div className="flex items-start gap-2.5 text-sm text-brand-400">
+              <XCircle className="h-4 w-4 text-brand-300 shrink-0 mt-0.5" />
+              <span>
+                If Bill Capture already processes your invoices accurately with minimal
+                manual review, a custom AI integration may not provide enough additional
+                value to justify the build and ongoing maintenance.
+              </span>
+            </div>
+          </div>
+        </div>
+
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why do companies choose SuitePacific for NetSuite AI invoice processing?</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why do companies choose SuitePacific for this?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">
@@ -352,7 +428,13 @@ export default function NetSuiteAiInvoiceProcessingPage() {
               <Link href="/netsuite-ai-integration" className="text-accent hover:underline">
                 NetSuite AI integration
               </Link>{" "}
-              covers the full range of AI integration options for live NetSuite accounts.
+              covers the full range of AI integration options for live NetSuite accounts, including native features and custom SuiteScript integrations.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-ai-optimization-assessment" className="text-accent hover:underline">
+                NetSuite AI Optimization Assessment
+              </Link>{" "}
+              is a discovery engagement that identifies where AI can improve your AP workflow before any implementation begins.
             </li>
             <li className="text-sm text-brand-400">
               <Link href="/netsuite-integrations" className="text-accent hover:underline">
@@ -366,23 +448,17 @@ export default function NetSuiteAiInvoiceProcessingPage() {
               </Link>{" "}
               covers what changed in Oracle&apos;s native Bill Capture in the most recent release.
             </li>
-            <li className="text-sm text-brand-400">
-              <Link href="/netsuite-suitescript-development" className="text-accent hover:underline">
-                NetSuite SuiteScript development
-              </Link>{" "}
-              covers the scripting layer that the invoice processing integration is built on.
-            </li>
           </ul>
         </div>
 
         <ServiceFaqSection items={FAQ} />
 
         <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
-          <p className="text-sm font-semibold text-brand-900 mb-1">Ready to automate your AP invoice processing?</p>
+          <p className="text-sm font-semibold text-brand-900 mb-1">Ready to assess your AP invoice workflow?</p>
           <p className="text-sm text-brand-400 mb-4">
-            Tell us about your vendor invoice volume and which formats cause the
-            most manual work. We will scope what an AI invoice processing
-            integration would cover for your account.
+            Tell us about your vendor invoice volume and which parts of your AP
+            process still require manual work. We will scope what a custom AI
+            invoice processing integration would cover for your account.
           </p>
           <LeadFormLight />
         </div>

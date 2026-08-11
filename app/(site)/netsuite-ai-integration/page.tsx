@@ -51,7 +51,7 @@ const CUSTOM_INTEGRATIONS = [
     icon: BarChart2,
     title: "AI reporting and financial insights",
     description:
-      "AI that reads your NetSuite financial data and surfaces trends, anomalies, and plain-language summaries. Ask questions about your data in natural language and get answers drawn from live NetSuite records — without building a saved search for every question.",
+      "AI that reads your NetSuite financial data and surfaces trends, anomalies, and plain-language summaries. Ask questions about your data in natural language and get answers drawn from live NetSuite records, without building a saved search for every question.",
   },
   {
     icon: TrendingUp,
@@ -99,7 +99,7 @@ const WHY_SP = [
     icon: ShieldCheck,
     title: "SuiteCloud Developer II certified",
     description:
-      "Custom AI integrations are SuiteScript work. The same certification that covers standard SuiteScript development covers AI integration scripts — the credential verifies the underlying platform knowledge.",
+      "Custom AI integrations are SuiteScript work. The same certification that covers standard SuiteScript development covers AI integration scripts; the credential verifies the underlying platform knowledge.",
   },
   {
     icon: Sparkles,
@@ -153,7 +153,7 @@ const FAQ = [
   {
     question: "What NetSuite AI features are included in my license?",
     answer:
-      "Oracle's native AI features — Text Enhance, Bill Capture, and Intelligent Forecasting — are available to NetSuite accounts depending on edition, modules purchased, and release version. Text Enhance availability depends on which fields Oracle has enabled and whether the feature has been turned on for your account. Bill Capture requires the Accounts Payable module. Intelligent Forecasting requires the Demand Planning module. We audit your account's enabled features and modules as part of any AI setup engagement to establish what is available before configuring anything.",
+      "Oracle's native AI features (Text Enhance, Bill Capture, and Intelligent Forecasting) are available to NetSuite accounts depending on edition, modules purchased, and release version. Text Enhance availability depends on which fields Oracle has enabled and whether the feature has been turned on for your account. Bill Capture requires the Accounts Payable module. Intelligent Forecasting requires the Demand Planning module. We audit your account's enabled features and modules as part of any AI setup engagement to establish what is available before configuring anything.",
   },
   {
     question: "Can SuiteScript call the OpenAI or Claude API?",
@@ -168,12 +168,12 @@ const FAQ = [
   {
     question: "Is custom AI integration covered under a managed support retainer?",
     answer:
-      "AI integration development — writing the SuiteScript, designing the API connection, testing in Sandbox — is standard SuiteScript development work and is covered under a managed support retainer at the same rate as any other development. Ongoing maintenance of an AI integration (handling API deprecations, adjusting prompts as model behavior changes, adding fields) is also retainer work. Net-new integrations of significant scope may be scoped separately depending on the retainer's existing hours.",
+      "AI integration development (writing the SuiteScript, designing the API connection, testing in Sandbox) is standard SuiteScript development work and is covered under a managed support retainer at the same rate as any other development. Ongoing maintenance of an AI integration (handling API deprecations, adjusting prompts as model behavior changes, adding fields) is also retainer work. Net-new integrations of significant scope may be scoped separately depending on the retainer's existing hours.",
   },
   {
     question: "What data does Oracle's AI access in my NetSuite account?",
     answer:
-      "For Oracle's native features like Text Enhance, Oracle's AI processes the content of the specific record and fields you are working with at the time of the request. Oracle's data processing terms govern how that data is handled. For custom AI integrations built with SuiteScript, only the data your script explicitly sends to the external API leaves NetSuite — you control exactly which fields are included in the request. We design custom integrations to minimize data exposure to only what the AI model needs to produce useful output.",
+      "For Oracle's native features like Text Enhance, Oracle's AI processes the content of the specific record and fields you are working with at the time of the request. Oracle's data processing terms govern how that data is handled. For custom AI integrations built with SuiteScript, only the data your script explicitly sends to the external API leaves NetSuite; you control exactly which fields are included in the request. We design custom integrations to minimize data exposure to only what the AI model needs to produce useful output.",
   },
 ];
 
@@ -327,7 +327,7 @@ export default function NetSuiteAiIntegrationPage() {
                 <span className="text-accent mt-0.5 shrink-0 text-base">›</span>
                 <div>
                   <p className="text-sm font-medium text-accent group-hover:underline">NetSuite AI Optimization Assessment</p>
-                  <p className="text-xs text-brand-400 mt-0.5">AI-assisted review of your account covering scripts, workflows, saved searches, and configuration. Delivers a prioritized findings report in 2-3 business days.</p>
+                  <p className="text-xs text-brand-400 mt-0.5">Fixed-scope discovery engagement that maps where AI can reduce manual work across your processes, customizations, and document workflows. Delivers a scored opportunity roadmap with implementation estimates.</p>
                 </div>
               </Link>
             </li>
@@ -423,7 +423,7 @@ export default function NetSuiteAiIntegrationPage() {
               <Link href="/suitecompare" className="text-accent hover:underline">
                 SuiteCompare
               </Link>{" "}
-              is SuitePacific&apos;s own NetSuite tool, which uses AI to analyze SuiteScript differences across environments — an example of the integration pattern applied to our own product.
+              is SuitePacific&apos;s own NetSuite tool, which uses AI to analyze SuiteScript differences across environments, an example of the integration pattern applied to our own product.
             </li>
           </ul>
         </div>

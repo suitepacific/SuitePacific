@@ -23,7 +23,7 @@ const PAIN_POINTS = [
     icon: Clock,
     title: "Tickets take days. Problems don't wait.",
     description:
-      "Standard NetSuite support operates on a queue. A workflow that stops approving invoices, a script that fails on every save, an integration that stopped syncing — these are urgent in the account, not in a ticket system.",
+      "Standard NetSuite support operates on a queue. A workflow that stops approving invoices, a script that fails on every save, an integration that stopped syncing: these are urgent in the account, not in a ticket system.",
   },
   {
     icon: AlertCircle,

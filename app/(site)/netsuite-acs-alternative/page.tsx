@@ -96,7 +96,7 @@ const WHY_SP = [
 const ACS_COMPARISON = [
   {
     aspect: "Customization coverage",
-    acs: "Platform only — SuiteScript, workflows, and custom integrations are explicitly excluded",
+    acs: "Platform only: SuiteScript, workflows, and custom integrations are explicitly excluded",
     sp: "Platform plus full customization layer: SuiteScript, integrations, workflows, saved searches, and PDF templates",
   },
   {
