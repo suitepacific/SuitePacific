@@ -114,6 +114,44 @@ const WHY_SP = [
   },
 ];
 
+const COVERAGE_COMPARISON = [
+  {
+    issueType: "SuiteScript error or governance failure",
+    nsSup: "Not covered",
+    sp: "Yes, including debugging, fix, and governance optimization",
+  },
+  {
+    issueType: "Workflow stopped firing or misfiring",
+    nsSup: "Standard platform workflows only",
+    sp: "Yes, including custom logic built during implementation",
+  },
+  {
+    issueType: "Integration stopped syncing after upgrade",
+    nsSup: "Not covered",
+    sp: "Yes, including rebuilds and OAuth 2.0 migration",
+  },
+  {
+    issueType: "Standard feature question",
+    nsSup: "Yes",
+    sp: "Yes",
+  },
+  {
+    issueType: "Confirmed platform bug escalation",
+    nsSup: "Yes, internal Oracle engineering escalation",
+    sp: "Documented and submitted via standard channel with full context",
+  },
+  {
+    issueType: "New SuiteScript or workflow development",
+    nsSup: "Not covered",
+    sp: "Yes, included in retainer",
+  },
+  {
+    issueType: "Response on active production issues",
+    nsSup: "Varies by support tier and shared queue volume",
+    sp: "Same business day",
+  },
+];
+
 const FAQ = [
   {
     question: "What does NetSuite's own support actually cover?",
@@ -228,6 +266,31 @@ export default function SupportAlternativePage() {
                 <p className="text-sm text-brand-400">{item.description}</p>
               </Card>
             ))}
+          </div>
+        </div>
+
+        {/* Coverage comparison */}
+        <div className="mt-14" data-section="coverage-comparison">
+          <h2 className="text-lg font-semibold text-brand-900 mb-5">What does each support option actually cover?</h2>
+          <div className="overflow-x-auto rounded-2xl border border-brand-100">
+            <table className="w-full text-sm min-w-[520px]">
+              <thead>
+                <tr className="border-b border-brand-100 bg-brand-50/50">
+                  <th className="text-left p-4 font-semibold text-brand-900 w-2/5">Issue type</th>
+                  <th className="text-left p-4 font-semibold text-brand-400">NetSuite support</th>
+                  <th className="text-left p-4 font-semibold text-accent">SuitePacific</th>
+                </tr>
+              </thead>
+              <tbody>
+                {COVERAGE_COMPARISON.map((row, i) => (
+                  <tr key={row.issueType} className={i < COVERAGE_COMPARISON.length - 1 ? "border-b border-brand-100" : ""}>
+                    <td className="p-4 font-medium text-brand-700 align-top">{row.issueType}</td>
+                    <td className="p-4 text-brand-400 align-top">{row.nsSup}</td>
+                    <td className="p-4 text-brand-700 align-top">{row.sp}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
 

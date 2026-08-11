@@ -121,6 +121,34 @@ const WHY_SP = [
   },
 ];
 
+const NATIVE_VS_CUSTOM = [
+  {
+    aspect: "Setup required",
+    native: "Account-level feature enablement and role configuration within NetSuite",
+    custom: "SuiteScript development, API authentication setup, and Sandbox testing before Production",
+  },
+  {
+    aspect: "External API needed",
+    native: "No; uses Oracle's AI infrastructure included with your license",
+    custom: "Yes; requires an API key from an AI provider (OpenAI, Anthropic, Gemini, or similar)",
+  },
+  {
+    aspect: "Development work",
+    native: "Configuration only; no custom code required",
+    custom: "SuiteScript development; typically 1-3 weeks depending on use case complexity",
+  },
+  {
+    aspect: "AI model control",
+    native: "Oracle-selected model and output behavior; not configurable",
+    custom: "Full control over model selection, prompt design, and output format",
+  },
+  {
+    aspect: "Best for",
+    native: "Standard workflows: text generation in standard fields, recognized vendor invoices, basic demand forecasting",
+    custom: "Non-standard formats, account-specific data models, custom record enrichment, or workflows Oracle has not built for",
+  },
+];
+
 const FAQ = [
   {
     question: "What NetSuite AI features are included in my license?",
@@ -259,6 +287,31 @@ export default function NetSuiteAiIntegrationPage() {
                 </div>
               </Card>
             ))}
+          </div>
+        </div>
+
+        {/* Native vs custom comparison */}
+        <div className="mt-14" data-section="native-vs-custom">
+          <h2 className="text-lg font-semibold text-brand-900 mb-5">When should you use Oracle native AI versus a custom AI integration?</h2>
+          <div className="overflow-x-auto rounded-2xl border border-brand-100">
+            <table className="w-full text-sm min-w-[520px]">
+              <thead>
+                <tr className="border-b border-brand-100 bg-brand-50/50">
+                  <th className="text-left p-4 font-semibold text-brand-900 w-1/3"></th>
+                  <th className="text-left p-4 font-semibold text-brand-700">Oracle native AI</th>
+                  <th className="text-left p-4 font-semibold text-accent">Custom AI integration</th>
+                </tr>
+              </thead>
+              <tbody>
+                {NATIVE_VS_CUSTOM.map((row, i) => (
+                  <tr key={row.aspect} className={i < NATIVE_VS_CUSTOM.length - 1 ? "border-b border-brand-100" : ""}>
+                    <td className="p-4 font-medium text-brand-700 align-top">{row.aspect}</td>
+                    <td className="p-4 text-brand-400 align-top">{row.native}</td>
+                    <td className="p-4 text-brand-700 align-top">{row.custom}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
 

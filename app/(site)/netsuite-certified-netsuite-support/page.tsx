@@ -78,6 +78,34 @@ const WHY_SP = [
   },
 ];
 
+const CREDENTIAL_COMPARISON = [
+  {
+    aspect: "What it covers",
+    dev2: "SuiteScript 2.x development, SuiteFlow, SuiteBuilder, and the technical development platform",
+    admin: "Configuration, workflows, user management, saved searches, and platform administration",
+  },
+  {
+    aspect: "Exam type",
+    dev2: "Oracle-administered technical development exam",
+    admin: "Oracle-administered administration and configuration exam",
+  },
+  {
+    aspect: "Relevant for",
+    dev2: "Custom scripting, integrations, Suitelets, RESTlets, Map/Reduce scripts",
+    admin: "Role setup, form layouts, custom fields, workflow configuration, access management",
+  },
+  {
+    aspect: "Renewal required",
+    dev2: "Yes, as the platform evolves across releases",
+    admin: "Yes, as the platform evolves across releases",
+  },
+  {
+    aspect: "When you need it",
+    dev2: "When the engagement includes any SuiteScript development or integration work",
+    admin: "When the engagement includes configuration, administration, or workflow changes",
+  },
+];
+
 const FAQ = [
   {
     question: "What NetSuite certifications should a support firm have?",
@@ -189,6 +217,31 @@ export default function CertifiedNetSuiteSupportPage() {
                 <p className="text-sm text-brand-400">{item.description}</p>
               </Card>
             ))}
+          </div>
+        </div>
+
+        {/* Credential comparison */}
+        <div className="mt-14" data-section="credential-comparison">
+          <h2 className="text-lg font-semibold text-brand-900 mb-5">SuiteCloud Developer II vs. Administrator Professional: what is the difference?</h2>
+          <div className="overflow-x-auto rounded-2xl border border-brand-100">
+            <table className="w-full text-sm min-w-[520px]">
+              <thead>
+                <tr className="border-b border-brand-100 bg-brand-50/50">
+                  <th className="text-left p-4 font-semibold text-brand-900 w-1/4"></th>
+                  <th className="text-left p-4 font-semibold text-brand-700">SuiteCloud Developer II</th>
+                  <th className="text-left p-4 font-semibold text-brand-700">Administrator Professional</th>
+                </tr>
+              </thead>
+              <tbody>
+                {CREDENTIAL_COMPARISON.map((row, i) => (
+                  <tr key={row.aspect} className={i < CREDENTIAL_COMPARISON.length - 1 ? "border-b border-brand-100" : ""}>
+                    <td className="p-4 font-medium text-brand-700 align-top">{row.aspect}</td>
+                    <td className="p-4 text-brand-400 align-top">{row.dev2}</td>
+                    <td className="p-4 text-brand-400 align-top">{row.admin}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
 

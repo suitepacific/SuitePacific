@@ -93,6 +93,39 @@ const WHY_SP = [
   },
 ];
 
+const ACS_COMPARISON = [
+  {
+    aspect: "Customization coverage",
+    acs: "Platform only — SuiteScript, workflows, and custom integrations are explicitly excluded",
+    sp: "Platform plus full customization layer: SuiteScript, integrations, workflows, saved searches, and PDF templates",
+  },
+  {
+    aspect: "Account context",
+    acs: "Shared resource pool; agent rotates per case and no context carries between cases",
+    sp: "Single consultant with retained knowledge of your account across every request",
+  },
+  {
+    aspect: "Response model",
+    acs: "Ticket queue; response time varies by tier and shared volume across all ACS accounts",
+    sp: "Direct access; same-day response on active production issues",
+  },
+  {
+    aspect: "New development",
+    acs: "Not covered",
+    sp: "Included in retainer: SuiteScript, workflow builds, integration development",
+  },
+  {
+    aspect: "Platform bug escalation",
+    acs: "Internal escalation to Oracle engineering via ACS channels",
+    sp: "Documented and submitted via standard NetSuite support channel with full context",
+  },
+  {
+    aspect: "Contract structure",
+    acs: "Annual subscription, typically a percentage of your NetSuite license cost",
+    sp: "Month-to-month retainer, no annual commitment required",
+  },
+];
+
 const FAQ = [
   {
     question: "What does NetSuite ACS actually cover?",
@@ -205,6 +238,31 @@ export default function AcsAlternativePage() {
                 <p className="text-sm text-brand-400">{item.description}</p>
               </Card>
             ))}
+          </div>
+        </div>
+
+        {/* ACS vs SuitePacific */}
+        <div className="mt-14" data-section="acs-comparison">
+          <h2 className="text-lg font-semibold text-brand-900 mb-5">How does NetSuite ACS compare to SuitePacific?</h2>
+          <div className="overflow-x-auto rounded-2xl border border-brand-100">
+            <table className="w-full text-sm min-w-[520px]">
+              <thead>
+                <tr className="border-b border-brand-100 bg-brand-50/50">
+                  <th className="text-left p-4 font-semibold text-brand-900 w-1/3"></th>
+                  <th className="text-left p-4 font-semibold text-brand-400">NetSuite ACS</th>
+                  <th className="text-left p-4 font-semibold text-accent">SuitePacific</th>
+                </tr>
+              </thead>
+              <tbody>
+                {ACS_COMPARISON.map((row, i) => (
+                  <tr key={row.aspect} className={i < ACS_COMPARISON.length - 1 ? "border-b border-brand-100" : ""}>
+                    <td className="p-4 font-medium text-brand-700 align-top">{row.aspect}</td>
+                    <td className="p-4 text-brand-400 align-top">{row.acs}</td>
+                    <td className="p-4 text-brand-700 align-top">{row.sp}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
 

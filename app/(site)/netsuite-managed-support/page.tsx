@@ -126,6 +126,39 @@ const WHY_SP = [
   },
 ];
 
+const RETAINER_COMPARISON = [
+  {
+    aspect: "Scope per request",
+    projectBased: "New scope document required for each task before work starts",
+    retainer: "All routine work handled as it surfaces; no scope required per request",
+  },
+  {
+    aspect: "Response on urgent issues",
+    projectBased: "Scope approval needed before work can begin",
+    retainer: "Addressed immediately within the retainer; no separate authorization",
+  },
+  {
+    aspect: "Monthly cost",
+    projectBased: "Unpredictable; varies with issue volume and task complexity",
+    retainer: "Fixed monthly fee regardless of request volume within scope",
+  },
+  {
+    aspect: "Account knowledge",
+    projectBased: "Rebuilt per project; context does not carry across engagements",
+    retainer: "Accumulates continuously; every request benefits from prior context",
+  },
+  {
+    aspect: "Upgrade preparation",
+    projectBased: "Requires a separate project scope each upgrade cycle",
+    retainer: "Included; release review and Sandbox testing handled as part of regular coverage",
+  },
+  {
+    aspect: "Contract structure",
+    projectBased: "Statement of Work per project; each requires separate approval",
+    retainer: "Month-to-month; no annual lock-in and no per-task authorization needed",
+  },
+];
+
 const FAQ = [
   {
     question: "What is NetSuite managed support?",
@@ -265,6 +298,26 @@ export default function NetSuiteManagedSupportPage() {
           <p className="text-sm text-brand-400 mb-6">
             Project-based billing works well for implementations. For ongoing NetSuite managed services, it introduces friction that slows down routine work.
           </p>
+          <div className="overflow-x-auto rounded-2xl border border-brand-100 mb-6">
+            <table className="w-full text-sm min-w-[520px]">
+              <thead>
+                <tr className="border-b border-brand-100 bg-brand-50/50">
+                  <th className="text-left p-4 font-semibold text-brand-900 w-1/3"></th>
+                  <th className="text-left p-4 font-semibold text-brand-400">Project-based billing</th>
+                  <th className="text-left p-4 font-semibold text-accent">Managed support retainer</th>
+                </tr>
+              </thead>
+              <tbody>
+                {RETAINER_COMPARISON.map((row, i) => (
+                  <tr key={row.aspect} className={i < RETAINER_COMPARISON.length - 1 ? "border-b border-brand-100" : ""}>
+                    <td className="p-4 font-medium text-brand-700 align-top">{row.aspect}</td>
+                    <td className="p-4 text-brand-400 align-top">{row.projectBased}</td>
+                    <td className="p-4 text-brand-700 align-top">{row.retainer}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {WHY_MANAGED.map((item) => (
               <Card key={item.title} className="p-5 flex flex-col gap-3">
