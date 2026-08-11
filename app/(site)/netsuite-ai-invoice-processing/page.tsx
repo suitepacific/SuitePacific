@@ -270,7 +270,38 @@ export default function NetSuiteAiInvoiceProcessingPage() {
 
         {/* How it works */}
         <div className="mt-14" data-section="how-it-works">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">How does NetSuite AI invoice processing work?</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-5">How does NetSuite AI invoice processing work?</h2>
+
+          <div className="overflow-x-auto pb-2 mb-6">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-2 sm:gap-0">
+              <div className="rounded-xl border border-brand-100 bg-brand-50/30 px-4 py-3 text-center flex-1">
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-brand-400 mb-1">Input</p>
+                <p className="text-sm font-medium text-brand-700">Vendor invoice (any format)</p>
+              </div>
+              <div className="hidden sm:flex items-center justify-center px-2 text-brand-300 text-base">›</div>
+              <div className="rounded-xl border border-brand-100 bg-brand-50/30 px-4 py-3 text-center flex-1">
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-brand-400 mb-1">Step 1</p>
+                <p className="text-sm font-medium text-brand-700">AI document extraction</p>
+              </div>
+              <div className="hidden sm:flex items-center justify-center px-2 text-brand-300 text-base">›</div>
+              <div className="rounded-xl border border-brand-100 bg-brand-50/30 px-4 py-3 text-center flex-1">
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-brand-400 mb-1">Step 2</p>
+                <p className="text-sm font-medium text-brand-700">Validation: vendor · PO · items</p>
+              </div>
+              <div className="hidden sm:flex items-center justify-center px-2 text-brand-300 text-base">›</div>
+              <div className="flex flex-col gap-2 flex-1">
+                <div className="rounded-xl border border-accent/20 bg-accent/5 px-4 py-3 text-center">
+                  <p className="text-[10px] font-semibold uppercase tracking-wide text-accent mb-1">Pass</p>
+                  <p className="text-sm font-medium text-brand-700">Bill record created</p>
+                </div>
+                <div className="rounded-xl border border-brand-200 bg-brand-50/50 px-4 py-3 text-center">
+                  <p className="text-[10px] font-semibold uppercase tracking-wide text-brand-400 mb-1">Exception</p>
+                  <p className="text-sm font-medium text-brand-500">Human review queue</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="space-y-4">
             {HOW_IT_WORKS.map((item) => (
               <div key={item.step} className="flex items-start gap-5">

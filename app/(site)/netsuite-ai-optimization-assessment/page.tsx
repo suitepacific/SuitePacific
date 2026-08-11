@@ -120,6 +120,39 @@ const WHY_GET_ASSESSMENT = [
   },
 ];
 
+const COMPARISON_ROWS = [
+  {
+    aspect: "Coverage scope",
+    manual: "Reviewer time limits coverage — typically samples scripts and selected workflows rather than the full account",
+    aiAssisted: "All active scripts, workflows, saved searches, and configuration items reviewed systematically",
+  },
+  {
+    aspect: "Review time",
+    manual: "3-5 business days for a partial account review",
+    aiAssisted: "1-2 business days for full account coverage regardless of account size",
+  },
+  {
+    aspect: "Issue detection",
+    manual: "Depends on reviewer experience with specific issue types; varies across accounts",
+    aiAssisted: "Cross-referenced against known risk patterns, deprecated API lists, and governance limit thresholds",
+  },
+  {
+    aspect: "Output format",
+    manual: "Notes and verbal recommendations; format varies by reviewer",
+    aiAssisted: "Written report with every finding categorized by area, ranked by severity, and assigned an estimated effort",
+  },
+  {
+    aspect: "Consistency",
+    manual: "Same account reviewed twice may surface different issues depending on reviewer focus",
+    aiAssisted: "Same analysis framework applied to every account; findings inventory is repeatable",
+  },
+  {
+    aspect: "Prioritization",
+    manual: "Reviewer judgment determines what to highlight; highest-risk items may not surface first",
+    aiAssisted: "All findings ranked by severity so highest-risk issues appear at the top of the report",
+  },
+];
+
 const FAQ = [
   {
     question: "What does a NetSuite AI optimization assessment include?",
@@ -235,6 +268,31 @@ export default function NetSuiteAiOptimizationAssessmentPage() {
                 </div>
               </Card>
             ))}
+          </div>
+        </div>
+
+        {/* Comparison */}
+        <div className="mt-14" data-section="comparison">
+          <h2 className="text-lg font-semibold text-brand-900 mb-5">How does AI-assisted NetSuite assessment compare to a standard account review?</h2>
+          <div className="overflow-x-auto rounded-2xl border border-brand-100">
+            <table className="w-full text-sm min-w-[520px]">
+              <thead>
+                <tr className="border-b border-brand-100 bg-brand-50/50">
+                  <th className="text-left p-4 font-semibold text-brand-900 w-1/3"></th>
+                  <th className="text-left p-4 font-semibold text-brand-400">Standard account review</th>
+                  <th className="text-left p-4 font-semibold text-accent">AI-assisted assessment</th>
+                </tr>
+              </thead>
+              <tbody>
+                {COMPARISON_ROWS.map((row, i) => (
+                  <tr key={row.aspect} className={i < COMPARISON_ROWS.length - 1 ? "border-b border-brand-100" : ""}>
+                    <td className="p-4 font-medium text-brand-700 align-top">{row.aspect}</td>
+                    <td className="p-4 text-brand-400 align-top">{row.manual}</td>
+                    <td className="p-4 text-brand-700 align-top">{row.aiAssisted}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
 
