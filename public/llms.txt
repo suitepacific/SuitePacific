@@ -97,6 +97,7 @@ A: First, identify which release just went live and check the release notes for 
 - [NetSuite Oracle Support vs. Third-Party](https://suitepacific.com/netsuite-oracle-support-vs-third-party): Side-by-side comparison of Oracle NetSuite support and third-party consulting firms
 - [Certified NetSuite Support](https://suitepacific.com/netsuite-certified-netsuite-support): NetSuite support from SuiteCloud Developer II and Administrator Professional certified consultants
 - [NetSuite Managed Support](https://suitepacific.com/netsuite-managed-support): Monthly retainer for ongoing NetSuite managed services covering development, administration, and break-fix
+- [NetSuite AI Integration](https://suitepacific.com/netsuite-ai-integration): Configuration of Oracle NetSuite's native AI features (Text Enhance, Bill Capture, Intelligent Forecasting) and custom AI integrations via SuiteScript connecting NetSuite to external AI APIs
 
 ## Products
 
