@@ -167,6 +167,24 @@ export default function AcsAlternativePage() {
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Direct access · Month-to-month · Covers your full customization layer</p>
 
+        <p className="mt-3 text-xs text-brand-300">Last updated August 2026</p>
+
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            NetSuite Advanced Customer Support (ACS) is a premium Oracle support tier that provides
+            access to senior NetSuite resources, proactive guidance, and faster escalation for
+            platform defects to Oracle engineering. What ACS does not cover: custom SuiteScript,
+            third-party integrations, implementation partner configurations, or anything built on
+            top of the standard platform. For most live accounts, the majority of support needs fall
+            in the customization layer. A NetSuite ACS alternative is a certified independent
+            consulting firm that covers both layers: the standard platform guidance ACS handles and
+            the customization layer ACS does not. The alternative provides direct access to the
+            consultant doing the work, retained context across every request, and same-day response
+            on active production issues without a shared-resource queue.
+          </p>
+        </div>
+
         <p className="mt-6 text-sm text-brand-400">
           ACS is a premium support tier from Oracle. It provides access to senior NetSuite
           resources, best-practice guidance, and faster escalation for platform issues. What it does
@@ -177,7 +195,7 @@ export default function AcsAlternativePage() {
         {/* ACS gaps */}
         <div className="mt-14" data-section="acs-gaps">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            Where ACS falls short for live accounts
+            Where does NetSuite ACS fall short for live accounts?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {ACS_GAPS.map((item) => (
@@ -192,7 +210,7 @@ export default function AcsAlternativePage() {
 
         {/* What we cover */}
         <div className="mt-14" data-section="what-we-cover">
-          <h2 className="text-lg font-semibold text-brand-900 mb-1">What a third-party alternative covers</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-1">What does a third-party NetSuite ACS alternative cover?</h2>
           <p className="text-sm text-brand-400 mb-6">
             Everything your account generates on any given week, not just the portion that falls within a platform vendor&apos;s scope.
           </p>
@@ -221,7 +239,7 @@ export default function AcsAlternativePage() {
 
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why companies switch to SuitePacific</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why do companies switch from NetSuite ACS to SuitePacific?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">

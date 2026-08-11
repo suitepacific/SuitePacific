@@ -200,6 +200,24 @@ export default function NetSuiteManagedSupportPage() {
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Fixed monthly retainer · Direct access · Month-to-month</p>
 
+        <p className="mt-3 text-xs text-brand-300">Last updated August 2026</p>
+
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            NetSuite managed support is an ongoing monthly retainer where a certified consulting
+            firm handles all support, development, and administration for a live NetSuite account
+            at a predictable fixed cost. The retainer covers development (SuiteScript, workflows,
+            integrations), administration (roles, configuration, custom fields), break-fix (script
+            errors, workflow failures, integration breaks), and version upgrade preparation (Sandbox
+            testing before each twice-yearly upgrade). Unlike per-project billing, where each task
+            requires a separate scope and proposal, a managed retainer means routine work is handled
+            as it surfaces. Unlike Oracle NetSuite support, managed support covers the full
+            customization layer. Engagements run month-to-month, scale with the account, and provide
+            direct access to the consultant who knows your account history across every request.
+          </p>
+        </div>
+
         <p className="mt-6 text-sm text-brand-400">
           A live NetSuite account generates continuous work: scripts that need updates, workflows
           that need modification, integrations that break after a platform upgrade, administration
@@ -209,7 +227,7 @@ export default function NetSuiteManagedSupportPage() {
 
         {/* What is included */}
         <div className="mt-14" data-section="what-is-included">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">What the managed support retainer covers</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">What does a NetSuite managed support retainer cover?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHAT_IS_INCLUDED.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">
@@ -225,7 +243,7 @@ export default function NetSuiteManagedSupportPage() {
 
         {/* How it works */}
         <div className="mt-14" data-section="how-it-works">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">How a managed support engagement works</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">How does a NetSuite managed support engagement work?</h2>
           <div className="space-y-4">
             {HOW_IT_WORKS.map((item) => (
               <div key={item.step} className="flex items-start gap-5">
@@ -243,7 +261,7 @@ export default function NetSuiteManagedSupportPage() {
 
         {/* Why managed over project-based */}
         <div className="mt-14" data-section="why-managed">
-          <h2 className="text-lg font-semibold text-brand-900 mb-1">Why a retainer model works better than project-by-project billing</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-1">Why does a retainer work better than project-by-project billing for NetSuite support?</h2>
           <p className="text-sm text-brand-400 mb-6">
             Project-based billing works well for implementations. For ongoing account support, it introduces friction that slows down routine work.
           </p>
@@ -270,7 +288,7 @@ export default function NetSuiteManagedSupportPage() {
 
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why companies choose SuitePacific for managed support</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why do companies choose SuitePacific for NetSuite managed support?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">

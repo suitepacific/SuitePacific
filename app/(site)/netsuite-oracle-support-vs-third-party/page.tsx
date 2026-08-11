@@ -115,6 +115,25 @@ export default function OracleSupportVsThirdPartyPage() {
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Direct access · No ticket queue · Month-to-month</p>
 
+        <p className="mt-3 text-xs text-brand-300">Last updated August 2026</p>
+
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            Oracle NetSuite support handles confirmed platform bugs, standard feature questions, and
+            escalation to Oracle engineering. It does not cover SuiteScript customizations,
+            third-party integrations, workflows built by your implementation partner, or custom
+            configuration. A third-party NetSuite consulting firm covers the customization layer:
+            SuiteScript, integrations, custom workflows, advanced PDF templates, and ongoing
+            administration. Most live accounts generate more support needs in the customization
+            layer than in the platform itself, which is why many companies use a third-party firm
+            for day-to-day work. The two options can run in parallel: Oracle support handles
+            confirmed platform defects through internal channels, while the third-party firm handles
+            everything above the platform. For most mid-market accounts, the third-party firm covers
+            the full scope without needing Oracle support for routine work.
+          </p>
+        </div>
+
         <p className="mt-6 text-sm text-brand-400">
           The choice between Oracle support and a third-party firm is not binary. It is a question
           of which layer of your account each covers, and whether the coverage matches where your
@@ -124,7 +143,7 @@ export default function OracleSupportVsThirdPartyPage() {
 
         {/* Comparison table */}
         <div className="mt-14" data-section="comparison">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Side-by-side comparison</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">How does Oracle NetSuite support compare to a third-party consulting firm?</h2>
           <div className="overflow-x-auto rounded-2xl border border-brand-100">
             <table className="w-full text-sm border-collapse min-w-[560px]">
               <thead>
@@ -202,11 +221,11 @@ export default function OracleSupportVsThirdPartyPage() {
 
         {/* Narrative context */}
         <div className="mt-14" data-section="when-to-use">
-          <h2 className="text-lg font-semibold text-brand-900 mb-5">When each option is the right choice</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-5">When should you use Oracle NetSuite support versus a third-party firm?</h2>
 
           <div className="space-y-6">
             <div className="rounded-2xl border border-brand-100 bg-brand-50/30 p-5">
-              <h3 className="font-semibold text-brand-900 text-sm mb-2">When Oracle NetSuite support is sufficient</h3>
+              <h3 className="font-semibold text-brand-900 text-sm mb-2">When is Oracle NetSuite support sufficient?</h3>
               <p className="text-sm text-brand-400">
                 If your account runs primarily on standard NetSuite functionality, has minimal
                 custom SuiteScript, and your main support needs are standard feature questions or
@@ -217,7 +236,7 @@ export default function OracleSupportVsThirdPartyPage() {
             </div>
 
             <div className="rounded-2xl border border-accent/20 bg-accent/5 p-5">
-              <h3 className="font-semibold text-brand-900 text-sm mb-2">When a third-party firm is the better fit</h3>
+              <h3 className="font-semibold text-brand-900 text-sm mb-2">When is a third-party firm the better fit?</h3>
               <p className="text-sm text-brand-400">
                 When your account depends on SuiteScript, custom workflows, integrations, or
                 configuration built during implementation, the work that surfaces daily sits outside
@@ -242,7 +261,7 @@ export default function OracleSupportVsThirdPartyPage() {
 
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why companies choose SuitePacific as their third-party firm</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why do companies choose SuitePacific as their third-party NetSuite firm?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">

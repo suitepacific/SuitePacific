@@ -152,6 +152,25 @@ export default function CertifiedNetSuiteSupportPage() {
         </div>
         <p className="mt-3 text-xs text-brand-400">SuiteCloud Developer II · Administrator Professional · Direct access · Month-to-month</p>
 
+        <p className="mt-3 text-xs text-brand-300">Last updated August 2026</p>
+
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            NetSuite certified support means the consultant working on your account holds
+            Oracle&apos;s official platform credentials. The two credentials directly relevant to
+            support and development work are: NetSuite SuiteCloud Developer II, which covers
+            SuiteScript 2.x, SuiteFlow, and the technical development platform; and NetSuite
+            Administrator Professional, which covers configuration, workflows, user management,
+            and platform administration. Both are Oracle-administered exams that test knowledge
+            against a defined standard and require renewal as the platform evolves. When evaluating
+            a firm, the relevant question is whether the consultant actually doing the work in your
+            account holds these credentials, not whether any employee at the firm holds them.
+            Self-declared experience is not the same as a passed credential exam. SuitePacific
+            holds both certifications.
+          </p>
+        </div>
+
         <p className="mt-6 text-sm text-brand-400">
           When evaluating a NetSuite support firm, certifications are the most direct signal of
           verified platform knowledge. Years of experience tells you time spent; a certification
@@ -161,7 +180,7 @@ export default function CertifiedNetSuiteSupportPage() {
 
         {/* Certifications held */}
         <div className="mt-14" data-section="certifications">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Certifications SuitePacific holds</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">What NetSuite certifications does SuitePacific hold?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {CERTIFICATIONS.map((item) => (
               <Card key={item.title} className="p-5 flex flex-col gap-3 border-accent/20 bg-accent/5">
@@ -175,7 +194,7 @@ export default function CertifiedNetSuiteSupportPage() {
 
         {/* What certification means */}
         <div className="mt-14" data-section="what-it-means">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">What certification actually means for your account</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">What does NetSuite certification actually mean for your account?</h2>
           <div className="space-y-4">
             {WHAT_CERTIFIED_MEANS.map((item) => (
               <div key={item.title} className="flex items-start gap-4 rounded-2xl border border-brand-100 bg-brand-50/30 p-5">
@@ -191,7 +210,7 @@ export default function CertifiedNetSuiteSupportPage() {
 
         {/* What to look for */}
         <div className="mt-14" data-section="evaluation">
-          <h2 className="text-lg font-semibold text-brand-900 mb-5">How to evaluate credentials when hiring a support firm</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-5">How should you evaluate credentials when hiring a NetSuite support firm?</h2>
           <div className="space-y-3 text-sm text-brand-400">
             <p>
               Ask which certifications the firm holds and whether those certifications are held by the
@@ -229,7 +248,7 @@ export default function CertifiedNetSuiteSupportPage() {
 
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why companies choose SuitePacific</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why do companies choose SuitePacific for certified NetSuite support?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">

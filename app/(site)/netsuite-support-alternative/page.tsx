@@ -188,6 +188,25 @@ export default function SupportAlternativePage() {
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Same-day response · Direct access · Covers your full account</p>
 
+        <p className="mt-3 text-xs text-brand-300">Last updated August 2026</p>
+
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            An alternative to NetSuite support is a certified third-party consulting firm that
+            handles the support and development needs Oracle&apos;s own support tiers do not cover.
+            NetSuite&apos;s standard support handles platform bugs, standard feature questions, and
+            escalation to Oracle engineering. It does not cover SuiteScript customizations,
+            third-party integrations, workflow logic built during implementation, or configuration
+            specific to how your account was set up. A third-party alternative fills that gap:
+            direct access to a certified consultant who knows your account, same-day response on
+            active production issues, and coverage across the full account rather than only the
+            standard-functionality tier. For most live accounts two or more years past go-live,
+            the customization layer generates more support work than the platform itself, making a
+            third-party firm the practical choice.
+          </p>
+        </div>
+
         <p className="mt-6 text-sm text-brand-400">
           NetSuite support is designed for the platform layer. It handles confirmed bugs, standard
           feature questions, and escalation to Oracle engineering. For everything built on top of
@@ -199,7 +218,7 @@ export default function SupportAlternativePage() {
         {/* Pain points */}
         <div className="mt-14" data-section="pain-points">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            Why NetSuite support stops working for live accounts
+            Why does NetSuite support stop working for live accounts?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {PAIN_POINTS.map((item) => (
@@ -214,7 +233,7 @@ export default function SupportAlternativePage() {
 
         {/* What we do */}
         <div className="mt-14" data-section="what-we-do">
-          <h2 className="text-lg font-semibold text-brand-900 mb-1">What the alternative looks like</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-1">What does an alternative to NetSuite support look like?</h2>
           <p className="text-sm text-brand-400 mb-6">
             A third-party support engagement covers the full account, not just the standard-functionality tier.
           </p>
@@ -233,7 +252,7 @@ export default function SupportAlternativePage() {
 
         {/* How it works */}
         <div className="mt-14" data-section="how-it-works">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">How an engagement starts</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">How does a third-party NetSuite support engagement start?</h2>
           <div className="space-y-4">
             {HOW_IT_WORKS.map((item) => (
               <div key={item.step} className="flex items-start gap-5">
@@ -261,7 +280,7 @@ export default function SupportAlternativePage() {
 
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why companies choose SuitePacific</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why do companies choose SuitePacific over NetSuite support?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">
