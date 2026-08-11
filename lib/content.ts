@@ -59,6 +59,18 @@ export const NAV_LINKS: NavLink[] = [
       { label: "Hire a NetSuite Developer", href: "/hire-netsuite-developer", description: "Dedicated NetSuite developer, no long-term contracts." },
     ],
   },
+  {
+    label: "Industries",
+    children: [
+      { label: "Manufacturing", href: "/industries/manufacturing", description: "NetSuite support for manufacturing operations." },
+      { label: "Wholesale & Distribution", href: "/industries/wholesale-distribution", description: "NetSuite support for inventory-driven businesses." },
+      { label: "Construction", href: "/industries/construction", description: "NetSuite support for project-driven businesses." },
+      { label: "Real Estate", href: "/industries/real-estate", description: "NetSuite support for property and project businesses." },
+      { label: "SaaS & Technology", href: "/industries/saas-technology", description: "NetSuite support for technology companies." },
+      { label: "Retail & E-commerce", href: "/industries/retail-ecommerce", description: "NetSuite support for commerce businesses." },
+      { label: "Professional Services", href: "/industries/professional-services", description: "NetSuite support for project-based firms." },
+    ],
+  },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Resources", href: "/resources" },
   { label: "Blog", href: "/blog" },
