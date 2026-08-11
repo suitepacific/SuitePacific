@@ -262,6 +262,43 @@ export default function NetSuiteAiIntegrationPage() {
           </div>
         </div>
 
+        {/* Spoke pages */}
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
+          <p className="text-sm font-semibold text-brand-900 mb-1">Dedicated AI services from SuitePacific</p>
+          <p className="text-sm text-brand-400 mb-4">
+            Three AI services designed for live NetSuite accounts, each scoped as a fixed engagement.
+          </p>
+          <ul className="space-y-3">
+            <li>
+              <Link href="/netsuite-ai-optimization-assessment" className="group flex items-start gap-3">
+                <span className="text-accent mt-0.5 shrink-0 text-base">›</span>
+                <div>
+                  <p className="text-sm font-medium text-accent group-hover:underline">NetSuite AI Optimization Assessment</p>
+                  <p className="text-xs text-brand-400 mt-0.5">AI-assisted review of your account covering scripts, workflows, saved searches, and configuration. Delivers a prioritized findings report in 2-3 business days.</p>
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link href="/netsuite-ai-invoice-processing" className="group flex items-start gap-3">
+                <span className="text-accent mt-0.5 shrink-0 text-base">›</span>
+                <div>
+                  <p className="text-sm font-medium text-accent group-hover:underline">NetSuite AI Invoice Processing</p>
+                  <p className="text-xs text-brand-400 mt-0.5">AI that reads vendor invoices and populates bill records automatically. Handles formats Oracle Bill Capture cannot process, with line-item PO matching and exception routing.</p>
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link href="/netsuite-ai-reporting" className="group flex items-start gap-3">
+                <span className="text-accent mt-0.5 shrink-0 text-base">›</span>
+                <div>
+                  <p className="text-sm font-medium text-accent group-hover:underline">NetSuite AI Reporting</p>
+                  <p className="text-xs text-brand-400 mt-0.5">Ask questions about your NetSuite data in plain English. A natural language interface converts questions to SuiteQL and returns answers from live records.</p>
+                </div>
+              </Link>
+            </li>
+          </ul>
+        </div>
+
         {/* How it works */}
         <div className="mt-14" data-section="how-it-works">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">How does a NetSuite AI integration engagement work?</h2>

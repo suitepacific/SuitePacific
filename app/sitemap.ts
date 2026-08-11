@@ -30,6 +30,9 @@ const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/netsuite-certified-netsuite-support", lastModified: NEW_PAGES_DATE },
   { path: "/netsuite-managed-support", lastModified: NEW_PAGES_DATE },
   { path: "/netsuite-ai-integration", lastModified: NEW_PAGES_DATE },
+  { path: "/netsuite-ai-optimization-assessment", lastModified: NEW_PAGES_DATE },
+  { path: "/netsuite-ai-invoice-processing", lastModified: NEW_PAGES_DATE },
+  { path: "/netsuite-ai-reporting", lastModified: NEW_PAGES_DATE },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

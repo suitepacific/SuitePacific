@@ -98,6 +98,9 @@ A: First, identify which release just went live and check the release notes for 
 - [Certified NetSuite Support](https://suitepacific.com/netsuite-certified-netsuite-support): NetSuite support from SuiteCloud Developer II and Administrator Professional certified consultants
 - [NetSuite Managed Support](https://suitepacific.com/netsuite-managed-support): Monthly retainer for ongoing NetSuite managed services covering development, administration, and break-fix
 - [NetSuite AI Integration](https://suitepacific.com/netsuite-ai-integration): Configuration of Oracle NetSuite's native AI features (Text Enhance, Bill Capture, Intelligent Forecasting) and custom AI integrations via SuiteScript connecting NetSuite to external AI APIs
+- [NetSuite AI Optimization Assessment](https://suitepacific.com/netsuite-ai-optimization-assessment): AI-assisted review of a live NetSuite account covering SuiteScript governance risks, SuiteFlow workflow inefficiencies, saved search errors, and configuration drift; delivers a prioritized findings report in 2-3 business days
+- [NetSuite AI Invoice Processing](https://suitepacific.com/netsuite-ai-invoice-processing): Custom SuiteScript integration using AI document extraction to read vendor invoices and populate NetSuite bill records automatically; handles non-standard formats Oracle Bill Capture cannot process, with line-item PO matching and exception routing
+- [NetSuite AI Reporting](https://suitepacific.com/netsuite-ai-reporting): Natural language reporting interface for NetSuite built as a Suitelet; converts plain-English questions to SuiteQL queries and returns answers from live account records without requiring a saved search
 
 ## Products
 
