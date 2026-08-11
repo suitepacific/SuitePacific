@@ -269,9 +269,32 @@ export default function AcsAlternativePage() {
         {/* What we cover */}
         <div className="mt-14" data-section="what-we-cover">
           <h2 className="text-lg font-semibold text-brand-900 mb-1">What does a third-party NetSuite ACS alternative cover?</h2>
-          <p className="text-sm text-brand-400 mb-6">
+          <p className="text-sm text-brand-400 mb-4">
             Everything your account generates on any given week, not just the portion that falls within a platform vendor&apos;s scope.
           </p>
+          <div className="overflow-x-auto pb-2 mb-6">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-2 sm:gap-0">
+              <div className="rounded-xl border border-brand-100 bg-brand-50/30 px-4 py-3 text-center flex-1">
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-brand-400 mb-1">Issue</p>
+                <p className="text-sm font-medium text-brand-700">Script, workflow, or integration fails</p>
+              </div>
+              <div className="hidden sm:flex items-center justify-center px-2 text-brand-300 text-base">›</div>
+              <div className="rounded-xl border border-brand-100 bg-brand-50/30 px-4 py-3 text-center flex-1">
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-brand-400 mb-1">Step 1</p>
+                <p className="text-sm font-medium text-brand-700">Direct contact, no Tier 1 triage</p>
+              </div>
+              <div className="hidden sm:flex items-center justify-center px-2 text-brand-300 text-base">›</div>
+              <div className="rounded-xl border border-brand-100 bg-brand-50/30 px-4 py-3 text-center flex-1">
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-brand-400 mb-1">Step 2</p>
+                <p className="text-sm font-medium text-brand-700">Fix built in your Sandbox account</p>
+              </div>
+              <div className="hidden sm:flex items-center justify-center px-2 text-brand-300 text-base">›</div>
+              <div className="rounded-xl border border-accent/20 bg-accent/5 px-4 py-3 text-center flex-1">
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-accent mb-1">Resolved</p>
+                <p className="text-sm font-medium text-brand-700">Deployed to Production</p>
+              </div>
+            </div>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHAT_WE_COVER.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">

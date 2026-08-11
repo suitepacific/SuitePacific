@@ -276,7 +276,30 @@ export default function NetSuiteManagedSupportPage() {
 
         {/* How it works */}
         <div className="mt-14" data-section="how-it-works">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">How does a NetSuite managed support engagement work?</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-4">How does a NetSuite managed support engagement work?</h2>
+          <div className="overflow-x-auto pb-2 mb-6">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-start gap-2 sm:gap-0">
+              <div className="rounded-xl border border-brand-100 bg-brand-50/30 px-4 py-3 text-center flex-1">
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-brand-400 mb-1">Issue</p>
+                <p className="text-sm font-medium text-brand-700">Problem surfaces in your account</p>
+              </div>
+              <div className="hidden sm:flex items-center justify-center px-2 text-brand-300 text-base">›</div>
+              <div className="rounded-xl border border-brand-100 bg-brand-50/30 px-4 py-3 text-center flex-1">
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-brand-400 mb-1">Step 1</p>
+                <p className="text-sm font-medium text-brand-700">Direct contact to your consultant, same-day response</p>
+              </div>
+              <div className="hidden sm:flex items-center justify-center px-2 text-brand-300 text-base">›</div>
+              <div className="rounded-xl border border-brand-100 bg-brand-50/30 px-4 py-3 text-center flex-1">
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-brand-400 mb-1">Step 2</p>
+                <p className="text-sm font-medium text-brand-700">Fix built and tested in Sandbox</p>
+              </div>
+              <div className="hidden sm:flex items-center justify-center px-2 text-brand-300 text-base">›</div>
+              <div className="rounded-xl border border-accent/20 bg-accent/5 px-4 py-3 text-center flex-1">
+                <p className="text-[10px] font-semibold uppercase tracking-wide text-accent mb-1">Resolved</p>
+                <p className="text-sm font-medium text-brand-700">Deployed to Production</p>
+              </div>
+            </div>
+          </div>
           <div className="space-y-4">
             {HOW_IT_WORKS.map((item) => (
               <div key={item.step} className="flex items-start gap-5">
