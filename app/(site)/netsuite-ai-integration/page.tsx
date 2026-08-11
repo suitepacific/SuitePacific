@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Sparkles,
-  Code2,
+  TrendingUp,
   Zap,
   ShieldCheck,
   Users,
   Clock,
   BarChart2,
   Cpu,
+  FileText,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
@@ -47,28 +48,28 @@ const NATIVE_AI = [
 
 const CUSTOM_INTEGRATIONS = [
   {
-    icon: Code2,
-    title: "SuiteScript to external AI API",
+    icon: BarChart2,
+    title: "AI reporting and financial insights",
     description:
-      "SuiteScript's N/https module can call any external HTTP endpoint — including OpenAI, Anthropic, Google Gemini, or a self-hosted model. We design and build the script, handle authentication, structure the prompt, parse the response, and write the result back to NetSuite records.",
+      "AI that reads your NetSuite financial data and surfaces trends, anomalies, and plain-language summaries. Ask questions about your data in natural language and get answers drawn from live NetSuite records — without building a saved search for every question.",
+  },
+  {
+    icon: TrendingUp,
+    title: "AI demand and revenue forecasting",
+    description:
+      "Connect NetSuite transaction and inventory history to AI forecasting models that predict future demand, flag low-stock risk, and project revenue by period. More accurate than static spreadsheet models because the AI updates as new orders and transactions come in.",
+  },
+  {
+    icon: FileText,
+    title: "AI invoice and AP automation",
+    description:
+      "Beyond Oracle's built-in Bill Capture, custom AI integrations can handle complex vendor invoice formats, multi-currency matching, PO line-item reconciliation, and exception routing. AI reads the invoice, populates the bill record, and flags anything that needs human review.",
   },
   {
     icon: Zap,
-    title: "AI-powered record enrichment",
+    title: "AI process and workflow automation",
     description:
-      "Use AI to classify, score, tag, or summarize NetSuite records at scale. Examples: classifying customer segments from order history, scoring leads from CRM data, tagging items from description text, or summarizing vendor performance. Built as scheduled scripts that run against existing records.",
-  },
-  {
-    icon: Sparkles,
-    title: "AI-triggered workflow automation",
-    description:
-      "SuiteFlow workflows triggered by AI output. An AI classification result or score written to a custom field can trigger approval routing, status transitions, notifications, or escalations. We connect the AI integration layer to your existing SuiteFlow logic.",
-  },
-  {
-    icon: Cpu,
-    title: "NetSuite data pipelines to AI tools",
-    description:
-      "Scheduled exports from NetSuite to external AI platforms: feeding order history to a forecasting model, syncing customer data to an AI-powered CRM layer, or pushing transaction data to a custom analytics pipeline. RESTlet or SuiteScript-based extraction with structured output.",
+      "AI that classifies records, scores transactions, or routes approvals based on patterns in your NetSuite data. Examples: auto-categorizing expense reports, scoring sales orders for credit risk, routing vendor bills by spend category, or flagging transactions that match known fraud patterns.",
   },
 ];
 
@@ -101,7 +102,7 @@ const WHY_SP = [
       "Custom AI integrations are SuiteScript work. The same certification that covers standard SuiteScript development covers AI integration scripts — the credential verifies the underlying platform knowledge.",
   },
   {
-    icon: Code2,
+    icon: Sparkles,
     title: "Existing AI integration experience",
     description:
       "SuiteCompare's AI summary panel connects NetSuite SuiteScript data to an AI model and streams structured analysis back to users. We have already built the integration pattern we would apply to your account.",
@@ -243,10 +244,10 @@ export default function NetSuiteAiIntegrationPage() {
 
         {/* Custom AI integrations */}
         <div className="mt-14" data-section="custom-integrations">
-          <h2 className="text-lg font-semibold text-brand-900 mb-1">What custom AI integrations can be built on NetSuite?</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-1">What can AI do in your NetSuite account?</h2>
           <p className="text-sm text-brand-400 mb-6">
-            SuiteScript can call any external HTTP endpoint, which means any AI API with
-            an HTTP interface can be integrated with your NetSuite account.
+            Beyond Oracle&apos;s built-in features, SuiteScript can connect your NetSuite
+            account to any external AI model. Here are the use cases companies ask about most often.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {CUSTOM_INTEGRATIONS.map((item) => (
