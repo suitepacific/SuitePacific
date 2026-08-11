@@ -6,6 +6,7 @@ import { getAllResources } from "@/lib/resources";
 
 const SITE_LAUNCH_DATE = new Date("2026-06-01");
 const SEO_REFRESH_DATE = new Date("2026-08-05");
+const NEW_PAGES_DATE = new Date("2026-08-11");
 
 const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/hire-netsuite-developer", lastModified: SEO_REFRESH_DATE },
@@ -23,6 +24,11 @@ const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/netsuite-consulting-services", lastModified: SEO_REFRESH_DATE },
   { path: "/netsuite-admin-support-small-business", lastModified: SEO_REFRESH_DATE },
   { path: "/suitecompare", lastModified: new Date("2026-07-19") },
+  { path: "/netsuite-acs-alternative", lastModified: NEW_PAGES_DATE },
+  { path: "/netsuite-support-alternative", lastModified: NEW_PAGES_DATE },
+  { path: "/netsuite-oracle-support-vs-third-party", lastModified: NEW_PAGES_DATE },
+  { path: "/netsuite-certified-netsuite-support", lastModified: NEW_PAGES_DATE },
+  { path: "/netsuite-managed-support", lastModified: NEW_PAGES_DATE },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
