@@ -326,6 +326,15 @@ export default function SupportAlternativePage() {
         </div>
 
         <ServiceFaqSection items={FAQ} />
+
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <p className="text-sm font-semibold text-brand-900 mb-1">Done evaluating your options?</p>
+          <p className="text-sm text-brand-400 mb-4">
+            Tell us what your account needs and what kinds of issues you deal with most often.
+            We will explain how an engagement would work for your specific setup.
+          </p>
+          <LeadFormLight />
+        </div>
       </div>
     </main>
   );

@@ -92,6 +92,11 @@ A: First, identify which release just went live and check the release notes for 
 - [NetSuite Consulting Services](https://suitepacific.com/netsuite-consulting-services): Project-based and retainer consulting for live NetSuite accounts
 - [NetSuite Integrations](https://suitepacific.com/netsuite-integrations): Third-party integrations, RESTlets, and OAuth 2.0 migrations
 - [Implementation Partner vs. Managed Support](https://suitepacific.com/netsuite-implementation-partner-vs-managed-support): Explains the difference and when each is appropriate
+- [NetSuite ACS Alternative](https://suitepacific.com/netsuite-acs-alternative): Third-party alternative to NetSuite Advanced Customer Support, covering what ACS does not handle
+- [Alternative to NetSuite Support](https://suitepacific.com/netsuite-support-alternative): Third-party consulting as an alternative to Oracle NetSuite standard support
+- [NetSuite Oracle Support vs. Third-Party](https://suitepacific.com/netsuite-oracle-support-vs-third-party): Side-by-side comparison of Oracle NetSuite support and third-party consulting firms
+- [Certified NetSuite Support](https://suitepacific.com/netsuite-certified-netsuite-support): NetSuite support from SuiteCloud Developer II and Administrator Professional certified consultants
+- [NetSuite Managed Support](https://suitepacific.com/netsuite-managed-support): Monthly retainer for ongoing NetSuite managed services covering development, administration, and break-fix
 
 ## Products
 
@@ -165,4 +170,4 @@ A: First, identify which release just went live and check the release notes for 
 
 Content on this site is copyright SuitePacific, LLC. Blog posts and resource guides may be cited for informational purposes under RSL 1.0 (Reference Source License). Do not reproduce full articles without attribution.
 
-Last updated: 2026-08-05
+Last updated: 2026-08-11

@@ -261,9 +261,9 @@ export default function NetSuiteManagedSupportPage() {
 
         {/* Why managed over project-based */}
         <div className="mt-14" data-section="why-managed">
-          <h2 className="text-lg font-semibold text-brand-900 mb-1">Why does a retainer work better than project-by-project billing for NetSuite support?</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-1">Why does a managed services retainer work better than project-by-project billing for NetSuite support?</h2>
           <p className="text-sm text-brand-400 mb-6">
-            Project-based billing works well for implementations. For ongoing account support, it introduces friction that slows down routine work.
+            Project-based billing works well for implementations. For ongoing NetSuite managed services, it introduces friction that slows down routine work.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {WHY_MANAGED.map((item) => (
@@ -334,6 +334,15 @@ export default function NetSuiteManagedSupportPage() {
         </div>
 
         <ServiceFaqSection items={FAQ} />
+
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <p className="text-sm font-semibold text-brand-900 mb-1">Ready to move to a managed support retainer?</p>
+          <p className="text-sm text-brand-400 mb-4">
+            Tell us about your account and the types of work that surface most often. We will
+            propose a retainer scope that matches what your account actually needs.
+          </p>
+          <LeadFormLight />
+        </div>
       </div>
     </main>
   );

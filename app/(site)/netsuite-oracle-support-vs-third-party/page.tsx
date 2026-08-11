@@ -307,6 +307,15 @@ export default function OracleSupportVsThirdPartyPage() {
         </div>
 
         <ServiceFaqSection items={FAQ} />
+
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <p className="text-sm font-semibold text-brand-900 mb-1">Ready to talk through your options?</p>
+          <p className="text-sm text-brand-400 mb-4">
+            Describe your account setup and current support situation. We will tell you honestly
+            whether a third-party engagement is the right fit.
+          </p>
+          <LeadFormLight />
+        </div>
       </div>
     </main>
   );

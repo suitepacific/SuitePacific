@@ -285,6 +285,16 @@ export default function AcsAlternativePage() {
         </div>
 
         <ServiceFaqSection items={FAQ} />
+
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <p className="text-sm font-semibold text-brand-900 mb-1">Ready to evaluate an ACS alternative?</p>
+          <p className="text-sm text-brand-400 mb-4">
+            Tell us about your account and the types of support work that surfaces most often.
+            We will give an honest assessment of whether a third-party engagement covers your
+            needs better than ACS.
+          </p>
+          <LeadFormLight />
+        </div>
       </div>
     </main>
   );

@@ -294,6 +294,15 @@ export default function CertifiedNetSuiteSupportPage() {
         </div>
 
         <ServiceFaqSection items={FAQ} />
+
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <p className="text-sm font-semibold text-brand-900 mb-1">Work with a certified consultant on your account</p>
+          <p className="text-sm text-brand-400 mb-4">
+            SuiteCloud Developer II and Administrator Professional certifications, direct access,
+            and retained context. Tell us what your account needs.
+          </p>
+          <LeadFormLight />
+        </div>
       </div>
     </main>
   );
