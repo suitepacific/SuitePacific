@@ -8,6 +8,16 @@ const SITE_LAUNCH_DATE = new Date("2026-06-01");
 const SEO_REFRESH_DATE = new Date("2026-08-05");
 const NEW_PAGES_DATE = new Date("2026-08-11");
 
+const INDUSTRY_PAGES: { path: string; lastModified: Date }[] = [
+  { path: "/industries/manufacturing", lastModified: SEO_REFRESH_DATE },
+  { path: "/industries/wholesale-distribution", lastModified: SEO_REFRESH_DATE },
+  { path: "/industries/construction", lastModified: SEO_REFRESH_DATE },
+  { path: "/industries/real-estate", lastModified: SEO_REFRESH_DATE },
+  { path: "/industries/saas-technology", lastModified: SEO_REFRESH_DATE },
+  { path: "/industries/retail-ecommerce", lastModified: SEO_REFRESH_DATE },
+  { path: "/industries/professional-services", lastModified: SEO_REFRESH_DATE },
+];
+
 const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/hire-netsuite-developer", lastModified: SEO_REFRESH_DATE },
   { path: "/partners", lastModified: SITE_LAUNCH_DATE },
@@ -45,6 +55,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/blog`, lastModified: posts.length > 0 ? new Date(posts[0].date) : SITE_LAUNCH_DATE },
     { url: `${SITE_URL}/resources`, lastModified: new Date("2026-07-14") },
     { url: `${SITE_URL}/case-studies`, lastModified: SITE_LAUNCH_DATE },
+    ...INDUSTRY_PAGES.map(({ path, lastModified }) => ({
+      url: `${SITE_URL}${path}`,
+      lastModified,
+    })),
     ...SERVICE_PAGES.map(({ path, lastModified }) => ({
       url: `${SITE_URL}${path}`,
       lastModified,

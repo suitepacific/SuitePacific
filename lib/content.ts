@@ -60,6 +60,15 @@ export const NAV_LINKS: NavLink[] = [
     ],
   },
   {
+    label: "AI Services",
+    children: [
+      { label: "NetSuite AI Integration", href: "/netsuite-ai-integration", description: "Connect AI tools and APIs to your live NetSuite account." },
+      { label: "AI Optimization Assessment", href: "/netsuite-ai-optimization-assessment", description: "Identify where AI automation delivers the most value in your workflows." },
+      { label: "AI Invoice Processing", href: "/netsuite-ai-invoice-processing", description: "Automate invoice capture, line-item extraction, and PO matching." },
+      { label: "AI Reporting", href: "/netsuite-ai-reporting", description: "AI-powered reporting and financial insights directly in NetSuite." },
+    ],
+  },
+  {
     label: "Industries",
     children: [
       { label: "Manufacturing", href: "/industries/manufacturing", description: "NetSuite support for manufacturing operations." },
@@ -476,6 +485,15 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: "NetSuite Consulting", href: "/netsuite-consulting-services" },
       { label: "Account Optimization", href: "/netsuite-account-optimization" },
       { label: "Post-Go-Live Support", href: "/netsuite-post-go-live-support" },
+    ],
+  },
+  {
+    title: "AI Services",
+    links: [
+      { label: "NetSuite AI Integration", href: "/netsuite-ai-integration" },
+      { label: "AI Optimization Assessment", href: "/netsuite-ai-optimization-assessment" },
+      { label: "AI Invoice Processing", href: "/netsuite-ai-invoice-processing" },
+      { label: "AI Reporting", href: "/netsuite-ai-reporting" },
     ],
   },
   {
