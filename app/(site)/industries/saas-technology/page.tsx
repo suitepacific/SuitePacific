@@ -17,7 +17,7 @@ import {
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
@@ -142,7 +142,7 @@ const CUSTOMIZATIONS = [
 const WHY_SP = [
   {
     icon: ShieldCheck,
-    title: "SuiteCloud Developer II Certified",
+    title: "NetSuite-Certified",
     description:
       "Oracle NetSuite's SuiteCloud Developer II and Administrator Professional certifications. Verified technical credentials across SuiteScript, SuiteFlow, and the NetSuite platform.",
   },
@@ -229,6 +229,39 @@ const FAQ = [
   },
 ];
 
+const COMPARISON = [
+  {
+    capability: "Subscription billing",
+    standard: "Recurring invoice templates",
+    withSP: "Custom proration, upgrade, and cancellation logic via SuiteScript",
+  },
+  {
+    capability: "Revenue recognition",
+    standard: "ARM schedules per invoice line",
+    withSP: "Automated deferred revenue posting on subscription invoice creation",
+  },
+  {
+    capability: "Renewal tracking",
+    standard: "Manual customer follow-up",
+    withSP: "Reminder workflows at 90, 60, and 30 days with escalation routing",
+  },
+  {
+    capability: "SaaS metrics reporting",
+    standard: "Standard AR and revenue reports",
+    withSP: "ARR, MRR, churn rate, and LTV saved searches via SuiteQL",
+  },
+  {
+    capability: "CRM integration",
+    standard: "Manual data entry from CRM systems",
+    withSP: "Salesforce and HubSpot sync via RESTlet or scheduled script",
+  },
+  {
+    capability: "Usage billing",
+    standard: "Manual invoice creation from usage data",
+    withSP: "Automated import scripts from usage tracking systems",
+  },
+];
+
 export const metadata: Metadata = {
   title: "NetSuite Support for SaaS & Technology Companies",
   description:
@@ -261,6 +294,14 @@ export default function SaasTechnologyPage() {
         url={`${SITE_URL}/industries/saas-technology`}
         serviceType="NetSuite SaaS Support"
       />
+      <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
+        description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
+        videoId="IQvWN_yZ24A"
+        uploadDate="2026-08-12"
+        isShort
+      />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading
@@ -275,14 +316,19 @@ export default function SaasTechnologyPage() {
           <LeadFormLight />
         </div>
         <p className="mt-3 text-xs text-brand-400">
-          SuiteCloud Developer II certified · Post-go-live specialist · Sandbox-first development · Month-to-month
+          NetSuite-Certified · Post-go-live specialist · Sandbox-first development · Month-to-month
+        </p>
+        <p className="mt-2 text-xs text-brand-300">
+          <time dateTime="2026-08">Published August 2026</time>
         </p>
 
         <p className="mt-8 text-sm text-brand-400">
-          SuitePacific provides NetSuite post-go-live support and development for SaaS and technology companies.
-          We work with technology companies already live on NetSuite, handling the technical work that follows
-          initial implementation: subscription billing logic, renewal automation, ARR and MRR reporting, usage-based
-          billing imports, and integrations with CRM systems and billing platforms. SaaS accounts in NetSuite
+          SaaS companies that select NetSuite for subscription billing and revenue recognition often find that
+          proration logic, renewal workflows, and ARR/MRR reporting require SuiteScript development that the
+          standard ARM module and invoicing tools do not provide out of the box. SuitePacific provides this
+          technical layer for technology companies already live on NetSuite, covering subscription billing logic,
+          renewal automation, ARR and MRR reporting, usage-based billing imports, and integrations with CRM systems
+          and billing platforms. SaaS accounts in NetSuite
           typically require significant customization to produce subscription revenue metrics, automate renewal
           workflows, and connect the finance system to the product and sales stack. Common areas include deferred
           revenue posting automation, renewal reminder workflows, SuiteQL-based ARR and MRR saved searches, and
@@ -292,10 +338,40 @@ export default function SaasTechnologyPage() {
           with no offshore handoffs or account manager layer.
         </p>
 
+        {/* Comparison */}
+        <div className="mt-14" data-section="comparison">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">
+            How does SuitePacific extend NetSuite for SaaS companies?
+          </h2>
+          <p className="text-sm text-brand-400 mb-4">
+            These are common capability gaps and what SuitePacific adds to fill them.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-brand-100">
+                  <th className="text-left py-3 pr-6 font-semibold text-brand-900 w-1/3">Capability</th>
+                  <th className="text-left py-3 pr-6 font-semibold text-brand-900 w-1/3">Standard NetSuite</th>
+                  <th className="text-left py-3 font-semibold text-brand-900 w-1/3">With SuitePacific</th>
+                </tr>
+              </thead>
+              <tbody>
+                {COMPARISON.map((row) => (
+                  <tr key={row.capability} className="border-b border-brand-50">
+                    <td className="py-3 pr-6 font-medium text-brand-900 align-top">{row.capability}</td>
+                    <td className="py-3 pr-6 text-brand-400 align-top">{row.standard}</td>
+                    <td className="py-3 text-brand-700 align-top">{row.withSP}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         {/* Challenges */}
         <div className="mt-14" data-section="challenges">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            NetSuite challenges SaaS companies face after go-live
+            What NetSuite challenges do SaaS companies face?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {CHALLENGES.map((item) => (
@@ -311,7 +387,7 @@ export default function SaasTechnologyPage() {
         {/* Services */}
         <div className="mt-14" data-section="services">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            NetSuite services for SaaS & technology
+            What NetSuite services does SuitePacific provide for SaaS companies?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {SERVICES.map((service) => (
@@ -333,7 +409,7 @@ export default function SaasTechnologyPage() {
         {/* Customizations */}
         <div className="mt-14" data-section="customizations">
           <h2 className="text-lg font-semibold text-brand-900 mb-2">
-            Common SaaS NetSuite customizations
+            What are common NetSuite customizations for SaaS companies?
           </h2>
           <p className="text-sm text-brand-400 mb-6">
             These are the kinds of builds we do for technology companies on a recurring basis.
@@ -345,7 +421,7 @@ export default function SaasTechnologyPage() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
-                  <p className="font-semibold text-brand-900 text-sm">{item.title}</p>
+                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
                   <p className="mt-0.5 text-sm text-brand-400">{item.description}</p>
                 </div>
               </div>
@@ -356,7 +432,7 @@ export default function SaasTechnologyPage() {
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            Why SaaS companies choose SuitePacific
+            Why do SaaS companies choose SuitePacific?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (

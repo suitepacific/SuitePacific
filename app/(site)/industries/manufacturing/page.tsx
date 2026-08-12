@@ -18,7 +18,7 @@ import {
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
@@ -143,7 +143,7 @@ const CUSTOMIZATIONS = [
 const WHY_SP = [
   {
     icon: ShieldCheck,
-    title: "SuiteCloud Developer II Certified",
+    title: "NetSuite-Certified",
     description:
       "Oracle NetSuite's SuiteCloud Developer II and Administrator Professional certifications. Verified technical credentials across SuiteScript, SuiteFlow, and the NetSuite platform.",
   },
@@ -230,6 +230,39 @@ const FAQ = [
   },
 ];
 
+const COMPARISON = [
+  {
+    capability: "BOM management",
+    standard: "Multi-level BOM structure with standard costing",
+    withSP: "Component substitution logic, costing overrides, and assembly validation via SuiteScript",
+  },
+  {
+    capability: "Work order processing",
+    standard: "Manual status updates and standard completion",
+    withSP: "Automated status transitions, component deduction, and completion scripts",
+  },
+  {
+    capability: "Lot and bin tracking",
+    standard: "Tracking fields available, entry not enforced",
+    withSP: "Entry enforcement scripts, transfer validation, and traceability saved searches",
+  },
+  {
+    capability: "Production reporting",
+    standard: "Standard inventory and transaction reports",
+    withSP: "WIP, variance, and production cost saved searches",
+  },
+  {
+    capability: "Approval routing",
+    standard: "Single-level approval workflow",
+    withSP: "Multi-level conditional routing by amount, vendor, and category",
+  },
+  {
+    capability: "KPI dashboards",
+    standard: "Standard dashboard portlets",
+    withSP: "Role-specific manufacturing KPI portlets updated from saved searches",
+  },
+];
+
 export const metadata: Metadata = {
   title: "NetSuite Support for Manufacturing Companies",
   description:
@@ -262,6 +295,14 @@ export default function ManufacturingPage() {
         url={`${SITE_URL}/industries/manufacturing`}
         serviceType="NetSuite Manufacturing Support"
       />
+      <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
+        description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
+        videoId="IQvWN_yZ24A"
+        uploadDate="2026-08-12"
+        isShort
+      />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading
@@ -276,15 +317,19 @@ export default function ManufacturingPage() {
           <LeadFormLight />
         </div>
         <p className="mt-3 text-xs text-brand-400">
-          SuiteCloud Developer II certified · Post-go-live specialist · Sandbox-first development · Month-to-month
+          NetSuite-Certified · Post-go-live specialist · Sandbox-first development · Month-to-month
+        </p>
+        <p className="mt-2 text-xs text-brand-300">
+          <time dateTime="2026-08">Published August 2026</time>
         </p>
 
         <p className="mt-8 text-sm text-brand-400">
-          SuitePacific provides NetSuite post-go-live support and development for manufacturing companies. We work
-          with manufacturers already live on NetSuite, handling the technical work that follows initial
-          implementation: BOM and assembly customization, work order automation, lot and bin tracking enforcement,
-          production reporting, and ongoing SuiteScript development for business logic that standard configuration
-          cannot reach. Manufacturing accounts in NetSuite typically require significant customization to match
+          Manufacturing companies go live on NetSuite with standard BOM and work order configuration, and typically
+          discover within months that production workflows, costing requirements, and lot tracking enforcement need
+          custom SuiteScript logic to operate reliably. SuitePacific provides this technical layer for manufacturers
+          already live on NetSuite, covering BOM and assembly customization, work order automation, lot and bin
+          tracking enforcement, production reporting, and ongoing SuiteScript development for business logic that
+          standard configuration cannot reach. Manufacturing accounts in NetSuite typically require significant customization to match
           production workflows, costing requirements, and approval chains. Common areas include multi-level BOM
           validation scripts, work order completion automation, production variance reporting via saved searches, and
           conditional approval routing for purchase orders and work orders. SuitePacific builds and maintains these
@@ -293,10 +338,40 @@ export default function ManufacturingPage() {
           no offshore handoffs or account manager layer.
         </p>
 
+        {/* Comparison */}
+        <div className="mt-14" data-section="comparison">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">
+            How does SuitePacific extend a standard NetSuite manufacturing account?
+          </h2>
+          <p className="text-sm text-brand-400 mb-4">
+            These are common capability gaps and what SuitePacific adds to fill them.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-brand-100">
+                  <th className="text-left py-3 pr-6 font-semibold text-brand-900 w-1/3">Capability</th>
+                  <th className="text-left py-3 pr-6 font-semibold text-brand-900 w-1/3">Standard NetSuite</th>
+                  <th className="text-left py-3 font-semibold text-brand-900 w-1/3">With SuitePacific</th>
+                </tr>
+              </thead>
+              <tbody>
+                {COMPARISON.map((row) => (
+                  <tr key={row.capability} className="border-b border-brand-50">
+                    <td className="py-3 pr-6 font-medium text-brand-900 align-top">{row.capability}</td>
+                    <td className="py-3 pr-6 text-brand-400 align-top">{row.standard}</td>
+                    <td className="py-3 text-brand-700 align-top">{row.withSP}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         {/* Challenges */}
         <div className="mt-14" data-section="challenges">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            NetSuite challenges manufacturers face after go-live
+            What NetSuite challenges do manufacturing companies face?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {CHALLENGES.map((item) => (
@@ -311,7 +386,7 @@ export default function ManufacturingPage() {
 
         {/* Services */}
         <div className="mt-14" data-section="services">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">NetSuite services for manufacturing</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">What NetSuite services does SuitePacific provide for manufacturing companies?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {SERVICES.map((service) => (
               <Link key={service.href} href={service.href} className="group">
@@ -332,7 +407,7 @@ export default function ManufacturingPage() {
         {/* Customizations */}
         <div className="mt-14" data-section="customizations">
           <h2 className="text-lg font-semibold text-brand-900 mb-2">
-            Common manufacturing NetSuite customizations
+            What are common NetSuite customizations for manufacturing?
           </h2>
           <p className="text-sm text-brand-400 mb-6">
             These are the kinds of builds we do for manufacturers on a recurring basis.
@@ -344,7 +419,7 @@ export default function ManufacturingPage() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
-                  <p className="font-semibold text-brand-900 text-sm">{item.title}</p>
+                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
                   <p className="mt-0.5 text-sm text-brand-400">{item.description}</p>
                 </div>
               </div>
@@ -355,7 +430,7 @@ export default function ManufacturingPage() {
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            Why manufacturing companies choose SuitePacific
+            Why do manufacturing companies choose SuitePacific?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (

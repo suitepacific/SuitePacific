@@ -16,10 +16,19 @@ import {
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+
+const COMPARISON = [
+  { capability: "SuiteScript development", typical: "Internal hire or ad-hoc contractor with no account context", withSP: "NetSuite SuiteCloud Developer II certified; account context maintained across every engagement" },
+  { capability: "Workflow automation updates", typical: "New SOW with implementation partner or internal admin workaround", withSP: "Handled in ongoing engagement without a new statement of work per request" },
+  { capability: "Integration maintenance", typical: "Original vendor support or new developer learning the system", withSP: "Same team maintains scripts and integrations; no handoff overhead" },
+  { capability: "Administration", typical: "NetSuite direct support or internal IT effort for each change", withSP: "Included in the same engagement as development; no separate engagement" },
+  { capability: "Incident response", typical: "Support ticket or escalation through an account manager", withSP: "Direct access to the developer who knows your account configuration" },
+  { capability: "Release impact review", typical: "Reactive, after issues appear in Production post-release", withSP: "Proactive Sandbox testing before each bi-annual NetSuite release" },
+];
 
 const PAIN_POINTS = [
   {
@@ -155,6 +164,41 @@ const FAQ = [
     answer:
       "Yes. Most live accounts need both. Administration covers configuration changes inside NetSuite's built-in tools. Development covers SuiteScript, integrations, and automation that requires custom code. Both are handled within the same engagement.",
   },
+  {
+    question: "What is included in a monthly post-go-live support engagement?",
+    answer:
+      "A monthly engagement provides a dedicated block of hours applied to whatever comes up during the month: new development requests, bug fixes, configuration changes, saved search updates, administration tasks, and integration maintenance. Work is brought as it arises; we handle it within the allocated hours. Most accounts find a consistent level of work month to month, with occasional spikes during NetSuite release cycles or business process changes.",
+  },
+  {
+    question: "How does SuitePacific handle urgent NetSuite issues?",
+    answer:
+      "Urgent issues get prioritized ahead of queued development work. Because we maintain context on your account, there is no ramp-up time diagnosing the problem. We have access to your existing scripts, workflows, and configuration history, which is typically where urgent issues originate.",
+  },
+  {
+    question: "Can you work with accounts that have legacy SuiteScript 1.0 scripts?",
+    answer:
+      "Yes. We work with both SuiteScript 1.0 and SuiteScript 2.x accounts. Legacy 1.0 scripts have different APIs and governance behavior than 2.x. We document which scripts are on 1.0 and assess whether migration to 2.x is warranted as part of ongoing maintenance, rather than recommending a wholesale migration that creates unnecessary disruption.",
+  },
+  {
+    question: "Do you handle custom record types and custom fields?",
+    answer:
+      "Yes. Custom records, custom fields, custom forms, and saved searches built on custom records are a standard part of post-go-live administration and development. We create, modify, and maintain these as part of the ongoing engagement.",
+  },
+  {
+    question: "How do you handle NetSuite's twice-yearly release cycle?",
+    answer:
+      "Before each release, we review the release preview in your Sandbox environment and check for compatibility issues with your existing customizations. Most customizations survive releases without changes, but SuiteFlow and advanced PDF templates occasionally require adjustments. We flag issues proactively so they are addressed before the release reaches your Production account.",
+  },
+  {
+    question: "Can you work alongside our internal IT team or administrator?",
+    answer:
+      "Yes. We work alongside internal IT and administrators regularly. The typical arrangement has internal IT managing infrastructure and general IT policy while we handle NetSuite-specific development, customization, and configuration. We adapt the scope of our engagement to avoid overlap with existing internal capabilities.",
+  },
+  {
+    question: "What happens to customizations built during the engagement if we end the relationship?",
+    answer:
+      "All customizations built during the engagement belong to your NetSuite account. We do not use proprietary tooling, platform wrappers, or external services that would make the work inaccessible after the engagement ends. We maintain documentation of active scripts and workflows, which we provide during offboarding.",
+  },
 ];
 
 export const metadata: Metadata = {
@@ -183,9 +227,17 @@ export default function PostGoLiveSupportPage() {
       <FaqJsonLd items={FAQ} />
       <ServiceJsonLd
         name="NetSuite Post-Go-Live Support"
-        description="Ongoing development, automation, and support for companies already live on NetSuite. Covers SuiteScript, workflow automation, saved searches, PDF templates, and configuration."
+        description="Ongoing NetSuite development and managed services for companies already live on NetSuite: SuiteScript 2.x (User Event, Scheduled, Map/Reduce, RESTlet, Suitelet), SuiteFlow workflow automation, RESTlet and API integrations, saved search and dashboard reporting, advanced FreeMarker PDF templates, account performance optimization, and administration. Month-to-month, sandbox-first, by Oracle NetSuite SuiteCloud Developer II and Administrator Professional certified developers."
         url={`${SITE_URL}/netsuite-post-go-live-support`}
         serviceType="NetSuite Managed Support"
+      />
+      <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
+        description="An introduction to SuitePacific, a boutique NetSuite consulting firm providing post-go-live support, SuiteScript development, workflow automation, integrations, and ongoing technical services for companies already live on NetSuite."
+        videoId="IQvWN_yZ24A"
+        uploadDate="2026-08-12"
+        isShort
       />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
@@ -201,18 +253,75 @@ export default function PostGoLiveSupportPage() {
           <LeadFormLight />
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
+        <p className="mt-2 text-xs text-brand-300"><time dateTime="2026-08">Published August 2026</time></p>
 
         <p className="mt-6 text-sm text-brand-400">
-          Implementation partners are scoped for go-live. Once that engagement closes, the
-          ongoing technical work has nowhere to go. SuitePacific fills that gap: ongoing
-          development, automation, and support for companies already live on NetSuite, as the
-          account continues to grow and change after implementation.
+          Implementation partners close their engagement at go-live. The scripts, workflows,
+          integrations, and configurations built during implementation continue to require
+          maintenance, and the business continues to need capabilities the original scope never
+          covered. Without a dedicated technical partner, these needs accumulate: development
+          backlogs grow, issues go unresolved, and the NetSuite account falls behind the pace of
+          the business. SuitePacific provides post-go-live support and ongoing development for
+          companies already live on NetSuite, covering SuiteScript development, workflow automation
+          updates, saved search and dashboard work, integration maintenance, account administration,
+          and performance optimization. Engagements are month-to-month with no long-term contract
+          required. Work is handled by NetSuite SuiteCloud Developer II and Administrator
+          Professional certified developers who maintain documentation and context on your specific
+          account across every engagement, so each new request builds on existing knowledge rather
+          than starting from scratch.
         </p>
+
+        {/* Intro video */}
+        <div className="mt-8 rounded-2xl border border-brand-100 bg-brand-50/30 p-5" data-section="intro-video">
+          <div className="flex flex-col sm:flex-row gap-5 items-start">
+            <div
+              className="w-32 shrink-0 mx-auto sm:mx-0 overflow-hidden rounded-xl"
+              style={{ aspectRatio: "9/16" }}
+            >
+              <iframe
+                src="https://www.youtube.com/embed/IQvWN_yZ24A"
+                title="SuitePacific Introduction: NetSuite Post-Go-Live Support"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full border-0"
+              />
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-brand-900">About SuitePacific</p>
+              <p className="mt-2 text-sm text-brand-400">
+                A short overview of what SuitePacific does, who we work with, and how post-go-live
+                NetSuite support works in practice.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Comparison */}
+        <div className="mt-10 overflow-x-auto" data-section="comparison">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="border-b border-brand-100">
+                <th className="py-2.5 pr-4 text-left text-xs font-semibold text-brand-900 w-1/3">Capability</th>
+                <th className="py-2.5 pr-4 text-left text-xs font-semibold text-brand-900 w-1/3">Without a support partner</th>
+                <th className="py-2.5 text-left text-xs font-semibold text-brand-900 w-1/3">With SuitePacific</th>
+              </tr>
+            </thead>
+            <tbody>
+              {COMPARISON.map((row) => (
+                <tr key={row.capability} className="border-b border-brand-50">
+                  <td className="py-2.5 pr-4 font-medium text-brand-900 text-xs align-top">{row.capability}</td>
+                  <td className="py-2.5 pr-4 text-brand-400 text-xs align-top">{row.typical}</td>
+                  <td className="py-2.5 text-brand-700 text-xs align-top">{row.withSP}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
         {/* Pain points */}
         <div className="mt-14" data-section="pain-points">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            What happens after go-live
+            What happens to your NetSuite account after the implementation partner leaves?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {PAIN_POINTS.map((item) => (
@@ -235,7 +344,7 @@ export default function PostGoLiveSupportPage() {
 
         {/* What we cover */}
         <div className="mt-14" data-section="what-we-cover">
-          <h2 className="text-lg font-semibold text-brand-900 mb-1">What is covered</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-1">What does SuitePacific post-go-live support cover?</h2>
           <p className="text-sm text-brand-400 mb-6">
             The mix varies by account, but a post-go-live engagement typically spans all of these.
           </p>
@@ -254,7 +363,7 @@ export default function PostGoLiveSupportPage() {
 
         {/* How it works */}
         <div className="mt-14" data-section="how-it-works">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">How it works</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">How does SuitePacific post-go-live support work?</h2>
           <div className="space-y-4">
             {HOW_IT_WORKS.map((item) => (
               <div key={item.step} className="flex items-start gap-5">
@@ -272,7 +381,7 @@ export default function PostGoLiveSupportPage() {
 
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why companies choose SuitePacific</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why do companies choose SuitePacific for post-go-live support?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">
@@ -315,6 +424,33 @@ export default function PostGoLiveSupportPage() {
               covers what to look for when selecting an ongoing support provider after go-live.
             </li>
           </ul>
+        </div>
+
+        {/* Industries */}
+        <div className="mt-14" data-section="industries">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">Which industries does SuitePacific provide post-go-live support for?</h2>
+          <p className="text-sm text-brand-400 mb-6">
+            Post-go-live support needs vary by industry. Each page below covers the specific gaps and customizations
+            that come up most often in that vertical.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { label: "Manufacturing", href: "/industries/manufacturing", desc: "BOM logic, work order automation, production reporting" },
+              { label: "Wholesale & Distribution", href: "/industries/wholesale-distribution", desc: "Customer pricing, fulfillment routing, EDI integrations" },
+              { label: "Construction", href: "/industries/construction", desc: "Job costing, change orders, progress billing" },
+              { label: "Real Estate", href: "/industries/real-estate", desc: "Property reporting, CapEx approvals, lease tracking" },
+              { label: "SaaS & Technology", href: "/industries/saas-technology", desc: "Subscription billing, ARR/MRR reporting, CRM sync" },
+              { label: "Retail & E-commerce", href: "/industries/retail-ecommerce", desc: "Channel orders, returns automation, inventory dashboards" },
+              { label: "Professional Services", href: "/industries/professional-services", desc: "Project billing, timesheet workflows, utilization reporting" },
+            ].map((item) => (
+              <Link key={item.href} href={item.href} className="group flex items-start gap-3 rounded-xl border border-brand-100 bg-white p-4 shadow-soft hover:border-brand-200 transition-colors">
+                <div>
+                  <p className="font-semibold text-brand-900 text-sm group-hover:text-accent transition-colors">{item.label}</p>
+                  <p className="mt-1 text-xs text-brand-400">{item.desc}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
 
         <ServiceFaqSection items={FAQ} />

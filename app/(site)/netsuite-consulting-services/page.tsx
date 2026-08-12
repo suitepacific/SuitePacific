@@ -18,10 +18,19 @@ import {
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+
+const COMPARISON = [
+  { capability: "Ongoing SuiteScript development", typical: "Separate engagement required; no dedicated resource after go-live", withSP: "Covered in monthly or project-based scope without a new SOW per request" },
+  { capability: "Workflow automation updates", typical: "Re-engagement with original implementation partner or new contractor", withSP: "Handled within ongoing engagement; no new statement of work required" },
+  { capability: "Integration maintenance", typical: "Depends on original integration vendor; no single point of ownership", withSP: "Maintained by the same team handling scripts and administration work" },
+  { capability: "Account context retention", typical: "Re-discovery required with each new developer or ticket submission", withSP: "Documented account knowledge maintained and carried forward across all requests" },
+  { capability: "NetSuite release readiness", typical: "Reactive, after issues appear in Production following release", withSP: "Proactive Sandbox review before each bi-annual platform release" },
+  { capability: "Response time", typical: "Queued behind implementation projects at larger firms", withSP: "Dedicated access; no shared ticket queue across unrelated clients" },
+];
 
 const PAIN_POINTS = [
   {
@@ -182,6 +191,36 @@ const FAQ = [
     answer:
       "We work across industries: professional services, e-commerce, manufacturing, software, and non-profit. NetSuite's customization layer behaves the same regardless of vertical; the business rules change but the technical approach does not.",
   },
+  {
+    question: "What types of SuiteScript scripts do you develop?",
+    answer:
+      "User Event, Scheduled, Map/Reduce, RESTlet, Client, and Suitelet scripts. The type depends on when the logic runs and how it is triggered. User Event scripts attach to record saves; Scheduled scripts run on a timer or as a background process; Map/Reduce handles large data sets; RESTlets expose NetSuite data to external systems; Suitelets build custom pages inside NetSuite. Most accounts use several of these running simultaneously.",
+  },
+  {
+    question: "How do you handle NetSuite's twice-yearly release cycle?",
+    answer:
+      "Before each release, we review the release notes and test account-specific customizations in Sandbox against the Preview environment NetSuite provides. Most SuiteScript 2.x code survives releases without changes, but workflow dependencies and UI components occasionally need attention. We proactively flag anything that requires action before the release goes to Production.",
+  },
+  {
+    question: "Do you work with OneWorld configurations and multi-subsidiary accounts?",
+    answer:
+      "Yes. OneWorld configurations introduce intercompany transaction logic, consolidated reporting, and multi-currency complexity that standard single-entity accounts do not have. We work with both single-entity and OneWorld accounts and handle subsidiary-specific customizations and intercompany automation.",
+  },
+  {
+    question: "Can you build integrations with platforms like Shopify, Salesforce, or Workday?",
+    answer:
+      "Yes. We build integrations using RESTlets, scheduled scripts, and RESTful API calls. Common integrations include Shopify order sync, Salesforce opportunity-to-order handoff, payment processor reconciliation, and 3PL fulfillment feeds. The approach depends on what APIs the external system exposes and the data volume involved.",
+  },
+  {
+    question: "How long does it take to get started?",
+    answer:
+      "Most engagements begin within one to two weeks of agreement. The onboarding process involves reviewing your account's existing scripts, workflows, and integrations, identifying the highest-priority items, and agreeing on initial scope. For companies with urgent issues, we can prioritize an account review and immediate fixes within the first week.",
+  },
+  {
+    question: "What makes NetSuite development different from standard software development?",
+    answer:
+      "NetSuite uses SuiteScript, a JavaScript-based API that runs inside the NetSuite platform rather than on a separate server. Governance limits control how many database operations a script can execute per run. Record types, field IDs, and transaction structures are NetSuite-specific. Debugging requires understanding SuiteLog and the Script Deployment record. These details take time to learn, which is why companies typically find that a generalist developer working in NetSuite for the first time costs significantly more than their hourly rate suggests.",
+  },
 ];
 
 export const metadata: Metadata = {
@@ -210,9 +249,17 @@ export default function NetSuiteConsultingServicesPage() {
       <FaqJsonLd items={FAQ} />
       <ServiceJsonLd
         name="NetSuite Consulting Services"
-        description="End-to-end NetSuite consulting for post-go-live customization, integration, and optimization."
+        description="NetSuite consulting for post-go-live companies: SuiteScript 2.x development (User Event, Scheduled, Map/Reduce, RESTlet, Suitelet), SuiteFlow workflow automation, RESTlet and API integrations, saved search and SuiteAnalytics reporting, advanced FreeMarker PDF templates, account performance optimization, and administration. Month-to-month engagements, sandbox-first, by Oracle NetSuite SuiteCloud Developer II and Administrator Professional certified developers."
         url={`${SITE_URL}/netsuite-consulting-services`}
         serviceType="NetSuite Consulting"
+      />
+      <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
+        description="An introduction to SuitePacific, a boutique NetSuite consulting firm providing post-go-live support, SuiteScript development, workflow automation, integrations, and ongoing technical services for companies already live on NetSuite."
+        videoId="IQvWN_yZ24A"
+        uploadDate="2026-08-12"
+        isShort
       />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
@@ -228,18 +275,75 @@ export default function NetSuiteConsultingServicesPage() {
           <LeadFormLight />
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
+        <p className="mt-2 text-xs text-brand-300"><time dateTime="2026-08">Published August 2026</time></p>
 
         <p className="mt-6 text-sm text-brand-400">
-          Implementation partners get you to go-live. Once that engagement closes, the ongoing
-          technical work (new customizations, integrations, automation, fixes) needs a different
-          kind of partner. SuitePacific is that firm. We work exclusively with companies already
-          live on NetSuite, handling the ongoing technical work that continues after implementation.
+          Companies that go live on NetSuite with an implementation partner typically discover
+          within six months that the technical work does not stop at go-live: SuiteScript
+          customizations need building, automations need updating, integrations need maintaining,
+          and the account needs to keep pace as the business changes. Implementation partners are
+          scoped for go-live delivery, not for what follows. SuitePacific provides the ongoing
+          technical layer for companies already live on NetSuite, covering SuiteScript development,
+          workflow automation, external integrations, saved search and dashboard work, advanced PDF
+          templates, account optimization, and ongoing administration. Every engagement is scoped
+          before development begins and operates sandbox-first, with changes tested against
+          representative data before reaching Production. Work is handled by NetSuite SuiteCloud
+          Developer II and Administrator Professional certified developers. Engagements are
+          month-to-month with no long-term contract requirement, and clients work directly with the
+          person doing the development.
         </p>
+
+        {/* Intro video */}
+        <div className="mt-8 rounded-2xl border border-brand-100 bg-brand-50/30 p-5" data-section="intro-video">
+          <div className="flex flex-col sm:flex-row gap-5 items-start">
+            <div
+              className="w-32 shrink-0 mx-auto sm:mx-0 overflow-hidden rounded-xl"
+              style={{ aspectRatio: "9/16" }}
+            >
+              <iframe
+                src="https://www.youtube.com/embed/IQvWN_yZ24A"
+                title="SuitePacific Introduction: NetSuite Post-Go-Live Support"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full border-0"
+              />
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-brand-900">About SuitePacific</p>
+              <p className="mt-2 text-sm text-brand-400">
+                A short overview of what SuitePacific does, who we work with, and how a post-go-live
+                NetSuite consulting engagement works in practice.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Comparison */}
+        <div className="mt-10 overflow-x-auto" data-section="comparison">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="border-b border-brand-100">
+                <th className="py-2.5 pr-4 text-left text-xs font-semibold text-brand-900 w-1/3">Capability</th>
+                <th className="py-2.5 pr-4 text-left text-xs font-semibold text-brand-900 w-1/3">Typical post-go-live gap</th>
+                <th className="py-2.5 text-left text-xs font-semibold text-brand-900 w-1/3">With SuitePacific</th>
+              </tr>
+            </thead>
+            <tbody>
+              {COMPARISON.map((row) => (
+                <tr key={row.capability} className="border-b border-brand-50">
+                  <td className="py-2.5 pr-4 font-medium text-brand-900 text-xs align-top">{row.capability}</td>
+                  <td className="py-2.5 pr-4 text-brand-400 text-xs align-top">{row.typical}</td>
+                  <td className="py-2.5 text-brand-700 text-xs align-top">{row.withSP}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
         {/* Pain points */}
         <div className="mt-14" data-section="pain-points">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            The situation post-go-live companies are in
+            What situation do post-go-live companies typically find themselves in?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {PAIN_POINTS.map((item) => (
@@ -261,7 +365,7 @@ export default function NetSuiteConsultingServicesPage() {
 
         {/* What we handle */}
         <div className="mt-14" data-section="services">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">What we handle</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">What NetSuite work does SuitePacific handle?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {SERVICES.map((service) => (
               <Link key={service.href} href={service.href} className="group">
@@ -281,7 +385,7 @@ export default function NetSuiteConsultingServicesPage() {
 
         {/* How it works */}
         <div className="mt-14" data-section="how-it-works">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">How it works</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">How does a SuitePacific consulting engagement work?</h2>
           <div className="space-y-4">
             {HOW_IT_WORKS.map((item) => (
               <div key={item.step} className="flex items-start gap-5">
@@ -302,7 +406,7 @@ export default function NetSuiteConsultingServicesPage() {
 
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why companies choose SuitePacific</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why do companies choose SuitePacific for NetSuite consulting?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">
@@ -312,6 +416,33 @@ export default function NetSuiteConsultingServicesPage() {
                   <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
                 </div>
               </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Industries */}
+        <div className="mt-14" data-section="industries">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">Which industries does SuitePacific provide NetSuite consulting for?</h2>
+          <p className="text-sm text-brand-400 mb-6">
+            We provide NetSuite consulting across verticals. Each industry page covers the specific challenges,
+            customizations, and support patterns relevant to that sector.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { label: "Manufacturing", href: "/industries/manufacturing", desc: "BOM logic, work order automation, production reporting" },
+              { label: "Wholesale & Distribution", href: "/industries/wholesale-distribution", desc: "Customer pricing, fulfillment routing, EDI integrations" },
+              { label: "Construction", href: "/industries/construction", desc: "Job costing, change orders, progress billing" },
+              { label: "Real Estate", href: "/industries/real-estate", desc: "Property reporting, CapEx approvals, lease tracking" },
+              { label: "SaaS & Technology", href: "/industries/saas-technology", desc: "Subscription billing, ARR/MRR reporting, CRM sync" },
+              { label: "Retail & E-commerce", href: "/industries/retail-ecommerce", desc: "Channel orders, returns automation, inventory dashboards" },
+              { label: "Professional Services", href: "/industries/professional-services", desc: "Project billing, timesheet workflows, utilization reporting" },
+            ].map((item) => (
+              <Link key={item.href} href={item.href} className="group flex items-start gap-3 rounded-xl border border-brand-100 bg-white p-4 shadow-soft hover:border-brand-200 transition-colors">
+                <div>
+                  <p className="font-semibold text-brand-900 text-sm group-hover:text-accent transition-colors">{item.label}</p>
+                  <p className="mt-1 text-xs text-brand-400">{item.desc}</p>
+                </div>
+              </Link>
             ))}
           </div>
         </div>

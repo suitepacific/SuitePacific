@@ -17,7 +17,7 @@ import {
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
@@ -142,7 +142,7 @@ const CUSTOMIZATIONS = [
 const WHY_SP = [
   {
     icon: ShieldCheck,
-    title: "SuiteCloud Developer II Certified",
+    title: "NetSuite-Certified",
     description:
       "Oracle NetSuite's SuiteCloud Developer II and Administrator Professional certifications. Verified technical credentials across SuiteScript, SuiteFlow, and the NetSuite platform.",
   },
@@ -229,6 +229,39 @@ const FAQ = [
   },
 ];
 
+const COMPARISON = [
+  {
+    capability: "Job costing",
+    standard: "Project cost tracking by category",
+    withSP: "Custom cost codes, allocation scripts, and budget variance reporting",
+  },
+  {
+    capability: "Change orders",
+    standard: "Manual budget and contract updates",
+    withSP: "Approval workflow with automatic budget sync on approval",
+  },
+  {
+    capability: "Progress billing",
+    standard: "Manual percentage calculation",
+    withSP: "Scripts that calculate billable amount from project cost records",
+  },
+  {
+    capability: "Subcontractor tracking",
+    standard: "Standard vendor records and purchase orders",
+    withSP: "Compliance fields, insurance expiry reminders, and lien waiver tracking",
+  },
+  {
+    capability: "Project reporting",
+    standard: "Standard project and transaction reports",
+    withSP: "Budget vs. actual, WIP schedule, and job profitability dashboards",
+  },
+  {
+    capability: "Approval routing",
+    standard: "Standard single-level AP approval",
+    withSP: "Multi-level routing by project, amount, and approver tier",
+  },
+];
+
 export const metadata: Metadata = {
   title: "NetSuite Support for Construction Companies",
   description:
@@ -261,6 +294,14 @@ export default function ConstructionPage() {
         url={`${SITE_URL}/industries/construction`}
         serviceType="NetSuite Construction Support"
       />
+      <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
+        description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
+        videoId="IQvWN_yZ24A"
+        uploadDate="2026-08-12"
+        isShort
+      />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading
@@ -275,14 +316,18 @@ export default function ConstructionPage() {
           <LeadFormLight />
         </div>
         <p className="mt-3 text-xs text-brand-400">
-          SuiteCloud Developer II certified · Post-go-live specialist · Sandbox-first development · Month-to-month
+          NetSuite-Certified · Post-go-live specialist · Sandbox-first development · Month-to-month
+        </p>
+        <p className="mt-2 text-xs text-brand-300">
+          <time dateTime="2026-08">Published August 2026</time>
         </p>
 
         <p className="mt-8 text-sm text-brand-400">
-          SuitePacific provides NetSuite post-go-live support and development for construction companies. We work
-          with construction firms already live on NetSuite, handling the technical work that follows initial
-          implementation: job costing logic, change order approval workflows, progress billing automation,
-          subcontractor compliance tracking, and project profitability reporting. Construction accounts in NetSuite
+          Construction companies that go live on NetSuite typically need custom development within the first year:
+          job costing accuracy, change order approval routing, and progress billing automation are rarely handled
+          correctly by standard NetSuite configuration alone. SuitePacific builds and maintains this layer for
+          construction firms already live on NetSuite, covering job costing logic, change order approval workflows,
+          progress billing automation, subcontractor compliance tracking, and project profitability reporting. Construction accounts in NetSuite
           typically require significant customization to match actual project billing workflows, cost allocation
           requirements, and approval chains. Common areas include change order workflows that automatically update
           project budgets, progress billing scripts that calculate percentage complete from cost records, and project
@@ -292,10 +337,40 @@ export default function ConstructionPage() {
           no offshore handoffs or account manager layer.
         </p>
 
+        {/* Comparison */}
+        <div className="mt-14" data-section="comparison">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">
+            How does SuitePacific extend NetSuite for construction companies?
+          </h2>
+          <p className="text-sm text-brand-400 mb-4">
+            These are common capability gaps and what SuitePacific adds to fill them.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-brand-100">
+                  <th className="text-left py-3 pr-6 font-semibold text-brand-900 w-1/3">Capability</th>
+                  <th className="text-left py-3 pr-6 font-semibold text-brand-900 w-1/3">Standard NetSuite</th>
+                  <th className="text-left py-3 font-semibold text-brand-900 w-1/3">With SuitePacific</th>
+                </tr>
+              </thead>
+              <tbody>
+                {COMPARISON.map((row) => (
+                  <tr key={row.capability} className="border-b border-brand-50">
+                    <td className="py-3 pr-6 font-medium text-brand-900 align-top">{row.capability}</td>
+                    <td className="py-3 pr-6 text-brand-400 align-top">{row.standard}</td>
+                    <td className="py-3 text-brand-700 align-top">{row.withSP}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         {/* Challenges */}
         <div className="mt-14" data-section="challenges">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            NetSuite challenges construction companies face after go-live
+            What NetSuite challenges do construction companies face?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {CHALLENGES.map((item) => (
@@ -310,7 +385,7 @@ export default function ConstructionPage() {
 
         {/* Services */}
         <div className="mt-14" data-section="services">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">NetSuite services for construction</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">What NetSuite services does SuitePacific provide for construction companies?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {SERVICES.map((service) => (
               <Link key={service.href} href={service.href} className="group">
@@ -331,7 +406,7 @@ export default function ConstructionPage() {
         {/* Customizations */}
         <div className="mt-14" data-section="customizations">
           <h2 className="text-lg font-semibold text-brand-900 mb-2">
-            Common construction NetSuite customizations
+            What are common NetSuite customizations for construction?
           </h2>
           <p className="text-sm text-brand-400 mb-6">
             These are the kinds of builds we do for construction companies on a recurring basis.
@@ -343,7 +418,7 @@ export default function ConstructionPage() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
-                  <p className="font-semibold text-brand-900 text-sm">{item.title}</p>
+                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
                   <p className="mt-0.5 text-sm text-brand-400">{item.description}</p>
                 </div>
               </div>
@@ -354,7 +429,7 @@ export default function ConstructionPage() {
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            Why construction companies choose SuitePacific
+            Why do construction companies choose SuitePacific?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (

@@ -1,9 +1,9 @@
 # Sitemap Audit: suitepacific.com
 
-**Audit date:** 2026-08-07
+**Audit date:** 2026-08-09
 **Sitemap URL:** https://suitepacific.com/sitemap.xml
-**Discovery:** Declared in robots.txt; validated as `urlset` kind; HTTP 200
-**Total URLs:** 90 (task brief cited 88; actual count is 90 - 15 service/static pages vs. the 9 listed in the brief)
+**Discovery:** Declared in robots.txt; validates as `urlset`; HTTP 200 with `content-type: application/xml`
+**Total URLs:** 94
 
 ---
 
@@ -11,130 +11,73 @@
 
 | Check | Result | Notes |
 |---|---|---|
-| Sitemap discoverable via robots.txt | PASS | Declared and resolves to HTTP 200 |
-| XML structure valid | PASS | Well-formed `urlset`; correct namespace |
-| URL count within 50,000 limit | PASS | 90 URLs |
+| Sitemap discoverable via robots.txt | PASS | `Sitemap: https://suitepacific.com/sitemap.xml` present |
+| XML structure valid | PASS | Well-formed `urlset`, correct namespace, xmllint exit 0 |
+| URL count within 50,000 limit | PASS | 94 URLs |
 | Sitemap file size within 50 MB | PASS | Small flat file |
-| All URLs return HTTP 200 | PASS | All 90 confirmed 200 |
-| No admin/private pages in sitemap | PASS | Admin, portals, app routes excluded |
-| lastmod dates present | PASS | All URLs have lastmod |
-| lastmod dates accurate | PARTIAL FAIL | Resources and case studies use hardcoded batch dates |
-| Noindexed URLs absent from sitemap | FAIL | /suitecompare is in sitemap but carries noindex |
-| priority / changefreq present | INFO | Both present; both ignored by Google |
-| Image sitemap | MISSING | No image sitemap or image tags anywhere |
+| Spot-checked URLs return HTTP 200 | PASS | 20/20 checked return 200 direct (no redirects) |
+| No redirect chains in sitemap | PASS | www redirects to non-www; all sitemap URLs use non-www |
+| No duplicate URLs | PASS | Zero duplicates |
+| Noindexed URLs absent from sitemap | PASS | /suitecompare is a public marketing page (index, follow) |
+| Auth-gated app routes excluded | PASS | /suitecompare/dashboard, /importDetector, /customer-portal, /partner-portal all absent |
+| priority / changefreq absent | PASS | Both deprecated fields correctly removed |
+| lastmod dates present | PASS | All 94 URLs have lastmod |
+| lastmod dates accurate | PARTIAL | Blog and resource individual pages use real dates; /resources index is stale; see findings |
+| Coverage: all indexable pages included | FAIL | /netsuite-freelancer-vs-consulting-firm missing; see HIGH finding |
 
 ---
 
 ## Findings
 
-### [HIGH] /suitecompare is in the sitemap but served with noindex, nofollow
+### [HIGH] /netsuite-freelancer-vs-consulting-firm is live and indexable but absent from sitemap
 
-**URL:** `https://suitepacific.com/suitecompare`
-**Sitemap lastmod:** 2026-07-19
+**URL:** `https://suitepacific.com/netsuite-freelancer-vs-consulting-firm`
+**HTTP status:** 200
+**Meta robots:** `index, follow`
+**Title:** NetSuite Freelancer vs. Consulting Firm: How to Choose | SuitePacific
 
-The `app/suitecompare/layout.tsx` exports `robots: { index: false, follow: false }` which cascades to every route under `/suitecompare/`, including the public marketing landing page. The sitemap declares this URL (implying it should be indexed), while the page itself signals the opposite. Google resolves this conflict by honoring the noindex and not indexing the page, making the sitemap entry a waste.
+This is a full service/comparison page with a distinct title, clear crawlability signal, and a route file at `app/(site)/netsuite-freelancer-vs-consulting-firm/page.tsx`. It is not listed in `sitemap.ts`'s `SERVICE_PAGES` array and therefore never appears in the generated sitemap. Googlebot will only discover it via internal links, not via sitemap hint, which delays indexing and removes the lastmod signal entirely.
 
-This is the flagship product landing page. If it is intended to be indexed, the metadata override must be placed directly in `app/suitecompare/page.tsx`. If it is intentionally private, remove it from the sitemap generator (`sitemap.ts` line 25).
-
-**Fix (if the marketing page should be indexed):**
-Add an explicit metadata export to `app/suitecompare/page.tsx` overriding the layout-level noindex:
+**Fix:** Add the entry to `SERVICE_PAGES` in `app/sitemap.ts`:
 ```ts
-export const metadata: Metadata = {
-  robots: { index: true, follow: true },
-  // ... title, description, etc.
-};
+{ path: "/netsuite-freelancer-vs-consulting-firm", lastModified: SEO_REFRESH_DATE },
 ```
 
 ---
 
-### [MEDIUM] robots.txt only disallows /admin; app routes under /suitecompare, /importDetector, and portals are crawlable
+### [MEDIUM] /resources index lastmod is hardcoded to 2026-07-14 but newest resource is dated 2026-07-27
 
-**robots.txt Disallow:** `/admin` only
+**Affected URL:** `https://suitepacific.com/resources`
+**Current lastmod:** `2026-07-14T00:00:00.000Z`
+**Newest resource publishedAt:** `2026-07-27` (netsuite-fsm-bundle-update-2026-checklist)
 
-The following routes are publicly reachable (HTTP 200) but only carry `noindex, nofollow` meta tags:
-- `/suitecompare/login`, `/suitecompare/signup`, `/suitecompare/dashboard/*`, `/suitecompare/accounts/*`, etc.
-- `/importDetector`
-- `/customer-portal/*`
-- `/partner-portal/*`
+`sitemap.ts` line 36 hardcodes `new Date("2026-07-14")` for the resources index while individual resource pages correctly use their `publishedAt` frontmatter value. This means the index page's lastmod is 13 days behind the most recent content addition. Google uses this date to decide whether to re-crawl the listing page, so a stale date here reduces the chance of the index being re-crawled after new resources are added.
 
-Meta robots prevents indexing, but Googlebot still follows the links, fetches the pages, and spends crawl budget on them. At 90 public URLs today this is low-impact, but as content scales the unblocked app routes will dilute crawl budget away from indexable pages.
-
-**Fix:** Add Disallow rules in `app/robots.ts`:
+**Fix:** Derive the resources index lastmod dynamically, mirroring the blog index pattern:
 ```ts
-rules: [
-  { userAgent: "*", allow: "/", disallow: "/admin" },
-  { userAgent: "Googlebot", disallow: ["/suitecompare/login", "/suitecompare/signup",
-    "/suitecompare/dashboard", "/suitecompare/accounts", "/suitecompare/settings",
-    "/suitecompare/scripts", "/suitecompare/compare", "/suitecompare/activate",
-    "/suitecompare/invite", "/suitecompare/verify", "/suitecompare/forgot-password",
-    "/suitecompare/reset-password", "/importDetector", "/customer-portal", "/partner-portal"] },
-],
+{ url: `${SITE_URL}/resources`, lastModified: resources.length > 0 ? new Date(resources[0].publishedAt) : SITE_LAUNCH_DATE },
 ```
+This requires `getAllResources()` to return items sorted by `publishedAt` descending, which should already be the case if the listing page sorts them that way.
 
 ---
 
-### [MEDIUM] All 30 resource pages share one hardcoded lastmod; individual file dates are available but unused
-
-**Affected URLs:** All 30 `/resources/*` entries
-**Current lastmod:** `2026-07-14` (hardcoded in `sitemap.ts` as `new Date("2026-07-14")`)
-**Actual `publishedAt` range in content files:** 2026-07-01 through 2026-07-27
-
-The resource content files contain a `publishedAt` frontmatter field with accurate per-file dates. The sitemap generator ignores this and applies a single batch date. Googlebot uses lastmod to decide whether to re-crawl; uniform dates provide no signal about which resources actually changed.
-
-**Fix:** In `sitemap.ts`, pass the `publishedAt` date from each resource's frontmatter into the sitemap entry, the same way blog posts already derive lastmod from `post.date`.
-
----
-
-### [MEDIUM] All 6 case studies share one hardcoded lastmod equal to the site launch date
-
-**Affected URLs:** All 6 `/case-studies/*` entries
-**Current lastmod:** `2026-06-01` (site launch date, hardcoded as `SITE_LAUNCH_DATE`)
-
-If case studies have been revised since launch, the lastmod date is stale. If they have not been revised, the date is technically accurate but indistinguishable from placeholder dates. Case study files should carry a `lastmod` or `updatedAt` frontmatter field so the sitemap can reflect actual changes.
-
----
-
-### [LOW] priority and changefreq present on all 90 URLs
-
-Google has publicly confirmed it ignores both `<priority>` and `<changefreq>`. Bing and other crawlers similarly treat them as advisory at best. All 90 entries carry both fields, which adds unnecessary payload to every sitemap parse.
-
-**Fix:** Remove both fields from all four `sitemap.ts` return statements. The sitemap spec allows `<url>` entries with only `<loc>` and `<lastmod>`.
-
----
-
-### [LOW] lastmod uses full ISO 8601 datetime with .000Z suffix rather than date-only format
+### [LOW] lastmod format uses ISO 8601 full datetime with .000Z suffix instead of date-only
 
 **Example value:** `2026-08-05T00:00:00.000Z`
 **Preferred:** `2026-08-05`
 
-W3C Datetime (the sitemap spec's required format) allows `YYYY-MM-DD` as a valid short form. The midnight UTC timestamp is technically valid but implies time-of-day precision that does not exist. The `.000Z` suffix is cosmetic noise on a batch-generated date. Next.js emits this format by default because JavaScript `Date.toISOString()` includes it; passing a date-string directly avoids the suffix.
+W3C Datetime (the sitemap spec) allows the short `YYYY-MM-DD` form and it is the most common format in production sitemaps. The full timestamp suffix implies time-of-day precision that does not exist (all dates are midnight UTC because JavaScript `Date.toISOString()` emits this by default). Google accepts both forms, so this is cosmetic, but the simpler format is less noisy and easier to read in Search Console.
+
+No fix required; revisit if sitemap tooling allows passing date strings directly.
 
 ---
 
-### [INFO] No image sitemap and no image: tags
+### [LOW] Case study pages all share a single hardcoded lastmod equal to the site launch date
 
-There is no image sitemap and no `<image:image>` extensions within the existing sitemap entries. Pages with meaningful images (homepage hero, case study screenshots, OG images) are not eligible for image search discovery via sitemap.
+**Affected URLs:** All 6 `/case-studies/*` entries
+**Current lastmod:** `2026-06-01T00:00:00.000Z` (SITE_LAUNCH_DATE constant)
 
-This is a low-priority enhancement for the current site, but worth noting as case studies and blog posts accumulate visuals.
-
----
-
-## Missing Pages Analysis
-
-No important indexable pages are absent from the sitemap.
-
-| Page | In Sitemap | noindex | Notes |
-|---|---|---|---|
-| `/suitecompare` | YES | YES (via layout) | Conflict - see HIGH finding above |
-| `/suitecompare/pricing` | NO | YES | Correct exclusion |
-| `/importDetector` | NO | YES | Correct exclusion |
-| `/customer-portal` | NO | YES | Correct exclusion |
-| `/partner-portal` | NO | YES | Correct exclusion |
-| `/admin/*` | NO | YES + robots.txt | Correct exclusion |
-| All 35 blog posts | YES | NO | Full coverage |
-| All 30 resources | YES | NO | Full coverage |
-| All 6 case studies | YES | NO | Full coverage |
-| All service pages | YES | NO | Full coverage (15 pages) |
+If a case study was meaningfully revised after launch, its lastmod is stale. If none were revised, the date is technically accurate but signals nothing. Adding an optional `updatedAt` frontmatter field to case study content files and wiring it into the sitemap generator would provide accurate per-page signals as case studies evolve.
 
 ---
 
@@ -149,15 +92,44 @@ No important indexable pages are absent from the sitemap.
 | Service and static pages | 15 |
 | /case-studies/* | 6 |
 | /resources/* | 30 |
-| /blog/* | 35 |
-| **Total** | **90** |
+| /blog/* | 39 |
+| **Total** | **94** |
+
+Note: The task brief cited 88 URLs. The actual count is 94 because newer blog and resource posts have been published since the brief was written.
+
+---
+
+## Auth-Gated and Private Routes (correctly excluded)
+
+All of the following are absent from the sitemap and correctly Disallowed in robots.txt:
+
+- `/suitecompare/login`, `/suitecompare/signup`, `/suitecompare/dashboard`, `/suitecompare/accounts`, `/suitecompare/settings`, `/suitecompare/scripts`, `/suitecompare/compare`, `/suitecompare/activate`, `/suitecompare/invite`, `/suitecompare/verify`, `/suitecompare/forgot-password`, `/suitecompare/reset-password`
+- `/importDetector`
+- `/customer-portal`
+- `/partner-portal`
+- `/admin`
+
+`/suitecompare` (root) is correctly included: it serves a public marketing landing page with `index, follow` and a distinct product title.
+
+---
+
+## What Works Well
+
+- XML is valid and well-formed
+- Sitemap declared in robots.txt with correct absolute URL
+- No priority or changefreq tags (correctly removed; both ignored by Google)
+- All 20 spot-checked URLs return HTTP 200 with no redirects
+- No duplicate URLs
+- Blog entries use `post.updated ?? post.date` for accurate per-post lastmod
+- Individual resource entries use `resource.publishedAt` for accurate per-resource lastmod
+- /blog index lastmod derives dynamically from the latest post date
+- All auth-gated app routes are excluded from sitemap and blocked in robots.txt
+- Non-www canonical is consistent throughout (sitemap, robots.txt, and live site all use suitepacific.com)
 
 ---
 
 ## Priority Fix Order
 
-1. Resolve the `/suitecompare` noindex conflict (decide: index or remove from sitemap)
-2. Add robots.txt Disallow rules for app routes and portals
-3. Wire resource `publishedAt` dates into sitemap lastmod (same pattern as blog posts)
-4. Strip `priority` and `changefreq` from `sitemap.ts`
-5. Add `lastmod`/`updatedAt` frontmatter to case study files and wire them into the sitemap
+1. Add `/netsuite-freelancer-vs-consulting-firm` to SERVICE_PAGES in `app/sitemap.ts` (HIGH)
+2. Make `/resources` index lastmod dynamic using the newest resource's publishedAt (MEDIUM)
+3. Add `updatedAt` frontmatter to case study files and wire into sitemap (LOW, future)

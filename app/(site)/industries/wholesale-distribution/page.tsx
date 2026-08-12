@@ -18,7 +18,7 @@ import {
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
@@ -143,7 +143,7 @@ const CUSTOMIZATIONS = [
 const WHY_SP = [
   {
     icon: ShieldCheck,
-    title: "SuiteCloud Developer II Certified",
+    title: "NetSuite-Certified",
     description:
       "Oracle NetSuite's SuiteCloud Developer II and Administrator Professional certifications. Verified technical credentials across SuiteScript, SuiteFlow, and the NetSuite platform.",
   },
@@ -230,6 +230,39 @@ const FAQ = [
   },
 ];
 
+const COMPARISON = [
+  {
+    capability: "Customer pricing",
+    standard: "Standard price levels and quantity pricing",
+    withSP: "Custom pricing scripts for complex customer, contract, and tier logic",
+  },
+  {
+    capability: "Inventory reorder",
+    standard: "Manual monitoring and PO creation",
+    withSP: "Automated PO creation when stock falls below reorder point",
+  },
+  {
+    capability: "Fulfillment routing",
+    standard: "Default preferred location fulfillment",
+    withSP: "Rules-based routing by availability, proximity, and assignment",
+  },
+  {
+    capability: "Returns processing",
+    standard: "Manual RMA and vendor credit creation",
+    withSP: "Automated RMA workflow with restocking and credit memo scripts",
+  },
+  {
+    capability: "Distribution reporting",
+    standard: "Standard inventory and sales reports",
+    withSP: "Aging, turns, fill rate, and velocity saved searches",
+  },
+  {
+    capability: "System integration",
+    standard: "Manual data entry from external systems",
+    withSP: "RESTlet integrations with warehouse and EDI platforms",
+  },
+];
+
 export const metadata: Metadata = {
   title: "NetSuite Support for Wholesale & Distribution Companies",
   description:
@@ -262,6 +295,14 @@ export default function WholesaleDistributionPage() {
         url={`${SITE_URL}/industries/wholesale-distribution`}
         serviceType="NetSuite Distribution Support"
       />
+      <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
+        description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
+        videoId="IQvWN_yZ24A"
+        uploadDate="2026-08-12"
+        isShort
+      />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading
@@ -276,14 +317,19 @@ export default function WholesaleDistributionPage() {
           <LeadFormLight />
         </div>
         <p className="mt-3 text-xs text-brand-400">
-          SuiteCloud Developer II certified · Post-go-live specialist · Sandbox-first development · Month-to-month
+          NetSuite-Certified · Post-go-live specialist · Sandbox-first development · Month-to-month
+        </p>
+        <p className="mt-2 text-xs text-brand-300">
+          <time dateTime="2026-08">Published August 2026</time>
         </p>
 
         <p className="mt-8 text-sm text-brand-400">
-          SuitePacific provides NetSuite post-go-live support and development for wholesale and distribution
-          companies. We work with distributors already live on NetSuite, handling the technical work that follows
-          initial implementation: customer-specific pricing logic, inventory reorder automation, order exception
-          workflows, returns processing, and integrations with warehouse management systems and EDI platforms.
+          Wholesale and distribution companies on NetSuite frequently find that standard price levels,
+          preferred-location fulfillment, and manual reorder processes do not match the complexity of their actual
+          inventory, pricing, and channel operations. SuitePacific provides the custom development layer for
+          distributors already live on NetSuite: customer-specific pricing scripts, inventory reorder automation,
+          order exception workflows, returns processing, and integrations with warehouse management systems and EDI
+          platforms.
           Distribution accounts in NetSuite typically require significant customization to match pricing rules,
           fulfillment logic, and operational reporting requirements that standard configuration cannot produce.
           Common areas include pricing enforcement scripts, auto-PO creation on inventory reorder points, fill rate
@@ -293,10 +339,40 @@ export default function WholesaleDistributionPage() {
           certification. Work is done directly, with no offshore handoffs or account manager layer.
         </p>
 
+        {/* Comparison */}
+        <div className="mt-14" data-section="comparison">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">
+            How does SuitePacific extend a standard NetSuite distribution account?
+          </h2>
+          <p className="text-sm text-brand-400 mb-4">
+            These are common capability gaps and what SuitePacific adds to fill them.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-brand-100">
+                  <th className="text-left py-3 pr-6 font-semibold text-brand-900 w-1/3">Capability</th>
+                  <th className="text-left py-3 pr-6 font-semibold text-brand-900 w-1/3">Standard NetSuite</th>
+                  <th className="text-left py-3 font-semibold text-brand-900 w-1/3">With SuitePacific</th>
+                </tr>
+              </thead>
+              <tbody>
+                {COMPARISON.map((row) => (
+                  <tr key={row.capability} className="border-b border-brand-50">
+                    <td className="py-3 pr-6 font-medium text-brand-900 align-top">{row.capability}</td>
+                    <td className="py-3 pr-6 text-brand-400 align-top">{row.standard}</td>
+                    <td className="py-3 text-brand-700 align-top">{row.withSP}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         {/* Challenges */}
         <div className="mt-14" data-section="challenges">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            NetSuite challenges distribution companies face after go-live
+            What NetSuite challenges do wholesale and distribution companies face?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {CHALLENGES.map((item) => (
@@ -312,7 +388,7 @@ export default function WholesaleDistributionPage() {
         {/* Services */}
         <div className="mt-14" data-section="services">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            NetSuite services for wholesale & distribution
+            What NetSuite services does SuitePacific provide for distribution companies?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {SERVICES.map((service) => (
@@ -334,7 +410,7 @@ export default function WholesaleDistributionPage() {
         {/* Customizations */}
         <div className="mt-14" data-section="customizations">
           <h2 className="text-lg font-semibold text-brand-900 mb-2">
-            Common distribution NetSuite customizations
+            What are common NetSuite customizations for wholesale and distribution?
           </h2>
           <p className="text-sm text-brand-400 mb-6">
             These are the kinds of builds we do for distributors on a recurring basis.
@@ -346,7 +422,7 @@ export default function WholesaleDistributionPage() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
-                  <p className="font-semibold text-brand-900 text-sm">{item.title}</p>
+                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
                   <p className="mt-0.5 text-sm text-brand-400">{item.description}</p>
                 </div>
               </div>
@@ -357,7 +433,7 @@ export default function WholesaleDistributionPage() {
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            Why distribution companies choose SuitePacific
+            Why do wholesale and distribution companies choose SuitePacific?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (

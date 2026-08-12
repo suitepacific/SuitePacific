@@ -19,7 +19,7 @@ import {
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
@@ -144,7 +144,7 @@ const CUSTOMIZATIONS = [
 const WHY_SP = [
   {
     icon: ShieldCheck,
-    title: "SuiteCloud Developer II Certified",
+    title: "NetSuite-Certified",
     description:
       "Oracle NetSuite's SuiteCloud Developer II and Administrator Professional certifications. Verified technical credentials across SuiteScript, SuiteFlow, and the NetSuite platform.",
   },
@@ -231,6 +231,39 @@ const FAQ = [
   },
 ];
 
+const COMPARISON = [
+  {
+    capability: "Channel order import",
+    standard: "Manual order entry per channel",
+    withSP: "Automated Shopify and Amazon import scripts with item mapping",
+  },
+  {
+    capability: "Returns processing",
+    standard: "Manual RMA and credit memo creation",
+    withSP: "Automated RMA workflow with restocking and refund scripts",
+  },
+  {
+    capability: "Fulfillment exceptions",
+    standard: "Manual exception review and routing",
+    withSP: "Automated hold logic, routing rules, and customer notification workflows",
+  },
+  {
+    capability: "Channel reconciliation",
+    standard: "Manual deposit matching per channel",
+    withSP: "Shopify and Stripe settlement reconciliation scripts",
+  },
+  {
+    capability: "Promotional pricing",
+    standard: "Standard price levels and promotions",
+    withSP: "Enforced pricing windows, quantity thresholds, and channel overrides",
+  },
+  {
+    capability: "Inventory reporting",
+    standard: "Standard inventory by location reports",
+    withSP: "Multi-channel inventory dashboards with reorder and alert logic",
+  },
+];
+
 export const metadata: Metadata = {
   title: "NetSuite Support for Retail & E-commerce Companies",
   description:
@@ -263,6 +296,14 @@ export default function RetailEcommercePage() {
         url={`${SITE_URL}/industries/retail-ecommerce`}
         serviceType="NetSuite Retail Support"
       />
+      <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
+        description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
+        videoId="IQvWN_yZ24A"
+        uploadDate="2026-08-12"
+        isShort
+      />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading
@@ -277,14 +318,19 @@ export default function RetailEcommercePage() {
           <LeadFormLight />
         </div>
         <p className="mt-3 text-xs text-brand-400">
-          SuiteCloud Developer II certified · Post-go-live specialist · Sandbox-first development · Month-to-month
+          NetSuite-Certified · Post-go-live specialist · Sandbox-first development · Month-to-month
+        </p>
+        <p className="mt-2 text-xs text-brand-300">
+          <time dateTime="2026-08">Published August 2026</time>
         </p>
 
         <p className="mt-8 text-sm text-brand-400">
-          SuitePacific provides NetSuite post-go-live support and development for retail and e-commerce companies.
-          We work with retailers already live on NetSuite, handling the technical work that follows initial
-          implementation: channel order import scripts, promotional pricing logic, RMA automation, fulfillment
-          exception workflows, channel settlement reconciliation, and inventory reporting. Retail accounts in
+          Retail and e-commerce companies with multiple selling channels typically find that order import, returns
+          automation, and channel financial reconciliation all require custom scripts: NetSuite has no native
+          connectors for Shopify, Amazon, or payment processors. SuitePacific builds and maintains these
+          integrations and workflows for retailers already live on NetSuite, covering channel order import scripts,
+          promotional pricing logic, RMA automation, fulfillment exception workflows, channel settlement
+          reconciliation, and inventory reporting. Retail accounts in
           NetSuite typically require significant customization to handle multi-channel order flows, channel-specific
           pricing rules, and financial reconciliation that the standard feature set does not produce. Common areas
           include Shopify-to-NetSuite order import scripts, returns processing automation, fulfillment exception
@@ -294,10 +340,40 @@ export default function RetailEcommercePage() {
           with no offshore handoffs or account manager layer.
         </p>
 
+        {/* Comparison */}
+        <div className="mt-14" data-section="comparison">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">
+            How does SuitePacific extend NetSuite for retail and e-commerce businesses?
+          </h2>
+          <p className="text-sm text-brand-400 mb-4">
+            These are common capability gaps and what SuitePacific adds to fill them.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-brand-100">
+                  <th className="text-left py-3 pr-6 font-semibold text-brand-900 w-1/3">Capability</th>
+                  <th className="text-left py-3 pr-6 font-semibold text-brand-900 w-1/3">Standard NetSuite</th>
+                  <th className="text-left py-3 font-semibold text-brand-900 w-1/3">With SuitePacific</th>
+                </tr>
+              </thead>
+              <tbody>
+                {COMPARISON.map((row) => (
+                  <tr key={row.capability} className="border-b border-brand-50">
+                    <td className="py-3 pr-6 font-medium text-brand-900 align-top">{row.capability}</td>
+                    <td className="py-3 pr-6 text-brand-400 align-top">{row.standard}</td>
+                    <td className="py-3 text-brand-700 align-top">{row.withSP}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         {/* Challenges */}
         <div className="mt-14" data-section="challenges">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            NetSuite challenges retail and e-commerce companies face after go-live
+            What NetSuite challenges do retail and e-commerce companies face?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {CHALLENGES.map((item) => (
@@ -313,7 +389,7 @@ export default function RetailEcommercePage() {
         {/* Services */}
         <div className="mt-14" data-section="services">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            NetSuite services for retail & e-commerce
+            What NetSuite services does SuitePacific provide for retail and e-commerce?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {SERVICES.map((service) => (
@@ -335,7 +411,7 @@ export default function RetailEcommercePage() {
         {/* Customizations */}
         <div className="mt-14" data-section="customizations">
           <h2 className="text-lg font-semibold text-brand-900 mb-2">
-            Common retail and e-commerce NetSuite customizations
+            What are common NetSuite customizations for retail and e-commerce?
           </h2>
           <p className="text-sm text-brand-400 mb-6">
             These are the kinds of builds we do for retailers on a recurring basis.
@@ -347,7 +423,7 @@ export default function RetailEcommercePage() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
-                  <p className="font-semibold text-brand-900 text-sm">{item.title}</p>
+                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
                   <p className="mt-0.5 text-sm text-brand-400">{item.description}</p>
                 </div>
               </div>
@@ -358,7 +434,7 @@ export default function RetailEcommercePage() {
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            Why retail companies choose SuitePacific
+            Why do retail and e-commerce companies choose SuitePacific?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (

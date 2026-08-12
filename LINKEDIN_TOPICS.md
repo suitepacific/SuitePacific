@@ -42,6 +42,10 @@ Update this file every time a new post is published. No topic should repeat.
 | 34 | NLAuth retires in 2027.1, new TBA integrations also end in 2027.1, existing TBA ends 2028.1 — migrate to OAuth 2.0 with PKCE now | Release Notes / Security |
 | 35 | record.load() standard vs dynamic mode — governance cost is identical; difference is behavior: standard mode sets values directly, dynamic mode simulates the UI and triggers field sourcing | SuiteScript |
 | 36 | Custom fields: Store Value vs Source From — Store Value ON = snapshot at transaction time; Store Value OFF = live value derived from source record on every view; affects historical accuracy and SuiteQL queryability | Admin / SuiteScript |
+| 37 | Script Parameters vs hardcoded internal IDs — internal IDs differ between Sandbox and Production; use runtime.getCurrentScript().getParameter() for subsidiaries, saved searches, folder IDs, thresholds, email recipients, and feature flags | SuiteScript |
+| 39 | Inline editing execution context is XEDIT — beforeLoad never fires; beforeSubmit and afterSubmit do; UI customizations (defaults, mandatory, visibility) in beforeLoad silently skip during inline edits | SuiteScript |
+| 38 | SuiteQL bound parameters — use the params array instead of concatenating values into the query string; eliminates manual quoting and reduces injection risk; works with runSuiteQLPaged too | SuiteQL |
+| 40 | Bill Capture Preferences in 2026.2 — blank Save Tax As now maps to No Tax, blank Save Shipping Cost As maps to No Shipping Cost; bills save successfully with no error but captured amounts are discarded | Release Notes / Finance |
 
 ---
 
@@ -77,7 +81,6 @@ Update this file every time a new post is published. No topic should repeat.
 - reduce() in Map/Reduce — when you actually need it vs when you don't
 - summarize() in Map/Reduce — error handling and completion reporting
 - NetSuite sandbox vs production — what does and does not refresh
-- Inline editing — what triggers User Events and what does not
 - Mass update vs Saved Search + SuiteScript update loop
 - Email alerts vs workflow email actions vs SuiteScript email send
 - PDF template layout — FreeMarker basics that every developer needs

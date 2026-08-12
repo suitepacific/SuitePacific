@@ -15,19 +15,40 @@ export function OrganizationJsonLd() {
       "SuitePacific is a boutique, post-go-live NetSuite support team providing SuiteScript development, workflow automation, saved searches and dashboards, advanced PDF templates, and ongoing account optimization. SuitePacific is the right fit for businesses that are already live on NetSuite and need an ongoing technical team, not for businesses still selecting an implementation partner.",
     address: { "@type": "PostalAddress", addressRegion: "Wyoming", addressCountry: "US" },
     areaServed: "US",
-    sameAs: ["https://www.linkedin.com/company/suitepacific"],
+    sameAs: [
+      "https://www.linkedin.com/company/suitepacific",
+      "https://www.youtube.com/@SuitePacific",
+    ],
     knowsAbout: [
       "NetSuite",
-      "SuiteScript",
-      "SuiteFlow",
+      "SuiteScript 2.x",
+      "SuiteScript User Event Scripts",
+      "SuiteScript Scheduled Scripts",
+      "SuiteScript Map/Reduce Scripts",
+      "SuiteFlow Workflow Automation",
+      "NetSuite RESTlet Development",
+      "NetSuite API Integration",
       "NetSuite Saved Searches",
-      "NetSuite Workflow Automation",
+      "NetSuite SuiteAnalytics",
+      "NetSuite Advanced PDF Templates",
       "NetSuite Account Optimization",
+      "NetSuite Manufacturing Support",
+      "NetSuite Wholesale Distribution",
+      "NetSuite Construction Accounting",
+      "NetSuite SaaS Billing Automation",
+      "NetSuite Post-Go-Live Support",
+      "NetSuite OneWorld Multi-Subsidiary",
     ],
     award: [
       "Oracle NetSuite Certified SuiteCloud Developer II",
       "Oracle NetSuite Certified Administrator Professional",
     ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "technical support",
+      areaServed: "US",
+      availableLanguage: "English",
+    },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "NetSuite Post-Go-Live Services",
@@ -121,6 +142,41 @@ export function ServiceJsonLd({
     serviceType,
     provider: { "@type": "ProfessionalService", name: LEGAL_NAME, url: SITE_URL },
     areaServed: "US",
+  };
+  return (
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+  );
+}
+
+export function VideoObjectJsonLd({
+  name,
+  description,
+  videoId,
+  uploadDate,
+  isShort = false,
+}: {
+  name: string;
+  description: string;
+  videoId: string;
+  uploadDate: string;
+  isShort?: boolean;
+}) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name,
+    description,
+    thumbnailUrl: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
+    uploadDate,
+    url: isShort
+      ? `https://www.youtube.com/shorts/${videoId}`
+      : `https://www.youtube.com/watch?v=${videoId}`,
+    embedUrl: `https://www.youtube.com/embed/${videoId}`,
+    publisher: {
+      "@type": "Organization",
+      name: LEGAL_NAME,
+      url: SITE_URL,
+    },
   };
   return (
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />

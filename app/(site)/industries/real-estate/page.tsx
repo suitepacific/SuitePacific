@@ -17,7 +17,7 @@ import {
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
@@ -142,7 +142,7 @@ const CUSTOMIZATIONS = [
 const WHY_SP = [
   {
     icon: ShieldCheck,
-    title: "SuiteCloud Developer II Certified",
+    title: "NetSuite-Certified",
     description:
       "Oracle NetSuite's SuiteCloud Developer II and Administrator Professional certifications. Verified technical credentials across SuiteScript, SuiteFlow, and the NetSuite platform.",
   },
@@ -229,6 +229,39 @@ const FAQ = [
   },
 ];
 
+const COMPARISON = [
+  {
+    capability: "Property reporting",
+    standard: "Standard financial statements by entity",
+    withSP: "Classification-based P&L saved searches by property",
+  },
+  {
+    capability: "Lease tracking",
+    standard: "Standard customer record fields",
+    withSP: "Custom expiry date fields with automated reminder workflows",
+  },
+  {
+    capability: "CapEx approvals",
+    standard: "Standard AP approval routing",
+    withSP: "Multi-level routing by amount, property manager, and CFO",
+  },
+  {
+    capability: "Vendor compliance",
+    standard: "Standard vendor records",
+    withSP: "Insurance expiry tracking, compliance dashboards, and alert workflows",
+  },
+  {
+    capability: "Multi-entity consolidation",
+    standard: "Manual intercompany journal entries",
+    withSP: "Automated elimination scripts for consolidated reporting",
+  },
+  {
+    capability: "Development accounting",
+    standard: "Standard project cost tracking",
+    withSP: "Draw schedule automation and development budget dashboards",
+  },
+];
+
 export const metadata: Metadata = {
   title: "NetSuite Support for Real Estate Companies",
   description:
@@ -261,6 +294,14 @@ export default function RealEstatePage() {
         url={`${SITE_URL}/industries/real-estate`}
         serviceType="NetSuite Real Estate Support"
       />
+      <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
+        description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
+        videoId="IQvWN_yZ24A"
+        uploadDate="2026-08-12"
+        isShort
+      />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading
@@ -275,14 +316,19 @@ export default function RealEstatePage() {
           <LeadFormLight />
         </div>
         <p className="mt-3 text-xs text-brand-400">
-          SuiteCloud Developer II certified · Post-go-live specialist · Sandbox-first development · Month-to-month
+          NetSuite-Certified · Post-go-live specialist · Sandbox-first development · Month-to-month
+        </p>
+        <p className="mt-2 text-xs text-brand-300">
+          <time dateTime="2026-08">Published August 2026</time>
         </p>
 
         <p className="mt-8 text-sm text-brand-400">
-          SuitePacific provides NetSuite post-go-live support and development for real estate companies. We work
-          with real estate firms already live on NetSuite, handling the technical work that follows initial
-          implementation: property-level reporting, lease and occupancy tracking, capital expenditure approval
-          workflows, vendor compliance management, and intercompany elimination for multi-entity structures.
+          Real estate companies using NetSuite across multiple properties or entities consistently need capabilities
+          beyond standard setup: property-level P&amp;L reporting, CapEx approval chains, and lease expiration
+          tracking all require custom scripts or workflows to function reliably. SuitePacific builds and maintains
+          these capabilities for real estate firms already live on NetSuite, covering property-level reporting, lease
+          and occupancy tracking, capital expenditure approval workflows, vendor compliance management, and
+          intercompany elimination for multi-entity structures.
           Real estate accounts in NetSuite typically require significant customization to produce the property-level
           financial views, approval chains, and compliance tracking that asset managers and finance teams need.
           Common areas include classification-based P&L saved searches, lease expiry reminder workflows, multi-level
@@ -292,10 +338,40 @@ export default function RealEstatePage() {
           certification. Work is done directly, with no offshore handoffs or account manager layer.
         </p>
 
+        {/* Comparison */}
+        <div className="mt-14" data-section="comparison">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">
+            How does SuitePacific extend NetSuite for real estate companies?
+          </h2>
+          <p className="text-sm text-brand-400 mb-4">
+            These are common capability gaps and what SuitePacific adds to fill them.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-brand-100">
+                  <th className="text-left py-3 pr-6 font-semibold text-brand-900 w-1/3">Capability</th>
+                  <th className="text-left py-3 pr-6 font-semibold text-brand-900 w-1/3">Standard NetSuite</th>
+                  <th className="text-left py-3 font-semibold text-brand-900 w-1/3">With SuitePacific</th>
+                </tr>
+              </thead>
+              <tbody>
+                {COMPARISON.map((row) => (
+                  <tr key={row.capability} className="border-b border-brand-50">
+                    <td className="py-3 pr-6 font-medium text-brand-900 align-top">{row.capability}</td>
+                    <td className="py-3 pr-6 text-brand-400 align-top">{row.standard}</td>
+                    <td className="py-3 text-brand-700 align-top">{row.withSP}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         {/* Challenges */}
         <div className="mt-14" data-section="challenges">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            NetSuite challenges real estate companies face after go-live
+            What NetSuite challenges do real estate companies face?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {CHALLENGES.map((item) => (
@@ -310,7 +386,7 @@ export default function RealEstatePage() {
 
         {/* Services */}
         <div className="mt-14" data-section="services">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">NetSuite services for real estate</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">What NetSuite services does SuitePacific provide for real estate companies?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {SERVICES.map((service) => (
               <Link key={service.href} href={service.href} className="group">
@@ -331,7 +407,7 @@ export default function RealEstatePage() {
         {/* Customizations */}
         <div className="mt-14" data-section="customizations">
           <h2 className="text-lg font-semibold text-brand-900 mb-2">
-            Common real estate NetSuite customizations
+            What are common NetSuite customizations for real estate?
           </h2>
           <p className="text-sm text-brand-400 mb-6">
             These are the kinds of builds we do for real estate companies on a recurring basis.
@@ -343,7 +419,7 @@ export default function RealEstatePage() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
-                  <p className="font-semibold text-brand-900 text-sm">{item.title}</p>
+                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
                   <p className="mt-0.5 text-sm text-brand-400">{item.description}</p>
                 </div>
               </div>
@@ -354,7 +430,7 @@ export default function RealEstatePage() {
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            Why real estate companies choose SuitePacific
+            Why do real estate companies choose SuitePacific?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (

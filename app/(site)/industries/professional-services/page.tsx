@@ -17,7 +17,7 @@ import {
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
@@ -142,7 +142,7 @@ const CUSTOMIZATIONS = [
 const WHY_SP = [
   {
     icon: ShieldCheck,
-    title: "SuiteCloud Developer II Certified",
+    title: "NetSuite-Certified",
     description:
       "Oracle NetSuite's SuiteCloud Developer II and Administrator Professional certifications. Verified technical credentials across SuiteScript, SuiteFlow, and the NetSuite platform.",
   },
@@ -229,6 +229,39 @@ const FAQ = [
   },
 ];
 
+const COMPARISON = [
+  {
+    capability: "Timesheet approval",
+    standard: "Standard single-level approval routing",
+    withSP: "Routed workflows with rejection handling and weekly reminders",
+  },
+  {
+    capability: "Project billing",
+    standard: "Manual invoice creation from time records",
+    withSP: "Billing-type-adaptive scripts for T&M, fixed fee, and milestone",
+  },
+  {
+    capability: "Revenue recognition",
+    standard: "Standard ARM schedule per invoice",
+    withSP: "Percentage-of-completion scripts from project cost data",
+  },
+  {
+    capability: "Project profitability",
+    standard: "Standard project and time reports",
+    withSP: "Margin, utilization, WIP, and unbilled aging dashboards",
+  },
+  {
+    capability: "Client invoices",
+    standard: "Standard NetSuite PDF invoice template",
+    withSP: "Billing-type-adaptive templates with time detail or milestone summary",
+  },
+  {
+    capability: "Resource management",
+    standard: "Manual project assignment tracking",
+    withSP: "Resource utilization saved searches by role, project, and period",
+  },
+];
+
 export const metadata: Metadata = {
   title: "NetSuite Support for Professional Services Firms",
   description:
@@ -261,6 +294,14 @@ export default function ProfessionalServicesPage() {
         url={`${SITE_URL}/industries/professional-services`}
         serviceType="NetSuite Professional Services Support"
       />
+      <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
+        description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
+        videoId="IQvWN_yZ24A"
+        uploadDate="2026-08-12"
+        isShort
+      />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading
@@ -275,14 +316,19 @@ export default function ProfessionalServicesPage() {
           <LeadFormLight />
         </div>
         <p className="mt-3 text-xs text-brand-400">
-          SuiteCloud Developer II certified · Post-go-live specialist · Sandbox-first development · Month-to-month
+          NetSuite-Certified · Post-go-live specialist · Sandbox-first development · Month-to-month
+        </p>
+        <p className="mt-2 text-xs text-brand-300">
+          <time dateTime="2026-08">Published August 2026</time>
         </p>
 
         <p className="mt-8 text-sm text-brand-400">
-          SuitePacific provides NetSuite post-go-live support and development for professional services firms. We
-          work with consulting, engineering, and other project-based firms already live on NetSuite, handling the
-          technical work that follows initial implementation: timesheet approval workflows, project billing
-          automation, revenue recognition scripts, resource utilization reporting, and client invoice templates.
+          Professional services firms on NetSuite consistently encounter the same gaps: timesheet approval routing
+          that matches their org structure, billing logic for T&amp;M and fixed-fee engagements, and revenue
+          recognition automation all require SuiteScript customization to work reliably at scale. SuitePacific
+          builds and maintains these customizations for consulting, engineering, and other project-based firms
+          already live on NetSuite, covering timesheet approval workflows, project billing automation, revenue
+          recognition scripts, resource utilization reporting, and client invoice templates.
           Professional services accounts in NetSuite typically require significant customization to match the firm&apos;s
           billing arrangements, approval chains, and project profitability reporting requirements. Common areas
           include milestone billing automation scripts, timesheet-to-invoice workflows, SuiteQL-based utilization
@@ -292,10 +338,40 @@ export default function ProfessionalServicesPage() {
           directly, with no offshore handoffs or account manager layer.
         </p>
 
+        {/* Comparison */}
+        <div className="mt-14" data-section="comparison">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">
+            How does SuitePacific extend NetSuite for professional services firms?
+          </h2>
+          <p className="text-sm text-brand-400 mb-4">
+            These are common capability gaps and what SuitePacific adds to fill them.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="border-b border-brand-100">
+                  <th className="text-left py-3 pr-6 font-semibold text-brand-900 w-1/3">Capability</th>
+                  <th className="text-left py-3 pr-6 font-semibold text-brand-900 w-1/3">Standard NetSuite</th>
+                  <th className="text-left py-3 font-semibold text-brand-900 w-1/3">With SuitePacific</th>
+                </tr>
+              </thead>
+              <tbody>
+                {COMPARISON.map((row) => (
+                  <tr key={row.capability} className="border-b border-brand-50">
+                    <td className="py-3 pr-6 font-medium text-brand-900 align-top">{row.capability}</td>
+                    <td className="py-3 pr-6 text-brand-400 align-top">{row.standard}</td>
+                    <td className="py-3 text-brand-700 align-top">{row.withSP}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         {/* Challenges */}
         <div className="mt-14" data-section="challenges">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            NetSuite challenges professional services firms face after go-live
+            What NetSuite challenges do professional services firms face?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {CHALLENGES.map((item) => (
@@ -311,7 +387,7 @@ export default function ProfessionalServicesPage() {
         {/* Services */}
         <div className="mt-14" data-section="services">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            NetSuite services for professional services firms
+            What NetSuite services does SuitePacific provide for professional services firms?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {SERVICES.map((service) => (
@@ -333,7 +409,7 @@ export default function ProfessionalServicesPage() {
         {/* Customizations */}
         <div className="mt-14" data-section="customizations">
           <h2 className="text-lg font-semibold text-brand-900 mb-2">
-            Common professional services NetSuite customizations
+            What are common NetSuite customizations for professional services?
           </h2>
           <p className="text-sm text-brand-400 mb-6">
             These are the kinds of builds we do for professional services firms on a recurring basis.
@@ -345,7 +421,7 @@ export default function ProfessionalServicesPage() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
-                  <p className="font-semibold text-brand-900 text-sm">{item.title}</p>
+                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
                   <p className="mt-0.5 text-sm text-brand-400">{item.description}</p>
                 </div>
               </div>
@@ -356,7 +432,7 @@ export default function ProfessionalServicesPage() {
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            Why professional services firms choose SuitePacific
+            Why do professional services firms choose SuitePacific?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (
