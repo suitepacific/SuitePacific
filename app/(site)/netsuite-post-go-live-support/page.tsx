@@ -274,18 +274,27 @@ export default function PostGoLiveSupportPage() {
         {/* Intro video */}
         <div className="mt-8 rounded-2xl border border-brand-100 bg-brand-50/30 p-5" data-section="intro-video">
           <div className="flex flex-col sm:flex-row gap-5 items-start">
-            <div
-              className="w-32 shrink-0 mx-auto sm:mx-0 overflow-hidden rounded-xl"
-              style={{ aspectRatio: "9/16" }}
+            <a
+              href="https://www.youtube.com/shorts/IQvWN_yZ24A"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative w-full sm:w-44 shrink-0 overflow-hidden rounded-xl"
+              style={{ aspectRatio: "16/9" }}
             >
-              <iframe
-                src="https://www.youtube.com/embed/IQvWN_yZ24A"
-                title="SuitePacific Introduction: NetSuite Post-Go-Live Support"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full border-0"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://i.ytimg.com/vi/IQvWN_yZ24A/hqdefault.jpg"
+                alt="SuitePacific introduction video"
+                className="w-full h-full object-cover"
               />
-            </div>
+              <div className="absolute inset-0 flex items-center justify-center bg-black/25 group-hover:bg-black/35 transition-colors">
+                <div className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center shadow-md">
+                  <svg className="w-4 h-4 ml-0.5 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </div>
+            </a>
             <div>
               <p className="text-sm font-semibold text-brand-900">About SuitePacific</p>
               <p className="mt-2 text-sm text-brand-400">
