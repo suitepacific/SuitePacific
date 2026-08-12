@@ -7,6 +7,12 @@ tags: ["NetSuite", "Reporting"]
 
 Generic month-end close advice is easy to find. What's harder to find is what's specific to NetSuite: the things that behave differently than your old system, the steps that require clicking in a specific order, and the reports that only tell you something went wrong after you've already closed the period. This checklist covers those.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The NetSuite month-end close has steps that behave differently from most ERP systems and that are not obvious without platform experience. The items that most commonly cause problems are: the distinction between a transaction date and its posting period, which determines which accounting period the transaction affects independently of the calendar date; the period locking sequence, which must close in the correct order across subsidiary ledgers; currency revaluation for open AR and AP balances in non-base currencies; received-not-billed accruals for inventory received but not yet invoiced; and the sequence for Fixed Asset Management depreciation runs. Unposted transactions, pending approval workflows, and scheduled scripts that touch balance-affecting records must also be verified before lock. The correct order of operations matters because actions taken out of sequence can create transactions in already-closed periods or produce incorrect period-end balances.</p>
+</div>
+
+
 <figure style="margin:1.75rem 0">
 <svg viewBox="0 0 680 168" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
   <defs>

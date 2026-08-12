@@ -10,7 +10,7 @@ At some point, every NetSuite developer hits a Saved Search that should work but
 SuiteQL is the answer to all three of those problems. It is a SQL-like query language built directly into NetSuite that gives developers and technically-minded administrators access to the full data model using familiar SQL syntax. If you have been working around saved search limitations with clumsy workarounds, this guide will make those workarounds unnecessary.
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
-<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">What SuiteQL is</p>
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">SuiteQL is a SQL-like query language built into NetSuite for retrieving data from the NetSuite database. It is available in SuiteScript via the N/query module and via NetSuite's REST API at the suiteql endpoint. SuiteQL queries target NetSuite record types using their internal table names (Transaction, Customer, Item, Employee, etc.) rather than arbitrary database table names. The language is based on Oracle SQL syntax with NetSuite-specific extensions for display values and custom field access. SuiteQL is read-only: it retrieves data but cannot create, update, or delete records.</p>
 </div>
 

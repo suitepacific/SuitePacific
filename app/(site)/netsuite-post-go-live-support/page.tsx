@@ -19,6 +19,7 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
 
 const COMPARISON = [
@@ -433,6 +434,45 @@ export default function PostGoLiveSupportPage() {
               covers what to look for when selecting an ongoing support provider after go-live.
             </li>
           </ul>
+          <p className="text-sm font-semibold text-brand-900 mb-3 mt-6">NetSuite 2026.2 releases</p>
+          <ul className="space-y-2.5">
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-payment-runs-2026-2" className="text-accent hover:underline">
+                NetSuite Payment Runs
+              </Link>{" "}
+              covers the new AP workflow for batching and paying multiple vendors in a single review and approval step.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-bank-reconciliation-changes-2026-2" className="text-accent hover:underline">
+                NetSuite bank reconciliation changes in 2026.2
+              </Link>{" "}
+              explains the Match Bank Data redesign and what finance teams need to update before the release reaches Production.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-payment-adjustments-2026-2" className="text-accent hover:underline">
+                NetSuite 2026.2 payment adjustment automation
+              </Link>{" "}
+              covers the new capability for automatically handling bank fees and underpayments during payment processing.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-bill-capture-preferences-2026-2" className="text-accent hover:underline">
+                NetSuite Bill Capture preference changes in 2026.2
+              </Link>{" "}
+              explains what blank values now mean in Bill Capture configuration and what to verify before the update.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-project-health-indicators-2026-2" className="text-accent hover:underline">
+                NetSuite 2026.2 project health indicators
+              </Link>{" "}
+              covers the five new indicators added to project records and what each one tracks.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-advanced-record-customization-2026-2" className="text-accent hover:underline">
+                NetSuite Advanced Record Customization in 2026.2
+              </Link>{" "}
+              covers the new location for managing AI descriptions on records and how the setting affects the account.
+            </li>
+          </ul>
         </div>
 
         {/* Industries */}
@@ -463,6 +503,10 @@ export default function PostGoLiveSupportPage() {
         </div>
 
         <ServiceFaqSection items={FAQ} />
+
+        <div id="contact" className="mt-14 pt-10 border-t border-brand-50">
+          <LeadForm />
+        </div>
       </div>
     </main>
   );

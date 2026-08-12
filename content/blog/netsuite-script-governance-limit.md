@@ -7,6 +7,12 @@ tags: ["SuiteScript", "Performance", "Development"]
 
 The "script execution governance limit exceeded" error is one of the most frustrating in NetSuite development because it doesn't always reproduce on demand, it often surfaces on the busiest transaction types, and the error message alone tells you almost nothing about what actually went wrong. This guide covers what governance actually is, every common cause of hitting the limit, how to diagnose the specific script and code path responsible, and the patterns that fix it permanently rather than just pushing the failure down the road.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The NetSuite governance limit error occurs when a script execution consumes more governance units than its type-specific budget allows. Governance units are a rate-limiting mechanism on Oracle's shared infrastructure. Different operations cost different amounts: record.load() costs 10 units, search execution costs 5 units plus additional units per page of results, submitFields() costs 10 units. User Event and Client scripts have a 1,000-unit budget per execution; Scheduled scripts have 10,000 units. The error is difficult to reproduce consistently because governance consumption scales with data volume. A script that works in Sandbox on 500 records may fail in Production on 50,000. The fix is almost always one of three patterns: replacing record.load() inside a loop with search.lookupFields() for the specific fields needed, reducing record.save() calls by batching updates with submitFields(), or switching to a Map/Reduce script for large-volume operations.</p>
+</div>
+
+
 ## What governance limits actually are
 
 NetSuite runs on shared multi-tenant infrastructure. To prevent any one script from monopolizing server resources and degrading performance for other tenants, Oracle imposes governance unit budgets on each script execution. Different operations consume different numbers of units: a `record.load()` costs 10 units, a `search.create().run()` costs 5 units per search plus additional units for each page of results, a `record.submitFields()` costs 10 units.

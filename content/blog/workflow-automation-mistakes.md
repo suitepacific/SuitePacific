@@ -7,6 +7,12 @@ tags: ["Workflow Automation", "SuiteFlow"]
 
 SuiteFlow makes it easy to build a workflow and easy to build one that breaks in ways that are hard to diagnose later.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The five workflow design mistakes that most commonly cause production problems in NetSuite SuiteFlow are: triggering on every save event instead of using Before Field Change conditions to limit execution to records where a relevant field actually changed; building duplicate approval logic across multiple workflows instead of one centralized workflow; allowing a workflow and a User Event script to modify the same field without a defined execution order, which creates race conditions; building workflows that modify records across subsidiaries without accounting for subsidiary-specific role permissions that restrict cross-subsidiary access; and using Set Field Value to store a calculated result in a permanent custom field instead of using formula-based fields that recalculate dynamically. Each mistake is preventable at design time but difficult to diagnose once the workflow is in production and the failure only appears under specific conditions.</p>
+</div>
+
+
 NetSuite SuiteFlow workflows trigger on record saves and can be configured to fire on any combination of create, edit, and delete events. The most common failure modes are not caused by SuiteFlow bugs but by workflow design decisions that seem reasonable in isolation: triggering on every save instead of only when a relevant field changes, duplicating business logic across multiple workflows with no single source of truth, and letting workflows and User Event scripts modify the same field without a defined execution order.
 
 These five mistakes appear consistently when we review workflow libraries inherited from previous developers or built incrementally over several years. Each one has a straightforward fix once it is identified.

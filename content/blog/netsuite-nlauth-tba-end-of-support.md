@@ -8,6 +8,12 @@ tags: ["Authentication", "SuiteScript", "Security"]
 
 NLAuth is one of the oldest authentication methods in NetSuite. It works by passing your account ID, email, and password directly in an HTTP Authorization header. Easy to implement, nothing to configure, and used in thousands of RESTlet integrations built over the last decade.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite is ending support for NLAuth, the authentication method that passes credentials directly in HTTP Authorization headers. Two retirement dates apply. In 2027.1, new integrations using NLAuth will be blocked, and existing NLAuth integrations that have not migrated will stop working. A second deprecation tentatively planned for 2028.1 completes the removal for any remaining connections. Any RESTlet, custom integration, or third-party connection that currently authenticates with NLAuth must migrate to Token-Based Authentication using Integration Records in NetSuite before 2027.1. Migration generates a Consumer Key, Consumer Secret, Token ID, and Token Secret for each integration. Organizations with large integration inventories should audit all connections for NLAuth usage now and prioritize migration of the highest-risk connections, particularly those that touch financial records or run unattended on a schedule.</p>
+</div>
+
+
 NetSuite is ending it.
 
 The 2026.2 release notes confirm two changes coming in 2027.1 and one tentatively planned for 2028.1. Any integration still using NLAuth at that point stops working. Any new integration built with Token-Based Authentication (TBA) from 2027.1 onward will be blocked. If your account has RESTlets, custom integrations, or third-party connections that authenticate with NLAuth or TBA credentials, you need an audit and a migration plan before that deadline.

@@ -7,6 +7,12 @@ tags: ["Advanced PDF", "Templates", "Development"]
 
 NetSuite's Advanced PDF/HTML Template editor uses FreeMarker, an open-source Java template language, to produce transaction documents, invoices, quotes, purchase orders, packing slips, statements. If you've opened the template editor and found a mix of HTML, CSS, and unfamiliar tags wrapped in `<#` and `${`, this guide explains what each piece does and how to adapt it to your documents.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite Advanced PDF/HTML Templates use FreeMarker, a Java template language, to produce transaction documents including invoices, purchase orders, packing slips, and statements. When NetSuite generates a PDF, it builds an XML data model from the transaction and related records, then passes that model to the FreeMarker engine, which processes the template and produces HTML that the rendering engine converts to a PDF. The transaction is available in the template as the object called record. Line items on the transaction are a collection under record.item. FreeMarker directives use angle brackets with a hash for logic and dollar-sign curly braces for output. The most common errors in NetSuite PDF templates are incorrect field paths, missing null checks on optional fields that are blank on some transactions, and text that overflows a fixed-width column in the HTML table layout.</p>
+</div>
+
+
 ## How it works
 
 When NetSuite generates a PDF from an Advanced PDF template, it does two things:

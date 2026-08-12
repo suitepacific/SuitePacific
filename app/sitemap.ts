@@ -31,6 +31,7 @@ const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/netsuite-account-optimization", lastModified: SEO_REFRESH_DATE },
   { path: "/netsuite-post-go-live-support", lastModified: SEO_REFRESH_DATE },
   { path: "/netsuite-implementation-partner-vs-managed-support", lastModified: SEO_REFRESH_DATE },
+  { path: "/netsuite-freelancer-vs-consulting-firm", lastModified: SEO_REFRESH_DATE },
   { path: "/netsuite-consulting-services", lastModified: SEO_REFRESH_DATE },
   { path: "/netsuite-admin-support-small-business", lastModified: SEO_REFRESH_DATE },
   { path: "/suitecompare", lastModified: new Date("2026-07-19") },

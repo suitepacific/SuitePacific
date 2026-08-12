@@ -7,6 +7,12 @@ tags: ["Field Service Management", "Administration", "Bundle Updates", "Sandbox 
 
 If you have a NetSuite account with the Field Service Management SuiteApp installed, you may have already received a notification from Oracle about an upcoming managed bundle update scheduled for 11 August. Oracle recommends testing the new bundle version in your Sandbox environment before it reaches Production, so that any issues with your existing configurations, customizations, or business processes can be identified and resolved in advance.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The NetSuite Field Service Management SuiteApp bundle is updating to version 2026.07.1 on August 11, 2026. The update changes the FSM Configuration record structure, the mobile app interface, the format of nxc_now() expressions in mobile event maps, and the readonly property behavior at the resource level. Oracle recommends testing the new bundle version in Sandbox before it reaches Production. The four areas requiring administrator attention before August 11 are: reviewing the automatically migrated nxc_now() expressions for accuracy, recreating readonly rules using the new field-level access controls, preparing field teams for the mobile app interface changes, and validating that existing FSM workflows behave correctly under the updated Configuration record structure.</p>
+</div>
+
+
 That recommendation is easy to overlook when your team is busy. For organizations running FSM in a live field operation, this particular update warrants close attention.
 
 **Not sure where to start?** SuitePacific helps NetSuite customers validate FSM bundle updates in Sandbox before they reach Production. If you would rather have an expert walk through your environment than navigate this alone, [contact us](/contact) and we will take it from there.

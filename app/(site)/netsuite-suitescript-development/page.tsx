@@ -8,9 +8,10 @@ import {
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
 
 const PAIN_POINTS = [
@@ -159,6 +160,14 @@ export default function SuiteScriptDevelopmentPage() {
         description="Custom SuiteScript 2.x development for post-go-live NetSuite accounts, including User Event scripts, Client scripts, Scheduled scripts, Map/Reduce scripts, RESTlets, and Suitelets."
         url={`${SITE_URL}/netsuite-suitescript-development`}
         serviceType="SuiteScript Development"
+      />
+      <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
+        description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
+        videoId="IQvWN_yZ24A"
+        uploadDate="2026-08-12"
+        isShort
       />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
@@ -332,10 +341,26 @@ export default function SuiteScriptDevelopmentPage() {
               </Link>{" "}
               covers the implicit sort removal that affects queries returning large result sets in 2026.2.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-suiteql-guide" className="text-accent hover:underline">
+                NetSuite SuiteQL guide for administrators and developers
+              </Link>{" "}
+              covers how SuiteQL differs from Saved Searches, key syntax differences, and how to run queries from SuiteScript and the REST API.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-custom-gl-plugin-guide" className="text-accent hover:underline">
+                NetSuite Custom GL Plugin: what it can and cannot do
+              </Link>{" "}
+              covers the transaction types where the plugin does not execute and the design principles for using it correctly.
+            </li>
           </ul>
         </div>
 
         <ServiceFaqSection items={FAQ} />
+
+        <div id="contact" className="mt-14 pt-10 border-t border-brand-50">
+          <LeadForm />
+        </div>
       </div>
     </main>
   );

@@ -7,6 +7,12 @@ tags: ["Finance", "Release Notes", "2026.2", "Accounts Payable"]
 
 NetSuite 2026.2 includes two updates that directly change how finance teams process payments and reconcile bank transactions. Neither requires configuration changes to start using, but both change the interface your team works in every day.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite 2026.2 includes two changes that affect how finance teams process payments and reconcile bank transactions. Payment Runs is a new AP feature that lets teams batch multiple vendor bills into a single review, approval, and payment workflow, replacing the bill-by-bill processing that required opening each transaction individually. The Match Bank Data page has been redesigned with renamed tabs, a new subtab structure replacing the old Review tab, and updated button labels. Neither change requires administrator configuration; both activate automatically after the 2026.2 update. Teams processing high volumes of vendor payments will see the most immediate impact from Payment Runs. Teams that reconcile bank accounts regularly should review the new Match Bank Data interface in Sandbox before 2026.2 reaches Production, and update any documented close procedures that reference the old tab names or button locations.</p>
+</div>
+
+
 This post covers what changed, what the new workflows look like, and what to communicate to your team before they encounter the changes on their own.
 
 **Managing a NetSuite finance function and want to make sure your team is prepared for 2026.2?** SuitePacific works with NetSuite customers through release updates, including walkthroughs of new finance features in Sandbox before they go live in Production. [Contact us](/contact).

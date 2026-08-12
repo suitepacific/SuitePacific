@@ -7,6 +7,12 @@ tags: ["Saved Searches", "Reporting"]
 
 Saved searches are the most underused power tool in NetSuite. Most teams use them for basic filtering and stop there, but a well-built saved search can replace a custom report, feed a dashboard, trigger a workflow, or catch data errors before they become a closing-day fire drill.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite saved searches can do more than filter records. The capabilities most teams have not fully used are: Summary type aggregation for totals and counts without building a custom report; Use Expressions columns for joining to related records that the standard columns do not surface; formula-based filters for conditions the standard criteria cannot express; Relative Date filters to avoid hardcoded date ranges that need updating each period; scheduled email delivery with a setting that suppresses the email when no results are found; dashboard portlet placement for live-refreshing visibility on login; and formula fields in the results for conditional formatting that highlights exceptions. A saved search that correctly combines criteria, summary, formula columns, and scheduled email delivery replaces several manual reporting steps that would otherwise run on the same schedule.</p>
+</div>
+
+
 <figure style="margin:1.75rem 0">
 <svg viewBox="0 0 680 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
   <defs>

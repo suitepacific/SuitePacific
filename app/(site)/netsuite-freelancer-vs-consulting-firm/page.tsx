@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, X, AlertCircle } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, OrganizationJsonLd, VideoObjectJsonLd, ArticleJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL, LEGAL_NAME } from "@/lib/content";
@@ -136,39 +136,20 @@ export default function FreelancerVsConsultingFirmPage() {
         ]}
       />
       <FaqJsonLd items={FAQ} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            url: `${SITE_URL}/netsuite-freelancer-vs-consulting-firm`,
-            headline: "NetSuite Freelancer vs. Consulting Firm: How to Choose",
-            description:
-              "The practical trade-offs between hiring a freelance NetSuite developer and working with a consulting firm: accountability, continuity, cost structure, and when each model fits.",
-            image: {
-              "@type": "ImageObject",
-              url: `${SITE_URL}/og-default.png`,
-              width: 1200,
-              height: 630,
-            },
-            author: { "@type": "Organization", name: LEGAL_NAME },
-            publisher: {
-              "@type": "Organization",
-              name: LEGAL_NAME,
-              logo: {
-                "@type": "ImageObject",
-                url: `${SITE_URL}/logo-icon.png`,
-                width: 256,
-                height: 256,
-              },
-            },
-            mainEntityOfPage: {
-              "@type": "WebPage",
-              "@id": `${SITE_URL}/netsuite-freelancer-vs-consulting-firm`,
-            },
-          }),
-        }}
+      <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
+        description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
+        videoId="IQvWN_yZ24A"
+        uploadDate="2026-08-12"
+        isShort
+      />
+      <ArticleJsonLd
+        url={`${SITE_URL}/netsuite-freelancer-vs-consulting-firm`}
+        headline="NetSuite Freelancer vs. Consulting Firm: How to Choose"
+        description="The practical trade-offs between hiring a freelance NetSuite developer and working with a consulting firm: accountability, continuity, cost structure, and when each model fits."
+        datePublished="2025-08-01"
+        dateModified="2026-08-12"
       />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">

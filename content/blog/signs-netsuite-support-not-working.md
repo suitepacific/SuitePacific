@@ -9,6 +9,12 @@ calloutText: "Recognizing some of these? Tell us what's happening in your accoun
 
 Most NetSuite support problems don't announce themselves. They accumulate. A slow response here, a production change that wasn't tested in sandbox there, a developer who left the firm and took all the account context with them. By the time the relationship clearly isn't working, months of friction have already cost the business real time and money.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A NetSuite support relationship has a structural problem when any of these eight conditions are present: customizations break on every release and the support team does not catch the failures before the client does; the developer who built the original customizations is no longer reachable and nobody else understands the code; changes go to Production without Sandbox testing; routine questions take more than two business days to receive a substantive response; new work quotes are consistently higher than expected because the account is not fully understood; hours are billed and output is low with work the client cannot evaluate; the support partner is a generalist firm where nobody has deep NetSuite expertise; or the client has stopped requesting improvements because trust in the engagement has broken down. Any one of these signs is a problem worth addressing. Multiple signs together indicate the engagement is not structured to serve the client.</p>
+</div>
+
+
 If you're reading this, you're probably already suspicious. Here are the signs that confirm it.
 
 <div style="background:#060f26;border-radius:10px;overflow:hidden;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">

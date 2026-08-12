@@ -8,6 +8,12 @@ tags: ["Banking", "Accounting", "Administration"]
 
 If you do bank reconciliation in NetSuite, the Match Bank Data page looks different in 2026.2. Several tabs have been renamed, buttons have changed, and a new subtab has replaced the old Review tab. Here is a complete rundown of what changed.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The Match Bank Data page in NetSuite has been redesigned in 2026.2. Several tabs have been renamed, the old Review tab has been replaced with a new subtab structure, and some buttons have changed labels or positions. The Matched subtab is now part of a reorganized interface, and the workflow for reviewing and confirming matched transactions follows a different path than in previous releases. These are interface changes, not functional ones: the reconciliation process itself is unchanged. Finance teams that perform bank reconciliation regularly should review the new interface in Sandbox before 2026.2 reaches Production, update documented close procedures to reflect the new tab names, and brief team members so the interface change is not mistaken for a system error when first encountered in Production.</p>
+</div>
+
+
 <figure style="margin:1.75rem 0">
 <svg viewBox="0 0 680 144" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
   <defs>

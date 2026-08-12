@@ -7,6 +7,12 @@ tags: ["Account Optimization", "Performance", "Administration"]
 
 When we audit a NetSuite account that has been live for two or three years, we almost always find the same things: custom fields nobody uses, saved searches still running on dashboards for processes that ended, workflows with no entry conditions firing on every transaction save, and script deployments for projects that wrapped up 18 months ago.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A NetSuite account optimization is a structured cleanup of a live account that has accumulated unused configurations, inactive customizations, and inefficient processes over time. Common findings include custom fields no longer used on any active form, saved searches still running on dashboards for processes that ended, workflows with no entry conditions that fire on every transaction save and slow overall performance, and script deployments for completed projects that continue consuming governance on every applicable record save. None of this accumulates intentionally; it builds because NetSuite makes addition easy and removal infrequent. An optimization addresses this without re-implementing or changing modules. The work typically covers custom field rationalization, workflow entry condition review, script deployment cleanup, role and permission audit, saved search deactivation, and documentation of what the account actually contains. The result is a system that is faster, cheaper to maintain, and easier to train new staff on.</p>
+</div>
+
+
 None of this gets added on purpose. It builds up because NetSuite makes it easy to add things and there is no natural pressure to remove them. The result is an account that is slower, harder to maintain, and harder to train new people on than it should be.
 
 A NetSuite optimization is a cleanup pass on a live account. No re-implementation, no module changes, no big project. Just a structured review of what is actually in the system and what should not be.

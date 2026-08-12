@@ -7,6 +7,12 @@ tags: ["Field Service Management", "Administration", "Bundle Updates", "Configur
 
 If your NetSuite Field Service Management configuration uses `nxc_now()` expressions in mobile event maps or field expressions, Oracle will automatically migrate those expressions when the FSM 2026.07.1 bundle updates on August 11, 2026.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite will automatically migrate nxc_now() expressions in FSM Configuration records when the 2026.07.1 bundle updates on August 11, 2026. The nxc_now() function, which captured the current timestamp in mobile event maps and field expressions, is being replaced with a different syntax in the updated FSM framework. Oracle copies the existing configuration record and converts the expressions into the new format. The automatic migration does not guarantee correctness: checkbox conditions may not transfer accurately, date and time formatting may differ from the original, and errors in the migrated record will not surface until technicians encounter the mobile event in a live work order. Organizations should review the migrated configuration record in Sandbox before August 11, test the affected mobile events using a test technician account, and verify that timestamps capture correctly before the update reaches Production.</p>
+</div>
+
+
 Automatic migration sounds like the safe option. It is not a reason to skip review.
 
 Oracle migrates the expressions into a copied configuration record and stores the result for you to inspect. If the migrated expressions contain errors, if checkbox conditions were not carried over correctly, or if date and time values are formatted incorrectly after migration, the problems will appear in your live field operation after August 11: not before, unless you review the migration in Sandbox first.

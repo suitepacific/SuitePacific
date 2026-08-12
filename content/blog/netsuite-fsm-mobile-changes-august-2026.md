@@ -7,6 +7,12 @@ tags: ["Field Service Management", "Mobile", "Bundle Updates"]
 
 On August 11, 2026, Oracle will update the NetSuite Field Service Management bundle to version 2026.07.1 in Production accounts. Most of the conversation about this update focuses on administrator configuration tasks. But for the people who will notice it most, the change is in the mobile app.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The NetSuite Field Service Management mobile app interface changes on August 11, 2026, when Oracle deploys the FSM 2026.07.1 bundle to Production accounts. The visible changes affect navigation structure, record layout, and button positions that technicians and dispatchers interact with in the field. These changes result from the underlying FSM Configuration record restructuring in the bundle update. Technicians who open the FSM Mobile app after August 11 without advance briefing may believe the app is broken or that they have the wrong screen. Organizations with field teams should validate the updated interface in Sandbox before August 11, document what changed for the team, and send a brief communication to technicians and dispatchers before the update reaches Production. The work orders, appointments, and service records accessible in the app are unchanged.</p>
+</div>
+
+
 Technicians, dispatchers, and field managers who open the FSM Mobile app on or after August 11 will see a different interface. Not a complete redesign, but enough visible change that without any advance briefing, some team members will assume something is broken.
 
 This post explains exactly what is changing in the mobile experience, why Oracle made these changes, and what to tell your field team before August 11.

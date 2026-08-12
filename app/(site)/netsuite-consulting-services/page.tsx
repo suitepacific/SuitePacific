@@ -21,6 +21,7 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
 
 const COMPARISON = [
@@ -457,6 +458,10 @@ export default function NetSuiteConsultingServicesPage() {
         </div>
 
         <ServiceFaqSection items={FAQ} />
+
+        <div id="contact" className="mt-14 pt-10 border-t border-brand-50">
+          <LeadForm />
+        </div>
       </div>
     </main>
   );

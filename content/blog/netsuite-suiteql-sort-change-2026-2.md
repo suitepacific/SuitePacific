@@ -7,6 +7,12 @@ tags: ["SuiteQL", "Release Notes", "SuiteScript", "2026.2"]
 
 If your SuiteQL queries against transaction records started returning results in a different order after the 2026.2 update, this is why.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite changed the default sort order for SuiteQL queries against transaction records in 2026.2. Queries that previously returned results sorted by tranDisplayName when no ORDER BY clause was specified now return results sorted by tranDate. Any SuiteQL query or integration that relied on the previous implicit ordering without an explicit ORDER BY will receive results in a different sequence after the update. The practical impact affects reports, exports, and integrations that expected a document-number sort and compare results across periods. Queries that already include an explicit ORDER BY clause are not affected. Organizations running SuiteScript, scheduled integrations, or custom reports that query the transaction table should audit for queries without an explicit ORDER BY before 2026.2 reaches Production, particularly for any output used in reconciliation workflows or compared against prior-period data.</p>
+</div>
+
+
 NetSuite changed the default sort order for transaction queries in 2026.2. Queries that previously returned results sorted by `tranDisplayName` now return results sorted by `tranDate`. Any query that does not include an explicit `ORDER BY` clause is subject to this change.
 
 **Running SuiteScript or integrations that query NetSuite transactions and not certain whether your queries are affected?** SuitePacific reviews SuiteScript implementations and can identify queries that need explicit sort order before they cause issues in your live environment. [Contact us](/contact).

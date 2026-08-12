@@ -12,7 +12,7 @@ The developer investigates and finds that the Custom GL Plugin, correctly implem
 That outcome is avoidable. Understanding what the Custom GL Plugin can and cannot do before you design the solution is what prevents it.
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
-<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Core rule</p>
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The Custom GL Plugin lets you add new debit and credit lines to a transaction's GL impact when it posts. It does not let you change, delete, or override the lines that NetSuite generates as part of its standard accounting logic. The plug-in receives the standard GL lines as a read-only input and returns additional lines to append. If your requirement is to change what NetSuite would normally post, the Custom GL Plugin is not the right solution. If your requirement is to add supplemental GL activity on top of what NetSuite posts, it is the right solution.</p>
 </div>
 

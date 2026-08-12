@@ -183,6 +183,41 @@ export function VideoObjectJsonLd({
   );
 }
 
+export function ArticleJsonLd({
+  url,
+  headline,
+  description,
+  datePublished,
+  dateModified,
+}: {
+  url: string;
+  headline: string;
+  description: string;
+  datePublished: string;
+  dateModified?: string;
+}) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    url,
+    headline,
+    description,
+    image: { "@type": "ImageObject", url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 },
+    datePublished,
+    dateModified: dateModified ?? datePublished,
+    author: { "@type": "Organization", name: LEGAL_NAME, url: SITE_URL },
+    publisher: {
+      "@type": "Organization",
+      name: LEGAL_NAME,
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png`, width: 256, height: 256 },
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+  };
+  return (
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+  );
+}
+
 export function BreadcrumbJsonLd({ items }: { items: { name: string; url: string }[] }) {
   const data = {
     "@context": "https://schema.org",

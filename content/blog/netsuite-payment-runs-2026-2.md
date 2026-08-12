@@ -8,6 +8,12 @@ tags: ["Accounting", "Administration", "NetSuite Tips"]
 
 If you process vendor payments in NetSuite, the process is usually the same: open a bill, pay it, move to the next one. For teams handling dozens or hundreds of bills each week, that manual repetition adds up to a lot of hours.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Payment Runs is a new AP feature in NetSuite 2026.2 that lets finance teams batch multiple payable documents together and process them through a single review, approval, and payment workflow. Before Payment Runs, teams processed bills individually: open a bill, pay it, move to the next. With Payment Runs, a controller or AP manager selects a group of bills, reviews the batch, applies approval, and executes payment in one workflow. The Payment Run record stores the selected bills, the payment method, bank account, and approval status in a single place. Payment Runs supports multiple payment methods within a single batch, including check, ACH, and wire. The feature is available after the 2026.2 update without requiring administrator configuration. Teams processing high volumes of vendor payments each week will see the most direct time savings from Payment Runs.</p>
+</div>
+
+
 NetSuite 2026.2 introduces **Payment Runs**, a new AP feature that groups multiple payables together for processing in one workflow.
 
 ## What a Payment Run includes

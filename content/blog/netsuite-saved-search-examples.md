@@ -7,6 +7,12 @@ tags: ["Saved Searches", "Reporting"]
 
 Most teams know they should be using saved searches more than they do. The gap is usually a starting point: it's hard to know what's worth building if you're staring at a blank search screen. These are searches we build or encounter regularly across post-go-live accounts, along with the specific criteria that make them work correctly.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The saved searches that appear most frequently across post-go-live NetSuite accounts fall into three categories: finance and accounting searches for overdue invoices, vendor aging, bills received but not yet invoiced for month-end accruals, and unposted transactions at period close; operations and inventory searches for items below reorder point, open sales orders past expected ship date, and items with negative quantity on hand; and administrative searches for records created or modified by a specific user for audit review, expense reports pending approval, and custom field exceptions for data quality monitoring. Each is built on a standard NetSuite record type without custom development. The correct configuration of each requires specific criteria, filter logic, and column selections; incorrect filter conditions are the most common reason a search appears to run but returns incomplete or misleading results.</p>
+</div>
+
+
 <figure style="margin:1.75rem 0">
 <svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
   <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">10 SEARCHES: BY TEAM AND PURPOSE</text>

@@ -7,6 +7,12 @@ tags: ["Field Service Management", "Administration", "Bundle Updates", "Configur
 
 If you have configured `readonly` rules at the resource level of your NetSuite Field Service Management configuration, those rules will stop working on August 11, 2026, when Oracle deploys the FSM 2026.07.1 bundle update to Production.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The readonly property at the resource level in NetSuite FSM Configuration records is being removed in the 2026.07.1 bundle update on August 11, 2026. Any readonly rules configured at the resource level will stop working after the update without an error, alert, or log entry in the system. Technicians who were restricted by these rules will gain the ability to edit records that were previously locked. Oracle is removing the resource-level readonly property because it was a binary on/off control that could not distinguish between create, edit, and delete permissions. The replacement is field-level access control configured at the section and field level in the FSM Configuration record, which provides more granular control. Organizations should identify all resource-level readonly configurations before August 11, recreate the restrictions using field-level controls in Sandbox, and validate that the new configuration produces the expected behavior before Production.</p>
+</div>
+
+
 There is no error when this happens. No alert, no log entry, and no visible change in your FSM Configuration record. Technicians will simply gain the ability to edit records that your `readonly` rule was previously restricting.
 
 **Need help identifying and migrating your FSM configuration before August 11?** SuitePacific works with NetSuite customers through FSM bundle updates, including configuration reviews, migration support, and Sandbox validation. [Contact us](/contact) and we will help you get ahead of this before it affects your live operation.
