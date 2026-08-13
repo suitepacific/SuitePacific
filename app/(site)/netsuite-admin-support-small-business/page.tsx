@@ -187,13 +187,13 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Admin Support for Small Business",
+  title: "Fractional NetSuite Administrator for Small Business",
   description:
-    "Fractional NetSuite administrator for small businesses: user management, roles, custom fields, saved searches, and workflow automation through dedicated monthly support. No full-time hire needed.",
+    "Fractional NetSuite administrator for small businesses: user management, roles, custom fields, saved searches, and workflow automation on dedicated monthly support. Enterprise expertise without the full-time hire.",
   alternates: { canonical: "/netsuite-admin-support-small-business" },
   openGraph: {
-    title: "NetSuite Admin Support for Small Business",
-    description: "Fractional NetSuite administrator for small businesses: user management, roles, custom fields, saved searches, and workflow automation through dedicated monthly support. No full-time hire needed.",
+    title: "Fractional NetSuite Administrator for Small Business",
+    description: "Fractional NetSuite administrator for small businesses: user management, roles, custom fields, saved searches, and workflow automation on dedicated monthly support. Enterprise expertise without the full-time hire.",
     url: "https://suitepacific.com/netsuite-admin-support-small-business",
     type: "website",
     images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
@@ -233,8 +233,8 @@ export default function NetSuiteAdminSupportSmallBusinessPage() {
         <SectionHeading
           as="h1"
           eyebrow="Fractional NetSuite Administrator"
-          title="NetSuite Admin Support for Small Business"
-          subtitle="Enterprise-grade NetSuite administration through dedicated monthly support built for SMBs. No full-time hire, no long-term contracts."
+          title="Fractional NetSuite Administrator for Small Business"
+          subtitle="Enterprise-grade NetSuite administration on dedicated monthly support. All the access and expertise of a full-time administrator, at the cost that fits a growing business."
           align="left"
         />
 

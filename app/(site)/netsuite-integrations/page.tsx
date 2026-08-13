@@ -312,6 +312,28 @@ export default function NetSuiteIntegrationsPage() {
           </div>
         </div>
 
+        {/* Named integration sub-pages */}
+        <div className="mt-14" data-section="named-integrations">
+          <h2 className="text-lg font-semibold text-brand-900 mb-1">Platform-specific integration guides</h2>
+          <p className="text-sm text-brand-400 mb-6">
+            Detailed guides covering data flows, field mapping decisions, and approach for specific platforms.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { href: "/netsuite-integrations/shopify", label: "NetSuite Shopify Integration", desc: "Order import, inventory sync, fulfillment, and customer matching." },
+              { href: "/netsuite-integrations/salesforce", label: "NetSuite Salesforce Integration", desc: "Account sync, opportunity-to-order, and invoice visibility in Salesforce." },
+              { href: "/netsuite-integrations/hubspot", label: "NetSuite HubSpot Integration", desc: "Contact sync, deal-to-sales-order, and invoice status in HubSpot." },
+              { href: "/netsuite-integrations/avalara", label: "NetSuite Avalara Integration", desc: "Real-time tax calculation, exemption management, and transaction reconciliation." },
+              { href: "/netsuite-integrations/amazon", label: "NetSuite Amazon Integration", desc: "Seller Central order import, FBA inventory sync, and settlement reconciliation." },
+            ].map((item) => (
+              <Link key={item.href} href={item.href} className="group block rounded-xl border border-brand-100 bg-white p-4 hover:border-accent/30 hover:shadow-sm transition-all">
+                <p className="text-sm font-semibold text-brand-900 group-hover:text-accent transition-colors">{item.label}</p>
+                <p className="mt-1 text-xs text-brand-400">{item.desc}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+
         {/* Related reading */}
         <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
           <p className="text-sm font-semibold text-brand-900 mb-3">From the blog</p>

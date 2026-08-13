@@ -7,6 +7,7 @@ import { getAllResources } from "@/lib/resources";
 const SITE_LAUNCH_DATE = new Date("2026-06-01");
 const SEO_REFRESH_DATE = new Date("2026-08-05");
 const NEW_PAGES_DATE = new Date("2026-08-11");
+const KW_GAP_DATE = new Date("2026-08-13");
 
 const INDUSTRY_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/industries/manufacturing", lastModified: SEO_REFRESH_DATE },
@@ -44,6 +45,13 @@ const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/netsuite-ai-optimization-assessment", lastModified: NEW_PAGES_DATE },
   { path: "/netsuite-ai-invoice-processing", lastModified: NEW_PAGES_DATE },
   { path: "/netsuite-ai-reporting", lastModified: NEW_PAGES_DATE },
+  { path: "/netsuite-health-check", lastModified: KW_GAP_DATE },
+  { path: "/netsuite-implementation-rescue", lastModified: KW_GAP_DATE },
+  { path: "/netsuite-integrations/shopify", lastModified: KW_GAP_DATE },
+  { path: "/netsuite-integrations/salesforce", lastModified: KW_GAP_DATE },
+  { path: "/netsuite-integrations/hubspot", lastModified: KW_GAP_DATE },
+  { path: "/netsuite-integrations/avalara", lastModified: KW_GAP_DATE },
+  { path: "/netsuite-integrations/amazon", lastModified: KW_GAP_DATE },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
