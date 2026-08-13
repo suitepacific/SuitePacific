@@ -85,6 +85,7 @@ const URLS = [
   "/netsuite-emergency-support",
   "/blog/netsuite-script-broke-after-upgrade",
   "/blog/netsuite-support-partner-red-flags",
+  "/netsuite-fsm-support",
 ];
 
 if (process.env.NODE_ENV !== "production") {

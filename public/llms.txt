@@ -103,6 +103,7 @@ A: First, identify which release just went live and check the release notes for 
 - [NetSuite Consultant Los Angeles](https://suitepacific.com/netsuite-consultant-los-angeles): Post-go-live NetSuite consulting for LA-area companies; apparel, e-commerce, entertainment, and professional services firms on NetSuite
 - [NetSuite Consultant New York](https://suitepacific.com/netsuite-consultant-new-york): Post-go-live NetSuite consulting for NYC companies; financial services, professional services, real estate, and media organizations on NetSuite
 - [NetSuite Consultant Chicago](https://suitepacific.com/netsuite-consultant-chicago): Post-go-live NetSuite consulting for Chicago-area companies; manufacturing, distribution, and professional services firms on NetSuite
+- [NetSuite FSM Support and Troubleshooting](https://suitepacific.com/netsuite-fsm-support): FSM support for live accounts: sync failures, bundle update issues, broken configurations, nxc_now() migration, readonly retirement, and mobile app problems
 - [Implementation Partner vs. Managed Support](https://suitepacific.com/netsuite-implementation-partner-vs-managed-support): Explains the difference and when each is appropriate
 - [NetSuite ACS Alternative](https://suitepacific.com/netsuite-acs-alternative): Third-party alternative to NetSuite Advanced Customer Support, covering what ACS does not handle
 - [Alternative to NetSuite Support](https://suitepacific.com/netsuite-support-alternative): Third-party consulting as an alternative to Oracle NetSuite standard support
