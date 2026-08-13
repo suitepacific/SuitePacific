@@ -52,6 +52,11 @@ const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/netsuite-integrations/hubspot", lastModified: KW_GAP_DATE },
   { path: "/netsuite-integrations/avalara", lastModified: KW_GAP_DATE },
   { path: "/netsuite-integrations/amazon", lastModified: KW_GAP_DATE },
+  { path: "/netsuite-consultant-san-francisco", lastModified: KW_GAP_DATE },
+  { path: "/netsuite-consultant-los-angeles", lastModified: KW_GAP_DATE },
+  { path: "/netsuite-consultant-new-york", lastModified: KW_GAP_DATE },
+  { path: "/netsuite-consultant-chicago", lastModified: KW_GAP_DATE },
+  { path: "/netsuite-emergency-support", lastModified: KW_GAP_DATE },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
