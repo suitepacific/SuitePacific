@@ -127,23 +127,28 @@ A: First, identify which release just went live and check the release notes for 
 - [NetSuite Workflow vs SuiteScript: How to Choose Between Them](https://suitepacific.com/blog/netsuite-workflow-vs-suitescript)
 - [Advanced PDF Templates in NetSuite: 5 Mistakes That Break in Production](https://suitepacific.com/blog/advanced-pdf-template-mistakes)
 - [NetSuite Advanced PDF Templates: FreeMarker Guide for Developers](https://suitepacific.com/blog/netsuite-freemarker-pdf-guide)
+- [NetSuite Advanced PDF Templates: How to Access Transaction Data in FreeMarker](https://suitepacific.com/blog/netsuite-advanced-pdf-data-model)
+- [NetSuite Custom GL Plugin: What It Can and Cannot Do](https://suitepacific.com/blog/netsuite-custom-gl-plugin-guide)
+- [NetSuite RESTlet vs REST Web Services: Which Integration Approach to Use](https://suitepacific.com/blog/netsuite-restlet-vs-rest-web-services)
+- [NetSuite SuiteQL: Guide for Administrators and Developers](https://suitepacific.com/blog/netsuite-suiteql-guide)
 - [NetSuite REST Batch and Sequential Requests: What Changed in 2026.2](https://suitepacific.com/blog/netsuite-rest-batch-sequential)
 - [NetSuite SuiteQL Bound Parameters: What Changed and Why It Matters](https://suitepacific.com/blog/netsuite-suiteql-bound-parameters)
 - [NetSuite 2026.2: The SuiteQL Default Sort Change That May Already Be Affecting Your Queries](https://suitepacific.com/blog/netsuite-suiteql-sort-change-2026-2)
 
 ### Authentication and Security
 - [NetSuite Is Retiring NLAuth and TBA: What Developers Need to Do Before 2027.1](https://suitepacific.com/blog/netsuite-nlauth-tba-end-of-support)
-- [NetSuite Passkeys as Second Factor: What Changed in 2026.2](https://suitepacific.com/blog/netsuite-passkeys-mfa-2026-2)
 - [NetSuite Passkey Second Factor Authentication in 2026.2](https://suitepacific.com/blog/netsuite-passkey-second-factor-2026-2)
 
 ### Saved Searches and Reporting
 - [10 NetSuite Saved Search Tips Every Finance Team Should Know](https://suitepacific.com/blog/netsuite-saved-search-tips)
-- [NetSuite Saved Search Examples for Finance and Operations Teams](https://suitepacific.com/blog/netsuite-saved-search-examples)
+- [10 NetSuite Saved Search Examples (Finance, Operations, Admin)](https://suitepacific.com/blog/netsuite-saved-search-examples)
+- [NetSuite Saved Search Formula Examples: Date Math, Conditionals, and Text Formatting](https://suitepacific.com/blog/netsuite-saved-search-formula-examples)
 - [NetSuite Advanced Record Customization in 2026.2](https://suitepacific.com/blog/netsuite-advanced-record-customization-2026-2)
 - [NetSuite Project Health Indicators in 2026.2](https://suitepacific.com/blog/netsuite-project-health-indicators-2026-2)
 
 ### Workflow and Automation
 - [5 Common NetSuite Workflow Automation Mistakes and How to Fix Them](https://suitepacific.com/blog/workflow-automation-mistakes)
+- [How to Build an Approval Workflow in NetSuite SuiteFlow](https://suitepacific.com/blog/netsuite-approval-workflow-setup)
 
 ### Account Optimization and Post-Go-Live
 - [NetSuite Account Optimization: What to Audit and Fix on a Live Account](https://suitepacific.com/blog/netsuite-optimization)
@@ -151,6 +156,12 @@ A: First, identify which release just went live and check the release notes for 
 - [NetSuite Post-Go-Live Checklist: What to Prioritize in Your First 90 Days](https://suitepacific.com/blog/netsuite-post-go-live-checklist)
 - [8 Signs Your NetSuite Support Isn't Working](https://suitepacific.com/blog/signs-netsuite-support-not-working)
 - [NetSuite Month-End Close Checklist: What Most Teams Miss](https://suitepacific.com/blog/netsuite-month-end-close-checklist)
+- [NetSuite Roles and Permissions: Administrator Setup Guide](https://suitepacific.com/blog/netsuite-roles-permissions-guide)
+
+### Consulting and Costs
+- [How to Choose a NetSuite Consulting Partner](https://suitepacific.com/blog/how-to-choose-netsuite-consulting-partner)
+- [How Much Does NetSuite Development Cost? A Realistic Guide](https://suitepacific.com/blog/netsuite-development-cost)
+- [NetSuite Implementation Partner vs. Post-Go-Live Support](https://suitepacific.com/blog/netsuite-implementation-partner-vs-managed-support)
 
 ### NetSuite 2026.2 Release Notes
 - [NetSuite 2026.2 Finance Updates: What Changed and What to Test](https://suitepacific.com/blog/netsuite-2026-2-finance-updates)
@@ -179,9 +190,10 @@ A: First, identify which release just went live and check the release notes for 
 - Consultation booking: https://suitepacific.com/contact
 - Email: info@suitepacific.com
 - LinkedIn: https://www.linkedin.com/company/suitepacific
+- YouTube: https://www.youtube.com/@SuitePacific
 
 ## Licensing
 
 Content on this site is copyright SuitePacific, LLC. Blog posts and resource guides may be cited for informational purposes under RSL 1.0 (Reference Source License). Do not reproduce full articles without attribution.
 
-Last updated: 2026-08-11
+Last updated: 2026-08-13

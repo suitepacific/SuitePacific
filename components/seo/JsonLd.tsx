@@ -153,12 +153,14 @@ export function VideoObjectJsonLd({
   description,
   videoId,
   uploadDate,
+  duration,
   isShort = false,
 }: {
   name: string;
   description: string;
   videoId: string;
   uploadDate: string;
+  duration?: string;
   isShort?: boolean;
 }) {
   const data = {
@@ -168,6 +170,7 @@ export function VideoObjectJsonLd({
     description,
     thumbnailUrl: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
     uploadDate,
+    ...(duration && { duration }),
     url: isShort
       ? `https://www.youtube.com/shorts/${videoId}`
       : `https://www.youtube.com/watch?v=${videoId}`,
