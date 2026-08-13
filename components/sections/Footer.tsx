@@ -75,8 +75,11 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 text-xs">
-          © {new Date().getFullYear()} SuitePacific, LLC. All rights reserved.
+        <div className="mt-12 pt-8 border-t border-white/10 text-xs flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+          <span>© {new Date().getFullYear()} SuitePacific, LLC. All rights reserved.</span>
+          <Link href="/privacy" className="text-blue-100/60 hover:text-white transition-colors">
+            Privacy Policy
+          </Link>
         </div>
       </div>
     </footer>

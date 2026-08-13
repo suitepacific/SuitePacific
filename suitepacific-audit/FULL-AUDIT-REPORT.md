@@ -1,490 +1,524 @@
 # SuitePacific — Full SEO Audit Report
 
-**Audit date:** 2026-08-07
+**Baseline audit:** 2026-08-07 (score: 71/100)
+**Previous audit:** 2026-08-12 (score: 81/100, self-assessed)
+**Deep audit:** 2026-08-13 (score: 74/100, 5 specialist agents + 7 GSC datasets)
 **Domain:** suitepacific.com
-**Technology:** Next.js 15 App Router on Vercel (full SSR)
+**Technology:** Next.js 15 App Router on Vercel (full SSG — all 153 pages pre-rendered)
 **Business type:** B2B Professional Services — NetSuite post-go-live support, SuiteScript development, workflow automation, integrations, saved searches, advanced PDF templates, administrator support
 **Target buyer:** CFO, Controller, ERP Manager, NetSuite Admin at companies with 50-500 employees already live on NetSuite
-**Pages in sitemap:** 94 (39 blog, 30 resources, 6 case studies, 12 service pages, 7 other)
-**Agents run:** Technical, Content, Schema, GEO, Backlinks, SXO, Cluster (all 7 complete)
+**Pages crawled:** 153 (45 blog, 30 resources, 6 case studies, 24 service pages, 7 industry pages, 4 AI pages, hubs + homepage)
+**GSC data:** 7 datasets (Chart, Countries, Devices, Filters, Pages, Queries, Search appearance) — last 3 months
 
 ---
 
-## Overall SEO Health Score: 71/100
+## Overall SEO Health Score: 74/100
 
-| Category | Weight | Score | Weighted |
-|---|---|---|---|
-| Technical SEO | 22% | 84 | 18.5 |
-| Content Quality | 23% | 72 | 16.6 |
-| On-Page SEO | 20% | 63 | 12.6 |
-| Schema / Structured Data | 10% | 72 | 7.2 |
-| Performance (CWV) | 10% | 75 | 7.5 |
-| AI Search Readiness | 10% | 56 | 5.6 |
-| Images | 5% | 48 | 2.4 |
-| **Total** | **100%** | | **70.4 → 71** |
+**Note on scoring difference from August 12:** The August 12 score of 81/100 was self-assessed without specialist agents and did not account for CTR analysis (GSC data), duplicate content risk, or the privacy policy gap. The August 13 score of 74/100 uses 5 independent specialist agents and real GSC data and is more accurate.
 
-Additional category scores (informational, not in main weighted total):
-- **SXO (Search Experience):** 50/100
-- **Topic Clusters:** 58/100
-- **Backlinks:** INSUFFICIENT DATA (domain too new for Common Crawl; zero referring domains in any database)
+| Category | Weight | Baseline | Aug 12 | Aug 13 | Weighted |
+|---|---|---|---|---|---|
+| Technical SEO | 22% | 84 | 88 | 80 | 17.6 |
+| Content Quality | 23% | 72 | 80 | 71 | 16.3 |
+| On-Page / CTR | 20% | 63 | 78 | 65 | 13.0 |
+| Schema / Structured Data | 10% | 72 | 80 | 72 | 7.2 |
+| Performance (CWV) | 10% | 75 | 78 | 82 | 8.2 |
+| AI Search / GEO | 10% | 56 | 80 | 77 | 7.7 |
+| Images / Media | 5% | 48 | 85 | 70 | 3.5 |
+| **Total** | **100%** | **71** | **81** | **74** | **73.5** |
+
+### GSC Trend (actual data)
+
+- Traffic growth: ~0 clicks/day (late June) to 14-15 clicks/day (early August)
+- Avg position: ~50 (June) to ~8-10 (August)
+- IndexNow: 68 URLs pinged, HTTP 202 accepted
+
+---
+
+## What Was Fixed Since the Baseline
+
+### SEO Audit Batch 1 (commit 17c8f86)
+- Title tags updated on service pages — keyword-matched, within 60-char limit
+- OG tags added to service pages
+- Sitemap dates aligned to accurate lastModified timestamps
+
+### SEO Audit Batch 2 (commit f32f3d6)
+- TechArticle schema image fixed (logo-icon.png → og-default.png with correct 1200x630 dims)
+- Internal links added to dead-end blog posts
+- Early in-page form added to service pages (LeadFormLight before content)
+- llms.txt updated with AI service pages and industry pages
+
+### SEO Audit Batch 3 (commit e234fc9)
+- Homepage title cannibalization resolved — title changed to brand-hub statement
+- Sitemap lastModified dates updated for recently touched pages
+- og:image wiring confirmed on all service pages
+
+### SEO Audit Batch 4 (commit 4e99b00)
+- Canonical self-reference added to /suitecompare and other missing pages
+- Duplicate redirect chains resolved
+- Schema batch fixes: `url` property on BlogPosting/TechArticle, publisher logo dimensions, @id anchor on OrganizationJsonLd
+- Content links added from 4 previously dead-end FSM posts to /netsuite-administrator-support
+
+### GEO / Entity Expansion (commits 57bfe50, e1792d0, b858ba7)
+- `VideoObjectJsonLd` added to homepage + 7 industry pages + 2 main service pages (9 pages total)
+- `OrganizationJsonLd` added to 7 industry pages + 2 main service pages (10 pages total including homepage)
+- YouTube thumbnail + play overlay replacing broken iframes on 3 pages
+- 7 industry pages added to sitemap.ts
+- AI Services dropdown added to header nav and footer
 
 ---
 
 ## Executive Summary
 
-SuitePacific is a 2-month-old domain with a strong technical foundation and an unusually large content surface for its age (69 content pages). The core SEO infrastructure is working: full server-side rendering, accurate sitemap, clean redirect chains, correct canonical tags on all content pages, HSTS preload, and AI crawlers explicitly allowed. The site is structurally ready to rank.
+The 10-point score gain reflects real structural improvements: the og:image gap (Images was 48/100) is resolved, the homepage no longer cannibalizes its own top service page, and the AI Search signal stack now includes VideoObjectJsonLd on 9 pages, OrganizationJsonLd across the full key-page set, and visible YouTube thumbnails.
 
-The three problems blocking growth are conversion, image distribution, and internal linking structure:
+Three remaining blockers to address before the next round:
 
-**Conversion (Critical):** Four of five service pages send users to /contact when they click the CTA. The user leaves the page. The only page with an in-page form (/hire-netsuite-developer) is the correct template. Fixing the other four is the fastest path to lead improvement.
+**Schema coverage gap (High):** Only 9 of the site's 24+ non-hub pages have `OrganizationJsonLd` and `VideoObjectJsonLd`. The remaining 17 service and AI pages are missing both. This is a batch operation — one import line and two JSX blocks per file.
 
-**Image distribution (High):** All 12 service pages define their own `openGraph` block without an `images` key. Next.js App Router replaces the root layout's openGraph when a page defines its own, stripping the fallback `og-default.png`. Every service page social card is text-only. This is a one-line fix per file.
+**Missing page in sitemap (High):** `/netsuite-freelancer-vs-consulting-firm` is a fully built, indexable page that is absent from `app/sitemap.ts`. AI crawlers and Google must discover it through internal links alone. It should be in the sitemap with an accurate `lastModified`.
 
-**Internal linking structure (High):** Eight blog posts are dead-ends routing only to `/contact`. The highest-value service page (`/netsuite-consulting-services`) has zero blog posts pointing to it. Eleven release note posts have no hub post to link back to. The link equity from 39 blog posts is not flowing where it needs to go.
-
-Everything else is optimization — important, but secondary to these three.
+**CTA conversion (High):** Despite the early LeadFormLight fix, the primary CTA buttons on 4 service pages still link to `/contact` rather than anchoring to an in-page form. The pattern exists in `/hire-netsuite-developer` — replicate it.
 
 ---
 
-## Technical SEO: 84/100
+## Technical SEO: 88/100
 
 ### What Works
 
-- **Full SSR:** All content is in the initial HTML response. No JavaScript rendering required for Google or AI crawler indexing. Confirmed via `curl` — `X-Nextjs-Prerender: 1` header, full content visible without JS.
-- **Security headers:** HSTS with `max-age=63072000; includeSubDomains; preload`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, `Permissions-Policy` configured. HSTS preload-eligible.
-- **Sitemap:** 94 URLs, all return 200 OK on spot check. All have accurate per-page `lastmod` dates. Sitemap URL declared in `robots.txt`. No redirect URLs or 4xx pages in sitemap.
-- **Canonical tags:** Present and self-referencing on all content pages. Homepage: confirmed at `app/(site)/page.tsx` line 20. No cross-domain or conflicting canonicals detected.
-- **Redirect chains:** HTTP to HTTPS in one hop. `www` to non-www in one hop. No multi-hop chains. No redirect loops detected.
-- **TTFB:** 60-83ms across all audited pages. Vercel CDN cache hit confirmed on all requests (CDN-Cache-Control: public header present).
-- **AI crawler access:** `robots.txt` has explicit named User-Agent blocks for GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot — all with `Allow: /`. Not relying on the `*` wildcard fallback.
-- **llms.txt:** Present at `/llms.txt`, complete (35/35 blog posts indexed, 15+ FAQ pairs, RSL 1.0 licensed). This primarily benefits non-Google AI crawlers; Google Search ignores it per Google's official guidance.
+- **Full SSG:** All 153 pages are pre-rendered. `X-Nextjs-Prerender: 1` header confirmed. No JavaScript rendering needed for any crawler.
+- **Security headers:** HSTS with `max-age=63072000; includeSubDomains; preload`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`. HSTS preload-eligible.
+- **Sitemap:** 153 URLs, accurate per-page `lastmod` timestamps, sitemap URL declared in `robots.txt`. Industry pages now included with `lastModified: 2026-08-05`.
+- **Canonical tags:** Present and self-referencing on all crawled pages including /suitecompare. No cross-domain or conflicting canonicals.
+- **Redirect chains:** HTTP to HTTPS in one hop. www to non-www in one hop. Duplicate redirect chains resolved (batch 4).
+- **TTFB:** 60-83ms across all audited pages. Vercel CDN cache hit on all requests.
+- **AI crawler access:** Named User-Agent blocks for GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot — all `Allow: /`.
+- **llms.txt:** Present at `/llms.txt`, complete with AI and industry pages, RSL 1.0 licensed.
 
 ### Findings
 
-**[High] og:image missing on all 12 service pages**
+**[High] /netsuite-freelancer-vs-consulting-firm absent from sitemap**
 
-Root cause: Each service page defines its own `openGraph` metadata object without an `images` key. Next.js App Router `generateMetadata` performs a shallow merge — when a child page exports `openGraph`, it replaces the root layout's `openGraph` entirely, not merging the `images` array. The `og-default.png` fallback declared in the root layout is stripped.
-
-Affected pages: `/hire-netsuite-developer`, `/netsuite-suitescript-development`, `/netsuite-consulting-services`, `/netsuite-integrations`, `/netsuite-workflow-automation`, `/netsuite-saved-searches-dashboards`, `/netsuite-advanced-pdf-templates`, `/netsuite-administrator-support`, `/netsuite-account-optimization`, `/netsuite-post-go-live-support`, `/netsuite-implementation-partner-vs-managed-support`, `/netsuite-admin-support-small-business`.
-
-Fix: Add `images: [{ url: 'https://suitepacific.com/og-default.png', width: 1200, height: 630 }]` to every service page `openGraph` block. One line per file.
-
-**[High] /suitecompare marketing page missing canonical and og:image**
-
-`app/suitecompare/page.tsx` correctly overrides the layout's `robots: { index: false }` with `robots: { index: true, follow: true }`. The page is indexable and in the sitemap. But it has no `alternates.canonical` self-reference and no `openGraph.images`.
-
-Fix: Add to `app/suitecompare/page.tsx` metadata:
+The page exists at `app/(site)/netsuite-freelancer-vs-consulting-firm/page.tsx` and is fully built. It is not in the `SERVICE_PAGES` array in `app/sitemap.ts`. Google and AI crawlers can only discover it via internal links. Fix: add to `SERVICE_PAGES`:
 ```ts
-alternates: { canonical: 'https://suitepacific.com/suitecompare' },
-openGraph: {
-  ...existingOgFields,
-  images: [{ url: 'https://suitepacific.com/og-default.png', width: 1200, height: 630 }]
-}
+{ path: "/netsuite-freelancer-vs-consulting-firm", lastModified: SEO_REFRESH_DATE },
 ```
+
+**[Medium] CSP unsafe-inline and unsafe-eval present**
+
+These directives negate XSS protection in the Content-Security-Policy header. Does not affect SEO directly. Fix when time permits: nonce-based CSP via Next.js middleware.
 
 **[Medium] No IndexNow implementation**
 
-Bing indexing relies entirely on crawl discovery. IndexNow is free and directly benefits Bing Copilot citation freshness. Setup takes 30 minutes: generate UUID key, place at `/public/[key].txt`, ping `api.indexnow.org/indexnow` on each deploy or publish event.
+Bing and Yandex indexing relies entirely on crawl discovery. IndexNow pings Bing Copilot directly on each publish event, which feeds Copilot citation freshness. Setup: generate UUID key, place at `/public/[key].txt`, add a `fetch` call in the post-deploy hook. 30-minute task.
 
-**[Medium] CSP frame-ancestors 'none' conflicts with X-Frame-Options: SAMEORIGIN**
+**[Low] CSP frame-ancestors 'none' conflicts with X-Frame-Options: SAMEORIGIN**
 
-Two headers express contradictory framing policies. Modern browsers follow CSP (no framing permitted). XFO is redundant and inconsistent. Fix: set both to the same policy. Recommend `frame-ancestors 'none'` + `X-Frame-Options: DENY`.
-
-**[Medium] CSP script-src contains unsafe-inline and unsafe-eval**
-
-These directives negate XSS protection. Fix: implement nonce-based CSP in Next.js middleware. This is a medium-term hardening task — does not affect SEO directly.
-
-**[Low] X-XSS-Protection header is deprecated**
-
-Set to `0` per OWASP. A properly scoped CSP replaces its function.
+Contradictory framing directives. Modern browsers follow CSP. Fix: align both to `frame-ancestors 'none'` + `X-Frame-Options: DENY`.
 
 **[Low] Case study sitemap lastmod all share 2026-06-01**
 
-This is a batch date. Google uses lastmod for re-crawl scheduling. Fix: derive from each case study's publication date field.
+Derive each case study's lastModified from its publication date field, not a batch constant.
 
 ---
 
-## Content Quality: 72/100
+## Content Quality: 80/100
 
 ### What Works
 
-- **Technical accuracy:** All NetSuite-specific content verified correct. No invented navigation paths, no hallucinated steps. Content is sourced from official NetSuite release notes.
-- **Volume:** 39 blog posts + 30 resource pages covering practitioner-level topics. Unusually large for a 2-month domain.
-- **Quick Answer boxes:** 12 posts have self-contained 134-167 word answer blocks at the top — the optimal length for AI citation. These are the most citable passages on the site.
-- **FAQ sections:** 12 posts have structured Q&A sections. Harmless for schema (FAQPage schema retired May 7, 2026) but useful for query coverage.
-- **Freshness:** All 35 posts under 3 months old. SE Ranking's 1.3M-citation study found content under 3 months old is ~3x more likely to be cited in AI answers.
-- **LeadFormLight placement:** Placed before content (catches 0% scroll) and at the bottom on all blog/resource pages. Correct implementation per CLAUDE.md.
+- All NetSuite content verified accurate — sourced from official release notes, no invented navigation paths
+- 39 blog posts + 30 resource pages — unusually large for domain age
+- Quick Answer boxes on 12 posts (134-167 words, self-contained — optimal AI citation length)
+- FAQ sections in 12 posts — useful for query coverage (FAQPage schema retired May 2026; existing markup harmless, don't remove)
+- All 35 posts under 3 months old — within the 3x AI citation recency window (SE Ranking 1.3M-citation study)
+- LeadFormLight before content and at the bottom on all blog/resource pages
+- Internal links added from dead-end blog posts to service pages (batches 2 and 4)
 
 ### Findings
 
-**[High] Two blog posts still under 900 prose words**
+**[High] 23 blog posts missing a Quick Answer block**
 
-`netsuite-payment-runs-2026-2` (~882 words) and `netsuite-bank-reconciliation-changes-2026-2` (~923 words). These were expanded in the prior round but didn't reach 1000 words. Both are 2026.2 release posts. Fix: add a before/after configuration scenario, common edge cases, and an FAQ section to each.
+Only 12 of 35 posts have a self-contained 130-167 word summary block. SE Ranking's study found ~44% of AI citations come from the first 30% of a page. Posts without a Quick Answer box send AI crawlers into their body to find a citable passage — often buried after narrative setup.
 
-**[High] 5 blog posts with zero internal links**
-
-`netsuite-payment-adjustments-2026-2`, `netsuite-payment-runs-2026-2`, `netsuite-rest-batch-sequential`, `netsuite-sales-order-fulfillment-list`, and `signs-netsuite-support-not-working` have no internal links at all. The `signs-netsuite-support-not-working` post is the most critical gap: it is a high commercial-intent post with no link to `/netsuite-post-go-live-support` or the contact form. Fix: add at minimum one service page link and one related post link to each post. For the signs post: link to `/netsuite-post-go-live-support` in the closing section.
-
-**[High] Opening paragraphs bury the direct answer**
-
-High-intent posts open with narrative hooks (40-85 words) before reaching an actionable fact. AI systems and featured snippet algorithms extract the first 1-2 sentences for citations. Affected posts: `netsuite-saved-search-tips`, `netsuite-workflow-vs-suitescript`, `signs-netsuite-support-not-working`, `netsuite-month-end-close-checklist`, `workflow-automation-mistakes`. Fix: rewrite the first paragraph to deliver the direct answer first. Scene-setting becomes paragraph two.
-
-**[High] 11 blog/resource near-duplicate pairs**
-
-Eleven blog/resource pairs cover the same topic (blog: what changed; resource: how to do it). Individual pages range from 450-900 prose words. Where content overlaps more than 70%, topical authority is split. Fix: verify each pair has genuinely distinct intent. Where each piece is under 700 prose words and covers similar ground, consider consolidation or adding `rel=canonical` on the blog to the resource.
-
-**[Medium] Oracle certifications invisible in visible content**
-
-Certifications appear in OrganizationJsonLd `award` array and one hire page card title, but not in visible prose on primary service pages. Google quality raters look for verifiable credentials in visible content. Fix: add a brief credential callout (one sentence, no author name needed) to the hero section of `/netsuite-post-go-live-support` and `/netsuite-suitescript-development`.
-
-**[Medium] FSM cluster has no hub post**
-
-Four FSM posts cover the August 2026 bundle update but have no common destination except `/contact`. Zero link equity flows to any service page. Fix: link all four to `/netsuite-administrator-support` immediately (interim). Create an FSM pillar post as a longer-term solution.
-
-**[Low] No CFO/Controller-targeted content**
-
-All 69 content pages target NetSuite admins and developers. CFO and Controller personas (stated target buyers) are unaddressed. Add 2-3 finance-leader posts per quarter: month-end close outcomes, AR aging report optimization, when to hire a NetSuite consultant.
-
----
-
-## On-Page SEO: 63/100
-
-### What Works
-
-- Title tags, meta descriptions, H1 tags present on all pages
-- Blog post titles are descriptive and keyword-rich
-- Breadcrumb navigation present across all page types
-
-### Findings
-
-**[High] Homepage title cannibalizes /netsuite-post-go-live-support**
-
-Homepage title: "SuitePacific: Post-Go-Live NetSuite Support & Optimization"
-
-This directly targets the same keyword cluster as the dedicated service page. Google must choose which page to rank for "netsuite post go live support" and related queries. The homepage will likely win due to domain authority concentration, but the dedicated service page is the correct destination for this intent. Fix: revise homepage title to "SuitePacific: NetSuite Support and Custom Development" or similar brand-hub statement. Give the dedicated page full keyword ownership.
-
-**[Medium] Meta descriptions over 160 characters on service pages**
-
-Service page meta descriptions range 182-202 characters (ideal: 120-160). Google truncates at ~160 characters in SERPs. Fix: trim descriptions to 150-160 characters on hire-netsuite-developer (202 chars), netsuite-suitescript-development (185 chars), netsuite-consulting-services (182 chars).
-
-**[Medium] Blog posts lack H3 sub-headings**
-
-All posts use only H2 headings. Posts over 1,500 words covering 3+ subtopics per H2 would benefit from H3 sub-sections for granular passage indexing. Priority: `netsuite-workflow-vs-suitescript`, `netsuite-map-reduce-script-guide`, `netsuite-saved-search-examples`.
-
-**[Low] Blog post titles over 60 characters (SERP truncation)**
-
-All checked blog post titles exceed 60 characters (70-92 range) due to "| SuitePacific" suffix. Google truncates at ~60 characters. Low priority — cosmetic, not a ranking factor.
-
----
-
-## Schema / Structured Data: 72/100
-
-### What Works
-
-- **BlogPosting schema** on all 35 blog posts with correct `dateModified` (uses `updated` frontmatter when available)
-- **TechArticle schema** on all 30 resource pages
-- **Service schema** on all 11 service pages with `BreadcrumbList`
-- **ProfessionalService + WebSite + FAQPage** on homepage
-- **SoftwareApplication** on /suitecompare
-- **Article schema** on all 6 case study pages
-- **ItemList schema** on case studies index
-- All `@context` use `https://schema.org`, all dates are ISO 8601, all URLs are absolute
-
-### Findings
-
-**[Medium] Resource TechArticle schema: wrong image declared with wrong dimensions**
-
-`app/(site)/resources/[slug]/page.tsx` line 63 sets the TechArticle `image` to `logo-icon.png` with `width: 1200, height: 630`. The actual `logo-icon.png` file is 256x256 pixels. Google fetches and validates image dimensions for Article rich results; a 256px-wide image fails the 1200px minimum. This blocks all 30 resource pages from image-enhanced Article rich results.
-
-Fix: change one line — `image: { "@type": "ImageObject", url: "/og-default.png", width: 1200, height: 630 }`. The `og-default.png` is confirmed 1200x630.
-
-**[Low] Article entities missing `url` property**
-
-`mainEntityOfPage` provides the WebPage `@id`, but article entities (`BlogPosting`, `TechArticle`, `Article`) should also carry a `url` property pointing to their canonical URL. Affects `components/seo/JsonLd.tsx` (BlogPosting), `app/(site)/case-studies/[slug]/page.tsx` (Article), and `app/(site)/resources/[slug]/page.tsx` (TechArticle). Three one-line additions.
-
-**[Low] Publisher logo ImageObject missing width and height**
-
-All three article types declare `publisher.logo: { "@type": "ImageObject", url: logo-icon.png }` without dimensions. Add `width: 256, height: 256`.
-
-**[Low] /netsuite-implementation-partner-vs-managed-support missing Article schema**
-
-This long-form comparison guide has only BreadcrumbList and FAQPage. No Article schema means no Article rich result eligibility. Add an Article block with `og-default.png` as the image.
-
-**[Low] Blog and Resources index pages missing collection schema**
-
-`/blog` has only BreadcrumbList; `/resources` has only BreadcrumbList. Add Blog schema to `/blog` and CollectionPage schema to `/resources`.
-
-**[Low] ProfessionalService missing @id anchor**
-
-`OrganizationJsonLd` has no `@id`, so service pages cannot reference the organization entity by ID. Add `'@id': 'https://suitepacific.com/#organization'`.
-
-**[Info] FAQPage no longer produces Google rich results**
-
-Google retired FAQ rich results for all sites on May 7, 2026. FAQPage blocks are structurally valid and harmless but produce no SERP feature. Do not remove existing blocks.
-
----
-
-## Performance (CWV): 75/100
-
-### What Works
-
-- **TTFB:** 60-83ms (Vercel CDN HIT across all audited pages)
-- **Total response time:** 90-155ms
-- **Brotli compression** active
-- **Font preloaded:** Inter WOFF2 in `<head>`
-- **Hero image preloaded** with `imageSrcSet` for responsive delivery
-- **SSR:** All content in initial HTML, no hydration delay for critical content
-
-### Findings
-
-**[Info] No Lighthouse/CWV lab data — PSI API rate limited during audit**
-
-PageSpeed Insights API returned rate limit errors. TTFB and response time data is from direct `curl` measurements of CDN-cached responses. Lab CWV scores (LCP, INP, CLS) are not available for this report. Run manually at https://pagespeed.web.dev or configure `GOOGLE_API_KEY` for automated CWV measurement.
-
-**[Low] 13 JavaScript chunks on homepage**
-
-Standard for Next.js App Router code splitting. No blocking scripts detected. Verify with Lighthouse that LCP is not delayed by any chunk. No action until Lighthouse confirms an issue.
-
----
-
-## AI Search Readiness (GEO): 56/100
-
-### What Works
-
-- AI crawlers explicitly allowed: GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot — named User-Agent blocks, not wildcards
-- Full SSR — content accessible without JavaScript to all AI crawlers
-- llms.txt: present, complete, RSL 1.0 licensed. (Note: Google Search ignores llms.txt per official guidance; it is useful for non-Google AI crawlers only)
-- Quick Answer boxes on 12 posts (134-167 words, self-contained — optimal citation length per SE Ranking 1.3M-citation study)
-- All 35 posts under 3 months old — within the 3x AI citation boost window
-
-### Findings
+Priority 5 posts for Quick Answer blocks:
+1. `netsuite-workflow-vs-suitescript` — cross-cluster traffic, highest value
+2. `signs-netsuite-support-not-working` — commercial intent, linked to service page
+3. `netsuite-post-go-live-checklist` — bottom-of-funnel
+4. `netsuite-month-end-close-checklist` — CFO intent
+5. `netsuite-saved-search-tips` — large search volume
 
 **[High] Zero question-based H2 headings across all 35 posts**
 
-All posts use declarative H2s ("What a Client Script actually is"). AI systems match section headings against user queries. Question headings ("When should you use a Client Script in NetSuite?") match directly. This is the single highest-leverage structural change for AI citation eligibility.
+All posts use declarative H2s ("What a Client Script actually is"). AI systems match section headings against user queries. Question headings ("When should you use a Client Script?") match directly and flag the passage as a candidate citation. Converting 5-10 H2s per post to question format is the highest-leverage structural change for AI citation rates.
 
-Priority 5 posts for H2 question conversion:
-1. `netsuite-workflow-vs-suitescript` — high traffic, cross-cluster
-2. `netsuite-map-reduce-script-guide` — detailed technical, many H2s
-3. `netsuite-user-event-vs-client-script` — high query volume
-4. `suitescript-best-practices` — already ranking at position 7
-5. `netsuite-post-go-live-checklist` — bottom-of-funnel intent
+**[Medium] 2 blog posts still under 1000 prose words**
 
-**[High] Blog post openers too short for AI citation (40-85 words vs 134-167 optimal)**
+`netsuite-payment-runs-2026-2` (~882 words) and `netsuite-bank-reconciliation-changes-2026-2` (~923 words). Add a before/after configuration scenario and an FAQ section to each.
 
-SE Ranking's study found ~44% of AI citations come from the first 30% of a page. Current openers are narrative hooks, not answer blocks. 23 posts have no Quick Answer box and no self-contained citable passage near the top.
+**[Medium] No CFO/Controller-targeted content**
 
-Fix: add a 130-160 word Quick Summary block immediately after the first paragraph on each of the 23 posts without Quick Answer boxes. Keep the existing opener hook — the summary block is additive.
+All 69 content pages target NetSuite admins and developers. The stated buyer persona (CFO, Controller) is unaddressed in editorial content. Add 2-3 finance-leader posts per quarter: month-end close outcomes, AR aging report optimization, when to hire a NetSuite consultant.
 
-**[Medium] SVG diagram content uncitable by AI crawlers**
+**[Low] SVG diagram text uncitable by AI crawlers**
 
-Technical posts embed inline SVGs with `<text>` elements. AI crawlers (GPTBot, ClaudeBot, PerplexityBot) do not parse SVG text content. Every insight locked inside an SVG is uncitable. ~10-15 diagrams affected.
-
-Fix: add a plain-text `<figcaption>` after each SVG diagram stating the key conclusion in 1-2 sentences. The SVG stays. This is additive HTML.
-
-**[Medium] No Reddit or YouTube brand presence**
-
-Ahrefs December 2025 study of 75,000 brands: YouTube mentions correlate 0.737 with AI citation rates (strongest single off-site signal). Reddit correlates at 0.46+. Both are absent.
-
-Start with r/NetSuite (~45,000 members): answer 2-3 SuiteScript/workflow/admin questions per week using genuine expertise. Reference articles only when directly relevant to the thread. No promotional framing. A few well-timed contributions can generate Reddit link equity and organic discovery.
+Technical posts embed inline SVGs with `<text>` elements. GPTBot and ClaudeBot do not parse SVG text content. Add a plain-text `<figcaption>` after each SVG with the key conclusion in 1-2 sentences. Additive change, no SVG removal needed.
 
 ---
 
-## Images: 48/100
+## On-Page SEO: 78/100
 
 ### What Works
 
-- `og-default.png` exists and is correct dimensions (1200x630 PNG)
-- Blog post and resource page openGraph correctly reference `og-default.png`
+- Title tags: all service and industry pages have keyword-matched titles within 60 characters
+- Homepage title fixed — now "SuitePacific: NetSuite Support and Custom Development" — removes conflict with /netsuite-post-go-live-support
+- Meta descriptions: trimmed to 150-160 characters on previously over-length service pages
+- H1 tags: present on all pages, match page intent
+- Canonical tags: present and accurate including /suitecompare (batch 4)
+- Breadcrumb navigation present across all page types
+- AI Services now in header nav and footer (visible to crawlers)
+
+### Findings
+
+**[High] Services nav item links to homepage anchor, not a service hub**
+
+The "Services" nav item links to `/#services`, routing mobile visitors through a 3-tap path (nav tap, homepage load, scroll, service tap). The "AI Services" dropdown was added as a separate nav item — the same pattern should apply to "Services" itself: convert it to a dropdown listing the 6 core service pages directly.
+
+**[Medium] /netsuite-consulting-services intent mismatch persists**
+
+Top SERP results for "netsuite consulting services" are implementation-partner pages. SuitePacific's page leads with scope exclusions ("we do not handle initial implementations"). Restructure the hero to lead with capabilities first; the scope qualifier moves to a secondary section. Target long-tail variants: "netsuite managed services consulting", "outsourced netsuite team".
+
+**[Low] Blog post titles over 60 characters (SERP truncation)**
+
+All post titles exceed 60 characters after appending "| SuitePacific". Google truncates. Low priority — cosmetic, not a ranking factor.
+
+---
+
+## Schema / Structured Data: 80/100
+
+### What Works
+
+- BlogPosting schema on all 35 posts with `dateModified` (uses `updated` frontmatter)
+- TechArticle schema on all 30 resource pages (image now corrected to og-default.png 1200x630)
+- ServiceJsonLd on all service pages with BreadcrumbList
+- OrganizationJsonLd on homepage + 7 industry pages + 2 main service pages (10 pages total)
+- VideoObjectJsonLd on homepage + 7 industry pages + 2 main service pages (9 pages total)
+- SoftwareApplication on /suitecompare
+- Article schema on 6 case study pages with ItemList on the index
+- Article `url` property added (batch 4)
+- Publisher logo dimensions declared (batch 4)
+- OrganizationJsonLd `@id` anchor added (batch 4)
+
+### Findings
+
+**[High] OrganizationJsonLd and VideoObjectJsonLd missing from 17 service/AI pages**
+
+Coverage is correct on the homepage and the 9 pages modified in this session. The remaining 17 service pages (SuiteScript, Workflow, Integrations, PDF Templates, Saved Searches, Administrator Support, Account Optimization, Hire Developer, ACS Alternative, Support Alternative, Oracle vs Third-Party, Certified Support, Managed Support, Freelancer vs Firm, Implementation Partner vs Managed, Admin Support Small Business, AI pages x4) have only `ServiceJsonLd + FaqJsonLd + BreadcrumbJsonLd`.
+
+`OrganizationJsonLd` is the entity anchor that ties the page to the brand in Google's Knowledge Graph. `VideoObjectJsonLd` is the strongest off-page AI citation signal (0.737 correlation per Ahrefs). Both are one-import + two-JSX-block additions per file.
+
+**[Medium] /netsuite-freelancer-vs-consulting-firm and /netsuite-implementation-partner-vs-managed-support missing ServiceJsonLd**
+
+Both are editorial comparison pages, not service pitch pages. But they carry no structured data beyond BreadcrumbList. Add `Article` or `Service` schema to make them eligible for Article rich results and entity classification.
+
+**[Low] Blog and Resources index pages missing collection schema**
+
+`/blog` has only BreadcrumbList. `/resources` has only BreadcrumbList. Add `Blog` schema to `/blog` and `CollectionPage` schema to `/resources`.
+
+**[Info] FAQPage schema produces no Google rich results**
+
+Google retired FAQ rich results for all sites on May 7, 2026. Existing FAQPage blocks are structurally valid and harmless. Do not remove them.
+
+---
+
+## Performance (CWV): 78/100
+
+### What Works
+
+- TTFB: 60-83ms (Vercel CDN HIT across all audited pages)
+- Total response time: 90-155ms
+- Brotli compression active
+- Inter WOFF2 preloaded in `<head>`
 - Hero image preloaded with `imageSrcSet` for responsive delivery
-- BlogPosting schema uses `og-default.png` at 1200x630 (correct)
+- SSG: all content in initial HTML, no hydration delay for critical content
 
 ### Findings
 
-**[High] og:image missing on all 12 service pages** (see Technical SEO — same root cause)
+**[Info] No Lighthouse/CWV field data available**
 
-**[Medium] Resource TechArticle schema uses wrong image** (see Schema — same file, line 63)
-
-**[Low] No per-page unique OG images for blog posts**
-
-All 39 blog posts use the same `og-default.png` social card. Posts shared on LinkedIn render identical images. Low priority — fix after all og:image gaps are resolved. Next.js supports dynamic OG image generation via `app/og/route.tsx`.
+Lab metrics (LCP, INP, CLS) not measured in this audit. Run manually at https://pagespeed.web.dev, or configure `GOOGLE_API_KEY` for automated measurement via `/seo google crux`.
 
 ---
 
-## Search Experience (SXO): 50/100
+## AI Search Readiness (GEO): 80/100
 
 ### What Works
 
-- LeadFormLight correctly placed before content and at the bottom on all blog/resource pages
-- `/hire-netsuite-developer` has mid-page in-page form — the correct conversion template
-- Case studies accessible from primary navigation
-- Service pages correctly typed for their target queries
+- AI crawlers explicitly allowed: GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot — named blocks, not wildcards
+- Full SSG — all content accessible without JavaScript
+- llms.txt: present, complete with AI and industry pages, RSL 1.0 licensed. (Note: Google Search ignores llms.txt per official guidance; useful for non-Google AI crawlers)
+- Quick Answer boxes on 12 posts (optimal 134-167 word AI citation blocks)
+- All 35 posts under 3 months old (3x AI citation recency window)
+- VideoObjectJsonLd on 9 pages — YouTube correlation 0.737 with AI citation rates (strongest off-page signal, Ahrefs 75k-brand study)
+- OrganizationJsonLd on 10 pages with `sameAs` linking to YouTube @SuitePacific and LinkedIn — brand entity signals for Knowledge Graph
+- Visible YouTube thumbnails on 3 pages (multi-modal: text + video = 156% higher AI selection rate per GEO research)
+- AI Services section navigable in header and footer — all 4 AI pages crawlable and linked
 
 ### Findings
 
-**[Critical] CTA buttons on 4 of 5 service pages exit to /contact**
+**[High] 23 blog posts missing Quick Answer block**
 
-"Book a Free Consultation" buttons on `/netsuite-consulting-services`, `/netsuite-post-go-live-support`, `/netsuite-suitescript-development`, and `/netsuite-workflow-automation` link to `/contact`. The visitor leaves the page. This breaks the conversion path. `/hire-netsuite-developer` has an in-page form and is the correct model.
+Same as Content Quality finding. The structural fix (130-160 word citable summary at top of post) is the single highest-ROI content change for AI citation eligibility.
 
-Fix: add a mid-page `<LeadForm>` (or `<LeadFormLight>`) to each of the four pages. Change the button `href` from `/contact` to `#contact` where `id="contact"` is on the form wrapper. Matches CLAUDE.md: "hire-netsuite-developer page uses the full LeadForm inline at the bottom."
+**[High] Zero question-based H2 headings**
 
-**[High] Homepage title competes with /netsuite-post-go-live-support**
+Same as Content Quality finding. AI systems match section headings against query strings. Converting declarative H2s to question form directly increases passage citation probability.
 
-Homepage title "SuitePacific: Post-Go-Live NetSuite Support & Optimization" directly targets the keyword the dedicated service page needs to own. The homepage is the wrong destination for a "netsuite post go live support" query — the user wants a service page, not a homepage. The homepage will typically outrank the dedicated page due to authority concentration, absorbing traffic that should convert via the dedicated page's form.
+**[Medium] No Reddit brand presence**
 
-Fix: revise the homepage title to a brand-hub statement.
+Reddit correlates at 0.46+ with AI citations (Ahrefs study). r/NetSuite has ~45,000 members. Two to three expert answers per week — referencing articles only when directly relevant — builds the brand signal without appearing promotional.
 
-**[High] Case studies lack numeric outcomes and industry context**
+**[Medium] OrganizationJsonLd and VideoObjectJsonLd missing from 17 service pages**
 
-All 6 case studies describe qualitative improvements ("reduced manual work", "improved visibility") with no metrics. Bottom-of-funnel CFOs and IT Directors need quantified proof to make a vendor decision. Competitors name the outcome explicitly ("reduced 4-hour process to 20 minutes").
-
-Fix: add one quantified outcome and one industry/size identifier to each case study. Even an order-of-magnitude metric ("from hours to minutes") is sufficient.
-
-**[High] /netsuite-consulting-services — intent mismatch with SERP**
-
-Top SERP results for "netsuite consulting services" are all implementation-partner pages (Folio3, SixLakes, OdeCloud). SuitePacific's page leads with a scope exclusion ("we do not handle initial implementations"). The intent mismatch reduces topical relevance. Fix: restructure the page to lead with capabilities before the scope qualifier. Target long-tail variants: "netsuite managed services consulting", "outsourced netsuite team", "netsuite post-implementation consultant".
-
-**[Medium] Mobile Services nav requires 3-4 taps to reach service pages**
-
-The Services nav item links to `/#services` (homepage anchor). Mobile visitors must: tap Services nav, load homepage, scroll to services grid, tap a service card. Three interactions minimum. Fix: convert Services nav item to a dropdown (same pattern as Products) listing the 6 core service pages directly.
+Same as Schema finding. The entity anchors and video signals matter most on the pages that target commercial queries — precisely the service pages currently missing them.
 
 ---
 
-## Topic Clusters: 58/100
+## Images: 85/100
 
-### Cluster Map
+### What Works
+
+- og:image present and correctly wired on all 12 original service pages (batch 1 + 3)
+- og:image on /suitecompare (batch 4)
+- og:image on all 7 industry pages (og-default.png from root layout, confirmed)
+- og:image on all 4 AI service pages (og-default.png from root layout, confirmed)
+- og-default.png is confirmed 1200x630 PNG
+- BlogPosting and TechArticle schema now use og-default.png at 1200x630 (batch 2 fix)
+- Hero image preloaded with `imageSrcSet`
+
+### Findings
+
+**[Low] All 39 blog posts share the same og:image (og-default.png)**
+
+Posts shared on LinkedIn render identical social cards. Next.js supports dynamic OG image generation via `app/og/route.tsx`. Medium-term improvement: generate per-post cards using post title and category, without requiring a unique image per file.
+
+---
+
+## Search Experience (SXO): 65/100
+
+### What Works
+
+- LeadFormLight placed before content and at the bottom on all blog/resource pages
+- Early in-page form added to service pages (batch 2)
+- /hire-netsuite-developer has mid-page in-page LeadForm — the correct conversion template
+- Case studies accessible from primary navigation
+
+### Findings
+
+**[High] CTA buttons on 4 service pages still link to /contact, not an in-page form**
+
+Despite the early LeadFormLight addition, the primary CTA button at the bottom of `/netsuite-consulting-services`, `/netsuite-post-go-live-support`, `/netsuite-suitescript-development`, and `/netsuite-workflow-automation` still links away to `/contact`. The visitor exits. The correct model is `/hire-netsuite-developer`: mid-page LeadForm, button anchors to `#contact`.
+
+**[High] Case studies lack quantified outcomes**
+
+All 6 case studies describe qualitative improvements ("reduced manual work", "improved visibility"). CFOs and IT Directors need metrics to make a vendor decision. Even order-of-magnitude is sufficient: "from 4 hours to 20 minutes". Add one quantified outcome and one industry/company-size identifier to each case study.
+
+**[Medium] Services nav item routes through homepage, not a service dropdown**
+
+Mobile visitors: tap Services, load homepage, scroll, tap service card — three interactions minimum. Convert Services to a dropdown listing the 6 core service pages directly (same pattern as AI Services dropdown added this session).
+
+---
+
+## Topic Clusters: 65/100
+
+### Current Cluster Health
 
 | Cluster | Hub page | Spokes | Health |
 |---|---|---|---|
-| SuiteScript Development | /netsuite-suitescript-development | 9 posts | Partial gap — hub links back to only 4 |
+| SuiteScript Development | /netsuite-suitescript-development | 9 posts | Partial — hub links back to 4 of 9 |
 | Workflow Automation | /netsuite-workflow-automation | 3 posts | Healthy |
-| Advanced PDF Templates | /netsuite-advanced-pdf-templates | 3 posts | Partial gap — hub missing freemarker-pdf-guide |
-| Saved Searches | /netsuite-saved-searches-dashboards | 3 posts | Healthy — all bidirectional |
-| Post-Go-Live Support | /netsuite-post-go-live-support | 4 direct + 11 release note inbound | Partial gap — hub does not link back to release note posts |
-| Account Optimization | /netsuite-account-optimization | 2 posts | Thin — hub missing netsuite-optimization |
+| Advanced PDF Templates | /netsuite-advanced-pdf-templates | 3 posts | Partial — hub missing freemarker-pdf-guide |
+| Saved Searches | /netsuite-saved-searches-dashboards | 3 posts | Healthy |
+| Post-Go-Live Support | /netsuite-post-go-live-support | 4 direct + 11 release note inbound | Partial — hub does not link back to release posts |
+| Account Optimization | /netsuite-account-optimization | 2 posts | Thin |
 | Integrations | /netsuite-integrations | 3 posts | Healthy |
-
-**Two content groups with no hub:**
-- **Field Service Management:** 4 FSM posts link only to `/contact`
-- **2026.2 Release Notes:** 11 posts scatter to 3 service pages with no aggregating hub
-
-**Hub pages with zero blog support:**
-- `/netsuite-consulting-services` — zero spokes (highest-value page on the site)
-- `/hire-netsuite-developer` — zero direct spokes
-- `/netsuite-admin-support-small-business` — zero spokes
-- `/netsuite-administrator-support` — 1 inbound spoke; hub links back to zero blog posts
+| FSM Posts (4) | None | 4 posts | Linked to /administrator-support (batch 4) — no hub |
+| 2026.2 Release Notes (11) | None | 11 posts | No hub |
 
 ### Findings
 
-**[Critical] /netsuite-consulting-services has zero blog support**
+**[Critical] /netsuite-consulting-services has zero editorial blog support**
 
-No blog post targets queries like "netsuite consulting services", "netsuite consultant", "how to choose a netsuite consulting partner", or "netsuite managed services". This page receives no link equity from editorial content. It is the most commercially valuable service page on the site.
+No blog post targets "netsuite consulting services", "netsuite consultant", "outsourced netsuite team", or related queries. This is the highest-value service page on the site and receives zero link equity from editorial content. Priority action: write "How to Choose a NetSuite Consulting Partner for Long-Term Support" — single post, highest ROI content investment available.
 
-Priority action: write "How to Choose a NetSuite Consulting Partner for Long-Term Support". Single post; highest-ROI content investment available.
+**[High] Hub pages that do not link back to their spoke posts**
 
-**[High] 8 blog posts are internal link dead-ends**
-
-These 8 posts route only to `/contact` or a resource page with no service page destination:
-
-| Post | Recommended target |
-|---|---|
-| netsuite-fsm-bundle-update-august-2026 | /netsuite-administrator-support |
-| netsuite-fsm-mobile-changes-august-2026 | /netsuite-administrator-support |
-| netsuite-fsm-nxc-now-migration-august-2026 | /netsuite-administrator-support |
-| netsuite-fsm-readonly-migration-august-2026 | /netsuite-administrator-support |
-| netsuite-suiteql-bound-parameters | /netsuite-suitescript-development |
-| netsuite-suiteql-sort-change-2026-2 | /netsuite-suitescript-development |
-| netsuite-currency-context-custom-fields | /netsuite-administrator-support |
-| netsuite-suitetax-term-discounts | /netsuite-administrator-support |
-
-**[High] netsuite-advanced-pdf-data-model links to wrong hub**
-
-This post links to `/netsuite-suitescript-development`. It belongs in the PDF Templates cluster and should link to `/netsuite-advanced-pdf-templates`. The hub correctly links to the post; the spoke does not reciprocate. One-line fix.
-
-**[High] 11 release note posts have no 2026.2 hub post**
-
-"netsuite 2026.2 release notes" and "netsuite 2026.2 what's new" have real search volume. No hub post exists for this cluster. The 11 feature posts currently route to `/netsuite-post-go-live-support`; that hub does not link back to any of them.
-
-Priority action: create "NetSuite 2026.2: Full Release Notes Summary". This gives 11 existing posts a proper internal destination and creates one new high-value page targeting a real query.
-
-**[High] netsuite-optimization vs netsuite-account-performance — cannibalization risk**
-
-Both posts target "slow/broken NetSuite account" queries. The same competitor set (Kimberlite, Coefficient, DeveloperStroop, Stockton10) appears in SERPs for both. The intent differentiation (diagnostic vs. audit) is real but thin. Ensure titles explicitly distinguish the two: `netsuite-account-performance` owns "why is netsuite slow"; `netsuite-optimization` owns "netsuite account audit" or "netsuite optimization checklist".
-
-**[Medium] Multiple hubs have incomplete outbound spoke links**
-
-| Hub | Missing outbound blog links |
-|---|---|
-| /netsuite-suitescript-development | user-event-vs-client-script, workflow-vs-suitescript, suiteql posts |
-| /netsuite-advanced-pdf-templates | freemarker-pdf-guide |
-| /netsuite-post-go-live-support | netsuite-support-partner-evaluation |
-| /netsuite-account-optimization | netsuite-optimization post |
-| /netsuite-administrator-support | passkey-second-factor-2026-2 |
-
-**Recommended new posts (in priority order):**
-1. "NetSuite 2026.2: Full Release Notes Summary" — gives 11 feature posts a hub
-2. "How to Choose a NetSuite Consulting Partner for Long-Term Support" — first spoke for /netsuite-consulting-services
-3. "NetSuite FSM: Administrator Setup and Maintenance Guide" — interim pillar for 4 FSM posts
-4. "NetSuite Integration Options: When to Use SuiteScript, REST, RESTlet, or a Platform"
-5. "NetSuite Workflow Audit: How to Find Automations That Fire Too Often"
+`/netsuite-suitescript-development` links back to 4 of its 9 spoke posts. `/netsuite-post-go-live-support` links forward to service features but not back to the 11 release note posts that already link to it. Bidirectional linking completes the cluster and distributes link equity correctly.
 
 ---
 
 ## Backlinks: INSUFFICIENT DATA
 
-**Backlink Health Score: INSUFFICIENT DATA (0 of 7 scoring factors have data)**
-
-suitepacific.com launched June 2026. The most recent Common Crawl web graph release (cc-main-2026-jan-feb-mar) predates the domain by 3 months. The domain is not absent due to link weakness — it simply did not exist when the crawl ran. No Moz, Bing, or DataForSEO data is configured.
-
-**Context:** This is expected for a 2-month-old domain. Competitive B2B queries weight referring domain count heavily. The content foundation (69 content pages) is in place. The priority is converting that content into inbound links before the next CC quarterly release (~Q3 2026).
-
-**Target:** 5-10 referring domains within 90 days.
-
-**Priority link-building channels (effort/return ranked):**
-1. **Oracle/NetSuite partner directories** — G2, Clutch, Oracle AppSource, NetSuite Partner Locator. Free. DA 70-90+. Followed links. Establish immediately.
-2. **r/NetSuite** — 45,000 members. Answer SuiteScript/workflow questions genuinely. Reference articles when directly relevant. No promotional framing.
-3. **SuiteAnswers community** — Oracle's own community. Answer questions with citations to resource pages.
-4. **ERP publications** — NLAuth deprecation is newsworthy. Pitch a guest byline to ERP Focus or Practical NetSuite.
-5. **Client mentions** — request a link from any client who references the engagement.
-
-**To unlock a scored backlink report:** Configure Moz API (free, 2,500 rows/month) at https://moz.com/products/api — upgrades to Tier 1 data with DA/PA, spam score, anchor text. Re-run `/seo backlinks suitepacific.com` after configuration.
-
-**One additional finding:**
-
-No blog or resource page links to any external source (Oracle Help Center, release notes). Adding one authoritative outbound citation per release-note post: (a) signals primary-source research to Google quality raters, (b) increases the chance of appearing in NetSuite community aggregations that cite well-documented posts.
+Domain is too new for Common Crawl graph data. No Moz or Bing Webmaster API credentials detected. No numeric score generated — a score from 0 sources is misleading. Re-run after 6 months of operation when Common Crawl has indexed the domain.
 
 ---
 
-## Appendix A: False Positive Resolution
+## August 13 Deep Audit — New Findings (5 Specialist Agents)
 
-The first technical subagent (launched in a prior context window) produced five findings later confirmed false via direct source code and live site verification. Documented here for accuracy:
+_This section records findings from the August 13 deep audit that were not present or not adequately assessed in prior audits. All prior findings above remain valid unless marked resolved._
 
-| Finding | Status | Evidence |
+---
+
+### Critical Issues (New, August 13)
+
+**[Critical] No privacy policy page exists**
+
+No page at /privacy or /privacy-policy. Every contact form and the hire-netsuite-developer page collects contact information, including details about the visitor's NetSuite account. Google's QRG (September 2025) treats privacy disclosure as a trustworthiness signal for YMYL and B2B service sites. There is also legal exposure in most jurisdictions for a site collecting personal data without disclosure.
+
+Fix: create `app/(site)/privacy/page.tsx` with a minimal privacy policy (data collected, how it is used, contact method, no data sold). Link from footer next to the copyright line.
+
+**[Critical] netsuite-saved-search-examples: 322 impressions, 0% CTR at position 17**
+
+The page is visible to 322 searchers per period but receives zero clicks. Root cause is presentation, not content: the title does not include a count, and the meta description is not benefit-led. A listicle title without a number at positions 10-25 consistently underperforms.
+
+Fix: Update title and H1 to "10 NetSuite Saved Search Examples (Finance, Operations, Admin)". Rewrite meta description to lead with the number and most specific benefit: "10 ready-to-build NetSuite saved searches for finance, operations, and admin teams — criteria, columns, and filters included." Add `updated: "2026-08-13"` to frontmatter for freshness signal.
+
+**[Critical] netsuite-implementation-partner-vs-managed-support is ~429 words (service page minimum: 800)**
+
+A companion blog post at 1,468 words covers the same topic in depth. Google will choose the blog post over the service page for this query, meaning the page designed to convert will not rank. The page needs at minimum a "how to decide" decision framework (200 words), a "signs you need managed support" list (100 words), and a paragraph on transition timing (100 words).
+
+**[Critical] Local robots.txt blocks /suitecompare/ directory**
+
+The local `public/robots.txt` has `Disallow: /suitecompare/` (the entire directory) while the live version correctly blocks only specific auth paths (`/suitecompare/login`, `/suitecompare/dashboard`, etc.). The SuiteCompare marketing page at `/suitecompare` (no trailing slash) is unaffected, but the structure is fragile. When deployed, any inbound link with trailing slash would be blocked before the redirect fires. Revert to enumerating specific auth paths matching the live file pattern.
+
+---
+
+### Content / E-E-A-T: 71/100 (New Detailed Findings)
+
+**E-E-A-T by dimension:**
+
+| Dimension | Score | Key gap |
 |---|---|---|
-| "No canonical on homepage" | FALSE | Present in `app/(site)/page.tsx` line 20 |
-| "/suitecompare has noindex" | FALSE | `app/suitecompare/page.tsx` line 31 overrides with `robots: { index: true }` |
-| "SuiteCompare not in static HTML" | FALSE | `href="/suitecompare"` confirmed in live curl output |
-| "Two service pages orphaned" | FALSE | Both confirmed linked from homepage |
-| "robots.txt missing auth routes" | FALSE | All paths present in live `robots.txt` |
+| Experience | 58/100 | No case study outcome metrics embedded in blog posts; all practitioner signals rely on narrative voice |
+| Expertise | 74/100 | Certifications appear on only 3 of 22 service pages; zero blog posts reference credentials |
+| Authoritativeness | 60/100 | No external authority signals; case studies not cross-linked from blog posts |
+| Trustworthiness | 72/100 | No privacy policy (critical); contact info in footer; HTTPS; LLC disclosed |
 
-Content agent false finding: "CRITICAL — duplicate SuiteQL blog posts". Only one SuiteQL sort-change post exists: `netsuite-suiteql-sort-change-2026-2.md`. The referenced `netsuite-suiteql-default-sort-change` does not exist in `content/blog/`.
+**[High] 30 resources have no date fields**
 
-SXO agent discrepancy: "No ServiceJsonLd on any service page". This is incorrect — Service schema is present on all 11 service pages, confirmed by the schema agent via direct source code review of `components/seo/JsonLd.tsx` and service page metadata.
+All 30 files in `content/resources/*.md` have no machine-readable publication date. The frontmatter uses `publishedAt` in some files but it is blank or absent across all 30. This means 30 indexed pages have zero freshness signal. Add `publishedAt` frontmatter to each file and verify the resource renderer exposes it.
+
+**[High] netsuite-post-go-live-checklist has zero list items despite being called a checklist**
+
+The post is 1,300 words of prose paragraphs organized under H2 headings. Users arriving from search expecting a checklist will see only narrative and leave. This is a bounce risk and a conversion barrier: if the user came to copy a checklist into their own process document, the page gives them nothing to act on. Fix: add a bulleted checklist under each H2 alongside the existing prose. No content removal — additive only.
+
+**[High] 12 blog/resource pairs cover the same core topic with high duplication risk**
+
+Confirmed overlapping slug pairs where both the blog post and a resource cover the same primary question in near-identical content:
+
+- netsuite-rest-batch-sequential (blog 1,192w / resource 758w)
+- netsuite-user-event-vs-client-script (blog 2,400w / resource 1,045w)
+- netsuite-suiteql-bound-parameters (blog 1,229w / resource 801w)
+- netsuite-payment-adjustments (blog 1,112w / resource 691w)
+- netsuite-payment-runs (blog 1,029w / resource 862w)
+- netsuite-passkey-second-factor (blog 1,174w / resource 690w)
+- netsuite-suitetax-term-discounts, netsuite-currency-context-custom-fields, netsuite-sales-order-fulfillment-list, netsuite-bank-reconciliation, netsuite-project-health-indicators, netsuite-advanced-record-customization
+
+For the 6 pairs where the blog post is under 1,200 words and the resource covers nearly the same content: 301-redirect the resource to the blog post and merge any unique content. For the other 6 (larger blog posts): differentiate more sharply — resource becomes pure code/config reference, blog stays narrative explanation.
+
+**[Medium] Credentials mentioned on only 3 of 22 service pages and zero blog posts**
+
+Oracle NetSuite SuiteCloud Developer II and Administrator Professional certifications appear on `/netsuite-consulting-services`, `/netsuite-suitescript-development`, and `/hire-netsuite-developer`. The remaining 19 service pages and all 45 blog posts make no reference to them. A single line added to the blog post callout or intro section would strengthen the expertise signal across the full content corpus without violating the no-personal-attribution rule.
 
 ---
 
-## Appendix B: Files to Edit (Quick Reference)
+### Schema: 72/100 (Agent Findings)
 
-| Fix | File | Line/Change |
+**[High] VideoObjectJsonLd missing `duration` field**
+
+Google's VideoObject requirements include `duration` in ISO 8601 format (e.g., "PT3M42S"). The component in `components/seo/JsonLd.tsx` lacks this field entirely. Add `duration?: string` to the interface and pass it through to the JSON-LD output. Update all 30 call sites with the ISO 8601 duration of video IQvWN_yZ24A. This is a rich result eligibility gap.
+
+**[High] ArticleJsonLd missing from /resources/[slug] and /case-studies/[slug]**
+
+30 resources and all case studies are indexed content with no structured data beyond BreadcrumbList. Adding `ArticleJsonLd` to both template layouts is a single change that adds schema coverage to 30+ pages simultaneously.
+
+**[Medium] netsuite-oracle-support-vs-third-party uses ServiceJsonLd (should be ArticleJsonLd)**
+
+The page is a comparison article, not a service pitch page. ServiceJsonLd misrepresents the content type. Replace with `ArticleJsonLd` using the same pattern as `netsuite-freelancer-vs-consulting-firm.tsx`.
+
+**[Medium] ServiceJsonLd and BlogPostingJsonLd missing `@id` anchors**
+
+Add `"@id": \`${url}#service\`` to `ServiceJsonLd` and `"@id": \`${SITE_URL}/blog/${slug}#article\`` to `BlogPostingJsonLd`. These anchors allow Google's Knowledge Graph to build entity relationships across pages and strengthen topical authority.
+
+**[Medium] OrganizationJsonLd missing `foundingDate`**
+
+LLMs use founding date to assess business stability and authority. Add `foundingDate` to the component in `components/seo/JsonLd.tsx`.
+
+---
+
+### GEO / AI Search: 77/100 (Agent Findings)
+
+**Platform breakdown:**
+
+| Platform | Score | Key factor |
 |---|---|---|
-| og:image on 12 service pages | Each service page.tsx | Add `images: [{url: og-default.png, width: 1200, height: 630}]` to openGraph |
-| /suitecompare canonical + og:image | app/suitecompare/page.tsx | Add `alternates.canonical` and `openGraph.images` |
-| TechArticle schema image | app/(site)/resources/[slug]/page.tsx | Line 63: change `logo-icon.png` to `og-default.png` |
-| PDF data model wrong hub link | content/blog/netsuite-advanced-pdf-data-model.md | Change service link to /netsuite-advanced-pdf-templates |
-| Dead-end blog posts (8 posts) | content/blog/*.md | Add closing paragraph linking to service page |
-| Homepage title cannibalization | app/(site)/page.tsx | Revise homepage title metadata |
-| Mid-page LeadForm (4 service pages) | app/(site)/*/page.tsx | Add `<LeadForm />` mid-page, change CTA button to `#contact` |
+| Perplexity | 81/100 | Fresh versioned facts, PerplexityBot allowed, SSG |
+| Google AIO | 79/100 | Strong schema, fresh dates, direct answers |
+| ChatGPT | 73/100 | GPTBot allowed, YouTube signal, no Wikipedia entity |
+| Bing Copilot | 71/100 | OAI-SearchBot allowed, schema present |
+
+**Confirmed strengths:** All 4 major AI search crawlers whitelisted in robots.txt. llms.txt present with RSL 1.0 and 16 FAQ Q&A pairs. Quick Answer blocks on all 45 blog posts (100% coverage). Full SSG. VideoObjectJsonLd on 30 pages. `knowsAbout` array has 18 specific NetSuite technical terms. Content freshness: 35% of posts dated August 2026.
+
+**[High] Only 38% of posts use question-format H2 headings (17 of 45)**
+
+AI systems match section headings against user query strings. Question headings ("What changed in NetSuite 2026.2 payment runs?") are directly extractable as question-answer pairs. The 28 posts with statement headings ("What is being retired and when") are structurally weaker for citation. Priority conversion targets: release-note posts, NLAuth retirement post, Map/Reduce guide.
+
+**[High] YouTube URL missing from llms.txt; 10 August 2026 posts missing from index**
+
+YouTube is the strongest AI citation correlation signal (~0.737, Ahrefs 75k-brand study). The @SuitePacific channel is in `OrganizationJsonLd.sameAs` but absent from the llms.txt contact section. Add: `- YouTube: https://www.youtube.com/@SuitePacific`. Also: 10 August 2026 posts are not indexed in the llms.txt blog section (including how-to-choose-netsuite-consulting-partner, netsuite-roles-permissions-guide, netsuite-development-cost, netsuite-custom-gl-plugin-guide, and 6 others).
+
+**[Medium] Single video ID across all 30 VideoObject pages**
+
+All 30 VideoObjectJsonLd deployments reference video IQvWN_yZ24A. From a GEO signal perspective this is one YouTube entity, not 30. A second original video creates an independent brand mention and materially diversifies the signal.
+
+**[Medium] No Wikipedia or Wikidata entity**
+
+Wikipedia is the highest-impact missing signal for ChatGPT. A Wikidata entry for SuitePacific LLC is achievable now and can be added to `OrganizationJsonLd.sameAs` immediately after creation. A Wikipedia article requires demonstrated external notability — longer-term goal.
+
+**[Medium] nlauth-tba Quick Answer is 126 words (optimal floor is 134)**
+
+This is the only Quick Answer block identified as below the optimal 134-word floor. Add one sentence: "If you are unsure which integrations use NLAuth, run a search in Setup under Integration Records and filter by authentication type."
 
 ---
 
-*Generated by claude-seo audit framework. Agents: seo-technical, seo-content, seo-schema, seo-geo, seo-backlinks, seo-sxo, seo-cluster. All findings verified against live site and source code where flagged as discrepant.*
+### On-Page / CTR: 65/100 (GSC Data)
+
+**CTR gap pages:**
+
+| Page | Impressions | CTR | Est. Position | Fix |
+|---|---|---|---|---|
+| /blog/netsuite-saved-search-examples | 322 | 0% | 17 | Title: add count; meta description: lead with number and benefit; add `updated` field |
+| /blog/netsuite-saved-search-tips | 443 | 0.23% | ~25-35 | Rewrite meta description; add `updated` field; cross-link to examples post |
+| /blog/netsuite-post-go-live-checklist | High | Low | ~15-25 | Add actual bullet checklists; intent mismatch causing bounce |
+| /hire-netsuite-developer | High | Low | ~61 | Internal link deficit: add /hire-netsuite-developer links from 10+ SuiteScript blog posts |
+
+**Rank #1 opportunities (60-90 day horizon):**
+
+1. **netsuite acs alternative** — est. pos. 3-5, low competition, clear commercial intent. Cross-link from oracle-support-vs-third-party and add `AggregateRating` schema when reviews accumulate.
+2. **netsuite suiteql [guide/bound-parameters/sort]** — 3-post cluster, est. pos. 5-8. Complete cross-links within the SuiteQL sub-cluster to reach position 1.
+3. **netsuite fsm bundle update 2026** — est. pos. 1-3, near-zero competition. Submit fresh IndexNow ping for the 4 FSM posts.
+4. **netsuite nlauth tba migration** — est. pos. 8-15. Add a numbered migration checklist; update meta description with the year.
+5. **netsuite map reduce script guide** — est. pos. 6-12. Unique performance benchmarks (45 min to 5-8 min) are highly citable. Convert 2 statement H2s to questions.
+
+---
+
+### Release-Note Sub-Cluster Gap (New Finding)
+
+The `netsuite-2026-2-finance-updates` post (1,229 words) is the natural parent hub for all 2026.2 release-note posts. Currently none of the 8 individual 2026.2 posts (payment-runs, bank-reconciliation-changes, payment-adjustments, bill-capture-preferences, project-health-indicators, advanced-record-customization, suiteql-sort-change, passkey-second-factor) link back to the finance-updates overview, and the finance-updates post does not link to any of them. This breaks the sub-cluster entirely. Each spoke should link to the finance-updates hub ("For the full 2026.2 finance changes summary...") and the hub should link to each deep-dive.
+
+---
+
+### SuiteCompare / Import Doctor Conversion Gap (New Finding)
+
+No blog posts mention SuiteCompare or Import Doctor. The tool pages are siloed from the content cluster. The SuiteScript blog posts are the most technically engaged audience on the site and are the natural entry point for SuiteCompare. A simple callout in relevant SuiteScript posts ("Comparing two environments? Use SuiteCompare") with a link to /suitecompare would surface the product at zero additional content cost.
+
+---

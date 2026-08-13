@@ -46,6 +46,9 @@ Update this file every time a new post is published. No topic should repeat.
 | 39 | Inline editing execution context is XEDIT — beforeLoad never fires; beforeSubmit and afterSubmit do; UI customizations (defaults, mandatory, visibility) in beforeLoad silently skip during inline edits | SuiteScript |
 | 38 | SuiteQL bound parameters — use the params array instead of concatenating values into the query string; eliminates manual quoting and reduces injection risk; works with runSuiteQLPaged too | SuiteQL |
 | 40 | Bill Capture Preferences in 2026.2 — blank Save Tax As now maps to No Tax, blank Save Shipping Cost As maps to No Shipping Cost; bills save successfully with no error but captured amounts are discarded | Release Notes / Finance |
+| 41 | What NetSuite ACS actually covers vs. what it doesn't — ACS covers platform questions, config guidance, bug escalation to Oracle Engineering; does not cover SuiteScript customizations, third-party integrations, custom workflow logic, or account-specific design | Admin / Support |
+| 42 | Sandbox Refresh doesn't sync your Sandbox — it replaces it; a point-in-time copy of Production overwrites everything in Sandbox including custom fields, workflow changes, scripts, and test data created only there; bank credentials and integration tokens are reset; email suppression resets too | Admin |
+| 43 | Oracle Support vs. consulting partner — not either/or; Oracle covers the platform layer (bugs, standard features, Engineering escalation); a partner covers the account-specific layer (SuiteScript, workflows, integrations, custom configuration); most live accounts need both | Admin / Support |
 
 ---
 

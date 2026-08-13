@@ -1,7 +1,8 @@
 ---
-title: "NetSuite Saved Search Examples for Finance and Operations Teams"
-description: "Practical NetSuite saved search examples for finance and operations: overdue invoices, open purchase orders, low stock, approval queues, and more, with the key criteria that make each one work."
+title: "10 NetSuite Saved Search Examples (Finance, Operations, Admin)"
+description: "10 ready-to-build NetSuite saved searches for finance, operations, and admin teams — with exact criteria, columns, formula fields, and the configuration mistakes that break each one."
 date: "2026-06-30"
+updated: "2026-08-13"
 tags: ["Saved Searches", "Reporting"]
 ---
 
@@ -55,12 +56,15 @@ Most teams know they should be using saved searches more than they do. The gap i
 
 ## 1. Overdue open invoices by customer
 
-**Record type:** Transaction (Invoice)
-**Key criteria:** Status = Open, Due Date before today
-**Columns:** Customer, Invoice number, Invoice date, Due date, Amount remaining
-**Summary:** Group by Customer, Sum on Amount remaining
+| Field | Value |
+|---|---|
+| Record type | Transaction (Invoice) |
+| Criteria | Status = Open; Due Date before today |
+| Columns | Customer, Invoice number, Invoice date, Due date, Amount remaining |
+| Summary | Group by Customer, Sum on Amount remaining |
+| Sort | Days Overdue descending |
 
-This is the AR aging search most finance teams eventually build, but commonly built wrong by filtering on Invoice Date rather than Due Date, which includes current invoices that aren't actually late. The Due Date filter with a `before today` dynamic date range gives you a clean view of what's genuinely overdue.
+This is the AR aging search most finance teams eventually build, but commonly built wrong by filtering on Invoice Date rather than Due Date, which includes current invoices that are not actually late. The Due Date filter with a `before today` dynamic date range gives you a clean view of what is genuinely overdue.
 
 Add a Days Overdue formula column and sort descending. The goal is to surface the most overdue amounts, not just the largest balances. Published as a dashboard portlet for the collections team, this search replaces the weekly "who do we chase today" spreadsheet.
 
@@ -73,10 +77,12 @@ Formula column: Days Overdue:
 
 ## 2. Sales orders pending approval
 
-**Record type:** Transaction (Sales Order)
-**Key criteria:** Status = Pending Approval
-**Columns:** Order number, Customer, Sales rep, Amount, Date created
-**Sort:** Date created ascending (oldest first)
+| Field | Value |
+|---|---|
+| Record type | Transaction (Sales Order) |
+| Criteria | Status = Pending Approval |
+| Columns | Order number, Customer, Sales rep, Amount, Date created |
+| Sort | Date created ascending (oldest first) |
 
 Simple but essential if you have an approval workflow. The "oldest first" sort surfaces orders that have been sitting the longest, which is what the person managing the queue actually needs to see rather than the default newest-first view.
 
@@ -84,9 +90,11 @@ Pair this with a scheduled email alert, set on the saved search itself under the
 
 ## 3. Purchase orders received but not yet billed
 
-**Record type:** Transaction (Purchase Order)
-**Key criteria:** Status = Partially Received or Fully Received, Billed = No
-**Columns:** PO number, Vendor, Expected receipt date, Amount, Received quantity
+| Field | Value |
+|---|---|
+| Record type | Transaction (Purchase Order) |
+| Criteria | Status = Partially Received or Fully Received; Billed = No |
+| Columns | PO number, Vendor, Expected receipt date, Amount, Received quantity |
 
 This is the GRN-not-invoiced search that AP teams need for accruals. Without it, period-end close involves manually cross-referencing receipts against bills, which is exactly the kind of work a saved search should be doing instead.
 
@@ -94,9 +102,11 @@ The `Billed = No` filter is a join field that checks whether a vendor bill has b
 
 ## 4. Items below reorder point
 
-**Record type:** Item
-**Key criteria:** Preferred Stock Level greater than Quantity On Hand + Quantity On Order
-**Columns:** Item name, Location, On hand, On order, Reorder point, Preferred vendor
+| Field | Value |
+|---|---|
+| Record type | Item |
+| Criteria | Formula (Numeric): {preferredstocklevel} - {quantityonhand} - {quantityonorder} greater than 0 |
+| Columns | Item name, Location, On hand, On order, Reorder point, Preferred vendor |
 
 The trick here is using a formula column and a criteria filter, rather than filtering on On Hand alone, which ignores pending purchase orders and triggers false alarms on items that already have replenishment in transit.
 
@@ -114,9 +124,12 @@ For multi-location accounts, add Location as a grouping column and run the summa
 
 ## 5. Expenses submitted but not yet approved
 
-**Record type:** Transaction (Expense Report)
-**Key criteria:** Status = Pending Supervisor Approval or Pending Accounting Approval
-**Columns:** Employee, Submission date, Total amount, Approval status
+| Field | Value |
+|---|---|
+| Record type | Transaction (Expense Report) |
+| Criteria | Status = Pending Supervisor Approval or Pending Accounting Approval |
+| Columns | Employee, Submission date, Total amount, Approval status |
+| Sort | Days Pending descending |
 
 Expense report queues fall off the radar faster than any other approval type because there's no obvious place to check them without a saved search. This one, published to finance and managers, eliminates the "I submitted it last week, did you see it?" follow-up.
 
@@ -131,9 +144,12 @@ Formula column: Days Pending:
 
 ## 6. Customers with no activity in 90 days
 
-**Record type:** Customer
-**Key criteria:** Last Order Date before 90 days ago (or is empty)
-**Columns:** Customer name, Customer since, Last order date, Sales rep, Total lifetime value
+| Field | Value |
+|---|---|
+| Record type | Customer |
+| Criteria | Last Order Date before today minus 90 days, or is empty |
+| Columns | Customer name, Customer since, Last order date, Sales rep, Total lifetime value |
+| Sort | Total lifetime value descending |
 
 Filtering on a relative date range (`before today minus 90 days`) rather than a static date means this search stays accurate without maintenance. The `or is empty` condition catches customers who were created but never placed an order, which is a separate data quality problem worth flagging to the sales team separately from the dormant account list.
 
@@ -141,18 +157,23 @@ Add Total Lifetime Value as a column and sort descending. A high-value account w
 
 ## 7. Transactions created by a specific script or workflow
 
-**Record type:** Transaction (any type)
-**Criteria:** Created by = [script or workflow name]
-**Columns:** Record type, Internal ID, Date, Created by
+| Field | Value |
+|---|---|
+| Record type | Transaction (any type) |
+| Criteria | Created by = [script or workflow name]; Date within range |
+| Columns | Record type, Internal ID, Date, Created by |
 
 This one is more for administrators than finance users. When a script or workflow is creating records unexpectedly or in the wrong volume, this search isolates the specific records it touched, which is the first thing you need before debugging what went wrong. Add a date range filter to limit results to the period in question.
 
 ## 8. Vendor aging by due date
 
-**Record type:** Transaction (Vendor Bill)
-**Key criteria:** Status = Open
-**Columns:** Vendor, Bill number, Bill date, Due date, Amount remaining
-**Summary:** Group by Vendor, Sum on Amount remaining
+| Field | Value |
+|---|---|
+| Record type | Transaction (Vendor Bill) |
+| Criteria | Status = Open |
+| Columns | Vendor, Bill number, Bill date, Due date, Amount remaining |
+| Summary | Group by Vendor, Sum on Amount remaining |
+| Sort | Days Until Due ascending (negative = past due) |
 
 The AP equivalent of the AR aging search. Add a Days Until Due formula column and sort ascending so the most urgent bills appear first. Negative values mean the bill is already past due.
 
@@ -167,9 +188,12 @@ For accounts with multiple payment terms across vendors, add Payment Terms as a 
 
 ## 9. Time entries not yet billed
 
-**Record type:** Time (Time Bill)
-**Key criteria:** Billable = Yes, Billing Status = Not Billed
-**Columns:** Employee, Customer, Project, Date, Hours, Billing rate, Billable amount
+| Field | Value |
+|---|---|
+| Record type | Time (Time Bill) |
+| Criteria | Billable = Yes; Billing Status = Not Billed |
+| Columns | Employee, Customer, Project, Date, Hours, Billing rate, Billable amount |
+| Sort | Date ascending (oldest unbilled first) |
 
 Essential for any professional services or project-based business tracking time in NetSuite. Without this search, billable hours fall through the cracks: an employee logs time, the project closes, and nobody generates an invoice because there was no systematic check that all logged hours were captured before billing.
 
@@ -184,9 +208,12 @@ Formula column: Week:
 
 ## 10. Open projects over budget
 
-**Record type:** Project
-**Key criteria:** Status = In Progress, Actual Cost greater than Estimated Cost
-**Columns:** Project name, Project manager, Estimated cost, Actual cost, Budget variance
+| Field | Value |
+|---|---|
+| Record type | Project |
+| Criteria | Status = In Progress; Actual Cost greater than Estimated Cost |
+| Columns | Project name, Project manager, Estimated cost, Actual cost, Budget variance |
+| Sort | % Over Budget descending |
 
 Add a Percent Over Budget formula column and sort descending by variance. The `NULLIF` prevents a divide-by-zero error on projects with no estimated cost entered.
 
