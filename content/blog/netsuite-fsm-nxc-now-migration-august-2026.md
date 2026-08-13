@@ -155,4 +155,4 @@ Reviewing FSM configuration expressions, identifying checkbox conditions that ma
 
 If your team is not certain how to locate or evaluate the migrated configuration record, [contact SuitePacific](/contact). We work with NetSuite customers through FSM bundle updates and can help you validate this specific migration before it affects your Production environment.
 
-For more on how SuitePacific supports FSM configuration and post-upgrade validation, see the [NetSuite administrator support service](/netsuite-administrator-support).
+For dedicated FSM support and post-upgrade troubleshooting, see [NetSuite FSM Support and Troubleshooting](/netsuite-fsm-support). For more on how SuitePacific supports FSM configuration and post-upgrade validation, see the [NetSuite administrator support service](/netsuite-administrator-support).

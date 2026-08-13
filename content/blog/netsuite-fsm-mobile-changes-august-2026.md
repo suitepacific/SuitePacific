@@ -148,4 +148,4 @@ This gives you firsthand knowledge of exactly what your technicians will experie
 
 Preparing a field team for a mobile app change is different from preparing administrators for a configuration change. If you need help developing a briefing for your dispatchers and technicians, or if you want a walkthrough of the new interface in Sandbox before August 11, [contact SuitePacific](/contact). We work with NetSuite customers through FSM bundle updates and can help you manage both the technical and operational side of the transition.
 
-For more on how SuitePacific supports NetSuite administrators through bundle updates and operational changes, see the [NetSuite administrator support service](/netsuite-administrator-support).
+For dedicated FSM support and post-update troubleshooting, see [NetSuite FSM Support and Troubleshooting](/netsuite-fsm-support). For more on how SuitePacific supports NetSuite administrators through bundle updates and operational changes, see the [NetSuite administrator support service](/netsuite-administrator-support).

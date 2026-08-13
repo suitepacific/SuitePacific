@@ -435,6 +435,27 @@ export default function PostGoLiveSupportPage() {
               covers what to look for when selecting an ongoing support provider after go-live.
             </li>
           </ul>
+          <p className="text-sm font-semibold text-brand-900 mb-3 mt-6">NetSuite FSM resources</p>
+          <ul className="space-y-2.5">
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-fsm-support" className="text-accent hover:underline">
+                NetSuite FSM Support and Troubleshooting
+              </Link>{" "}
+              covers sync failures, bundle update issues, broken configurations, and mobile app problems for live FSM accounts.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-fsm-bundle-update-august-2026" className="text-accent hover:underline">
+                NetSuite FSM bundle 2026.07.1
+              </Link>{" "}
+              covers the three breaking changes in the August 2026 update and what to test in Sandbox before Production.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/resources/netsuite-fsm-configuration-change-control" className="text-accent hover:underline">
+                FSM configuration change control checklist
+              </Link>{" "}
+              is a Sandbox-first workflow for managing FSM changes safely in a live field operation.
+            </li>
+          </ul>
           <p className="text-sm font-semibold text-brand-900 mb-3 mt-6">NetSuite 2026.2 releases</p>
           <ul className="space-y-2.5">
             <li className="text-sm text-brand-400">

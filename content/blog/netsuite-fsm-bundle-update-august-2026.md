@@ -234,4 +234,4 @@ This update includes configuration changes that require administrator action bef
 
 SuitePacific works with NetSuite customers through the post-go-live phase: reviewing configurations, validating bundle updates, resolving issues that emerge after upgrades, and making sure nothing falls through the gap between Sandbox and Production. If you are not certain your team has the time or expertise to work through the 2026.07.1 changes before August 11, reach out to us and we will take it from there.
 
-For more on how SuitePacific approaches bundle updates and ongoing configuration reviews, see the [NetSuite administrator support service](/netsuite-administrator-support).
+For dedicated FSM troubleshooting and post-bundle-update support, see [NetSuite FSM Support and Troubleshooting](/netsuite-fsm-support). For more on how SuitePacific approaches bundle updates and ongoing configuration reviews, see the [NetSuite administrator support service](/netsuite-administrator-support).

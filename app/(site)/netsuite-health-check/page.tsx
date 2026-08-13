@@ -300,6 +300,12 @@ export default function NetSuiteHealthCheckPage() {
               </Link>{" "}
               is the ongoing engagement for accounts that are in good shape and need a dedicated technical team going forward.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-fsm-support" className="text-accent hover:underline">
+                NetSuite FSM Support
+              </Link>{" "}
+              covers Field Service Management-specific findings: sync failures, bundle update issues, configuration problems, and mobile app behavior.
+            </li>
           </ul>
         </div>
 

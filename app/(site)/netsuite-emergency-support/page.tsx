@@ -252,6 +252,10 @@ export default function NetSuiteEmergencySupportPage() {
               <Link href="/blog/netsuite-script-broke-after-upgrade" className="text-accent hover:underline">What to do when a NetSuite script breaks after an upgrade</Link>{" "}
               walks through diagnosis steps for the most common release-related failures.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-fsm-support" className="text-accent hover:underline">NetSuite FSM support</Link>{" "}
+              covers FSM-specific emergencies: bundle update breaks, sync failures, broken configurations, and nxc_now() migration issues.
+            </li>
           </ul>
         </div>
 
