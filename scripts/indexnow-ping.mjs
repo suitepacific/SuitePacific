@@ -67,6 +67,24 @@ const URLS = [
   "/blog/netsuite-fsm-mobile-changes-august-2026",
   "/blog/netsuite-fsm-nxc-now-migration-august-2026",
   "/blog/netsuite-fsm-readonly-migration-august-2026",
+  // Tier 1 keyword gap (2026-08-13)
+  "/netsuite-health-check",
+  "/netsuite-implementation-rescue",
+  "/netsuite-integrations/shopify",
+  "/netsuite-integrations/salesforce",
+  "/netsuite-integrations/hubspot",
+  "/netsuite-integrations/avalara",
+  "/netsuite-integrations/amazon",
+  "/blog/signs-netsuite-implementation-failed",
+  "/blog/netsuite-support-pricing-guide",
+  // Tier 2/3 keyword gap (2026-08-13)
+  "/netsuite-consultant-san-francisco",
+  "/netsuite-consultant-los-angeles",
+  "/netsuite-consultant-new-york",
+  "/netsuite-consultant-chicago",
+  "/netsuite-emergency-support",
+  "/blog/netsuite-script-broke-after-upgrade",
+  "/blog/netsuite-support-partner-red-flags",
 ];
 
 if (process.env.NODE_ENV !== "production") {
