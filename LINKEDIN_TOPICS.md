@@ -49,6 +49,7 @@ Update this file every time a new post is published. No topic should repeat.
 | 41 | What NetSuite ACS actually covers vs. what it doesn't — ACS covers platform questions, config guidance, bug escalation to Oracle Engineering; does not cover SuiteScript customizations, third-party integrations, custom workflow logic, or account-specific design | Admin / Support |
 | 42 | Sandbox Refresh doesn't sync your Sandbox — it replaces it; a point-in-time copy of Production overwrites everything in Sandbox including custom fields, workflow changes, scripts, and test data created only there; bank credentials and integration tokens are reset; email suppression resets too | Admin |
 | 43 | Oracle Support vs. consulting partner — not either/or; Oracle covers the platform layer (bugs, standard features, Engineering escalation); a partner covers the account-specific layer (SuiteScript, workflows, integrations, custom configuration); most live accounts need both | Admin / Support |
+| 44 | FSM configuration needs change control — don't change FSM directly in Production without Sandbox testing; only one active configuration at a time; test changes recommended by Support or partners before applying; validate mobile, Schedule Board, scripts, and notifications after every significant change | Field Service Management |
 
 ---
 
