@@ -2,10 +2,11 @@
 title: "NetSuite Advanced PDF Templates: A FreeMarker Syntax Guide with Examples"
 description: "How FreeMarker works inside NetSuite's Advanced PDF/HTML Template editor, the data model, the core syntax, date and number formatting, line item loops, conditionals, and working code you can copy."
 date: "2026-07-18"
+updated: "2026-08-14"
 tags: ["Advanced PDF", "Templates", "Development"]
 ---
 
-NetSuite's Advanced PDF/HTML Template editor uses FreeMarker, an open-source Java template language, to produce transaction documents, invoices, quotes, purchase orders, packing slips, statements. If you've opened the template editor and found a mix of HTML, CSS, and unfamiliar tags wrapped in `<#` and `${`, this guide explains what each piece does and how to adapt it to your documents.
+FreeMarker is an open-source Java template engine that processes a data model and a template to produce text output. In NetSuite, it generates the HTML that the PDF renderer converts into a transaction document. NetSuite's Advanced PDF/HTML Template editor uses FreeMarker, an open-source Java template language, to produce transaction documents, invoices, quotes, purchase orders, packing slips, statements. If you've opened the template editor and found a mix of HTML, CSS, and unfamiliar tags wrapped in `<#` and `${`, this guide explains what each piece does and how to adapt it to your documents.
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>

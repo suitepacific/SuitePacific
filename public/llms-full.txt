@@ -66,7 +66,7 @@ Advanced PDF templates are one of the easiest things to get visually right and f
 
 ## How to Choose a NetSuite Consulting Partner
 URL: https://suitepacific.com/blog/how-to-choose-netsuite-consulting-partner
-Published: 2026-08-12
+Published: 2026-08-12  |  Updated: 2026-08-14
 
 A NetSuite consulting partner is a firm certified by Oracle to provide NetSuite professional services, including implementation, customization, and post-go-live support. The certification tier and specialization vary widely, and the right type of partner depends entirely on which phase of the NetSuite lifecycle you are in.
 "NetSuite consulting partner" describes at least three genuinely different kinds of firms. An implementation partner who builds out a new NetSuite account. A managed services provider who handles ongoing support after go-live. A development-focused boutique who takes on specific technical projects. The mistake most buyers make is evaluating all three by the same criteria, which means they either over-buy (hiring an implementation firm to handle post-go-live questions) or under-buy (hiring a small boutique to run a complex implementation).
@@ -111,7 +111,7 @@ The correct choice depends on what you are actually buying. An implementation is
 
 ## NetSuite 2026.2 Finance Updates: Payment Runs and the Redesigned Match Bank Data Page
 URL: https://suitepacific.com/blog/netsuite-2026-2-finance-updates
-Published: 2026-08-02
+Published: 2026-08-02  |  Updated: 2026-08-14
 
 NetSuite 2026.2 includes two updates that directly change how finance teams process payments and reconcile bank transactions. Neither requires configuration changes to start using, but both change the interface your team works in every day.
  Quick answer 
@@ -203,8 +203,9 @@ Account performance issues are almost always fixable without an upgrade or a re-
 
 ## NetSuite Advanced PDF Templates: How to Access Transaction Data in FreeMarker
 URL: https://suitepacific.com/blog/netsuite-advanced-pdf-data-model
-Published: 2026-08-07
+Published: 2026-08-07  |  Updated: 2026-08-14
 
+The NetSuite Advanced PDF data model is the XML structure that NetSuite builds from a transaction record and passes to the FreeMarker template engine at print time. It determines which fields, sublists, and related record values are available inside the template; knowing how to navigate it is the difference between a template that fills in values reliably and one that produces blank fields.
 NetSuite's Advanced PDF/HTML templates use FreeMarker, a Java-based template language, to generate printed documents from transaction data. The template receives a data model containing the record and its related objects. Knowing how to navigate that data model is the difference between a template that fills in values reliably and one that produces blank fields or FreeMarker errors.
 The most common point of confusion is that the available fields in a FreeMarker template are not the same as the field IDs you use in SuiteScript or saved searches. FreeMarker templates receive the data in a pre-structured model that follows NetSuite's print data format. NetSuite provides a way to view the actual XML data that your specific record type exports, which is the authoritative source for what is available in any given template.
  Quick answer 
@@ -363,7 +364,7 @@ Keeping your NetSuite account configuration current as features expand is part o
 
 ## How to Build an Approval Workflow in NetSuite SuiteFlow
 URL: https://suitepacific.com/blog/netsuite-approval-workflow-setup
-Published: 2026-08-07
+Published: 2026-08-07  |  Updated: 2026-08-14
 
 NetSuite's SuiteFlow engine is the right tool for most approval routing requirements. It models business processes as state machines: a record moves through defined stages (Draft, Pending Approval, Approved, Rejected) via transitions that fire actions along the way. You do not need a developer to build or modify a straightforward approval workflow, and the process is visible to everyone who can open the record.
 This guide covers a complete approval workflow from scratch: states, transitions, role-restricted approval buttons, email notifications on each transition, and the common mistakes that cause workflows to fire at the wrong time or not at all. The same pattern applies to any record type you want to add approval routing to. For record types that have NetSuite's built-in approval routing (Purchase Orders, Expense Reports), SuiteFlow is an additional option alongside the native routing, not a replacement for it.
@@ -600,7 +601,7 @@ For help auditing or configuring custom fields in your NetSuite account, see Sui
 
 ## NetSuite Custom GL Plugin: What It Can and Cannot Do
 URL: https://suitepacific.com/blog/netsuite-custom-gl-plugin-guide
-Published: 2026-08-09
+Published: 2026-08-09  |  Updated: 2026-08-14
 
 The accounting requirement looks simple on paper: when a transaction posts, also generate a corresponding entry to a secondary account for management reporting. A developer builds it, tests it in Sandbox, and it works. Then it gets deployed to Production and the controller notices it is not running on the specific transaction types the requirement was designed for.
 The developer investigates and finds that the Custom GL Plugin, correctly implemented, does not execute on several documented transaction types. The build was never going to work in Production on those transactions. Nobody knew to test for them in Sandbox.
@@ -665,7 +666,7 @@ For related reading: [SuiteScript best practices](/blog/suitescript-best-practic
 
 ## How Much Does NetSuite Development Cost? A Realistic Guide
 URL: https://suitepacific.com/blog/netsuite-development-cost
-Published: 2026-08-09
+Published: 2026-08-09  |  Updated: 2026-08-14
 
 Two developers quote the same NetSuite requirement. One comes in at $8,000. The other comes in at $35,000. Both quotes are legitimate. The difference is not one developer charging four times more for the same work. It is two developers scoping entirely different amounts of work for the same stated requirement, with different assumptions about testing, documentation, error handling, and edge cases that were never explicitly discussed.
 That gap, and the confusion it creates for buyers trying to evaluate what is fair, is the most common problem in NetSuite development procurement. A quote that looks expensive may be the right price for work done correctly. A quote that looks cheap may be omitting things that will cost more to fix later than they would have cost to build correctly the first time.
@@ -749,9 +750,9 @@ For related reading: [NetSuite implementation partner vs. post-go-live support](
 
 ## NetSuite Advanced PDF Templates: A FreeMarker Syntax Guide with Examples
 URL: https://suitepacific.com/blog/netsuite-freemarker-pdf-guide
-Published: 2026-07-18
+Published: 2026-07-18  |  Updated: 2026-08-14
 
-NetSuite's Advanced PDF/HTML Template editor uses FreeMarker, an open-source Java template language, to produce transaction documents, invoices, quotes, purchase orders, packing slips, statements. If you've opened the template editor and found a mix of HTML, CSS, and unfamiliar tags wrapped in ` 
+FreeMarker is an open-source Java template engine that processes a data model and a template to produce text output. In NetSuite, it generates the HTML that the PDF renderer converts into a transaction document. NetSuite's Advanced PDF/HTML Template editor uses FreeMarker, an open-source Java template language, to produce transaction documents, invoices, quotes, purchase orders, packing slips, statements. If you've opened the template editor and found a mix of HTML, CSS, and unfamiliar tags wrapped in ` 
  Quick answer 
  NetSuite Advanced PDF/HTML Templates use FreeMarker, a Java template language, to produce transaction documents including invoices, purchase orders, packing slips, and statements. When NetSuite generates a PDF, it builds an XML data model from the transaction and related records, then passes that model to the FreeMarker engine, which processes the template and produces HTML that the rendering engine converts to a PDF. The transaction is available in the template as the object called record. Line items on the transaction are a collection under record.item. FreeMarker directives use angle brackets with a hash for logic and dollar-sign curly braces for output. The most common errors in NetSuite PDF templates are incorrect field paths, missing null checks on optional fields that are blank on some transactions, and text that overflows a fixed-width column in the HTML table layout. 
 ## How it works
@@ -923,7 +924,7 @@ Both approaches are common in production templates that need data beyond what's 
 
 ## NetSuite FSM Bundle Update (August 11, 2026): What Is Changing and What to Test in Sandbox
 URL: https://suitepacific.com/blog/netsuite-fsm-bundle-update-august-2026
-Published: 2026-07-27
+Published: 2026-07-27  |  Updated: 2026-08-14
 
 NetSuite Field Service Management (FSM) is a SuiteApp that extends NetSuite with work order management, technician scheduling, dispatch, and mobile field service capabilities. It is installed as a managed bundle and receives periodic updates from Oracle that can change configuration record structure, mobile app behavior, and expression syntax.
 If you have a NetSuite account with the Field Service Management SuiteApp installed, you may have already received a notification from Oracle about an upcoming managed bundle update scheduled for 11 August. Oracle recommends testing the new bundle version in your Sandbox environment before it reaches Production, so that any issues with your existing configurations, customizations, or business processes can be identified and resolved in advance.
@@ -1064,7 +1065,7 @@ For dedicated FSM troubleshooting and post-bundle-update support, see [NetSuite 
 
 ## What NetSuite FSM Technicians Will See After the August 11 Update
 URL: https://suitepacific.com/blog/netsuite-fsm-mobile-changes-august-2026
-Published: 2026-08-01
+Published: 2026-08-01  |  Updated: 2026-08-14
 
 The NetSuite Field Service Management (FSM) mobile app is the interface field technicians and dispatchers use to view work orders, update service records, and log appointments from a mobile device. The app's layout and navigation are defined by the FSM Configuration record in the account, which means bundle updates that change the Configuration record structure also change what technicians see in the field.
 On August 11, 2026, Oracle will update the NetSuite Field Service Management bundle to version 2026.07.1 in Production accounts. Most of the conversation about this update focuses on administrator configuration tasks. But for the people who will notice it most, the change is in the mobile app.
@@ -1136,7 +1137,7 @@ For dedicated FSM support and post-update troubleshooting, see [NetSuite FSM Sup
 
 ## NetSuite FSM nxc_now() Migration Guide: What to Review Before August 11
 URL: https://suitepacific.com/blog/netsuite-fsm-nxc-now-migration-august-2026
-Published: 2026-08-01
+Published: 2026-08-01  |  Updated: 2026-08-14
 
 The nxc_now() function is a date-time expression used in NetSuite Field Service Management mobile event maps to capture the current timestamp at the moment a technician triggers a mobile event in the field. The 2026.07.1 bundle update replaces this function with a different syntax, and Oracle is automatically migrating existing configurations that use it.
 If your NetSuite Field Service Management configuration uses `nxc_now()` expressions in mobile event maps or field expressions, Oracle will automatically migrate those expressions when the FSM 2026.07.1 bundle updates on August 11, 2026.
@@ -1207,7 +1208,7 @@ For dedicated FSM support and post-upgrade troubleshooting, see [NetSuite FSM Su
 
 ## NetSuite FSM Breaking Change: How to Replace readonly Resource-Level Rules Before August 11
 URL: https://suitepacific.com/blog/netsuite-fsm-readonly-migration-august-2026
-Published: 2026-08-01
+Published: 2026-08-01  |  Updated: 2026-08-14
 
 The readonly property in NetSuite FSM Configuration records is a field-level setting that prevents technicians from editing specific resources in the FSM mobile app. In the 2026.07.1 bundle, Oracle is removing the resource-level readonly property and replacing it with more granular field-level access controls configured at the section and field level.
 If you have configured `readonly` rules at the resource level of your NetSuite Field Service Management configuration, those rules will stop working on August 11, 2026, when Oracle deploys the FSM 2026.07.1 bundle update to Production.
@@ -1275,7 +1276,7 @@ For dedicated FSM support and configuration troubleshooting, see [NetSuite FSM S
 
 ## NetSuite Implementation Partner vs. Post-Go-Live Support
 URL: https://suitepacific.com/blog/netsuite-implementation-partner-vs-managed-support
-Published: 2026-08-09
+Published: 2026-08-09  |  Updated: 2026-08-14
 
 A NetSuite implementation partner is a firm engaged to configure and deploy a new NetSuite account, typically under a fixed-scope statement of work. Managed support is an ongoing post-go-live service that covers administration, SuiteScript development, and optimization tasks after the initial deployment is complete. The two are different engagements with different scopes, pricing models, and skill requirements.
 The implementation ends. The statement of work is delivered, the final invoice arrives, and the partner moves on to their next project. Then, somewhere in the following weeks, the first change request surfaces that has no clear owner: a new team member needs access, a workflow needs updating for a process that changed since go-live, a saved search is returning wrong data and nobody on the internal team knows why.
@@ -1610,7 +1611,7 @@ If you're working with a NetSuite account that has aging Scheduled Scripts hitti
 
 ## NetSuite Month-End Close Checklist: What Most Teams Miss
 URL: https://suitepacific.com/blog/netsuite-month-end-close-checklist
-Published: 2026-07-01
+Published: 2026-07-01  |  Updated: 2026-08-14
 
 The NetSuite month-end close is the sequence of accounting steps that finalizes a fiscal period: verifying that all transactions posted to the correct period, running currency revaluation, locking the ledger against further entries, and reconciling open balances across modules. The order of operations matters because NetSuite's period structure and subsidiary ledgers behave differently from most ERP systems.
 Generic month-end close advice is easy to find. What's harder to find is what's specific to NetSuite: the things that behave differently than your old system, the steps that require clicking in a specific order, and the reports that only tell you something went wrong after you've already closed the period. This checklist covers those.
@@ -1716,7 +1717,7 @@ If you need help auditing your current integrations or planning the migration, [
 
 ## NetSuite Account Optimization: What to Audit and Fix on a Live Account
 URL: https://suitepacific.com/blog/netsuite-optimization
-Published: 2026-07-05
+Published: 2026-07-05  |  Updated: 2026-08-14
 
 When we audit a NetSuite account that has been live for two or three years, we almost always find the same things: custom fields nobody uses, saved searches still running on dashboards for processes that ended, workflows with no entry conditions firing on every transaction save, and script deployments for projects that wrapped up 18 months ago.
  Quick answer 
@@ -1725,21 +1726,21 @@ None of this gets added on purpose. It builds up because NetSuite makes it easy 
 A NetSuite optimization is a cleanup pass on a live account. No re-implementation, no module changes, no big project. Just a structured review of what is actually in the system and what should not be.
 All six areas compound. A script deployed to a high-volume record type with no entry condition, custom fields loading on that same record, and a portlet search running on every login adds up fast.
 Here is what to look at.
-## Custom fields
+## Which Custom Field Configurations Cause Performance Problems?
 Every custom field on a record type loads with that record, whether it is on any active form or not. Accounts that have been live a few years tend to have fields from old projects, fields that were replaced by different fields, and fields somebody added to test something and never removed.
 Pull the full list from Customization > Lists, Records and Fields > Transaction Body Fields. Look for fields that are not on any active form and have no data in them. Those are safe to deactivate. If a field has historical data, deactivate it rather than deleting it. Deactivated fields keep their data but stop loading on forms.
-## Saved searches
+## How Do Saved Searches Impact Account Performance?
 The ones that matter most for performance are saved searches assigned as dashboard portlets. Those run every single time someone with that role loads their home page, whether they are looking at the results or not. Go to Reports > Saved Searches > All Saved Searches, filter for public searches, and check portlet assignments. If a search is running on a dashboard for a process that no longer exists, remove the portlet assignment.
 Everything else, searches nobody has opened in a year, searches built for a one-time report, should be deactivated.
-## Workflows
+## Which Workflow Configurations Slow Down NetSuite?
 Two things to check on every active workflow. First, does the process it was built for still exist? Second, does it have entry conditions set?
 A workflow with no entry conditions runs on every save of that record type, regardless of what changed. That is fine if the workflow actually needs to run every time. Most do not. Go to Customization > Workflow > Workflows, open each active workflow, and look at the initiation tab. If there are no conditions limiting when it triggers, it is worth reviewing whether that is intentional. For the workflow mistakes that most commonly cause this pattern, see [5 Common NetSuite Workflow Automation Mistakes](/blog/workflow-automation-mistakes).
-## Script deployments
+## Which Script Deployments Should You Audit?
 Same logic as workflows. A User Event script deployed to the Transaction record type runs on every transaction save, for as long as it is active. Go to Customization > Scripting > Script Deployments, filter by Status = Released, and work through the list. For each deployment, ask what business process it supports. If you cannot answer that, it needs investigation before staying active. For practices that prevent deployment sprawl in the first place, see [SuiteScript Best Practices: Customizations That Survive the Next Upgrade](/blog/suitescript-best-practices).
-## Roles and permissions
+## How Do Roles and Permissions Affect Performance?
 Most accounts have at least a few users on the Administrator or Full Access role who do not need to be. Both roles give access to payroll data, banking configuration, and system settings. Most users do not need any of that.
 Review active users and their roles. Anyone on a broad role who only needs to process bills, run reports, or enter orders should be on a custom role scoped to what they actually do. For multi-subsidiary accounts, confirm subsidiary restrictions are set on each role. Without them, a user in one entity can see transactions from another.
-## Custom forms
+## When Do Custom Forms Cause Performance Issues?
 Old custom forms still show up in the form selector when someone opens a record, even if nobody uses them. Go to Customization > Forms > Transaction Forms and set anything that is not an active entry form to inactive. It removes the confusion for users and reduces the metadata NetSuite loads when a record opens.
 None of this is complicated. It is time-consuming because accounts accumulate years of changes and there is no dashboard that shows you what is unused. But working through it systematically results in an account that is noticeably faster, easier to manage, and less likely to produce unexpected behavior from something nobody remembers setting up.
 Our [NetSuite account optimization service](/netsuite-account-optimization) is built around exactly this kind of audit. If the account has not had a structured cleanup pass since go-live, [book a consultation](/contact) and we can tell you what we find. For related reading, see [Why Your NetSuite Account Feels Slow and What Actually Fixes It](/blog/netsuite-account-performance) and [10 NetSuite Saved Search Tips Every Finance Team Should Know](/blog/netsuite-saved-search-tips).
@@ -1996,7 +1997,7 @@ If you are working with REST Web Services using Token-Based Authentication, see 
 
 ## NetSuite RESTlet vs REST Web Services: Which Integration Approach to Use
 URL: https://suitepacific.com/blog/netsuite-restlet-vs-rest-web-services
-Published: 2026-08-07
+Published: 2026-08-07  |  Updated: 2026-08-14
 
 A RESTlet is a custom SuiteScript-based REST endpoint that you write, deploy, and maintain inside NetSuite. REST Web Services is NetSuite's built-in REST API that provides standard CRUD operations and SuiteQL access for all major record types without requiring any custom code.
 The two main ways to build REST-based integrations with NetSuite are RESTlets and REST Web Services. Both accept HTTP requests and return JSON. Both support Token-Based Authentication. But they work differently and are built for different problems. RESTlets are custom SuiteScript endpoints you write and maintain. REST Web Services is NetSuite's built-in REST API that requires no custom code.
@@ -2134,7 +2135,7 @@ A: Yes. RESTlets run as SuiteScript executions and consume governance units. A R
 
 ## NetSuite Roles and Permissions: Administrator Setup Guide
 URL: https://suitepacific.com/blog/netsuite-roles-permissions-guide
-Published: 2026-08-09
+Published: 2026-08-09  |  Updated: 2026-08-14
 
 Most NetSuite accounts have at least one person with more access than they should have. Not from malice, but from how permissions accumulate over time. An employee changes roles and their old permissions stay. A contractor finishes and their account gets deactivated, but the role template lives on for the next contractor. An administrator temporarily elevates access to debug something and never reverses it.
 Multiply that across two or three years of a growing team and you have an account where nobody is fully confident about who can do what. When an auditor or a new CFO asks, the honest answer is usually: we would need a few days to map it out.
@@ -2401,7 +2402,7 @@ These are starting points, not finished searches. The right criteria, columns, a
 
 ## NetSuite Saved Search Formula Examples: Date Math, Conditionals, and Text Formatting
 URL: https://suitepacific.com/blog/netsuite-saved-search-formula-examples
-Published: 2026-08-07
+Published: 2026-08-07  |  Updated: 2026-08-14
 
 A NetSuite saved search formula field is a calculated column type that accepts Oracle SQL expressions, added in the Results tab of any saved search to produce values that do not exist as standard fields on the record. Formula fields appear alongside standard columns, support summary functions, and work the same way in grouped and ungrouped searches.
 NetSuite saved searches include a formula field type that accepts Oracle SQL expressions. This lets you build calculated columns that do not exist as standard fields on the record: invoice age in days, a conditional label based on status, a formatted combination of two text fields, or a bucketed value for grouping. Formula fields appear alongside standard result columns and work in summary searches the same way standard fields do.
@@ -2502,7 +2503,7 @@ A: Both handle conditional logic. `DECODE` is an Oracle-specific function: `DECO
 
 ## 10 NetSuite Saved Search Tips Every Finance Team Should Know
 URL: https://suitepacific.com/blog/netsuite-saved-search-tips
-Published: 2026-06-10
+Published: 2026-06-10  |  Updated: 2026-08-14
 
 Saved searches are the most underused power tool in NetSuite. Most teams use them for basic filtering and stop there, but a well-built saved search can replace a custom report, feed a dashboard, trigger a workflow, or catch data errors before they become a closing-day fire drill.
  Quick answer 
@@ -2535,11 +2536,11 @@ Saved searches are also where we usually start when we take over an account post
 
 ## What to Do When a NetSuite Script Breaks After an Upgrade
 URL: https://suitepacific.com/blog/netsuite-script-broke-after-upgrade
-Published: 2026-08-13
+Published: 2026-08-13  |  Updated: 2026-08-14
 
 A release-related script failure is a SuiteScript customization that ran correctly before a NetSuite platform update but stops working or produces different output after the update, without any change made by the account administrator. These failures are distinct from bugs introduced by the developer because the script code itself has not changed.
 NetSuite pushes two major releases per year and several minor updates in between. Scripts that have run without issue for years can fail silently after an update with no warning to the account administrator. This guide walks through how to diagnose a release-related script failure, identify what changed, and restore function.
-## How release-related script failures typically appear
+## How Do Release-Related Script Failures Typically Appear?
 The most common symptoms:
 - A user event script stops firing on save, so records are missing expected data or automation steps are not completing
 - A scheduled script runs and exits with an error logged in the Script Execution Log with no visible impact on users
@@ -2607,12 +2608,12 @@ For ongoing coverage before each release, [post-go-live support](/netsuite-post-
 
 ## NetSuite Script Execution Governance Limit Exceeded: Causes, Diagnosis, and Fixes
 URL: https://suitepacific.com/blog/netsuite-script-governance-limit
-Published: 2026-07-06
+Published: 2026-07-06  |  Updated: 2026-08-14
 
 The "script execution governance limit exceeded" error is one of the most frustrating in NetSuite development because it doesn't always reproduce on demand, it often surfaces on the busiest transaction types, and the error message alone tells you almost nothing about what actually went wrong. This guide covers what governance actually is, every common cause of hitting the limit, how to diagnose the specific script and code path responsible, and the patterns that fix it permanently rather than just pushing the failure down the road.
  Quick answer 
  The NetSuite governance limit error occurs when a script execution consumes more governance units than its type-specific budget allows. Governance units are a rate-limiting mechanism on Oracle's shared infrastructure. Different operations cost different amounts: record.load() costs 10 units, search execution costs 5 units plus additional units per page of results, submitFields() costs 10 units. User Event and Client scripts have a 1,000-unit budget per execution; Scheduled scripts have 10,000 units. The error is difficult to reproduce consistently because governance consumption scales with data volume. A script that works in Sandbox on 500 records may fail in Production on 50,000. The fix is almost always one of three patterns: replacing record.load() inside a loop with search.lookupFields() for the specific fields needed, reducing record.save() calls by batching updates with submitFields(), or switching to a Map/Reduce script for large-volume operations. 
-## What governance limits actually are
+## What Are NetSuite Script Governance Limits?
 NetSuite runs on shared multi-tenant infrastructure. To prevent any one script from monopolizing server resources and degrading performance for other tenants, Oracle imposes governance unit budgets on each script execution. Different operations consume different numbers of units: a `record.load()` costs 10 units, a `search.create().run()` costs 5 units per search plus additional units for each page of results, a `record.submitFields()` costs 10 units.
 Each script type has a different total governance budget per execution:
 | Script Type | Governance Limit |
@@ -2628,7 +2629,7 @@ Each script type has a different total governance budget per execution:
 A single search with column projections uses a fraction of the budget a record-load loop consumes.
 The most consequential limits in practice are User Event scripts (1,000 units per record save) and Scheduled Scripts (10,000 units per execution, after which the script must yield or fail).
 When a script exceeds its governance budget, NetSuite throws `"Script Execution Governance Limit Exceeded"` and aborts the script at that point. For User Event scripts on `beforeSubmit`, this means the record save is rejected. For `afterSubmit`, the record saved but the script's remaining logic did not execute. For Scheduled scripts, the execution stops until the next scheduled run.
-## The six most common causes
+## What Are the Most Common Causes of Governance Errors?
 ### 1. Record loads inside a loop
 This is the single most common governance violation we see. It looks like this:
 ```javascript
@@ -2695,7 +2696,7 @@ The most common reason governance errors reach production is that scripts were t
 2. Run it during a simulated import or integration push, not just via manual record save
 3. Log governance consumption during the test run and establish headroom
 A script that consumes 800 of 1,000 units on a 50-line sales order will fail on your 120-line orders from enterprise customers.
-## Permanent fixes by scenario
+## What Are the Permanent Fixes for Each Governance Limit Scenario?
 **User Event hitting the limit on record load:**
 Migrate to `search.create()` with result columns instead of `record.load()` inside the script. If record modification is required, use `record.submitFields()`.
 **Scheduled Script hitting the limit processing large datasets:**
@@ -2706,7 +2707,7 @@ Move all data retrieval to `map()` and pass it forward to `reduce()` in the mapp
 Add `context.type` guards so the full script body only runs when relevant. For a script that should only run on manual edits, exclude `CSV_IMPORT`, `XEDIT`, `COPY`, and `INLINE_EDIT` unless each is tested and intentional.
 **Governance cost unclear:**
 Add `runtime.getCurrentScript().getRemainingUsage()` logging at key checkpoints in development and staging, establish a baseline, and ensure the production deployment has meaningful governance headroom (not running at 95% of the limit under normal conditions).
-## The governance limit and script architecture
+## How Do Governance Limits Shape Script Architecture?
 The governance limit is not a bug or an arbitrary restriction. It is a signal about script architecture. A well-designed script running on a single record should consume a small fraction of its governance budget. A script that regularly approaches or exceeds the limit almost always has one of the structural problems described above, and fixing the architecture, rather than trying to shave governance units one at a time, is what produces a script that runs reliably at any volume.
 The most durable fix for a governance-limit problem is almost always moving from Scheduled Scripts to Map/Reduce for high-volume work, and eliminating record loads and search calls from inside loops everywhere else.
 Governance limit errors in production scripts are one of the most common issues we resolve when taking over a customized NetSuite account. If you have scripts that are hitting governance limits, or scripts that behave differently under high load than they did in development, [book a consultation](/contact) and we'll identify the root cause and fix it. For related reading, see [SuiteScript Best Practices: Customizations That Survive the Next Upgrade](/blog/suitescript-best-practices), [NetSuite User Event Scripts vs Client Scripts: Which One to Use and When](/blog/netsuite-user-event-vs-client-script), and our [SuiteScript development service](/netsuite-suitescript-development).
@@ -2780,7 +2781,7 @@ For help reviewing or rewriting SuiteQL queries in your account, see SuitePacifi
 
 ## NetSuite SuiteQL: Guide for Administrators and Developers
 URL: https://suitepacific.com/blog/netsuite-suiteql-guide
-Published: 2026-08-09
+Published: 2026-08-09  |  Updated: 2026-08-14
 
 At some point, every NetSuite developer hits a Saved Search that should work but cannot. The data is in the system, the logic is right, but the Search UI cannot express what the query actually needs: a join across multiple record types, a GROUP BY aggregation that the Summary type cannot cleanly handle, or a result set that quietly stops at 4,000 records with no warning that it missed anything.
 SuiteQL is the answer to all three of those problems. It is a SQL-like query language built directly into NetSuite that gives developers and technically-minded administrators access to the full data model using familiar SQL syntax. If you have been working around saved search limitations with clumsy workarounds, this guide will make those workarounds unnecessary.
@@ -2918,7 +2919,7 @@ For related reading: [NetSuite SuiteQL sort change in 2026.2](/blog/netsuite-sui
 
 ## NetSuite 2026.2: The SuiteQL Default Sort Change That May Already Be Affecting Your Queries
 URL: https://suitepacific.com/blog/netsuite-suiteql-sort-change-2026-2
-Published: 2026-08-02
+Published: 2026-08-02  |  Updated: 2026-08-14
 
 SuiteQL is NetSuite's SQL-based query language that provides direct, structured access to the NetSuite data model, used in saved searches, REST API queries, and SuiteScript integrations. Without an explicit ORDER BY clause, SuiteQL results are returned in an implementation-defined order that can change between platform releases.
 If your SuiteQL queries against transaction records started returning results in a different order after the 2026.2 update, this is why.
@@ -3051,7 +3052,7 @@ For help configuring SuiteTax settings or resolving tax-related issues in your N
 
 ## How to Evaluate a NetSuite Post-Go-Live Support Partner
 URL: https://suitepacific.com/blog/netsuite-support-partner-evaluation
-Published: 2026-08-07
+Published: 2026-08-07  |  Updated: 2026-08-14
 
 Most NetSuite implementations include a hypercare period where the implementation partner is still actively available. When that ends, anywhere from 30 to 90 days post-go-live, you need a support arrangement that can handle the ongoing work: user questions, small configuration changes, the occasional script issue, and the twice-yearly release cycle that touches something in your account every six months.
 The support partner you choose for this phase is different from your implementation partner in important ways. Implementation is a project with a defined end. Support is an ongoing relationship where responsiveness, institutional knowledge, and cost predictability matter more than project management capability. Many teams sign with their implementation partner out of convenience without evaluating whether that firm is actually set up to do ongoing support well.
@@ -3113,7 +3114,7 @@ A: Oracle's support team handles confirmed bugs in the NetSuite platform, questi
 
 ## Red Flags When Evaluating a NetSuite Support Partner
 URL: https://suitepacific.com/blog/netsuite-support-partner-red-flags
-Published: 2026-08-13
+Published: 2026-08-13  |  Updated: 2026-08-14
 
 Companies looking for ongoing NetSuite support after an implementation often find themselves evaluating multiple partners with similar-sounding capabilities and pricing. The differences that matter are rarely visible on a website. They surface in how a partner is staffed, how they handle requests, and what happens when something breaks. Below are the red flags that appear most consistently in engagements that do not go well.
 ## The team that sells is not the team that delivers
@@ -3165,13 +3166,13 @@ SuitePacific provides [post-go-live NetSuite support](/netsuite-post-go-live-sup
 
 ## NetSuite Support and Managed Services Pricing Guide (2026)
 URL: https://suitepacific.com/blog/netsuite-support-pricing-guide
-Published: 2026-08-13
+Published: 2026-08-13  |  Updated: 2026-08-14
 
 NetSuite support and managed services pricing is one of the least transparent areas in the NetSuite consulting market. Most firms do not publish rates. Buyers go into initial conversations without a realistic expectation of cost, which makes it harder to evaluate whether a proposal is fair or to compare providers on an apples-to-apples basis.
 This guide covers what NetSuite post-go-live support and managed services actually cost in 2026, how the major pricing models work, what drives cost up or down within each model, and what to watch for when evaluating a proposal.
  Quick answer 
  NetSuite post-go-live support typically costs between $1,500 and $8,000 per month on a retainer model, depending on hours included and the mix of administration versus development work. Project-based engagements (health checks, optimizations, specific development) typically run $150 to $250 per hour for direct-access boutique firms and $200 to $350 per hour for large consulting practices. Oracle's own Advanced Customer Support (ACS) tiers start around $2,500 per month with significant limitations on scope and response time. 
-## The four service models and how they are priced
+## What Are the Four NetSuite Support Service Models?
 ### 1. Monthly retainer (most common for ongoing support)
 A retainer is a fixed monthly fee covering an agreed block of hours. The business gets a dedicated resource available each month; the consultant gets predictable revenue and deep context into the account over time.
 **Typical structure:** A fixed fee per month covering a defined number of hours. Additional hours beyond the block are billed at an agreed overage rate. Most retainers are month-to-month with no minimum commitment, though some firms require 3 to 6 month minimums.
@@ -3214,13 +3215,13 @@ The scope of what ACS covers is defined by Oracle's service catalog, not by what
 ### 4. Break-fix or on-demand (no retainer)
 Some firms will take project calls without an ongoing retainer, billing hourly as work comes in. This is common for one-off requests: a broken script, a single saved search, a role change.
 The trade-off is context: an on-demand consultant has no institutional knowledge of your account and charges time to understand the situation before fixing it. Over time, on-demand support from multiple sources accumulates inconsistent decisions in the account. For routine ongoing needs, a retainer relationship is almost always more cost-effective than on-demand billing once you factor in context overhead.
-## What to watch for in a support proposal
+## What Should You Watch For in a NetSuite Support Proposal?
 **Vague hours:** A retainer described as "up to X hours per month" or "a block of support hours" should specify exactly what work is in scope. Some firms include development time in their retainer scope; others include only administration and bill development separately at a different rate.
 **Offshore delivery at US-rate pricing:** Some large firms price retainers at US rates but deliver work through offshore teams operating US hours. This is legal and sometimes appropriate, but the delivery model affects turnaround time, communication, and accountability. Ask directly who will be doing the work.
 **Minimum commitments that exceed your needs:** A firm requiring a 12-month minimum retainer for a 10-user account with modest admin needs is pricing for their own convenience, not yours. Month-to-month is standard for boutique and mid-market NetSuite support firms.
 **Scope creep toward implementation pricing:** Some support firms quote a retainer rate, then bill development work at a separate higher rate that was not disclosed upfront. The retainer covers administration; everything else is extra. Understand the scope boundary before signing.
 **The account manager relay:** When the person you speak with during sales is not the person who will do the work, and when requests go through a ticket system rather than directly to the developer, context is lost at every step. This is typical of larger firms and some managed service providers. The resulting overhead is built into the rate.
-## Getting the right price for your actual needs
+## How Do You Get the Right Price for Your NetSuite Support Needs?
 The range above is wide because NetSuite support needs vary enormously. A 15-user account that went live 18 months ago and runs smoothly has fundamentally different needs from a 200-user multi-subsidiary account with active integrations and a developer-heavy customization backlog.
 Before evaluating a proposal:
 1. **Estimate your monthly request volume.** How many configuration requests, user changes, and development asks do you typically generate in a month? If you don't have a clear sense, track informally for 30 days before committing to a retainer.
@@ -3489,7 +3490,7 @@ For related reading: [5 Common Workflow Automation Mistakes](/blog/workflow-auto
 
 ## Signs Your NetSuite Implementation Failed (and What to Do About It)
 URL: https://suitepacific.com/blog/signs-netsuite-implementation-failed
-Published: 2026-08-13
+Published: 2026-08-13  |  Updated: 2026-08-14
 
 Not every NetSuite go-live produces a working account. Implementation timelines compress, scope gets cut at the end, partners disengage before everything functions correctly, and businesses end up live on an account that was never quite right. The issue is that a partially functioning NetSuite account looks like a working NetSuite account from the outside. Users log in, records get created, and orders move through. But the underlying problems keep surfacing: data that doesn't match, manual steps nobody can explain the origin of, and reports that require spreadsheet adjustments before anyone trusts them.
 Recognizing the specific patterns that indicate a failed implementation, rather than normal post-go-live friction, is the first step toward addressing the right problem.
@@ -3517,7 +3518,7 @@ If your team has been aware of data quality issues since go-live and has not had
 ## 7. Go-live happened under pressure, not when the account was ready
 Many of the patterns above originate from a single root cause: the go-live date was set before the implementation was complete, and the business and implementation partner agreed to proceed anyway. This happens for legitimate reasons: a fiscal year boundary, a contractual deadline, a business reason to be on NetSuite by a specific date.
 When go-live happens before the account is ready, the outstanding configuration work becomes post-go-live support work, and it often never gets done. The business assumes the partner will come back to finish it; the partner considers the engagement closed. The gap between what was built and what was needed stays open indefinitely.
-## What to do if you recognize these patterns
+## What Should You Do If You Recognize These Patterns?
 The appropriate response depends on how many of the patterns above apply and how severely they affect operations.
 **If one or two patterns apply:** Targeted remediation of the specific configuration issues is usually sufficient. This does not necessarily require a full account audit, though it helps to understand the scope of what needs to change before making changes.
 **If three or more patterns apply:** A structured health check, a systematic review of the account's current state across all major configuration areas, is the right starting point before any remediation begins. This gives you a written picture of what was actually built and what specifically needs to change, rather than discovering problems iteratively as you try to fix individual issues.
@@ -3669,7 +3670,7 @@ A: NetSuite gives each script execution a budget of governance units. Scheduled 
 
 ## 5 Common NetSuite Workflow Automation Mistakes (and How to Fix Them)
 URL: https://suitepacific.com/blog/workflow-automation-mistakes
-Published: 2026-06-25
+Published: 2026-06-25  |  Updated: 2026-08-14
 
 SuiteFlow is NetSuite's built-in workflow automation engine that lets administrators create no-code business process automations on any record type, triggered by field changes, form submissions, or scheduled intervals. Workflows run on NetSuite's servers and fire across all save paths, including CSV imports and API calls, which is both their strength and the source of most misconfiguration problems.
 SuiteFlow makes it easy to build a workflow and easy to build one that breaks in ways that are hard to diagnose later.

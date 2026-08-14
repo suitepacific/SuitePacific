@@ -2,6 +2,7 @@
 title: "How to Choose a NetSuite Consulting Partner"
 description: "What to look for when choosing a NetSuite consulting partner: the difference between implementation and post-go-live partners, the certifications that matter, pricing model trade-offs, and the questions that reveal whether a firm is actually equipped to support your account."
 date: "2026-08-12"
+updated: "2026-08-14"
 tags: ["Post-Go-Live", "NetSuite", "Administration"]
 calloutText: "Looking for a post-go-live NetSuite consulting partner? Tell us about your account."
 ---

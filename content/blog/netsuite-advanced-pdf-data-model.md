@@ -2,8 +2,11 @@
 title: "NetSuite Advanced PDF Templates: How to Access Transaction Data in FreeMarker"
 description: "How to navigate the FreeMarker data model in NetSuite Advanced PDF templates: accessing header fields, line items, addresses, entity data, and amounts, with examples for the most common patterns."
 date: "2026-08-07"
+updated: "2026-08-14"
 tags: ["FreeMarker", "PDF Templates", "Development", "Admin"]
 ---
+
+The NetSuite Advanced PDF data model is the XML structure that NetSuite builds from a transaction record and passes to the FreeMarker template engine at print time. It determines which fields, sublists, and related record values are available inside the template; knowing how to navigate it is the difference between a template that fills in values reliably and one that produces blank fields.
 
 NetSuite's Advanced PDF/HTML templates use FreeMarker, a Java-based template language, to generate printed documents from transaction data. The template receives a data model containing the record and its related objects. Knowing how to navigate that data model is the difference between a template that fills in values reliably and one that produces blank fields or FreeMarker errors.
 

@@ -2,6 +2,7 @@
 title: "NetSuite Month-End Close Checklist: What Most Teams Miss"
 description: "A practical NetSuite month-end close checklist covering the items specific to NetSuite that fall through the cracks: period locking, subledger reconciliation, unposted transactions, currency revaluation, and more."
 date: "2026-07-01"
+updated: "2026-08-14"
 tags: ["NetSuite", "Reporting"]
 ---
 

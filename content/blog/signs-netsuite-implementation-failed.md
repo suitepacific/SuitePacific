@@ -2,6 +2,7 @@
 title: "Signs Your NetSuite Implementation Failed (and What to Do About It)"
 description: "Seven patterns that distinguish a recoverable NetSuite implementation from one that needs fundamental remediation, with guidance on what each pattern typically requires to fix."
 date: "2026-08-13"
+updated: "2026-08-14"
 tags: ["Implementation", "Account Optimization"]
 ---
 
@@ -58,7 +59,7 @@ Many of the patterns above originate from a single root cause: the go-live date 
 
 When go-live happens before the account is ready, the outstanding configuration work becomes post-go-live support work, and it often never gets done. The business assumes the partner will come back to finish it; the partner considers the engagement closed. The gap between what was built and what was needed stays open indefinitely.
 
-## What to do if you recognize these patterns
+## What Should You Do If You Recognize These Patterns?
 
 The appropriate response depends on how many of the patterns above apply and how severely they affect operations.
 

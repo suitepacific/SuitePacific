@@ -2,6 +2,7 @@
 title: "NetSuite FSM Breaking Change: How to Replace readonly Resource-Level Rules Before August 11"
 description: "The readonly property at the FSM resource level is being retired in the August 11 update. After that date, any readonly rules you have there will silently stop working. Here is how to identify them and replace them before Production is affected."
 date: "2026-08-01"
+updated: "2026-08-14"
 tags: ["Field Service Management", "Administration", "Bundle Updates", "Configuration"]
 ---
 

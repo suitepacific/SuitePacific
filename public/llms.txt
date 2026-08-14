@@ -6,7 +6,7 @@
 
 ## Who we are
 
-SuitePacific is a small, senior-level team. Our lead developer holds Oracle NetSuite's SuiteCloud Developer II and Administrator Professional certifications. We work directly with clients — no account-manager layer, no offshore handoffs.
+SuitePacific is a small, senior-level team. Our lead developer holds Oracle NetSuite's SuiteCloud Developer II and Administrator Professional certifications. We work directly with clients: no account-manager layer, no offshore handoffs.
 
 ## What we do
 
@@ -42,7 +42,7 @@ A: No. SuitePacific works exclusively with companies that are already live on Ne
 A: Yes. We specialize in post-go-live support for SMBs that need a responsive technical team without the overhead of a large consulting firm.
 
 **Q: How is SuitePacific different from a NetSuite implementation partner?**
-A: Implementation partners build the initial NetSuite account and typically disengage after go-live. SuitePacific takes over after that point — ongoing development, fixes, automation, and optimization as the business evolves.
+A: Implementation partners build the initial NetSuite account and typically disengage after go-live. SuitePacific takes over after that point: ongoing development, fixes, automation, and optimization as the business evolves.
 
 **Q: Can SuitePacific migrate integrations from NLAuth to OAuth 2.0?**
 A: Yes. With NLAuth being retired in NetSuite 2027.1, we help clients audit existing integrations and rebuild them for OAuth 2.0.
@@ -72,7 +72,7 @@ A: Simple scripts (field logic, basic validations) typically take 1-3 days from 
 A: Yes. We review existing code as part of onboarding. If prior customizations have issues, we document them before making changes.
 
 **Q: What is the difference between a User Event script and a Client script in NetSuite?**
-A: User Event scripts run on the server when a record is saved — they fire regardless of how the save happens (UI, CSV import, SuiteScript). Client scripts run in the browser during UI interaction and respond to field changes, saves, and page load. Use User Event scripts for business logic that must run on every save; use Client scripts for real-time UI behavior.
+A: User Event scripts run on the server when a record is saved; they fire regardless of how the save happens (UI, CSV import, SuiteScript). Client scripts run in the browser during UI interaction and respond to field changes, saves, and page load. Use User Event scripts for business logic that must run on every save; use Client scripts for real-time UI behavior.
 
 **Q: Does SuitePacific handle NetSuite workflow automation?**
 A: Yes. We build and maintain SuiteFlow workflows for approval routing, email notifications, status transitions, and field updates. We also build SuiteScript automations for cases where SuiteFlow's limits make scripting the better choice.
@@ -81,7 +81,7 @@ A: Yes. We build and maintain SuiteFlow workflows for approval routing, email no
 A: Yes. Account performance issues typically stem from unindexed saved searches, scripts with inefficient record loads, or too many active workflows with broad entry conditions. We audit and fix these.
 
 **Q: What should I do if my NetSuite scripts break after a release?**
-A: First, identify which release just went live and check the release notes for changes affecting the record types or APIs your scripts use. Test in sandbox if possible. If scripts are in production and broken, contact your developer immediately — governance limit spikes and unexpected exits are the most common release-related failures.
+A: First, identify which release just went live and check the release notes for changes affecting the record types or APIs your scripts use. Test in sandbox if possible. If scripts are in production and broken, contact your developer immediately; governance limit spikes and unexpected exits are the most common release-related failures.
 
 ## Key service pages
 
@@ -132,23 +132,23 @@ A: First, identify which release just went live and check the release notes for 
 
 ## Products
 
-- [SuiteCompare](https://suitepacific.com/suitecompare): SuiteScript comparison tool — diff scripts across NetSuite environments with AI-powered analysis
-- [Import Doctor](https://suitepacific.com/importDetector): CSV import validator — catch reference key and required-field errors before they cause failed imports
+- [SuiteCompare](https://suitepacific.com/suitecompare): SuiteScript comparison tool: diff scripts across NetSuite environments with AI-powered analysis
+- [Import Doctor](https://suitepacific.com/importDetector): CSV import validator: catch reference key and required-field errors before they cause failed imports
 - [NetSuite Care Plans](https://suitepacific.com/netsuite-care): Fixed-price monthly support plans for ongoing NetSuite technical needs; Care ($799/mo, 10 hrs), Care Plus ($1,499/mo, 20 hrs), Care Pro ($2,499/mo, 35 hrs); covers SuiteScript, workflows, PDFs, saved searches, troubleshooting, and technical guidance; 3-month minimum then month-to-month
 
 ## Blog posts
 
 ### SuiteScript and Development
-- [NetSuite User Event Scripts vs Client Scripts: Which One to Use and When](https://suitepacific.com/blog/netsuite-user-event-vs-client-script): User Event scripts run on the server on every save path (UI, CSV import, API); Client scripts run in the browser only during UI interaction — putting business logic in the wrong type is the most common cause of intermittent NetSuite customization failures.
+- [NetSuite User Event Scripts vs Client Scripts: Which One to Use and When](https://suitepacific.com/blog/netsuite-user-event-vs-client-script): User Event scripts run on the server on every save path (UI, CSV import, API); Client scripts run in the browser only during UI interaction; putting business logic in the wrong type is the most common cause of intermittent NetSuite customization failures.
 - [SuiteScript Best Practices: Customizations That Survive the Next Upgrade](https://suitepacific.com/blog/suitescript-best-practices): Eight practices that prevent the most common SuiteScript production failures, including Map/Reduce for bulk jobs, avoiding hard-coded internal IDs, error handling for external calls, and keeping configuration out of code.
 - [NetSuite Map/Reduce Script Guide: When to Use It and How to Structure It](https://suitepacific.com/blog/netsuite-map-reduce-script-guide): Map/Reduce distributes work across parallel workers so a job processing 10,000 records in 5-8 minutes that would take a Scheduled Script 45 minutes; covers all five stages, governance limits, and a complete working example.
 - [NetSuite Script Governance Limits: What They Are and How to Stay Under Them](https://suitepacific.com/blog/netsuite-script-governance-limit): Each SuiteScript execution gets a fixed governance budget (1,000 units for most scripts); explains what consumes units, how to monitor usage, and how to restructure scripts that regularly hit limits.
-- [NetSuite Workflow vs SuiteScript: How to Choose Between Them](https://suitepacific.com/blog/netsuite-workflow-vs-suitescript): SuiteFlow is for sequential business processes non-developers need to maintain; SuiteScript is for guaranteed enforcement on all save paths, computation, and bulk processing — practical decision guide organized by scenario.
+- [NetSuite Workflow vs SuiteScript: How to Choose Between Them](https://suitepacific.com/blog/netsuite-workflow-vs-suitescript): SuiteFlow is for sequential business processes non-developers need to maintain; SuiteScript is for guaranteed enforcement on all save paths, computation, and bulk processing; practical decision guide organized by scenario.
 - [Advanced PDF Templates in NetSuite: 5 Mistakes That Break in Production](https://suitepacific.com/blog/advanced-pdf-template-mistakes): Five FreeMarker mistakes that render correctly in sandbox but fail in production, including currency formatting, null field access, and conditional section logic.
 - [NetSuite Advanced PDF Templates: FreeMarker Guide for Developers](https://suitepacific.com/blog/netsuite-freemarker-pdf-guide): Complete FreeMarker syntax reference for NetSuite Advanced PDF templates, covering variables, conditionals, loops, date/number formatting, and sublist iteration.
 - [NetSuite Advanced PDF Templates: How to Access Transaction Data in FreeMarker](https://suitepacific.com/blog/netsuite-advanced-pdf-data-model): How NetSuite exposes transaction data to FreeMarker templates, including the record object model, sublist access patterns, and how to reach related record fields.
 - [NetSuite Custom GL Plugin: What It Can and Cannot Do](https://suitepacific.com/blog/netsuite-custom-gl-plugin-guide): Custom GL plugins let developers override the default general ledger impact of transactions; covers when to use them, hard limits (cannot change period or subsidiary), and common use cases.
-- [NetSuite RESTlet vs REST Web Services: Which Integration Approach to Use](https://suitepacific.com/blog/netsuite-restlet-vs-rest-web-services): RESTlets are custom SuiteScript endpoints with full record access; REST Web Services are Oracle's native CRUD API — decision guide covering authentication, performance, and which fits each integration pattern.
+- [NetSuite RESTlet vs REST Web Services: Which Integration Approach to Use](https://suitepacific.com/blog/netsuite-restlet-vs-rest-web-services): RESTlets are custom SuiteScript endpoints with full record access; REST Web Services are Oracle's native CRUD API; decision guide covering authentication, performance, and which fits each integration pattern.
 - [NetSuite SuiteQL: Guide for Administrators and Developers](https://suitepacific.com/blog/netsuite-suiteql-guide): SuiteQL is NetSuite's SQL-like query language for SuiteAnalytics; covers syntax, joins, filtering, date functions, and how it differs from saved search formula fields.
 - [NetSuite REST Batch and Sequential Requests: What Changed in 2026.2](https://suitepacific.com/blog/netsuite-rest-batch-sequential): NetSuite 2026.2 changed how REST batch and sequential requests handle errors and response ordering; covers what broke, what the new behavior is, and how to update integrations.
 - [NetSuite SuiteQL Bound Parameters: What Changed and Why It Matters](https://suitepacific.com/blog/netsuite-suiteql-bound-parameters): NetSuite began enforcing bound parameters in SuiteQL queries to prevent injection; covers the new syntax, which APIs are affected, and how to migrate existing queries.
@@ -171,7 +171,7 @@ A: First, identify which release just went live and check the release notes for 
 
 ### Account Optimization and Post-Go-Live
 - [NetSuite Account Optimization: What to Audit and Fix on a Live Account](https://suitepacific.com/blog/netsuite-optimization): What to audit when a live NetSuite account has accumulated technical debt: unindexed searches, overly broad workflow entry conditions, orphaned script deployments, and unused custom fields.
-- [Why Your NetSuite Account Feels Slow and What Actually Fixes It](https://suitepacific.com/blog/netsuite-account-performance): The three most common causes of NetSuite performance problems — unindexed saved searches, scripts with record loads in loops, and workflows with broad entry conditions — and how to diagnose and fix each.
+- [Why Your NetSuite Account Feels Slow and What Actually Fixes It](https://suitepacific.com/blog/netsuite-account-performance): The three most common causes of NetSuite performance problems: unindexed saved searches, scripts with record loads in loops, and workflows with broad entry conditions; and how to diagnose and fix each.
 - [NetSuite Post-Go-Live Checklist: What to Prioritize in Your First 90 Days](https://suitepacific.com/blog/netsuite-post-go-live-checklist): Seven high-priority tasks for the first 90 days after NetSuite go-live, covering documentation handoff, role audits, exception saved searches, dashboards, and what to track during the first period close.
 - [8 Signs Your NetSuite Support Isn't Working](https://suitepacific.com/blog/signs-netsuite-support-not-working): Eight indicators that a NetSuite support arrangement has broken down, including slow response times, repeated fixes for the same issue, and customizations that break after releases.
 - [NetSuite Month-End Close Checklist: What Most Teams Miss](https://suitepacific.com/blog/netsuite-month-end-close-checklist): Month-end close steps that NetSuite teams commonly skip or do in the wrong order, including period lock timing, intercompany elimination, and deferred revenue posting verification.
@@ -180,7 +180,7 @@ A: First, identify which release just went live and check the release notes for 
 ### Consulting and Costs
 - [How to Choose a NetSuite Consulting Partner](https://suitepacific.com/blog/how-to-choose-netsuite-consulting-partner): Evaluation criteria for selecting a NetSuite consulting partner, including certification level, post-go-live specialization, response time expectations, and contract structure.
 - [How Much Does NetSuite Development Cost? A Realistic Guide](https://suitepacific.com/blog/netsuite-development-cost): Realistic cost ranges for common NetSuite development work, including SuiteScript customizations, workflow automation, integrations, and ongoing support retainers.
-- [NetSuite Implementation Partner vs. Post-Go-Live Support](https://suitepacific.com/blog/netsuite-implementation-partner-vs-managed-support): Implementation partners configure the initial NetSuite account; post-go-live support handles the ongoing development, fixes, and optimization after the implementation is complete — when you need each.
+- [NetSuite Implementation Partner vs. Post-Go-Live Support](https://suitepacific.com/blog/netsuite-implementation-partner-vs-managed-support): Implementation partners configure the initial NetSuite account; post-go-live support handles the ongoing development, fixes, and optimization after the implementation is complete; when you need each.
 - [Red Flags When Evaluating a NetSuite Support Partner](https://suitepacific.com/blog/netsuite-support-partner-red-flags): Warning signs when evaluating a NetSuite support partner, including vague SLAs, offshore handoffs, lack of sandbox-first policy, and difficulty getting direct access to the developer doing the work.
 - [What to Do When a NetSuite Script Breaks After an Upgrade](https://suitepacific.com/blog/netsuite-script-broke-after-upgrade): Diagnostic steps for SuiteScript failures that appear after a NetSuite release, including checking release notes for API changes, testing in sandbox, and identifying governance-related failures.
 
@@ -216,5 +216,11 @@ A: First, identify which release just went live and check the release notes for 
 ## Licensing
 
 Content on this site is copyright SuitePacific, LLC. Blog posts and resource guides may be cited for informational purposes under RSL 1.0 (Reference Source License). Do not reproduce full articles without attribution.
+
+RSL-Version: 1.0
+RSL-Policy: citation-allowed
+RSL-Attribution: required
+RSL-Commercial: prohibited
+RSL-Training: prohibited
 
 Last updated: 2026-08-14

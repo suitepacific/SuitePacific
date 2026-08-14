@@ -2,6 +2,7 @@
 title: "10 NetSuite Saved Search Tips Every Finance Team Should Know"
 description: "Practical, easy-to-apply NetSuite saved search techniques that help finance and operations teams get faster, more accurate reporting without waiting on IT."
 date: "2026-06-10"
+updated: "2026-08-14"
 tags: ["Saved Searches", "Reporting"]
 ---
 

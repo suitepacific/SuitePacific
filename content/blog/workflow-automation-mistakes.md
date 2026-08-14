@@ -2,6 +2,7 @@
 title: "5 Common NetSuite Workflow Automation Mistakes (and How to Fix Them)"
 description: "The recurring workflow design mistakes that cause NetSuite SuiteFlow automations to misfire, double-trigger, or quietly stop working, and how to fix each one."
 date: "2026-06-25"
+updated: "2026-08-14"
 tags: ["Workflow Automation", "SuiteFlow"]
 ---
 

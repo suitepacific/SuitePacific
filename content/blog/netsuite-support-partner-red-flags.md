@@ -2,6 +2,7 @@
 title: "Red Flags When Evaluating a NetSuite Support Partner"
 description: "What to watch for when comparing NetSuite consulting and support firms: staffing models, response time structures, contract terms, and technical qualification signals that separate capable partners from the rest."
 date: "2026-08-13"
+updated: "2026-08-14"
 tags: ["netsuite", "consulting", "netsuite-support", "vendor-evaluation"]
 ---
 

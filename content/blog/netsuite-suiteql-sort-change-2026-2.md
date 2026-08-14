@@ -2,6 +2,7 @@
 title: "NetSuite 2026.2: The SuiteQL Default Sort Change That May Already Be Affecting Your Queries"
 description: "In 2026.2, NetSuite changed the default sort order for SuiteQL transaction queries from tranDisplayName to tranDate. If your queries do not have an explicit ORDER BY clause, they may be returning results in a different order than before."
 date: "2026-08-02"
+updated: "2026-08-14"
 tags: ["SuiteQL", "Release Notes", "SuiteScript", "2026.2"]
 ---
 

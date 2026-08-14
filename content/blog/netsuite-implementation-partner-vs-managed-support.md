@@ -2,6 +2,7 @@
 title: "NetSuite Implementation Partner vs. Post-Go-Live Support"
 description: "The difference between a NetSuite implementation partner and a post-go-live support provider, what each covers, and how to know which one you need right now."
 date: "2026-08-09"
+updated: "2026-08-14"
 tags: ["NetSuite", "Admin", "Post-Go-Live"]
 ---
 

@@ -2,6 +2,7 @@
 title: "NetSuite Roles and Permissions: Administrator Setup Guide"
 description: "NetSuite roles explained: the five permission levels, how to create custom roles, and design principles that keep access structured as your team grows."
 date: "2026-08-09"
+updated: "2026-08-14"
 tags: ["Admin", "NetSuite", "Security"]
 ---
 

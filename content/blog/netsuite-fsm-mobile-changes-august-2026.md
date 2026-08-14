@@ -2,6 +2,7 @@
 title: "What NetSuite FSM Technicians Will See After the August 11 Update"
 description: "The FSM 2026.07.1 bundle update changes the mobile app interface that field technicians use every day. Here is exactly what is changing, what it looks like, and how to brief your team before August 11."
 date: "2026-08-01"
+updated: "2026-08-14"
 tags: ["Field Service Management", "Mobile", "Bundle Updates"]
 ---
 

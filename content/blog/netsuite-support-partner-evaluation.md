@@ -2,6 +2,7 @@
 title: "How to Evaluate a NetSuite Post-Go-Live Support Partner"
 description: "What to look for when choosing a NetSuite support partner after go-live: response time SLAs, capability tiers, pricing models, and the questions to ask before signing."
 date: "2026-08-07"
+updated: "2026-08-14"
 tags: ["Post-Go-Live", "NetSuite"]
 ---
 

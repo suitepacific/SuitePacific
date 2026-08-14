@@ -2,6 +2,7 @@
 title: "NetSuite FSM nxc_now() Migration Guide: What to Review Before August 11"
 description: "Oracle will automatically migrate your nxc_now() expressions when the FSM 2026.07.1 bundle updates on August 11. But automatic does not mean correct. Here is what the migration does, what it misses, and what you need to review in Sandbox before Production is affected."
 date: "2026-08-01"
+updated: "2026-08-14"
 tags: ["Field Service Management", "Administration", "Bundle Updates", "Configuration"]
 ---
 

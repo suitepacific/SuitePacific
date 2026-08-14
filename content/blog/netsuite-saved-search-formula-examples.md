@@ -2,6 +2,7 @@
 title: "NetSuite Saved Search Formula Examples: Date Math, Conditionals, and Text Formatting"
 description: "Common saved search formula patterns for NetSuite: calculating age in days, CASE WHEN conditionals, null handling with NVL, date formatting, and building bucketed results columns."
 date: "2026-08-07"
+updated: "2026-08-14"
 tags: ["Saved Searches", "Reporting", "Admin", "NetSuite Tips"]
 ---
 

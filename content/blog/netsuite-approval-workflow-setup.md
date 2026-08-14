@@ -2,6 +2,7 @@
 title: "How to Build an Approval Workflow in NetSuite SuiteFlow"
 description: "A practical guide to building approval workflows in NetSuite using SuiteFlow: how to set up states, transitions, approval buttons, role restrictions, and email notifications."
 date: "2026-08-07"
+updated: "2026-08-14"
 tags: ["Workflow Automation", "Development", "Admin"]
 ---
 

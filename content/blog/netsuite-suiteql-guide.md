@@ -2,6 +2,7 @@
 title: "NetSuite SuiteQL: Guide for Administrators and Developers"
 description: "SuiteQL explained: how it differs from Saved Searches, key SQL syntax differences, how to run queries from SuiteScript and the REST API, and common patterns."
 date: "2026-08-09"
+updated: "2026-08-14"
 tags: ["SuiteQL", "SuiteScript", "Reporting"]
 ---
 

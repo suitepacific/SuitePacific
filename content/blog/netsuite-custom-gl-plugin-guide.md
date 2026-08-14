@@ -2,6 +2,7 @@
 title: "NetSuite Custom GL Plugin: What It Can and Cannot Do"
 description: "What the NetSuite Custom GL Plugin can and cannot do, the transaction types where it does not execute, and the design principles for using it correctly."
 date: "2026-08-09"
+updated: "2026-08-14"
 tags: ["SuiteScript", "Accounting", "Development"]
 ---
 

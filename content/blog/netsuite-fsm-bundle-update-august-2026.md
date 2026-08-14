@@ -2,6 +2,7 @@
 title: "NetSuite FSM Bundle Update (August 11, 2026): What Is Changing and What to Test in Sandbox"
 description: "NetSuite Field Service Management version 2026.07.1 reaches Production on August 11. Here is exactly what is changing, what requires action before the update, and what to validate in Sandbox to protect your live operation."
 date: "2026-07-27"
+updated: "2026-08-14"
 tags: ["Field Service Management", "Administration", "Bundle Updates", "Sandbox Testing"]
 ---
 

@@ -2,6 +2,7 @@
 title: "What to Do When a NetSuite Script Breaks After an Upgrade"
 description: "Step-by-step guide to diagnosing and fixing NetSuite scripts that break after a release update, including how to find the error, identify the cause, and test the fix."
 date: "2026-08-13"
+updated: "2026-08-14"
 tags: ["netsuite", "suitescript", "troubleshooting", "netsuite-release"]
 ---
 
@@ -9,7 +10,7 @@ A release-related script failure is a SuiteScript customization that ran correct
 
 NetSuite pushes two major releases per year and several minor updates in between. Scripts that have run without issue for years can fail silently after an update with no warning to the account administrator. This guide walks through how to diagnose a release-related script failure, identify what changed, and restore function.
 
-## How release-related script failures typically appear
+## How Do Release-Related Script Failures Typically Appear?
 
 The most common symptoms:
 
