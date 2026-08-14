@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CheckCircle2, ShieldCheck, Clock, Star } from "lucide-react";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
@@ -64,6 +65,21 @@ export default function ContactPage() {
                 </div>
               ))}
             </div>
+
+            <Link
+              href="https://clutch.co/profile/suitepacific"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-4 py-2 text-sm text-brand-700 shadow-sm hover:border-brand-200 transition-colors"
+            >
+              <span className="flex items-center gap-0.5 text-amber-400">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-3.5 w-3.5 fill-current" />
+                ))}
+              </span>
+              <span className="font-semibold text-brand-900">5.0</span>
+              <span className="text-brand-400">&middot; 1 verified review on Clutch</span>
+            </Link>
 
             <div className="mt-8 pt-6 border-t border-brand-50">
               <p className="text-sm text-brand-400">

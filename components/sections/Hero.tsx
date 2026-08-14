@@ -1,4 +1,5 @@
-import { CheckCircle2 } from "lucide-react";
+import Link from "next/link";
+import { CheckCircle2, Star } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { DashboardMockup } from "@/components/graphics/DashboardMockup";
@@ -31,7 +32,22 @@ export function Hero() {
 
           <p className="mt-4 text-sm text-brand-400">{CTA_SUPPORT_LINE}</p>
 
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <Link
+            href="https://clutch.co/profile/suitepacific"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-4 py-2 text-sm text-brand-700 shadow-sm hover:border-brand-200 transition-colors"
+          >
+            <span className="flex items-center gap-0.5 text-amber-400">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="h-3.5 w-3.5 fill-current" />
+              ))}
+            </span>
+            <span className="font-semibold text-brand-900">5.0</span>
+            <span className="text-brand-400">&middot; 1 verified review on Clutch</span>
+          </Link>
+
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
             {TRUST_BADGES.map((badge) => (
               <div key={badge} className="flex items-center gap-2 text-sm text-brand-600">
                 <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
