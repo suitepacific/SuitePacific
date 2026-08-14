@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/Hero";
+import { SocialProof } from "@/components/sections/SocialProof";
 import { PainPoints } from "@/components/sections/PainPoints";
 import { Timeline } from "@/components/sections/Timeline";
 import { Services } from "@/components/sections/Services";
@@ -36,6 +37,7 @@ export default async function Home() {
         isShort
       />
       <Hero />
+      <SocialProof />
       <PainPoints />
       <Timeline />
       <Services />

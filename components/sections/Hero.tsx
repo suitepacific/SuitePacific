@@ -44,7 +44,7 @@ export function Hero() {
               ))}
             </span>
             <span className="font-semibold text-brand-900">5.0</span>
-            <span className="text-brand-400">&middot; 1 verified review on Clutch</span>
+            <span className="text-brand-400">&middot; Reviewed on Clutch</span>
           </Link>
 
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
