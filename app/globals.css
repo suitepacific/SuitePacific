@@ -68,6 +68,12 @@ body {
   color: var(--foreground);
 }
 
+/* Infinite logo marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 /* Shiki syntax-highlighted code blocks */
 .shiki-wrap {
   margin: 1.5rem 0;
