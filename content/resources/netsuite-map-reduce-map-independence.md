@@ -4,10 +4,16 @@ description: "The power of Map/Reduce comes from parallel execution. If your map
 category: "Map/Reduce"
 tags: ["Map/Reduce", "SuiteScript", "Performance"]
 publishedAt: "2026-07-14"
+updatedAt: "2026-08-15"
 linkedinDay: 14
 ---
 
-## The core design principle of map()
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Each map() function invocation in a NetSuite Map/Reduce script runs in its own isolated context. The Map/Reduce framework may run dozens of map() calls in parallel across separate queues. Global variables set in one map() invocation are not visible in another, and the order of map() executions is not guaranteed. map() must be designed to process a single input item independently and completely: read the value, transform it, and either write the result to a record or pass it to reduce() via Reduce.write(). Any logic that accumulates results across multiple items, tracks running totals, or assumes execution order belongs in reduce(), not map().</p>
+</div>
+
+## Why Must Each map() Execution Be Independent?
 
 SuiteScript Map/Reduce distributes work by running `map()` across multiple processors simultaneously. Each `map()` invocation receives one input item and processes it independently. This is what makes Map/Reduce faster than a Scheduled Script running the same work sequentially.
 
@@ -133,7 +139,7 @@ Think of `map()` as giving 100 workers one box each. Each worker opens their box
 
 The moment workers need to coordinate, "what did you find in your box?", the work has become a `reduce()` problem. That coordination is exactly what `reduce()` is designed for, with the guarantee that all related items arrive together.
 
-## The rule
+## How Do You Design a Correct map() Function?
 
 Design each `map()` invocation to process one item and write its result forward via `context.write()`. Aggregation, combining, and state that spans multiple records belongs in `reduce()`.
 

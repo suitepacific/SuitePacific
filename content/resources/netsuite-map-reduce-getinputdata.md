@@ -4,10 +4,16 @@ description: "getInputData() is the most misunderstood stage in SuiteScript Map/
 category: "Map/Reduce"
 tags: ["Map/Reduce", "SuiteScript", "Performance"]
 publishedAt: "2026-07-13"
+updatedAt: "2026-08-15"
 linkedinDay: 13
 ---
 
-## The misunderstood stage
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The getInputData() function in a NetSuite Map/Reduce script defines the work to be done, not how to do it. It should return a data source object: a saved search, a SuiteQL query, or a plain array. The Map/Reduce framework reads this data source and distributes each item as an input key-value pair to parallel map() invocations. getInputData() runs once, synchronously, in a single thread before any parallelism begins. Placing record loads, business logic, or data processing inside getInputData() defeats the purpose of the framework: the entire processing cost runs in that one synchronous call rather than being distributed across parallel map() executions.</p>
+</div>
+
+## What Is the Purpose of getInputData() in Map/Reduce?
 
 Most Map/Reduce documentation focuses on the `map()` and `reduce()` stages, where the actual processing happens. But `getInputData()` is where the most consequential design decisions are made, and where the most common performance mistakes occur.
 
@@ -125,7 +131,7 @@ The manager's job is to write the list, not to start working through it before h
 
 When `getInputData()` pre-executes the search, it is as if the manager processes half the orders before any workers have arrived. The work that was supposed to be distributed has already been done sequentially.
 
-## The rule
+## What Should getInputData() Never Do?
 
 `getInputData()` should return one of:
 - A `Search` object, `search.load()` or `search.create()`

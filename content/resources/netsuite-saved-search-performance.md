@@ -4,10 +4,16 @@ description: "Saved Searches rarely become slow all at once. They accumulate for
 category: "Saved Searches"
 tags: ["Saved Searches", "Performance", "SuiteAnalytics"]
 publishedAt: "2026-07-12"
+updatedAt: "2026-08-15"
 linkedinDay: 12
 ---
 
-## The gradual slowdown
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite Saved Search performance degrades as formula columns, joined fields, and summary calculations accumulate over time. The three most expensive column types are formula columns that evaluate per row, joined fields that pull data from a related record type, and summary functions (COUNT, SUM, GROUP BY) applied across large result sets. Diagnose a slow search by removing columns one at a time and measuring execution time to identify which column is responsible. If the search cannot be made fast enough through column reduction, consider moving the reporting use case to a SuiteAnalytics Workbook, which uses a separate query engine optimized for aggregations.</p>
+</div>
+
+## Why Do Saved Searches Get Slower Over Time?
 
 One of the most common month-end complaints in NetSuite accounts is: "This report used to run in a few seconds. Now it takes forever."
 
@@ -93,7 +99,7 @@ If your NetSuite account includes SuiteAnalytics Workbook, it is often a better 
 
 The distinction matters because adding more formulas and joins to a Saved Search to make it more analytical is working against the tool's design. At some point, the right answer is not to optimize the search further, it is to move the requirement to a tool designed for it.
 
-## The practical rule
+## When Should You Optimize vs Replace a Slow Saved Search?
 
 Use Saved Searches for operational data: what needs action today, what is open, what is overdue, what exception needs attention.
 

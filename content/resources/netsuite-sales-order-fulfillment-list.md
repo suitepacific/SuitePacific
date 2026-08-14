@@ -4,8 +4,14 @@ description: "NetSuite 2026.2 lets you initiate item fulfillment directly from t
 category: "Administration"
 tags: ["Administration", "Order Management", "NetSuite Tips"]
 publishedAt: "2026-07-21"
+updatedAt: "2026-08-15"
 linkedinDay: 34
 ---
+
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite 2026.2 adds the ability to initiate item fulfillment directly from the Sales Order list view without opening each individual order. Navigate to Transactions > Sales > Enter Sales Orders, locate the orders to fulfill, select one or more orders using the list checkboxes, and click the Fulfill action from the Actions menu. NetSuite opens the item fulfillment record for each selected order where you can review quantities and commit the fulfillment. This reduces the clicks required to fulfill multiple orders compared to opening each order record individually.</p>
+</div>
 
 ## What changed in 2026.2
 

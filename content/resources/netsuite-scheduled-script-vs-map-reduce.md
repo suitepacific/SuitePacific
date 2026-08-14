@@ -4,10 +4,16 @@ description: "Using a Scheduled Script for work that should be handled by Map/Re
 category: "SuiteScript"
 tags: ["SuiteScript", "Map/Reduce", "Performance", "Best Practices"]
 publishedAt: "2026-07-06"
+updatedAt: "2026-08-15"
 linkedinDay: 6
 ---
 
-## Two script types for batch processing
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite Scheduled Scripts run sequentially in a single thread with a 10,000 governance unit limit per execution. Map/Reduce Scripts distribute work across multiple parallel queues with a separate governance pool per stage (getInputData, map, reduce, summarize). Use a Scheduled Script when processing a small number of records sequentially, when operations must run in strict order, or when the total work fits within 10,000 units. Use a Map/Reduce Script when processing large datasets (hundreds or thousands of records), when operations are independent and can run in parallel, or when a Scheduled Script consistently hits its governance limit. Map/Reduce is the right default for any batch job that grows with data volume.</p>
+</div>
+
+## What Is the Difference Between a Scheduled Script and a Map/Reduce Script?
 
 SuiteScript provides two script types designed for processing records in batch: Scheduled Scripts and Map/Reduce scripts. Both run in the background on a schedule or on demand. Both can process large numbers of records. But they work fundamentally differently, and choosing the wrong one for the workload is a reliable path to governance limit errors and slow execution.
 
@@ -104,7 +110,7 @@ Many NetSuite accounts have Scheduled Scripts that were written when the data vo
 
 Choosing the right script type early avoids this migration cost. If the dataset could grow significantly over the life of the script, Map/Reduce is the safer design choice from the start.
 
-## The quick rule
+## When Should You Use a Scheduled Script vs Map/Reduce?
 
 **Handling hundreds of records, straightforward logic?** → Scheduled Script
 Simple to build and maintain. Appropriate when the workload fits within a single governance budget.

@@ -4,10 +4,16 @@ description: "Saved Searches and SuiteAnalytics Workbook may look similar, but t
 category: "Saved Searches"
 tags: ["Saved Searches", "SuiteAnalytics", "Reporting", "Performance"]
 publishedAt: "2026-07-05"
+updatedAt: "2026-08-15"
 linkedinDay: 5
 ---
 
-## Two reporting tools with different purposes
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Saved Searches and SuiteAnalytics Workbooks serve different purposes in NetSuite. Saved Searches are designed for operational queries: finding records that match criteria, filtering lists, driving scripts and automations, and producing results that stay current on every run. SuiteAnalytics Workbooks are designed for analytical reporting: multi-record-type joins, pivots, aggregations, and charts that summarize data across many records. Workbooks require a SuiteAnalytics license beyond the standard NetSuite subscription. Use a Saved Search for any query that drives automation or operational workflows. Use a Workbook when you need cross-record aggregations or want to build a visual dashboard for analytical reporting.</p>
+</div>
+
+## What Is the Difference Between a Saved Search and a SuiteAnalytics Workbook?
 
 NetSuite offers two primary reporting tools that can produce similar-looking output: Saved Searches and SuiteAnalytics Workbook. The difference is not just in the interface, they query different data sources and are optimized for different types of work.
 
@@ -69,7 +75,7 @@ SuiteAnalytics Workbook is the right tool for:
 - **Pivot tables and interactive reports:** cross-dimensional analysis of large volumes of data
 - **Year-to-date and multi-period summaries:** reports that aggregate across wide date ranges
 
-## Where the confusion happens
+## Why Do People Confuse Saved Searches and Workbooks?
 
 The two tools can produce similar output for simple cases, which makes the distinction less obvious until you hit a scenario where the difference matters.
 
@@ -81,7 +87,7 @@ Similarly, if a Saved Search is consistently slow, taking more than a few second
 
 SuiteAnalytics Workbook is not available to every NetSuite customer by default, it requires the SuiteAnalytics module to be included in your NetSuite license. If you navigate to Reports and do not see a Workbook option, confirm with your NetSuite account manager whether it is included in your subscription.
 
-## The quick rule
+## When Should You Use a Saved Search vs a Workbook?
 
 **Need operational data?** → Saved Search
 Use for real-time operations, dashboard KPIs, workflow triggers, alerts, and day-to-day monitoring.

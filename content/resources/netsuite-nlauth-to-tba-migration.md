@@ -4,10 +4,16 @@ description: "NLAuth stops working in NetSuite 2027.1. Here are the steps to aud
 category: "SuiteScript"
 tags: ["SuiteScript", "Authentication", "Security"]
 publishedAt: "2026-07-21"
+updatedAt: "2026-08-15"
 linkedinDay: 21
 ---
 
-## Why you need to act before 2027.1
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite NLAuth authentication stops working in 2027.1. NLAuth is a legacy method that transmits credentials in an HTTP Authorization header. Token-Based Authentication (TBA) replaces it using OAuth 1.0a, where each integration gets a dedicated access token scoped to a specific role. To migrate: find every RESTlet, web service call, and integration using NLAuth credentials; create an Integration Record in NetSuite for each system; generate an access token paired with a role that has the necessary permissions; update the integration code to generate an OAuth 1.0a Authorization header; test in sandbox; then cut over production and remove the NLAuth credentials from all systems.</p>
+</div>
+
+## Why Must You Migrate from NLAuth Before NetSuite 2027.1?
 
 As of NetSuite 2027.1, all integrations using NLAuth will stop working. NLAuth is the authentication method that passes your NetSuite account ID, email, and password in an HTTP Authorization header.
 
@@ -122,7 +128,7 @@ Sandbox NetSuite Account IDs follow the format `ACCOUNT_ID_SB1` or `ACCOUNT_ID_S
 
 Once sandbox testing passes, update your production integration to use the TBA credentials you created in Step 3. Then remove all NLAuth credentials from your codebase, config files, and any secret managers. Do not leave them in place after migration.
 
-## Who this applies to
+## Who Needs to Migrate from NLAuth to TBA?
 
 Any developer or administrator responsible for a NetSuite integration that:
 - Passes credentials in an NLAuth Authorization header

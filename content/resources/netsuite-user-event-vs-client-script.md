@@ -4,10 +4,16 @@ description: "User Event scripts run on the server. Client scripts run in the br
 category: "SuiteScript"
 tags: ["SuiteScript", "User Event", "Client Script", "Best Practices"]
 publishedAt: "2026-07-02"
+updatedAt: "2026-08-15"
 linkedinDay: 2
 ---
 
-## Two script types, two execution environments
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">In NetSuite SuiteScript, User Event scripts run server-side and fire on every record save regardless of how the save was triggered: UI, API, CSV import, workflow, or Mass Update. Client scripts run browser-side and fire only when a user is working in the record form in the web UI. If business logic must run on every save (validation, field computation, downstream record creation), use a User Event script. If logic needs to respond to a user interacting with the form (field changes, button clicks, page load in the browser), use a Client Script. The most common mistake is using a Client Script for validation that silently fails when the record is saved via API or CSV import.</p>
+</div>
+
+## What Is the Difference Between a User Event Script and a Client Script?
 
 SuiteScript provides two script types for record-level logic: User Event scripts and Client scripts. They look similar in purpose, both respond to record actions, but they run in entirely different environments and serve entirely different functions.
 
@@ -109,7 +115,7 @@ function fieldChanged(scriptContext) {
 }
 ```
 
-## The most common mistake
+## What Is the Most Common Mistake When Choosing a Script Type?
 
 Putting critical business logic in a Client script.
 
@@ -119,7 +125,7 @@ The logic that was supposed to run on every save runs on none of those saves. Th
 
 If a field calculation, validation, or business rule must apply every time a record is saved, regardless of who or what saved it, it belongs in a User Event script.
 
-## The rule
+## How Do You Choose the Right Script Type?
 
 **Server-side for business rules.** If the logic must run every time the record is saved, use a User Event script.
 

@@ -4,8 +4,14 @@ description: "NetSuite 2026.2 changed the default sort for Transaction table Sui
 category: "SuiteScript"
 tags: ["SuiteScript", "SuiteQL", "NetSuite Tips"]
 publishedAt: "2026-07-21"
+updatedAt: "2026-08-15"
 linkedinDay: 24
 ---
+
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite 2026.2 changed the default sort order for Transaction table SuiteQL queries from tranDisplayName ascending to tranDate descending. Queries that relied on the previous implicit sort now return records in a different order, which may break any logic that assumes the first result is the oldest or that results are alphabetically ordered by transaction name. The fix is to add an explicit ORDER BY clause to every Transaction table SuiteQL query where result order matters. Review all SuiteQL queries that query the Transaction table without an explicit ORDER BY and add the appropriate sort before the 2026.2 upgrade reaches your account.</p>
+</div>
 
 ## What changed
 

@@ -4,10 +4,16 @@ description: "Most NetSuite performance complaints are not caused by NetSuite it
 category: "Performance"
 tags: ["Performance", "Administration", "Saved Searches", "SuiteScript"]
 publishedAt: "2026-07-03"
+updatedAt: "2026-08-15"
 linkedinDay: 3
 ---
 
-## The real cause of most performance complaints
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Most NetSuite performance problems are caused by account configuration, not the platform. The five most common causes are: dashboard saved searches that reload on every login; custom scripts that run on every record save without execution conditions limiting when they fire; workflows without entry conditions that evaluate on every save of every applicable record; accumulated unused metadata (custom fields, unused scripts, deactivated but still-evaluating workflows); and saved searches that apply criteria after loading all matching records rather than filtering at the database level. Check these five areas before filing a support case with NetSuite.</p>
+</div>
+
+## What Actually Causes NetSuite to Feel Slow?
 
 "NetSuite is slow" is one of the most common complaints from teams that have been live for a while. Page loads are sluggish. Dashboards take seconds to open. Record saves feel delayed.
 
@@ -95,7 +101,7 @@ For example, a search that retrieves all transactions and then applies a `CASE W
 
 **What to check:** For slow saved searches, look at whether the primary filters are on indexed fields (date, status, type, entity) or on formula columns. Move as much filtering as possible to the criteria section using indexed fields. Formula-heavy filtering belongs on a smaller, pre-filtered dataset, not the full table.
 
-## Most of these are fixable without a re-implementation
+## Can You Fix NetSuite Slowness Without a Reimplementation?
 
 Accumulated performance debt is normal in any mature NetSuite account. The fixes, tightening script conditions, adding workflow entry conditions, trimming metadata, optimizing search criteria, are configuration and code changes, not architectural overhauls.
 

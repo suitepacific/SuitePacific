@@ -63,7 +63,7 @@ export default async function ResourcePage({
             description: resource.description,
             image: { "@type": "ImageObject", url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 },
             datePublished: resource.publishedAt,
-            dateModified: resource.publishedAt,
+            dateModified: resource.updatedAt ?? resource.publishedAt,
             author: { "@type": "Organization", name: LEGAL_NAME },
             publisher: {
               "@type": "Organization",

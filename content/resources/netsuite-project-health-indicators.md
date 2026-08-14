@@ -4,8 +4,14 @@ description: "NetSuite 2026.2 adds five project health indicators: Planned vs. A
 category: "Administration"
 tags: ["Administration", "Projects", "NetSuite Tips"]
 publishedAt: "2026-07-21"
+updatedAt: "2026-08-15"
 linkedinDay: 28
 ---
+
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite 2026.2 adds five project health indicators that display a status flag on each project record based on configurable thresholds. The five indicators are: Planned vs. Actual Time Overrun (compares budgeted hours to hours logged), Overdue Tasks (counts tasks past their due date), Project Resource Coverage for Remaining Work (flags whether enough scheduled hours exist to complete the project), Project Margin Indicator (compares projected revenue to projected cost), and Unbilled Approved Charges (flags approved time and expenses that have not yet been invoiced). Each indicator shows green, yellow, or red based on thresholds the administrator sets at the project template or individual project level.</p>
+</div>
 
 ## What project health indicators are
 

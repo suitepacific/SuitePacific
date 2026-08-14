@@ -4,10 +4,16 @@ description: "A NetSuite workflow that fires twice on every save is almost alway
 category: "Workflow Automation"
 tags: ["Workflow Automation", "SuiteFlow", "Troubleshooting"]
 publishedAt: "2026-07-01"
+updatedAt: "2026-08-15"
 linkedinDay: 1
 ---
 
-## The symptom
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A NetSuite workflow that fires twice on the same record save has one of two causes. The first is that both Before Record Submit and After Record Submit triggers are selected in a single workflow: these are separate trigger events, so selecting both fires the workflow twice per save. Fix this by selecting only the trigger that matches when the workflow logic should run. The second cause is that a User Event script or another workflow modifies the record after the workflow fires, triggering a second save that re-evaluates the workflow. Identify this by checking whether the workflow's entry condition prevents it from re-firing on records it has already processed.</p>
+</div>
+
+## How Do You Know a Workflow Is Firing Twice?
 
 A workflow fires twice on the same record save. Approval emails go out in duplicate. Field updates happen twice. A workflow that should create one record creates two.
 
@@ -99,7 +105,7 @@ The workflow itself is configured correctly, it only fires once per save. But be
 - Modify the User Event script to skip its update when the save originated from a workflow context (check `runtime.executionContext`).
 - Restructure the workflow or script so they do not create a save loop.
 
-## The underlying principle
+## What Is the Underlying Cause of Double-Firing Workflows?
 
 Every workflow should have a clear answer to the question: "Under exactly what conditions should this run?"
 

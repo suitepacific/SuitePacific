@@ -4,10 +4,16 @@ description: "If you only need a few field values from a known record, search.lo
 category: "SuiteScript"
 tags: ["SuiteScript", "Performance", "Best Practices"]
 publishedAt: "2026-07-07"
+updatedAt: "2026-08-15"
 linkedinDay: 7
 ---
 
-## The default pattern and its cost
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">search.lookupFields() retrieves specific field values from a known record without loading the full record object. It is significantly faster than record.load() for read-only field access because it executes a targeted database query rather than constructing a full record in memory. Use search.lookupFields() when you know the record's internal ID and only need a few body field values. Use record.load() when you need to access sublists, modify the record, or read fields that search.lookupFields() does not support (such as custom field types that are not body fields). For most field-value checks in beforeSubmit and afterSubmit scripts, search.lookupFields() is the right choice.</p>
+</div>
+
+## Why Is record.load() Expensive for Field Reads?
 
 When a SuiteScript needs to read field values from a specific record, most developers reach for `record.load()`:
 
@@ -93,7 +99,7 @@ This is important: `search.lookupFields()` is read-only. You cannot use the resu
 
 `search.lookupFields()` also cannot read sublist data. If you need line items, sublists, or subrecords, you need `record.load()`.
 
-## When to use each
+## When Should You Use record.load() vs search.lookupFields()?
 
 **Use `search.lookupFields()` when:**
 - You know the record's internal ID
@@ -132,7 +138,7 @@ if (fields.status === 'Pending Fulfillment' && !fields.custbody_processed) {
 
 This pattern is particularly useful in Scheduled Scripts that scan a large list of records: use `lookupFields()` to check a condition quickly, and only load the full record when you actually need to write to it.
 
-## The rule
+## What Is the Rule for Choosing Between Them?
 
 If you have an ID and need to read body field values, `search.lookupFields()` is the right tool. If you need to update the record, read sublists, or work with subrecords, use `record.load()`.
 

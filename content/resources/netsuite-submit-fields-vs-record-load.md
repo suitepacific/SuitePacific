@@ -4,10 +4,16 @@ description: "Using record.load() to update a single body field is one of the mo
 category: "SuiteScript"
 tags: ["SuiteScript", "Performance", "User Event"]
 publishedAt: "2026-07-14"
+updatedAt: "2026-08-15"
 linkedinDay: 8
 ---
 
-## The common pattern
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">record.submitFields() updates one or more body fields on a record without loading the full record object. It is faster than record.load() followed by record.save() because it skips constructing the full record in memory and executes a targeted update. The critical caveat: record.submitFields() does not trigger the beforeLoad or beforeSubmit User Event scripts on the record being updated, only afterSubmit. If the record has a beforeSubmit script that validates or modifies fields, bypassing it with submitFields() may produce inconsistent data. Always check whether User Event scripts on the target record type need to run before choosing submitFields().</p>
+</div>
+
+## Why Is record.load() Slow for Single-Field Updates?
 
 A typical record update in SuiteScript loads the full record, changes a value, and saves:
 
@@ -80,7 +86,7 @@ No full record load. Lower governance usage. Faster execution per record.
 
 You can update multiple body fields in a single call by adding more keys to the `values` object. The savings scale with the number of records your script processes, a script that handles 5,000 records with `submitFields()` instead of `record.load() + save()` will complete measurably faster and use fewer governance units.
 
-## The critical caveat: User Event scripts
+## What Is the Critical Caveat for record.submitFields()?
 
 This is the most important thing to understand before switching from `record.load() + save()` to `submitFields()`.
 
@@ -106,7 +112,7 @@ Before making the switch: identify what User Event scripts are deployed on the r
 - You need to read other field values from the record before deciding what to update
 - The update logic depends on the current state of the record
 
-## The quick rule
+## When Should You Use record.submitFields() vs record.load()?
 
 Body fields only, no User Event dependencies → `record.submitFields()`
 

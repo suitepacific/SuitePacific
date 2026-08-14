@@ -4,10 +4,16 @@ description: "A workflow without an Entry Condition evaluates on every record sa
 category: "Workflow Automation"
 tags: ["Workflow Automation", "Performance", "Administration"]
 publishedAt: "2026-07-11"
+updatedAt: "2026-08-15"
 linkedinDay: 11
 ---
 
-## The hidden cost of workflows without Entry Conditions
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A NetSuite SuiteFlow Entry Condition is a filter that determines whether a workflow evaluates on a given record save. Without an Entry Condition, a workflow evaluates every time any record of the applicable type is saved, even when nothing relevant to the workflow has changed. Adding an Entry Condition based on the specific field or status the workflow monitors (for example: Status equals Pending Approval) means the workflow only runs the evaluation logic when that condition is true. On accounts with high save volume, workflows without Entry Conditions are a significant source of unnecessary governance consumption and background processing slowdowns.</p>
+</div>
+
+## What Is the Performance Cost of a Workflow Without an Entry Condition?
 
 Every time a record is saved in NetSuite, the platform checks all deployed workflows to determine which ones should run. If a workflow has no Entry Condition, NetSuite evaluates it on every save, regardless of whether anything relevant changed.
 
@@ -138,7 +144,7 @@ A tighter execution history means:
 - Cleaner audit trails for compliance purposes
 - Less noise when investigating unexpected workflow behavior
 
-## The practical rule
+## When Should You Add an Entry Condition to a Workflow?
 
 For every workflow, identify the minimum conditions under which it has meaningful work to do. Set those as the Entry Condition.
 

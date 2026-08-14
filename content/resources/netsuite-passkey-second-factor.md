@@ -4,8 +4,14 @@ description: "Starting in NetSuite 2026.2, a FIDO2-compliant passkey can replace
 category: "Administration"
 tags: ["Administration", "Security", "Authentication"]
 publishedAt: "2026-07-21"
+updatedAt: "2026-08-15"
 linkedinDay: 23
 ---
+
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Starting in NetSuite 2026.2, a FIDO2-compliant passkey can replace the authenticator app step in two-factor authentication. A FIDO2-compliant passkey is one registered on a hardware security key, a platform authenticator (Touch ID, Face ID, Windows Hello), or any device that implements the FIDO2 standard. If your passkey meets this requirement, NetSuite accepts it as both your primary credential and your second factor in a single step. You must first set up a passkey in NetSuite under Home > Settings > Manage Passkeys before it can serve as your second factor. Keep your authenticator app active as a backup until you confirm the passkey works as expected.</p>
+</div>
 
 ## What changed in 2026.2
 

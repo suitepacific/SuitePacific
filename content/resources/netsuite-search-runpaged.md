@@ -4,10 +4,16 @@ description: "search.run().getRange() has a 4,000-record ceiling in SuiteScript.
 category: "SuiteScript"
 tags: ["SuiteScript", "Performance", "Saved Search"]
 publishedAt: "2026-07-14"
+updatedAt: "2026-08-15"
 linkedinDay: 10
 ---
 
-## The problem with search.run()
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">search.run().getRange() in SuiteScript has a hard ceiling of 4,000 records and silently returns only the first 4,000 when a search returns more. search.runPaged() iterates through results in pages of up to 1,000 records each and processes every matching record regardless of total count. For any saved search that might return more than 1,000 records in production, use search.runPaged(). The pattern is: call search.runPaged({pageSize: 1000}), iterate through pagedData.fetch({index: i}) for each page, and process each page's data array. Running getRange() on large datasets produces a silent truncation bug that only surfaces when data volume grows past the threshold.</p>
+</div>
+
+## What Is the Problem with search.run().getRange()?
 
 When you run a saved search in SuiteScript using `search.run()`, you retrieve results using `getRange()`:
 
@@ -84,7 +90,7 @@ The `return true` inside the iterator is required to continue iteration. Returni
 
 `pageSize` accepts values from 5 to 1,000. Using 1,000 minimizes the number of page fetches for large result sets.
 
-## Why the difference matters in production
+## Why Does This Matter in Production?
 
 Scripts are often written when a dataset is small, then left running as the business grows. A script written for an account with 2,000 sales orders works fine. Two years later with 15,000 orders, it silently processes only 4,000, and there is no obvious sign that anything is wrong. Month-end reports balance, jobs complete without errors, and the gap is only discovered when someone notices the numbers don't add up.
 
@@ -101,7 +107,7 @@ Scripts are often written when a dataset is small, then left running as the busi
 - You are writing a Scheduled Script or Map/Reduce script designed for ongoing batch processing
 - You cannot guarantee the search will stay under 4,000 results as the account scales
 
-## The practical rule
+## When Should You Use search.runPaged()?
 
 If you are writing a script that will run repeatedly against growing data, use `search.runPaged()` by default. The overhead compared to `getRange()` is minimal, and it removes an entire category of silent data loss bugs.
 

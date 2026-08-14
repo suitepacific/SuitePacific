@@ -4,6 +4,7 @@ description: "A practical checklist for managing FSM configuration changes safel
 category: "Field Service Management"
 tags: ["Field Service Management", "Administration", "Configuration", "Sandbox Testing"]
 publishedAt: "2026-08-13"
+updatedAt: "2026-08-15"
 linkedinDay: 44
 ---
 
@@ -12,6 +13,12 @@ NetSuite Field Service Management is a live operational system. Technicians depe
 FSM configuration can change more often than most administrators expect. Oracle pushes managed bundle updates on its own schedule. NetSuite Support may recommend a configuration change during a support case. A consulting partner may make changes during an engagement. Each of those events is a point of risk if no change control process is in place.
 
 This checklist covers the Sandbox-first workflow, what to validate after a change, and the single most important FSM administration rule: only one configuration should be active at a time.
+
+
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite Field Service Management configuration changes should always be validated in Sandbox before deploying to Production. The three highest-risk areas are: the active configuration (only one can be active at a time, and changing it immediately affects all field technicians); mobile validation rules (a misconfigured rule produces a hard stop on the technician's device with no clear error message, blocking them from completing work orders in the field); and work order status transitions (an incorrect transition configuration can prevent field operations from moving work orders to a completed state). Use a Sandbox-first workflow for any FSM configuration change and test the full technician mobile flow before promoting to Production.</p>
+</div>
 
 ## The Sandbox-first workflow
 

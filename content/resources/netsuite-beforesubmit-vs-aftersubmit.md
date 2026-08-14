@@ -4,10 +4,16 @@ description: "beforeSubmit and afterSubmit serve different purposes in NetSuite 
 category: "SuiteScript"
 tags: ["SuiteScript", "User Event", "Best Practices"]
 publishedAt: "2026-07-04"
+updatedAt: "2026-08-15"
 linkedinDay: 4
 ---
 
-## Two triggers, two different moments
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">In NetSuite User Event scripts, beforeSubmit fires after the user clicks Save but before the record is written to the database. The record exists in memory and can still be modified or the save can be thrown with an error. afterSubmit fires after the record is committed to the database and has a permanent internal ID. Use beforeSubmit to validate data, set computed field values, or block invalid saves. Use afterSubmit to create related records, send notifications, or trigger follow-on actions that require the saved record to already exist. The most common mistake is using afterSubmit to modify the current record, which requires an additional record.load() and record.save(), triggering another round of User Event scripts on the same record.</p>
+</div>
+
+## What Is the Difference Between beforeSubmit and afterSubmit?
 
 NetSuite User Event scripts fire in response to record saves. Both `beforeSubmit` and `afterSubmit` run when a record is saved, but they fire at different points in the save process, and that difference determines what each one can and cannot do.
 
@@ -128,7 +134,7 @@ function afterSubmit(context) {
 
 **What afterSubmit cannot do:** You cannot modify the current record's field values using `setValue()` on `context.newRecord`. The record is already saved, your changes won't persist. If you need to update the record after save, you would need to use `record.submitFields()` with the record's ID, which triggers another save cycle (use with care to avoid loops).
 
-## The most common mistake
+## What Is the Most Common Mistake with These Triggers?
 
 Placing external API calls or record creation logic in `beforeSubmit`.
 
@@ -166,7 +172,7 @@ function afterSubmit(context) {
 | Create related records? | Avoid | Yes |
 | Validation logic? | Yes | No |
 
-## The rule
+## Which Trigger Should You Use?
 
 If the logic must modify the current record or can abort the save, it belongs in `beforeSubmit`.
 

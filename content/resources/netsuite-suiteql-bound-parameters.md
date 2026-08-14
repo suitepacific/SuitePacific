@@ -4,8 +4,14 @@ description: "Bound parameters let you pass dynamic values to SuiteQL queries se
 category: "SuiteScript"
 tags: ["SuiteScript", "SuiteQL", "Security"]
 publishedAt: "2026-07-21"
+updatedAt: "2026-08-15"
 linkedinDay: 29
 ---
+
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Bound parameters in NetSuite REST SuiteQL let you pass dynamic values to a query separately from the query string, using ? as a placeholder in the SQL and a params array in the request body. A query written as WHERE tranid = 'TRAN-001' becomes WHERE tranid = ? with ['TRAN-001'] in the params array. This prevents SQL injection vulnerabilities that arise when dynamic values are concatenated directly into the query string. Bound parameters also improve query plan reuse because the database sees the same query structure regardless of the parameter values. Any REST SuiteQL query that includes dynamic values from user input or script variables should use bound parameters.</p>
+</div>
 
 ## What bound parameters do
 

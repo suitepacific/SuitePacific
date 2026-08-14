@@ -4,10 +4,16 @@ description: "Loading records inside a loop is one of the most common SuiteScrip
 category: "SuiteScript"
 tags: ["SuiteScript", "Performance", "Saved Search"]
 publishedAt: "2026-07-09"
+updatedAt: "2026-08-15"
 linkedinDay: 9
 ---
 
-## The pattern that looks reasonable but isn't
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Loading records inside a loop in SuiteScript is one of the most common causes of governance limit errors and slow script execution. Each record.load() call consumes governance units and makes a synchronous database request. A loop that loads 200 records makes 200 separate database calls. The fix is to design the saved search to return the field values you need as columns directly on the search results, so the loop iterates over result rows rather than loading each record individually. The only time record.load() in a loop is appropriate is when you need to access sublist data that cannot be returned as saved search columns.</p>
+</div>
+
+## Why Is record.load() in a Loop a Problem?
 
 A common SuiteScript pattern runs a saved search, loops through the results, and loads each record to read additional data:
 
@@ -124,7 +130,7 @@ There are cases where loading inside a loop is unavoidable. The key question is:
 
 If you genuinely need one of the above, load only what you must, and consider whether the script design can be restructured to reduce the number of loads. For example, if you are updating one field on many records, `record.submitFields()` avoids a full load entirely.
 
-## The right question before every loop
+## What Should You Ask Before Writing a Loop in SuiteScript?
 
 Before writing any loop that involves records, ask: does this field value need to come from a record load, or can I include it in the search?
 

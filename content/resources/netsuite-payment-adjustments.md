@@ -4,8 +4,14 @@ description: "NetSuite 2026.2 automates payment adjustments for bank fees, conve
 category: "Administration"
 tags: ["Administration", "Accounting", "AR"]
 publishedAt: "2026-07-21"
+updatedAt: "2026-08-15"
 linkedinDay: 27
 ---
+
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite 2026.2 adds automated payment adjustments that handle three common discrepancy scenarios from Customer Payment and Customer Deposit records: bank fees charged by the payment processor, convenience fees added to the payment amount, and underpayments where the customer paid slightly less than the invoice balance (within a configurable tolerance). When a payment comes in with one of these discrepancies, NetSuite creates the adjustment automatically rather than requiring a manual journal entry. Automated payment adjustments reduce the manual reconciliation work on accounts with high payment volume and frequent small discrepancies.</p>
+</div>
 
 ## What automated payment adjustments cover
 

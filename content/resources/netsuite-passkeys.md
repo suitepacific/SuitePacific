@@ -4,8 +4,14 @@ description: "NetSuite supports passkeys, a passwordless authentication method u
 category: "Administration"
 tags: ["Administration", "Security", "NetSuite Tips"]
 publishedAt: "2026-07-16"
+updatedAt: "2026-08-15"
 linkedinDay: 16
 ---
+
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A passkey is a passwordless authentication credential that uses your device's built-in authenticator (Touch ID, Face ID, Windows Hello, or a hardware security key) instead of a typed password. NetSuite supports passkeys as a login method. To set one up: log in to NetSuite, go to Home > Settings > Manage Passkeys, click Add Passkey, complete the device authentication prompt, and give the passkey a name. On subsequent logins, selecting the passkey option replaces the password prompt with a device authentication gesture. Passkeys are phishing-resistant because the credential is stored on your device and never transmitted to the server.</p>
+</div>
 
 ## Passwords are the weakest link in your login flow
 

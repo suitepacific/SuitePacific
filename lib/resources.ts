@@ -25,6 +25,7 @@ export type ResourceMeta = {
   category: string;
   tags: string[];
   publishedAt: string;
+  updatedAt?: string;
   linkedinDay?: number;
   readingTime: string;
 };
@@ -54,6 +55,7 @@ export function getAllResources(): ResourceMeta[] {
         category: data.category as string,
         tags: (data.tags as string[]) ?? [],
         publishedAt: data.publishedAt as string,
+        updatedAt: data.updatedAt as string | undefined,
         linkedinDay: data.linkedinDay as number | undefined,
         readingTime: readingTime(content).text,
       };
@@ -73,6 +75,7 @@ export async function getResourceBySlug(slug: string): Promise<Resource | null> 
     category: data.category as string,
     tags: (data.tags as string[]) ?? [],
     publishedAt: data.publishedAt as string,
+    updatedAt: data.updatedAt as string | undefined,
     linkedinDay: data.linkedinDay as number | undefined,
     readingTime: readingTime(content).text,
     contentHtml: await parseMarkdown(content),

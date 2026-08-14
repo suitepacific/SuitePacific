@@ -4,7 +4,13 @@ description: "A practical checklist for NetSuite administrators to validate the 
 category: "Field Service Management"
 tags: ["Field Service Management", "Administration", "Bundle Updates", "Sandbox Testing"]
 publishedAt: "2026-07-27"
+updatedAt: "2026-08-15"
 ---
+
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The NetSuite FSM 2026.07.1 bundle update deployed to Production accounts on August 11, 2026. Before the Production upgrade, validate the update in your Sandbox account by testing work order creation, technician scheduling, mobile check-in and check-out, parts management, and the active configuration setting. Only one FSM configuration can be active at a time; confirm that your active configuration is still set correctly after the bundle update. The most common post-update issue is the active configuration reverting to an unintended state, which silently changes mobile behavior for all technicians.</p>
+</div>
 
 ## How to use this checklist
 

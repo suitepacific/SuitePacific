@@ -4,8 +4,14 @@ description: "NetSuite 2026.2 changed how blank Bill Capture preference fields b
 category: "Administration"
 tags: ["Administration", "Accounting", "AP"]
 publishedAt: "2026-07-21"
+updatedAt: "2026-08-15"
 linkedinDay: 30
 ---
+
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite 2026.2 changed the behavior of blank Bill Capture preference fields. A blank Save Tax As field now maps to No Tax instead of leaving the tax handling undefined. A blank Save Shipping Cost As field now maps to No Shipping Cost. If your account was relying on blank fields to inherit some other behavior, the upgrade may change how captured bills handle tax and shipping amounts. Check your preferences at Setup > Accounting > Bill Capture Preferences after the 2026.2 upgrade and set each field explicitly. 2026.2 also adds Gross and Net options to these fields for accounts that need to control whether amounts are captured inclusive or exclusive of tax.</p>
+</div>
 
 ## What changed in 2026.2
 

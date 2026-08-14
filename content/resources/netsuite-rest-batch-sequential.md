@@ -4,8 +4,14 @@ description: "NetSuite 2026.2 adds sequential processing for REST batch operatio
 category: "SuiteScript"
 tags: ["SuiteScript", "NetSuite Tips", "Security"]
 publishedAt: "2026-07-21"
+updatedAt: "2026-08-15"
 linkedinDay: 32
 ---
+
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Sequential batch processing in NetSuite REST Web Services (added in 2026.2) lets you send multiple API requests in a single batch payload and guarantee they execute in the order submitted. In the standard parallel batch mode, requests execute concurrently and a later request may complete before an earlier one. Sequential mode is for dependent operations where step 2 requires the result of step 1, such as creating a parent record and then creating child records that reference its internal ID. Set the execution mode to sequential in the batch request header to enable ordered processing.</p>
+</div>
 
 ## What sequential batch processing is
 
