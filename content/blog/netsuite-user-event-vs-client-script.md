@@ -4,6 +4,11 @@ description: "The practical difference between NetSuite User Event scripts and C
 date: "2026-07-02"
 updated: "2026-08-07"
 tags: ["SuiteScript", "Development"]
+video:
+  id: "r6c8N12SjYM"
+  title: "NetSuite User Event Scripts vs Client Scripts Explained"
+  description: "The practical difference between NetSuite User Event scripts and Client scripts, when to use each, and the common mistake that puts critical business logic in the wrong place."
+  uploadDate: "2026-08-15"
 ---
 
 A User Event script is a SuiteScript 2.x server-side script type that fires on every record create, edit, or delete, regardless of how the save was triggered. A Client Script is a browser-side script type that fires only when a user is actively working in a NetSuite record form in the web UI.
@@ -55,6 +60,15 @@ A User Event script runs on NetSuite's servers and fires on every record save, r
 </tbody>
 </table>
 </div>
+
+<a href="https://youtu.be/r6c8N12SjYM" target="_blank" rel="noopener noreferrer" style="display:block;position:relative;max-width:560px;margin:2rem 0;border-radius:12px;overflow:hidden">
+  <img src="https://i.ytimg.com/vi/r6c8N12SjYM/hqdefault.jpg" alt="NetSuite User Event Scripts vs Client Scripts explained" style="width:100%;display:block" />
+  <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25)">
+    <div style="width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.9);display:flex;align-items:center;justify-content:center">
+      <svg width="18" height="18" fill="#111" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    </div>
+  </div>
+</a>
 
 ## When should you use a Client Script in NetSuite?
 

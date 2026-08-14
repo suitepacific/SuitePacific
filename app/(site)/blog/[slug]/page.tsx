@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { BlogPostingJsonLd, BreadcrumbJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { Card } from "@/components/ui/Card";
 import { getAllPosts, getAllSlugs, getPostBySlug } from "@/lib/blog";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
@@ -53,6 +53,15 @@ export default async function BlogPostPage({
   return (
     <main className="pt-32 pb-24 sm:pt-40 sm:pb-32">
       <BlogPostingJsonLd post={post} />
+      {post.video && (
+        <VideoObjectJsonLd
+          name={post.video.title}
+          description={post.video.description}
+          videoId={post.video.id}
+          uploadDate={post.video.uploadDate}
+          duration={post.video.duration}
+        />
+      )}
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: SITE_URL },

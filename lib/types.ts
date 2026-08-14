@@ -48,6 +48,14 @@ export type FaqItem = {
   answer: string;
 };
 
+export type BlogPostVideo = {
+  id: string;
+  title: string;
+  description: string;
+  uploadDate: string;
+  duration?: string;
+};
+
 export type BlogPostMeta = {
   slug: string;
   title: string;
@@ -57,6 +65,7 @@ export type BlogPostMeta = {
   tags: string[];
   readingTime: string;
   calloutText?: string;
+  video?: BlogPostVideo;
 };
 
 export type BlogPost = BlogPostMeta & {
