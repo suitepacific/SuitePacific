@@ -6,22 +6,22 @@ import { Star } from "lucide-react";
 import { useRef } from "react";
 
 // Drop PNG/SVG files into public/logos/clients/ and add entries here.
-// Example: { src: "/logos/clients/acme.svg", alt: "Acme Corp", width: 96 }
-const CLIENT_LOGOS: { src: string; alt: string; width?: number }[] = [];
-
-// Placeholder slots shown until real logos are uploaded.
-const PLACEHOLDERS = [
-  { label: "Manufacturing Co.", width: 120 },
-  { label: "SaaS Company",      width: 100 },
-  { label: "Distribution Inc.", width: 128 },
-  { label: "Tech Startup",      width: 96  },
-  { label: "E-commerce Co.",    width: 112 },
-  { label: "Services Group",    width: 104 },
+// darkBg: true wraps the logo in a dark pill (use for white logos).
+const CLIENT_LOGOS: { src: string; alt: string; width?: number; darkBg?: boolean }[] = [
+  { src: "/logos/clients/FreeLetics.png",                  alt: "Freeletics",          width: 120 },
+  { src: "/logos/clients/Patriot_Gold_Group_white_Logo.png", alt: "Patriot Gold Group", width: 140, darkBg: true },
 ];
+
+// How many times to duplicate — keep even, increase for fewer logos.
+const PASSES = 4;
 
 export function SocialProof() {
   const trackRef = useRef<HTMLDivElement>(null);
-  const items = CLIENT_LOGOS.length > 0 ? CLIENT_LOGOS : null;
+
+  // Build the full item list (PASSES copies for seamless loop).
+  const items = Array.from({ length: PASSES }, (_, pass) =>
+    CLIENT_LOGOS.map((logo, i) => ({ ...logo, key: `${pass}-${i}` }))
+  ).flat();
 
   return (
     <section className="py-10 border-t border-brand-100" data-section="social-proof">
@@ -59,12 +59,12 @@ export function SocialProof() {
           Trusted by
         </p>
 
-        {/* Marquee */}
+        {/* Infinite marquee */}
         <div
           className="relative overflow-hidden"
           style={{
-            maskImage: "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
-            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
+            maskImage: "linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)",
           }}
           onMouseEnter={() => {
             if (trackRef.current) trackRef.current.style.animationPlayState = "paused";
@@ -75,34 +75,42 @@ export function SocialProof() {
         >
           <div
             ref={trackRef}
-            className="flex items-center gap-10 sm:gap-14"
-            style={{ animation: "marquee 22s linear infinite", width: "max-content" }}
+            className="flex items-center gap-12 sm:gap-16"
+            style={{
+              animation: "marquee 18s linear infinite",
+              width: "max-content",
+            }}
           >
-            {/* Render items twice for seamless loop */}
-            {[0, 1].map((pass) =>
-              items
-                ? items.map((logo, i) => (
-                    <div key={`${pass}-${i}`} className="shrink-0 flex items-center justify-center h-10">
-                      <Image
-                        src={logo.src}
-                        alt={logo.alt}
-                        width={logo.width ?? 112}
-                        height={32}
-                        className="h-7 w-auto object-contain opacity-40 grayscale hover:opacity-75 hover:grayscale-0 transition-all duration-300"
-                      />
-                    </div>
-                  ))
-                : PLACEHOLDERS.map((p, i) => (
-                    <div
-                      key={`${pass}-${i}`}
-                      className="shrink-0 flex items-center justify-center h-10"
-                      style={{ width: p.width }}
-                    >
-                      <div className="w-full h-6 rounded bg-brand-100/70 flex items-center justify-center">
-                        <span className="text-[10px] font-medium text-brand-300 select-none">{p.label}</span>
-                      </div>
-                    </div>
-                  ))
+            {items.map((logo) =>
+              logo.darkBg ? (
+                <div
+                  key={logo.key}
+                  className="shrink-0 flex items-center justify-center rounded-lg bg-brand-800 px-4 py-2"
+                  style={{ width: (logo.width ?? 120) + 32 }}
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={logo.width ?? 120}
+                    height={36}
+                    className="h-7 w-auto object-contain opacity-60 hover:opacity-90 transition-opacity duration-300"
+                  />
+                </div>
+              ) : (
+                <div
+                  key={logo.key}
+                  className="shrink-0 flex items-center justify-center"
+                  style={{ width: logo.width ?? 120 }}
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={logo.width ?? 120}
+                    height={36}
+                    className="h-7 w-auto object-contain opacity-40 grayscale hover:opacity-75 hover:grayscale-0 transition-all duration-300"
+                  />
+                </div>
+              )
             )}
           </div>
         </div>
