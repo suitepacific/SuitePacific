@@ -52,7 +52,7 @@ Before assuming the issue requires an upgrade or re-implementation, check these 
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">None of these require a platform upgrade. All are configuration or cleanup changes in the account.</figcaption>
 </figure>
 
-## 1. Dashboard saved searches
+## 1. Are Dashboard Saved Searches Reloading Constantly?
 
 Every portlet on a dashboard backed by a saved search re-executes that search every time someone opens the dashboard. A search with formula columns, joined fields, and no tight date filter runs in full every morning when users log in.
 
@@ -60,7 +60,7 @@ If five users open their dashboard between 8:00 and 9:00 AM, that search runs fi
 
 **What to check:** Identify the saved searches powering dashboard portlets. Look for searches with formula columns, multiple joins, or wide date ranges. Trim columns to only what is displayed. Add or tighten date range filters. Consider whether the portlet needs to be real-time or whether a cached result would serve the same purpose.
 
-## 2. Custom scripts with no execution conditions
+## 2. Are Custom Scripts Running Without Execution Conditions?
 
 A User Event script deployed on a record type with no entry condition, no filter on the deployment record, no early exit in the script logic, fires on every save of that record type, regardless of what changed.
 
@@ -77,7 +77,7 @@ function afterSubmit(context) {
 }
 ```
 
-## 3. Workflows with no entry conditions
+## 3. Are Workflows Evaluating on Every Save?
 
 This mirrors the script issue at the workflow level. A workflow deployed on a record type with no Entry Condition evaluates on every save, even when nothing relevant has changed. The workflow still has to answer "should I run?" on every save, which adds evaluation overhead.
 
@@ -85,7 +85,7 @@ In accounts that have been running for years, it is common to find dozens of wor
 
 **What to check:** Review deployed workflows and identify those with no Entry Condition. Add conditions that limit evaluation to saves where something meaningful has changed. For legacy workflows that may no longer be needed, deactivate and test, if nothing breaks, consider removing them.
 
-## 4. Unused metadata
+## 4. Has Unused Metadata Accumulated in the Account?
 
 NetSuite loads and evaluates every custom field, custom form, and saved search in the account, including ones nobody has touched in years. A field that was created for a project that ended, a form variant that was replaced, a saved search from a reporting requirement that no longer exists, all of it is still being loaded and evaluated.
 
@@ -93,7 +93,7 @@ This is one of the easiest wins in a performance cleanup: identifying and removi
 
 **What to check:** Look for custom fields with no values populated across any records. Identify forms that are not assigned to any role or workflow. Find saved searches that have not been run recently. Deactivate rather than delete first, if nothing breaks within a week, it is safe to remove.
 
-## 5. Saved searches that filter after loading
+## 5. Are Saved Searches Filtering After Loading Records?
 
 A search that loads a large dataset and then applies formula-based filters does far more work than one that filters using indexed fields from the start.
 

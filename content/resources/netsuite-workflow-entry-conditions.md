@@ -21,7 +21,7 @@ For a workflow deployed on Sales Orders in an account that processes hundreds of
 
 Individually, each evaluation is small. At volume, across all workflows deployed on a record type, it adds up as a consistent drag on save performance.
 
-## What Entry Conditions do
+## What Do Entry Conditions Do in NetSuite Workflows?
 
 An Entry Condition is a filter that NetSuite checks before deciding whether to begin evaluating a workflow. If the condition is not met, the workflow is skipped entirely, no state evaluation, no action checks, no processing overhead.
 
@@ -79,7 +79,7 @@ The difference in how NetSuite evaluates each case:
 
 When the condition is not met, NetSuite stops at the entry check. None of the internal workflow logic is evaluated.
 
-## Designing a useful Entry Condition
+## How Do You Design a Useful Entry Condition?
 
 The goal is to identify the specific fields or values that actually determine whether the workflow should start. An approval workflow for sales orders, for example, might only be relevant when:
 
@@ -127,7 +127,7 @@ define([], () => {
 
 This is the SuiteScript discipline that mirrors Entry Conditions: check the minimum conditions first, return immediately if they aren't met, and only run the actual logic when it has something meaningful to do. The performance principle is identical to what Entry Conditions achieve at the workflow level.
 
-## Why experienced admins look at Entry Conditions first
+## Why Do Experienced Admins Check Entry Conditions First?
 
 When a NetSuite account feels slow on record saves, the instinct is often to look at the number of workflow states or the complexity of workflow actions. Entry Conditions matter more for performance because they determine whether any of that internal logic runs at all.
 
@@ -135,7 +135,7 @@ A workflow with 15 states and a well-designed Entry Condition will perform bette
 
 The number of states is internal complexity. The Entry Condition controls external frequency.
 
-## Additional performance benefits
+## What Are the Additional Performance Benefits of Entry Conditions?
 
 Beyond save performance, Entry Conditions also make workflows easier to troubleshoot. When a workflow runs on every save, the execution history fills with evaluations where nothing happened, making it harder to find the runs that actually mattered. With a good Entry Condition, the execution log reflects meaningful events only.
 

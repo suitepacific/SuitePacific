@@ -118,7 +118,7 @@ var mySearch = search.create({
 
 Then read the values directly from each result in the loop, no record load needed.
 
-## When record.load() in a loop is actually necessary
+## When Is record.load() in a Loop Actually Necessary?
 
 There are cases where loading inside a loop is unavoidable. The key question is: what are you doing with the record?
 

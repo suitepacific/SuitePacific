@@ -26,7 +26,7 @@ A single Payment Run can include any combination of:
 
 NetSuite processes the payments using the Bulk Processing Framework. After processing, each source transaction shows the related payment activity on its record, so you can trace which Payment Run settled a given bill without searching through payment history.
 
-## The four stages of a Payment Run
+## What Are the Four Stages of a Payment Run?
 
 <figure style="margin:1.75rem 0">
 <svg viewBox="0 0 680 110" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
@@ -89,7 +89,7 @@ If your account uses an approval workflow for AP, the Payment Run routes through
 
 NetSuite executes the payments. Each source transaction is updated with the related payment activity from the run.
 
-## What Payment Runs integrate with
+## What Does Payment Runs Integrate With in NetSuite?
 
 Payment Runs are a standard NetSuite record type. They support:
 
@@ -101,7 +101,7 @@ Payment Runs are a standard NetSuite record type. They support:
 - **REST web services:** integrate with external systems that trigger or read payment runs
 - **CSV import:** import payment run data in bulk
 
-## Why use Payment Runs instead of paying bills individually
+## Why Use Payment Runs Instead of Paying Bills Individually?
 
 **Efficiency.** Processing a batch of vendor payments in one workflow is significantly faster than opening and paying each bill separately, especially for AP teams with high transaction volumes.
 

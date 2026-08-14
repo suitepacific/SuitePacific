@@ -57,7 +57,7 @@ That parallelism only holds if each `map()` invocation can complete its work wit
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Parallel executions share no memory. Design each map() to be self-contained: all data it needs must come from context, not from shared state.</figcaption>
 </figure>
 
-## Why global variables do not work in map()
+## Why Do Global Variables Not Work in Parallel map() Calls?
 
 A common mistake is using a module-level variable to accumulate values across `map()` invocations:
 
@@ -76,7 +76,7 @@ Each `map()` execution runs in its own execution context. When NetSuite dispatch
 
 No error is thrown. The script completes. But `total` never reflects the full dataset, each invocation only ever accumulated its own single value before the context reset.
 
-## What map() should do instead
+## What Should map() Do Instead of Sharing State?
 
 The correct pattern is for each `map()` invocation to process its input and write a key-value pair to the context, which is passed to `reduce()`:
 
@@ -94,7 +94,7 @@ function map(context) {
 
 Each invocation processes one record and writes its contribution. `reduce()` then receives all values grouped by key and performs the aggregation. The `map()` stage never accumulates, it only transforms and routes.
 
-## What reduce() is for
+## What Is reduce() For in a Map/Reduce Script?
 
 `reduce()` is designed specifically for combining multiple values that share a key. When you call `context.write({ key: ..., value: ... })` in `map()`, NetSuite collects all values that share the same key and passes them together to a single `reduce()` invocation.
 
@@ -115,7 +115,7 @@ function reduce(context) {
 
 `reduce()` guarantees that all values for a given key are processed in a single invocation, which makes it the correct place for state that depends on multiple records. This guarantee does not exist in `map()`.
 
-## Other assumptions that break in map()
+## What Other Assumptions Break in Parallel map() Execution?
 
 Beyond global variables, these patterns also fail:
 
@@ -133,7 +133,7 @@ If processing requires combining values from multiple records, totals by custome
 
 The distinction: `map()` handles one record. `reduce()` combines many.
 
-## The analogy
+## What Analogy Explains Map/Reduce Isolation?
 
 Think of `map()` as giving 100 workers one box each. Each worker opens their box, does the work, and sets it aside. They do not need to talk to each other to finish their box.
 

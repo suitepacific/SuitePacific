@@ -63,7 +63,7 @@ Mixing up which type belongs where is one of the most common sources of missing 
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">If the logic must run every time a record is saved: use User Event. If it reacts to user interaction in the form: use Client Script.</figcaption>
 </figure>
 
-## User Event scripts: server-side, always runs
+## How Do User Event Scripts Execute in NetSuite?
 
 A User Event script fires on every save of a record, regardless of the save origin:
 
@@ -92,7 +92,7 @@ function beforeSubmit(context) {
 }
 ```
 
-## Client scripts: browser-side, only when using the UI
+## How Do Client Scripts Execute in NetSuite?
 
 A Client script runs in the user's browser while they are working on a form. It responds to events like field changes, page load, and form submission, but only when the record is open in the NetSuite UI.
 

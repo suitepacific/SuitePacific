@@ -13,7 +13,7 @@ linkedinDay: 28
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite 2026.2 adds five project health indicators that display a status flag on each project record based on configurable thresholds. The five indicators are: Planned vs. Actual Time Overrun (compares budgeted hours to hours logged), Overdue Tasks (counts tasks past their due date), Project Resource Coverage for Remaining Work (flags whether enough scheduled hours exist to complete the project), Project Margin Indicator (compares projected revenue to projected cost), and Unbilled Approved Charges (flags approved time and expenses that have not yet been invoiced). Each indicator shows green, yellow, or red based on thresholds the administrator sets at the project template or individual project level.</p>
 </div>
 
-## What project health indicators are
+## What Are NetSuite Project Health Indicators?
 
 Project health indicators in NetSuite give project managers a quick status read on a project without reviewing every task, timesheet, and transaction individually. They surface specific risk signals so you can act before a problem becomes a missed deadline or a billing gap.
 
@@ -52,7 +52,7 @@ NetSuite 2026.2 adds five new indicators to the existing set.
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Indicators surface risk signals without requiring a full timesheet or transaction review.</figcaption>
 </figure>
 
-## The 5 new indicators
+## What Are the 5 New Project Health Indicators in 2026.2?
 
 ### Planned vs. Actual Time Overrun
 
@@ -94,7 +94,7 @@ NetSuite 2026.2 adds five new indicators to the existing set.
 
 ---
 
-## Where to find these indicators
+## Where Do You Find Project Health Indicators in NetSuite?
 
 The five new indicators appear in the project health section of the project record in NetSuite. They are new in 2026.2 and will display automatically on project records once your account is on the 2026.2 release. No configuration is required to enable them.
 

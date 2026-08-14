@@ -68,7 +68,7 @@ SuiteScript provides two script types designed for processing records in batch: 
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Scheduled Scripts fail at scale because one governance budget covers all records. Map/Reduce distributes the budget across independent map() executions.</figcaption>
 </figure>
 
-## Scheduled Scripts: single-threaded, sequential
+## How Do NetSuite Scheduled Scripts Execute?
 
 A Scheduled Script runs as a single execution. It starts, processes records one by one in sequence, and finishes. All of the work happens in one transaction context, on one thread.
 
@@ -82,7 +82,7 @@ The advantages are simplicity: a Scheduled Script is easier to write, easier to 
 
 The constraint is that all processing happens sequentially in a single execution context. The governance limit for a Scheduled Script is a fixed number of units, and if processing 5,000 records would exceed that limit, the script will fail partway through.
 
-## Map/Reduce Scripts: distributed, parallel
+## How Do Map/Reduce Scripts Execute in Parallel?
 
 A Map/Reduce script breaks the work into stages and distributes processing across multiple execution contexts. The `getInputData()` stage defines the workload, `map()` processes each item independently (potentially in parallel), `reduce()` aggregates results where needed, and `summarize()` handles completion.
 
@@ -96,7 +96,7 @@ The key advantage is scalability. Because `map()` executions run independently a
 
 The tradeoff is complexity. Map/Reduce requires understanding the stage model and designing the workload accordingly. Debugging is more involved because execution is distributed across multiple contexts.
 
-## The governance boundary
+## What Is the Governance Boundary Between Script Types?
 
 The clearest signal for which script type to use is whether the workload fits within a Scheduled Script's governance limits.
 
@@ -104,7 +104,7 @@ If you are writing a Scheduled Script and adding retry logic, checkpointing, or 
 
 Map/Reduce is specifically designed to handle governance at scale: each `map()` invocation gets its own governance allocation, so the total governance available to the job scales with the number of items being processed.
 
-## A common performance issue
+## What Is a Common Performance Issue with Scheduled Scripts?
 
 Many NetSuite accounts have Scheduled Scripts that were written when the data volume was small and have since grown into a problem. A script that processed 200 records comfortably at go-live hits governance limits three years later when it needs to process 8,000. The fix is not to optimize the Scheduled Script, it is to rewrite it as a Map/Reduce script.
 

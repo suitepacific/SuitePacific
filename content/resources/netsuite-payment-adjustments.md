@@ -13,7 +13,7 @@ linkedinDay: 27
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite 2026.2 adds automated payment adjustments that handle three common discrepancy scenarios from Customer Payment and Customer Deposit records: bank fees charged by the payment processor, convenience fees added to the payment amount, and underpayments where the customer paid slightly less than the invoice balance (within a configurable tolerance). When a payment comes in with one of these discrepancies, NetSuite creates the adjustment automatically rather than requiring a manual journal entry. Automated payment adjustments reduce the manual reconciliation work on accounts with high payment volume and frequent small discrepancies.</p>
 </div>
 
-## What automated payment adjustments cover
+## What Do Automated Payment Adjustments Cover in NetSuite?
 
 NetSuite 2026.2 introduces automation for three types of payment discrepancies that previously required manual adjustment entries:
 
@@ -51,7 +51,7 @@ NetSuite 2026.2 introduces automation for three types of payment discrepancies t
 
 **Underpayments:** When a customer pays slightly less than the full amount due and the difference falls within a write-off threshold, the adjustment can be applied automatically rather than requiring a separate journal entry.
 
-## Where the automation happens
+## Where Does the Automated Payment Adjustment Happen?
 
 Payment adjustment automation is available on two record types:
 
@@ -60,7 +60,7 @@ Payment adjustment automation is available on two record types:
 
 When you record a payment on either of these records and a discrepancy exists that falls within the automated adjustment scope, NetSuite handles the adjustment at that point rather than leaving it for a separate manual step.
 
-## What this replaces
+## What Did Automated Payment Adjustments Replace?
 
 Before 2026.2, handling a bank fee, convenience fee, or small underpayment typically required one or more of the following:
 
@@ -70,7 +70,7 @@ Before 2026.2, handling a bank fee, convenience fee, or small underpayment typic
 
 These steps added transactions to the ledger and required time to complete for each affected payment. The 2026.2 automation applies the adjustment directly as part of recording the payment.
 
-## What this does not cover
+## What Do Automated Payment Adjustments Not Cover?
 
 Automated payment adjustments handle small discrepancies within defined thresholds. Larger underpayments, disputed amounts, or partial payments that require separate billing or follow-up are outside the scope of this automation and still require manual handling.
 

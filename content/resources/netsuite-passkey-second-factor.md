@@ -70,11 +70,11 @@ The next time NetSuite prompts for a second factor after your password login:
 2. Authenticate using Face ID, Touch ID, or Windows Hello
 3. Login completes without entering a time-based code from an authenticator app
 
-## Keep your authenticator app installed
+## Should You Keep Your Authenticator App After Enabling a Passkey?
 
 Even with a passkey as your second factor, NetSuite will prompt for your authenticator app code once every three months. This is a built-in fallback, not a malfunction. Keep your authenticator app installed and your account registered so you can complete this prompt when it appears.
 
-## If you are a NetSuite administrator
+## What Should NetSuite Administrators Know About Passkey Second Factors?
 
 Administrators can disable the passkey-as-2FA feature for their account. This reverts all users to the standard authenticator app prompt for 2FA regardless of whether they have a passkey configured.
 

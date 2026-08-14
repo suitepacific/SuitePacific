@@ -76,7 +76,7 @@ Getting this wrong is one of the most common sources of subtle SuiteScript bugs,
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">beforeSubmit fires before the record exists in the database. afterSubmit fires after it is committed and has a permanent ID.</figcaption>
 </figure>
 
-## What beforeSubmit can do
+## What Can beforeSubmit Do?
 
 Because `beforeSubmit` fires before the record is committed, it has two capabilities that `afterSubmit` does not:
 
@@ -111,7 +111,7 @@ function beforeSubmit(context) {
 }
 ```
 
-## What afterSubmit can do
+## What Can afterSubmit Do?
 
 **afterSubmit** runs after the record is safely committed. The record has a permanent ID (`context.newRecord.id`) and is available in the database.
 

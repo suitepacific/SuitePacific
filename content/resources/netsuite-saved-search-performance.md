@@ -63,7 +63,7 @@ Each change looked harmless on its own. Together, they transformed a simple oper
 </svg>
 </figure>
 
-## What makes a Saved Search expensive
+## What Makes a NetSuite Saved Search Slow?
 
 **Formula columns** require NetSuite to evaluate a calculation for every row in the result set. A `CASE WHEN amount > 10000 THEN 'High' ELSE 'Low' END` formula runs once per result. At 50,000 rows, that is 50,000 formula evaluations.
 
@@ -75,7 +75,7 @@ Each change looked harmless on its own. Together, they transformed a simple oper
 
 Any one of these adds modest overhead. Several together, applied to a search returning thousands of rows, create the conditions for a search that takes minutes instead of seconds.
 
-## Diagnosing your specific search
+## How Do You Diagnose a Slow Saved Search?
 
 When a Saved Search is slow, review its columns for:
 

@@ -13,7 +13,7 @@ linkedinDay: 25
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite 2026.2 replaced the Review subtab on the Match Bank Data page with a new Match Suggestions subtab. The Match Suggestions subtab presents system-suggested matches between bank transactions and NetSuite records. Five actions are available for each suggestion: Match (accept and link the records), Match All (accept all suggestions at once), Unmatch (break an existing match), Resolve (mark as reconciled without a matching record), and Ignore (dismiss the suggestion without action). The Submit button was renamed to Update. Navigate to Transactions > Bank > Match Bank Data and select the Match Suggestions tab to access these options.</p>
 </div>
 
-## What changed in 2026.2
+## What Changed in NetSuite 2026.2 Bank Reconciliation?
 
 The Match Bank Data page in NetSuite 2026.2 has a new **Match Suggestions** subtab that replaces the old Review subtab. Along with this, several tab names and button labels changed. If you did bank reconciliation before 2026.2, the page looks different.
 
@@ -70,7 +70,7 @@ Once you have matched a transaction, click **Match and Submit** (previously labe
 
 The rename reflects that the action now submits automatically rather than requiring a separate confirmation step.
 
-## Tab names that changed
+## Which Tab Names Changed in Match Bank Data?
 
 Two tabs on the Match Bank Data page were renamed in 2026.2:
 
@@ -81,7 +81,7 @@ Two tabs on the Match Bank Data page were renamed in 2026.2:
 
 The underlying content is the same. Only the labels changed.
 
-## Other changes on the page
+## What Other Changes Were Made to the Match Bank Data Page?
 
 **Action buttons above and below the list:** Buttons now appear at the top and bottom of the transaction list. For long lists, you no longer have to scroll to the bottom to take action.
 

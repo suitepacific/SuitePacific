@@ -178,7 +178,7 @@ These are Oracle's minimum required test areas for any FSM bundle update, plus a
 
 ---
 
-## After the Production upgrade (August 11)
+## What Should You Do After the Production Upgrade on August 11?
 
 - [ ] Re-verify custom center tab audience settings and links in Production
 - [ ] Confirm the "Auto Configure xxxx: Migrate nxc_now expressions" record in Production matches what you reviewed in Sandbox
@@ -187,7 +187,7 @@ These are Oracle's minimum required test areas for any FSM bundle update, plus a
 
 ---
 
-## If you find an issue
+## What Should You Do If You Find an Issue During Testing?
 
 1. Document the exact steps to reproduce, the expected result, and the actual result
 2. Log a support case with Oracle NetSuite support referencing the FSM bundle version (2026.07.1) and Bundle ID 570821

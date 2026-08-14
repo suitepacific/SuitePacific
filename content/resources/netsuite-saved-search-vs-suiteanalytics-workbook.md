@@ -52,7 +52,7 @@ Using the wrong one is one of the most common causes of slow month-end reporting
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Saved Searches query live data. Workbooks query a separate analytical store optimized for aggregations and large datasets.</figcaption>
 </figure>
 
-## Saved Search: built for operational data
+## What Is a NetSuite Saved Search Designed For?
 
 A Saved Search queries NetSuite's operational (transactional) data, the live database that records are written to and read from in real time.
 
@@ -64,7 +64,7 @@ This makes Saved Searches the right tool for:
 
 The defining characteristic is that Saved Searches return live data. When you run a search for open sales orders, it reflects the exact state of the database at that moment.
 
-## SuiteAnalytics Workbook: built for analytical reporting
+## What Is SuiteAnalytics Workbook Designed For?
 
 SuiteAnalytics Workbook uses a separate analytical data source designed for reporting and analysis. It is not querying the same live operational database that Saved Searches use, it is optimized for the types of queries that operational databases handle poorly: large result sets, period comparisons, trend analysis, and complex aggregations.
 
@@ -83,7 +83,7 @@ The clearest signal is month-end and year-end reporting. When finance needs a re
 
 Similarly, if a Saved Search is consistently slow, taking more than a few seconds to run, timing out under normal conditions, or causing complaints from users who run it regularly, rebuilding it as a Workbook is one of the first things to try. The performance difference on the right query type can be significant.
 
-## The license consideration
+## What License Is Required for SuiteAnalytics Workbook?
 
 SuiteAnalytics Workbook is not available to every NetSuite customer by default, it requires the SuiteAnalytics module to be included in your NetSuite license. If you navigate to Reports and do not see a Workbook option, confirm with your NetSuite account manager whether it is included in your subscription.
 

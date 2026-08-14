@@ -68,7 +68,7 @@ In a script that runs once or twice, this is irrelevant. In a Scheduled Script r
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">The governance difference is negligible on one record. On 5,000 records in a nightly script, it is not.</figcaption>
 </figure>
 
-## A faster alternative for body field updates
+## What Is a Faster Alternative for Updating Body Fields?
 
 `record.submitFields()` updates body fields directly without loading the full record:
 
@@ -98,7 +98,7 @@ This is not always a problem. If the User Event script handles something unrelat
 
 Before making the switch: identify what User Event scripts are deployed on the record type you are updating and confirm whether any of them contain logic that needs to execute on this particular change.
 
-## When to use each method
+## When Should You Use submitFields() vs record.load()?
 
 **Use `record.submitFields()` when:**
 - You are updating one or a few body fields

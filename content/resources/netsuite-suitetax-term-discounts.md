@@ -13,7 +13,7 @@ linkedinDay: 31
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite SuiteTax accounts can now calculate tax on term discounts (early payment discounts) using a feature added in 2026.2. Enabling it requires two settings: first, enable Tax Term Discounts at Setup > Accounting > Accounting Preferences > Tax tab; second, enable the equivalent setting at the nexus level under Setup > Tax > Nexuses, edit the relevant nexus, and enable the term discount tax option. Both settings must be active for the feature to apply on transactions. Test with a purchase transaction in sandbox to confirm that the tax adjustment appears correctly when an early payment discount is applied.</p>
 </div>
 
-## What this enables
+## What Does the Tax on Term Discounts Feature Enable?
 
 When a vendor gives you a term discount (for example, 2% off if you pay within 10 days) and you take that discount, the amount you actually paid is less than the invoice total. In most tax jurisdictions, the taxable base is the amount paid, not the gross invoice amount.
 
@@ -72,7 +72,7 @@ Confirm that NetSuite generates an adjustment transaction to account for the tax
 
 Review the adjustment transaction to confirm the tax amounts are correct for your nexus configuration.
 
-## What to check if it is not working
+## What Should You Check If Term Discount Tax Is Not Working?
 
 If no adjustment transaction is created after following these steps:
 

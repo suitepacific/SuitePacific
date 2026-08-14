@@ -70,7 +70,7 @@ This is one of the most common workflow issues in NetSuite accounts, and the cau
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Cause 1 is visible in the trigger tab. Cause 2 requires checking what User Event scripts are deployed on the same record type.</figcaption>
 </figure>
 
-## Cause 1: Both "Before Record Submit" and "After Record Submit" are selected
+## Why Does Selecting Both Submit Triggers Cause a Workflow to Fire Twice?
 
 When configuring a workflow's trigger, NetSuite lets you select multiple trigger events. The most common double-fire pattern is selecting both **Before Record Submit** and **After Record Submit** on the same workflow.
 
@@ -86,7 +86,7 @@ If both are selected, the workflow runs once for each trigger, two executions pe
 
 One workflow should serve one purpose. If the logic genuinely needs to run at both points in the save cycle, that is usually a sign it should be split into two separate workflows, each with a single trigger.
 
-## Cause 2: A User Event script is triggering a record update that re-fires the workflow
+## How Does a User Event Script Cause a Workflow to Fire Twice?
 
 This is a less obvious but equally common cause. The sequence looks like this:
 

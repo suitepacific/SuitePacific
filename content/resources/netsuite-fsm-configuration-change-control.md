@@ -20,7 +20,7 @@ This checklist covers the Sandbox-first workflow, what to validate after a chang
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite Field Service Management configuration changes should always be validated in Sandbox before deploying to Production. The three highest-risk areas are: the active configuration (only one can be active at a time, and changing it immediately affects all field technicians); mobile validation rules (a misconfigured rule produces a hard stop on the technician's device with no clear error message, blocking them from completing work orders in the field); and work order status transitions (an incorrect transition configuration can prevent field operations from moving work orders to a completed state). Use a Sandbox-first workflow for any FSM configuration change and test the full technician mobile flow before promoting to Production.</p>
 </div>
 
-## The Sandbox-first workflow
+## What Is the Sandbox-First Workflow for FSM Configuration Changes?
 
 No FSM configuration change should go directly to Production. The sequence is:
 
@@ -44,7 +44,7 @@ Apply the approved configuration to Production and repeat the validation steps a
 
 ---
 
-## What to validate after any significant FSM configuration change
+## What Should You Validate After a Significant FSM Configuration Change?
 
 Check each of these areas after a configuration change, scaled to the scope of what changed:
 
@@ -72,7 +72,7 @@ Check each of these areas after a configuration change, scaled to the scope of w
 
 ---
 
-## The one-active-configuration rule
+## What Is the One-Active-Configuration Rule in NetSuite FSM?
 
 Only one FSM Configuration record should be active in your NetSuite account at any time.
 
@@ -88,7 +88,7 @@ After any bundle update or configuration migration, confirm that only one FSM Co
 
 ---
 
-## Testing changes recommended by Support or partners
+## How Should You Test Changes Recommended by Support or Partners?
 
 When NetSuite Support or a consulting partner recommends a configuration change, test it in Sandbox before applying it to Production.
 

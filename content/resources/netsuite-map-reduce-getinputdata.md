@@ -60,7 +60,7 @@ Its job is simple: tell NetSuite what records need to be processed. Return a dat
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Return the search object itself, not an array you built by looping. The framework does the rest.</figcaption>
 </figure>
 
-## What many scripts do instead
+## What Do Many Scripts Do Incorrectly in getInputData()?
 
 A common pattern uses `getInputData()` to run a search, loop through every result, and build an array before passing it to `map()`:
 
@@ -83,7 +83,7 @@ This works. But by the time `map()` starts, all the search execution has already
 
 If the search returns 10,000 records, `getInputData()` processes all 10,000 sequentially. Then `map()` distributes what's left. The stage that was supposed to benefit from parallelism has already done the heavy lifting before parallelism begins.
 
-## The correct approach: return a data source object
+## What Is the Correct Approach for getInputData()?
 
 Instead of executing the search inside `getInputData()`, return the search object itself:
 
@@ -107,13 +107,13 @@ function getInputData() {
 }
 ```
 
-## Why this matters for governance
+## Why Does getInputData() Design Matter for Governance?
 
 `getInputData()` runs under the standard scheduled script governance limits. When you pre-execute a large search inside it, you consume governance units before any parallel processing begins.
 
 By returning a Search or Query object instead, you defer execution to the Map/Reduce framework, which handles pagination and distribution more efficiently. The result is lower governance consumption in `getInputData()`, more work offloaded to `map()` workers, and a script that scales to larger datasets without hitting limits.
 
-## What should stay out of getInputData()
+## What Should Stay Out of getInputData()?
 
 Beyond pre-executing searches, these patterns in `getInputData()` undermine the framework:
 
@@ -123,7 +123,7 @@ Beyond pre-executing searches, these patterns in `getInputData()` undermine the 
 
 The simpler `getInputData()` is, the more work the framework can distribute.
 
-## The analogy
+## What Analogy Explains the Map/Reduce Pattern?
 
 Think of Map/Reduce as a warehouse operation. `getInputData()` is the manager who creates the work order list. `map()` workers are the employees who execute each item on the list independently.
 

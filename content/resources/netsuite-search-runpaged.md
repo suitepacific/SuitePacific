@@ -64,7 +64,7 @@ This is one of the more dangerous limitations in SuiteScript because it fails si
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Use search.runPaged() any time the result set might exceed 4,000 records now or in the future.</figcaption>
 </figure>
 
-## How search.runPaged() works differently
+## How Does search.runPaged() Work Differently from search.run()?
 
 `search.runPaged()` removes the 4,000-record ceiling entirely. It returns a `PagedData` object that iterates through every matching result regardless of total count:
 
@@ -96,7 +96,7 @@ Scripts are often written when a dataset is small, then left running as the busi
 
 `search.runPaged()` eliminates this class of bug. The script either processes all records or throws a runtime error, there is no silent partial execution.
 
-## When to use each method
+## When Should You Use runPaged() vs run()?
 
 **Use `search.run()` when:**
 - The result set is small and bounded, a lookup of a specific subset, a UI-facing feature that only needs the first page of results, or a search filtered tightly enough that it will never approach 4,000 records

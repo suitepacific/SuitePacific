@@ -69,7 +69,7 @@ In a script that runs once, the overhead is negligible. In a Scheduled Script ch
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Use lookupFields() to read; use record.load() to write sublists, trigger User Events, or read data from line items.</figcaption>
 </figure>
 
-## A faster alternative for field reads
+## What Is a Faster Alternative for Reading Field Values?
 
 When you know a record's ID and just need specific field values, `search.lookupFields()` reads only what you ask for:
 
@@ -87,13 +87,13 @@ var total = fields.amount;
 
 No full record load. Only the specified fields are retrieved. The governance and performance cost is a fraction of `record.load()`.
 
-## What search.lookupFields() returns
+## What Does search.lookupFields() Return?
 
 The return value is a plain object with the field values keyed by field ID. Most fields return simple string or number values. Select fields (like `entity`, `status`) return the display value by default.
 
 For fields that have both an internal ID and a display value, like a list/record field, `lookupFields()` returns the value in a format similar to how it appears in a search result. If you need the internal ID of a select field, you can access it via the result's `value` property in some cases, or run a search with the field as a column.
 
-## What search.lookupFields() cannot do
+## What Can search.lookupFields() Not Do?
 
 This is important: `search.lookupFields()` is read-only. You cannot use the result to update the record. If your script needs to read values and then update the record based on what it reads, you still need `record.load()`, or you can use `lookupFields()` for the read and `record.submitFields()` for the update (keeping them separate).
 
@@ -113,7 +113,7 @@ This is important: `search.lookupFields()` is read-only. You cannot use the resu
 - You need to work with subrecords
 - You need to read a large number of body fields where a full load is more practical
 
-## A common use case: checking a field before deciding whether to act
+## How Do You Check a Field Value Before Acting?
 
 A frequent pattern is checking a field value to decide whether further action is needed. This is where `lookupFields()` provides the clearest benefit:
 

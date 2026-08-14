@@ -13,7 +13,7 @@ linkedinDay: 26
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Advanced Record Customization (ARC) in NetSuite 2026.2 is a new area under Customization that lets administrators manage AI descriptions for standard and custom record types. These descriptions inform NetSuite's AI features how to interpret and work with each record type. ARC is accessible at Customization > Advanced Record Customization. Select a record type to view its current AI description, create a custom description if none exists, or edit the existing one. Custom descriptions are account-specific and take precedence over NetSuite's defaults. Only one description can be active per record type at a time.</p>
 </div>
 
-## What Advanced Record Customization is
+## What Is Advanced Record Customization (ARC) in NetSuite?
 
 Advanced Record Customization (ARC) is a new feature in NetSuite 2026.2 that gives you a centralized place to manage AI descriptions for record types. An AI description is a short text (up to 280 characters) that tells NetSuite's AI Connector Service what a record type is and how it is used in your account. These descriptions inform AI-powered features and MCP-based integrations connected to your NetSuite instance.
 
@@ -81,11 +81,11 @@ Use this to check whether your customization is significantly different from the
 
 If you have set a custom description and want to go back to the original, you can revert. This restores either the NetSuite default or the partner solution description, depending on which one was in place before your customization.
 
-## What to know about scope
+## What Should You Know About ARC Description Scope?
 
 AI descriptions set in ARC apply at the **account level**. They override both the default NetSuite descriptions and any descriptions added by partner solutions or installed bundles. Your custom description takes precedence.
 
-## Who should use ARC
+## Who Should Use Advanced Record Customization?
 
 Advanced Record Customization is most useful for:
 
