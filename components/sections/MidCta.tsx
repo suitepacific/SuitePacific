@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { Star } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { CTA_SUPPORT_LINE } from "@/lib/content";
@@ -19,6 +21,17 @@ export function MidCta() {
             <p className="mt-4 text-sm text-brand-400 max-w-md mx-auto text-balance">
               {CTA_SUPPORT_LINE}
             </p>
+            <Link
+              href="https://clutch.co/profile/suitepacific"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 text-xs text-brand-400 hover:text-accent transition-colors"
+            >
+              <span className="flex items-center gap-0.5 text-amber-400">
+                {[...Array(5)].map((_, i) => <Star key={i} className="h-3 w-3 fill-current" />)}
+              </span>
+              5.0 on Clutch
+            </Link>
           </div>
         </FadeIn>
       </div>

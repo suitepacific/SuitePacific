@@ -1,4 +1,5 @@
-import { CheckCircle2 } from "lucide-react";
+import Link from "next/link";
+import { CheckCircle2, Star } from "lucide-react";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { LeadForm } from "@/components/sections/LeadForm";
 
@@ -26,6 +27,17 @@ export function FinalCta() {
               </div>
             ))}
           </div>
+          <Link
+            href="https://clutch.co/profile/suitepacific"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center gap-2 text-xs text-blue-200 hover:text-white transition-colors"
+          >
+            <span className="flex items-center gap-0.5 text-amber-400">
+              {[...Array(5)].map((_, i) => <Star key={i} className="h-3 w-3 fill-current" />)}
+            </span>
+            5.0 on Clutch &middot; verified client review
+          </Link>
         </FadeIn>
 
         <FadeIn onMount delay={0.1}>
