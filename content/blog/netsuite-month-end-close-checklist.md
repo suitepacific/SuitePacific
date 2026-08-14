@@ -5,6 +5,8 @@ date: "2026-07-01"
 tags: ["NetSuite", "Reporting"]
 ---
 
+The NetSuite month-end close is the sequence of accounting steps that finalizes a fiscal period: verifying that all transactions posted to the correct period, running currency revaluation, locking the ledger against further entries, and reconciling open balances across modules. The order of operations matters because NetSuite's period structure and subsidiary ledgers behave differently from most ERP systems.
+
 Generic month-end close advice is easy to find. What's harder to find is what's specific to NetSuite: the things that behave differently than your old system, the steps that require clicking in a specific order, and the reports that only tell you something went wrong after you've already closed the period. This checklist covers those.
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">

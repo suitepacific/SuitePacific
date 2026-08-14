@@ -6,6 +6,8 @@ updated: "2026-08-05"
 tags: ["Administration", "Accounting", "AP"]
 ---
 
+NetSuite Bill Capture is the platform's AI-powered document processing feature that automatically extracts vendor bill data from uploaded PDF files and populates vendor bill records, reducing manual data entry for accounts payable teams. Bill Capture preferences control how the extracted data is applied and how the resulting bill records are created.
+
 If your NetSuite account uses Bill Capture to process vendor bills, two preference fields changed behavior in 2026.2. Previously, leaving them blank had an ambiguous outcome. Now those blank values map to explicit options.
 
 <div style="background:#fefce8;border:1px solid #fde68a;border-radius:10px;overflow:hidden;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">

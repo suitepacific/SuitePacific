@@ -5,6 +5,8 @@ date: "2026-08-01"
 tags: ["Field Service Management", "Administration", "Bundle Updates", "Configuration"]
 ---
 
+The nxc_now() function is a date-time expression used in NetSuite Field Service Management mobile event maps to capture the current timestamp at the moment a technician triggers a mobile event in the field. The 2026.07.1 bundle update replaces this function with a different syntax, and Oracle is automatically migrating existing configurations that use it.
+
 If your NetSuite Field Service Management configuration uses `nxc_now()` expressions in mobile event maps or field expressions, Oracle will automatically migrate those expressions when the FSM 2026.07.1 bundle updates on August 11, 2026.
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">

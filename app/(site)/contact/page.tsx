@@ -15,7 +15,7 @@ const WHAT_TO_EXPECT = [
 const TRUST_BADGES = [
   { icon: ShieldCheck, label: "NetSuite Certified" },
   { icon: Clock, label: "Post-Go-Live Specialists" },
-  { icon: Star, label: "6+ Years NetSuite Experience" },
+  { icon: Star, label: "NetSuite specialist since 2020" },
 ];
 
 export const metadata: Metadata = {

@@ -5,6 +5,8 @@ date: "2026-07-27"
 tags: ["Field Service Management", "Administration", "Bundle Updates", "Sandbox Testing"]
 ---
 
+NetSuite Field Service Management (FSM) is a SuiteApp that extends NetSuite with work order management, technician scheduling, dispatch, and mobile field service capabilities. It is installed as a managed bundle and receives periodic updates from Oracle that can change configuration record structure, mobile app behavior, and expression syntax.
+
 If you have a NetSuite account with the Field Service Management SuiteApp installed, you may have already received a notification from Oracle about an upcoming managed bundle update scheduled for 11 August. Oracle recommends testing the new bundle version in your Sandbox environment before it reaches Production, so that any issues with your existing configurations, customizations, or business processes can be identified and resolved in advance.
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">

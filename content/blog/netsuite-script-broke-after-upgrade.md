@@ -5,6 +5,8 @@ date: "2026-08-13"
 tags: ["netsuite", "suitescript", "troubleshooting", "netsuite-release"]
 ---
 
+A release-related script failure is a SuiteScript customization that ran correctly before a NetSuite platform update but stops working or produces different output after the update, without any change made by the account administrator. These failures are distinct from bugs introduced by the developer because the script code itself has not changed.
+
 NetSuite pushes two major releases per year and several minor updates in between. Scripts that have run without issue for years can fail silently after an update with no warning to the account administrator. This guide walks through how to diagnose a release-related script failure, identify what changed, and restore function.
 
 ## How release-related script failures typically appear

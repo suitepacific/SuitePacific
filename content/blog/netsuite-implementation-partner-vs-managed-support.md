@@ -5,6 +5,8 @@ date: "2026-08-09"
 tags: ["NetSuite", "Admin", "Post-Go-Live"]
 ---
 
+A NetSuite implementation partner is a firm engaged to configure and deploy a new NetSuite account, typically under a fixed-scope statement of work. Managed support is an ongoing post-go-live service that covers administration, SuiteScript development, and optimization tasks after the initial deployment is complete. The two are different engagements with different scopes, pricing models, and skill requirements.
+
 The implementation ends. The statement of work is delivered, the final invoice arrives, and the partner moves on to their next project. Then, somewhere in the following weeks, the first change request surfaces that has no clear owner: a new team member needs access, a workflow needs updating for a process that changed since go-live, a saved search is returning wrong data and nobody on the internal team knows why.
 
 That gap between what the implementation covered and what the account actually needs is one of the most expensive surprises in a NetSuite deployment. Most companies discover it at the worst possible moment, when the work is urgent and the partner who built the system is no longer available for it.

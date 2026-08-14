@@ -13,7 +13,7 @@ export function Footer() {
               <span className="font-semibold text-white text-lg">SuitePacific</span>
             </Link>
             <p className="mt-4 text-sm max-w-xs">
-              Your dedicated NetSuite team for ongoing enhancements, custom
+              Your dedicated NetSuite specialist for ongoing enhancements, custom
               development, and expert support after go-live.
             </p>
             <p className="mt-3 text-xs text-blue-100/60">Wyoming, USA</p>

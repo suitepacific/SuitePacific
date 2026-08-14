@@ -5,6 +5,8 @@ date: "2026-08-01"
 tags: ["Field Service Management", "Mobile", "Bundle Updates"]
 ---
 
+The NetSuite Field Service Management (FSM) mobile app is the interface field technicians and dispatchers use to view work orders, update service records, and log appointments from a mobile device. The app's layout and navigation are defined by the FSM Configuration record in the account, which means bundle updates that change the Configuration record structure also change what technicians see in the field.
+
 On August 11, 2026, Oracle will update the NetSuite Field Service Management bundle to version 2026.07.1 in Production accounts. Most of the conversation about this update focuses on administrator configuration tasks. But for the people who will notice it most, the change is in the mobile app.
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">

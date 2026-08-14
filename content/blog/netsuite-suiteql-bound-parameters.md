@@ -6,6 +6,8 @@ updated: "2026-08-07"
 tags: ["SuiteScript", "SuiteQL", "Security"]
 ---
 
+Bound parameters are a parameterized query technique where dynamic values are passed separately from the query string, preventing injection vulnerabilities and making queries easier to maintain. In SuiteQL, a bound parameter replaces an embedded value with a placeholder that NetSuite substitutes safely at execution time.
+
 If you build SuiteQL queries in NetSuite that include dynamic values, such as a date range, a user-supplied record ID, or a value from another transaction, there is now a safer way to write them.
 
 NetSuite 2026.2 adds support for **bound parameters** in REST SuiteQL queries. Instead of embedding values directly in the query string, you put placeholders in the query and pass the values separately. NetSuite handles the substitution safely.

@@ -6,6 +6,8 @@ updated: "2026-08-07"
 tags: ["Advanced PDF", "Templates"]
 ---
 
+NetSuite Advanced PDF Templates are the platform's built-in system for generating transaction documents using FreeMarker markup and BFO Tag Library syntax, attached directly to transaction forms. The template controls exactly how each transaction type renders as a PDF, from field placement to conditional logic based on transaction data.
+
 A new Advanced PDF template almost always passes testing. The failures usually surface weeks later, on a specific customer's invoice or a transaction with unusual data, and by then nobody remembers what the template was supposed to handle. Five causes account for most of what we end up fixing.
 
 <div style="background:#fefce8;border:1px solid #fde68a;border-radius:10px;overflow:hidden;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">

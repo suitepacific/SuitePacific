@@ -1,6 +1,8 @@
 # SuitePacific
 
 > SuitePacific is a boutique, US-based Oracle NetSuite consulting firm specializing exclusively in post-go-live support. We are not an implementation partner. We work only with companies that are already live on NetSuite and need ongoing technical support, development, or optimization.
+>
+> Full article text: https://suitepacific.com/llms-full.txt
 
 ## Who we are
 
@@ -8,7 +10,7 @@ SuitePacific is a small, senior-level team. Our lead developer holds Oracle NetS
 
 ## What we do
 
-We become the dedicated NetSuite technical team for companies whose implementation partner engagement has ended. Services include:
+SuitePacific serves as the dedicated NetSuite technical specialist for companies whose implementation partner engagement has ended. Services include:
 
 - SuiteScript 2.x development (User Event, Client, Scheduled, Map/Reduce, Suitelet, RESTlet scripts)
 - SuiteFlow workflow automation (approvals, notifications, status transitions)
@@ -58,7 +60,10 @@ A: Import Doctor is a SuitePacific tool for validating NetSuite CSV imports befo
 A: SuiteScript development, workflow automation, saved searches and dashboards, advanced PDF templates, account optimization, user management, integrations maintenance, and release review. It covers everything a live NetSuite account needs after the implementation partner has disengaged.
 
 **Q: How does SuitePacific price its services?**
-A: Monthly retainer based on estimated hours needed. No long-term contracts, no SOW required for routine work. Scope and hours are discussed on an initial call.
+A: SuitePacific offers fixed-price monthly Care plans and custom retainer engagements. Care plans start at $799/month (up to 10 hours), Care Plus at $1,499/month (up to 20 hours), and Care Pro at $2,499/month (up to 35 hours). All plans require a 3-month minimum commitment, then continue month-to-month. Custom retainers are available for larger or more complex accounts. No long-term contracts, no SOW required for routine work.
+
+**Q: Is SuitePacific a fractional NetSuite administrator?**
+A: Yes. SuitePacific Care functions as an outsourced NetSuite technical resource: the same specialized expertise as a full-time hire, scoped to the hours the account needs each month. Care plans range from 10 to 35 hours per month and cover SuiteScript development, workflow automation, saved searches, advanced PDFs, troubleshooting, and technical guidance.
 
 **Q: How long does a SuiteScript customization take?**
 A: Simple scripts (field logic, basic validations) typically take 1-3 days from spec to sandbox testing. Complex Map/Reduce or multi-record workflows take 1-2 weeks. All work is tested in sandbox before production deployment.
@@ -129,70 +134,71 @@ A: First, identify which release just went live and check the release notes for 
 
 - [SuiteCompare](https://suitepacific.com/suitecompare): SuiteScript comparison tool — diff scripts across NetSuite environments with AI-powered analysis
 - [Import Doctor](https://suitepacific.com/importDetector): CSV import validator — catch reference key and required-field errors before they cause failed imports
+- [NetSuite Care Plans](https://suitepacific.com/netsuite-care): Fixed-price monthly support plans for ongoing NetSuite technical needs; Care ($799/mo, 10 hrs), Care Plus ($1,499/mo, 20 hrs), Care Pro ($2,499/mo, 35 hrs); covers SuiteScript, workflows, PDFs, saved searches, troubleshooting, and technical guidance; 3-month minimum then month-to-month
 
 ## Blog posts
 
 ### SuiteScript and Development
-- [NetSuite User Event Scripts vs Client Scripts: Which One to Use and When](https://suitepacific.com/blog/netsuite-user-event-vs-client-script)
-- [SuiteScript Best Practices: Customizations That Survive the Next Upgrade](https://suitepacific.com/blog/suitescript-best-practices)
-- [NetSuite Map/Reduce Script Guide: When to Use It and How to Structure It](https://suitepacific.com/blog/netsuite-map-reduce-script-guide)
-- [NetSuite Script Governance Limits: What They Are and How to Stay Under Them](https://suitepacific.com/blog/netsuite-script-governance-limit)
-- [NetSuite Workflow vs SuiteScript: How to Choose Between Them](https://suitepacific.com/blog/netsuite-workflow-vs-suitescript)
-- [Advanced PDF Templates in NetSuite: 5 Mistakes That Break in Production](https://suitepacific.com/blog/advanced-pdf-template-mistakes)
-- [NetSuite Advanced PDF Templates: FreeMarker Guide for Developers](https://suitepacific.com/blog/netsuite-freemarker-pdf-guide)
-- [NetSuite Advanced PDF Templates: How to Access Transaction Data in FreeMarker](https://suitepacific.com/blog/netsuite-advanced-pdf-data-model)
-- [NetSuite Custom GL Plugin: What It Can and Cannot Do](https://suitepacific.com/blog/netsuite-custom-gl-plugin-guide)
-- [NetSuite RESTlet vs REST Web Services: Which Integration Approach to Use](https://suitepacific.com/blog/netsuite-restlet-vs-rest-web-services)
-- [NetSuite SuiteQL: Guide for Administrators and Developers](https://suitepacific.com/blog/netsuite-suiteql-guide)
-- [NetSuite REST Batch and Sequential Requests: What Changed in 2026.2](https://suitepacific.com/blog/netsuite-rest-batch-sequential)
-- [NetSuite SuiteQL Bound Parameters: What Changed and Why It Matters](https://suitepacific.com/blog/netsuite-suiteql-bound-parameters)
-- [NetSuite 2026.2: The SuiteQL Default Sort Change That May Already Be Affecting Your Queries](https://suitepacific.com/blog/netsuite-suiteql-sort-change-2026-2)
+- [NetSuite User Event Scripts vs Client Scripts: Which One to Use and When](https://suitepacific.com/blog/netsuite-user-event-vs-client-script): User Event scripts run on the server on every save path (UI, CSV import, API); Client scripts run in the browser only during UI interaction — putting business logic in the wrong type is the most common cause of intermittent NetSuite customization failures.
+- [SuiteScript Best Practices: Customizations That Survive the Next Upgrade](https://suitepacific.com/blog/suitescript-best-practices): Eight practices that prevent the most common SuiteScript production failures, including Map/Reduce for bulk jobs, avoiding hard-coded internal IDs, error handling for external calls, and keeping configuration out of code.
+- [NetSuite Map/Reduce Script Guide: When to Use It and How to Structure It](https://suitepacific.com/blog/netsuite-map-reduce-script-guide): Map/Reduce distributes work across parallel workers so a job processing 10,000 records in 5-8 minutes that would take a Scheduled Script 45 minutes; covers all five stages, governance limits, and a complete working example.
+- [NetSuite Script Governance Limits: What They Are and How to Stay Under Them](https://suitepacific.com/blog/netsuite-script-governance-limit): Each SuiteScript execution gets a fixed governance budget (1,000 units for most scripts); explains what consumes units, how to monitor usage, and how to restructure scripts that regularly hit limits.
+- [NetSuite Workflow vs SuiteScript: How to Choose Between Them](https://suitepacific.com/blog/netsuite-workflow-vs-suitescript): SuiteFlow is for sequential business processes non-developers need to maintain; SuiteScript is for guaranteed enforcement on all save paths, computation, and bulk processing — practical decision guide organized by scenario.
+- [Advanced PDF Templates in NetSuite: 5 Mistakes That Break in Production](https://suitepacific.com/blog/advanced-pdf-template-mistakes): Five FreeMarker mistakes that render correctly in sandbox but fail in production, including currency formatting, null field access, and conditional section logic.
+- [NetSuite Advanced PDF Templates: FreeMarker Guide for Developers](https://suitepacific.com/blog/netsuite-freemarker-pdf-guide): Complete FreeMarker syntax reference for NetSuite Advanced PDF templates, covering variables, conditionals, loops, date/number formatting, and sublist iteration.
+- [NetSuite Advanced PDF Templates: How to Access Transaction Data in FreeMarker](https://suitepacific.com/blog/netsuite-advanced-pdf-data-model): How NetSuite exposes transaction data to FreeMarker templates, including the record object model, sublist access patterns, and how to reach related record fields.
+- [NetSuite Custom GL Plugin: What It Can and Cannot Do](https://suitepacific.com/blog/netsuite-custom-gl-plugin-guide): Custom GL plugins let developers override the default general ledger impact of transactions; covers when to use them, hard limits (cannot change period or subsidiary), and common use cases.
+- [NetSuite RESTlet vs REST Web Services: Which Integration Approach to Use](https://suitepacific.com/blog/netsuite-restlet-vs-rest-web-services): RESTlets are custom SuiteScript endpoints with full record access; REST Web Services are Oracle's native CRUD API — decision guide covering authentication, performance, and which fits each integration pattern.
+- [NetSuite SuiteQL: Guide for Administrators and Developers](https://suitepacific.com/blog/netsuite-suiteql-guide): SuiteQL is NetSuite's SQL-like query language for SuiteAnalytics; covers syntax, joins, filtering, date functions, and how it differs from saved search formula fields.
+- [NetSuite REST Batch and Sequential Requests: What Changed in 2026.2](https://suitepacific.com/blog/netsuite-rest-batch-sequential): NetSuite 2026.2 changed how REST batch and sequential requests handle errors and response ordering; covers what broke, what the new behavior is, and how to update integrations.
+- [NetSuite SuiteQL Bound Parameters: What Changed and Why It Matters](https://suitepacific.com/blog/netsuite-suiteql-bound-parameters): NetSuite began enforcing bound parameters in SuiteQL queries to prevent injection; covers the new syntax, which APIs are affected, and how to migrate existing queries.
+- [NetSuite 2026.2: The SuiteQL Default Sort Change That May Already Be Affecting Your Queries](https://suitepacific.com/blog/netsuite-suiteql-sort-change-2026-2): NetSuite 2026.2 removed the implicit default sort from SuiteQL results; queries that relied on consistent ordering without an ORDER BY clause now return rows in unpredictable order.
 
 ### Authentication and Security
-- [NetSuite Is Retiring NLAuth and TBA: What Developers Need to Do Before 2027.1](https://suitepacific.com/blog/netsuite-nlauth-tba-end-of-support)
-- [NetSuite Passkey Second Factor Authentication in 2026.2](https://suitepacific.com/blog/netsuite-passkey-second-factor-2026-2)
+- [NetSuite Is Retiring NLAuth and TBA: What Developers Need to Do Before 2027.1](https://suitepacific.com/blog/netsuite-nlauth-tba-end-of-support): NLAuth (credential-based authentication) is being retired in NetSuite 2027.1; all RESTlet and web services integrations using NLAuth must migrate to OAuth 2.0 Token-Based Authentication before that release.
+- [NetSuite Passkey Second Factor Authentication in 2026.2](https://suitepacific.com/blog/netsuite-passkey-second-factor-2026-2): NetSuite 2026.2 added passkey support as a second authentication factor; covers how passkeys work, administrator configuration, and what changes for users during login.
 
 ### Saved Searches and Reporting
-- [10 NetSuite Saved Search Tips Every Finance Team Should Know](https://suitepacific.com/blog/netsuite-saved-search-tips)
-- [10 NetSuite Saved Search Examples (Finance, Operations, Admin)](https://suitepacific.com/blog/netsuite-saved-search-examples)
-- [NetSuite Saved Search Formula Examples: Date Math, Conditionals, and Text Formatting](https://suitepacific.com/blog/netsuite-saved-search-formula-examples)
-- [NetSuite Advanced Record Customization in 2026.2](https://suitepacific.com/blog/netsuite-advanced-record-customization-2026-2)
-- [NetSuite Project Health Indicators in 2026.2](https://suitepacific.com/blog/netsuite-project-health-indicators-2026-2)
+- [10 NetSuite Saved Search Tips Every Finance Team Should Know](https://suitepacific.com/blog/netsuite-saved-search-tips): Ten saved search techniques that address common finance team frustrations, including multi-join criteria, date relative filters, formula fields for aging buckets, and emailing search results on a schedule.
+- [10 NetSuite Saved Search Examples (Finance, Operations, Admin)](https://suitepacific.com/blog/netsuite-saved-search-examples): Ten ready-to-build saved search examples with field-level setup instructions, covering open AR by customer, inventory reorder alerts, unapproved purchase orders, and script deployment errors.
+- [NetSuite Saved Search Formula Examples: Date Math, Conditionals, and Text Formatting](https://suitepacific.com/blog/netsuite-saved-search-formula-examples): Formula field examples for common saved search calculations including days overdue, conditional text, date arithmetic, and concatenating fields from related records.
+- [NetSuite Advanced Record Customization in 2026.2](https://suitepacific.com/blog/netsuite-advanced-record-customization-2026-2): What changed in NetSuite 2026.2 for custom record types, custom fields, and record customization behavior, including new field type options and deployment considerations.
+- [NetSuite Project Health Indicators in 2026.2](https://suitepacific.com/blog/netsuite-project-health-indicators-2026-2): New project health indicator fields added in NetSuite 2026.2 for project records, what they measure, and how to surface them in saved searches and dashboards.
 
 ### Workflow and Automation
-- [5 Common NetSuite Workflow Automation Mistakes and How to Fix Them](https://suitepacific.com/blog/workflow-automation-mistakes)
-- [How to Build an Approval Workflow in NetSuite SuiteFlow](https://suitepacific.com/blog/netsuite-approval-workflow-setup)
+- [5 Common NetSuite Workflow Automation Mistakes and How to Fix Them](https://suitepacific.com/blog/workflow-automation-mistakes): Five SuiteFlow configuration mistakes that cause workflows to fire on the wrong records, skip transitions, or conflict with scripts, with specific fixes for each.
+- [How to Build an Approval Workflow in NetSuite SuiteFlow](https://suitepacific.com/blog/netsuite-approval-workflow-setup): Step-by-step guide to building a multi-level approval workflow in SuiteFlow, covering state design, transition conditions, email actions, and rejection handling.
 
 ### Account Optimization and Post-Go-Live
-- [NetSuite Account Optimization: What to Audit and Fix on a Live Account](https://suitepacific.com/blog/netsuite-optimization)
-- [Why Your NetSuite Account Feels Slow and What Actually Fixes It](https://suitepacific.com/blog/netsuite-account-performance)
-- [NetSuite Post-Go-Live Checklist: What to Prioritize in Your First 90 Days](https://suitepacific.com/blog/netsuite-post-go-live-checklist)
-- [8 Signs Your NetSuite Support Isn't Working](https://suitepacific.com/blog/signs-netsuite-support-not-working)
-- [NetSuite Month-End Close Checklist: What Most Teams Miss](https://suitepacific.com/blog/netsuite-month-end-close-checklist)
-- [NetSuite Roles and Permissions: Administrator Setup Guide](https://suitepacific.com/blog/netsuite-roles-permissions-guide)
+- [NetSuite Account Optimization: What to Audit and Fix on a Live Account](https://suitepacific.com/blog/netsuite-optimization): What to audit when a live NetSuite account has accumulated technical debt: unindexed searches, overly broad workflow entry conditions, orphaned script deployments, and unused custom fields.
+- [Why Your NetSuite Account Feels Slow and What Actually Fixes It](https://suitepacific.com/blog/netsuite-account-performance): The three most common causes of NetSuite performance problems — unindexed saved searches, scripts with record loads in loops, and workflows with broad entry conditions — and how to diagnose and fix each.
+- [NetSuite Post-Go-Live Checklist: What to Prioritize in Your First 90 Days](https://suitepacific.com/blog/netsuite-post-go-live-checklist): Seven high-priority tasks for the first 90 days after NetSuite go-live, covering documentation handoff, role audits, exception saved searches, dashboards, and what to track during the first period close.
+- [8 Signs Your NetSuite Support Isn't Working](https://suitepacific.com/blog/signs-netsuite-support-not-working): Eight indicators that a NetSuite support arrangement has broken down, including slow response times, repeated fixes for the same issue, and customizations that break after releases.
+- [NetSuite Month-End Close Checklist: What Most Teams Miss](https://suitepacific.com/blog/netsuite-month-end-close-checklist): Month-end close steps that NetSuite teams commonly skip or do in the wrong order, including period lock timing, intercompany elimination, and deferred revenue posting verification.
+- [NetSuite Roles and Permissions: Administrator Setup Guide](https://suitepacific.com/blog/netsuite-roles-permissions-guide): How to set up and audit NetSuite roles and permissions, including permission level differences, restricting access by subsidiary, and identifying roles with broader access than needed.
 
 ### Consulting and Costs
-- [How to Choose a NetSuite Consulting Partner](https://suitepacific.com/blog/how-to-choose-netsuite-consulting-partner)
-- [How Much Does NetSuite Development Cost? A Realistic Guide](https://suitepacific.com/blog/netsuite-development-cost)
-- [NetSuite Implementation Partner vs. Post-Go-Live Support](https://suitepacific.com/blog/netsuite-implementation-partner-vs-managed-support)
-- [Red Flags When Evaluating a NetSuite Support Partner](https://suitepacific.com/blog/netsuite-support-partner-red-flags)
-- [What to Do When a NetSuite Script Breaks After an Upgrade](https://suitepacific.com/blog/netsuite-script-broke-after-upgrade)
+- [How to Choose a NetSuite Consulting Partner](https://suitepacific.com/blog/how-to-choose-netsuite-consulting-partner): Evaluation criteria for selecting a NetSuite consulting partner, including certification level, post-go-live specialization, response time expectations, and contract structure.
+- [How Much Does NetSuite Development Cost? A Realistic Guide](https://suitepacific.com/blog/netsuite-development-cost): Realistic cost ranges for common NetSuite development work, including SuiteScript customizations, workflow automation, integrations, and ongoing support retainers.
+- [NetSuite Implementation Partner vs. Post-Go-Live Support](https://suitepacific.com/blog/netsuite-implementation-partner-vs-managed-support): Implementation partners configure the initial NetSuite account; post-go-live support handles the ongoing development, fixes, and optimization after the implementation is complete — when you need each.
+- [Red Flags When Evaluating a NetSuite Support Partner](https://suitepacific.com/blog/netsuite-support-partner-red-flags): Warning signs when evaluating a NetSuite support partner, including vague SLAs, offshore handoffs, lack of sandbox-first policy, and difficulty getting direct access to the developer doing the work.
+- [What to Do When a NetSuite Script Breaks After an Upgrade](https://suitepacific.com/blog/netsuite-script-broke-after-upgrade): Diagnostic steps for SuiteScript failures that appear after a NetSuite release, including checking release notes for API changes, testing in sandbox, and identifying governance-related failures.
 
 ### NetSuite 2026.2 Release Notes
-- [NetSuite 2026.2 Finance Updates: What Changed and What to Test](https://suitepacific.com/blog/netsuite-2026-2-finance-updates)
-- [NetSuite Payment Runs in 2026.2: What Changed](https://suitepacific.com/blog/netsuite-payment-runs-2026-2)
-- [NetSuite Payment Adjustments in 2026.2](https://suitepacific.com/blog/netsuite-payment-adjustments-2026-2)
-- [NetSuite Bank Reconciliation Changes in 2026.2](https://suitepacific.com/blog/netsuite-bank-reconciliation-changes-2026-2)
-- [NetSuite Bill Capture Preferences in 2026.2](https://suitepacific.com/blog/netsuite-bill-capture-preferences-2026-2)
-- [NetSuite Currency Context for Custom Fields in 2026.2](https://suitepacific.com/blog/netsuite-currency-context-custom-fields)
-- [NetSuite SuiteTax Term Discounts in 2026.2](https://suitepacific.com/blog/netsuite-suitetax-term-discounts)
-- [NetSuite Sales Order Fulfillment List in 2026.2](https://suitepacific.com/blog/netsuite-sales-order-fulfillment-list)
+- [NetSuite 2026.2 Finance Updates: What Changed and What to Test](https://suitepacific.com/blog/netsuite-2026-2-finance-updates): Summary of finance module changes in NetSuite 2026.2 and which areas to test before the release goes live in production.
+- [NetSuite Payment Runs in 2026.2: What Changed](https://suitepacific.com/blog/netsuite-payment-runs-2026-2): Changes to payment run behavior and configuration in NetSuite 2026.2, including new options and fields that affect how payment batches are processed.
+- [NetSuite Payment Adjustments in 2026.2](https://suitepacific.com/blog/netsuite-payment-adjustments-2026-2): What changed for payment adjustment handling in NetSuite 2026.2 and how it affects existing payment workflows.
+- [NetSuite Bank Reconciliation Changes in 2026.2](https://suitepacific.com/blog/netsuite-bank-reconciliation-changes-2026-2): Bank reconciliation behavior changes in NetSuite 2026.2, including matching logic updates and new configuration options.
+- [NetSuite Bill Capture Preferences in 2026.2](https://suitepacific.com/blog/netsuite-bill-capture-preferences-2026-2): New Bill Capture configuration options added in NetSuite 2026.2 for controlling AI-based invoice extraction behavior.
+- [NetSuite Currency Context for Custom Fields in 2026.2](https://suitepacific.com/blog/netsuite-currency-context-custom-fields): How NetSuite 2026.2 changed the way currency context is handled for custom currency fields on transaction records.
+- [NetSuite SuiteTax Term Discounts in 2026.2](https://suitepacific.com/blog/netsuite-suitetax-term-discounts): SuiteTax changes in 2026.2 affecting how early payment term discounts interact with tax calculations on invoices.
+- [NetSuite Sales Order Fulfillment List in 2026.2](https://suitepacific.com/blog/netsuite-sales-order-fulfillment-list): Changes to the sales order fulfillment list view in NetSuite 2026.2, including new filtering and bulk action options.
 
 ### FSM (Field Service Management) Updates
-- [NetSuite FSM Bundle Update August 2026](https://suitepacific.com/blog/netsuite-fsm-bundle-update-august-2026)
-- [NetSuite FSM Mobile Changes August 2026](https://suitepacific.com/blog/netsuite-fsm-mobile-changes-august-2026)
-- [NetSuite FSM NXC to Now Migration August 2026](https://suitepacific.com/blog/netsuite-fsm-nxc-now-migration-august-2026)
-- [NetSuite FSM Read-Only Migration August 2026](https://suitepacific.com/blog/netsuite-fsm-readonly-migration-august-2026)
+- [NetSuite FSM Bundle Update August 2026](https://suitepacific.com/blog/netsuite-fsm-bundle-update-august-2026): What changed in the August 2026 FSM bundle update, what to test after upgrading, and how to handle customizations that interact with FSM records.
+- [NetSuite FSM Mobile Changes August 2026](https://suitepacific.com/blog/netsuite-fsm-mobile-changes-august-2026): Changes to the FSM mobile app behavior in August 2026, including offline sync updates and technician workflow changes.
+- [NetSuite FSM NXC to Now Migration August 2026](https://suitepacific.com/blog/netsuite-fsm-nxc-now-migration-august-2026): How to migrate FSM scripts from the deprecated nxc_now() function to the replacement approach required after the August 2026 bundle update.
+- [NetSuite FSM Read-Only Migration August 2026](https://suitepacific.com/blog/netsuite-fsm-readonly-migration-august-2026): Which FSM fields and records became read-only in the August 2026 bundle update and how to update customizations that previously wrote to those fields.
 
 ## Resources
 
@@ -211,4 +217,4 @@ A: First, identify which release just went live and check the release notes for 
 
 Content on this site is copyright SuitePacific, LLC. Blog posts and resource guides may be cited for informational purposes under RSL 1.0 (Reference Source License). Do not reproduce full articles without attribution.
 
-Last updated: 2026-08-13
+Last updated: 2026-08-14

@@ -7,7 +7,7 @@ publishedAt: "2026-08-13"
 linkedinDay: 44
 ---
 
-NetSuite Field Service Management is a live operational system. Technicians depend on it during active field days. A configuration change that breaks mobile sync, disables a permission, or changes how work orders are created has an immediate impact on your field operation — not just in a staging environment.
+NetSuite Field Service Management is a live operational system. Technicians depend on it during active field days. A configuration change that breaks mobile sync, disables a permission, or changes how work orders are created has an immediate impact on your field operation, not just in a staging environment.
 
 FSM configuration can change more often than most administrators expect. Oracle pushes managed bundle updates on its own schedule. NetSuite Support may recommend a configuration change during a support case. A consulting partner may make changes during an engagement. Each of those events is a point of risk if no change control process is in place.
 
@@ -25,7 +25,7 @@ If the change involves a bundle update, Oracle will have already applied it to S
 
 ### 2. Validate the configuration in Sandbox
 
-After making the change, test the affected FSM functionality in Sandbox. Use a test technician account and the FSM Mobile app — do not validate mobile behavior from the NetSuite admin UI alone. Check the specific areas listed in the validation section below.
+After making the change, test the affected FSM functionality in Sandbox. Use a test technician account and the FSM Mobile app; do not validate mobile behavior from the NetSuite admin UI alone. Check the specific areas listed in the validation section below.
 
 ### 3. Get approval before applying to Production
 
@@ -69,7 +69,7 @@ Check each of these areas after a configuration change, scaled to the scope of w
 
 Only one FSM Configuration record should be active in your NetSuite account at any time.
 
-FSM uses the active configuration record to determine mobile behavior: which tabs appear, how fields are defined, what permissions apply, and how mobile events are handled. If more than one configuration record is marked active, FSM does not produce a clean error — it produces unpredictable mobile behavior that is difficult to trace back to the cause.
+FSM uses the active configuration record to determine mobile behavior: which tabs appear, how fields are defined, what permissions apply, and how mobile events are handled. If more than one configuration record is marked active, FSM does not produce a clean error; it produces unpredictable mobile behavior that is difficult to trace back to the cause.
 
 Multiple active configurations can accumulate over time in ways that are not immediately obvious:
 

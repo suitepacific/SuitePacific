@@ -5,6 +5,8 @@ date: "2026-08-01"
 tags: ["Field Service Management", "Administration", "Bundle Updates", "Configuration"]
 ---
 
+The readonly property in NetSuite FSM Configuration records is a field-level setting that prevents technicians from editing specific resources in the FSM mobile app. In the 2026.07.1 bundle, Oracle is removing the resource-level readonly property and replacing it with more granular field-level access controls configured at the section and field level.
+
 If you have configured `readonly` rules at the resource level of your NetSuite Field Service Management configuration, those rules will stop working on August 11, 2026, when Oracle deploys the FSM 2026.07.1 bundle update to Production.
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">

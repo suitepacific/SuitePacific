@@ -6,6 +6,8 @@ tags: ["Post-Go-Live", "NetSuite", "Administration"]
 calloutText: "Looking for a post-go-live NetSuite consulting partner? Tell us about your account."
 ---
 
+A NetSuite consulting partner is a firm certified by Oracle to provide NetSuite professional services, including implementation, customization, and post-go-live support. The certification tier and specialization vary widely, and the right type of partner depends entirely on which phase of the NetSuite lifecycle you are in.
+
 "NetSuite consulting partner" describes at least three genuinely different kinds of firms. An implementation partner who builds out a new NetSuite account. A managed services provider who handles ongoing support after go-live. A development-focused boutique who takes on specific technical projects. The mistake most buyers make is evaluating all three by the same criteria, which means they either over-buy (hiring an implementation firm to handle post-go-live questions) or under-buy (hiring a small boutique to run a complex implementation).
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">

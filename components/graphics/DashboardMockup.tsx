@@ -120,7 +120,7 @@ export function DashboardMockup() {
         className="absolute -left-6 -bottom-6 glass rounded-xl shadow-soft px-3 py-2 flex items-center gap-2"
       >
         <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-        <span className="text-xs font-medium text-brand-700">250+ Workflows Automated</span>
+        <span className="text-xs font-medium text-brand-700">Sandbox-first on every change</span>
       </motion.div>
 
       <motion.div
@@ -128,7 +128,7 @@ export function DashboardMockup() {
         transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
         className="absolute right-2 top-8 sm:-right-4 sm:top-10 glass rounded-xl shadow-soft px-3 py-2 flex items-center gap-2"
       >
-        <span className="text-xs font-medium text-brand-700">5+ Tickets Resolved Daily</span>
+        <span className="text-xs font-medium text-brand-700">Same-day response</span>
       </motion.div>
 
       <motion.div

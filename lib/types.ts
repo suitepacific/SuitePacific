@@ -26,6 +26,7 @@ export type TimelineStep = {
 export type CaseStudy = {
   icon: LucideIcon;
   title: string;
+  client: string;
   challenge: string;
   solution: string;
   outcome: string;

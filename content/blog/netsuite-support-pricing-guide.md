@@ -36,7 +36,7 @@ A retainer is a fixed monthly fee covering an agreed block of hours. The busines
 
 ### 2. Project-based or time-and-materials
 
-For defined-scope work — a health check, an account optimization engagement, a specific SuiteScript customization, or an integration build — project pricing is based on estimated hours at an hourly rate.
+For defined-scope work (a health check, an account optimization engagement, a specific SuiteScript customization, or an integration build), project pricing is based on estimated hours at an hourly rate.
 
 **Typical hourly rates:**
 - Boutique firms with direct developer access: $150 to $225 per hour

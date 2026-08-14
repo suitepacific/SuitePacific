@@ -20,7 +20,10 @@ export function CaseStudies() {
               <Card className="p-7 h-full">
                 <div className="flex items-center gap-3">
                   <IconBadge icon={study.icon} />
-                  <h3 className="font-semibold text-brand-900 text-balance">{study.title}</h3>
+                  <div>
+                    <h3 className="font-semibold text-brand-900 text-balance">{study.title}</h3>
+                    <p className="mt-0.5 text-[11px] text-brand-300 tracking-wide">{study.client}</p>
+                  </div>
                 </div>
 
                 <dl className="mt-6 space-y-4">

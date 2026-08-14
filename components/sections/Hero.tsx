@@ -16,7 +16,7 @@ export function Hero() {
             Your NetSuite Journey Doesn&apos;t End After Go-Live.
           </h1>
           <p className="mt-6 text-lg text-brand-400 max-w-xl text-balance">
-            We become your dedicated NetSuite team, delivering ongoing
+            You get a dedicated NetSuite specialist delivering ongoing
             enhancements, custom development, workflow automation, reporting,
             and expert support as your business grows.
           </p>

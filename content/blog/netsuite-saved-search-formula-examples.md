@@ -5,6 +5,8 @@ date: "2026-08-07"
 tags: ["Saved Searches", "Reporting", "Admin", "NetSuite Tips"]
 ---
 
+A NetSuite saved search formula field is a calculated column type that accepts Oracle SQL expressions, added in the Results tab of any saved search to produce values that do not exist as standard fields on the record. Formula fields appear alongside standard columns, support summary functions, and work the same way in grouped and ungrouped searches.
+
 NetSuite saved searches include a formula field type that accepts Oracle SQL expressions. This lets you build calculated columns that do not exist as standard fields on the record: invoice age in days, a conditional label based on status, a formatted combination of two text fields, or a bucketed value for grouping. Formula fields appear alongside standard result columns and work in summary searches the same way standard fields do.
 
 Most saved search users never touch formula fields because the syntax looks unfamiliar. But the functions you actually need for the most common use cases are straightforward, and the same four or five patterns cover the majority of real-world requirements.

@@ -6,6 +6,8 @@ updated: "2026-08-05"
 tags: ["Administration", "Customization", "NetSuite Tips"]
 ---
 
+Advanced Record Customization (ARC) is a new feature in NetSuite 2026.2 that provides administrators with a centralized interface for managing AI-generated descriptions for both standard and custom record types. The descriptions are used by NetSuite's AI features to provide contextually relevant assistance when users work with those records.
+
 NetSuite 2026.2 adds a new section called **Advanced Record Customization**, accessible under the Customization menu. It gives administrators a centralized place to manage AI descriptions for both standard and custom record types.
 
 <figure style="margin:1.75rem 0">

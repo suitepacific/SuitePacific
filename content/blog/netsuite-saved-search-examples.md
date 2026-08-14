@@ -1,6 +1,6 @@
 ---
 title: "10 NetSuite Saved Search Examples (Finance, Operations, Admin)"
-description: "10 ready-to-build NetSuite saved searches for finance, operations, and admin teams — with exact criteria, columns, formula fields, and the configuration mistakes that break each one."
+description: "10 ready-to-build NetSuite saved searches for finance, operations, and admin teams, with exact criteria, columns, formula fields, and the configuration mistakes that break each one."
 date: "2026-06-30"
 updated: "2026-08-13"
 tags: ["Saved Searches", "Reporting"]

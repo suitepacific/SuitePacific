@@ -91,6 +91,11 @@ export const NAV_LINKS: NavLink[] = [
         href: "/suitecompare",
         description: "Compare NetSuite scripts across environments in one click.",
       },
+      {
+        label: "NetSuite Care",
+        href: "/netsuite-care",
+        description: "Ongoing NetSuite technical support for a predictable monthly fee.",
+      },
     ],
   },
 ];
@@ -154,7 +159,7 @@ export const PAIN_POINTS: IconItem[] = [
 export const TIMELINE_STEPS: TimelineStep[] = [
   { label: "Implementation Partner", description: "Built your initial NetSuite instance" },
   { label: "NetSuite Go-Live", description: "Your system launched and the project team moved on" },
-  { label: "SuitePacific", description: "Your dedicated team for everything after go-live", emphasis: true },
+  { label: "SuitePacific", description: "Your dedicated specialist for everything after go-live", emphasis: true },
 ];
 
 export const TIMELINE_BENEFITS: string[] = [
@@ -247,19 +252,19 @@ export const BOUTIQUE_BENEFITS: IconItem[] = [
   { icon: Users, title: "No Junior Staffing", description: "Every engagement is handled by an experienced NetSuite developer; we don't staff accounts with juniors learning on the job." },
   { icon: Zap, title: "Fast Turnaround", description: "Most requests are scoped and delivered in days, not weeks, with no statement-of-work cycle in between." },
   { icon: MessageCircle, title: "Talk Directly to Who's Building It", description: "Your point of contact is the developer writing the script or workflow, not an account manager relaying your request." },
-  { icon: Heart, title: "Built for the Long Run", description: "We're set up to stay your NetSuite team for years, picking up new requests as your business changes rather than closing out after one project." },
+  { icon: Heart, title: "Built for the Long Run", description: "We're set up to be your NetSuite specialist for years, picking up new requests as your business changes rather than closing out after one project." },
   { icon: DollarSign, title: "Cost Effective", description: "Boutique overhead means senior expertise without enterprise consulting rates." },
-  { icon: Headset, title: "Dedicated Support", description: "A consistent team that knows your account, your history, and your priorities." },
+  { icon: Headset, title: "Dedicated Support", description: "A dedicated specialist who knows your account, your history, and your priorities." },
 ];
 
 export const ABOUT_INTRO = {
   eyebrow: "About SuitePacific",
   title: "About SuitePacific",
   subtitle:
-    "A boutique NetSuite consulting team focused on practical, post-implementation support, direct communication, and long-term partnership.",
+    "A boutique NetSuite consulting practice focused on practical, post-implementation support, direct communication, and long-term partnership.",
   paragraphs: [
     "SuitePacific exists because of a gap most NetSuite accounts fall into: the implementation partner's contract ends at go-live, but the business doesn't stop changing. What's left is a live, mission-critical system with no one assigned to keep up with it.",
-    "We chose to stay boutique on purpose. A small, focused team means no account-manager layer between you and the person doing the work, no junior staff learning on your account, and no incentive to pad scope with discovery phases you don't need.",
+    "We chose to stay boutique on purpose. Staying small and focused means no account-manager layer between you and the person doing the work, no junior staff learning on your account, and no incentive to pad scope with discovery phases you don't need.",
     "That's also why we focus exclusively on post-go-live work. Implementation and ongoing support require different skills and different pacing; trying to do both well, for every client, is how large firms end up doing neither particularly well for any one of them.",
     "Direct communication and long-term partnership aren't slogans here, they're the practical result of staying small: you talk to the person building your workflows, every change is tested in a sandbox before it touches production, and the relationship is built to continue for as long as it's useful to you.",
   ],
@@ -310,6 +315,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     icon: LayoutDashboard,
     title: "Custom Project Performance Dashboard",
+    client: "Professional services firm · ~90 employees",
     challenge:
       "Project managers lacked a centralized view of actual effort versus planned work. Standard NetSuite reporting couldn't accurately compare actual hours, budgeted effort, and remaining work.",
     solution:
@@ -320,6 +326,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     icon: ClipboardList,
     title: "Vendor Quotation Management Solution",
+    client: "Contract manufacturer · mid-market",
     challenge:
       "Managing supplier quotations manually made it difficult to compare pricing, evaluate vendors, and maintain a consistent procurement process.",
     solution:
@@ -330,6 +337,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     icon: Workflow,
     title: "Intelligent Sales Order Approval Workflow",
+    client: "Wholesale distributor · 200+ employees",
     challenge:
       "Sales orders with low profit margins required manual review, creating delays and inconsistent approval processes.",
     solution:
@@ -340,6 +348,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     icon: Receipt,
     title: "High-Volume Invoice Processing Automation",
+    client: "Staffing and workforce services company",
     challenge:
       "Processing large invoice batches manually created unnecessary administrative work and slowed financial operations.",
     solution:
@@ -350,6 +359,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     icon: FileText,
     title: "Advanced PDF Document Automation",
+    client: "Consumer goods brand · multi-channel retail",
     challenge:
       "Standard NetSuite templates couldn't support the client's complex document requirements and branding standards.",
     solution:
@@ -360,6 +370,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     icon: BarChart3,
     title: "Operational Reporting & Business Intelligence",
+    client: "Multi-location retail operation",
     challenge:
       "Business users needed faster access to operational insights than standard NetSuite reporting could provide.",
     solution:
@@ -373,7 +384,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "What does SuitePacific do?",
     answer:
-      "SuitePacific is an ongoing NetSuite support team for companies that have already completed their implementation. We handle SuiteScript development, workflow automation, saved searches and dashboards, advanced PDF templates, account optimization, bug fixes, and monthly enhancements: everything that comes up after go-live.",
+      "SuitePacific provides ongoing NetSuite support for companies that have already completed their implementation. We handle SuiteScript development, workflow automation, saved searches and dashboards, advanced PDF templates, account optimization, bug fixes, and monthly enhancements: everything that comes up after go-live.",
   },
   {
     question: "Do you handle NetSuite implementations?",
@@ -398,7 +409,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "How much does SuitePacific cost?",
     answer:
-      "Pricing depends on the scope of ongoing work your account needs. Because we're a boutique team without enterprise consulting overhead, our rates are typically well below large NetSuite consulting firms. Book a free consultation and we'll give you a clear, specific quote.",
+      "Pricing depends on the scope of ongoing work your account needs. Because we're a boutique practice without enterprise consulting overhead, our rates are typically well below large NetSuite consulting firms. Book a free consultation and we'll give you a clear, specific quote.",
   },
   {
     question: "Is your team certified on NetSuite?",
@@ -443,7 +454,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "Who actually works on our account?",
     answer:
-      "A consistent, senior NetSuite developer who learns your account and stays with it, not a rotating cast of juniors. As a boutique team, we keep our client list intentionally limited so every account gets real attention.",
+      "A consistent, senior NetSuite developer who learns your account and stays with it, not a rotating cast of juniors. As a focused practice, we keep our client list intentionally limited so every account gets real attention.",
   },
   {
     question: "Who owns the customizations you build?",

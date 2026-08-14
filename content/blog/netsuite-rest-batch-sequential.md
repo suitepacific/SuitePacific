@@ -6,6 +6,8 @@ updated: "2026-08-07"
 tags: ["SuiteScript", "Authentication", "NetSuite Tips"]
 ---
 
+A REST batch operation is a single HTTP request that bundles multiple sub-requests and executes them against NetSuite's REST Web Services API in one call, reducing the network overhead of high-volume integrations that would otherwise require separate round trips for each operation.
+
 NetSuite's REST Web Services API supports batch operations, which let you send multiple requests in a single HTTP call rather than making separate round trips for each one. Before 2026.2, the order in which those operations executed was not guaranteed.
 
 NetSuite 2026.2 adds **sequential processing** for batch operations. When you use this option, operations in a batch execute in the order you specified. Each operation completes before the next one begins.

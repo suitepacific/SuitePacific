@@ -6,6 +6,8 @@ updated: "2026-08-05"
 tags: ["Projects", "Administration", "NetSuite Tips"]
 ---
 
+NetSuite project health indicators are a set of color-coded status signals on the project record that give project managers a snapshot of schedule, budget, resource, and billing status without requiring a detailed review of every task and transaction. Each indicator maps to a specific data condition and turns red or yellow when a threshold is breached.
+
 NetSuite project health indicators give project managers a quick read on whether a project is on track without digging into every detail. 2026.2 adds five new indicators to cover gaps in the existing set.
 
 Here is what each one tracks.

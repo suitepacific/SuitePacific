@@ -7,7 +7,7 @@ tags: ["Implementation", "Account Optimization"]
 
 Not every NetSuite go-live produces a working account. Implementation timelines compress, scope gets cut at the end, partners disengage before everything functions correctly, and businesses end up live on an account that was never quite right. The issue is that a partially functioning NetSuite account looks like a working NetSuite account from the outside. Users log in, records get created, and orders move through. But the underlying problems keep surfacing: data that doesn't match, manual steps nobody can explain the origin of, and reports that require spreadsheet adjustments before anyone trusts them.
 
-Recognizing the specific patterns that indicate a failed implementation — rather than normal post-go-live friction — is the first step toward addressing the right problem.
+Recognizing the specific patterns that indicate a failed implementation, rather than normal post-go-live friction, is the first step toward addressing the right problem.
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
@@ -18,7 +18,7 @@ Recognizing the specific patterns that indicate a failed implementation — rath
 
 The most reliable indicator of a failed implementation is that the processes NetSuite was supposed to replace are still running outside NetSuite. This takes several forms: the AP team still maintains a manual payment tracking spreadsheet because the NetSuite approval workflow was never finished; inventory is counted in a separate sheet because the NetSuite quantities don't match physical stock; the sales team maintains their own pipeline tracker because the CRM-to-order flow was never fully configured.
 
-Some spreadsheet work during the first 30 to 60 days post-go-live is normal — teams need time to build confidence in a new system. When the workarounds are still in place at 90, 120, or 180 days, it usually means the underlying configuration never got to a point where people trusted it enough to stop.
+Some spreadsheet work during the first 30 to 60 days post-go-live is normal; teams need time to build confidence in a new system. When the workarounds are still in place at 90, 120, or 180 days, it usually means the underlying configuration never got to a point where people trusted it enough to stop.
 
 The specific question to ask: is your team using the workaround because they are still learning NetSuite, or because NetSuite doesn't actually do what was promised?
 
@@ -36,7 +36,7 @@ This manifests as: "We always check that box but we're not sure what it does." O
 
 ## 4. High volume of unused customizations
 
-Every NetSuite account accumulates some unused configuration over time — a saved search someone asked for and stopped using, a custom field added for a project that ended. In a healthy account, this accumulates gradually over years.
+Every NetSuite account accumulates some unused configuration over time: a saved search someone asked for and stopped using, a custom field added for a project that ended. In a healthy account, this accumulates gradually over years.
 
 When an account that has only been live for one or two years already has a significant volume of unused custom fields, deactivated scripts, and workflows nobody can identify the purpose of, it suggests the implementation process involved significant trial and error that never got cleaned up. Some of what was built in that process may be actively causing problems, particularly workflows with overly broad entry conditions that fire on records where they have no business logic to run.
 
@@ -54,7 +54,7 @@ If your team has been aware of data quality issues since go-live and has not had
 
 ## 7. Go-live happened under pressure, not when the account was ready
 
-Many of the patterns above originate from a single root cause: the go-live date was set before the implementation was complete, and the business and implementation partner agreed to proceed anyway. This happens for legitimate reasons — a fiscal year boundary, a contractual deadline, a business reason to be on NetSuite by a specific date.
+Many of the patterns above originate from a single root cause: the go-live date was set before the implementation was complete, and the business and implementation partner agreed to proceed anyway. This happens for legitimate reasons: a fiscal year boundary, a contractual deadline, a business reason to be on NetSuite by a specific date.
 
 When go-live happens before the account is ready, the outstanding configuration work becomes post-go-live support work, and it often never gets done. The business assumes the partner will come back to finish it; the partner considers the engagement closed. The gap between what was built and what was needed stays open indefinitely.
 
@@ -64,7 +64,7 @@ The appropriate response depends on how many of the patterns above apply and how
 
 **If one or two patterns apply:** Targeted remediation of the specific configuration issues is usually sufficient. This does not necessarily require a full account audit, though it helps to understand the scope of what needs to change before making changes.
 
-**If three or more patterns apply:** A structured health check — a systematic review of the account's current state across all major configuration areas — is the right starting point before any remediation begins. This gives you a written picture of what was actually built and what specifically needs to change, rather than discovering problems iteratively as you try to fix individual issues.
+**If three or more patterns apply:** A structured health check, a systematic review of the account's current state across all major configuration areas, is the right starting point before any remediation begins. This gives you a written picture of what was actually built and what specifically needs to change, rather than discovering problems iteratively as you try to fix individual issues.
 
 **If financial reporting is affected:** Correct the underlying issue, not the report. Saved search adjustments that compensate for incorrect chart of accounts or posting rule configuration create ongoing maintenance work and fail when anything upstream changes.
 

@@ -6,6 +6,8 @@ updated: "2026-08-07"
 tags: ["Administration", "Customization", "NetSuite Tips"]
 ---
 
+Currency Context is a new setting in NetSuite 2026.2 for custom currency-type fields that controls whether the field displays amounts in the subsidiary's base currency or the transaction's transaction currency. Before this setting, custom currency fields did not have a predictable way to specify which currency context should apply.
+
 If your NetSuite account uses custom fields that store currency amounts, 2026.2 adds a new option called **Currency Context** to the field definition.
 
 <div style="background:#eef2fb;border:1px solid #d7e0f3;border-radius:10px;overflow:hidden;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">

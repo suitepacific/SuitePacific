@@ -6,6 +6,8 @@ updated: "2026-08-07"
 tags: ["SuiteScript", "Development"]
 ---
 
+A User Event script is a SuiteScript 2.x server-side script type that fires on every record create, edit, or delete, regardless of how the save was triggered. A Client Script is a browser-side script type that fires only when a user is actively working in a NetSuite record form in the web UI.
+
 The most common SuiteScript question from teams inheriting a customized NetSuite account is some version of: "Why does this logic only work sometimes?" Nine times out of ten, the answer is that someone put server-side business logic in a Client script, or vice versa. Understanding the difference between the two isn't just academic - it determines whether your customization works reliably or only when someone manually saves a record from the UI.
 
 A User Event script runs on NetSuite's servers and fires on every record save, regardless of how the save happened: UI, CSV import, REST API call, workflow action, or another script. A Client Script runs in the browser and only fires when a user is actively working with a record form in NetSuite's web interface. The save path determines which one runs, and putting logic in the wrong type is one of the most common causes of intermittent NetSuite customization failures.

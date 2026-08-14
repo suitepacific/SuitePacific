@@ -6,7 +6,7 @@ updated: "2026-08-05"
 tags: ["Authentication", "SuiteScript", "Security"]
 ---
 
-NLAuth is one of the oldest authentication methods in NetSuite. It works by passing your account ID, email, and password directly in an HTTP Authorization header. Easy to implement, nothing to configure, and used in thousands of RESTlet integrations built over the last decade.
+NLAuth is a legacy credential-based authentication method in NetSuite that transmits an account ID, email, and password as a Base64-encoded string in an HTTP Authorization header. It is one of the oldest methods on the platform and is used in thousands of RESTlet integrations built over the last decade. It works by passing your account ID, email, and password directly in an HTTP Authorization header. Easy to implement, nothing to configure, and used in thousands of RESTlet integrations built over the last decade.
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>

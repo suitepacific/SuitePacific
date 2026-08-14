@@ -5,6 +5,8 @@ date: "2026-08-07"
 tags: ["Integrations", "SuiteScript", "Development"]
 ---
 
+A RESTlet is a custom SuiteScript-based REST endpoint that you write, deploy, and maintain inside NetSuite. REST Web Services is NetSuite's built-in REST API that provides standard CRUD operations and SuiteQL access for all major record types without requiring any custom code.
+
 The two main ways to build REST-based integrations with NetSuite are RESTlets and REST Web Services. Both accept HTTP requests and return JSON. Both support Token-Based Authentication. But they work differently and are built for different problems. RESTlets are custom SuiteScript endpoints you write and maintain. REST Web Services is NetSuite's built-in REST API that requires no custom code.
 
 Choosing between them comes down to what the integration needs to do. Standard record operations (create, read, update, delete, query) belong in REST Web Services. Custom business logic, cross-record lookups, and integrations that need a non-standard response structure belong in RESTlets. In many accounts, both coexist: REST Web Services handles straightforward data exchange and a RESTlet exposes a custom endpoint for something the built-in API cannot do.

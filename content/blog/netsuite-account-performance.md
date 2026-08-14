@@ -6,6 +6,8 @@ updated: "2026-08-07"
 tags: ["Performance", "Account Optimization"]
 ---
 
+NetSuite account performance is the measure of how quickly the platform responds across all user-facing actions: record loads, saved search execution, script processing, and scheduled job completion times. Degradation is almost always caused by configuration decisions and data volume, not by infrastructure limitations.
+
 When a client tells us their account "got slow," it's almost never one cause. Usually two or three smaller things have been quietly adding up for a year or more, and none of them need an infrastructure upgrade to fix. Here's the order we check them in.
 
 <div style="background:#060f26;border-radius:10px;overflow:hidden;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">

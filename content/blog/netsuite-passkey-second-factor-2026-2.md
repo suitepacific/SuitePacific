@@ -6,6 +6,8 @@ updated: "2026-08-05"
 tags: ["Authentication", "Security", "Administration"]
 ---
 
+A passkey is a FIDO2-based credential that authenticates a user using biometrics or a device PIN instead of a password, eliminating the need to remember or type credentials. In NetSuite, passkeys enable passwordless login but were not previously recognized as a sufficient second authentication factor on their own.
+
 If you use a passkey to log into NetSuite, you may have noticed that even after setting one up, the system still prompts you for an authenticator app code on some logins. That prompt existed because passkeys, up until 2026.2, handled passwordless authentication but were not recognized as a second authentication factor on their own.
 
 NetSuite 2026.2 changes this.

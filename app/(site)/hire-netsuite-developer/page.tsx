@@ -392,8 +392,7 @@ export default function HireNetSuiteDeveloperPage() {
             Looking to hire a NetSuite developer who can work on your existing NetSuite account?
             Whether you need a custom SuiteScript, workflow automation, advanced PDF templates,
             integrations with third-party systems, or ongoing post-go-live support, SuitePacific
-            provides experienced NetSuite-certified developers who become an extension of
-            your team.
+            provides experienced NetSuite-certified developers who work directly on your account.
           </p>
           <p>
             Unlike implementation partners whose work often ends at go-live, we specialize in

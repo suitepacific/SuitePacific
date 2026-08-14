@@ -5,6 +5,8 @@ date: "2026-08-02"
 tags: ["SuiteQL", "Release Notes", "SuiteScript", "2026.2"]
 ---
 
+SuiteQL is NetSuite's SQL-based query language that provides direct, structured access to the NetSuite data model, used in saved searches, REST API queries, and SuiteScript integrations. Without an explicit ORDER BY clause, SuiteQL results are returned in an implementation-defined order that can change between platform releases.
+
 If your SuiteQL queries against transaction records started returning results in a different order after the 2026.2 update, this is why.
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">

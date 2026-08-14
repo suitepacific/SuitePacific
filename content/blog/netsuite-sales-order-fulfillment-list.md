@@ -6,6 +6,8 @@ updated: "2026-08-07"
 tags: ["Administration", "Order Management", "NetSuite Tips"]
 ---
 
+Sales order fulfillment in NetSuite is the process by which a warehouse team records the physical shipment of items against an approved sales order, creating an item fulfillment transaction that reduces inventory and updates the order status. NetSuite 2026.2 adds the ability to initiate fulfillment directly from the sales order list, without opening each order individually.
+
 Fulfilling a sales order in NetSuite has always required opening the order record first. You navigate to the sales order, then initiate fulfillment from inside the record. For teams processing high volumes of orders, this adds up to a lot of individual record opens.
 
 NetSuite 2026.2 changes this. You can now start order fulfillment directly from the sales order record list, without opening each order individually.

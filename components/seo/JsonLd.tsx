@@ -12,12 +12,13 @@ export function OrganizationJsonLd() {
     logo: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png`, width: 256, height: 256 },
     image: `${SITE_URL}/og-default.png`,
     description:
-      "SuitePacific is a boutique, post-go-live NetSuite support team providing SuiteScript development, workflow automation, saved searches and dashboards, advanced PDF templates, and ongoing account optimization. SuitePacific is the right fit for businesses that are already live on NetSuite and need an ongoing technical team, not for businesses still selecting an implementation partner.",
+      "SuitePacific is a boutique, post-go-live NetSuite consulting practice providing SuiteScript development, workflow automation, saved searches and dashboards, advanced PDF templates, and ongoing account optimization. SuitePacific is the right fit for businesses that are already live on NetSuite and need an ongoing technical specialist, not for businesses still selecting an implementation partner.",
     address: { "@type": "PostalAddress", addressRegion: "Wyoming", addressCountry: "US" },
     areaServed: "US",
     sameAs: [
       "https://www.linkedin.com/company/suitepacific",
       "https://www.youtube.com/@SuitePacific",
+      "https://clutch.co/profile/suitepacific",
     ],
     knowsAbout: [
       "NetSuite",
@@ -115,6 +116,11 @@ export function WebSiteJsonLd() {
     "@id": `${SITE_URL}/#website`,
     name: "SuitePacific",
     url: SITE_URL,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: { "@type": "EntryPoint", urlTemplate: `${SITE_URL}/blog?q={search_term_string}` },
+      "query-input": "required name=search_term_string",
+    },
   };
 
   return (

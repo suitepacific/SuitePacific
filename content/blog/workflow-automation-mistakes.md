@@ -5,6 +5,8 @@ date: "2026-06-25"
 tags: ["Workflow Automation", "SuiteFlow"]
 ---
 
+SuiteFlow is NetSuite's built-in workflow automation engine that lets administrators create no-code business process automations on any record type, triggered by field changes, form submissions, or scheduled intervals. Workflows run on NetSuite's servers and fire across all save paths, including CSV imports and API calls, which is both their strength and the source of most misconfiguration problems.
+
 SuiteFlow makes it easy to build a workflow and easy to build one that breaks in ways that are hard to diagnose later.
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
