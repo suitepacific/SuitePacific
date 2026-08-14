@@ -19,6 +19,7 @@ export function OrganizationJsonLd() {
       "https://www.linkedin.com/company/suitepacific",
       "https://www.youtube.com/@SuitePacific",
       "https://clutch.co/profile/suitepacific",
+      "https://www.wikidata.org/wiki/Q141067925",
     ],
     knowsAbout: [
       "NetSuite",
