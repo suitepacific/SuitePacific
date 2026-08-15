@@ -42,7 +42,7 @@ Action required: check your Bill Capture Preferences at Setup > Accounting > Bil
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Two Bill Capture preference fields changed behavior in NetSuite 2026.2. A blank Save Tax As field now explicitly maps to No Tax, and a blank Save Shipping Cost As field now explicitly maps to No Shipping Cost. Previously, a blank value produced undefined behavior. Bills captured after the 2026.2 upgrade with these fields blank will have their tax and shipping cost data discarded. To review your settings, go to Setup &gt; Accounting &gt; Bill Capture Preferences and check both fields. If either is blank and you expect captured tax or shipping amounts to appear on vendor bills, set an explicit value now. The 2026.2 release also introduces new gross and net options for these preferences, providing more control over whether captured amounts are treated as tax-inclusive or tax-exclusive when the bill is saved in NetSuite.</p>
 </div>
 
-## What changed
+## What Changed in Bill Capture Preferences in NetSuite 2026.2?
 
 NetSuite Bill Capture uses two preferences that control how captured bill data is saved:
 
@@ -59,17 +59,17 @@ From 2026.2:
 
 This means bills captured with a blank setting will have their tax or shipping cost discarded rather than processed in an unspecified way.
 
-## Where to check your settings
+## Where Do You Check Your Bill Capture Preference Settings?
 
 Go to **Setup > Accounting > Bill Capture Preferences**.
 
 Review both the **Save Tax As** and **Save Shipping Cost As** fields. If either is currently blank and you expected captured tax or shipping amounts to flow through to the bill, you need to set them explicitly now.
 
-## New gross and net options
+## What Are the New Gross and Net Options in Bill Capture?
 
 2026.2 also adds new gross and net options to Bill Capture. These give you more control over whether captured amounts are treated as inclusive or exclusive of tax when the bill is saved. Review these options in the same Bill Capture Preferences page alongside the tax and shipping fields.
 
-## Who needs to act
+## Who Needs to Review Bill Capture Preferences After 2026.2?
 
 If your account uses Bill Capture and either Save Tax As or Save Shipping Cost As is blank, the 2026.2 change affects you. Bills captured after the upgrade will have those amounts treated as No Tax or No Shipping Cost respectively.
 
@@ -77,7 +77,7 @@ Check the settings now and set them to the correct explicit option if you want c
 
 For a step-by-step guide to reviewing and updating these settings, see [How to Review Your NetSuite Bill Capture Preferences After the 2026.2 Update](/resources/netsuite-bill-capture-preferences).
 
-## What gross and net options mean for captured amounts
+## What Do Gross and Net Options Mean for Captured Amounts?
 
 Along with the blank value change, NetSuite 2026.2 adds new gross and net options to Bill Capture Preferences.
 

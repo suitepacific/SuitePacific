@@ -65,7 +65,7 @@ NetSuite 2026.2 adds **sequential processing** for batch operations. When you us
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite 2026.2 adds sequential processing as an option for batch operations in REST Web Services. Before this release, the execution order of operations in a batch was not guaranteed. Sequential processing ensures operations execute in the order you specify, with each completing before the next begins. This matters for batch workflows where one operation depends on the result of another: for example, creating a customer record first, then creating a sales order for that customer, then applying a payment. In a parallel batch, the sales order creation might execute before the customer exists and fail. Sequential processing makes the dependency order explicit and reliable. Use sequential processing when operations have dependencies between them; use parallel processing when operations are completely independent and throughput matters more than order. The REST Web Services batch endpoint is the same for both modes.</p>
 </div>
 
-## Why order matters in batch operations
+## Why Does Order Matter in NetSuite REST Batch Operations?
 
 Many batch workflows involve operations that depend on each other. A common example:
 
@@ -77,7 +77,7 @@ In a parallel batch, there is no guarantee that the customer exists before the s
 
 Sequential processing solves this. Operations run in the order you define, so dependent steps reliably have access to the results of earlier steps.
 
-## When to use sequential vs. parallel
+## When Should You Use Sequential vs. Parallel Batch Processing?
 
 **Sequential processing** is appropriate when:
 
@@ -92,7 +92,7 @@ Sequential processing solves this. Operations run in the order you define, so de
 - Speed is more important than order
 - You are updating existing records with no cross-dependencies
 
-## What this means for existing integrations
+## What Does Sequential Batch Processing Mean for Existing Integrations?
 
 If you have existing REST batch integrations that relied on operations running in a specific order, those integrations may have been relying on behavior that was never guaranteed. With sequential processing now available as an explicit option, you can make the ordering a deliberate choice rather than an assumption.
 

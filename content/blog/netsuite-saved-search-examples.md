@@ -226,7 +226,7 @@ Formula column: % Over Budget:
 
 Published to project managers as a dashboard portlet, this search surfaces budget overruns before the project closes rather than after. Filter to Status = In Progress so completed projects don't clutter the view, you cannot do much about a completed project's budget overage, but you can intervene on one still in flight.
 
-## Making searches operational
+## How Do You Make NetSuite Saved Searches Operational?
 
 Building the search is half the work. A saved search sitting in the library that nobody opens produces the same outcome as not having the search at all. Three patterns that make searches consistently actionable:
 

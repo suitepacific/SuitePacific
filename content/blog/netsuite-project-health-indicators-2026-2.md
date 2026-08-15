@@ -74,7 +74,7 @@ This indicator flags approved charges on the project that have not yet been bill
 
 Why it matters: unbilled charges represent revenue that has been earned but not yet invoiced. This can happen when expenses are approved but billing is delayed, or when charges accumulate between billing cycles. The indicator ensures nothing falls through the cracks before a billing run.
 
-## Where to find these indicators
+## Where Do You Find Project Health Indicators in NetSuite?
 
 The five new indicators appear in the project health section of the project record in NetSuite. They are new in 2026.2 and will appear automatically on project records once your account is on the 2026.2 release.
 

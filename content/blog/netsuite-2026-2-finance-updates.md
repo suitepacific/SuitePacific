@@ -18,7 +18,7 @@ This post covers what changed, what the new workflows look like, and what to com
 
 **Managing a NetSuite finance function and want to make sure your team is prepared for 2026.2?** SuitePacific works with NetSuite customers through release updates, including walkthroughs of new finance features in Sandbox before they go live in Production. [Contact us](/contact).
 
-## Payment Runs: batch AP processing in one workflow
+## What Is the Payment Runs Feature in NetSuite 2026.2?
 
 ### What it is
 
@@ -80,7 +80,7 @@ This consolidation is most valuable for organizations with regular AP cycles: we
 
 Finance team members who process AP payments will see Payment Runs as a new option in their workflow. Teams that have an established rhythm for processing payables should be briefed on the new batch approach so they understand how it relates to existing processes.
 
-## Match Bank Data: new Match Suggestions interface
+## What Changed in the Match Bank Data Interface?
 
 ### What changed
 
@@ -98,7 +98,7 @@ The Match Suggestions approach surfaces potential matches alongside the transact
 
 Team members responsible for bank reconciliation will notice the change when they open the Match Bank Data page. The new layout is different enough that a brief walkthrough before the team encounters it in Production is worth doing. Your Sandbox account already has the 2026.2 update; the Match Suggestions interface is available there now.
 
-## Testing both features in Sandbox
+## How Should You Test These Features in Sandbox?
 
 Both Payment Runs and the Match Bank Data redesign are available in Sandbox now. Before your team encounters them in Production:
 
@@ -108,6 +108,6 @@ Both Payment Runs and the Match Bank Data redesign are available in Sandbox now.
 
 The underlying accounting does not change with either feature. The changes are in the workflow and interface, which means the risk is team members being unfamiliar with the new screens rather than any accounting outcome being different.
 
-## How SuitePacific can help
+## How Can SuitePacific Help With 2026.2 Finance Updates?
 
 Preparing finance teams for interface changes requires more than communicating that something looks different. If your team needs a Sandbox walkthrough of Payment Runs or the Match Bank Data redesign before 2026.2 reaches your Production environment, [contact SuitePacific](/contact). We work with NetSuite finance teams through release updates and can help your team build familiarity with new workflows before they go live.

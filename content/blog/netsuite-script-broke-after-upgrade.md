@@ -93,7 +93,7 @@ After fixing the script in Sandbox:
 
 When the fix is confirmed in Sandbox, deploy to Production. The deployment process is identical: update the script file, redeploy the script record, and run the same test scenario in Production to confirm resolution.
 
-## What to check after the fix
+## What Should You Check After Fixing a Broken Script?
 
 After restoring the script, assess whether any data was affected during the failure window. Depending on the script type:
 
@@ -101,7 +101,7 @@ After restoring the script, assess whether any data was affected during the fail
 - **Scheduled scripts**: Jobs that ran and failed during the failure window may need to be re-run once the script is fixed.
 - **Integration scripts (RESTlets)**: Identify whether any external systems that call the RESTlet encountered errors during the failure window and whether any data needs to be re-synced.
 
-## Preventing recurrence
+## How Do You Prevent Scripts From Breaking After Future Upgrades?
 
 A release-related script failure often signals that the script was not tested against the new release before it went live. The standard prevention is:
 

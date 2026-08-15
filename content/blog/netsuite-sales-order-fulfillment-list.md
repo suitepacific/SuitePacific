@@ -49,7 +49,7 @@ NetSuite 2026.2 changes this. You can now start order fulfillment directly from 
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite 2026.2 adds the ability to initiate order fulfillment directly from the sales order list view without opening each individual order record first. Previously, fulfilling a sales order required navigating into the record, which added a page load for every order processed. The new list-level action lets warehouse and operations staff trigger fulfillment from the list and move through orders without leaving it. The fulfillment process itself is unchanged: Item Fulfillment records are still created, inventory is still committed and decremented the same way, and all existing fulfillment rules and workflow logic continue to apply. The feature is available in the sales order list in NetSuite 2026.2 with no additional configuration required. It is most beneficial for teams fulfilling high volumes of orders manually each day. Automated fulfillment via SuiteScript or workflow is unaffected.</p>
 </div>
 
-## What changed
+## What Changed in Sales Order Fulfillment in NetSuite 2026.2?
 
 The sales order list now supports initiating fulfillment as a list-level action. Instead of the workflow being:
 
@@ -61,15 +61,15 @@ The sales order list now supports initiating fulfillment as a list-level action.
 
 You can now trigger fulfillment from the list itself, reducing the number of page loads and clicks required to process a batch of orders.
 
-## Why this matters for order teams
+## Why Does List-Level Fulfillment Matter for Order Teams?
 
 The benefit is speed and efficiency for teams fulfilling multiple orders in sequence. If your warehouse or operations team works through a queue of orders each day, removing the extra navigation step adds up. The list-level action lets you move through orders faster without changing how fulfillment itself works.
 
-## What stays the same
+## What Stays the Same in the Fulfillment Process?
 
 The fulfillment process, the Item Fulfillment record, and the underlying logic are unchanged. This is a navigation improvement, not a change to how fulfillment works. Orders still create Item Fulfillment records, inventory is still committed and decremented in the same way, and all existing fulfillment rules and workflow logic still apply.
 
-## Who benefits
+## Who Benefits Most From List-Level Fulfillment?
 
 This change is most useful for:
 
@@ -81,7 +81,7 @@ If your fulfillment process is already automated through SuiteScript or workflow
 
 The feature is available in NetSuite 2026.2. Navigate to your sales order list to see the fulfillment action available directly from there.
 
-## What configuration is required
+## What Configuration Is Required to Enable List-Level Fulfillment?
 
 No additional setup is required. The list-level fulfillment action is available as a standard feature in NetSuite 2026.2. It appears in the sales order list for orders that are eligible for fulfillment based on their current status and your account's fulfillment rules. Orders that are not ready for fulfillment, such as those pending approval or in a status that does not allow fulfillment, will not show the action.
 

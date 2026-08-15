@@ -47,13 +47,13 @@ NetSuite 2026.2 changes this.
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite 2026.2 allows users with a FIDO2-compliant passkey to use it as a second authentication factor, not just for passwordless login. If your account requires two-factor authentication and you have a passkey set up using Face ID, Touch ID, Windows Hello, or a FIDO2-certified hardware security key, that passkey can now satisfy the 2FA requirement without requiring an authenticator app code. The feature works automatically once a qualifying passkey is configured in the user's account. A 3-month fallback remains: even with a passkey as the second factor, NetSuite prompts for an authenticator app code every three months as a built-in security check, so keep the authenticator app installed. Administrators can disable the passkey-as-2FA feature at the account level. This change is separate from the passwordless login feature also added in 2026.2, which uses the passkey to replace both the password and 2FA prompt entirely.</p>
 </div>
 
-## What changed
+## What Changed for NetSuite Passkey Second Factors in 2026.2?
 
 Users who have a FIDO2-compliant passkey configured in their NetSuite account can now use that passkey as a second factor, not just as a passwordless login method.
 
 If your account requires two-factor authentication, your passkey can satisfy that requirement. You no longer need to open an authenticator app and enter a code every time.
 
-## What FIDO2-compliant means
+## What Does FIDO2-Compliant Mean for NetSuite Passkeys?
 
 FIDO2 is the technical standard that modern passkeys are built on. Your passkey qualifies if you created it using:
 
@@ -63,15 +63,15 @@ FIDO2 is the technical standard that modern passkeys are built on. Your passkey 
 
 Passkeys created through these methods are FIDO2-compliant and work as a second factor in NetSuite.
 
-## The 3-month authenticator prompt
+## What Is the 3-Month Authenticator Prompt After Enabling a Passkey?
 
 Even with a passkey configured as your second factor, NetSuite will still prompt you for an authenticator app code every three months. This is a built-in fallback, not a sign that something is misconfigured. Keep your authenticator app installed and your backup codes stored somewhere safe.
 
-## What administrators need to know
+## What Do Administrators Need to Know About Passkey Second Factors?
 
 Administrators can disable the passkey-as-2FA feature for their account. If your organization has compliance requirements around which second-factor methods are approved, or if you want to control the rollout, you can disable this in your account's authentication settings and users will revert to the standard authenticator app prompt for 2FA.
 
-## How this is different from passwordless passkey login
+## How Is Second-Factor Passkey Different From Passwordless Login?
 
 In 2026.2, NetSuite released two separate passkey-related changes:
 
@@ -81,7 +81,7 @@ In 2026.2, NetSuite released two separate passkey-related changes:
 
 These are two separate use cases. If you are already using passkeys for full passwordless login, the 2FA change may not affect your day-to-day experience. But if your account uses password plus 2FA and you want to remove the authenticator app step, this is how.
 
-## What to do
+## What Should You Do About the Passkey Second Factor Change?
 
 If you want to use your passkey as a second factor in NetSuite, you do not need to do anything extra. The change works automatically once you have a FIDO2-compliant passkey set up in your account. If you have not set one up yet, see [How to Enable Passkeys in NetSuite](/resources/netsuite-passkeys) for the setup steps.
 

@@ -156,7 +156,7 @@ If you're currently in a contract you're not satisfied with, or considering rene
 
 ---
 
-## What a well-functioning support engagement looks like
+## What Does a Well-Functioning NetSuite Support Engagement Look Like?
 
 For comparison: a support relationship that's working looks like this.
 
@@ -164,7 +164,7 @@ Your partner knows your account without being reminded. Changes are built in san
 
 If that description sounds like a higher standard than what you're currently experiencing, it's worth knowing it's the baseline, not a premium. For a breakdown of what [NetSuite post-go-live support](/netsuite-post-go-live-support) should include, that page covers the service model in detail. To verify whether your current setup covers the essentials, the [post-go-live checklist](/blog/netsuite-post-go-live-checklist) and the [month-end close checklist](/blog/netsuite-month-end-close-checklist) identify what a well-managed NetSuite account should have in place.
 
-## What to do next
+## What Should You Do If Your NetSuite Support Is Not Working?
 
 If several of these signs match your current engagement, the practical next step is a conversation, not a commitment. We work with post-go-live NetSuite accounts exclusively. We do not require long-term contracts. And the first thing we do with any new account is actually read it, before suggesting anything.
 

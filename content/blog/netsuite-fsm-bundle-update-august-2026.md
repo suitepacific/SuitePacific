@@ -22,7 +22,7 @@ That recommendation is easy to overlook when your team is busy. For organization
 
 This article covers exactly what is changing in version 2026.07.1, which changes require action on your part, and what to validate in Sandbox before August 11.
 
-## Release timeline
+## What Is the Release Timeline for the FSM Bundle Update?
 
 The 2026.07.1 update is already available in Sandbox accounts as of July 16, 2026. Production upgrades are scheduled as follows:
 
@@ -40,7 +40,7 @@ NetSuite Field Service Management is delivered as a managed SuiteApp, which mean
 
 What you do control is preparation. Oracle has already pushed 2026.07.1 to Sandbox accounts. That window between July 16 and August 11 is your opportunity to identify anything that breaks or behaves differently before real work orders, real technicians, and real dispatching are affected.
 
-## What is changing in 2026.07.1
+## What Is Changing in FSM Bundle Version 2026.07.1?
 
 This release is primarily a mobile app update with several configuration changes that administrators need to review before and after the upgrade.
 
@@ -130,7 +130,7 @@ The FSM Mobile app now supports Portuguese (Portugal) through the pt_PT locale. 
 
 Five mobile UX fixes ship in this release. Searchable select fields in table rows now reset cleanly between rows instead of carrying over previous search text. Select fields correctly show the current option label rather than the raw saved value. Search keywords on mobile tabs now persist visually when you navigate back to them. Task list search text survives app restarts and refreshes. Service report images now render correctly for customers whose Field Service Language is set to something other than English or French.
 
-## Required actions from Oracle
+## What Actions Does Oracle Require Before the Update?
 
 Oracle has specified the following actions for this update.
 
@@ -159,7 +159,7 @@ For detailed guidance, refer to SuiteAnswers ID 1021215 (Maintaining Field Servi
 
 Verify that the right people in your organization receive FSM bundle messages such as upgrade notices. On the Bundle Details page for FSM (Bundle ID 570821), confirm that email recipients are set to either All Bundle Admins or Custom. If you select Custom, add or update recipients as needed. Note that email addresses cannot be edited on the Bundle Details page and must be updated directly on the employee record.
 
-## What to validate in Sandbox before August 11
+## What Should You Validate in Sandbox Before August 11?
 
 Use this checklist alongside Oracle's minimum requirements. Prioritize the areas that the 2026.07.1 changes directly touch.
 
@@ -231,7 +231,7 @@ Oracle published the full 2026.07.1 release notes under SuiteAnswers answer ID 1
 **What if I find a problem in Sandbox but Production has already updated?**
 Log a support case with Oracle immediately and document the business impact. In parallel, identify whether the issue can be mitigated through a configuration change or custom script while Oracle works on a fix. Your Sandbox test documentation will significantly speed up Oracle support's response.
 
-## How SuitePacific can help
+## How Can SuitePacific Help With the FSM Bundle Update?
 
 This update includes configuration changes that require administrator action before and after the Production upgrade, not just passive testing. The removal of the `readonly` resource-level rule, the `nxc_now()` migration review, and the mobile user license reporting change are all items that need to be addressed regardless of whether your Sandbox testing surfaces any issues.
 

@@ -47,7 +47,7 @@ If you do bank reconciliation in NetSuite, the Match Bank Data page looks differ
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Match Suggestions gives each unmatched bank line five structured resolution options rather than a flat review list.</figcaption>
 </figure>
 
-## The Match Suggestions subtab replaces the Review subtab
+## What Replaced the Review Subtab in NetSuite 2026.2?
 
 The biggest change on the Match Bank Data page is the new **Match Suggestions** subtab. It replaces the old Review subtab.
 
@@ -61,7 +61,7 @@ Match Suggestions shows NetSuite's proposed matches for imported bank transactio
 
 This is more than a rename. The suggested actions give you a structured workflow for each unmatched bank line instead of just a list to review.
 
-## Suggestions now cover both AR and AP
+## Do Match Suggestions Cover Both AR and AP?
 
 Match Suggestions are not limited to your bank side. NetSuite 2026.2 also introduces suggestions for applying payments against:
 
@@ -70,7 +70,7 @@ Match Suggestions are not limited to your bank side. NetSuite 2026.2 also introd
 
 This means the suggestion engine works across both sides of your reconciliation, not just incoming bank lines.
 
-## Tab and button names changed
+## Which Tab and Button Names Changed in Match Bank Data?
 
 Several elements of the Match Bank Data page have been renamed:
 
@@ -83,19 +83,19 @@ Several elements of the Match Bank Data page have been renamed:
 
 The button renames reflect that matching now automatically submits the action, removing a separate confirmation step.
 
-## Action buttons appear above and below the list
+## Where Do Action Buttons Appear in the Updated Interface?
 
 In previous versions, action buttons were only at the bottom of the transaction list. In 2026.2, they appear both above and below. For long lists, this means you no longer have to scroll to the bottom to take action.
 
-## New filter chips
+## What Are the New Filter Chips in Match Bank Data?
 
 The Match Bank Data page now includes filter chips to narrow the transaction list. This helps when you have a large number of unmatched bank lines and want to focus on a subset.
 
-## Matched By and Submitted By columns
+## What Are the Matched By and Submitted By Columns?
 
 On the Review tab (separate from the Match Suggestions subtab), two new columns now appear: **Matched By** and **Submitted By**. These show which user matched and submitted each transaction, giving you an audit trail without having to dig through system notes.
 
-## System notes are now more searchable
+## How Did System Notes Become More Searchable?
 
 System notes for matching and reconciliation activity are now available on the open transaction record under the System Information subtab. Two fields are now searchable in saved searches:
 
@@ -104,11 +104,11 @@ System notes for matching and reconciliation activity are now available on the o
 
 This makes it possible to build saved searches that report on reconciliation activity across transactions without opening each record individually.
 
-## Sensitive information notice for imported bank data
+## What Is the Sensitive Information Notice for Imported Bank Data?
 
 A notice now appears on the Format Profile and Upload File pages when you import bank data. This is a visibility reminder that the imported data may contain sensitive financial information.
 
-## Where to find these changes
+## Where Do You Find These Bank Reconciliation Changes?
 
 All of these changes are on the Match Bank Data page at:
 

@@ -46,7 +46,7 @@ NetSuite 2026.2 introduces **Automating Payment Adjustments**, which handles the
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite 2026.2 introduces automated payment adjustment handling for three types of discrepancies: bank fees deducted from payments by the bank before deposit, convenience fees charged on certain payment methods, and small underpayments within a configurable write-off threshold. These adjustments are handled directly from the customer payment or customer deposit record, removing the need for separate manual journal entries to clear each discrepancy. AR teams that regularly process payments with bank fees or write off small underpayments benefit most: fewer manual transactions, cleaner reconciliation, and less follow-up when payment amounts differ slightly from invoice totals. The feature is available on customer payment and customer deposit records in NetSuite 2026.2. No separate workflow or module is required: the adjustment handling is built into the existing payment record in NetSuite.</p>
 </div>
 
-## What types of adjustments are covered
+## What Types of Payment Adjustments Are Covered in NetSuite?
 
 The automation handles three types of payment discrepancies:
 
@@ -56,19 +56,19 @@ The automation handles three types of payment discrepancies:
 
 **Underpayments:** When a customer pays less than the full amount due, and the difference is within a threshold your account considers acceptable for write-off, the adjustment can be applied automatically rather than creating a separate journal entry.
 
-## Where this happens
+## Where Do Automated Payment Adjustments Happen?
 
 Payment adjustment automation works from the **customer payment** and **customer deposit** records in NetSuite. These are the records you create when you receive money from a customer.
 
 Previously, clearing a small discrepancy on one of these records required a separate manual step, typically a journal entry or a write-off transaction. The 2026.2 change brings that adjustment handling directly into the payment workflow.
 
-## Why this matters
+## Why Do Automated Payment Adjustments Matter?
 
 The practical benefit is reduced manual work for AR teams. Small discrepancies, bank fees, and underpayments are common in any accounts receivable operation. Handling each one manually generates extra transactions, takes time, and creates reconciliation noise.
 
 Automating these adjustments means fewer manual journal entries, cleaner reconciliation, and less follow-up for the AR team when a payment does not match the invoice exactly.
 
-## Who should use this
+## Who Should Use Automated Payment Adjustments?
 
 This feature is most relevant for:
 

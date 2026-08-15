@@ -16,7 +16,7 @@ If you process vendor payments in NetSuite, the process is usually the same: ope
 
 NetSuite 2026.2 introduces **Payment Runs**, a new AP feature that groups multiple payables together for processing in one workflow.
 
-## What a Payment Run includes
+## What Does a NetSuite Payment Run Include?
 
 A single Payment Run can contain any combination of:
 
@@ -65,7 +65,7 @@ You add whatever payables belong together, review them as a batch, get approvals
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Payment Run four-stage workflow in NetSuite: Prepare (add bills, credits, and journal entries), Review (full batch visible before committing), Approve, and Pay.</figcaption>
 </figure>
 
-## How the workflow works
+## How Does the Payment Runs Workflow Work?
 
 Payment Runs follows a four-stage workflow:
 
@@ -77,7 +77,7 @@ Payment Runs follows a four-stage workflow:
 
 **Process:** NetSuite executes the payments using the Bulk Processing Framework. After processing, each source transaction (vendor bill, expense report, etc.) shows the related payment activity on its record.
 
-## Why this matters
+## Why Does the Payment Runs Feature Matter?
 
 Two things make Payment Runs worth paying attention to.
 
@@ -85,7 +85,7 @@ Two things make Payment Runs worth paying attention to.
 
 **Reduced duplicate payment risk.** When each payment is an independent transaction, it is easy to accidentally process the same bill twice, especially if multiple people work in the same account. Payment Runs puts the full batch in front of a reviewer before anything is paid, giving you a chance to catch duplicates before they become a problem.
 
-## What Payment Runs works with
+## What Does Payment Runs Integrate With in NetSuite?
 
 Payment Runs is designed to work with the rest of NetSuite from the start:
 
@@ -100,7 +100,7 @@ Payment Runs is designed to work with the rest of NetSuite from the start:
 
 It is a standard NetSuite record type, not a workaround. You can build scripts around it, report on it, and include it in your existing automation the same way you would with any other NetSuite transaction.
 
-## Who this is for
+## Who Is the Payment Runs Feature For?
 
 Payment Runs is most useful for AP teams that process a high volume of vendor payments on a regular schedule. If your team currently processes bills one at a time and you are dealing with duplicate payment risk or manual inefficiency, this feature is worth evaluating.
 

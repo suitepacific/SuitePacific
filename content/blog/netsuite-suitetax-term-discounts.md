@@ -42,7 +42,7 @@ Both settings are required. Enabling only one does not produce the correct tax a
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite 2026.2 adds formal support for tax adjustments on term discounts in SuiteTax through two settings that must both be enabled. The first, Create Adjustment Transactions for Term Discounts, is in Accounting Preferences at Setup &gt; Accounting &gt; Accounting Preferences. It tells NetSuite to generate an adjustment transaction when a term discount is applied on a purchase. The second, Include Tax When Calculating Term Discount, is a nexus-level setting that controls whether tax is recalculated on the discounted amount for that jurisdiction. Both settings are required: enabling only one produces incomplete results. Once both are enabled, when a payment applies a term discount, NetSuite creates an adjustment so that tax is calculated on the amount actually paid rather than the gross invoice total. The feature applies to SuiteTax accounts only and is most relevant for businesses in jurisdictions where the taxable base is the amount actually paid, not the gross invoice amount.</p>
 </div>
 
-## What the new settings do
+## What Do the New SuiteTax Term Discount Settings Do?
 
 Two settings work together to enable tax adjustments on term discounts:
 
@@ -56,19 +56,19 @@ This is a nexus-level setting that tells NetSuite to account for tax when calcul
 
 Both settings need to be enabled for the full behavior to work. Enabling only one produces incomplete results.
 
-## Where to enable them
+## Where Do You Enable SuiteTax Term Discount Tax Settings?
 
 **Setting 1** is in your accounting preferences. Go to **Setup > Accounting > Accounting Preferences** and look for "Create Adjustment Transactions for Term Discounts."
 
 **Setting 2** is at the nexus level. Go to your nexus configuration and look for "Include Tax When Calculating Term Discount" on the nexus you want this to apply to.
 
-## What happens when a term discount is taken
+## What Happens When a Term Discount Is Applied in NetSuite?
 
 Once both settings are enabled, when a vendor payment applies a term discount on a purchase transaction, NetSuite creates an adjustment transaction to account for the tax difference. The tax is recalculated on the discounted amount rather than the gross invoice amount.
 
 This keeps your tax liability accurate when discounts are taken. Without the adjustment, your books show more tax paid than was correct for the actual amount transacted.
 
-## Who should enable this
+## Who Should Enable SuiteTax Term Discount Tax?
 
 This feature is most relevant for:
 

@@ -47,19 +47,19 @@ NetSuite 2026.2 adds a new section called **Advanced Record Customization**, acc
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Advanced Record Customization (ARC) is a new section in NetSuite 2026.2, found at Customization &gt; Advanced Record Customization, that gives administrators a central place to manage AI descriptions for standard and custom record types. An AI description is a short text up to 280 characters that tells NetSuite's AI Connector Service what a record type is used for in the account. ARC lets administrators view the current description, create a new one, update an existing one, compare a custom description against the NetSuite default or a partner description, and revert to the original if needed. Custom descriptions set in ARC apply at the account level and override both the default NetSuite descriptions and any descriptions added by partner bundles. The feature is most relevant for accounts using AI integrations built on NetSuite's AI Connector Service or MCP (Model Context Protocol). More accurate record descriptions produce more relevant AI responses for that record type.</p>
 </div>
 
-## What Advanced Record Customization is
+## What Is Advanced Record Customization in NetSuite 2026.2?
 
 Advanced Record Customization (ARC) is a new area in NetSuite for managing AI-level metadata on record types. In 2026.2, its primary function is managing AI descriptions.
 
 An AI description is a short piece of text (up to 280 characters) that describes what a record type is and how it is used in your account. NetSuite's AI Connector Service reads these descriptions when generating AI-powered responses and actions, including integrations built on MCP (Model Context Protocol). A more accurate description leads to more relevant AI output.
 
-## Where to find it
+## Where Do You Find Advanced Record Customization?
 
 Go to **Customization > Advanced Record Customization**.
 
 From here you can select any standard or custom record type and manage its AI description.
 
-## What you can do in ARC
+## What Can You Do in Advanced Record Customization?
 
 For each record type, ARC lets you:
 
@@ -69,17 +69,17 @@ For each record type, ARC lets you:
 - **Compare** your custom description against the default NetSuite description or a description from a partner solution
 - **Revert** to the original description if a customization is not working as expected
 
-## Account-level scope
+## What Does Account-Level Scope Mean in ARC?
 
 AI descriptions set in ARC apply at the account level. This means your custom descriptions override both the default NetSuite descriptions and any descriptions added by partner solutions or bundles installed in your account. This gives administrators direct control over what the AI connector sees when it reads your record types.
 
-## The 280-character limit
+## What Is the 280-Character Limit in ARC Descriptions?
 
 Each AI description is capped at 280 characters. That is enough for a clear, specific description but forces you to be concise. A good AI description names what the record is used for in your specific account, not just what it is in general.
 
 For example, if your account uses the Opportunity record type in a non-standard way (for internal projects, not external sales), an accurate description of that distinction will produce better results from any AI tool connected to NetSuite.
 
-## Who should use this
+## Who Should Use Advanced Record Customization?
 
 Advanced Record Customization is most relevant for:
 
@@ -91,7 +91,7 @@ If your account does not use AI integrations yet, this feature has no immediate 
 
 For step-by-step instructions on using ARC, see [How to Use Advanced Record Customization (ARC) in NetSuite](/resources/netsuite-advanced-record-customization).
 
-## How to write a good AI description
+## How Do You Write a Good AI Description in ARC?
 
 A good AI description for a record type names what that record is specifically used for in your account, not just what the record type is in general. NetSuite's default description for the Opportunity record type describes it in general sales terms. If your account uses Opportunity records for internal project tracking rather than external sales, a description that reflects that distinction will produce more relevant AI responses.
 

@@ -49,7 +49,7 @@ The 2026.2 release notes confirm two changes coming in 2027.1 and one tentativel
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Migrating to TBA now buys time but is not the final destination. OAuth 2.0 is the long-term target.</figcaption>
 </figure>
 
-## What is being retired and when
+## What Is Being Retired in NetSuite and When?
 
 **As of 2027.1:**
 
@@ -60,13 +60,13 @@ The 2026.2 release notes confirm two changes coming in 2027.1 and one tentativel
 
 - TBA will be fully retired. Existing TBA integrations that currently work will stop working when this happens.
 
-## Why NLAuth is being retired
+## Why Is NLAuth Being Retired by Oracle?
 
 NLAuth passes your NetSuite account email and password with every request. If those credentials are compromised, an attacker can log directly into NetSuite, not just call your API. NetSuite has been phasing it out for years. 2027.1 is the hard cutoff.
 
 TBA is more secure but is based on OAuth 1.0. OAuth 2.0 is the current standard, and NetSuite's direction is to move all integrations there.
 
-## What to do if you use NLAuth
+## What Should You Do If You Use NLAuth?
 
 You need to migrate before 2027.1. The options are:
 
@@ -80,7 +80,7 @@ For both options, the starting point is the same: create an Integration Record i
 
 If you need outside help with the migration, [SuitePacific's NetSuite integration service](/netsuite-integrations) covers OAuth 2.0 rebuilds for existing NLAuth and TBA integrations.
 
-## What to do if you use TBA
+## What Should You Do If You Already Use TBA?
 
 If you have existing TBA integrations, you have more runway. They will continue working until TBA is fully retired, which is tentatively planned for 2028.1. However:
 
@@ -89,11 +89,11 @@ If you have existing TBA integrations, you have more runway. They will continue 
 
 Plan your migration to OAuth 2.0 now. Do not wait until you are forced to.
 
-## One more change in 2027.1: PKCE for OAuth 2.0
+## What Is the PKCE Requirement for OAuth 2.0 in NetSuite 2027.1?
 
 If you are already using OAuth 2.0 Authorization Code Grant Flow, PKCE (Proof Key for Code Exchange) will be required as of 2027.1. If your current implementation does not include PKCE, add it before the deadline.
 
-## Summary of changes and timeline
+## What Is the Full Summary of NLAuth Retirement Changes?
 
 | Change | When |
 |---|---|

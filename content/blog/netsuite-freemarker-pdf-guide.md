@@ -14,7 +14,7 @@ FreeMarker is an open-source Java template engine that processes a data model an
 </div>
 
 
-## How it works
+## How Does FreeMarker Work in NetSuite Advanced PDF Templates?
 
 When NetSuite generates a PDF from an Advanced PDF template, it does two things:
 
@@ -69,7 +69,7 @@ To see the exact XML data model for a specific transaction, open the template ed
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">FreeMarker PDF rendering pipeline in NetSuite: transaction record and related records are serialized into an XML data model, then processed by the FreeMarker template, and rendered as a PDF output.</figcaption>
 </figure>
 
-## The core FreeMarker syntax
+## What Is the Core FreeMarker Syntax for NetSuite PDFs?
 
 FreeMarker has two types of constructs: expressions that output a value (`${...}`) and directives that control template logic (`<# ... >`).
 
@@ -132,7 +132,7 @@ Or use the full currency field if available:
 ${record.currencysymbol!"$"}${record.total?string["#,##0.00"]}
 ```
 
-## Line items: the `<#list>` loop
+## How Do You Loop Through Line Items in FreeMarker?
 
 The sublist of line items on a transaction is accessed as `record.item`. Loop over it with `<#list>`:
 
@@ -180,7 +180,7 @@ Some transactions include non-item rows (group headers, subtotals, description-o
 
 `?has_content` returns true if the value is neither null nor an empty string. It's more reliable than `!= ""` for fields that might be null.
 
-## Conditional logic with `<#if>`
+## How Do You Add Conditional Logic in FreeMarker Templates?
 
 ```html
 <#if record.custbody_showdiscount == "T">
@@ -215,7 +215,7 @@ The pattern of one template with `<#if>` branches for different customer types, 
 
 This suppresses the entire "Notes:" section when the memo is blank, useful for any optional field that should only appear when it has a value.
 
-## Assigning variables
+## How Do You Assign Variables in FreeMarker?
 
 Use `<#assign>` to compute or alias a value once and reuse it:
 
@@ -231,7 +231,7 @@ Use `<#assign>` to compute or alias a value once and reuse it:
 
 `?number` converts a string to a number, necessary when you want to do arithmetic on a field that FreeMarker received as a string.
 
-## Addressing fields
+## How Do You Address NetSuite Fields in FreeMarker?
 
 Addresses on transactions have a specific structure. The billing address is accessed via `record.billaddress` (the pre-formatted full address) or by individual components:
 
@@ -250,7 +250,7 @@ If the formatted address `record.billaddress` has the right layout for your docu
 ${record.billaddress!""}
 ```
 
-## Whitespace control
+## How Do You Control Whitespace in FreeMarker Templates?
 
 FreeMarker directives (`<#if>`, `<#list>`) leave blank lines in the output when their condition is false or the loop is empty. To suppress these, wrap the directive in `<#compress>` or add whitespace control markers:
 
@@ -264,7 +264,7 @@ FreeMarker directives (`<#if>`, `<#list>`) leave blank lines in the output when 
 
 `<#compress>` collapses all whitespace and blank lines within its block into single spaces, which keeps the rendered HTML clean when optional sections are suppressed.
 
-## A working invoice template skeleton
+## What Does a Working FreeMarker Invoice Template Look Like?
 
 This is a minimal but functional starting point for a custom invoice:
 
@@ -360,7 +360,7 @@ This is a minimal but functional starting point for a custom invoice:
 </pdf>
 ```
 
-## Testing and iteration
+## How Do You Test and Iterate on a FreeMarker PDF Template?
 
 Use the Preview button in the Advanced PDF/HTML Template editor with a specific transaction to test rendering without saving. The preview updates in real time as you edit, which makes iteration fast.
 
@@ -372,7 +372,7 @@ For testing edge cases, deliberately pick transactions with:
 
 NetSuite will render `&` in a field value as `&amp;` automatically in most cases, but if you're concatenating strings inside the template, escape manually: `${"&amp;"}` or use `?html`.
 
-## When FreeMarker isn't enough
+## When Is FreeMarker Not Enough for NetSuite PDF Templates?
 
 FreeMarker templates reference fields that NetSuite includes in the transaction data model. If you need a value that isn't in that data model, a custom record field joined through several levels, a calculated aggregate from a saved search, or data from an external system, you have two options:
 

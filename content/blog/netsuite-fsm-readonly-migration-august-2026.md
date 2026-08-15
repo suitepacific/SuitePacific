@@ -20,7 +20,7 @@ There is no error when this happens. No alert, no log entry, and no visible chan
 
 **Need help identifying and migrating your FSM configuration before August 11?** SuitePacific works with NetSuite customers through FSM bundle updates, including configuration reviews, migration support, and Sandbox validation. [Contact us](/contact) and we will help you get ahead of this before it affects your live operation.
 
-## Why Oracle is removing the readonly property
+## Why Is Oracle Removing the readonly Property?
 
 The `readonly` property at the resource level was a single on/off control. It blocked technicians from editing a record but gave administrators no way to distinguish between create, edit, and delete permissions independently. You could not, for example, allow technicians to create new records on a tab but prevent them from deleting existing ones.
 
@@ -28,7 +28,7 @@ The 2026.07.1 update replaces this blunt control with three separate properties 
 
 As part of this change, the `readonly` property at the resource level is being retired. Oracle has not provided an automatic migration for it. Identifying and replacing your `readonly` rules is a manual task that must be completed before August 11.
 
-## What happens if you do nothing
+## What Happens If You Do Nothing About the readonly Property?
 
 If you have `readonly` rules at the resource level and take no action before August 11:
 
@@ -39,7 +39,7 @@ If you have `readonly` rules at the resource level and take no action before Aug
 
 This is the category of FSM change that is easy to miss in Sandbox testing if you are only checking that things load and complete correctly, rather than specifically testing that restrictions are still in place.
 
-## How to identify whether you are affected
+## How Do You Identify Whether You Are Affected by This Change?
 
 Open your FSM Configuration record in NetSuite (Sandbox first) and review the resource-level configuration. You are looking for any property named `readonly` applied at the resource level rather than at the mobile tab level.
 
@@ -47,7 +47,7 @@ If you are uncertain where to find this in your specific configuration, search f
 
 If your configuration has no `readonly` rules at the resource level, you are not affected by this specific change. You should still validate your mobile tab permissions in Sandbox, but no migration is required for this item.
 
-## The replacement: create, edit, and delete on mobile tabs
+## What Replaces the readonly Property on Mobile Tabs?
 
 The three new properties work at the mobile tab level, not the resource level. For each mobile tab in your FSM Configuration, you can now specify:
 
@@ -86,7 +86,7 @@ The important default to understand: if none of these properties are set on a ta
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">The readonly resource-level rule is replaced by three independent properties at the mobile tab level.</figcaption>
 </figure>
 
-## Migration approach
+## What Is the Migration Approach for the readonly Property?
 
 For each `readonly` rule you find at the resource level, work through the following:
 
@@ -108,7 +108,7 @@ Add the appropriate `create`, `edit`, and `delete` properties to each mobile tab
 
 The retired `readonly` property at the resource level will have no effect after August 11. It does not need to be removed for the system to function, but leaving it in place creates a false impression that a restriction is active. Remove it once you have confirmed the replacement tab-level properties are working correctly.
 
-## Testing in Sandbox
+## How Do You Test the readonly Migration in Sandbox?
 
 Your Sandbox account already has 2026.07.1 available as of July 16. Test your migration there before August 11.
 
@@ -136,7 +136,7 @@ No. If your FSM Configuration does not use `readonly` at the resource level, thi
 **Where can I find more information about the new properties?**
 The full 2026.07.1 release notes are available in SuiteAnswers answer ID 1047018. The FSM Configuration documentation in SuiteAnswers covers the mobile tab property schema.
 
-## How SuitePacific can help
+## How Can SuitePacific Help With the readonly Migration?
 
 Reviewing FSM Configuration for retired properties, translating business requirements into the new mobile tab permission model, and validating the result in Sandbox before August 11 is exactly the kind of work SuitePacific does for NetSuite customers in the post-go-live phase.
 

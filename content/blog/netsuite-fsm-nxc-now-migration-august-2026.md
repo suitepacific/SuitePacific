@@ -22,7 +22,7 @@ Oracle migrates the expressions into a copied configuration record and stores th
 
 **Not sure whether your FSM configuration uses nxc_now() or how to find the migrated record?** SuitePacific helps NetSuite customers review FSM configurations before bundle updates. [Contact us](/contact) and we will work through your Sandbox environment with you before August 11.
 
-## What nxc_now() does and why it is changing
+## What Does nxc_now() Do and Why Is It Changing?
 
 `nxc_now()` is a function used in FSM mobile expressions to return the current date or time. It has been a common tool in FSM configurations for setting default values, populating date fields automatically, and building conditional expressions that depend on when a task is being completed.
 
@@ -33,7 +33,7 @@ The 2026.07.1 update introduces two purpose-built helpers that replace `nxc_now(
 
 These new helpers are more explicit about what they return and how values are formatted, which reduces the category of bugs that came from `nxc_now()` returning values in an unexpected format.
 
-## What Oracle migrates automatically
+## What Does Oracle Migrate Automatically for nxc_now()?
 
 When the 2026.07.1 update is applied to your account, Oracle identifies all `nxc_now()` expressions in your FSM Configuration and migrates them to use the new `format()` and `now()` helpers.
 
@@ -45,7 +45,7 @@ The `xxxx` in the name corresponds to your FSM configuration identifier. This re
 
 Your original configuration record is not modified. The migrated record sits alongside it. The migration preserves existing checkbox conditions.
 
-## What you need to review
+## What Do You Need to Review Before the nxc_now() Migration?
 
 The automatic migration handles the straightforward cases. The cases that require human review are:
 
@@ -103,7 +103,7 @@ Simple uses of `nxc_now()`: for example, setting a date field to the current dat
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Oracle handles the migration. You are responsible for verifying the result before August 11.</figcaption>
 </figure>
 
-## How to review the migration in Sandbox
+## How Do You Review the nxc_now() Migration in Sandbox?
 
 Your Sandbox account has already received the 2026.07.1 update as of July 16. The migrated configuration record is already there.
 
@@ -132,7 +132,7 @@ Reading the configuration is not enough. Open the FSM Mobile app in Sandbox, nav
 
 If you find incorrect expressions in the migrated record, correct them in Sandbox and re-test. The goal is to have a confirmed, working migrated configuration in Sandbox before August 11, so you know exactly what the Production state should be after the upgrade.
 
-## What if your configuration does not use nxc_now()
+## What If Your Configuration Does Not Use nxc_now()?
 
 If your FSM Configuration does not use `nxc_now()` in any expressions, this migration does not apply to you. No "Auto Configure xxxx: Migrate nxc_now expressions" record will be created in your account.
 
@@ -152,7 +152,7 @@ No. Oracle runs the migration automatically as part of the bundle update. Your o
 **Where is the full documentation for this change?**
 The 2026.07.1 release notes are available in SuiteAnswers answer ID 1047018. The date and time field update guidance is in SuiteAnswers answer ID 1047012.
 
-## How SuitePacific can help
+## How Can SuitePacific Help With the nxc_now() Migration?
 
 Reviewing FSM configuration expressions, identifying checkbox conditions that may not have migrated correctly, testing the mobile app in Sandbox, and confirming the migration is correct before August 11 is technical work that requires FSM experience.
 

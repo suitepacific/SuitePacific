@@ -22,7 +22,7 @@ This post explains exactly what is changing in the mobile experience, why Oracle
 
 **Running FSM in a live field operation and not sure how to prepare your team?** SuitePacific helps NetSuite customers manage FSM bundle updates, including briefing templates and Sandbox walkthroughs for field teams. [Contact us](/contact).
 
-## The core problem this update solves
+## What Problem Does the August 2026 FSM Mobile Update Solve?
 
 Before 2026.07.1, the FSM Mobile app gave technicians limited visibility into the status of their records. If a record had a sync error, the technician might not know until they specifically navigated to it. If the device went offline, there was no persistent indication across all screens. If a task was waiting to sync, it was not obvious at a glance.
 
@@ -30,7 +30,7 @@ These limitations led to real operational problems: technicians completing tasks
 
 The 2026.07.1 update addresses this by adding persistent, visible status indicators throughout the mobile app. The goal is to surface problems at the moment they happen, not after the fact.
 
-## What is changing in the mobile app
+## What Is Changing in the FSM Mobile App?
 
 ### Status counters on the task list and on individual tasks
 
@@ -100,7 +100,7 @@ Records that have not been saved yet will show "Unsaved Draft" in the navigation
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">After the update: status counter in the nav bar, sync error indicator on the affected record, and a persistent offline banner. These are improvements, not errors.</figcaption>
 </figure>
 
-## What is not changing
+## What Is Not Changing in the FSM Mobile Update?
 
 It is worth being clear about what the August 11 update does not change for technicians:
 
@@ -111,7 +111,7 @@ It is worth being clear about what the August 11 update does not change for tech
 
 The changes are in how the app communicates its status to the technician, not in how the technician does their work.
 
-## Task completion behavior change for CRM tasks
+## How Is Task Completion Behavior Changing for CRM Tasks?
 
 One functional change that affects technicians directly: CRM task completion is now restricted to the assigned technician by default.
 
@@ -121,7 +121,7 @@ Project tasks are not affected by this change. Project task completion remains a
 
 **What to tell your team:** If a technician reports that the Complete button on a CRM task is greyed out, this is expected behavior after the update. The task is likely assigned to a different technician. If this behavior needs to be adjusted for specific task types, it can be configured by an administrator using the new `cancomplete` property in FSM Configuration.
 
-## How to brief your field team
+## How Should You Brief Your Field Team on These Changes?
 
 The single most useful thing you can do before August 11 is give your field team a brief explanation of what they will see on the first morning after the update. A short message covering the following is enough:
 
@@ -133,7 +133,7 @@ The single most useful thing you can do before August 11 is give your field team
 
 Without this briefing, the most likely outcome is support calls from technicians who see the offline banner or error icon and assume the app has stopped working.
 
-## Testing the new interface in Sandbox
+## How Do You Test the New FSM Mobile Interface in Sandbox?
 
 Your Sandbox account already has the 2026.07.1 update as of July 16. If you have not already done so, log in to the FSM Mobile app using a Sandbox technician account and walk through the new interface before August 11.
 
@@ -147,7 +147,7 @@ Specifically:
 
 This gives you firsthand knowledge of exactly what your technicians will experience, so you can brief them accurately.
 
-## How SuitePacific can help
+## How Can SuitePacific Help With FSM Mobile Changes?
 
 Preparing a field team for a mobile app change is different from preparing administrators for a configuration change. If you need help developing a briefing for your dispatchers and technicians, or if you want a walkthrough of the new interface in Sandbox before August 11, [contact SuitePacific](/contact). We work with NetSuite customers through FSM bundle updates and can help you manage both the technical and operational side of the transition.
 

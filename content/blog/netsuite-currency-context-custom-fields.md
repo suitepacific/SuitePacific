@@ -39,17 +39,17 @@ If your NetSuite account uses custom fields that store currency amounts, 2026.2 
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Currency Context is a new field-level setting added in NetSuite 2026.2 for currency-type custom fields. It controls how the stored monetary value is interpreted when a transaction or record operates in a different currency than the one the value was entered in. The setting appears on Transaction Body Fields, Transaction Column Fields, and Entity Fields that store currency amounts. To configure it, navigate to Customization &gt; Lists, Records, and Fields, open a currency custom field, and locate the Currency Context option in the field definition. For new currency custom fields, Currency Context is available during the initial setup. The setting is most relevant for multi-currency accounts where custom currency fields are used on transactions that may span different currencies. Administrators with existing currency custom fields should review each one to confirm the currency context is configured as expected for that field's purpose in the account.</p>
 </div>
 
-## What currency context controls
+## What Does Currency Context Control on NetSuite Custom Fields?
 
 A currency custom field stores a monetary value. In a multi-currency NetSuite account, that value needs a context: which currency does it represent, and how should it convert when displayed or used in transactions involving a different currency?
 
 Currency context is the setting that answers this question. It tells NetSuite how to treat the stored value when the transaction or record is operating in a different currency than the one the value was entered in.
 
-## What is new in 2026.2
+## What Is New for Currency Context in NetSuite 2026.2?
 
 NetSuite 2026.2 adds a new Currency Context option to currency custom fields. This gives administrators more explicit control over currency behavior at the field level, rather than relying on account-wide or transaction-level defaults.
 
-## Where to find it
+## Where Do You Find the Currency Context Setting?
 
 Currency Context is a field-level setting. To access it:
 
@@ -59,7 +59,7 @@ Open the currency custom field you want to update. The Currency Context option i
 
 When creating a new currency custom field, the Currency Context option is available during setup.
 
-## Who should review this
+## Who Should Review Currency Context Settings?
 
 - Administrators who manage custom fields that store currency amounts on transactions, records, or entities
 - Accounts with multi-currency setups where custom currency fields need consistent behavior across different transaction currencies
@@ -67,7 +67,7 @@ When creating a new currency custom field, the Currency Context option is availa
 
 If your account uses single-currency only, or if your existing currency custom fields behave correctly already, this update may have no immediate impact. But it is worth reviewing if you have noticed inconsistent currency behavior on custom fields in a multi-currency environment.
 
-## How currency context affects multi-currency transactions
+## How Does Currency Context Affect Multi-Currency Transactions?
 
 When a NetSuite account operates across multiple currencies, the same custom field may store values entered in euros on one transaction and dollars on another. Without clear context, NetSuite has to make assumptions about how to interpret, display, or aggregate those values. Currency Context makes that behavior explicit at the field level.
 

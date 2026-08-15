@@ -43,7 +43,7 @@ NetSuite 2026.2 adds support for **bound parameters** in REST SuiteQL queries. I
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Bound parameters in NetSuite REST SuiteQL separate query structure from query values by replacing dynamic values in the SQL string with ? placeholders and passing the actual values in a separate params array. Available from NetSuite 2026.2 on the REST SuiteQL endpoint at POST /services/rest/query/v1/suiteql. The request body takes a q field with the query containing ? placeholders and a params array where each value maps positionally to a placeholder. NetSuite substitutes each placeholder with the corresponding params value, treating it as data rather than SQL. This prevents injection vulnerabilities where a crafted value could otherwise alter the query structure. The primary benefit is security: values in params cannot change the query structure regardless of what they contain. A secondary benefit is clarity: query logic and query values are readable separately. Use bound parameters whenever query values come from dynamic sources such as user input, request parameters, or values fetched at runtime.</p>
 </div>
 
-## The problem with inline values
+## What Is the Problem With Inline Values in SuiteQL?
 
 A common pattern for building SuiteQL queries with dynamic values looks like this:
 
@@ -57,7 +57,7 @@ query.runSuiteQL({
 
 If `status` contains unexpected input, it can alter the structure of the query. This is SQL injection, one of the most common and serious vulnerabilities in software that constructs database queries dynamically. In the context of SuiteQL via REST, a crafted value in that string can change what the query returns or how it behaves.
 
-## How bound parameters work
+## How Do Bound Parameters Work in SuiteQL?
 
 With bound parameters, you replace each dynamic value in the query with a `?` placeholder, and pass the actual values in a separate `params` array:
 
@@ -70,7 +70,7 @@ With bound parameters, you replace each dynamic value in the query with a `?` pl
 
 NetSuite substitutes each `?` with the corresponding value from `params` in order. The values are treated as data, not as part of the query structure. A value that looks like SQL syntax is never interpreted as SQL.
 
-## Why this matters
+## Why Do Bound Parameters Matter in SuiteQL?
 
 The separation between query logic and query values is what makes bound parameters secure. When a value is passed through `params`, NetSuite knows it is a value, regardless of what the string contains. There is no way for a value in `params` to change the structure of the query.
 
@@ -80,7 +80,7 @@ For queries built entirely from hardcoded values, the risk is low and bound para
 - Values from request parameters or external systems
 - Record IDs or field values fetched from other sources at runtime
 
-## Where to use them
+## Where Should You Use Bound Parameters in SuiteQL?
 
 Bound parameters are available on the REST SuiteQL endpoint:
 
@@ -99,7 +99,7 @@ In SuiteScript using the `N/https` module or in any REST client hitting this end
 
 The `params` array maps positionally to the `?` placeholders in the query. The first `?` gets the first value, the second `?` gets the second, and so on.
 
-## The practical default
+## What Is the Practical Default for Writing SuiteQL Queries?
 
 Even for queries where injection risk seems low, using bound parameters is a good habit. It makes the intent of the query clearer (logic is separate from values), simplifies testing (you can change values without touching the query string), and eliminates an entire class of vulnerability without any meaningful cost.
 

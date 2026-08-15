@@ -20,7 +20,7 @@ NetSuite changed the default sort order for transaction queries in 2026.2. Queri
 
 **Running SuiteScript or integrations that query NetSuite transactions and not certain whether your queries are affected?** SuitePacific reviews SuiteScript implementations and can identify queries that need explicit sort order before they cause issues in your live environment. [Contact us](/contact).
 
-## What changed
+## What Changed in the SuiteQL Default Sort in NetSuite 2026.2?
 
 In previous releases, a SuiteQL query against the `transaction` table without an `ORDER BY` clause would return results ordered by `tranDisplayName` by default. The `tranDisplayName` field is a display-formatted string that combines the record type and document number, for example "Invoice #1042" or "Bill #0318."
 
@@ -28,7 +28,7 @@ In 2026.2, the default sort order changed to `tranDate`. Queries without an expl
 
 This is not a change to the SuiteQL language itself. It is a change to the underlying default behavior when no sort is specified.
 
-## Why this matters
+## Why Does the SuiteQL Sort Change Matter?
 
 A query that returns results in a different order is a silent change. There is no error, no warning, and no indication in the query itself that anything has changed. The query runs successfully; the results just come back in a different sequence.
 
@@ -104,7 +104,7 @@ If a query uses `OFFSET` and `FETCH NEXT` for pagination without an explicit `OR
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Same query, same records, different order. Without ORDER BY, the result sequence changed in 2026.2.</figcaption>
 </figure>
 
-## How to identify affected queries
+## How Do You Identify SuiteQL Queries Affected by This Change?
 
 Any SuiteQL query that meets all three of these criteria is potentially affected:
 
@@ -124,7 +124,7 @@ Dependency on result order is not always obvious. A script that iterates through
 
 Search your codebase for `FROM transaction` and `FROM transactionLine` as a starting point. Any query that uses these tables without `ORDER BY` is a candidate for review.
 
-## The fix
+## What Is the Fix for the SuiteQL Sort Change?
 
 Add an explicit `ORDER BY` clause to every SuiteQL query that operates on transaction data. This removes the dependency on default sort behavior and makes the query deterministic regardless of how the default changes in future releases.
 
@@ -175,7 +175,7 @@ No. The change applies to SuiteQL queries using the N/query module, the REST API
 **Where is this documented?**
 The SuiteQL behavior change is included in the NetSuite 2026.2 release notes. Review the SuiteQL section of the release notes for the complete details.
 
-## How SuitePacific can help
+## How Can SuitePacific Help With the SuiteQL Sort Change?
 
 Auditing SuiteScript implementations for implicit sort dependencies, particularly across scheduled and Map/Reduce scripts that process large transaction volumes, is the kind of technical review that prevents production issues before they appear.
 
