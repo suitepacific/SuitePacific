@@ -2,10 +2,11 @@
 title: "NetSuite SuiteBilling: Why Charges Are Not Being Generated"
 description: "When SuiteBilling subscriptions exist but no charges or invoices appear, the problem is in the four-stage billing pipeline. Here is how to identify where the pipeline broke and what fixes each stage."
 date: "2026-08-15"
+updated: "2026-08-16"
 tags: ["SuiteBilling", "Billing", "Troubleshooting"]
 ---
 
-When a SuiteBilling subscription exists in NetSuite but no invoices are appearing, the problem is somewhere in the billing pipeline. SuiteBilling moves through four stages to get from a subscription record to a customer invoice: the subscription defines what is being billed and when, rating calculates the charge amounts, charge records accumulate until the billing step runs, and the billing step creates the final invoice. Each stage has its own failure mode.
+NetSuite SuiteBilling is the platform's subscription and recurring billing module, used by SaaS, software, and subscription businesses to manage recurring charges, renewals, and mid-term subscription modifications. When a SuiteBilling subscription exists in NetSuite but no invoices are appearing, the problem is somewhere in the billing pipeline. SuiteBilling moves through four stages to get from a subscription record to a customer invoice: the subscription defines what is being billed and when, rating calculates the charge amounts, charge records accumulate until the billing step runs, and the billing step creates the final invoice. Each stage has its own failure mode.
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
@@ -121,5 +122,12 @@ If rating has run and Charge records exist in Pending Billing status, the proble
 The most effective preventive measure is a post-go-live review that confirms three things: every live subscription is in Active status, the rating and invoice generation tasks are running on the expected schedule, and at least one invoice has been successfully created per subscription since activation. Many SuiteBilling issues go undetected because the failure is silent: no error, just no invoice.
 
 A saved search showing subscriptions in Active status with no associated Charge records is a useful ongoing monitor. Add it to the billing team's dashboard and schedule a weekly review.
+
+## Related SuiteBilling Guides
+
+- [SuiteBilling Change Orders: How Upgrades, Downgrades, and Cancellations Work](/blog/netsuite-suitebilling-change-orders)
+- [SuiteBilling and Advanced Revenue Management: What the Integration Actually Does](/blog/netsuite-suitebilling-arm-integration)
+
+For ongoing SuiteBilling support, see [NetSuite SuiteBilling Support](/netsuite-suitebilling-support).
 
 **Need help diagnosing a SuiteBilling charge generation issue or setting up billing monitors?** [Contact SuitePacific](/contact) and we can review your account setup and identify where the pipeline is breaking.

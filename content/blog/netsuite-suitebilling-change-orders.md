@@ -2,8 +2,11 @@
 title: "NetSuite SuiteBilling Change Orders: How Upgrades, Downgrades, and Cancellations Work"
 description: "SuiteBilling change orders let you modify active subscriptions mid-term. Here is how the change order process works, what each type does, how proration is handled, and what to watch for."
 date: "2026-08-15"
+updated: "2026-08-16"
 tags: ["SuiteBilling", "Billing", "Subscriptions"]
 ---
+
+NetSuite SuiteBilling is the platform's subscription billing module. A change order in SuiteBilling is the mechanism for modifying an active subscription, including adding or removing lines, changing quantities or pricing, or cancelling the subscription, without overwriting the original subscription record or its billing history.
 
 Subscriptions change. Customers add seats, drop a product tier, move to a different plan, or cancel before their renewal date. SuiteBilling handles these modifications through change orders, a separate record type that manages mid-subscription adjustments without overwriting the original subscription.
 
@@ -11,7 +14,7 @@ Understanding how change orders work is essential for anyone administering Suite
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
-<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A SuiteBilling change order is a record that modifies an active subscription by adding subscription lines, removing them, changing quantities or pricing, or cancelling the subscription entirely. Change orders do not overwrite the original subscription lines; they create new line revisions with their own effective dates. The effective date determines when the new version of the line takes over from the previous version. Proration controls whether the customer is credited or charged for the portion of a billing period before the effective date. A change order must be Applied before it takes effect. Until it is Applied, the existing subscription continues billing normally. Cancellation change orders end the subscription at the specified date and generate a final prorated charge or credit for any partial period, depending on proration settings.</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A SuiteBilling change order is a record that modifies an active subscription by adding subscription lines, removing them, changing quantities or pricing, or cancelling the subscription entirely. Change orders do not overwrite the original subscription lines; they create new line revisions with their own effective dates. The effective date determines when the new version of the line takes over from the previous version. Proration controls whether the customer is credited or charged for the portion of a billing period before the effective date. A change order must be Applied before it takes effect. Until it is Applied, the existing subscription continues billing normally. Cancellation change orders end the subscription at the specified date and generate a final prorated charge or credit for any partial period, depending on proration settings. Once Applied, a change order cannot be reversed directly; correcting a billing error typically requires creating a second change order, issuing a credit memo, or both.</p>
 </div>
 
 ## What Is a SuiteBilling Change Order?
@@ -135,5 +138,12 @@ Before applying a significant change order (particularly a mid-period upgrade wi
 2. The proration calculation matches what was communicated to the customer
 3. The resulting Charge records have the correct amounts and billing periods
 4. The next invoice preview (if available) shows the expected totals
+
+## Related SuiteBilling Guides
+
+- [NetSuite SuiteBilling: Why Charges Are Not Being Generated](/blog/netsuite-suitebilling-charge-generation)
+- [SuiteBilling and Advanced Revenue Management: What the Integration Actually Does](/blog/netsuite-suitebilling-arm-integration)
+
+For ongoing SuiteBilling support, see [NetSuite SuiteBilling Support](/netsuite-suitebilling-support).
 
 **SuitePacific works with SaaS, professional services, and subscription businesses on NetSuite SuiteBilling post-go-live.** If change orders are producing unexpected charges, or if your billing pipeline needs a systematic review, [contact us](/contact).

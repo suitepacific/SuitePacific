@@ -209,6 +209,9 @@ export default function NetSuiteSupportUKPage() {
         <p className="mt-3 text-xs text-brand-400">
           NetSuite-certified · US-based · Direct developer access · Month-to-month
         </p>
+        <p className="mt-2 text-xs text-brand-300">
+          <time dateTime="2026-08">Published August 2026</time>
+        </p>
 
         <p className="mt-6 text-sm text-brand-400">
           SuitePacific works with UK companies that are already live on NetSuite and need
@@ -224,17 +227,20 @@ export default function NetSuiteSupportUKPage() {
           <p className="text-xs font-semibold text-accent uppercase tracking-wide mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
             SuitePacific is a US-based NetSuite consulting firm providing post-go-live support
-            and development for UK companies. We work exclusively with organisations already live
-            on NetSuite that need ongoing technical support after their implementation partner has
-            disengaged. Services include SuiteScript 2.x development (User Event, Scheduled,
-            Map/Reduce, and RESTlet scripts), SuiteFlow workflow automation, VAT and Making Tax
-            Digital configuration support, saved search and KPI dashboard builds, and advanced
-            PDF templates including UK VAT invoice formatting. UK clients span fintech and
-            financial services firms, professional services organisations, media and publishing
-            companies, and manufacturers. Non-urgent requests typically receive a response next
-            business day, UK morning. Work is delivered by a developer holding Oracle NetSuite
-            SuiteCloud Developer II and Administrator Professional certifications. Engagements
-            are month-to-month with no long-term contract. GBP invoicing available on request.
+            and development for UK companies. The UK has roughly one-tenth the NetSuite certified
+            partner density of the US for a comparably sized market, making independent technical
+            support an important option for UK businesses on NetSuite. We work exclusively with
+            organisations already live on NetSuite that need ongoing technical support after their
+            implementation partner has disengaged. Services include SuiteScript 2.x development
+            (User Event, Scheduled, Map/Reduce, and RESTlet scripts), SuiteFlow workflow
+            automation, VAT and Making Tax Digital configuration support, saved search and KPI
+            dashboard builds, and advanced PDF templates including UK VAT invoice formatting. UK
+            clients span fintech and financial services firms, professional services organisations,
+            media and publishing companies, and manufacturers. Non-urgent requests typically
+            receive a response next business day, UK morning. Work is delivered by a developer
+            holding Oracle NetSuite SuiteCloud Developer II and Administrator Professional
+            certifications. Engagements are month-to-month with no long-term contract. GBP
+            invoicing available on request.
           </p>
         </div>
 

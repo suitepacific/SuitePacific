@@ -228,9 +228,12 @@ export default function NetSuiteSuiteBillingSupportPage() {
         <p className="mt-3 text-xs text-brand-400">
           Same-day response · NetSuite-certified · SuiteBilling + ARM · Direct developer access
         </p>
+        <p className="mt-2 text-xs text-brand-300">
+          <time dateTime="2026-08">Published August 2026</time>
+        </p>
 
         <p className="mt-6 text-sm text-brand-400">
-          SuiteBilling problems after go-live are rarely obvious. The billing pipeline fails
+          NetSuite SuiteBilling is the platform&apos;s subscription billing module, used by SaaS and subscription businesses to manage recurring charges, renewals, and mid-term subscription changes. SuiteBilling problems after go-live are rarely obvious. The billing pipeline fails
           silently: no error message, just no invoice. A change order applied with the wrong
           proration produces an incorrect charge that is only caught when the customer calls.
           The ARM integration creates Revenue Arrangements for most subscriptions but misses
@@ -247,21 +250,24 @@ export default function NetSuiteSuiteBillingSupportPage() {
           <p className="text-xs font-semibold text-accent uppercase tracking-wide mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
             SuitePacific provides post-go-live support for NetSuite SuiteBilling accounts where
-            subscription billing is not working correctly after implementation. Common issues include
-            charges not generating for active subscriptions, change orders applied with incorrect
-            proration producing wrong invoices, Revenue Arrangements missing from the ARM
-            integration, renewal billing creating duplicate charges, and subscription configurations
-            with no documentation from the original implementation partner. SuitePacific diagnoses
-            where in the billing pipeline the issue is occurring, fixes it in Sandbox before touching
-            Production, and documents the root cause and configuration state. Support is available
-            on a project basis for one-time issues or as part of a month-to-month post-go-live retainer.
+            subscription billing is not working correctly after implementation. SuiteBilling
+            generates invoices through a four-stage pipeline: Subscription, Rating, Charge Records,
+            and Invoice. A failure at any stage is silent: no error message, just no invoice.
+            Common issues include charges not generating for active subscriptions, change orders
+            applied with incorrect proration producing wrong invoices, Revenue Arrangements missing
+            from the ARM integration, renewal billing creating duplicate charges, and subscription
+            configurations with no documentation from the original implementation partner.
+            SuitePacific diagnoses where in the pipeline the issue is occurring, fixes it in
+            Sandbox before touching Production, and documents the root cause and configuration
+            state. Support is available on a project basis for one-time issues or as part of a
+            month-to-month post-go-live retainer. Same-day response for live billing failures.
           </p>
         </div>
 
         {/* Failure modes */}
         <div className="mt-14" data-section="failure-modes">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            Common SuiteBilling problems we fix
+            What NetSuite SuiteBilling problems does SuitePacific fix?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {FAILURE_MODES.map((item) => (
@@ -276,7 +282,7 @@ export default function NetSuiteSuiteBillingSupportPage() {
 
         {/* How it works */}
         <div className="mt-14" data-section="how-it-works">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">How SuiteBilling support works</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">How does SuitePacific SuiteBilling support work?</h2>
           <div className="space-y-4">
             {HOW_IT_WORKS.map((item) => (
               <div key={item.step} className="flex items-start gap-5">
@@ -295,7 +301,7 @@ export default function NetSuiteSuiteBillingSupportPage() {
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
-            Why SuitePacific for SuiteBilling support
+            Why choose SuitePacific for NetSuite SuiteBilling support?
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (

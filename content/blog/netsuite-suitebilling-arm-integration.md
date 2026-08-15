@@ -2,6 +2,7 @@
 title: "NetSuite SuiteBilling and Advanced Revenue Management: What the Integration Actually Does"
 description: "When SuiteBilling and Advanced Revenue Management are both active, billing and revenue recognition operate independently. Here is how the integration works and where it breaks down post-implementation."
 date: "2026-08-15"
+updated: "2026-08-16"
 tags: ["SuiteBilling", "Advanced Revenue Management", "Accounting", "Revenue Recognition"]
 ---
 
@@ -131,5 +132,12 @@ The review should cover:
 2. All active subscriptions: confirm Revenue Arrangements exist and contain the expected Elements
 3. The Deferred Revenue balance: confirm it reflects the total unrecognized subscription revenue
 4. One test cycle: run revenue recognition for a recent period and confirm the journal entries post correctly
+
+## Related SuiteBilling Guides
+
+- [NetSuite SuiteBilling: Why Charges Are Not Being Generated](/blog/netsuite-suitebilling-charge-generation)
+- [SuiteBilling Change Orders: How Upgrades, Downgrades, and Cancellations Work](/blog/netsuite-suitebilling-change-orders)
+
+For ongoing SuiteBilling and ARM support, see [NetSuite SuiteBilling Support](/netsuite-suitebilling-support).
 
 **SuitePacific works with subscription businesses that have SuiteBilling and ARM active post-go-live.** If your Revenue Arrangements are not matching your billing, your Deferred Revenue balance is unexplained, or change orders are producing recognition issues, [contact us](/contact) and we can review your setup.
