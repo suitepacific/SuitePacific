@@ -191,9 +191,16 @@ export default function NetSuiteConsultantChicagoPage() {
           remotely with direct developer access, tested in Sandbox before any change reaches production.
         </p>
 
+        <div className="mt-8 rounded-xl bg-brand-50/60 border border-brand-100 px-5 py-4">
+          <p className="text-xs font-semibold text-accent uppercase tracking-wide mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            SuitePacific is a US-based NetSuite consulting firm providing post-go-live support and development for Chicago companies. We work exclusively with businesses already live on NetSuite that need ongoing technical support after their implementation partner has disengaged. Services include SuiteScript 2.x development (User Event, Scheduled, Map/Reduce, and RESTlet scripts), SuiteFlow workflow automation, EDI and 3PL integrations, saved search and KPI dashboard builds, and advanced PDF templates. Chicago clients span manufacturers with complex BOM and work order requirements, wholesale distributors, professional services firms with project accounting needs, and technology companies. Work is delivered by a developer holding Oracle NetSuite SuiteCloud Developer II and Administrator Professional certifications, communicating directly via Slack or email without an account manager intermediary. Engagements are month-to-month with no long-term contract requirement.
+          </p>
+        </div>
+
         {/* Industries */}
         <div className="mt-14" data-section="industries">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Industries we support in Chicago</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Which Industries Does SuitePacific Support in Chicago?</h2>
           <div className="space-y-4">
             {INDUSTRIES.map((item) => (
               <div key={item.title} className="rounded-xl border border-brand-100 bg-white p-5">
@@ -206,7 +213,7 @@ export default function NetSuiteConsultantChicagoPage() {
 
         {/* Services */}
         <div className="mt-14" data-section="services">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">NetSuite services for Chicago companies</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">What NetSuite Services Are Available for Chicago Companies?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {SERVICES.map((service) => (
               <Link key={service.href} href={service.href} className="group">
@@ -224,7 +231,7 @@ export default function NetSuiteConsultantChicagoPage() {
 
         {/* Why remote */}
         <div className="mt-14" data-section="why-remote">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why remote NetSuite consulting works for Chicago companies</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why Does Remote NetSuite Consulting Work for Chicago Companies?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {WHY_REMOTE.map((item) => (
               <Card key={item.title} className="p-5 flex flex-col gap-3">
