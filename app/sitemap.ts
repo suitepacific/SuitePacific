@@ -18,6 +18,7 @@ const INDUSTRY_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/industries/retail-ecommerce", lastModified: SEO_REFRESH_DATE },
   { path: "/industries/professional-services", lastModified: SEO_REFRESH_DATE },
   { path: "/industries/nonprofit", lastModified: new Date("2026-08-15") },
+  { path: "/netsuite-support-uk", lastModified: new Date("2026-08-15") },
 ];
 
 const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
