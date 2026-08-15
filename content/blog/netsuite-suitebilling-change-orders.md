@@ -114,6 +114,8 @@ For evergreen subscriptions (no fixed end date), a cancellation change order is 
 
 ## What Are Common Change Order Problems?
 
+An incorrect effective date is the leading cause of SuiteBilling billing discrepancies that require credit memo corrections after go-live. Once a change order is Applied, the effective date is permanently locked; there is no undo. Reviewing the effective date and proration setting in Sandbox before applying to Production is the single most effective way to avoid post-application correction work.
+
 ### Wrong effective date
 
 Using today's date when the change was meant to be effective at the end of the month (or vice versa) is the most common mistake. Once a change order is Applied, the effective date is locked. Correcting this typically requires creating a second change order to reverse the incorrect one.

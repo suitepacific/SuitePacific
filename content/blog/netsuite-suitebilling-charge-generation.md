@@ -13,7 +13,19 @@ NetSuite SuiteBilling is the platform's subscription and recurring billing modul
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">When NetSuite SuiteBilling subscriptions exist but charges or invoices are not being generated, the cause is typically one of five issues: the subscription is not in Active status (charges only generate for Active subscriptions), the subscription start date is in the future so billing has not yet begun, the scheduled process that generates charges has not been configured or is failing silently, billing frequency is missing or misconfigured on the subscription line, or the invoice step is running but resulting invoices are on hold or filtered out of the view being checked. The billing pipeline in SuiteBilling is: Subscription → Rating → Charge Records → Invoice. Diagnosing which stage is failing narrows the fix to one area of configuration. In most cases, the problem is either subscription status or the scheduled rating/charge generation task not running.</p>
 </div>
 
+SuiteBilling charge generation failures are silent: no error message appears in any log when charges fail to generate. The only indicator is the absence of Charge records or invoices in the billing queue. Subscription status not set to Active is the single most common cause of missing charges in post-go-live reviews.
+
 This article covers the five most common causes of missing SuiteBilling charges, how to identify which one is occurring, and what to do about each one.
+
+**Quick-reference diagnostic table:**
+
+| What you observe | Stage to check | First thing to verify |
+|---|---|---|
+| No Charge records exist for an active subscription | Subscription or Rating | Subscription status field; if Active, check start date |
+| Charge records exist but no invoices appear | Charge Records → Invoice | Invoice generation schedule; Charge record status |
+| Some subscription lines are missing charges | Subscription line | Billing frequency field on each line |
+| Charges exist but for the wrong periods | Rating | Start date on each subscription line |
+| Invoices were created but are not visible | Invoice | Invoice hold status; billing view filters |
 
 ## What Is the SuiteBilling Billing Pipeline?
 

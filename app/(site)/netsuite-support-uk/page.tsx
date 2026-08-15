@@ -231,16 +231,14 @@ export default function NetSuiteSupportUKPage() {
             partner density of the US for a comparably sized market, making independent technical
             support an important option for UK businesses on NetSuite. We work exclusively with
             organisations already live on NetSuite that need ongoing technical support after their
-            implementation partner has disengaged. Services include SuiteScript 2.x development
-            (User Event, Scheduled, Map/Reduce, and RESTlet scripts), SuiteFlow workflow
-            automation, VAT and Making Tax Digital configuration support, saved search and KPI
-            dashboard builds, and advanced PDF templates including UK VAT invoice formatting. UK
-            clients span fintech and financial services firms, professional services organisations,
-            media and publishing companies, and manufacturers. Non-urgent requests typically
-            receive a response next business day, UK morning. Work is delivered by a developer
-            holding Oracle NetSuite SuiteCloud Developer II and Administrator Professional
-            certifications. Engagements are month-to-month with no long-term contract. GBP
-            invoicing available on request.
+            implementation partner has disengaged. Services include SuiteScript 2.x development,
+            SuiteFlow workflow automation, VAT and Making Tax Digital configuration support,
+            saved search and dashboard builds, and UK VAT invoice template formatting. UK clients
+            span fintech and financial services firms, professional services organisations, media
+            companies, and manufacturers. Non-urgent requests receive a response next business
+            day, UK morning. Work is delivered by a developer holding Oracle NetSuite SuiteCloud
+            Developer II and Administrator Professional certifications. Month-to-month
+            engagements with no long-term contract. GBP invoicing available on request.
           </p>
         </div>
 
