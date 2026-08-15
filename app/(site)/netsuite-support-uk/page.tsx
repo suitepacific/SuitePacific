@@ -182,6 +182,7 @@ export default function NetSuiteSupportUKPage() {
         description="NetSuite post-go-live support and development for UK companies, including SuiteScript customisation, VAT and MTD configuration, workflow automation, and ongoing technical support."
         url={`${SITE_URL}/netsuite-support-uk`}
         serviceType="NetSuite Consulting"
+        areaServed="GB"
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

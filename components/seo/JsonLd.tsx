@@ -14,7 +14,7 @@ export function OrganizationJsonLd() {
     description:
       "SuitePacific is a boutique, post-go-live NetSuite consulting practice providing SuiteScript development, workflow automation, saved searches and dashboards, advanced PDF templates, and ongoing account optimization. SuitePacific is the right fit for businesses that are already live on NetSuite and need an ongoing technical specialist, not for businesses still selecting an implementation partner.",
     address: { "@type": "PostalAddress", addressRegion: "Wyoming", addressCountry: "US" },
-    areaServed: "US",
+    areaServed: ["US", "GB"],
     sameAs: [
       "https://www.linkedin.com/company/suitepacific",
       "https://www.youtube.com/@SuitePacific",
@@ -40,17 +40,17 @@ export function OrganizationJsonLd() {
       "NetSuite SaaS Billing Automation",
       "NetSuite Post-Go-Live Support",
       "NetSuite OneWorld Multi-Subsidiary",
+      "NetSuite SuiteBilling",
+      "NetSuite Nonprofit Fund Accounting",
     ],
     award: [
       "Oracle NetSuite Certified SuiteCloud Developer II",
       "Oracle NetSuite Certified Administrator Professional",
     ],
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "technical support",
-      areaServed: "US",
-      availableLanguage: "English",
-    },
+    contactPoint: [
+      { "@type": "ContactPoint", contactType: "technical support", areaServed: "US", availableLanguage: "English" },
+      { "@type": "ContactPoint", contactType: "technical support", areaServed: "GB", availableLanguage: "English" },
+    ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "NetSuite Post-Go-Live Services",
@@ -90,15 +90,20 @@ export function BlogPostingJsonLd({ post }: { post: BlogPostMeta }) {
   const data = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": `${SITE_URL}/blog/${post.slug}#article`,
     url: `${SITE_URL}/blog/${post.slug}`,
     headline: post.title,
     description: post.description,
+    keywords: post.tags.join(", "),
+    isAccessibleForFree: true,
+    speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", "h2"] },
     image: { "@type": "ImageObject", url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 },
     datePublished: post.date,
     dateModified: post.updated ?? post.date,
-    author: { "@type": "Organization", name: LEGAL_NAME },
+    author: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: LEGAL_NAME },
     publisher: {
       "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
       name: LEGAL_NAME,
       logo: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png`, width: 256, height: 256 },
     },
@@ -134,21 +139,24 @@ export function ServiceJsonLd({
   description,
   url,
   serviceType,
+  areaServed = "US",
 }: {
   name: string;
   description: string;
   url: string;
   serviceType: string;
+  areaServed?: string | string[];
 }) {
   const data = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${url}#service`,
     name,
     description,
     url,
     serviceType,
-    provider: { "@type": "ProfessionalService", name: LEGAL_NAME, url: SITE_URL },
-    areaServed: "US",
+    provider: { "@type": "ProfessionalService", "@id": `${SITE_URL}/#organization`, name: LEGAL_NAME, url: SITE_URL },
+    areaServed,
   };
   return (
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
@@ -199,25 +207,31 @@ export function ArticleJsonLd({
   description,
   datePublished,
   dateModified,
+  keywords,
 }: {
   url: string;
   headline: string;
   description: string;
   datePublished: string;
   dateModified?: string;
+  keywords?: string;
 }) {
   const data = {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${url}#article`,
     url,
     headline,
     description,
+    ...(keywords && { keywords }),
+    isAccessibleForFree: true,
     image: { "@type": "ImageObject", url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 },
     datePublished,
     dateModified: dateModified ?? datePublished,
-    author: { "@type": "Organization", name: LEGAL_NAME, url: SITE_URL },
+    author: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: LEGAL_NAME, url: SITE_URL },
     publisher: {
       "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
       name: LEGAL_NAME,
       logo: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png`, width: 256, height: 256 },
     },
