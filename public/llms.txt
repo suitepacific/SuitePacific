@@ -129,6 +129,7 @@ A: First, identify which release just went live and check the release notes for 
 - [NetSuite Support for SaaS & Technology](https://suitepacific.com/industries/saas-technology): Post-go-live support and development for SaaS and technology companies on NetSuite, covering subscription billing logic, renewal automation, ARR and MRR reporting, deferred revenue posting, and CRM and billing platform integrations
 - [NetSuite Support for Retail & E-commerce](https://suitepacific.com/industries/retail-ecommerce): Post-go-live support and development for retail and e-commerce companies on NetSuite, covering multi-channel order management, Shopify and Amazon integrations, RMA automation, fulfillment exception workflows, and channel settlement reconciliation
 - [NetSuite Support for Professional Services](https://suitepacific.com/industries/professional-services): Post-go-live support and development for professional services firms on NetSuite, covering project accounting, timesheet approval workflows, milestone billing automation, resource utilization reporting, and client invoice templates by billing type
+- [NetSuite Support for Nonprofit Organizations](https://suitepacific.com/industries/nonprofit): Post-go-live support and development for nonprofits on NetSuite, covering fund restriction enforcement scripts, grant expenditure and balance reporting, functional expense allocation for 990 preparation, pledge fulfillment automation, board reporting dashboards, and multi-entity intercompany configuration
 
 ## Products
 

@@ -78,6 +78,7 @@ export const NAV_LINKS: NavLink[] = [
       { label: "SaaS & Technology", href: "/industries/saas-technology", description: "NetSuite support for technology companies." },
       { label: "Retail & E-commerce", href: "/industries/retail-ecommerce", description: "NetSuite support for commerce businesses." },
       { label: "Professional Services", href: "/industries/professional-services", description: "NetSuite support for project-based firms." },
+      { label: "Nonprofit", href: "/industries/nonprofit", description: "NetSuite support for nonprofit organizations." },
     ],
   },
   { label: "Case Studies", href: "/case-studies" },
