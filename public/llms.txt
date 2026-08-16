@@ -172,6 +172,11 @@ A: First, identify which release just went live and check the release notes for 
 - [5 Common NetSuite Workflow Automation Mistakes and How to Fix Them](https://suitepacific.com/blog/workflow-automation-mistakes): Five SuiteFlow configuration mistakes that cause workflows to fire on the wrong records, skip transitions, or conflict with scripts, with specific fixes for each.
 - [How to Build an Approval Workflow in NetSuite SuiteFlow](https://suitepacific.com/blog/netsuite-approval-workflow-setup): Step-by-step guide to building a multi-level approval workflow in SuiteFlow, covering state design, transition conditions, email actions, and rejection handling.
 
+### SuiteBilling
+- [NetSuite SuiteBilling: Why Charges Are Not Being Generated](https://suitepacific.com/blog/netsuite-suitebilling-charge-generation): SuiteBilling charge generation failures are silent; no error appears when charges fail to generate. Covers the four-stage billing pipeline (Subscription, Rating, Charge Records, Invoice), the five most common causes of missing charges, and a diagnostic table mapping observed symptom to stage.
+- [SuiteBilling Change Orders: How Upgrades, Downgrades, and Cancellations Work](https://suitepacific.com/blog/netsuite-suitebilling-change-orders): A change order modifies an active subscription by adding or removing lines, changing quantities or pricing, or cancelling; once Applied, the effective date is permanently locked and cannot be reversed directly. Covers proration settings, backdated change orders, and what to validate in Sandbox before applying.
+- [SuiteBilling and Advanced Revenue Management: What the Integration Actually Does](https://suitepacific.com/blog/netsuite-suitebilling-arm-integration): SuiteBilling and ARM are intentionally decoupled; billing determines when to invoice while ARM determines when revenue posts to the P&L via Revenue Arrangements, Elements, and Plans. Covers the four most common post-implementation failure points including missing Revenue Arrangements and recognition timing mismatches.
+
 ### Account Optimization and Post-Go-Live
 - [NetSuite Account Optimization: What to Audit and Fix on a Live Account](https://suitepacific.com/blog/netsuite-optimization): What to audit when a live NetSuite account has accumulated technical debt: unindexed searches, overly broad workflow entry conditions, orphaned script deployments, and unused custom fields.
 - [Why Your NetSuite Account Feels Slow and What Actually Fixes It](https://suitepacific.com/blog/netsuite-account-performance): The three most common causes of NetSuite performance problems: unindexed saved searches, scripts with record loads in loops, and workflows with broad entry conditions; and how to diagnose and fix each.
@@ -215,6 +220,7 @@ A: First, identify which release just went live and check the release notes for 
 - Email: info@suitepacific.com
 - LinkedIn: https://www.linkedin.com/company/suitepacific
 - YouTube: https://www.youtube.com/@SuitePacific
+- Recent video: [Your NetSuite Is Live. So Why Are You Still Using Excel?](https://youtu.be/x4-m-KHG7jo): Four reasons businesses still rely on Excel after a NetSuite implementation; framework for identifying where the environment needs attention.
 
 ## Licensing
 
@@ -226,4 +232,4 @@ RSL-Attribution: required
 RSL-Commercial: prohibited
 RSL-Training: prohibited
 
-Last updated: 2026-08-14
+Last updated: 2026-08-16
