@@ -234,12 +234,11 @@ export default function PostGoLiveSupportPage() {
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd
-        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
-        description="An introduction to SuitePacific, a boutique NetSuite consulting firm providing post-go-live support, SuiteScript development, workflow automation, integrations, and ongoing technical services for companies already live on NetSuite."
-        videoId="IQvWN_yZ24A"
-        duration="PT18S"
-        uploadDate="2026-08-12"
-        isShort
+        name="Your NetSuite Is Live. So Why Are You Still Using Excel?"
+        description="Four common reasons businesses continue relying on Excel after a NetSuite implementation: unfinished customization, missing reporting, temporary workarounds that became permanent, and no owner for post-go-live improvement. Includes a framework for identifying where your NetSuite environment needs attention."
+        videoId="x4-m-KHG7jo"
+        duration="PT4M16S"
+        uploadDate="2026-08-16"
       />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
