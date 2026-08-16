@@ -276,7 +276,7 @@ export default function PostGoLiveSupportPage() {
         <div className="mt-8 rounded-2xl border border-brand-100 bg-brand-50/30 p-5" data-section="intro-video">
           <div className="flex flex-col sm:flex-row gap-5 items-start">
             <a
-              href="https://www.youtube.com/shorts/IQvWN_yZ24A"
+              href="https://youtu.be/x4-m-KHG7jo"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative w-full sm:w-44 shrink-0 overflow-hidden rounded-xl"
@@ -284,8 +284,8 @@ export default function PostGoLiveSupportPage() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://i.ytimg.com/vi/IQvWN_yZ24A/hqdefault.jpg"
-                alt="SuitePacific introduction video"
+                src="https://i.ytimg.com/vi/x4-m-KHG7jo/hqdefault.jpg"
+                alt="Why your team is still using Excel after going live on NetSuite"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black/25 group-hover:bg-black/35 transition-colors">
@@ -297,10 +297,10 @@ export default function PostGoLiveSupportPage() {
               </div>
             </a>
             <div>
-              <p className="text-sm font-semibold text-brand-900">About SuitePacific</p>
+              <p className="text-sm font-semibold text-brand-900">Your NetSuite is live. So why is your team still in Excel?</p>
               <p className="mt-2 text-sm text-brand-400">
-                A short overview of what SuitePacific does, who we work with, and how post-go-live
-                NetSuite support works in practice.
+                Four common reasons businesses still rely on Excel after a NetSuite implementation,
+                and how to identify where your environment needs attention.
               </p>
             </div>
           </div>

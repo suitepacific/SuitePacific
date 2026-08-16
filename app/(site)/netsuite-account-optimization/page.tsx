@@ -277,6 +277,40 @@ export default function AccountOptimizationPage() {
           </div>
         </div>
 
+        {/* Video */}
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5" data-section="intro-video">
+          <div className="flex flex-col sm:flex-row gap-5 items-start">
+            <a
+              href="https://youtu.be/x4-m-KHG7jo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative w-full sm:w-44 shrink-0 overflow-hidden rounded-xl"
+              style={{ aspectRatio: "16/9" }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://i.ytimg.com/vi/x4-m-KHG7jo/hqdefault.jpg"
+                alt="Why your team is still using Excel after going live on NetSuite"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/25 group-hover:bg-black/35 transition-colors">
+                <div className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center shadow-md">
+                  <svg className="w-4 h-4 ml-0.5 text-gray-900" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+            <div>
+              <p className="text-sm font-semibold text-brand-900">Your NetSuite is live. So why is your team still in Excel?</p>
+              <p className="mt-2 text-sm text-brand-400">
+                Four common reasons businesses still rely on Excel after a NetSuite implementation,
+                and how to identify where your environment needs attention.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Related reading */}
         <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
           <p className="text-sm font-semibold text-brand-900 mb-3">From the blog</p>
