@@ -102,7 +102,7 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const CTA_SUPPORT_LINE =
-  "No sales pressure. No long-term contracts. Just practical advice from experienced NetSuite specialists.";
+  "Experienced NetSuite specialists focused on solving problems quickly and getting your system working better.";
 
 export const TRUST_BADGES: string[] = [
   "NetSuite Certified Professional",
