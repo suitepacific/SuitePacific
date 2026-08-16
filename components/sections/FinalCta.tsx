@@ -3,7 +3,7 @@ import { CheckCircle2, Star } from "lucide-react";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { LeadForm } from "@/components/sections/LeadForm";
 
-const REASONS = ["Fast response & quick turnaround", "Optimized, scalable solutions", "Senior NetSuite developer, direct"];
+const REASONS = ["Fast response & quick turnaround", "Optimized, scalable solutions", "Senior NetSuite consultant, direct"];
 
 export function FinalCta() {
   return (
