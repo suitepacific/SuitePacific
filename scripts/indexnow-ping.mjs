@@ -1,4 +1,4 @@
-// Pings Bing IndexNow after each production build.
+// Pings Bing + IndexNow network after each production build.
 // Run via `npm run indexnow` or call from a Vercel deploy hook.
 // Skips automatically when NODE_ENV is not "production".
 
@@ -62,7 +62,6 @@ const URLS = [
   "/blog/netsuite-bill-capture-preferences-2026-2",
   "/blog/netsuite-project-health-indicators-2026-2",
   "/blog/netsuite-advanced-record-customization-2026-2",
-  "/blog/netsuite-suiteql-sort-change-2026-2",
   "/blog/netsuite-fsm-bundle-update-august-2026",
   "/blog/netsuite-fsm-mobile-changes-august-2026",
   "/blog/netsuite-fsm-nxc-now-migration-august-2026",
@@ -86,6 +85,34 @@ const URLS = [
   "/blog/netsuite-script-broke-after-upgrade",
   "/blog/netsuite-support-partner-red-flags",
   "/netsuite-fsm-support",
+  // Service pages (2026-08-17)
+  "/netsuite-support-uk",
+  "/netsuite-suitebilling-support",
+  "/netsuite-care",
+  // Industry pages (2026-08-17)
+  "/industries/manufacturing",
+  "/industries/wholesale-distribution",
+  "/industries/construction",
+  "/industries/real-estate",
+  "/industries/saas-technology",
+  "/industries/retail-ecommerce",
+  "/industries/professional-services",
+  "/industries/nonprofit",
+  // Blog posts (2026-08-17)
+  "/blog/netsuite-suitebilling-charge-generation",
+  "/blog/netsuite-suitebilling-change-orders",
+  "/blog/netsuite-suitebilling-arm-integration",
+  "/blog/netsuite-account-performance",
+  "/blog/netsuite-advanced-pdf-data-model",
+  "/blog/advanced-pdf-template-mistakes",
+  "/blog/netsuite-implementation-partner-vs-managed-support",
+  "/blog/netsuite-passkey-second-factor-2026-2",
+  "/blog/netsuite-rest-batch-sequential",
+  "/blog/netsuite-restlet-vs-rest-web-services",
+  "/blog/netsuite-sales-order-fulfillment-list",
+  "/blog/netsuite-saved-search-formula-examples",
+  "/blog/netsuite-suitetax-term-discounts",
+  "/blog/netsuite-currency-context-custom-fields",
 ];
 
 if (process.env.NODE_ENV !== "production") {
@@ -93,7 +120,8 @@ if (process.env.NODE_ENV !== "production") {
   process.exit(0);
 }
 
-const urlList = URLS.map((path) => `https://${HOST}${path}`);
+// Deduplicate in case any slug was added twice
+const urlList = [...new Set(URLS)].map((path) => `https://${HOST}${path}`);
 
 const body = {
   host: HOST,
@@ -102,16 +130,25 @@ const body = {
   urlList,
 };
 
-const res = await fetch("https://api.indexnow.org/indexnow", {
-  method: "POST",
-  headers: { "Content-Type": "application/json; charset=utf-8" },
-  body: JSON.stringify(body),
-});
+const ENDPOINTS = [
+  "https://api.indexnow.org/indexnow",
+  "https://www.bing.com/indexnow",
+];
 
-if (res.ok) {
-  console.log(`IndexNow: pinged ${urlList.length} URLs (HTTP ${res.status})`);
-} else {
-  const text = await res.text();
-  console.error(`IndexNow: ping failed (HTTP ${res.status}): ${text}`);
-  process.exit(1);
+let exitCode = 0;
+for (const endpoint of ENDPOINTS) {
+  const res = await fetch(endpoint, {
+    method: "POST",
+    headers: { "Content-Type": "application/json; charset=utf-8" },
+    body: JSON.stringify(body),
+  });
+  if (res.ok) {
+    console.log(`IndexNow: ${endpoint} → ${urlList.length} URLs (HTTP ${res.status})`);
+  } else {
+    const text = await res.text();
+    console.error(`IndexNow: ${endpoint} failed (HTTP ${res.status}): ${text}`);
+    exitCode = 1;
+  }
 }
+
+process.exit(exitCode);
