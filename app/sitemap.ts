@@ -63,6 +63,7 @@ const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/netsuite-fsm-support", lastModified: KW_GAP_DATE },
   { path: "/netsuite-care", lastModified: new Date("2026-08-14") },
   { path: "/netsuite-partner-replacement", lastModified: new Date("2026-08-17") },
+  { path: "/netsuite-technical-debt", lastModified: new Date("2026-08-18") },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

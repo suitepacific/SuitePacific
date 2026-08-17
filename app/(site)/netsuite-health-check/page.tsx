@@ -283,6 +283,13 @@ export default function NetSuiteHealthCheckPage() {
           <p className="text-sm font-semibold text-brand-900 mb-3">After the health check</p>
           <ul className="space-y-2.5">
             <li className="text-sm text-brand-400">
+              Not sure what{" "}
+              <Link href="/netsuite-technical-debt" className="text-accent hover:underline">
+                NetSuite technical debt
+              </Link>{" "}
+              looks like in a live account? That page covers the five layers where it accumulates and what each one costs in practice.
+            </li>
+            <li className="text-sm text-brand-400">
               <Link href="/netsuite-account-optimization" className="text-accent hover:underline">
                 Account Optimization
               </Link>{" "}

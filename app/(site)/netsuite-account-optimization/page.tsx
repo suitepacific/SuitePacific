@@ -194,7 +194,11 @@ export default function AccountOptimizationPage() {
           but it adds up to an account that loads slowly and is increasingly difficult to manage.
           SuitePacific handles this cleanup for live NetSuite accounts, auditing before touching
           anything and documenting every change.
-          See our{" "}
+          See{" "}
+          <Link href="/netsuite-technical-debt" className="text-accent hover:underline">
+            NetSuite technical debt
+          </Link>{" "}
+          for a full breakdown of the five layers where this debt accumulates, or our{" "}
           <Link href="/blog/netsuite-account-performance" className="text-accent hover:underline">
             NetSuite account performance guide
           </Link>{" "}
