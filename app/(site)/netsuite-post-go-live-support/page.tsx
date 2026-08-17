@@ -631,6 +631,12 @@ export default function PostGoLiveSupportPage() {
               </Link>{" "}
               covers what ACS does and does not include, and how a third-party engagement compares on scope, hours, and contract terms.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-partner-replacement" className="text-accent hover:underline">
+                NetSuite partner replacement
+              </Link>{" "}
+              covers what the transition looks like when switching from an existing partner: what stays in your account, what the first 90 days look like, and how to overlap the handoff cleanly.
+            </li>
           </ul>
           <p className="text-sm font-semibold text-brand-900 mb-3 mt-6">NetSuite FSM resources</p>
           <ul className="space-y-2.5">
