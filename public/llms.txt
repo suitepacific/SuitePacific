@@ -190,6 +190,11 @@ A: First, identify which release just went live and check the release notes for 
 - [What Does a NetSuite Health Check Include?](https://suitepacific.com/blog/netsuite-health-check-what-it-includes): Layer-by-layer breakdown of what a thorough NetSuite health check covers: scripts (execution logs, governance, overlap), workflows (entry conditions, retired processes), saved searches (indexed criteria, dashboard performance), custom fields, roles and permissions, integration health. Includes example Critical, High, and Advisory findings.
 - [NetSuite Health Check vs. Account Optimization: What's the Difference?](https://suitepacific.com/blog/netsuite-health-check-vs-account-optimization): A health check is diagnosis (review and written report, nothing in the account changes); account optimization is remediation (fixing what the assessment found). Assessment comes first. Includes a practical example showing how skipping the assessment misses the non-obvious root cause.
 
+### Post-Go-Live Consulting
+- [What Is NetSuite Post-Go-Live Support?](https://suitepacific.com/blog/what-is-netsuite-post-go-live-support): Definitional article: what post-go-live support covers (SuiteScript, workflows, integrations, saved searches, administration), who provides it, how it is structured (managed retainer vs. break-fix), what the first 90 days look like, and when it becomes necessary for a live NetSuite account.
+- [NetSuite Managed Support vs. Break-Fix: How to Decide](https://suitepacific.com/blog/netsuite-managed-vs-break-fix-support): Managed support retains account context so each request costs less; break-fix restarts re-onboarding on every engagement. Decision framework: choose managed when the account generates 4+ hours of work per month; break-fix for isolated, infrequent, self-contained items.
+- [How to Evaluate a NetSuite Post-Go-Live Support Partner](https://suitepacific.com/blog/how-to-evaluate-netsuite-support-partner): Six evaluation questions that separate good-fit providers from poor-fit ones: who actually does the work, what certifications they hold, how they scope ongoing work, how they handle releases, how they document what they build, and how they handle urgent issues. Includes red flags worth walking away from.
+
 ### Account Optimization and Post-Go-Live
 - [NetSuite Account Optimization: What to Audit and Fix on a Live Account](https://suitepacific.com/blog/netsuite-optimization): What to audit when a live NetSuite account has accumulated technical debt: unindexed searches, overly broad workflow entry conditions, orphaned script deployments, and unused custom fields.
 - [Why Your NetSuite Account Feels Slow and What Actually Fixes It](https://suitepacific.com/blog/netsuite-account-performance): The three most common causes of NetSuite performance problems: unindexed saved searches, scripts with record loads in loops, and workflows with broad entry conditions; and how to diagnose and fix each.
@@ -235,6 +240,9 @@ A: First, identify which release just went live and check the release notes for 
 - [How to Migrate NetSuite Integrations from NLAuth to Token-Based Authentication](https://suitepacific.com/resources/netsuite-nlauth-to-tba-migration)
 - [How to Update Your NetSuite SuiteQL Queries After the 2026.2 Default Sort Change](https://suitepacific.com/resources/netsuite-suiteql-orderby)
 - [NetSuite FSM Bundle Update 2026 Checklist](https://suitepacific.com/resources/netsuite-fsm-bundle-update-2026-checklist)
+- [NetSuite Post-Go-Live Support: What to Expect in Year One](https://suitepacific.com/resources/netsuite-post-go-live-support-year-one): Month-by-month guide to what post-go-live NetSuite support should cover in the first 12 months: Month 1 stabilization checklist, Months 2-3 backlog clearance, Months 4-6 ongoing development, Months 7-12 mature engagement indicators, and signs the engagement is not working.
+- [NetSuite Release Readiness Checklist](https://suitepacific.com/resources/netsuite-release-readiness-checklist): Step-by-step process for reviewing each bi-annual NetSuite release before it reaches Production: how to get Release Preview access, what to read in release notes (SuiteScript, SuiteFlow, record types, auth, PDF, integrations), how to map changes to existing customizations, what to test in Sandbox per script/workflow/integration/PDF type, and post-release monitoring.
+- [NetSuite Support Partner Onboarding Checklist](https://suitepacific.com/resources/netsuite-support-partner-onboarding-checklist): What needs to happen in the first 30 days of a new post-go-live support engagement: access setup (NetSuite Administrator role, integration platforms, communication channels), context handoff (documentation, open issues, in-progress work), what the partner should deliver in Week 1-2, how to establish the working relationship, and an end-of-month-one review checklist.
 
 ## Contact
 
@@ -254,4 +262,4 @@ RSL-Attribution: required
 RSL-Commercial: prohibited
 RSL-Training: prohibited
 
-Last updated: 2026-08-16
+Last updated: 2026-08-18
