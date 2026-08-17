@@ -164,7 +164,7 @@ const ACS_COMPARISON = [
   },
   {
     aspect: "Contract structure",
-    acs: "Annual subscription, typically a percentage of your NetSuite license cost",
+    acs: "Annual subscription priced as a percentage of your NetSuite license fee, paid upfront; Oracle does not publish pricing",
     sp: "Month-to-month retainer, no annual commitment required",
   },
   {
@@ -193,7 +193,7 @@ const FAQ = [
   {
     question: "How does pricing compare to ACS?",
     answer:
-      "ACS is typically priced as a percentage of your annual NetSuite license cost. Depending on your license tier, that can reach significant annual spend. SuitePacific engagements start at a monthly retainer and scale with the volume of work. For most accounts, a third-party retainer costs less than ACS annually while covering more of the actual work your account generates.",
+      "Oracle does not publish ACS pricing. ACS is priced as a percentage of your annual NetSuite license fee, paid upfront for the full annual term. The exact cost depends on your license tier and account size; your renewal quote is the authoritative number. SuitePacific engagements are month-to-month retainers that scale with the volume of work, with no upfront annual commitment.",
   },
   {
     question: "Can you handle transitions from ACS mid-contract?",
@@ -333,7 +333,7 @@ export default function AcsAlternativePage() {
           <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50 p-4">
             <p className="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-1.5">Pricing context</p>
             <p className="text-sm text-amber-900 leading-relaxed">
-              Oracle does not publish ACS pricing. Based on customer and partner reports, ACS is priced as a percentage of your annual NetSuite license fee. Accounts at the Optimize tier have reported costs in the range of $22,000-$60,000 per year depending on license size, paid upfront for the full annual term. Customers also report renewal increases of 10-30% in years two and three.{" "}
+              Oracle does not publish ACS pricing. ACS is priced as a percentage of your annual NetSuite license fee, paid upfront for the full annual term. The exact percentage and total cost vary by license tier and account size; your renewal quote is the authoritative figure. Partners and customers also report year-over-year increases at renewal.{" "}
               <Link href="/blog/netsuite-acs-cost-breakdown" className="underline text-amber-800 hover:text-amber-900">
                 Full ACS cost breakdown
               </Link>

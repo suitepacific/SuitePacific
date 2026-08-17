@@ -56,21 +56,22 @@ Even at 40 hours per month, the scope limitation remains: Architect does not cov
 
 ## What Does ACS Actually Cost?
 
-Oracle does not publish ACS pricing, and quotes are negotiated based on license tier and account size. Based on customer reports and information published by NetSuite partners:
+Oracle does not publish ACS pricing. Quotes are negotiated based on your license tier and account size, and the only authoritative number is the one Oracle provides at renewal.
 
-- ACS is typically priced at 15-25% of your annual NetSuite license fee
-- For a $150,000 annual license: ACS Optimize is reported in the range of $22,500-$37,500 per year
-- For a $250,000 annual license: ACS Optimize has been reported at approximately $56,000-$62,500 per year
+What is consistently reported across customer accounts and NetSuite partner disclosures:
+
+- ACS is priced as a percentage of your annual NetSuite license fee
 - Payment is made upfront for the full annual term, not monthly
 - ACS Architect pricing is higher and tied to enterprise license tiers
+- The total annual cost varies significantly depending on your license size
 
-These figures come from customer accounts and partner data rather than official Oracle documentation, which is not published.
+Because Oracle does not publish pricing and quotes vary by account, we do not publish specific dollar figures here. If you are evaluating ACS, ask Oracle for a written quote that breaks out the ACS fee separately from the license fee, and confirm what is included and excluded in writing before signing.
 
-## The Renewal Escalation Problem
+## The Renewal Escalation Pattern
 
-ACS customers consistently report year-over-year price increases at renewal. NetSuite license renewals typically see increases of 10-30% annually, and ACS pricing follows the same pattern since it is tied to license cost as a percentage.
+ACS customers and NetSuite partners consistently report year-over-year price increases at renewal. Because ACS is priced as a percentage of your license fee, and NetSuite license fees typically increase at renewal, ACS costs tend to rise in parallel without any change in the tier or services received.
 
-An account paying $40,000 for ACS Optimize in year one may be quoted $48,000-$52,000 in year two without any change in the tier or services received. Over three years, a mid-market ACS contract that started at $40,000/year reaches $55,000-$70,000/year at typical escalation rates, while the 20-hour monthly cap remains unchanged.
+The practical effect: accounts that found ACS cost-effective in year one often report a different calculation by year three, with the monthly hour cap unchanged while the annual cost has grown. Partners and customers describe this as one of the most common reasons accounts evaluate alternatives ahead of renewal.
 
 ## What the Hour Cap Actually Means
 
