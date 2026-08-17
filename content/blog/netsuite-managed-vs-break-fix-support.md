@@ -68,6 +68,18 @@ Under managed support, the consultant has built understanding of the account ove
 
 This is not a guarantee; managed support consultants make mistakes too. But the error rate and the diagnostic time for a consultant who has been maintaining an account for a year are meaningfully lower than for one who is starting fresh on each engagement.
 
+## Side-by-side comparison
+
+| | Managed retainer | Break-fix |
+|---|---|---|
+| Account context | Retained across every request | Rebuilt at the start of each engagement |
+| Re-onboarding per request | None | 1-3 hours typical; more on complex accounts |
+| Cost per completed item | Lower at 4+ hours/month | Higher once re-onboarding is included |
+| Release review | Included proactively each cycle | Not included; reactive only |
+| Response to urgent issues | Direct developer contact, no ramp-up | Depends on availability; ramp-up required |
+| Minimum commitment | Typically 3-month minimum, then month-to-month | None; per-request |
+| Best for | Ongoing, recurring development and maintenance | Isolated, infrequent, self-contained items |
+
 ## The decision framework
 
 **Choose managed support when:**
