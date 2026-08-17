@@ -113,6 +113,8 @@ const URLS = [
   "/blog/netsuite-saved-search-formula-examples",
   "/blog/netsuite-suitetax-term-discounts",
   "/blog/netsuite-currency-context-custom-fields",
+  // ACS keyword strategy (2026-08-17)
+  "/blog/netsuite-acs-cost-breakdown",
 ];
 
 if (process.env.NODE_ENV !== "production") {

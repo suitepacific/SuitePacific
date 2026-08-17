@@ -18,6 +18,43 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 
+const ACS_TIERS = [
+  {
+    name: "ACS Advise",
+    target: "New and growing accounts",
+    hours: "Shared pool",
+    description: "Shared specialist access, best-practice guidance, and basic troubleshooting. No dedicated consultant assigned.",
+  },
+  {
+    name: "ACS Monitor",
+    target: "Established accounts",
+    hours: "~36 hrs / quarter",
+    description: "Designated functional consultant and project execution support across the quarter.",
+  },
+  {
+    name: "ACS Optimize",
+    target: "Mid-market growth",
+    hours: "~20 hrs / month",
+    description: "Customer Success Manager plus functional consultant, optimization playbooks, and access to senior resources.",
+  },
+  {
+    name: "ACS Architect",
+    target: "Enterprise / multi-subsidiary",
+    hours: "~40 hrs / month",
+    description: "Senior CSM plus named expert team, strategic roadmap sessions, and dedicated escalation paths.",
+  },
+];
+
+const HOUR_CAP_SCENARIOS = [
+  { task: "Monthly system health review", hours: "6-8 hrs", covered: "Yes" },
+  { task: "Saved search or reporting fix", hours: "3-5 hrs", covered: "Yes" },
+  { task: "Workflow configuration question", hours: "2-3 hrs", covered: "Yes" },
+  { task: "Allocation remaining after the above", hours: "4-9 hrs", covered: "" },
+  { task: "SuiteScript fix for the underlying workflow issue", hours: "3-6 hrs", covered: "No" },
+  { task: "Celigo or Shopify integration debugging", hours: "Variable", covered: "No" },
+  { task: "New automation or custom development", hours: "Variable", covered: "No" },
+];
+
 const ACS_GAPS = [
   {
     icon: XCircle,
@@ -36,6 +73,12 @@ const ACS_GAPS = [
     title: "ACS agents rotate. Your account context does not transfer.",
     description:
       "Each case starts from scratch. The agent handling your issue today has no knowledge of the issue resolved three months ago. Re-explaining account history is built into the model.",
+  },
+  {
+    icon: XCircle,
+    title: "ACS does not touch your integration stack.",
+    description:
+      "Celigo flows, Shopify connectors, Salesforce syncs, EDI connections, and 3PL integrations are outside ACS scope entirely. If a Celigo flow breaks where the root cause is in NetSuite, ACS stops at the NetSuite boundary.",
   },
 ];
 
@@ -124,6 +167,16 @@ const ACS_COMPARISON = [
     acs: "Annual subscription, typically a percentage of your NetSuite license cost",
     sp: "Month-to-month retainer, no annual commitment required",
   },
+  {
+    aspect: "Hour allocation",
+    acs: "Optimize: ~20 hrs/month; Architect: ~40 hrs/month; shared pool at lower tiers",
+    sp: "No hour caps on retainer work; scope is the issue, not the clock",
+  },
+  {
+    aspect: "Integration coverage",
+    acs: "NetSuite platform only; Celigo, Shopify, Salesforce, EDI, and 3PL connections are out of scope",
+    sp: "Full stack: platform, customizations, and integrations built on or connected to NetSuite",
+  },
 ];
 
 const FAQ = [
@@ -152,17 +205,32 @@ const FAQ = [
     answer:
       "We identify it, document it, and guide you through submitting it to Oracle NetSuite support. We also provide workarounds where possible while the official fix works through Oracle's process. Platform bugs that ACS would escalate internally we handle through the standard NetSuite support channel with full documentation.",
   },
+  {
+    question: "What notice period does Oracle require to cancel ACS?",
+    answer:
+      "Oracle does not publish a standard cancellation policy, but ACS is an annual subscription and customer reports consistently indicate you are committed for the full term. Transition planning should begin several months before your renewal date if you intend to move to a third-party provider. Starting an engagement with a third-party partner before ACS expires is the cleanest way to ensure no gap in coverage.",
+  },
+  {
+    question: "Can we run ACS and a third-party partner at the same time?",
+    answer:
+      "Yes, and this is actually the recommended transition approach. A third-party partner can begin learning your account, your scripts, and your integrations while ACS is still active. You let ACS lapse at renewal once the handoff is complete. There is no technical restriction from Oracle on using additional consulting resources alongside ACS.",
+  },
+  {
+    question: "Does ACS cover Celigo, Shopify, or Salesforce integrations?",
+    answer:
+      "No. ACS scope is limited to the NetSuite platform itself. If a Celigo flow stops syncing, a Shopify connector breaks, or a Salesforce integration falls out of alignment, ACS will not diagnose the non-NetSuite side of the problem, and often cannot fully diagnose the NetSuite side without knowing what the integration expects. Integration ecosystems are a significant blind spot for ACS accounts running a multi-tool stack.",
+  },
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite ACS Alternative",
+  title: "NetSuite ACS Alternative: Third-Party Support Without the Contract",
   description:
-    "Third-party NetSuite support as an alternative to ACS: certified consultants, direct access, faster response, and coverage for the customizations ACS does not handle.",
+    "A NetSuite ACS alternative that covers what ACS does not: SuiteScript, integrations, and custom workflows. No annual contract, no hour caps, direct access to a certified consultant.",
   alternates: { canonical: "/netsuite-acs-alternative" },
   openGraph: {
-    title: "NetSuite ACS Alternative",
+    title: "NetSuite ACS Alternative: Third-Party Support Without the Contract",
     description:
-      "Third-party NetSuite support as an alternative to ACS: certified consultants, direct access, faster response, and coverage for the customizations ACS does not handle.",
+      "A NetSuite ACS alternative that covers what ACS does not: SuiteScript, integrations, and custom workflows. No annual contract, no hour caps, direct access to a certified consultant.",
     url: `${SITE_URL}/netsuite-acs-alternative`,
     type: "website",
     images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
@@ -234,6 +302,46 @@ export default function AcsAlternativePage() {
           every day. SuitePacific covers that layer, and everything under it.
         </p>
 
+        {/* ACS tiers */}
+        <div className="mt-14" data-section="acs-tiers">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">What are the NetSuite ACS tiers?</h2>
+          <p className="text-sm text-brand-400 mb-5">
+            ACS is structured across four tiers. Each tier increases the hours allocated and the seniority of the assigned resource. What stays constant across all tiers: ACS scope ends at the standard NetSuite platform boundary. Customizations, integrations, and anything your implementation partner built are excluded regardless of tier.
+          </p>
+          <div className="overflow-x-auto rounded-2xl border border-brand-100">
+            <table className="w-full text-sm min-w-[520px]">
+              <thead>
+                <tr className="border-b border-brand-100 bg-brand-50/50">
+                  <th className="text-left p-4 font-semibold text-brand-900">Tier</th>
+                  <th className="text-left p-4 font-semibold text-brand-900">Target account</th>
+                  <th className="text-left p-4 font-semibold text-brand-900 whitespace-nowrap">Hours included</th>
+                  <th className="text-left p-4 font-semibold text-brand-900">What changes vs. lower tiers</th>
+                </tr>
+              </thead>
+              <tbody>
+                {ACS_TIERS.map((tier, i) => (
+                  <tr key={tier.name} className={i < ACS_TIERS.length - 1 ? "border-b border-brand-100" : ""}>
+                    <td className="p-4 font-medium text-brand-700 align-top whitespace-nowrap">{tier.name}</td>
+                    <td className="p-4 text-brand-400 align-top">{tier.target}</td>
+                    <td className="p-4 text-brand-700 font-medium align-top whitespace-nowrap">{tier.hours}</td>
+                    <td className="p-4 text-brand-400 align-top">{tier.description}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50 p-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-1.5">Pricing context</p>
+            <p className="text-sm text-amber-900 leading-relaxed">
+              Oracle does not publish ACS pricing. Based on customer and partner reports, ACS is priced as a percentage of your annual NetSuite license fee. Accounts at the Optimize tier have reported costs in the range of $22,000-$60,000 per year depending on license size, paid upfront for the full annual term. Customers also report renewal increases of 10-30% in years two and three.{" "}
+              <Link href="/blog/netsuite-acs-cost-breakdown" className="underline text-amber-800 hover:text-amber-900">
+                Full ACS cost breakdown
+              </Link>
+              .
+            </p>
+          </div>
+        </div>
+
         {/* ACS gaps */}
         <div className="mt-14" data-section="acs-gaps">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">
@@ -248,6 +356,49 @@ export default function AcsAlternativePage() {
               </Card>
             ))}
           </div>
+        </div>
+
+        {/* Hour cap reality */}
+        <div className="mt-14" data-section="hour-cap">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">What does 20 hours per month actually cover?</h2>
+          <p className="text-sm text-brand-400 mb-5">
+            ACS Optimize, the most common tier for mid-market accounts, allocates approximately 20 hours per month. Here is how a typical active month looks for a live account, and where those hours run out before the real work starts.
+          </p>
+          <div className="overflow-x-auto rounded-2xl border border-brand-100">
+            <table className="w-full text-sm min-w-[480px]">
+              <thead>
+                <tr className="border-b border-brand-100 bg-brand-50/50">
+                  <th className="text-left p-4 font-semibold text-brand-900">Task</th>
+                  <th className="text-left p-4 font-semibold text-brand-900">Typical hours</th>
+                  <th className="text-left p-4 font-semibold text-brand-900">ACS covers?</th>
+                </tr>
+              </thead>
+              <tbody>
+                {HOUR_CAP_SCENARIOS.map((row, i) => (
+                  <tr
+                    key={row.task}
+                    className={[
+                      i < HOUR_CAP_SCENARIOS.length - 1 ? "border-b border-brand-100" : "",
+                      i === 3 ? "bg-brand-50/40" : "",
+                    ].join(" ")}
+                  >
+                    <td className="p-4 text-brand-700 align-top">{row.task}</td>
+                    <td className="p-4 text-brand-400 align-top whitespace-nowrap">{row.hours}</td>
+                    <td className={`p-4 align-top font-medium whitespace-nowrap ${
+                      row.covered === "Yes" ? "text-emerald-600" :
+                      row.covered === "No" ? "text-red-500" :
+                      "text-brand-400 italic"
+                    }`}>
+                      {row.covered === "" ? "—" : row.covered}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 text-sm text-brand-400">
+            The work that actually fixes things — the SuiteScript behind the workflow, the integration that keeps dropping records, the new automation — is out of scope. That work goes back to whoever built it, or sits unresolved.
+          </p>
         </div>
 
         {/* ACS vs SuitePacific */}

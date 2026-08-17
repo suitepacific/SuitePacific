@@ -39,7 +39,7 @@ const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/netsuite-consulting-services", lastModified: SEO_REFRESH_DATE },
   { path: "/netsuite-admin-support-small-business", lastModified: SEO_REFRESH_DATE },
   { path: "/suitecompare", lastModified: new Date("2026-07-19") },
-  { path: "/netsuite-acs-alternative", lastModified: NEW_PAGES_DATE },
+  { path: "/netsuite-acs-alternative", lastModified: new Date("2026-08-17") },
   { path: "/netsuite-support-alternative", lastModified: NEW_PAGES_DATE },
   { path: "/netsuite-oracle-support-vs-third-party", lastModified: NEW_PAGES_DATE },
   { path: "/netsuite-certified-netsuite-support", lastModified: NEW_PAGES_DATE },
