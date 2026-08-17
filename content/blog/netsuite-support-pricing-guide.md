@@ -68,7 +68,7 @@ Oracle's own post-go-live support program. Typically sold in three tiers:
 - **ACS Strategic:** Dedicated resources for large enterprise accounts, custom pricing.
 
 **The important caveats about ACS:**
-The scope of what ACS covers is defined by Oracle's service catalog, not by what your account needs. Work outside that catalog is not covered. ACS resources are shared pools, which means response times and continuity vary. The program works well for companies that need a stable, well-defined support contract; it works less well for companies that need agile access to a developer who understands their specific customizations.
+The scope of what ACS covers is defined by Oracle's service catalog, not by what your account needs. Work outside that catalog is not covered. ACS resources are shared pools, which means response times and continuity vary. The program works well for companies that need a stable, well-defined support contract; it works less well for companies that need agile access to a developer who understands their specific customizations. For a full breakdown of what ACS includes and excludes by tier, see [NetSuite ACS alternative](/netsuite-acs-alternative).
 
 ### 4. Break-fix or on-demand (no retainer)
 

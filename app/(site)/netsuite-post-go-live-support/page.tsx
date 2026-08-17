@@ -433,6 +433,12 @@ export default function PostGoLiveSupportPage() {
               </Link>{" "}
               covers what to look for when selecting an ongoing support provider after go-live.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-acs-alternative" className="text-accent hover:underline">
+                NetSuite ACS alternative
+              </Link>{" "}
+              covers what ACS does and does not include, and how a third-party engagement compares on scope, hours, and contract terms.
+            </li>
           </ul>
           <p className="text-sm font-semibold text-brand-900 mb-3 mt-6">NetSuite FSM resources</p>
           <ul className="space-y-2.5">
