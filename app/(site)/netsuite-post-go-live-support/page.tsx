@@ -12,6 +12,7 @@ import {
   Wrench,
   Users,
   Award,
+  CheckCircle2,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
@@ -21,6 +22,72 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
+
+const SUPPORT_PHASES = [
+  {
+    phase: "01",
+    name: "Stabilization",
+    timeline: "Days 1-30",
+    focus: "Account orientation and priority issue resolution",
+    items: [
+      "Read existing scripts, workflows, and integrations before changing anything",
+      "Diagnose and resolve the highest-priority open issues",
+      "Document account configuration, known risks, and in-progress work",
+      "Establish communication process and request workflow",
+    ],
+  },
+  {
+    phase: "02",
+    name: "Optimization",
+    timeline: "Days 31-90",
+    focus: "Backlog clearance and proactive improvements",
+    items: [
+      "Work through accumulated development backlog in priority order",
+      "Proactive Sandbox review ahead of the next NetSuite release",
+      "Performance improvements for slow pages, searches, and scripts",
+      "Integration health check across connected systems",
+    ],
+  },
+  {
+    phase: "03",
+    name: "Ongoing",
+    timeline: "Day 91+",
+    focus: "New development as the account and business evolve",
+    items: [
+      "New development requests handled as they arise; no new SOW required",
+      "Pre-release regression testing in Sandbox before each bi-annual NetSuite update",
+      "Proactive flagging of issues before they surface in Production",
+      "Account grows with the business rather than accumulating technical debt",
+    ],
+  },
+];
+
+const SLA_LEVELS = [
+  {
+    severity: "Critical",
+    example: "Production outage or data integrity failure affecting live operations",
+    response: "Same day",
+    action: "All other work paused; immediate diagnosis, Sandbox fix, and Production deployment",
+  },
+  {
+    severity: "High",
+    example: "Script failure or workflow breaking a key business process",
+    response: "Next business day",
+    action: "Prioritized over queued development; Sandbox fix and deployment within the week",
+  },
+  {
+    severity: "Standard",
+    example: "New development request, configuration change, or reporting update",
+    response: "Within the week",
+    action: "Added to active queue; Sandbox development and scheduled Production deployment",
+  },
+  {
+    severity: "Advisory",
+    example: "Question about feature behavior or best-practice guidance",
+    response: "Within 24 hours",
+    action: "Direct answer logged for account context; no ticket overhead",
+  },
+];
 
 const COMPARISON = [
   { capability: "SuiteScript development", typical: "Internal hire or ad-hoc contractor with no account context", withSP: "NetSuite SuiteCloud Developer II certified; account context maintained across every engagement" },
@@ -200,6 +267,31 @@ const FAQ = [
     answer:
       "All customizations built during the engagement belong to your NetSuite account. We do not use proprietary tooling, platform wrappers, or external services that would make the work inaccessible after the engagement ends. We maintain documentation of active scripts and workflows, which we provide during offboarding.",
   },
+  {
+    question: "What is NetSuite hypercare support?",
+    answer:
+      "Hypercare is the period immediately after go-live, typically the first 30-90 days, when issues surface at the highest rate. Data entry errors, integration failures, and configuration gaps that testing did not catch all appear under real transaction volumes. A post-go-live support partner stabilizes this period by diagnosing and resolving issues as they arise rather than letting them accumulate into a backlog while the internal team tries to keep up with day-to-day operations.",
+  },
+  {
+    question: "What is the difference between break-fix and managed NetSuite support?",
+    answer:
+      "Break-fix support is on-demand: you engage a consultant when something breaks, pay per incident or per hour, and the relationship ends when the issue is resolved. Managed support is a retainer covering whatever comes up each month, including proactive work and new development. Break-fix accumulates context overhead on every call because the consultant starts from scratch each time. Managed support builds institutional knowledge, so each request takes less time than the last. For accounts with a steady stream of ongoing needs, managed support is typically more cost-effective once re-onboarding time is factored into each break-fix engagement.",
+  },
+  {
+    question: "How long does NetSuite post-go-live support typically last?",
+    answer:
+      "Most accounts maintain an ongoing support engagement indefinitely. NetSuite accounts continue to evolve: business processes change, integrations require maintenance, new capabilities need development, and twice-yearly NetSuite releases require regression testing in Sandbox. Accounts that end a support engagement typically restart within 6-12 months when accumulated needs become urgent. The relevant question for most accounts is not how long support lasts but how many hours per month the account actually generates.",
+  },
+  {
+    question: "Is it more cost-effective to hire a full-time NetSuite administrator?",
+    answer:
+      "A full-time NetSuite administrator covers configuration, administration, and basic saved searches but typically does not cover SuiteScript development, integration work, or complex automation. Accounts needing both development and administration would require a developer-level hire, which carries the full overhead of a full-time employee: salary, benefits, paid time off, and ramp-up time. A retainer covering both development and administration provides access to a broader skill set without fixed headcount cost, which is generally more cost-effective for mid-market accounts that need both capabilities but not at full-time volume for either.",
+  },
+  {
+    question: "What is involved in switching from an existing NetSuite support partner?",
+    answer:
+      "We perform an independent account review during onboarding, reading existing scripts, workflows, and configuration ourselves rather than relying on documentation from the previous provider. Overlapping the transition by starting an engagement with us while the existing contract winds down is the cleanest approach: it avoids a coverage gap and gives us time to learn the account before the handoff is complete. All customizations built by a previous provider remain in your NetSuite account. We do not use proprietary tooling or wrappers that would make prior work inaccessible.",
+  },
 ];
 
 export const metadata: Metadata = {
@@ -371,6 +463,36 @@ export default function PostGoLiveSupportPage() {
           </div>
         </div>
 
+        {/* SLA levels */}
+        <div className="mt-14" data-section="sla-levels">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">What are the response times for different types of issues?</h2>
+          <p className="text-sm text-brand-400 mb-5">
+            Not every request has the same urgency. Issues are classified on first contact and handled accordingly.
+          </p>
+          <div className="overflow-x-auto rounded-xl border border-brand-100">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-brand-50/60 border-b border-brand-100">
+                  <th className="py-2.5 px-4 text-left text-xs font-semibold text-brand-900">Severity</th>
+                  <th className="py-2.5 px-4 text-left text-xs font-semibold text-brand-900">Example</th>
+                  <th className="py-2.5 px-4 text-left text-xs font-semibold text-brand-900">Response</th>
+                  <th className="py-2.5 px-4 text-left text-xs font-semibold text-brand-900">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {SLA_LEVELS.map((row, i) => (
+                  <tr key={row.severity} className={i < SLA_LEVELS.length - 1 ? "border-b border-brand-50" : ""}>
+                    <td className="py-3 px-4 font-semibold text-brand-900 text-xs align-top whitespace-nowrap">{row.severity}</td>
+                    <td className="py-3 px-4 text-brand-400 text-xs align-top">{row.example}</td>
+                    <td className="py-3 px-4 text-accent font-medium text-xs align-top whitespace-nowrap">{row.response}</td>
+                    <td className="py-3 px-4 text-brand-400 text-xs align-top">{row.action}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         {/* How it works */}
         <div className="mt-14" data-section="how-it-works">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">How does SuitePacific post-go-live support work?</h2>
@@ -389,6 +511,39 @@ export default function PostGoLiveSupportPage() {
           </div>
         </div>
 
+        {/* Support phases */}
+        <div className="mt-14" data-section="support-phases">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">What does a new support engagement look like in the first 90 days?</h2>
+          <p className="text-sm text-brand-400 mb-6">
+            Every new account goes through three structured phases before settling into steady-state ongoing support.
+          </p>
+          <div className="space-y-4">
+            {SUPPORT_PHASES.map((phase) => (
+              <div key={phase.phase} className="rounded-xl border border-brand-100 bg-white p-5 shadow-soft">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-3">
+                  <span className="text-xs font-semibold text-accent bg-accent/10 rounded-full h-7 w-7 flex items-center justify-center shrink-0">
+                    {phase.phase}
+                  </span>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+                    <p className="font-semibold text-brand-900 text-sm">{phase.name}</p>
+                    <span className="hidden sm:block text-brand-200">·</span>
+                    <p className="text-xs text-accent font-medium">{phase.timeline}</p>
+                  </div>
+                </div>
+                <p className="text-xs font-medium text-brand-600 mb-2">{phase.focus}</p>
+                <ul className="space-y-1.5">
+                  {phase.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-brand-400">
+                      <CheckCircle2 className="h-3.5 w-3.5 text-accent shrink-0 mt-0.5" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">Why do companies choose SuitePacific for post-go-live support?</h2>
@@ -401,6 +556,43 @@ export default function PostGoLiveSupportPage() {
                   <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
                 </div>
               </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Switching partner */}
+        <div className="mt-14" data-section="switching-partner">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">How do you transition from an existing NetSuite support partner?</h2>
+          <p className="text-sm text-brand-400 mb-6">
+            Switching support partners mid-engagement is straightforward when handled in the right order. Most transitions complete in two to three weeks.
+          </p>
+          <div className="space-y-4">
+            {[
+              {
+                step: "01",
+                title: "Start an engagement while your current contract is still active",
+                description: "Overlapping by four to six weeks is the cleanest approach. It gives us time to review the account, understand active work, and identify open issues before the handoff is complete. There is no gap in coverage, and your existing provider continues to handle day-to-day requests while we orient.",
+              },
+              {
+                step: "02",
+                title: "We review the account independently",
+                description: "We read existing scripts, workflows, saved searches, and integrations ourselves rather than relying solely on documentation from the previous provider. This surfaces undocumented customizations and known issues that may not have been communicated at handoff.",
+              },
+              {
+                step: "03",
+                title: "Let the previous contract lapse at its natural end date",
+                description: "Once we have sufficient context on the account, the previous engagement ends at its scheduled date. All customizations built by the previous provider remain in your NetSuite account. We do not require any proprietary tooling or access credentials that would not already be in the account.",
+              },
+            ].map((item) => (
+              <div key={item.step} className="flex items-start gap-5">
+                <span className="text-xs font-semibold text-accent bg-accent/10 rounded-full h-7 w-7 flex items-center justify-center shrink-0 mt-0.5">
+                  {item.step}
+                </span>
+                <div>
+                  <p className="font-semibold text-brand-900 text-sm">{item.title}</p>
+                  <p className="mt-0.5 text-sm text-brand-400">{item.description}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
