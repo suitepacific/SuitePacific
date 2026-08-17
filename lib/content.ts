@@ -52,8 +52,9 @@ export const NAV_LINKS: NavLink[] = [
     label: "Services",
     children: [
       { label: "Post-Go-Live Support", href: "/netsuite-post-go-live-support", description: "Ongoing support, fixes, and improvements after implementation." },
+      { label: "Health Check", href: "/netsuite-health-check", description: "Independent audit of your live account with a written findings report." },
+      { label: "Partner Replacement", href: "/netsuite-partner-replacement", description: "Switch NetSuite partners without losing momentum or account context." },
       { label: "SuiteScript Development", href: "/netsuite-suitescript-development", description: "Custom scripts for logic that standard configuration cannot handle." },
-      { label: "NetSuite Consulting", href: "/netsuite-consulting-services", description: "Technical consulting for post-go-live NetSuite accounts." },
       { label: "Administrator Support", href: "/netsuite-administrator-support", description: "Role configuration, permission management, and account maintenance." },
       { label: "Workflow Automation", href: "/netsuite-workflow-automation", description: "Approval workflows, notifications, and SuiteFlow automation." },
       { label: "Hire a NetSuite Developer", href: "/hire-netsuite-developer", description: "Dedicated NetSuite developer, no long-term contracts." },
@@ -497,6 +498,9 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: "NetSuite Consulting", href: "/netsuite-consulting-services" },
       { label: "Account Optimization", href: "/netsuite-account-optimization" },
       { label: "Post-Go-Live Support", href: "/netsuite-post-go-live-support" },
+      { label: "Health Check", href: "/netsuite-health-check" },
+      { label: "Technical Debt", href: "/netsuite-technical-debt" },
+      { label: "Partner Replacement", href: "/netsuite-partner-replacement" },
     ],
   },
   {
