@@ -424,6 +424,33 @@ export default function NetSuitePartnerReplacementPage() {
               </Link>
             </li>
           </ul>
+          <p className="text-sm font-semibold text-brand-900 mb-3 mt-6">Common switching reasons</p>
+          <ul className="space-y-2.5">
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-partner-too-expensive" className="text-accent hover:underline">
+                NetSuite partner too expensive
+              </Link>{" "}
+              covers why large partners cost more than they should for ongoing support and what a retainer model costs instead ($799/month).
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-partner-too-slow" className="text-accent hover:underline">
+                NetSuite partner too slow
+              </Link>{" "}
+              explains why slow response is structural in project-delivery firms and what a support-first model looks like.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-partner-not-responsive" className="text-accent hover:underline">
+                NetSuite partner not responsive
+              </Link>{" "}
+              covers when unresponsiveness is a sign the relationship has run its course and how to switch without the current partner's cooperation.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-consultant-cost" className="text-accent hover:underline">
+                NetSuite consultant cost
+              </Link>{" "}
+              compares the three billing models on actual cost per completed request, not just hourly rate.
+            </li>
+          </ul>
           <p className="text-sm font-semibold text-brand-900 mb-3 mt-6">Further reading</p>
           <ul className="space-y-2.5">
             <li className="text-sm text-brand-400">
@@ -433,7 +460,7 @@ export default function NetSuitePartnerReplacementPage() {
               covers the patterns that indicate a support relationship needs to change before it becomes an emergency.
             </li>
             <li className="text-sm text-brand-400">
-              <Link href="/blog/netsuite-support-partner-evaluation" className="text-accent hover:underline">
+              <Link href="/blog/how-to-evaluate-netsuite-support-partner" className="text-accent hover:underline">
                 How to evaluate a NetSuite support partner
               </Link>{" "}
               covers what to look for when selecting a replacement partner after go-live.
