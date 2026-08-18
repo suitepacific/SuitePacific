@@ -7,7 +7,7 @@ tags: ["Post-Go-Live", "Partner Replacement"]
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
-<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">When your NetSuite implementation partner ends the engagement, the immediate risks are undocumented customizations, no coverage for release-related script failures, and no resource for the development work that accumulates after go-live. The practical steps in the first 30 days: document what is running in your account, identify who holds administrator access, prioritize any open issues from the implementation, and evaluate a replacement partner who is built for ongoing support rather than project delivery. The transition to a new partner typically takes two to four weeks.</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">When your NetSuite implementation partner ends the engagement, the immediate risks are undocumented customizations, no coverage for release-related script failures, and no resource for the development work that accumulates after go-live. The practical steps in the first 30 days: document what is running in your account under Customization &gt; Scripting &gt; Script Deployments and Customization &gt; Workflow &gt; Workflows; identify who on your internal team holds full Administrator access; prioritize any open issues from the implementation and classify them as critical, high, or standard; and begin evaluating a replacement partner who is built for ongoing support rather than project delivery. The key quality to look for in a replacement partner is retained account context: the ability to accumulate knowledge of your specific account and apply it across requests without starting from zero. The transition to a new partner typically takes two to four weeks from first contact to active work.</p>
 </div>
 
 When an implementation partner closes their engagement, it is rarely a surprise. Most implementation contracts are scoped to go-live. The timeline was set at the beginning, the deliverables were defined, and when the project reached its end state the engagement closed. That is how implementation contracts work.
@@ -18,7 +18,7 @@ The account is live, but it is not finished. Scripts need updating as processes 
 
 The implementation partner was never the answer to any of this. Their engagement was scoped for something different. But they were the team who knew your account, and now they are on another implementation.
 
-## Why this happens to almost every NetSuite customer
+## Why does a NetSuite implementation partner disengage after go-live?
 
 Implementation partners build accounts for a living. Their revenue model is project-based: scope a project, deliver it, close the engagement, move to the next one. The economics of ongoing support do not fit that model. A two-hour script fix or a saved search update is not a project; it generates friction in a firm built around statements of work and formal scoping.
 
@@ -26,7 +26,7 @@ Some implementation partners offer post-go-live support as an add-on. In practic
 
 The gap between what an implementation engagement delivers and what a live account needs is structural. Recognizing it as structural rather than a failure of your specific partner matters, because it determines what kind of replacement you should look for.
 
-## What is at risk in the first 30 days
+## What is at risk in the first 30 days after your NetSuite partner leaves?
 
 The 30 days immediately following an implementation partner's exit are when problems surface fastest.
 
@@ -38,27 +38,27 @@ The 30 days immediately following an implementation partner's exit are when prob
 
 **Development backlog.** Within weeks of go-live, requests start accumulating. A team member needs a new role. A process that was manual during implementation needs automation. A report that the finance team requested is not in the account. These requests have nowhere to go when there is no partner to receive them.
 
-## What to do in the first 30 days
+## What should you do in the first 30 days after your NetSuite implementation partner leaves?
 
-### Document what is running in your account
+### How do you document what is running in your NetSuite account?
 
 Before finding a replacement partner, get a basic inventory of what is in your account. In NetSuite, you can review active script deployments under Customization > Scripting > Script Deployments. Filter by status to see what is currently deployed and active. Workflows are visible under Customization > Workflow > Workflows. Review which ones have active status and which record types they evaluate on.
 
 You do not need to understand every script or workflow in detail. The goal is a written list: what is deployed, which record types it runs on, and whether it was marked as a known issue during the implementation. This list becomes the starting point for any replacement partner's onboarding.
 
-### Identify who holds administrator access
+### Who should hold NetSuite administrator access after the implementation?
 
 Confirm that someone on your team has full Administrator access to the account. This is the role that allows reading script source code, reviewing deployment configurations, and making configuration changes without restriction. If the implementation partner's own consultants were the only active administrators, you need to verify that an internal role with Administrator access exists and is not tied to a consultant who has now disengaged.
 
-### Prioritize open issues from the implementation
+### How do you prioritize open issues from the NetSuite implementation?
 
 Review any open issue list from the implementation engagement. If your implementation partner used a project management tool or shared a handoff document, that is the starting point. If nothing was formally handed off, ask your team what has already broken or is behaving unexpectedly since go-live. Classify each item as critical (affecting live operations), high (causing workarounds), or standard (working but not optimally). This priority list is what a replacement partner should address first.
 
-### Do not wait for something to break
+### Why should you act before something breaks in your NetSuite account?
 
 The most common mistake after an implementation partner leaves is waiting. The account is running, so the urgency feels low. Then a NetSuite release updates an API your scripts use, or an integration fails because a third-party platform changed an endpoint, or a workflow that was quietly misfiring all along causes a data problem that requires cleanup. The time to find a replacement partner is before these events, not during them.
 
-## What to look for in a replacement partner
+## What should you look for in a NetSuite replacement support partner?
 
 The firm that got you live was optimized for implementation. A replacement partner for ongoing support should be optimized for the opposite: small, recurring, context-retained work that does not require a new statement of work for each request.
 
@@ -72,7 +72,7 @@ The firm that got you live was optimized for implementation. A replacement partn
 
 **Release review practice.** Ask specifically how the partner handles NetSuite's twice-yearly releases. A partner who tests your customizations in Sandbox before each release and flags issues proactively is providing a materially different level of service than one who waits for something to break in Production.
 
-## What the transition to a new partner looks like
+## What does the transition to a new NetSuite support partner look like?
 
 A partner transition does not require starting from scratch. Your account, your customizations, and your data are all still exactly where they were. The new partner reads the account independently and builds their own understanding of what was built and why.
 
@@ -82,13 +82,13 @@ Most transitions complete within two to four weeks. The first two weeks are acco
 
 For a full breakdown of what the transition timeline looks like and what stays in your account when you switch, the [NetSuite partner replacement](/netsuite-partner-replacement) page covers the process in detail.
 
-## What ongoing support should cost
+## What does ongoing NetSuite support cost after an implementation partner leaves?
 
 If you have been billing development work through your implementation partner on a per-project basis, you may have a distorted sense of what ongoing support costs. Implementation rates are project rates: they carry the overhead of scoping, project management, and the general administrative structure of a firm that runs on formal engagements.
 
 Ongoing support from a boutique partner that is built for retainer work runs materially lower. SuitePacific's monthly Care plans start at $799 for 10 hours per month, covering SuiteScript development, workflow automation, saved searches, administration, and troubleshooting. This is not a stripped-down version of implementation support; it is a different model designed for the type of work a live account generates. The full breakdown is on the [NetSuite Care pricing page](/netsuite-care).
 
-## The longer-term picture
+## What does NetSuite support look like long-term after the implementation ends?
 
 A live NetSuite account is not a finished product. It is a system that evolves with the business: new processes, new team members, new integrations, new reporting requirements, and two releases a year that require someone to verify your customizations still work. The implementation partner delivered the foundation. Everything that comes after is ongoing support.
 

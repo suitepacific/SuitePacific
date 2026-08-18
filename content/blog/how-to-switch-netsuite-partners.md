@@ -7,7 +7,7 @@ tags: ["Post-Go-Live", "Partner Replacement"]
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
-<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The key to switching NetSuite partners without disruption: start the new partner before the old one is off the account. A four-to-six week overlap gives the new partner time to review what was built, identify open issues, and establish account context before they are the only resource. The transition itself takes two to four weeks from first contact to active work. The most common mistake is waiting until the previous partner has fully disengaged before starting the evaluation process.</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The key to switching NetSuite partners without disruption: start the new partner before the old one is off the account. A four-to-six week overlap gives the new partner time to review what was built independently, identify open issues, and establish account context before they are the only resource. The transition itself takes two to four weeks from first contact to active work. Begin by auditing what is currently running in your account under Customization &gt; Scripting and Customization &gt; Workflow, then document any work in progress or known issues before the previous engagement closes. Start evaluating replacements four to eight weeks before your expected transition date, not after. The most common and most expensive mistake in a NetSuite partner transition is waiting until the previous partner has fully disengaged before starting the evaluation process, which virtually guarantees a coverage gap.</p>
 </div>
 
 Switching NetSuite partners is not technically complicated. Your account, your customizations, and your data all stay exactly where they are. What makes transitions disruptive is not the switch itself but the sequence: starting too late, skipping the overlap, or handing over too little for the new partner to orient quickly.
@@ -16,7 +16,7 @@ Done in the right order, a partner transition is a low-disruption event. Done in
 
 This is the right order.
 
-## Step 1: Audit what is running in your account before you do anything else
+## Step 1: What should you audit before switching NetSuite partners?
 
 The most important thing to do before a partner transition is understand what is in your account. Not to document it perfectly, but to have a current-state inventory that answers three questions: what is active, what is known to have issues, and what nobody on your team can explain.
 
@@ -26,7 +26,7 @@ You do not need to understand each script or workflow in detail. The goal is a w
 
 If your current partner is still engaged, ask them to produce this list. A partner who resists or is unable to produce a basic inventory of what they built and deployed is itself a sign worth noting.
 
-## Step 2: Document active work and open issues before the previous engagement ends
+## Step 2: What should you document before your current NetSuite partner disengages?
 
 Every implementation and ongoing engagement closes with items that are not fully resolved. Before your previous partner disengages, get a clear accounting of:
 
@@ -38,7 +38,7 @@ Every implementation and ongoing engagement closes with items that are not fully
 
 **Upcoming release items.** If a NetSuite release is coming within 60 days of the transition, confirm whether the previous partner identified any compatibility concerns with your customizations. If they did, that information needs to transfer. If they did not review the release at all, that is an immediate priority for the new partner.
 
-## Step 3: Start evaluating a replacement before the old engagement ends
+## Step 3: When should you start evaluating a NetSuite replacement partner?
 
 The most common mistake in a partner transition is sequential thinking: wait for the old partner to disengage, then start evaluating replacements. This approach virtually guarantees a coverage gap.
 
@@ -56,7 +56,7 @@ When evaluating candidates, the questions that separate strong ongoing-support p
 
 **Who will actually be doing the work?** In larger firms, the person you speak with during evaluation is often not the person who will handle your account. Understanding who will be your day-to-day contact and whether that person is a senior developer or a junior resource matters significantly for the quality of ongoing support.
 
-## Step 4: Overlap the transition by four to six weeks
+## Step 4: How long should you overlap NetSuite partners during the transition?
 
 The overlap is the single most important element of a clean transition.
 
@@ -66,7 +66,7 @@ A four-to-six week overlap is sufficient for most accounts. The new partner uses
 
 Overlapping costs two partner fees for one to two months. This cost is consistently lower than the cost of a coverage gap: production issues that go unaddressed, accumulated backlog, a NetSuite release that passes without review, and the extended onboarding time that results when a new partner inherits an undocumented account with no context transfer.
 
-## Step 5: Give the new partner what they need, let them find the rest
+## Step 5: What should you give a new NetSuite partner during onboarding?
 
 A handoff document is useful but not sufficient on its own. Strong ongoing-support partners do not rely solely on what was handed to them; they review the account directly.
 
@@ -88,7 +88,7 @@ What a good partner should find themselves without being told:
 
 If the new partner's onboarding review does not surface issues of this type in most inherited accounts, their review is not thorough enough.
 
-## Step 6: Verify coverage before the previous partner is fully off
+## Step 6: What should you verify before removing your previous NetSuite partner's access?
 
 Before ending the previous engagement completely, confirm the following with the new partner:
 
@@ -100,7 +100,7 @@ Before ending the previous engagement completely, confirm the following with the
 
 The final step is removing the previous partner's administrator access from the account. Do this after the new partner has confirmed they have everything they need. Removing access before that confirmation creates a scenario where the previous partner becomes unreachable at the same time a question about their work arises.
 
-## The mistakes that create unnecessary disruption
+## What mistakes cause unnecessary disruption when switching NetSuite partners?
 
 **Waiting until something breaks to start the evaluation.** An urgent production issue is the worst time to be evaluating partner options. You end up choosing under pressure, which typically means choosing the first available resource rather than the right long-term fit.
 
