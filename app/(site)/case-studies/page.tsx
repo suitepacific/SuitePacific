@@ -14,6 +14,13 @@ export const metadata: Metadata = {
   description:
     "Real NetSuite customization projects: dashboards, approval workflows, invoice automation, PDF templates, integrations, and operational reporting, built for post-go-live accounts.",
   alternates: { canonical: "/case-studies" },
+  openGraph: {
+    title: "NetSuite Case Studies",
+    description: "Real NetSuite customization projects: dashboards, approval workflows, invoice automation, PDF templates, integrations, and operational reporting, built for post-go-live accounts.",
+    url: "https://suitepacific.com/case-studies",
+    type: "website",
+    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+  },
 };
 
 export default function CaseStudiesIndexPage() {

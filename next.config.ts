@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const securityHeaders = [
   // Prevent clickjacking — no external site can embed SuitePacific in an iframe
-  { key: "X-Frame-Options", value: "SAMEORIGIN" },
+  { key: "X-Frame-Options", value: "DENY" },
   // Prevent MIME-type sniffing
   { key: "X-Content-Type-Options", value: "nosniff" },
   // Force HTTPS for 2 years, include subdomains
@@ -53,6 +53,12 @@ const nextConfig: NextConfig = {
       {
         source: "/:path+/",
         destination: "/:path+",
+        statusCode: 301,
+      },
+      // Active cannibalization: two posts with identical titles — redirect older to newer
+      {
+        source: "/blog/netsuite-support-partner-evaluation",
+        destination: "/blog/how-to-evaluate-netsuite-support-partner",
         statusCode: 301,
       },
       // Duplicate content: shorter posts redirect to the comprehensive canonical versions

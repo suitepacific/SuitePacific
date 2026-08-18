@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   CheckCircle2,
   Code2,
@@ -9,12 +10,15 @@ import {
   Wrench,
   HelpCircle,
   BookOpen,
+  Star,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { FadeIn } from "@/components/motion/FadeIn";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
-import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
+import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
 
 const WHAT_INCLUDED = [
@@ -173,6 +177,13 @@ export const metadata: Metadata = {
   description:
     "SuitePacific NetSuite Care gives your team ongoing access to experienced NetSuite technical professionals for a predictable monthly fee. Starting at $799/month.",
   alternates: { canonical: "/netsuite-care" },
+  openGraph: {
+    title: "NetSuite Care Plans | Ongoing NetSuite Support | SuitePacific",
+    description: "SuitePacific NetSuite Care gives your team ongoing access to experienced NetSuite technical professionals for a predictable monthly fee. Starting at $799/month.",
+    url: "https://suitepacific.com/netsuite-care",
+    type: "website",
+    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+  },
 };
 
 export default function NetSuiteCarePage() {
@@ -184,6 +195,14 @@ export default function NetSuiteCarePage() {
           { name: "NetSuite Care", url: `${SITE_URL}/netsuite-care` },
         ]}
       />
+      <FaqJsonLd items={FAQS.map(({ q, a }) => ({ question: q, answer: a }))} />
+      <ServiceJsonLd
+        name="NetSuite Care Plans"
+        description="SuitePacific NetSuite Care is a monthly retainer for businesses already live on NetSuite that need ongoing SuiteScript development, workflow automation, reporting, troubleshooting, and technical support. Plans start at $799/month for 10 hours and scale to $2,499/month for 35 hours. 3-month minimum, then month-to-month. No SOW required per request."
+        url={`${SITE_URL}/netsuite-care`}
+        serviceType="NetSuite Support"
+      />
+      <OrganizationJsonLd />
 
       {/* Hero */}
       <section className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
@@ -200,7 +219,7 @@ export default function NetSuiteCarePage() {
             professionals for a predictable monthly fee.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Button href="/contact" size="lg">
+            <Button href="#lead-form" size="lg">
               Get Started
             </Button>
             <Button href="#plans" variant="secondary" size="lg">
@@ -211,6 +230,40 @@ export default function NetSuiteCarePage() {
             Starting at $799/month. 3-month minimum, then month-to-month.
           </p>
         </FadeIn>
+      </section>
+
+      {/* Lead form — top */}
+      <section id="lead-form" className="mx-auto max-w-3xl px-6 lg:px-8 mt-10">
+        <div className="rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <LeadFormLight />
+        </div>
+        <p className="mt-3 text-xs text-brand-400 text-center">
+          NetSuite-certified &middot; No SOW per request &middot; Direct developer access &middot; From $799/month
+        </p>
+      </section>
+
+      {/* Social proof */}
+      <section className="mx-auto max-w-3xl px-6 lg:px-8 mt-8">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 rounded-2xl bg-brand-50 border border-brand-100 px-6 py-4">
+          <div className="flex items-center gap-1.5">
+            {[0,1,2,3,4].map((i) => (
+              <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+            ))}
+            <span className="text-sm font-semibold text-brand-900 ml-1">5.0</span>
+          </div>
+          <p className="text-sm text-brand-400">
+            Rated 5.0 on{" "}
+            <a
+              href="https://clutch.co/profile/suitepacific"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent hover:underline"
+            >
+              Clutch
+            </a>
+            {" "}&middot; NetSuite SuiteCloud Developer II &middot; Administrator Professional certified
+          </p>
+        </div>
       </section>
 
       {/* No-negotiation callout */}
@@ -310,7 +363,7 @@ export default function NetSuiteCarePage() {
                     {plan.bestFor}
                   </p>
                   <Button
-                    href="/contact"
+                    href="#lead-form"
                     variant={plan.popular ? "primary" : "secondary"}
                     className="w-full justify-center"
                   >
@@ -497,24 +550,49 @@ export default function NetSuiteCarePage() {
         </div>
       </section>
 
+      {/* Related services */}
+      <section className="mx-auto max-w-3xl px-6 lg:px-8 mt-24">
+        <div className="rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
+          <p className="text-sm font-semibold text-brand-900 mb-3">Related services</p>
+          <ul className="space-y-2.5">
+            <li className="text-sm text-brand-400">
+              Considering a Care plan but want a documented view of your account first?{" "}
+              <Link href="/netsuite-health-check" className="text-accent hover:underline">
+                A NetSuite health check
+              </Link>{" "}
+              gives you a written assessment of what&apos;s working, what&apos;s at risk, and what needs attention before committing to ongoing support.
+            </li>
+            <li className="text-sm text-brand-400">
+              Switching from an existing partner?{" "}
+              <Link href="/netsuite-partner-replacement" className="text-accent hover:underline">
+                NetSuite partner replacement
+              </Link>{" "}
+              covers how the transition works, what stays intact in your account, and how to overlap the handoff cleanly.
+            </li>
+            <li className="text-sm text-brand-400">
+              Need a broader overview of what post-go-live support covers and who provides it?{" "}
+              <Link href="/netsuite-post-go-live-support" className="text-accent hover:underline">
+                NetSuite post-go-live support
+              </Link>{" "}
+              explains the full scope of what an ongoing technical engagement includes and how pricing works.
+            </li>
+          </ul>
+        </div>
+      </section>
+
       {/* Final CTA */}
-      <section className="mx-auto max-w-3xl px-6 lg:px-8 mt-24 text-center">
-        <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 text-balance">
+      <section className="mx-auto max-w-3xl px-6 lg:px-8 mt-24">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 text-balance text-center mb-2">
           Your NetSuite environment deserves ongoing technical care.
         </h2>
-        <p className="mt-4 text-brand-400 max-w-xl mx-auto">
+        <p className="text-brand-400 max-w-xl mx-auto text-center mb-8">
           Less time negotiating estimates. Less time searching for developers.
           Less time waiting for small changes. More time running your business.
         </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <Button href="/contact" size="lg">
-            Start with SuitePacific NetSuite Care
-          </Button>
-          <Button href="#plans" variant="secondary" size="lg">
-            See Plans
-          </Button>
+        <div className="rounded-2xl border border-brand-100 bg-white p-6 shadow-soft">
+          <LeadForm />
         </div>
-        <p className="mt-4 text-sm text-brand-400">From $799/month</p>
+        <p className="mt-4 text-center text-sm text-brand-400">From $799/month &middot; 3-month minimum, then month-to-month</p>
       </section>
     </main>
   );

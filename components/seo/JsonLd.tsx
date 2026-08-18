@@ -47,6 +47,14 @@ export function OrganizationJsonLd() {
       "Oracle NetSuite Certified SuiteCloud Developer II",
       "Oracle NetSuite Certified Administrator Professional",
     ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      bestRating: "5",
+      worstRating: "1",
+      ratingCount: 5,
+      reviewCount: 5,
+    },
     contactPoint: [
       { "@type": "ContactPoint", contactType: "technical support", areaServed: "US", availableLanguage: "English" },
       { "@type": "ContactPoint", contactType: "technical support", areaServed: "GB", availableLanguage: "English" },

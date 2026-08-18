@@ -308,6 +308,15 @@ export default function NetSuiteHealthCheckPage() {
               is the ongoing engagement for accounts that are in good shape and need a dedicated technical team going forward.
             </li>
             <li className="text-sm text-brand-400">
+              <Link href="/netsuite-care" className="text-accent hover:underline">
+                NetSuite Care Plans
+              </Link>{" "}
+              are the monthly support plans for accounts that need ongoing SuiteScript, workflow, and technical support on a predictable retainer, starting at $799/month.
+            </li>
+            <li className="text-sm text-brand-400">
+              If the health check reveals the account needs a partner change, <Link href="/netsuite-partner-replacement" className="text-accent hover:underline">NetSuite Partner Replacement</Link> covers what the transition looks like and what stays intact in your account.
+            </li>
+            <li className="text-sm text-brand-400">
               <Link href="/netsuite-fsm-support" className="text-accent hover:underline">
                 NetSuite FSM Support
               </Link>{" "}

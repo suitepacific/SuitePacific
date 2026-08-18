@@ -620,10 +620,19 @@ export default function PostGoLiveSupportPage() {
               walks through the steps for a clean period close in NetSuite.
             </li>
             <li className="text-sm text-brand-400">
-              <Link href="/blog/netsuite-support-partner-evaluation" className="text-accent hover:underline">
+              <Link href="/blog/how-to-evaluate-netsuite-support-partner" className="text-accent hover:underline">
                 How to evaluate a NetSuite support partner
               </Link>{" "}
               covers what to look for when selecting an ongoing support provider after go-live.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-care" className="text-accent hover:underline">
+                NetSuite Care Plans
+              </Link>{" "}
+              are the monthly retainer options for post-go-live accounts: 10, 20, or 35 hours/month from $799, covering development, workflows, reporting, and troubleshooting.
+            </li>
+            <li className="text-sm text-brand-400">
+              Not sure if your account is in the right shape for ongoing support? <Link href="/netsuite-health-check" className="text-accent hover:underline">A NetSuite health check</Link> gives you a documented baseline before committing to an ongoing engagement.
             </li>
             <li className="text-sm text-brand-400">
               <Link href="/netsuite-acs-alternative" className="text-accent hover:underline">

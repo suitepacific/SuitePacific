@@ -15,6 +15,13 @@ export const metadata: Metadata = {
   description:
     "Practical NetSuite tips, SuiteScript best practices, and workflow automation advice for teams managing NetSuite after go-live.",
   alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "NetSuite Tips & Tricks Blog",
+    description: "Practical NetSuite tips, SuiteScript best practices, and workflow automation advice for teams managing NetSuite after go-live.",
+    url: "https://suitepacific.com/blog",
+    type: "website",
+    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+  },
 };
 
 export default async function BlogIndexPage() {

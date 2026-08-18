@@ -13,6 +13,13 @@ export const metadata: Metadata = {
   description:
     "Practical NetSuite reference articles: SuiteScript best practices, performance optimization, workflow automation, saved searches, and administration guides for post-go-live accounts.",
   alternates: { canonical: "/resources" },
+  openGraph: {
+    title: "NetSuite Resources",
+    description: "Practical NetSuite reference articles: SuiteScript best practices, performance optimization, workflow automation, saved searches, and administration guides for post-go-live accounts.",
+    url: "https://suitepacific.com/resources",
+    type: "website",
+    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+  },
 };
 
 export default async function ResourcesIndexPage({

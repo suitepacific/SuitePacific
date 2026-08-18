@@ -111,6 +111,13 @@ export const metadata: Metadata = {
   description:
     "Partner with SuitePacific to refer NetSuite post-go-live support, SuiteScript development, and workflow automation to your clients. For implementation partners, resellers, accounting firms, and software vendors.",
   alternates: { canonical: "/partners" },
+  openGraph: {
+    title: "Partner with SuitePacific | NetSuite Post-Go-Live Partner Program",
+    description: "Partner with SuitePacific to refer NetSuite post-go-live support, SuiteScript development, and workflow automation to your clients. For implementation partners, resellers, accounting firms, and software vendors.",
+    url: "https://suitepacific.com/partners",
+    type: "website",
+    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+  },
 };
 
 export default function PartnersPage() {

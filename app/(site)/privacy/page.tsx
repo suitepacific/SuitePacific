@@ -8,6 +8,12 @@ export const metadata: Metadata = {
     "SuitePacific's privacy policy: what information we collect when you contact us, how we use it, and how to reach us with questions.",
   alternates: { canonical: "/privacy" },
   robots: { index: true, follow: true },
+  openGraph: {
+    title: "Privacy Policy | SuitePacific",
+    description: "SuitePacific's privacy policy: what information we collect when you contact us, how we use it, and how to reach us with questions.",
+    url: "https://suitepacific.com/privacy",
+    type: "website",
+  },
 };
 
 export default function PrivacyPage() {

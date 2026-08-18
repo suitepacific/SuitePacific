@@ -23,6 +23,13 @@ export const metadata: Metadata = {
   description:
     "Get in touch with SuitePacific for NetSuite post-go-live support, SuiteScript development, workflow automation, and integrations. Book a free consultation, no long-term contracts.",
   alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact SuitePacific | Book a Free NetSuite Consultation",
+    description: "Get in touch with SuitePacific for NetSuite post-go-live support, SuiteScript development, workflow automation, and integrations. Book a free consultation, no long-term contracts.",
+    url: "https://suitepacific.com/contact",
+    type: "website",
+    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+  },
 };
 
 export default function ContactPage() {
