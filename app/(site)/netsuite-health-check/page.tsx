@@ -175,7 +175,7 @@ export default function NetSuiteHealthCheckPage() {
       <FaqJsonLd items={FAQ} />
       <ServiceJsonLd
         name="NetSuite Health Check and System Audit"
-        description="Independent review of a live NetSuite account covering scripts, workflows, custom fields, saved searches, roles, and integrations, with a written findings report."
+        description="Independent review of a live NetSuite account covering scripts, workflows, custom fields, saved searches, roles, and integrations, with a written findings report. Fixed fee $799. Delivered within 5-7 business days."
         url={`${SITE_URL}/netsuite-health-check`}
         serviceType="NetSuite Audit"
       />
@@ -201,7 +201,7 @@ export default function NetSuiteHealthCheckPage() {
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <LeadFormLight />
         </div>
-        <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Written report within 5-7 days · Fixed scope, fixed cost · No upsell obligation</p>
+        <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Written report within 5-7 days · Fixed fee $799 · No upsell obligation</p>
 
         <p className="mt-6 text-sm text-brand-400">
           A NetSuite health check is a structured review of your live account by someone who did
@@ -323,6 +323,20 @@ export default function NetSuiteHealthCheckPage() {
               covers Field Service Management-specific findings: sync failures, bundle update issues, configuration problems, and mobile app behavior.
             </li>
           </ul>
+        </div>
+
+        {/* Pricing */}
+        <div className="mt-14 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
+          <p className="text-sm font-semibold text-brand-900 mb-1">Pricing</p>
+          <p className="text-3xl font-bold text-brand-900 mt-2">$799 <span className="text-sm font-normal text-brand-400">fixed fee</span></p>
+          <p className="text-sm text-brand-400 mt-2">
+            One fixed price covers the full account review across all six areas and the written findings report.
+            No hourly billing, no scope creep. Same price as one month of a Care plan entry tier, with a defined deliverable.
+          </p>
+          <p className="text-sm text-brand-400 mt-3">
+            If the findings point to remediation work, that is scoped and priced separately.
+            You are not required to engage SuitePacific for anything beyond the assessment.
+          </p>
         </div>
 
         <ServiceFaqSection items={FAQ} />
