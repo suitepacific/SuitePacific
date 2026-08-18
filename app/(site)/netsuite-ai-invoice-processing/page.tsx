@@ -452,6 +452,12 @@ export default function NetSuiteAiInvoiceProcessingPage() {
               covers third-party integrations generally, including the SuiteScript patterns used in invoice processing.
             </li>
             <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-ai-invoice-staging-pattern" className="text-accent hover:underline">
+                NetSuite AI invoice processing: staging in a custom record vs. bill unapproved status
+              </Link>{" "}
+              covers the architectural tradeoff between native Vendor Bills and custom staging records when AI-extracted data needs a review layer before it becomes a transaction.
+            </li>
+            <li className="text-sm text-brand-400">
               <Link href="/blog/netsuite-bill-capture-preferences-2026-2" className="text-accent hover:underline">
                 NetSuite Bill Capture preferences in 2026.2
               </Link>{" "}

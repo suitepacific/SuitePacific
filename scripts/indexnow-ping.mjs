@@ -115,6 +115,28 @@ const URLS = [
   "/blog/netsuite-currency-context-custom-fields",
   // ACS keyword strategy (2026-08-17)
   "/blog/netsuite-acs-cost-breakdown",
+  // Pillar hub pages (2026-08-18)
+  "/netsuite-technical-debt",
+  "/netsuite-partner-replacement",
+  // Post-Go-Live pillar blogs (2026-08-18)
+  "/blog/what-is-netsuite-post-go-live-support",
+  "/blog/netsuite-health-check-what-it-includes",
+  "/blog/netsuite-health-check-vs-account-optimization",
+  "/blog/when-to-get-netsuite-health-check",
+  "/blog/netsuite-technical-debt",
+  "/blog/netsuite-account-gets-harder-to-maintain",
+  "/blog/netsuite-technical-debt-audit",
+  "/blog/netsuite-nobody-owns-customizations",
+  "/blog/netsuite-managed-vs-break-fix-support",
+  "/blog/how-to-evaluate-netsuite-support-partner",
+  // Post-Go-Live pillar resources (2026-08-18)
+  "/resources/netsuite-technical-debt-audit-checklist",
+  "/resources/netsuite-health-check-readiness-guide",
+  "/resources/netsuite-health-check-provider-questions",
+  "/resources/netsuite-health-check-report-guide",
+  "/resources/netsuite-post-go-live-support-year-one",
+  "/resources/netsuite-release-readiness-checklist",
+  "/resources/netsuite-support-partner-onboarding-checklist",
 ];
 
 if (process.env.NODE_ENV !== "production") {
