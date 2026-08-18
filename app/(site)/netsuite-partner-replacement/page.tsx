@@ -442,7 +442,7 @@ export default function NetSuitePartnerReplacementPage() {
               <Link href="/netsuite-partner-not-responsive" className="text-accent hover:underline">
                 NetSuite partner not responsive
               </Link>{" "}
-              covers when unresponsiveness is a sign the relationship has run its course and how to switch without the current partner's cooperation.
+              covers when unresponsiveness is a sign the relationship has run its course and how to switch without the current partner&apos;s cooperation.
             </li>
             <li className="text-sm text-brand-400">
               <Link href="/netsuite-consultant-cost" className="text-accent hover:underline">

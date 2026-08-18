@@ -134,9 +134,9 @@ export default function NetSuitePartnerNotResponsivePage() {
             What does switching look like when your partner is already unresponsive?
           </h2>
           <div className="space-y-4 text-sm text-brand-400">
-            <p><strong className="text-brand-700">You do not need their cooperation.</strong> A new partner can read everything that was built in your account independently. Scripts, workflows, and configurations are visible to any user with Administrator access. Your account history is inside NetSuite, not inside your current partner's systems.</p>
+            <p><strong className="text-brand-700">You do not need their cooperation.</strong> A new partner can read everything that was built in your account independently. Scripts, workflows, and configurations are visible to any user with Administrator access. Your account history is inside NetSuite, not inside your current partner&apos;s systems.</p>
             <p><strong className="text-brand-700">You do not need their documentation.</strong> Handoff documentation from an unresponsive partner is often thin or nonexistent. A strong replacement partner builds their own understanding of the account directly from what is deployed, without relying on what the previous partner provides.</p>
-            <p><strong className="text-brand-700">You retain full control.</strong> Your NetSuite account, your data, and everything that was built are yours. Removing an unresponsive partner's administrator access and granting access to a new partner is a straightforward account change that takes minutes.</p>
+            <p><strong className="text-brand-700">You retain full control.</strong> Your NetSuite account, your data, and everything that was built are yours. Removing an unresponsive partner&apos;s administrator access and granting access to a new partner is a straightforward account change that takes minutes.</p>
           </div>
         </div>
 
