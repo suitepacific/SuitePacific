@@ -22,8 +22,8 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline'",                // Tailwind inline styles
       "img-src 'self' data: https:",                     // logo, og images
       "font-src 'self'",
-      "connect-src 'self'",
-      "frame-src 'none'",
+      "connect-src 'self' https://www.youtube-nocookie.com https://www.youtube.com",
+      "frame-src 'none' https://www.youtube-nocookie.com https://www.youtube.com",
       "frame-ancestors 'none'",                          // stronger than X-Frame-Options
       "base-uri 'self'",
       "form-action 'self'",

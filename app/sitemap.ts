@@ -9,6 +9,16 @@ const SEO_REFRESH_DATE = new Date("2026-08-05");
 const NEW_PAGES_DATE = new Date("2026-08-11");
 const KW_GAP_DATE = new Date("2026-08-13");
 
+// These resource slugs redirect to /blog/* equivalents — exclude from sitemap to avoid 301s
+const REDIRECTED_RESOURCE_SLUGS = new Set([
+  "netsuite-user-event-vs-client-script",
+  "netsuite-rest-batch-sequential",
+  "netsuite-suiteql-bound-parameters",
+  "netsuite-sales-order-fulfillment-list",
+  "netsuite-currency-context-custom-fields",
+  "netsuite-suitetax-term-discounts",
+]);
+
 const INDUSTRY_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/industries/manufacturing", lastModified: SEO_REFRESH_DATE },
   { path: "/industries/wholesale-distribution", lastModified: SEO_REFRESH_DATE },
@@ -64,6 +74,10 @@ const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/netsuite-care", lastModified: new Date("2026-08-14") },
   { path: "/netsuite-partner-replacement", lastModified: new Date("2026-08-17") },
   { path: "/netsuite-technical-debt", lastModified: new Date("2026-08-18") },
+  { path: "/netsuite-partner-too-expensive", lastModified: new Date("2026-08-19") },
+  { path: "/netsuite-consultant-cost", lastModified: new Date("2026-08-19") },
+  { path: "/netsuite-partner-too-slow", lastModified: new Date("2026-08-19") },
+  { path: "/netsuite-partner-not-responsive", lastModified: new Date("2026-08-19") },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -88,10 +102,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${SITE_URL}/case-studies/${slug}`,
       lastModified: SITE_LAUNCH_DATE,
     })),
-    ...resources.map((resource) => ({
-      url: `${SITE_URL}/resources/${resource.slug}`,
-      lastModified: new Date(resource.publishedAt),
-    })),
+    ...resources
+      .filter((resource) => !REDIRECTED_RESOURCE_SLUGS.has(resource.slug))
+      .map((resource) => ({
+        url: `${SITE_URL}/resources/${resource.slug}`,
+        lastModified: new Date(resource.publishedAt),
+      })),
     ...posts.map((post) => ({
       url: `${SITE_URL}/blog/${post.slug}`,
       lastModified: new Date(post.updated ?? post.date),
