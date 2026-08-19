@@ -51,6 +51,7 @@ Update this file every time a new post is published. No topic should repeat.
 | 43 | Oracle Support vs. consulting partner — not either/or; Oracle covers the platform layer (bugs, standard features, Engineering escalation); a partner covers the account-specific layer (SuiteScript, workflows, integrations, custom configuration); most live accounts need both | Admin / Support |
 | 44 | FSM configuration needs change control — don't change FSM directly in Production without Sandbox testing; only one active configuration at a time; test changes recommended by Support or partners before applying; validate mobile, Schedule Board, scripts, and notifications after every significant change | Field Service Management |
 | 49 | AP Aging vs Vendor Balance mismatch — the two numbers can legitimately differ; check As of Date and Aging Method (Due Date vs Transaction Date) before looking for a missing transaction | Finance / Admin |
+| 50 | Transaction Date vs Posting Period — the GL can be correct while a financial report looks wrong; Transaction Date is when it happened, Posting Period is which period takes the financial impact; when a period is closed, NetSuite posts to the next open period per account settings; check Posting Period and Accounting Period status first | Finance / Admin |
 
 ---
 

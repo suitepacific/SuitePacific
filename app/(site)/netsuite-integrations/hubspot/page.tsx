@@ -139,7 +139,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/netsuite-integrations/hubspot" },
   openGraph: {
     title: "NetSuite HubSpot Integration",
-    description: "Connect HubSpot CRM to NetSuite ERP with contact sync, deal-to-order creation, and invoice status visibility. Custom or native connector — scoped to your requirements.",
+    description: "Connect HubSpot CRM to NetSuite ERP with contact sync, deal-to-order creation, and invoice status visibility. Custom or native connector, scoped to your requirements.",
     url: "https://suitepacific.com/netsuite-integrations/hubspot",
     type: "website",
     images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],

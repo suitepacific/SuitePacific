@@ -139,7 +139,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/netsuite-integrations/salesforce" },
   openGraph: {
     title: "NetSuite Salesforce Integration",
-    description: "Connect Salesforce CRM to NetSuite ERP with bidirectional account sync, opportunity-to-order creation, and invoice visibility. Custom build or Celigo — we scope both.",
+    description: "Connect Salesforce CRM to NetSuite ERP with bidirectional account sync, opportunity-to-order creation, and invoice visibility. Custom build or Celigo: we scope both.",
     url: "https://suitepacific.com/netsuite-integrations/salesforce",
     type: "website",
     images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],

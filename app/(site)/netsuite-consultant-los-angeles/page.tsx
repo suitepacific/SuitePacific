@@ -105,7 +105,7 @@ const FAQ = [
   {
     question: "Does SuitePacific work with companies in Los Angeles?",
     answer:
-      "Yes. SuitePacific works with Los Angeles-area companies on a remote basis — apparel brands, e-commerce operations, media companies, and professional services firms that are already live on NetSuite and need ongoing support or development.",
+      "Yes. SuitePacific works with Los Angeles-area companies on a remote basis: apparel brands, e-commerce operations, media companies, and professional services firms that are already live on NetSuite and need ongoing support or development.",
   },
   {
     question: "What NetSuite challenges are common for LA apparel and fashion companies?",

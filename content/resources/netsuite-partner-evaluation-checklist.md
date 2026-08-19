@@ -49,7 +49,7 @@ The billing model determines how much overhead is added to every request. This i
 - [ ] Is pricing per hour, per project, or a fixed monthly retainer?
 - [ ] If per hour: what is the minimum billable increment per request?
 - [ ] Are there minimum engagement requirements per request (e.g., a 4-hour minimum for any change)?
-- [ ] What is the process for a small request — a field change, a saved search update, a script fix?
+- [ ] What is the process for a small request: a field change, a saved search update, a script fix?
 - [ ] Under a retainer: what is included and what triggers additional billing?
 - [ ] What is the contract minimum and what are the exit terms?
 
@@ -63,11 +63,11 @@ Response time commitments are easy to make and hard to verify until you need the
 
 - [ ] What is the committed response time for a production outage?
 - [ ] What is the committed response time for a non-urgent request?
-- [ ] How do you contact the support partner for an urgent issue — email, phone, Slack?
+- [ ] How do you contact the support partner for an urgent issue: email, phone, Slack?
 - [ ] What happens during holidays or if your assigned consultant is out?
 - [ ] Can you speak to a current client about their experience with urgent issue response?
 
-**Red flag:** SLA commitments that are vague ("we respond quickly") or that describe a ticket system as the primary escalation path for urgent production issues. Urgent issues in a live account require direct access to someone who knows the account — not a ticket number.
+**Red flag:** SLA commitments that are vague ("we respond quickly") or that describe a ticket system as the primary escalation path for urgent production issues. Urgent issues in a live account require direct access to someone who knows the account, not a ticket number.
 
 ---
 
@@ -76,7 +76,7 @@ Response time commitments are easy to make and hard to verify until you need the
 NetSuite releases twice a year. Accounts without proactive release review accumulate script failures and workflow breaks after each cycle.
 
 - [ ] Does the firm review the release preview in your Sandbox before each bi-annual NetSuite release?
-- [ ] Who does that review — the same person working on your account, or a separate team?
+- [ ] Who does that review: the same person working on your account, or a separate team?
 - [ ] How are release-related issues communicated before they reach Production?
 - [ ] Does the firm proactively flag potential issues, or only respond after something breaks?
 - [ ] What is the typical turnaround on a release-related fix?

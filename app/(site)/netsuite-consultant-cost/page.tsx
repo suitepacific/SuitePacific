@@ -20,7 +20,7 @@ const MODELS = [
     name: "Independent freelance consultant",
     rate: "$75–$175/hr",
     model: "Time-and-materials or fixed project",
-    context: "Varies — one person, limited availability",
+    context: "Varies; one person, limited availability",
     minimum: "Usually none",
     notes: "Lower rates but limited capacity, coverage gaps, and no team backup.",
   },
@@ -53,7 +53,7 @@ const FAQ = [
   {
     question: "What affects NetSuite consultant cost the most?",
     answer:
-      "The four factors that affect NetSuite consultant cost the most are: (1) billing model — project-based billing adds scoping and approval overhead that inflates per-item cost; (2) firm size — large firms carry overhead (account managers, project managers, facilities) that is priced into their rates; (3) specialization — SuiteScript developers and integration specialists command higher rates than general administrators; (4) context retention — consultants who re-learn your account on every engagement cost more per completed item than those who maintain ongoing context.",
+      "The four factors that affect NetSuite consultant cost the most are: (1) billing model: project-based billing adds scoping and approval overhead that inflates per-item cost; (2) firm size: large firms carry overhead (account managers, project managers, facilities) that is priced into their rates; (3) specialization: SuiteScript developers and integration specialists command higher rates than general administrators; (4) context retention: consultants who re-learn your account on every engagement cost more per completed item than those who maintain ongoing context.",
   },
   {
     question: "How much do SuitePacific Care plans cost?",

@@ -115,7 +115,7 @@ const FAQ = [
   {
     question: "Can a remote NetSuite consultant work as effectively as a local one?",
     answer:
-      "Yes. NetSuite development, configuration, and support is entirely remote — the work happens inside your NetSuite account, not at your office. A remote consultant with direct communication and a fast turnaround model is more efficient than a local firm with an account manager intermediary and a weekly meeting cadence.",
+      "Yes. NetSuite development, configuration, and support is entirely remote; the work happens inside your NetSuite account, not at your office. A remote consultant with direct communication and a fast turnaround model is more efficient than a local firm with an account manager intermediary and a weekly meeting cadence.",
   },
   {
     question: "What does a NetSuite post-go-live engagement look like for a Bay Area startup?",

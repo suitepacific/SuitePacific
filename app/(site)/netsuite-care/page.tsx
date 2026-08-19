@@ -232,7 +232,7 @@ export default function NetSuiteCarePage() {
         </FadeIn>
       </section>
 
-      {/* Lead form — top */}
+      {/* Lead form - top */}
       <section id="lead-form" className="mx-auto max-w-3xl px-6 lg:px-8 mt-10">
         <div className="rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <LeadFormLight />

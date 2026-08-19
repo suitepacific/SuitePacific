@@ -389,7 +389,7 @@ export default function AcsAlternativePage() {
                       row.covered === "No" ? "text-red-500" :
                       "text-brand-400 italic"
                     }`}>
-                      {row.covered === "" ? "—" : row.covered}
+                      {row.covered === "" ? "-" : row.covered}
                     </td>
                   </tr>
                 ))}
@@ -397,7 +397,7 @@ export default function AcsAlternativePage() {
             </table>
           </div>
           <p className="mt-4 text-sm text-brand-400">
-            The work that actually fixes things — the SuiteScript behind the workflow, the integration that keeps dropping records, the new automation — is out of scope. That work goes back to whoever built it, or sits unresolved.
+            The work that actually fixes things (the SuiteScript behind the workflow, the integration that keeps dropping records, the new automation) is out of scope. That work goes back to whoever built it, or sits unresolved.
           </p>
         </div>
 

@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd, FaqJsonLd, OrganizationJsonLd, VideoObjectJsonLd, ArticleJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
+import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL, LEGAL_NAME } from "@/lib/content";
 
 const FAQ = [
@@ -95,6 +96,10 @@ export default function ComparisonPage() {
           align="left"
         />
 
+        <div className="mt-8">
+          <LeadFormLight />
+        </div>
+
         <div className="prose prose-blue mt-12 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
           <p>
             “NetSuite consulting” covers two genuinely different jobs that happen to use the
@@ -162,14 +167,8 @@ export default function ComparisonPage() {
 
         <ServiceFaqSection items={FAQ} />
 
-        <div className="mt-14 pt-10 border-t border-brand-50 text-center">
-          <p className="text-brand-900 font-semibold">Already live on NetSuite?</p>
-          <p className="mt-2 text-sm text-brand-400">
-            That’s exactly who we work with. Let’s talk about what’s next.
-          </p>
-          <div className="mt-6">
-            <Button href="/contact">Book a Free Consultation</Button>
-          </div>
+        <div className="mt-14">
+          <LeadFormLight />
         </div>
       </div>
     </main>

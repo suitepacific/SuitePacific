@@ -7,7 +7,7 @@ tags: ["Post-Go-Live", "Consulting", "Account Optimization"]
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
-<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite post-go-live support is the ongoing technical engagement that keeps a live NetSuite account running and evolving after the implementation project closes. It covers SuiteScript development, SuiteFlow workflow automation, saved searches and dashboards, integrations maintenance, account optimization, and administration — everything a live account needs as business requirements change and the account grows. It is distinct from NetSuite's own platform support (which covers product bugs and standard functionality) and from implementation work (which is scoped to go-live). Most businesses on NetSuite need post-go-live support within six to twelve months of going live, because the account needs to change faster than internal resources can manage on their own.</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite post-go-live support is the ongoing technical engagement that keeps a live NetSuite account running and evolving after the implementation project closes. It covers SuiteScript development, SuiteFlow workflow automation, saved searches and dashboards, integrations maintenance, account optimization, and administration: everything a live account needs as business requirements change and the account grows. It is distinct from NetSuite's own platform support (which covers product bugs and standard functionality) and from implementation work (which is scoped to go-live). Most businesses on NetSuite need post-go-live support within six to twelve months of going live, because the account needs to change faster than internal resources can manage on their own.</p>
 </div>
 
 When a NetSuite implementation closes, the account is live and configured for how the business operated at the time of go-live. It is not configured for how the business will operate in two years. Processes change. Integrations need maintenance. Staff turns over and roles are updated. New requirements emerge. Each NetSuite release twice a year changes something that may interact with existing customizations.
@@ -40,7 +40,7 @@ Post-go-live support is most commonly structured as a monthly retainer: a fixed 
 
 The alternative is time-and-materials (also called break-fix): you engage a consultant when something is needed, pay per hour or per project, and the relationship ends when that item is complete. Break-fix is simpler to start but more expensive in practice for accounts with ongoing needs, because every engagement starts from scratch with the consultant re-learning the account.
 
-For accounts with a steady stream of ongoing work — new development requests, recurring administration, maintenance — a retainer is typically more efficient once you account for the re-onboarding overhead on each break-fix engagement.
+For accounts with a steady stream of ongoing work (new development requests, recurring administration, maintenance) a retainer is typically more efficient once you account for the re-onboarding overhead on each break-fix engagement.
 
 ## What the first 90 days look like
 

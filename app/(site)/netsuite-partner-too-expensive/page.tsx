@@ -11,7 +11,7 @@ const COST_DRIVERS = [
   {
     label: "Project-based billing",
     detail:
-      "Every request — a script fix, a saved search, a workflow update — requires a scoping call, a proposal, and an approval cycle. The overhead of that process often costs more than the work itself for small changes.",
+      "Every request (a script fix, a saved search, a workflow update) requires a scoping call, a proposal, and an approval cycle. The overhead of that process often costs more than the work itself for small changes.",
   },
   {
     label: "Account manager relay",

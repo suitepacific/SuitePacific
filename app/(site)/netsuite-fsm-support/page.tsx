@@ -91,7 +91,7 @@ const WHY_SP = [
     icon: Zap,
     title: "Same-day response for live FSM failures",
     description:
-      "A sync failure during an active field day, technicians unable to complete work orders, or permissions that have silently dropped — these are urgent. We prioritize live FSM issues and respond same-business-day.",
+      "A sync failure during an active field day, technicians unable to complete work orders, or permissions that have silently dropped; these are urgent. We prioritize live FSM issues and respond same-business-day.",
   },
   {
     icon: Users,
@@ -133,7 +133,7 @@ const FAQ = [
   {
     question: "We received an Oracle notification about an upcoming FSM bundle update. What should we do?",
     answer:
-      "Review the bundle release notes to identify breaking changes and areas requiring administrator action. Apply the bundle in Sandbox and test the specific areas affected: mobile event maps, field expressions, permission rules, and downstream workflow triggers. Run a full work order cycle in Sandbox with a test technician account before the update reaches Production. If the review surfaces issues you do not know how to resolve, contact us — that is exactly the scenario we help with.",
+      "Review the bundle release notes to identify breaking changes and areas requiring administrator action. Apply the bundle in Sandbox and test the specific areas affected: mobile event maps, field expressions, permission rules, and downstream workflow triggers. Run a full work order cycle in Sandbox with a test technician account before the update reaches Production. If the review surfaces issues you do not know how to resolve, contact us; that is exactly the scenario we help with.",
   },
   {
     question: "Our FSM technicians say the mobile app looks different after an update. Is something broken?",
@@ -153,7 +153,7 @@ const FAQ = [
   {
     question: "Do we need a retainer, or can SuitePacific help with a one-time FSM issue?",
     answer:
-      "Both. We work with new clients on one-time FSM issues — no retainer required to start. For a single bundle-update review, a specific sync failure, or a configuration problem, we charge on a project basis. Existing retainer clients receive FSM support as part of their ongoing engagement, which means each bundle update is reviewed proactively rather than after something breaks.",
+      "Both. We work with new clients on one-time FSM issues (no retainer required to start). For a single bundle-update review, a specific sync failure, or a configuration problem, we charge on a project basis. Existing retainer clients receive FSM support as part of their ongoing engagement, which means each bundle update is reviewed proactively rather than after something breaks.",
   },
 ];
 

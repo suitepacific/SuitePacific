@@ -11,7 +11,7 @@ const FAQ = [
   {
     question: "What should I do if my NetSuite partner is not responding?",
     answer:
-      "Start evaluating a replacement now rather than waiting for the situation to improve. Begin by documenting what is running in your account so a new partner can onboard independently. Identify who holds administrator access internally. Then evaluate replacement partners — look specifically for firms whose primary model is ongoing retainer support, not project delivery. A transition typically takes two to four weeks from first contact to active work.",
+      "Start evaluating a replacement now rather than waiting for the situation to improve. Begin by documenting what is running in your account so a new partner can onboard independently. Identify who holds administrator access internally. Then evaluate replacement partners; look specifically for firms whose primary model is ongoing retainer support, not project delivery. A transition typically takes two to four weeks from first contact to active work.",
   },
   {
     question: "Can I switch to a new NetSuite partner if my current one is unresponsive?",

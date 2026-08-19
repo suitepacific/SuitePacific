@@ -12,7 +12,7 @@ const CLIENT_LOGOS: { src: string; alt: string; width?: number; darkBg?: boolean
   { src: "/logos/clients/Patriot_Gold_Group_white_Logo.png", alt: "Patriot Gold Group", width: 140, darkBg: true },
 ];
 
-// How many times to duplicate — keep even, increase for fewer logos.
+// How many times to duplicate - keep even, increase for fewer logos.
 const PASSES = 4;
 
 export function SocialProof() {
