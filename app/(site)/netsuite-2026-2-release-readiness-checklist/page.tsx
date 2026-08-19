@@ -257,14 +257,6 @@ export default function ReleaseChecklistPage() {
           2026.2 Release Preview Notes
         </p>
 
-        {/* Lead form top */}
-        <div className="mt-8 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
-          <LeadFormLight />
-        </div>
-        <p className="mt-3 text-xs text-brand-400">
-          NetSuite-certified · Sandbox-first testing · Direct access, no ticket system
-        </p>
-
         {/* ORACLE VS SUITEPACIFIC */}
         <div className="mt-16 pt-10 border-t border-brand-100">
           <h2 className="text-xl font-bold text-brand-900 mb-2">
@@ -399,6 +391,16 @@ export default function ReleaseChecklistPage() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Lead form - after tech risk hotspots, before full checklist */}
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <p className="text-sm font-semibold text-brand-900 mb-1">Working through 2026.2 prep and want a second set of eyes?</p>
+          <p className="text-xs text-brand-400 mb-4">SuitePacific can identify which changes affect your specific account and customizations.</p>
+          <LeadFormLight />
+          <p className="mt-2 text-xs text-brand-300">
+            NetSuite-certified · Sandbox-first · Direct access, no ticket system
+          </p>
         </div>
 
         {/* FULL CHECKLIST */}
