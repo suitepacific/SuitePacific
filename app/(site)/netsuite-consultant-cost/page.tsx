@@ -103,13 +103,6 @@ export default function NetSuiteConsultantCostPage() {
           align="left"
         />
 
-        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
-          <LeadFormLight />
-        </div>
-        <p className="mt-3 text-xs text-brand-400">
-          SuitePacific Care from $799/month &middot; No SOW per request &middot; 3-month minimum
-        </p>
-
         <p className="mt-8 text-sm text-brand-400 leading-relaxed">
           The most common mistake when evaluating NetSuite consultant cost is comparing hourly
           rates without accounting for the overhead that inflates the cost per completed item.
@@ -140,6 +133,13 @@ export default function NetSuiteConsultantCostPage() {
             ))}
           </div>
         </div>
+
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <LeadFormLight />
+        </div>
+        <p className="mt-3 text-xs text-brand-400">
+          SuitePacific Care from $799/month &middot; No SOW per request &middot; 3-month minimum
+        </p>
 
         {/* Re-onboarding cost */}
         <div className="mt-14">

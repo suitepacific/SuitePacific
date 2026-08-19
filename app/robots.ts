@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: "/",
       },
       {
-        userAgent: ["GPTBot", "OAI-SearchBot", "ClaudeBot", "PerplexityBot"],
+        userAgent: ["GPTBot", "OAI-SearchBot", "ClaudeBot", "PerplexityBot", "Google-Extended"],
         allow: "/",
         disallow: [
           "/suitecompare/login",
