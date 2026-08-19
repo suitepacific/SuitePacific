@@ -1,0 +1,68 @@
+---
+title: "FSM Mobile Custom Tabs and Duplicate Records: Using Idempotency Fields"
+description: "Custom FSM Mobile tabs that create records can produce duplicates when technicians save more than once. The idempotency field prevents this without adding visible complexity to the technician's workflow."
+category: "Field Service Management"
+tags: ["Field Service Management", "Mobile", "Configuration"]
+publishedAt: "2026-08-20"
+updatedAt: "2026-08-20"
+linkedinDay: 45
+---
+
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Custom FSM Mobile tabs that create records need an idempotency field to prevent duplicates. When a technician submits a form on a custom tab, FSM uses the idempotency field to check whether the record already exists before creating a new one. Without it, a technician who taps Save twice, or whose device submits the form twice due to a connectivity retry, creates two records instead of one. The idempotency field does not have to be visible to the technician — it can be hidden from the mobile form while still functioning as the duplicate-prevention mechanism. Configure this before the tab goes to production; retrofitting it after discovering duplicates requires data cleanup in addition to the configuration fix.</p>
+</div>
+
+## What Is an Idempotency Field in FSM Mobile?
+
+When you build a custom FSM Mobile tab that creates records (such as work orders, custom records, or other NetSuite transaction types), FSM provides an option to designate an idempotency field on that tab. This field stores a unique value that FSM checks before creating a new record.
+
+If the idempotency value already exists on a record of that type, FSM returns the existing record instead of creating a new one. If no record with that value exists, FSM creates the record and stores the idempotency value on it.
+
+The result is that submitting the same form twice produces one record, not two. This matters in field conditions where connectivity is intermittent and the FSM Mobile app may retry a submission that appeared to fail.
+
+## When Does Duplicate Record Creation Happen?
+
+Duplicate records on custom FSM Mobile tabs occur in two common patterns:
+
+**Double-tap on Save.** A technician taps the Save button, the response is slow due to network conditions, and they tap again assuming the first tap did not register. Both taps submit the form. Without an idempotency field, both submissions create records.
+
+**Offline sync retry.** A technician creates a record while offline. The device queues the creation and attempts to sync when connectivity is restored. In some configurations, the sync logic retries submissions that did not receive a confirmed response, resulting in the same record being submitted more than once.
+
+Both of these scenarios are more likely in field environments with unreliable connectivity, which is precisely the environment FSM is designed for.
+
+## How to Configure the Idempotency Field
+
+The idempotency field is configured on the custom tab definition within the FSM Configuration record.
+
+The field you designate must be:
+- A field on the record type the custom tab creates
+- Capable of storing a unique value (typically a text field)
+- Not required by other business logic to contain specific content
+
+FSM will populate this field automatically when the form is submitted. You do not need to wire up any SuiteScript or workflow logic to make the idempotency check work; it is handled by FSM's record creation logic on the custom tab.
+
+## Does the Idempotency Field Have to Be Visible to Technicians?
+
+No. The idempotency field can be hidden from the mobile form. FSM will still populate it when the record is created, and will still use it to detect duplicates on subsequent submissions.
+
+This means you can implement duplicate prevention without adding any visible complexity to the technician's workflow. The technician fills out the form the same way they always have; the idempotency logic operates behind the scenes.
+
+To hide the field from the mobile form, configure its visibility setting on the custom tab to hidden. Confirm in Sandbox that the field is being populated on created records even when hidden, and that a second submission of the same form returns the existing record rather than creating a new one.
+
+## Why Configure This Before Going to Production?
+
+Configuring the idempotency field before the tab goes to production is significantly easier than fixing duplicate records after they have been created in production.
+
+Once duplicate records exist, the cleanup process involves:
+- Identifying which records are duplicates and which is the record of record
+- Merging or deleting the duplicate records without losing data that may have been entered on the duplicate
+- Updating any related records that reference the duplicate
+
+All of that work is avoidable by configuring the idempotency field in Sandbox before the tab goes live.
+
+## Related Resources
+
+- [NetSuite FSM Configuration Change Control Checklist](/resources/netsuite-fsm-configuration-change-control): the Sandbox-first workflow for all FSM configuration changes, including custom tab additions.
+- [NetSuite FSM Bundle Update 2026.07.1 Checklist](/resources/netsuite-fsm-bundle-update-2026-checklist): what changed in the most recent FSM managed bundle update.
+- [NetSuite FSM Support](/netsuite-fsm-support): post-go-live FSM support and troubleshooting.
