@@ -1,115 +1,83 @@
 ---
-title: "How to Switch NetSuite Partners Without Losing Momentum"
-description: "A practical guide to changing NetSuite support partners: the right sequence, what to document, how to overlap the handoff, and the mistakes that create unnecessary coverage gaps."
-date: "2026-08-18"
-tags: ["Post-Go-Live", "Partner Replacement"]
+title: "How to Switch NetSuite Partners Without Losing Account Context"
+description: "Switching NetSuite partners after go-live is straightforward when done in the right order. Here is what the transition actually looks like and how to preserve account knowledge during the handoff."
+date: "2026-08-20"
+tags: ["Partner Replacement", "Post-Go-Live", "Consulting"]
 ---
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
-<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The key to switching NetSuite partners without disruption: start the new partner before the old one is off the account. A four-to-six week overlap gives the new partner time to review what was built independently, identify open issues, and establish account context before they are the only resource. The transition itself takes two to four weeks from first contact to active work. Begin by auditing what is currently running in your account under Customization &gt; Scripting and Customization &gt; Workflow, then document any work in progress or known issues before the previous engagement closes. Start evaluating replacements four to eight weeks before your expected transition date, not after. The most common and most expensive mistake in a NetSuite partner transition is waiting until the previous partner has fully disengaged before starting the evaluation process, which virtually guarantees a coverage gap.</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Switching NetSuite partners does not require NetSuite's involvement. You select a new provider, grant them admin access to your account, and the previous partner's access is removed. The main risk in a partner switch is losing account context: documentation of why customizations were built, how integrations are structured, and what decisions were made during implementation. The transition process should prioritize capturing that context before the previous partner's access is removed, ideally through a structured knowledge transfer session rather than just credential handoff.</p>
 </div>
 
-Switching NetSuite partners is not technically complicated. Your account, your customizations, and your data all stay exactly where they are. What makes transitions disruptive is not the switch itself but the sequence: starting too late, skipping the overlap, or handing over too little for the new partner to orient quickly.
+The mechanics of switching NetSuite partners are simple. The knowledge transfer is where most transitions go wrong.
 
-Done in the right order, a partner transition is a low-disruption event. Done in the wrong order, it creates a coverage gap that compounds every week it sits open.
+Companies that switch partners after go-live often do so because the relationship has degraded to the point where communication is difficult. When communication is already strained, asking the outgoing partner to document their work thoroughly is unlikely to produce a complete handoff. The incoming partner then inherits an account with gaps in its history.
 
-This is the right order.
+This guide walks through what a well-executed partner switch looks like and how to minimize the knowledge loss.
 
-## Step 1: What should you audit before switching NetSuite partners?
+## Step 1: Select the new partner before notifying the current one
 
-The most important thing to do before a partner transition is understand what is in your account. Not to document it perfectly, but to have a current-state inventory that answers three questions: what is active, what is known to have issues, and what nobody on your team can explain.
+The first step is selecting the incoming provider and getting them oriented on your account before notifying the current partner. This matters for two reasons.
 
-In NetSuite, active script deployments are visible under Customization > Scripting > Script Deployments. Filter by status to separate active from inactive. Workflows are under Customization > Workflow > Workflows; the status column shows which are active. Check the list of active integrations if your account connects to external systems.
+First, the incoming provider can tell you what they need to know about the account before they take over. Having a clear list of questions going into a knowledge transfer session produces a better outcome than a free-form handoff.
 
-You do not need to understand each script or workflow in detail. The goal is a written list that a new partner can use as a starting point. Note anything that is known to be problematic: scripts that throw errors intermittently, workflows that seem to fire incorrectly, integrations that require manual intervention. This inventory becomes the new partner's onboarding brief and shapes how they prioritize the first month.
+Second, once you notify the current partner that you are leaving, their incentive to cooperate on knowledge transfer decreases. Some partners handle this professionally regardless; others become less responsive once they know the relationship is ending. Having the incoming provider engaged first means you can move quickly after the notification.
 
-If your current partner is still engaged, ask them to produce this list. A partner who resists or is unable to produce a basic inventory of what they built and deployed is itself a sign worth noting.
+## Step 2: Audit what documentation exists
 
-## Step 2: What should you document before your current NetSuite partner disengages?
+Before the handoff, inventory what written documentation exists about the account. This typically includes:
 
-Every implementation and ongoing engagement closes with items that are not fully resolved. Before your previous partner disengages, get a clear accounting of:
+**Implementation project files:** Statement of work, design documents, data migration mapping files, test scripts. These usually live with the implementation partner, not in the NetSuite account itself.
 
-**Work currently in Sandbox.** Any development that has been built but not yet deployed to Production exists only in Sandbox. If the partner disengages before that work is promoted, it either needs to be deployed before they leave or it needs to be documented well enough for a new partner to evaluate and deploy it independently. Confirm the status of everything in Sandbox and agree on a disposition before the engagement ends.
+**SuiteScript documentation:** Comments in script code, any external documentation about what scripts do and why they were built. Check the File Cabinet in NetSuite for any documentation files the partner stored there.
 
-**Open issues that were scoped but not started.** Items that were discussed, scoped, or acknowledged but never moved into active development should be clearly listed with whatever context was established. A new partner inheriting an undocumented backlog has to re-scope each item from scratch.
+**Integration documentation:** Architecture diagrams, field mappings, credential locations, and contact information for third-party integration platforms.
 
-**Known workarounds.** Situations where something in the account does not work as intended and your team has built a manual workaround around it are important to surface before the transition. These workarounds often disappear from view over time; the people who created them move on or forget why the workaround existed. Document them explicitly so the new partner knows what they are inheriting.
+**Configuration decisions:** Records of why specific setup choices were made — why a particular subsidiary structure was chosen, why certain workflows were built the way they were, why specific custom fields exist.
 
-**Upcoming release items.** If a NetSuite release is coming within 60 days of the transition, confirm whether the previous partner identified any compatibility concerns with your customizations. If they did, that information needs to transfer. If they did not review the release at all, that is an immediate priority for the new partner.
+Most accounts have less documentation than they should. Identifying the gaps before the handoff tells you what questions to ask during the knowledge transfer session.
 
-## Step 3: When should you start evaluating a NetSuite replacement partner?
+## Step 3: Request a knowledge transfer session
 
-The most common mistake in a partner transition is sequential thinking: wait for the old partner to disengage, then start evaluating replacements. This approach virtually guarantees a coverage gap.
+A knowledge transfer session is a structured call or series of calls where the outgoing partner walks through the account configuration with the incoming provider present. This is more valuable than document handoff alone because it captures the reasoning behind decisions, not just the decisions themselves.
 
-Evaluating a new partner takes time: initial conversations, reference checks, reviewing their approach to onboarding, understanding their pricing model. If you start this process after the previous engagement ends, you are running without coverage while the evaluation happens.
+A useful knowledge transfer agenda covers:
 
-Start the evaluation process four to eight weeks before your expected transition date. This gives you time to evaluate options without pressure, and it positions you to start an overlap period before the previous partner is fully off.
+- SuiteScript customizations: what each script does, what triggers it, what it was built to solve, and any known limitations or edge cases
+- Workflow configuration: the same for complex workflow logic
+- Integration architecture: how each integration works, where credentials are stored, what the failure modes are, and how errors have been handled historically
+- Ongoing issues: anything that has been discussed but not yet resolved, known limitations in the current configuration, or pending requests that were in progress
 
-When evaluating candidates, the questions that separate strong ongoing-support partners from project-delivery firms:
+The incoming provider should ask specific questions rather than accepting a high-level overview. The goal is institutional knowledge transfer, not a demo.
 
-**How do you document and retain account knowledge?** A partner that cannot answer this clearly is likely to re-onboard from scratch each time, which drives up the cost and time of every request.
+## Step 4: Grant the new partner access before removing the old one
 
-**What is your process for handling requests without a statement of work?** Ongoing support should not require a formal scoping document for routine work. If the answer is that most requests go through a scoping process, the model is project-based, not support-based.
+Create admin-level login credentials or an administrator role for the incoming provider before removing the outgoing partner's access. There should be no gap where the account has no active support partner.
 
-**How do you handle NetSuite releases?** The answer should include reviewing release notes for compatibility with existing customizations and testing in Sandbox before the release reaches Production. If the answer is reactive (addressing issues after they appear in Production), the partner is not actively maintaining the account.
+In NetSuite, this means:
+- Creating a new user record for the incoming provider's team with an appropriate role
+- If the incoming provider uses token-based authentication for scripts, setting up new TBA credentials
+- Confirming the incoming provider can access the File Cabinet and all relevant saved searches
 
-**Who will actually be doing the work?** In larger firms, the person you speak with during evaluation is often not the person who will handle your account. Understanding who will be your day-to-day contact and whether that person is a senior developer or a junior resource matters significantly for the quality of ongoing support.
+Only after the incoming provider confirms they have full access should the outgoing partner's access be removed.
 
-## Step 4: How long should you overlap NetSuite partners during the transition?
+## Step 5: Run a parallel review period
 
-The overlap is the single most important element of a clean transition.
+The first thirty to sixty days with a new provider are the highest-risk period. The incoming provider is still building familiarity with the account, and issues that the outgoing partner knew about may not have been fully documented.
 
-Starting an engagement with a new partner while your previous contract is still active accomplishes three things. It eliminates the coverage gap entirely. It gives the new partner time to review the account while you and the previous partner may still be reachable with specific questions. And it surfaces any issues in the account that the previous partner was aware of but had not communicated.
+During this period, route all requests through the new provider but pay attention to their questions. The questions they ask reveal the gaps in the knowledge transfer. If the same context keeps coming up repeatedly, it is worth writing it down as a reference document for future use.
 
-A four-to-six week overlap is sufficient for most accounts. The new partner uses the first two weeks for independent account review: reading scripts, examining workflow configurations, reviewing saved searches, checking integration health, and building their own understanding of what was built and why. By week three, active work on any open issues begins. By the end of the overlap, the new partner has enough context to handle routine requests without needing input from the previous team.
+## What the incoming provider should deliver at the start
 
-Overlapping costs two partner fees for one to two months. This cost is consistently lower than the cost of a coverage gap: production issues that go unaddressed, accumulated backlog, a NetSuite release that passes without review, and the extended onboarding time that results when a new partner inherits an undocumented account with no context transfer.
+A good incoming provider does not wait to be asked for documentation. Within the first thirty to sixty days, they should produce their own account summary: the key customizations, the integration architecture, the areas they identified as having technical debt or risk. This document serves as the institutional knowledge baseline going forward.
 
-## Step 5: What should you give a new NetSuite partner during onboarding?
-
-A handoff document is useful but not sufficient on its own. Strong ongoing-support partners do not rely solely on what was handed to them; they review the account directly.
-
-What is useful to provide:
-
-- The inventory from Step 1 (active scripts, workflows, integrations)
-- The open issue list from Step 2 (in-progress work, known issues, workarounds)
-- Any documentation produced by the previous partner during the engagement
-- Access to any project management tools where requests and development history were tracked
-- Context on business processes: why certain customizations exist, what they are designed to handle, what edge cases are known
-
-What a good partner should find themselves without being told:
-
-- Script deployments with error histories that indicate recurring problems
-- Workflows with entry conditions broader than intended (evaluating on every save rather than on specific triggers)
-- Saved searches used in workflows or dashboards that run without indexed criteria
-- Custom fields that exist on no active form and carry no data
-- Integration configurations that have not synced recently or that are generating errors
-
-If the new partner's onboarding review does not surface issues of this type in most inherited accounts, their review is not thorough enough.
-
-## Step 6: What should you verify before removing your previous NetSuite partner's access?
-
-Before ending the previous engagement completely, confirm the following with the new partner:
-
-- They have reviewed the account independently and have a current-state picture of what is running
-- Any urgent open issues have been assessed and are in the active queue
-- The upcoming NetSuite release has been reviewed for compatibility with existing customizations
-- All access credentials they need are in their possession
-- The communication process for ongoing requests is established and working
-
-The final step is removing the previous partner's administrator access from the account. Do this after the new partner has confirmed they have everything they need. Removing access before that confirmation creates a scenario where the previous partner becomes unreachable at the same time a question about their work arises.
-
-## What mistakes cause unnecessary disruption when switching NetSuite partners?
-
-**Waiting until something breaks to start the evaluation.** An urgent production issue is the worst time to be evaluating partner options. You end up choosing under pressure, which typically means choosing the first available resource rather than the right long-term fit.
-
-**Assuming the previous partner will hand everything over.** Some partners produce thorough handoff documentation. Many do not. Your account review process should not depend on the quality of what the previous partner provides.
-
-**Skipping the overlap to save one month of dual fees.** A coverage gap costs more than an overlap. The comparison is one month of dual fees versus weeks or months of accumulated backlog, unreviewed releases, and the extended onboarding time that results when there is no context transfer.
-
-**Choosing a replacement that is also a project-delivery firm.** If the previous partner's model was the problem, choosing a replacement with the same model produces the same outcome. Look specifically for partners whose primary model is ongoing retainer support, not project delivery.
+For what post-go-live support looks like once the transition is complete, see [NetSuite post-go-live support](/netsuite-post-go-live-support) and the [NetSuite Care plans](/netsuite-care) for retainer options.
 
 ---
 
-For a structured checklist of everything to cover before, during, and after a partner transition, the [NetSuite partner transition checklist](/resources/netsuite-partner-transition-checklist) has the full detail. For an overview of what the transition looks like and what to expect from the first 90 days with a new partner, the [NetSuite partner replacement](/netsuite-partner-replacement) page covers the process end to end. If you are evaluating what ongoing support costs from a boutique partner built for this type of work, the [NetSuite Care pricing page](/netsuite-care) has the monthly plan detail.
+## Related reading
+
+- [Signs it is time to replace your NetSuite partner](/blog/signs-time-to-replace-netsuite-partner): the specific patterns that indicate the relationship has run its course.
+- [How to evaluate a NetSuite post-go-live support partner](/blog/how-to-evaluate-netsuite-support-partner): what to look for when selecting a replacement and how to compare options.
+- [NetSuite partner replacement](/netsuite-partner-replacement): the service page with more on what SuitePacific covers for accounts transitioning from a previous partner.
