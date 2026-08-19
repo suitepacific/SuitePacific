@@ -292,6 +292,31 @@ const FAQ = [
     answer:
       "We perform an independent account review during onboarding, reading existing scripts, workflows, and configuration ourselves rather than relying on documentation from the previous provider. Overlapping the transition by starting an engagement with us while the existing contract winds down is the cleanest approach: it avoids a coverage gap and gives us time to learn the account before the handoff is complete. All customizations built by a previous provider remain in your NetSuite account. We do not use proprietary tooling or wrappers that would make prior work inaccessible.",
   },
+  {
+    question: "How much does NetSuite post-go-live support cost?",
+    answer:
+      "SuitePacific post-go-live support is priced as a fixed monthly retainer with three tiers: Care at $799 per month covering 10 hours, Care Plus at $1,499 per month covering 20 hours, and Care Pro at $2,499 per month covering 35 hours. All plans require a 3-month minimum, then continue month-to-month. Hours cover SuiteScript development, workflow automation, saved searches and dashboards, Advanced PDF templates, troubleshooting, and technical guidance. There is no Statement of Work required per request within the retainer scope. The effective hourly rate at Care Plus and Care Pro is $75 to $80 per hour, which compares favorably to large partner firms that bill $150 to $300 per hour and add re-onboarding overhead on each engagement.",
+  },
+  {
+    question: "What is the difference between NetSuite ACS and a third-party support partner?",
+    answer:
+      "NetSuite Advanced Customer Support (ACS) is Oracle's own premium support offering, priced as a percentage of your annual license fee. ACS covers configuration guidance, standard feature questions, and bug escalation to Oracle Engineering. It does not cover SuiteScript customization, third-party integrations, custom workflow logic, or account-specific design decisions. A third-party support partner covers exactly the areas ACS does not: the customization layer that is specific to your account. Most live accounts that need both platform guidance and ongoing customization work use Oracle support or ACS alongside a third-party partner, not one or the other.",
+  },
+  {
+    question: "How quickly can a new NetSuite support engagement get started?",
+    answer:
+      "Most new engagements are active within one to two weeks of the initial conversation. The first step is an intake call to understand the account scope and priority issues. We then request Administrator access and spend the first week reading existing scripts, workflows, and integrations before making any changes. The first development work typically begins in week two. If there are urgent production issues, those are triaged immediately during onboarding and do not wait for a full account review to complete.",
+  },
+  {
+    question: "What certifications should a NetSuite post-go-live support partner hold?",
+    answer:
+      "Oracle offers several NetSuite certifications. The most relevant for a post-go-live support engagement are SuiteCloud Developer II (covers SuiteScript 2.x, advanced scripting, and API integration) and Administrator Professional (covers account configuration, roles, workflows, and ongoing administration). SuiteCloud Developer II is the most technically demanding NetSuite certification and is not widely held. SuitePacific holds both. When evaluating a support partner, ask specifically whether the individual assigned to your account holds these certifications, not just the firm. Certifications at the firm level without the assigned developer holding them provide no practical assurance.",
+  },
+  {
+    question: "Can a small business afford dedicated NetSuite post-go-live support?",
+    answer:
+      "Yes. SuitePacific Care at $799 per month is structured for SMBs that need a responsive technical resource without the cost of a full-time hire or an enterprise consulting retainer. The comparison point is not a full-time NetSuite developer (which would cost $80,000 to $130,000 per year plus benefits) but an on-demand break-fix consultant billing $150 to $300 per hour with re-onboarding overhead on every engagement. For accounts that generate four or more hours of ongoing work per month, a fixed retainer at $799 is typically more cost-effective than break-fix at any comparable rate once per-request overhead is factored in.",
+  },
 ];
 
 export const metadata: Metadata = {
@@ -341,6 +366,26 @@ export default function PostGoLiveSupportPage() {
           subtitle="Ongoing development, automation, and support for companies already live on NetSuite. Your implementation partner got you there; we keep it running and growing."
           align="left"
         />
+
+        <div className="mt-6 rounded-xl border border-brand-100 bg-brand-50 p-5">
+          <p className="mb-1 text-[0.65rem] font-bold uppercase tracking-widest text-brand-400">Quick answer</p>
+          <p className="text-sm leading-relaxed text-brand-700">
+            NetSuite post-go-live support covers the ongoing development, administration, and
+            maintenance a live NetSuite account requires after the implementation partner&rsquo;s
+            engagement ends. It includes SuiteScript development, SuiteFlow workflow automation,
+            saved search and dashboard updates, third-party integration maintenance, account
+            administration, and Sandbox review before each bi-annual NetSuite release. Most live
+            accounts need this continuously: business processes change, integrations require
+            maintenance, and NetSuite releases twice a year, requiring regression testing before each
+            update reaches Production. The two main models are a managed retainer (fixed monthly
+            engagement with retained account context) and break-fix (on-demand per-incident billing
+            with no retained context). For accounts generating four or more hours of ongoing work per
+            month, a managed retainer produces a lower cost per completed item than break-fix once
+            re-onboarding overhead is factored in. SuitePacific provides post-go-live support as a
+            fixed monthly retainer starting at $799 per month with no Statement of Work required per
+            request.
+          </p>
+        </div>
 
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <LeadFormLight />
@@ -645,6 +690,24 @@ export default function PostGoLiveSupportPage() {
                 NetSuite partner replacement
               </Link>{" "}
               covers what the transition looks like when switching from an existing partner: what stays in your account, what the first 90 days look like, and how to overlap the handoff cleanly.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-partner-too-expensive" className="text-accent hover:underline">
+                Why your NetSuite partner is too expensive
+              </Link>{" "}
+              covers the five structural cost drivers that inflate ongoing support bills at large implementation firms, and how a retainer model compares on total cost.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-partner-too-slow" className="text-accent hover:underline">
+                Why your NetSuite partner is too slow
+              </Link>{" "}
+              covers the four structural reasons large partner firms deliver slowly on ongoing requests, and what delivery looks like under a retainer model.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-partner-not-responsive" className="text-accent hover:underline">
+                NetSuite partner not responsive
+              </Link>{" "}
+              covers seven signs of a responsiveness problem and what switching looks like when your current partner is difficult to reach.
             </li>
           </ul>
           <p className="text-sm font-semibold text-brand-900 mb-3 mt-6">NetSuite FSM resources</p>
