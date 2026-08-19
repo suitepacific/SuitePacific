@@ -256,6 +256,10 @@ A: First, identify which release just went live and check the release notes for 
 - [NetSuite Support Partner Evaluation Checklist](https://suitepacific.com/resources/netsuite-partner-evaluation-checklist): Six-part checklist for evaluating a NetSuite post-go-live support partner: who does the work, certification verification, billing model (SOW-per-request vs. retainer), response time and urgent issue handling, release review process, and documentation and offboarding terms; includes a good-fit vs. poor-fit summary table and red flags for each section.
 - [NetSuite Support Partner Onboarding Checklist](https://suitepacific.com/resources/netsuite-support-partner-onboarding-checklist): What needs to happen in the first 30 days of a new post-go-live support engagement: access setup (NetSuite Administrator role, integration platforms, communication channels), context handoff (documentation, open issues, in-progress work), what the partner should deliver in Week 1-2, how to establish the working relationship, and an end-of-month-one review checklist.
 
+## Release Readiness
+
+- [NetSuite 2026.2 Release Readiness Checklist](https://suitepacific.com/netsuite-2026-2-release-readiness-checklist): 44+ practical checkpoints for NetSuite 2026.2 across Finance, Integrations, SuiteScript, Manufacturing, Banking, Inventory, Authentication, Reporting, CPQ, and SuiteCloud Development. Each item identifies what Oracle changed, why it matters to live accounts, and what to test in Release Preview before Production. Includes 9 Critical items (NLAuth end-of-support, TBA deprecation, OAuth 2.0 PKCE, SuiteQL sort change, Advanced BOM storage change, zero-quantity manufacturing components, CPQ Configurator migration, SuiteCloud SDK availability, SuiteTax on vendor term discounts, externally rated usage billing). Downloadable Excel workbook with 6 tabs (Executive Summary, Full Checklist, Technical, Finance, Operations, Sign-Off). Based on Oracle NetSuite 2026.2 Release Preview Notes, Revision Date July 13 2026.
+
 ## Contact
 
 - Consultation booking: https://suitepacific.com/contact

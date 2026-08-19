@@ -78,6 +78,7 @@ const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/netsuite-consultant-cost", lastModified: new Date("2026-08-19") },
   { path: "/netsuite-partner-too-slow", lastModified: new Date("2026-08-19") },
   { path: "/netsuite-partner-not-responsive", lastModified: new Date("2026-08-19") },
+  { path: "/netsuite-2026-2-release-readiness-checklist", lastModified: new Date("2026-08-19") },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
