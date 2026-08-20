@@ -179,6 +179,77 @@ const ACS_COMPARISON = [
   },
 ];
 
+const EVALUATION_SCORECARD = [
+  {
+    criterion: "Customization coverage",
+    question: "Do they handle SuiteScript, workflows, and integrations they did not build?",
+    whyItMatters: "ACS explicitly excludes customizations. An alternative must cover the full layer ACS does not.",
+  },
+  {
+    criterion: "Response model",
+    question: "Is contact direct to the consultant, or through a ticket queue?",
+    whyItMatters: "Ticket routing is the most common complaint about ACS. Direct access eliminates the queue.",
+  },
+  {
+    criterion: "Account continuity",
+    question: "Does one consultant handle your account consistently, or do agents rotate per case?",
+    whyItMatters: "ACS agents rotate and lose context between cases. A retained consultant builds knowledge that compounds.",
+  },
+  {
+    criterion: "Contract flexibility",
+    question: "Month-to-month or annual commitment required?",
+    whyItMatters: "ACS requires an annual subscription paid upfront. A true alternative should offer month-to-month terms.",
+  },
+  {
+    criterion: "Integration coverage",
+    question: "Do they handle Celigo, Boomi, Shopify connectors, or custom middleware?",
+    whyItMatters: "ACS stops at the NetSuite platform boundary. Integration ecosystems are a primary blind spot.",
+  },
+  {
+    criterion: "Certified credentials",
+    question: "What NetSuite certifications does the consultant hold?",
+    whyItMatters: "SuiteCloud Developer II and Administrator Professional are the benchmark credential standard.",
+  },
+  {
+    criterion: "Platform bug handling",
+    question: "How do confirmed platform bugs get submitted to Oracle?",
+    whyItMatters: "ACS has internal Oracle escalation channels. Third-party providers submit via standard NetSuite support with full documentation.",
+  },
+  {
+    criterion: "Transition overlap",
+    question: "Can they start while ACS is still active?",
+    whyItMatters: "A parallel overlap period prevents a coverage gap and lets the new provider build context before ACS expires.",
+  },
+];
+
+const MIGRATION_TIMELINE = [
+  {
+    week: "Weeks 1-2",
+    action: "Initial engagement and access provisioning",
+    detail: "Sign month-to-month agreement. Provision NetSuite account access at the appropriate role level. Schedule account onboarding call to walk through known issues and priorities.",
+  },
+  {
+    week: "Weeks 2-4",
+    action: "Account onboarding",
+    detail: "Consultant reviews existing SuiteScript, workflows, integrations, saved searches, and documented issues directly in the account. No documentation package required from your team.",
+  },
+  {
+    week: "Weeks 4-8",
+    action: "Parallel coverage period",
+    detail: "Third-party provider handles new requests as they surface. ACS remains active. Non-platform requests route to the new provider; platform bug escalations still go to ACS during this overlap.",
+  },
+  {
+    week: "At ACS renewal",
+    action: "Let ACS lapse",
+    detail: "Do not renew ACS. Third-party provider is now the primary support relationship. Platform bugs are submitted directly to NetSuite support with full documentation from the provider.",
+  },
+  {
+    week: "Month 3 onward",
+    action: "Steady-state managed support",
+    detail: "Provider has full account context. All work covers platform guidance, customizations, integrations, upgrade preparation, and administration under a single retainer.",
+  },
+];
+
 const FAQ = [
   {
     question: "What does NetSuite ACS actually cover?",
@@ -426,6 +497,34 @@ export default function AcsAlternativePage() {
           </div>
         </div>
 
+        {/* Evaluation scorecard */}
+        <div className="mt-14" data-section="evaluation-scorecard">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">How to evaluate a NetSuite ACS alternative</h2>
+          <p className="text-sm text-brand-400 mb-5">
+            Use these criteria when comparing any ACS alternative. Each addresses a specific gap in the ACS model. Ask these questions before signing.
+          </p>
+          <div className="overflow-x-auto rounded-2xl border border-brand-100">
+            <table className="w-full text-sm min-w-[520px]">
+              <thead>
+                <tr className="border-b border-brand-100 bg-brand-50/50">
+                  <th className="text-left p-4 font-semibold text-brand-900 w-1/4">Criterion</th>
+                  <th className="text-left p-4 font-semibold text-brand-900">Question to ask</th>
+                  <th className="text-left p-4 font-semibold text-brand-900 hidden sm:table-cell">Why it matters</th>
+                </tr>
+              </thead>
+              <tbody>
+                {EVALUATION_SCORECARD.map((row, i) => (
+                  <tr key={row.criterion} className={i < EVALUATION_SCORECARD.length - 1 ? "border-b border-brand-100" : ""}>
+                    <td className="p-4 font-medium text-brand-700 align-top">{row.criterion}</td>
+                    <td className="p-4 text-brand-400 align-top">{row.question}</td>
+                    <td className="p-4 text-brand-400 align-top hidden sm:table-cell text-[13px]">{row.whyItMatters}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         {/* What we cover */}
         <div className="mt-14" data-section="what-we-cover">
           <h2 className="text-lg font-semibold text-brand-900 mb-1">What does a third-party NetSuite ACS alternative cover?</h2>
@@ -466,6 +565,39 @@ export default function AcsAlternativePage() {
               </Card>
             ))}
           </div>
+        </div>
+
+        {/* Migration timeline */}
+        <div className="mt-14" data-section="migration-timeline">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">What does the transition from ACS to a third-party provider look like?</h2>
+          <p className="text-sm text-brand-400 mb-6">
+            The cleanest ACS transitions run a parallel overlap period so the incoming provider has time to learn the account before ACS expires. Here is how that typically plays out.
+          </p>
+          <div className="space-y-0 rounded-2xl border border-brand-100 overflow-hidden">
+            {MIGRATION_TIMELINE.map((item, i) => (
+              <div
+                key={item.week}
+                className={[
+                  "flex flex-col sm:flex-row gap-3 sm:gap-5 p-5",
+                  i < MIGRATION_TIMELINE.length - 1 ? "border-b border-brand-100" : "",
+                  i % 2 === 1 ? "bg-brand-50/30" : "",
+                ].join(" ")}
+              >
+                <div className="shrink-0 sm:w-28">
+                  <span className="text-xs font-semibold text-accent bg-accent/10 rounded-full px-2.5 py-0.5 whitespace-nowrap">
+                    {item.week}
+                  </span>
+                </div>
+                <div className="flex-1">
+                  <p className="font-semibold text-brand-900 text-sm mb-0.5">{item.action}</p>
+                  <p className="text-sm text-brand-400 leading-relaxed">{item.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-sm text-brand-400">
+            The transition does not require a gap in coverage. Starting the engagement two to three months before your ACS renewal date gives enough time to complete onboarding before the parallel period ends.
+          </p>
         </div>
 
         {/* Mid-page CTA */}
