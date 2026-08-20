@@ -2,13 +2,13 @@
 title: "How to Switch NetSuite Partners Without Losing Account Context"
 description: "Switching NetSuite partners after go-live is straightforward when done in the right order. Here is what the transition actually looks like, how to preserve account knowledge, and what to do when the outgoing partner is uncooperative."
 date: "2026-08-20"
-updated: "2026-08-20"
+updated: "2026-08-21"
 tags: ["Partner Replacement", "Post-Go-Live", "Consulting"]
 ---
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
-<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Switching NetSuite partners does not require NetSuite's involvement and does not disrupt your live system. You select a new provider, grant them admin access to your account, and remove the previous partner's access. The main risk is losing account context: documentation of why customizations were built, how integrations are structured, and what decisions were made during implementation. A well-executed transition prioritizes capturing that context before the previous partner's access is removed, ideally through a structured knowledge transfer session rather than just credential handoff. A typical transition takes two to four weeks when the outgoing partner cooperates.</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Switching NetSuite partners does not require NetSuite's involvement and does not disrupt your live system. You select a new provider, grant them admin access to your account, and remove the previous partner's access. The main risk is losing account context: documentation of why customizations were built, how integrations are structured, and what decisions were made during implementation. A well-executed transition prioritizes capturing that context before the previous partner's access is removed, ideally through a structured knowledge transfer session rather than just credential handoff. A typical transition takes two to four weeks when the outgoing partner cooperates. The most common complication is an outgoing partner who is unresponsive or who delays providing documentation. In that case, the incoming provider works directly from the account, reading scripts, workflows, and integration configurations to reconstruct the context that the outgoing partner did not document. This takes longer but is always possible; no partner owns the account itself, only their access to it.</p>
 </div>
 
 The mechanics of switching NetSuite partners are simple. The knowledge transfer is where most transitions go wrong.

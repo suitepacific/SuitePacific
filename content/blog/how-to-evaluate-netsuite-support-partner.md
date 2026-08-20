@@ -2,13 +2,13 @@
 title: "How to Evaluate a NetSuite Post-Go-Live Support Partner"
 description: "The criteria for choosing a post-go-live NetSuite support partner are different from what mattered during implementation selection. Here is what to look for, what questions to ask, and how to run a structured evaluation."
 date: "2026-08-20"
-updated: "2026-08-20"
+updated: "2026-08-21"
 tags: ["Partner Replacement", "Post-Go-Live", "Consulting"]
 ---
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
-<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The criteria that mattered for choosing an implementation partner — firm size, number of certifications, project methodology, sales track record — are largely irrelevant for post-go-live support. What matters for ongoing support is individual developer expertise (not firm headcount), retainer-based availability (not SOW-driven billing), direct access to the person doing the work (not an account manager intermediary), and demonstrated familiarity with accounts similar to yours. The evaluation process for a support partner should test these things directly, not rely on credentials and case studies designed for implementation selection. A structured evaluation takes one to two weeks and includes a technical test conversation, billing model review, and reference check with companies in ongoing retainer relationships.</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The criteria that mattered for choosing an implementation partner (firm size, certifications, project methodology, sales track record) are largely irrelevant for post-go-live support. What matters for ongoing support is individual developer expertise rather than firm headcount, retainer-based availability rather than SOW-driven billing, and direct access to the person doing the work rather than an account manager intermediary. The evaluation process for a support partner should test these things directly, not rely on credentials and case studies designed for implementation selection. A structured evaluation takes one to two weeks and includes a technical test conversation, billing model review, and reference check with companies in ongoing retainer relationships. The most revealing question to ask any prospective support provider: walk me through what happens when we submit an urgent request. A provider who can describe a specific process is more credible than one who responds with a general service-level commitment. Ask to speak with the individual consultant who would actually work in your account, not just the sales contact.</p>
 </div>
 
 Implementation partners are evaluated on their ability to execute a complex project: experience with similar companies, methodology, certifications, team size, and references from comparable go-lives. Those signals are meaningful for a six-month implementation project.
