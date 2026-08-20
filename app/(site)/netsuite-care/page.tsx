@@ -137,6 +137,44 @@ const HOUR_USES = [
   },
 ];
 
+const TESTIMONIALS = [
+  {
+    quote:
+      "We mainly use SuitePacific for ongoing NetSuite support. They've become someone we can reach out to when something breaks or when we need a change made. Having someone who already knows our account has made things much easier for our team.",
+    role: "Operations Manager",
+  },
+  {
+    quote:
+      "What we appreciate most is how quickly SuitePacific responds when we have an issue. They don't just tell us what's wrong, they look into it and help us get it resolved without a lot of back and forth.",
+    role: "Finance Director",
+  },
+  {
+    quote:
+      "SuitePacific has helped us with a number of NetSuite customizations and improvements to our existing processes. They take the time to understand how we actually use NetSuite rather than just building exactly what was initially requested.",
+    role: "Controller",
+  },
+  {
+    quote:
+      "We started working with SuitePacific for a few NetSuite development tasks and eventually began using them for ongoing support. They understand our setup and our business processes now, which makes it much easier to get things done.",
+    role: "IT Manager",
+  },
+  {
+    quote:
+      "For a smaller business like ours, having access to experienced NetSuite developers without the cost of a large consulting firm has been a big advantage. SuitePacific has been flexible with our requirements and we've been happy with the value we get from them.",
+    role: "CEO",
+  },
+  {
+    quote:
+      "We needed help with both NetSuite administration and development, and SuitePacific has been able to handle both. It's been useful having one team that can take care of the day-to-day issues as well as larger customization work.",
+    role: "VP of Finance",
+  },
+  {
+    quote:
+      "We've worked with SuitePacific on NetSuite reporting, workflows and customizations. They're good at finding a straightforward way to solve something instead of making the solution more complicated than it needs to be.",
+    role: "Director of Operations",
+  },
+];
+
 const FAQS = [
   {
     q: "Do I need to replace my existing NetSuite partner?",
@@ -393,6 +431,35 @@ export default function NetSuiteCarePage() {
         </div>
         <p className="mt-6 text-center text-sm text-brand-400">
           3-month minimum commitment, then month-to-month.
+        </p>
+      </section>
+
+      {/* Testimonials */}
+      <section className="mx-auto max-w-5xl px-6 lg:px-8 mt-16">
+        <div className="text-center mb-10">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3">Client Feedback</p>
+          <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 text-balance">
+            What Care clients say
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {TESTIMONIALS.map(({ quote, role }) => (
+            <figure key={role + quote.slice(0, 20)} className="rounded-xl border border-brand-100 bg-white p-6 shadow-sm flex flex-col gap-4">
+              <div className="flex gap-0.5">
+                {[0,1,2,3,4].map((i) => (
+                  <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+                ))}
+              </div>
+              <blockquote className="text-sm text-brand-600 leading-relaxed flex-1">{quote}</blockquote>
+              <figcaption className="text-xs text-brand-400 font-medium">{role}</figcaption>
+            </figure>
+          ))}
+        </div>
+        <p className="mt-6 text-center text-xs text-brand-400">
+          Rated 5.0 on{" "}
+          <a href="https://clutch.co/profile/suitepacific" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+            Clutch
+          </a>
         </p>
       </section>
 
