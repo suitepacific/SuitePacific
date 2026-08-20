@@ -145,6 +145,11 @@ For a vendor name plus address line for a printed report:
 
 Note that multi-level field references (entity.entityid, billingaddress.addr1) are available in formula fields the same way they are in standard column expressions. The field ID uses dot notation to traverse the relationship.
 
+<figure style="margin:2rem 0">
+<img src="/blog/netsuite-saved-search-formula-examples/formula-results.png" alt="NetSuite saved search results showing a formula column with AR aging bucket labels such as 1_Current, 2_1-30 days, and 3_31-60 days alongside Document Number, Customer, Amount, and Due Date columns" style="width:100%;border-radius:8px;border:1px solid #e2e8f0" loading="lazy" />
+<figcaption style="font-size:0.75rem;color:#64748b;margin-top:0.5rem">A saved search results grid with a Formula(Text) aging bucket column. The sort-order prefix on each label (1_, 2_, 3_) keeps the buckets in chronological order when the column is sorted, which a plain text label like "Current" or "31-60 days" would not do.</figcaption>
+</figure>
+
 ## CASE WHEN examples for finance and operations teams
 
 The following formulas cover the most common conditional logic requirements on finance and operations saved searches. Each can be added as a Formula(Text) or Formula(Numeric) column in the Results tab.
