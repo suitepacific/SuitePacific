@@ -38,6 +38,22 @@ When the deal structure changes, the integration has to change. A new pricing ti
 
 These are not exceptional maintenance events. They are the normal consequence of two production systems evolving in parallel. The SaaS companies that handle this well treat the Salesforce-NetSuite integration as an ongoing product with dedicated technical attention, not a completed project deliverable.
 
+## Audit readiness and the finance team's evolving requirements
+
+Bay Area SaaS companies often face an audit or investor diligence process at some point in their growth cycle: a Series B or C due diligence package, a 409A valuation, or an audit in anticipation of an IPO. Each of these creates a moment where the accuracy of the NetSuite data becomes scrutinized more heavily than it typically is during normal operations.
+
+The ARM configuration is frequently where issues surface during diligence. Revenue recognition schedules that were configured at implementation may have accumulated exceptions over time: manual journal entry overrides, subscription amendments that were handled outside the standard SuiteBilling workflow, legacy contracts whose ARM treatment was not updated when the contract was modified. These are the kinds of issues that a retained technical specialist who reviews the account regularly can identify before they become diligence problems.
+
+The specific questions that come up during a SaaS audit involving NetSuite include: are revenue recognition schedules tied correctly to the underlying contract terms? Are contract modifications handled via amendment records in SuiteBilling or via manual journal entries? Does the revenue waterfall report tie to the general ledger? Are deferred revenue balances reconcilable to the subscription schedule? Finance teams that have ongoing technical support have someone to ask these questions of before the auditor does.
+
+## Common mistakes SaaS companies make with SuiteBilling in years two and three
+
+**Configuring new plans outside the subscription framework.** When a new pricing tier needs to go live quickly, finance teams sometimes bill it outside SuiteBilling as a one-off invoice rather than creating a proper subscription plan. This works for one customer but creates a category of customer that cannot be managed through the subscription reporting and billing automation that SuiteBilling provides. Over time, this builds a shadow billing workflow that creates reporting inconsistency.
+
+**Not updating ARM rules when bundling changes.** When professional services are added to a software deal, the standalone selling price allocation changes. If the ARM configuration is not updated to reflect the new bundle, the revenue allocation between software and services may not comply with ASC 606. This is a common discovery during audits.
+
+**Over-relying on the subscription list view as a source of truth.** The SuiteBilling subscription record is the operational record; the general ledger is the accounting record. When subscription amendments are processed inconsistently, the two can drift apart. A scheduled review of the reconciliation between the two is part of healthy SuiteBilling maintenance.
+
 ## Why the implementation partner is not the right resource for this
 
 The firm that implemented NetSuite and configured SuiteBilling for a San Francisco SaaS company is typically not the right resource for ongoing billing configuration changes. Implementation partners are structured around project delivery: a defined scope, a project team, and a timeline. After the go-live project closes, the team moves on.
@@ -45,6 +61,8 @@ The firm that implemented NetSuite and configured SuiteBilling for a San Francis
 When a SaaS company needs to update its SuiteBilling configuration for a new pricing tier, the engagement with an implementation partner follows the project pattern: a discovery call, a scoping document, a proposal, client approval, and then execution by a consultant who may or may not have worked on the original implementation. The overhead on that process is significant for what is often a few days of configuration work.
 
 The right model for a Bay Area SaaS company is a retained technical specialist who knows the specific SuiteBilling and ARM configuration that was built, can update it when the pricing model changes, and can respond in days rather than weeks.
+
+When evaluating a support provider for a SaaS account, ask specifically about their experience with SuiteBilling subscription plan amendments, ARM revenue rule configuration, and Salesforce-to-NetSuite integration maintenance. These are the areas where specialized SaaS expertise matters most, and a provider who cannot discuss them in specific terms has not worked with enough growth-stage SaaS accounts to be effective quickly.
 
 For what this looks like in practice, see [NetSuite post-go-live support](/netsuite-post-go-live-support) and the [NetSuite consultant San Francisco](/netsuite-consultant-san-francisco) page for more on how remote support works for Bay Area accounts.
 

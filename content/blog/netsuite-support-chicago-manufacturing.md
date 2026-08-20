@@ -40,11 +40,35 @@ The work that remains after go-live does not fit the project model well. Adding 
 
 When manufacturers try to get this work done through their implementation partner, they run into the standard friction: scoping calls, proposals, statements of work, approval cycles, and execution by someone who does not know the account and has to re-learn it each time. The turnaround for a one-hour fix becomes a two-week process.
 
+## The specific industries in Chicago where this complexity is highest
+
+**Food processing and consumer packaged goods manufacturers.** Chicago is home to a large food and beverage manufacturing base. These companies run NetSuite with lot tracking enabled for traceability, expiration date management across finished goods and raw materials, and recall readiness reporting. The SuiteScript customizations that enforce lot assignment rules and flag expiring inventory are among the highest-risk scripts in the account: they run on every transaction and are sensitive to any change in item or transaction record structure. These scripts require careful review before every NetSuite release.
+
+**Automotive and industrial parts manufacturers.** Tier 2 and Tier 3 automotive suppliers in the greater Chicago area typically have EDI connections to OEM customers, customer-specific part numbering requirements, and production scheduling workflows tied to customer release orders. When a customer releases a new EDI specification or changes their scheduling frequency, the NetSuite-side EDI configuration requires updating. These are recurring maintenance events, not one-time setup tasks.
+
+**Specialty and custom manufacturers.** Chicago has a large base of specialty manufacturers in categories like commercial printing, packaging, and industrial equipment. These companies often run make-to-order production with complex job costing requirements: labor tracking at the routing step level, material variance reporting, and overhead allocation customization. SuiteScript automation for job costing frequently needs adjustment when the production routing changes or when new product categories are added with different cost structures.
+
+**Multi-site manufacturers.** Manufacturers with production and distribution across multiple Illinois locations or across state lines run OneWorld accounts with location-specific inventory policies, transfer order workflows, and location-aware pricing. Adding a new plant or distribution site requires configuration work across subsidiaries, location records, and any SuiteScript that filters by location. This is a common request in the second and third year after go-live as the business expands.
+
 ## What post-go-live support for a manufacturer actually looks like
 
 A manufacturing account on retainer support looks different from a generalist account. The work is weighted toward SuiteScript maintenance as manufacturing configuration evolves, release review before each bi-annual NetSuite upgrade, integration maintenance for EDI and 3PL connections, and new SuiteScript development when production processes require automation that did not exist in the original implementation scope.
 
 The right support provider for this work is someone with direct experience in manufacturing accounts, not a general NetSuite administrator. Manufacturing module configuration, assembly item structures, work order data models, and the SuiteScript APIs that interact with them are specialized enough that general NetSuite experience does not substitute for manufacturing-specific experience.
+
+During the evaluation of a support provider, ask whether they have worked with Advanced Manufacturing, lot and serial number tracking, and SuiteScript customizations that interact with work order records. Ask for a specific example of a manufacturing SuiteScript issue they diagnosed and resolved. The answer tells you quickly whether the expertise is real.
+
+## Common post-go-live mistakes in manufacturing accounts
+
+**Skipping Sandbox testing before NetSuite releases.** The bi-annual NetSuite release cycle is the highest-risk moment for manufacturing accounts with significant SuiteScript customization. Scripts that interact with manufacturing transaction data are among the most sensitive to data model changes. Manufacturers who apply releases to Production without first testing in Sandbox routinely discover that a SuiteScript customization failed silently, producing incorrect data rather than an error that would have triggered investigation. By the time the issue is discovered, transactions have been processed on incorrect data.
+
+**Not documenting why customizations were built.** Manufacturing accounts accumulate SuiteScript customization over time as production processes evolve. Without documentation of why a specific script was built, the next developer to touch it does not know what edge cases it was designed to handle. When a NetSuite release or bundle update breaks a manufacturing script, the repair process is significantly faster if the original intent is documented.
+
+**Treating EDI maintenance as a one-time project.** EDI integrations with manufacturing customers are living connections, not completed projects. Customer EDI specifications change. Annual EDI certifications require testing against updated schemas. Treating EDI as "done" after the initial integration is built leads to gradual drift between the integration and the customer's current requirements, which eventually surfaces as rejected transactions.
+
+**Deferring lot and serial tracking cleanup.** Manufacturing accounts that have used lot and serial tracking through multiple production cycles often accumulate lot records with incomplete information: missing lot expiration dates, lots assigned to the wrong item class, or lot-level quantity discrepancies between what NetSuite shows and what the physical warehouse contains. These issues compound over time and become expensive to resolve once they have spread across multiple seasons of production data.
+
+A retained technical specialist for a Chicago manufacturing account prevents these accumulation patterns by treating the account as an ongoing system that needs regular maintenance, not a project that was completed at go-live.
 
 For what this looks like in practice, see [NetSuite post-go-live support](/netsuite-post-go-live-support) and the [SuiteScript development](/netsuite-suitescript-development) page for the technical side of what ongoing development support covers.
 

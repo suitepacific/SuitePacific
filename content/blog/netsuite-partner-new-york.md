@@ -48,11 +48,35 @@ The firms that do this well are smaller and more specialized than the large impl
 
 The economics work differently too. A monthly retainer covering ten to twenty hours of ongoing work costs less than the blended rate on a large firm's SOW process, and the work actually gets done when the client needs it.
 
+## The industries where this pattern is most visible in New York
+
+**Financial services and PE-backed companies.** Multi-entity accounts with complex intercompany transactions, consolidation reports, and foreign currency revaluation are technically demanding to maintain. When the implementation partner's ongoing team is not deeply familiar with OneWorld and the intercompany elimination workflows, recurring month-end tasks become support escalations. Private equity-owned companies in New York also face additional complexity when portfolio companies consolidate: the NetSuite account structure needs to evolve with the business, which requires ongoing development support rather than one-time project work.
+
+**Real estate and property management firms.** NetSuite accounts in the real estate sector often have project-based billing tied to individual properties, complex revenue recognition across property types, and integrations to property management platforms like Yardi or MRI. After go-live, these integrations require regular maintenance as the property portfolio changes. A property acquisition or sale affects the NetSuite account; someone has to handle the configuration implications.
+
+**Media and entertainment companies.** New York media companies use NetSuite for project-based revenue, talent cost tracking, and royalty reporting. The implementation typically covers the standard project billing structure, but the actual production process generates requirements the implementation did not anticipate: cost allocation rules that need SuiteScript to enforce, reporting that crosses project and period boundaries, and integrations to production management tools. Ongoing technical support is built into how these accounts operate, not an exception.
+
+**Professional services firms.** Law firms, consulting firms, and staffing companies in New York run NetSuite with the Professional Services Automation module alongside core financials. After go-live, the PSA module requires configuration updates as the firm's billing practices evolve: new billing rate structures, revised project budget templates, updated resource allocation workflows. These are not project-scale changes, but they require NetSuite expertise to execute correctly.
+
 ## For New York accounts evaluating a switch
 
 The clearest signal that a switch is worth pursuing is the overhead-to-output ratio. If you are spending more time managing the partner relationship, following up on requests, and waiting for responses than you are receiving useful work, the structure is wrong for what your account needs now.
 
 The evaluation criteria for a replacement are different from what mattered during implementation selection: certifications and individual expertise matter more than firm size; retainer model and direct developer access matter more than project management process; account context retention matters more than sales track record.
+
+For New York accounts in particular, ask prospective support partners specifically about experience with multi-entity accounts and OneWorld configuration. The intercompany transaction and consolidation complexity that characterizes New York accounts is specialized; a support provider with primarily single-entity experience will have a steeper learning curve.
+
+## What a healthy post-go-live support relationship looks like at year two
+
+A New York account that has been live for two years and has the right support relationship in place looks different from one that has been relying on an implementation partner's ongoing team or an internal admin without scripting expertise.
+
+The support relationship is proactive rather than reactive. Before each NetSuite release, the provider reviews the account's specific SuiteScript library and flags what needs testing in Sandbox. They have already identified which saved searches pull data in ways that could be affected by the new release's default changes. They send a short note outlining what was checked, what was found, and what was tested, so the account's finance or IT team can make the go/no-go decision for Production with full information.
+
+The account documentation exists and is current. The provider maintains a living record of the account's customizations: what each script does, why it was built, and what it touches. This documentation is owned by the client, not the provider; if the relationship ends, the institutional knowledge does not leave with the consultant.
+
+The response time is predictable. Non-urgent requests receive a response within the same business day with a realistic estimate of when the work will be done. For most accounts in New York, this means requests submitted Monday morning are delivered Thursday at the latest for anything under ten hours. Production issues receive same-day attention regardless of when they are submitted.
+
+These are the practical characteristics of a post-go-live support relationship that is actually working. If the current relationship does not fit this description, that is what a replacement is designed to restore.
 
 For what this looks like in practice, see the [NetSuite post-go-live support](/netsuite-post-go-live-support) page, or the [NetSuite Care plans](/netsuite-care) for fixed-price monthly retainer options.
 

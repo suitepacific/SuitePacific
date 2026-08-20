@@ -44,7 +44,25 @@ Unlike many other industries, apparel operates on a hard seasonal calendar. Fall
 
 Each of these stages generates technical work in NetSuite: new item creation for the incoming season, landed cost calculations for in-transit orders, markdown pricing updates, and clearance item handling. Brands that do not have a technical resource who knows their account well end up doing this work manually or building workarounds that accumulate over time.
 
-The right support model for a Los Angeles apparel brand is a retained technical specialist who treats the NetSuite account as an ongoing product rather than a completed project. For what that looks like in practice, see the [NetSuite post-go-live support](/netsuite-post-go-live-support) page and the [integrations](/netsuite-integrations) page for the integration maintenance side.
+## How technical debt accumulates in apparel accounts
+
+The workarounds that accumulate in an understaffed NetSuite account are a specific kind of problem: they often work well enough in the short term but create fragility that surfaces at the worst possible moment. A brand that solves a matrix item creation problem by manually entering items outside the standard matrix structure will eventually have a situation where a saved search that filters by matrix attributes returns incomplete results. The problem is not the saved search; it is the item data, which was created outside the standard structure months earlier.
+
+Technical debt in apparel NetSuite accounts tends to cluster in a few areas:
+
+**Item record inconsistency.** When new styles are set up under time pressure at the start of a season, shortcuts get taken. Attribute values are not applied consistently. The size or color values used for one product line do not match the controlled list used for another. Over time, the item master becomes inconsistent in ways that are expensive to clean up and cause problems for any reporting or integration that depends on attribute matching.
+
+**Landed cost data gaps.** Landed cost calculations require accurate freight and duty data attached to the correct purchase orders. When this process is not followed consistently because it is too manual, the finished goods cost data in NetSuite becomes unreliable. Brands that discover their NetSuite cost-of-goods data does not match their actual sourcing costs often trace the root cause to inconsistent landed cost entry during the first year.
+
+**Integration drift.** Shopify, 3PL, and EDI integrations are built against the NetSuite data structure as it exists at go-live. Over eighteen to twenty-four months, the item record structure, custom field configuration, and transaction workflows in NetSuite may have changed in ways that the integration was not updated to handle. The integration continues to function in most cases but starts producing edge case errors when the mismatch between the original integration logic and the current NetSuite configuration is exposed by a real transaction.
+
+## What a retained technical specialist does differently
+
+A retained technical specialist who knows a Los Angeles apparel brand's account prevents these patterns rather than cleaning them up after the fact. Before a new season's items are set up, they review the process and flag where inconsistency is likely to enter. Before a 3PL WMS update, they review the integration and identify what needs to change. Before a NetSuite release, they check which scripts and saved searches are at risk.
+
+The right support model for a Los Angeles apparel brand is a retained technical specialist who treats the NetSuite account as an ongoing product rather than a completed project. When evaluating a support provider, ask whether they have worked with matrix items, landed cost calculations, and Shopify-to-NetSuite inventory sync for an apparel brand specifically. The specific data model of an apparel account, where a single style generates dozens of item records across a size/color matrix, is different from how a generalist account is structured, and a provider without apparel experience will take longer to be effective.
+
+For what that looks like in practice, see the [NetSuite post-go-live support](/netsuite-post-go-live-support) page and the [integrations](/netsuite-integrations) page for the integration maintenance side.
 
 ---
 

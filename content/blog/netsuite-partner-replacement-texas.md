@@ -56,7 +56,27 @@ The right model has a few defining characteristics:
 
 The economics work out differently than they appear. An implementation partner charging $225/hour with SOW overhead on every request routinely costs more in total than a retainer specialist charging a fixed monthly fee, because the overhead is eliminated and the work gets done on the first engagement rather than after multiple rounds of scoping and approval.
 
-For what this looks like in practice, see [NetSuite post-go-live support](/netsuite-post-go-live-support) and the [NetSuite Care plans](/netsuite-care) for the fixed-price monthly retainer options.
+## What the transition looks like for Texas accounts
+
+The transition from an implementation partner to a retained specialist does not require downtime or risk to the live account. The incoming provider is granted access to the NetSuite account, does their own review to understand the configuration, and takes over handling requests as they come in.
+
+In practice, the first thirty to sixty days with a new provider are the orientation period. The incoming provider is learning the specific account: which scripts are doing what, how the integrations are structured, what the history of decisions looks like. Texas accounts with complex configurations typically share context through a knowledge transfer call with the outgoing partner, though this depends on how cooperative the outgoing firm is.
+
+After sixty days, most accounts have stabilized with the new provider. The provider has handled enough requests to know the account well, and the rhythm of the support relationship is established.
+
+## What to look for in a Texas replacement
+
+When evaluating a replacement in Texas, a few questions are worth asking directly:
+
+**Do they have experience with Texas-specific industries?** A provider who has worked with Dallas distribution companies, Houston energy services firms, or Austin SaaS companies will have relevant context for the type of account you operate. Ask for examples from accounts in your specific industry.
+
+**How do they handle the time zone?** Texas operates on Central time. If the provider is on the East Coast, they cover the full Texas business day; if they are based in a significantly different time zone, clarify what the practical response window is for non-urgent requests.
+
+**Can they handle the full scope of your account?** Distribution accounts with 3PL integrations, energy accounts with project billing, and technology accounts with SuiteBilling are different from a generalist NetSuite account. The provider should be able to articulate specific experience with the modules and configuration types that are central to your account.
+
+**What happens with urgent requests?** For Texas companies with operationally intensive accounts, a production issue on a Tuesday afternoon needs same-day attention. Ask specifically how urgent requests are handled and what the escalation path is. A clear answer distinguishes a provider with an actual process from one who will handle urgency on an ad hoc basis.
+
+The [NetSuite consultant Texas](/netsuite-consultant-texas) page has more detail on what remote support looks like for the specific industries in the state. For monthly retainer options, see the [NetSuite Care plans](/netsuite-care). For what ongoing post-go-live support covers in practice, including what a retainer engagement actually delivers month to month, see the [NetSuite post-go-live support](/netsuite-post-go-live-support) page.
 
 ---
 
