@@ -135,6 +135,11 @@ A search that loads a broad set of records and then filters with a formula or su
 
 The common pattern that causes this: a search built with no date criteria that returns all transactions of a type, then uses an available filter to let users pick a date range at run time. The search loads every transaction first, then filters. The fix is to set a default date range in the Criteria tab (This Fiscal Year, or a Relative Date value) so the database query is bounded before any rows are returned. Users can still override the filter if they need a different range.
 
+<figure style="margin:2rem 0">
+<img src="/blog/netsuite-account-performance/script-execution-log.png" alt="NetSuite Script Execution Log under Customization > Scripting showing six script executions including one Failed User Event script highlighted in red, with execution times ranging from 842 ms to 45,672 ms" style="width:100%;border-radius:8px;border:1px solid #e2e8f0" loading="lazy" />
+<figcaption style="font-size:0.75rem;color:#64748b;margin-top:0.5rem">The Script Execution Log at Customization &gt; Scripting &gt; Script Execution Log. A Failed status row (red) indicates a script error affecting that record type. High execution times — such as the 45,672 ms Map/Reduce job above — are the first place to look when an account feels slow across multiple users.</figcaption>
+</figure>
+
 ## What does normal NetSuite performance look like?
 
 Having a rough benchmark for expected load times helps distinguish between a real performance issue and an expectation mismatch. These are the load times we use as a reference for a healthy account on a standard connection:
