@@ -19,6 +19,11 @@ This guide explains the difference between implementation work and post-go-live 
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A NetSuite implementation partner deploys NetSuite for a company that is not yet live on the platform. The engagement has a defined scope and a go-live date where it ends. Post-implementation NetSuite support covers everything that needs to happen after go-live: ongoing SuiteScript development, workflow modifications, integration maintenance, administration changes, and release preparation. NetSuite releases platform updates twice per year, in January and July. Each release requires reviewing existing customizations against the release notes, testing affected scripts in Sandbox, and fixing anything that breaks before Production upgrades. That review and testing work is not covered by Oracle NetSuite support, which handles only the core platform layer, not the customization and integration layer. If you are already on NetSuite, you need post-implementation support. If you have not gone live yet, you need an implementation partner. Many companies use both at different points, but they serve different needs.</p>
 </div>
 
+<figure style="margin:2rem 0">
+<img src="/blog/netsuite-implementation-partner-vs-managed-support/engagement-timeline.png" alt="NetSuite engagement timeline diagram showing Phase 1 Implementation with defined scope and go-live date, followed by Phase 2 Post-Go-Live Support which is ongoing with no end date and retainer billing" style="width:100%;border-radius:8px;border:1px solid #e2e8f0" loading="lazy" />
+<figcaption style="font-size:0.75rem;color:#64748b;margin-top:0.5rem">Implementation has a defined scope and a go-live date where it ends. Post-go-live support begins at that same point and continues as long as the account is live. The two engagements are sequential, not interchangeable.</figcaption>
+</figure>
+
 ## What is post-implementation NetSuite support?
 
 Post-implementation NetSuite support is the technical engagement that begins when the implementation project ends. It covers everything that changes, breaks, or needs to be built after the system is live and being used by your team.
