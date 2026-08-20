@@ -19,6 +19,7 @@ import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { LeadForm } from "@/components/sections/LeadForm";
+import { TestimonialCarousel } from "@/components/sections/TestimonialCarousel";
 import { SITE_URL } from "@/lib/content";
 
 const WHAT_INCLUDED = [
@@ -435,27 +436,15 @@ export default function NetSuiteCarePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="mx-auto max-w-5xl px-6 lg:px-8 mt-16">
-        <div className="text-center mb-10">
+      <section className="mx-auto max-w-2xl px-6 lg:px-8 mt-16">
+        <div className="text-center mb-8">
           <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3">Client Feedback</p>
           <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 text-balance">
             What Care clients say
           </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {TESTIMONIALS.map(({ quote, role }) => (
-            <figure key={role + quote.slice(0, 20)} className="rounded-xl border border-brand-100 bg-white p-6 shadow-sm flex flex-col gap-4">
-              <div className="flex gap-0.5">
-                {[0,1,2,3,4].map((i) => (
-                  <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                ))}
-              </div>
-              <blockquote className="text-sm text-brand-600 leading-relaxed flex-1">{quote}</blockquote>
-              <figcaption className="text-xs text-brand-400 font-medium">{role}</figcaption>
-            </figure>
-          ))}
-        </div>
-        <p className="mt-6 text-center text-xs text-brand-400">
+        <TestimonialCarousel testimonials={TESTIMONIALS} />
+        <p className="mt-5 text-center text-xs text-brand-400">
           Rated 5.0 on{" "}
           <a href="https://clutch.co/profile/suitepacific" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
             Clutch
