@@ -211,6 +211,11 @@ The most common case where teams choose RESTlet over REST Web Services is the co
 
 ## How to migrate a RESTlet from NLAuth to TBA
 
+<figure style="margin:2rem 0">
+<img src="/blog/netsuite-restlet-vs-rest-web-services/manage-integrations.png" alt="NetSuite Manage Integrations page at Setup > Integration showing three integration records with Token-Based Authentication and Authentication Type columns, including one Legacy NLAuth Integration row with NLAuth type and TBA unchecked" style="width:100%;border-radius:8px;border:1px solid #e2e8f0" loading="lazy" />
+<figcaption style="font-size:0.75rem;color:#64748b;margin-top:0.5rem">Setup &gt; Integration &gt; Manage Integrations. The Authentication Type column distinguishes Token-Based Authentication from NLAuth integrations. Any integration still showing NLAuth needs to migrate before the 2027.1 release.</figcaption>
+</figure>
+
 NLAuth-authenticated RESTlets need to migrate to Token-Based Authentication before the 2027.1 release. The migration does not require changes to the RESTlet script itself; only the authentication credentials and calling convention in the external system change.
 
 **Step 1: Create a TBA integration record.** Navigate to Setup > Integration > Manage Integrations > New. Enable Token-Based Authentication and save. Note the Consumer Key and Consumer Secret.
