@@ -6,11 +6,38 @@ import { Star } from "lucide-react";
 interface Testimonial {
   quote: string;
   role: string;
+  rating: number;
 }
 
 interface TestimonialCarouselProps {
   testimonials: Testimonial[];
   intervalMs?: number;
+}
+
+function StarRating({ rating }: { rating: number }) {
+  return (
+    <div className="flex items-center gap-1.5">
+      <div className="flex gap-0.5">
+        {[1, 2, 3, 4, 5].map((star) => {
+          const filled = rating >= star;
+          const partial = !filled && rating > star - 1;
+          const pct = partial ? Math.round((rating - Math.floor(rating)) * 100) : 0;
+          return (
+            <span key={star} className="relative inline-block h-3.5 w-3.5">
+              <Star className="absolute inset-0 h-3.5 w-3.5 fill-amber-200 text-amber-200" />
+              <span
+                className="absolute inset-0 overflow-hidden"
+                style={{ width: filled ? "100%" : partial ? `${pct}%` : "0%" }}
+              >
+                <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+              </span>
+            </span>
+          );
+        })}
+      </div>
+      <span className="text-xs font-semibold text-brand-600">{rating.toFixed(1)}</span>
+    </div>
+  );
 }
 
 export function TestimonialCarousel({
@@ -46,7 +73,7 @@ export function TestimonialCarousel({
     advance(i);
   };
 
-  const { quote, role } = testimonials[active];
+  const { quote, role, rating } = testimonials[active];
 
   return (
     <div
@@ -58,10 +85,8 @@ export function TestimonialCarousel({
         className="w-full rounded-xl border border-brand-100 bg-white p-6 sm:p-8 shadow-sm min-h-[160px] flex flex-col justify-between transition-opacity duration-300"
         style={{ opacity: fading ? 0 : 1 }}
       >
-        <div className="flex gap-0.5 mb-4">
-          {[0, 1, 2, 3, 4].map((i) => (
-            <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-          ))}
+        <div className="mb-4">
+          <StarRating rating={rating} />
         </div>
         <blockquote className="text-sm sm:text-[15px] text-brand-600 leading-relaxed flex-1">
           {quote}
