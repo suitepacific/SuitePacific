@@ -15,6 +15,16 @@ San Francisco's SaaS market moves fast. A company that went live with NetSuite o
 
 This is not a failure of the original implementation. It is what growth looks like on a flexible ERP platform. But it requires ongoing technical attention that most SaaS companies are not staffed to provide internally.
 
+## Implementation partner vs. retained specialist at a glance
+
+| | Implementation partner | Retained specialist |
+|---|---|---|
+| Availability | Project-scoped; closed at go-live | Ongoing; handles work as it surfaces |
+| Request handling | Each task requires a scope document | Routine requests handled within the retainer |
+| Response time | Days to weeks (scoping and approval cycle) | Same-day on urgent issues |
+| Account knowledge | Resets per project; no continuity | Accumulates continuously over the engagement |
+| Cost structure | Per-project billing; unpredictable | Fixed monthly retainer |
+
 ## What SuiteBilling actually requires over time
 
 SuiteBilling is NetSuite's native subscription billing module. It handles subscription plan management, recurring billing schedules, contract modifications, and integration with Advanced Revenue Management (ARM) for ASC 606-compliant revenue recognition.

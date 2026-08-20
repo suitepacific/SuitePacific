@@ -15,6 +15,16 @@ Texas has one of the fastest-growing NetSuite customer bases in the country. Dal
 
 That cohort of post-go-live accounts is where the partner replacement pattern is most visible.
 
+## Implementation partner vs. retained specialist at a glance
+
+| | Implementation partner | Retained specialist |
+|---|---|---|
+| Availability | Project-scoped; closed at go-live | Ongoing; handles work as it surfaces |
+| Request handling | Each task requires a scope document | Routine requests handled within the retainer |
+| Response time | Days to weeks (scoping and approval cycle) | Same-day on urgent issues |
+| Account knowledge | Resets per project; no continuity | Accumulates continuously over the engagement |
+| Cost structure | Per-project billing; unpredictable | Fixed monthly retainer |
+
 ## Why the implementation partner relationship degrades
 
 The implementation partner was the right choice for go-live. They had the staffing to run a complex project, the methodology to drive decisions, and the experience to configure modules the company had never used before. That expertise justified the engagement model: defined scope, project team, SOW-driven billing.

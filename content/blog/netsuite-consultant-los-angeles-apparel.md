@@ -15,6 +15,16 @@ Los Angeles is home to one of the largest concentrations of apparel brands in th
 
 What happens next is where most brands underestimate the support requirement.
 
+## Implementation partner vs. retained specialist at a glance
+
+| | Implementation partner | Retained specialist |
+|---|---|---|
+| Availability | Project-scoped; closed at go-live | Ongoing; handles work as it surfaces |
+| Request handling | Each task requires a scope document | Routine requests handled within the retainer |
+| Response time | Days to weeks (scoping and approval cycle) | Same-day on urgent issues |
+| Account knowledge | Resets per project; no continuity | Accumulates continuously over the engagement |
+| Cost structure | Per-project billing; unpredictable | Fixed monthly retainer |
+
 ## The first season on NetSuite is always the hardest
 
 Go-live timing for apparel companies is rarely clean. A brand launching NetSuite in Q3 is doing so while production orders for the holiday season are already in motion. A brand launching in Q1 is managing spring delivery in two systems simultaneously. The implementation partner hands off a configured account, but the operational complexity of the next season falls on a team that is still learning the platform.

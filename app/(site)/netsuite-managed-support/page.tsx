@@ -371,6 +371,89 @@ export default function NetSuiteManagedSupportPage() {
           <LeadFormLight />
         </div>
 
+        {/* Which accounts need managed support */}
+        <div className="mt-14" data-section="who-needs">
+          <h2 className="text-lg font-semibold text-brand-900 mb-4">Which NetSuite accounts typically need managed support?</h2>
+          <p className="text-sm text-brand-400 mb-5">
+            Managed support fits accounts where the volume and variety of ongoing work makes per-project billing impractical. The pattern is recognizable across industries.
+          </p>
+          <div className="space-y-3">
+            {[
+              {
+                label: "Accounts 12 or more months post go-live with a growing backlog",
+                detail: "The implementation delivered the baseline. Since then, change requests have accumulated faster than they get resolved. Each new request adds to a backlog that represents real operational friction.",
+              },
+              {
+                label: "Multi-entity OneWorld accounts",
+                detail: "Intercompany transactions, elimination workflows, consolidated reporting, and multi-currency operations generate regular SuiteScript and configuration work month to month.",
+              },
+              {
+                label: "Accounts with SuiteBilling or Advanced Revenue Management",
+                detail: "SuiteBilling subscription plans and ARM revenue rules require technical updates when the commercial model changes. For growth-stage companies, this is recurring work with no natural endpoint.",
+              },
+              {
+                label: "Accounts that have outgrown their implementation partner",
+                detail: "The partner that ran the implementation is structured for project delivery. Post-go-live, their statement-of-work model makes small requests expensive and slow. Managed support is the structural alternative.",
+              },
+              {
+                label: "Companies that lost their internal NetSuite resource",
+                detail: "An internal NetSuite admin or developer who leaves takes institutional account knowledge with them. A managed support retainer fills that gap and builds documented account context over the engagement.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-4 p-4 rounded-xl border border-brand-100 bg-brand-50/30">
+                <span className="text-xs font-bold text-accent bg-accent/10 rounded-full h-6 w-6 flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+                <div>
+                  <p className="text-sm font-semibold text-brand-900">{item.label}</p>
+                  <p className="mt-0.5 text-sm text-brand-400">{item.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* First 60 days */}
+        <div className="mt-14" data-section="onboarding">
+          <h2 className="text-lg font-semibold text-brand-900 mb-4">What do the first 60 days of a managed support engagement look like?</h2>
+          <p className="text-sm text-brand-400 mb-6">
+            The first two months are the highest-investment period of any managed support engagement. The consultant builds account familiarity while handling active requests in parallel.
+          </p>
+          <div className="overflow-x-auto rounded-2xl border border-brand-100">
+            <table className="w-full text-sm min-w-[440px]">
+              <thead>
+                <tr className="border-b border-brand-100 bg-brand-50/50">
+                  <th className="text-left p-4 font-semibold text-brand-900 w-1/4">Timeframe</th>
+                  <th className="text-left p-4 font-semibold text-brand-900">What happens</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  {
+                    time: "Week 1-2",
+                    what: "Account review. The consultant reads the account directly: installed SuiteScript files, workflow configurations, active integrations, custom fields, and saved searches. No documentation required from your team.",
+                  },
+                  {
+                    time: "Week 2-4",
+                    what: "Backlog triage. Existing requests are reviewed, prioritized by urgency and impact, and queued. Quick wins are addressed first: script errors, broken saved searches, administration changes.",
+                  },
+                  {
+                    time: "Month 2",
+                    what: "Stabilization. The highest-priority issues from the backlog are resolved. The working rhythm is established: how requests are submitted, expected response times, and how larger development work is flagged.",
+                  },
+                  {
+                    time: "Month 2 onward",
+                    what: "Steady-state retainer. The consultant knows your account and handles requests as they surface. Release preparation is handled before each twice-yearly NetSuite upgrade cycle.",
+                  },
+                ].map((row, i) => (
+                  <tr key={i} className={i < 3 ? "border-b border-brand-100" : ""}>
+                    <td className="p-4 font-medium text-brand-700 align-top">{row.time}</td>
+                    <td className="p-4 text-brand-400 align-top">{row.what}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">Why do companies choose SuitePacific for NetSuite managed support?</h2>

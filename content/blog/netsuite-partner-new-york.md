@@ -15,6 +15,16 @@ New York's NetSuite market skews large. Financial services companies, real estat
 
 That staffing model is the right answer for implementation. It becomes the wrong answer the day after go-live.
 
+## Implementation partner vs. retained specialist at a glance
+
+| | Implementation partner | Retained specialist |
+|---|---|---|
+| Availability | Project-scoped; closed at go-live | Ongoing; handles work as it surfaces |
+| Request handling | Each task requires a scope document | Routine requests handled within the retainer |
+| Response time | Days to weeks (scoping and approval cycle) | Same-day on urgent issues |
+| Account knowledge | Resets per project; no continuity | Accumulates continuously over the engagement |
+| Cost structure | Per-project billing; unpredictable | Fixed monthly retainer |
+
 ## What "ongoing support" actually looks like for a New York account
 
 A financial services firm one year post-go-live is not looking for someone to configure subsidiaries or run a data migration. They need someone who knows their account well enough to fix a failing intercompany elimination script without a discovery session, build a new saved search for the treasury team, update a workflow that stopped firing after a permission change, or help them prepare for a NetSuite release.

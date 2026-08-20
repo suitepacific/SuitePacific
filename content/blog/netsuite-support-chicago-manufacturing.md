@@ -15,6 +15,16 @@ Chicago-area manufacturers make up a substantial share of the NetSuite customer 
 
 What many of those companies discover is that the go-live is not the end of the technical work. It is the beginning of a different kind of technical work.
 
+## Implementation partner vs. retained specialist at a glance
+
+| | Implementation partner | Retained specialist |
+|---|---|---|
+| Availability | Project-scoped; closed at go-live | Ongoing; handles work as it surfaces |
+| Request handling | Each task requires a scope document | Routine requests handled within the retainer |
+| Response time | Days to weeks (scoping and approval cycle) | Same-day on urgent issues |
+| Account knowledge | Resets per project; no continuity | Accumulates continuously over the engagement |
+| Cost structure | Per-project billing; unpredictable | Fixed monthly retainer |
+
 ## Manufacturing accounts generate more ongoing technical work, not less
 
 A consumer goods manufacturer that goes live with three product lines in year one will likely add new product lines in years two and three. Each new product line means new items, new bills of material, new work order templates, and potentially new production routing steps. If the original implementation included SuiteScript to automate work order completion, pull labor data, or calculate finished goods costs, those scripts now need to extend to the new product category.
