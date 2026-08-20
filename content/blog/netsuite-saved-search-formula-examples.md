@@ -1,8 +1,8 @@
 ---
 title: "NetSuite Saved Search Formula Examples: Date Math, Conditionals, and Text Formatting"
-description: "Common saved search formula patterns for NetSuite: calculating age in days, CASE WHEN conditionals, null handling with NVL, date formatting, and building bucketed results columns."
+description: "Common saved search formula patterns for NetSuite: CASE WHEN conditionals with finance examples, age-in-days calculations, NVL null handling, date formatting, and bucketed AR aging columns."
 date: "2026-08-07"
-updated: "2026-08-14"
+updated: "2026-08-21"
 tags: ["Saved Searches", "Reporting", "Admin", "NetSuite Tips"]
 ---
 
@@ -144,6 +144,75 @@ For a vendor name plus address line for a printed report:
 ```
 
 Note that multi-level field references (entity.entityid, billingaddress.addr1) are available in formula fields the same way they are in standard column expressions. The field ID uses dot notation to traverse the relationship.
+
+## CASE WHEN examples for finance and operations teams
+
+The following formulas cover the most common conditional logic requirements on finance and operations saved searches. Each can be added as a Formula(Text) or Formula(Numeric) column in the Results tab.
+
+**AR aging bucket label (used as a group-by column in summary searches):**
+```sql
+CASE
+  WHEN ROUND(SYSDATE - {duedate}) <= 0 THEN '1_Current'
+  WHEN ROUND(SYSDATE - {duedate}) <= 30 THEN '2_1-30 days'
+  WHEN ROUND(SYSDATE - {duedate}) <= 60 THEN '3_31-60 days'
+  WHEN ROUND(SYSDATE - {duedate}) <= 90 THEN '4_61-90 days'
+  ELSE '5_Over 90 days'
+END
+```
+Prefixing each label with a number forces the correct sort order when the column is used as a group-by field. Use Formula(Text).
+
+**Approval status flag for exception searches:**
+```sql
+CASE
+  WHEN {approvalstatus} = 'Approved' AND {amount} > 50000 THEN 'Large - Approved'
+  WHEN {approvalstatus} = 'Approved' THEN 'Approved'
+  WHEN {approvalstatus} = 'Pending Approval' AND ROUND(SYSDATE - {trandate}) > 3 THEN 'Overdue - Pending'
+  WHEN {approvalstatus} = 'Pending Approval' THEN 'Pending'
+  ELSE 'Rejected / Draft'
+END
+```
+This surfaces overdue pending approvals as their own category in a single column. Useful for an AP exceptions dashboard. Use Formula(Text).
+
+**Revenue recognition period flag:**
+```sql
+CASE
+  WHEN TO_CHAR({startdate}, 'MM/YYYY') = TO_CHAR(SYSDATE, 'MM/YYYY') THEN 'Recognizing This Month'
+  WHEN {startdate} > SYSDATE THEN 'Future'
+  WHEN {enddate} < SYSDATE THEN 'Fully Recognized'
+  ELSE 'Active'
+END
+```
+Useful for SuiteBilling or ARM searches to quickly classify arrangements by their current recognition state. Use Formula(Text).
+
+**Margin tier (calculated from amount and cost fields):**
+```sql
+CASE
+  WHEN {amount} = 0 THEN 'No Revenue'
+  WHEN ({amount} - NVL({estgrossprofit}, 0)) / {amount} < 0.1 THEN 'Low Margin (<10%)'
+  WHEN ({amount} - NVL({estgrossprofit}, 0)) / {amount} < 0.25 THEN 'Mid Margin (10-25%)'
+  ELSE 'High Margin (>25%)'
+END
+```
+Use Formula(Text). Note that `{estgrossprofit}` field availability varies by transaction type and account configuration; confirm the internal field ID for your account in the field selector.
+
+**Days since last customer activity (for customer aging in CRM workflows):**
+```sql
+ROUND(SYSDATE - NVL({lastmodifieddate}, {datecreated}))
+```
+Returns number of days since the customer record was last modified, falling back to the creation date if no modification has occurred. Use Formula(Numeric). Add a CASE WHEN wrapper to convert to a category label if needed for grouping.
+
+**Multi-subsidiary allocation label:**
+```sql
+CASE
+  WHEN {subsidiary} = 'Parent Company : US Operations' THEN 'US'
+  WHEN {subsidiary} = 'Parent Company : UK Operations' THEN 'UK'
+  WHEN {subsidiary} = 'Parent Company : Canada' THEN 'CA'
+  ELSE 'Other'
+END
+```
+Useful for consolidating subsidiary names into shorter labels for reporting. Replace the subsidiary display names with the actual values from your account. Use Formula(Text).
+
+The pattern across all of these is the same: evaluate a condition or set of conditions, return a label or value based on the first matching condition, and close with `END`. Chaining multiple `WHEN` clauses handles ranges; combining field comparisons with `AND` and `OR` inside a single `WHEN` handles compound conditions.
 
 ## What formula shows transactions created this month?
 

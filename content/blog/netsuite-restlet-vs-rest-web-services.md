@@ -2,7 +2,7 @@
 title: "NetSuite RESTlet vs REST Web Services: Which Integration Approach to Use"
 description: "The practical difference between NetSuite RESTlets and REST Web Services, when to build a custom RESTlet versus using the built-in REST API, and how authentication differs between the two."
 date: "2026-08-07"
-updated: "2026-08-14"
+updated: "2026-08-21"
 tags: ["Integrations", "SuiteScript", "Development"]
 ---
 
@@ -189,6 +189,37 @@ Use REST Web Services when the integration needs to:
 - Follow standard REST conventions that the wider development team already understands
 
 REST Web Services is maintained by Oracle and updated with each NetSuite release. Standard record types gain new fields and capabilities without requiring changes to the integration code. For net-new integrations that do not require custom logic at the endpoint layer, REST Web Services is the default choice.
+
+## Decision framework: RESTlet or REST Web Services?
+
+If the integration requirement fits one of these patterns, the choice is straightforward:
+
+| Scenario | Use |
+|---|---|
+| Create, read, update, or delete a standard NetSuite record | REST Web Services |
+| Query NetSuite data using SQL syntax | REST Web Services (SuiteQL endpoint) |
+| Return data from multiple record types in one HTTP call | RESTlet |
+| Apply business logic or validation before writing to NetSuite | RESTlet |
+| Third-party iPaaS tool (Celigo, Boomi, Workato) managing the connection | REST Web Services (OAuth 2.0 support) |
+| Internal tool or service managing TBA credentials directly | Either (TBA supported by both) |
+| Migrate from an NLAuth-authenticated endpoint | RESTlet (same architecture, credential swap only) |
+| Net-new integration, no custom logic required | REST Web Services |
+| Real-time combined lookup from multiple record types | RESTlet |
+| Batch data extraction for reporting or data warehouse | REST Web Services (SuiteQL + pagination) |
+
+The most common case where teams choose RESTlet over REST Web Services is the combined lookup: an external system needs customer data plus open orders plus recent payments in a single API call. REST Web Services requires three separate requests and client-side assembly. A RESTlet handles the joins in SuiteScript and returns a single shaped response.
+
+## How to migrate a RESTlet from NLAuth to TBA
+
+NLAuth-authenticated RESTlets need to migrate to Token-Based Authentication before the 2027.1 release. The migration does not require changes to the RESTlet script itself; only the authentication credentials and calling convention in the external system change.
+
+**Step 1: Create a TBA integration record.** Navigate to Setup > Integration > Manage Integrations > New. Enable Token-Based Authentication and save. Note the Consumer Key and Consumer Secret.
+
+**Step 2: Create an access token.** The role used must have RESTlet execution permission. Navigate to Setup > Users/Roles > Access Tokens > New and generate a token for the integration. Note the Token ID and Token Secret. These four values replace the NLAuth credentials in the calling system.
+
+**Step 3: Update the calling system's authentication header.** Replace the `Authorization: NLAuth ...` header with an OAuth 1.0 HMAC-SHA256 signature. Most integration platforms have a TBA connector that handles signature computation automatically once the four credential values are configured.
+
+**Step 4: Validate in Sandbox before Production.** The RESTlet URL does not change. Test the credential swap in Sandbox, confirm the RESTlet returns the expected response, then replicate to Production.
 
 ---
 
