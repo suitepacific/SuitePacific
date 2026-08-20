@@ -82,6 +82,16 @@ export const NAV_LINKS: NavLink[] = [
       { label: "Nonprofit", href: "/industries/nonprofit", description: "NetSuite support for nonprofit organizations." },
     ],
   },
+  {
+    label: "Locations",
+    children: [
+      { label: "NetSuite Consultant Chicago", href: "/netsuite-consultant-chicago", description: "Post-go-live support for Chicago-area manufacturers and distributors." },
+      { label: "NetSuite Consultant New York", href: "/netsuite-consultant-new-york", description: "Post-go-live support for New York financial services and professional firms." },
+      { label: "NetSuite Consultant Los Angeles", href: "/netsuite-consultant-los-angeles", description: "Post-go-live support for LA apparel, media, and distribution companies." },
+      { label: "NetSuite Consultant San Francisco", href: "/netsuite-consultant-san-francisco", description: "Post-go-live support for SF SaaS and technology companies." },
+      { label: "NetSuite Consultant Texas", href: "/netsuite-consultant-texas", description: "Post-go-live support for Texas manufacturers and energy services companies." },
+    ],
+  },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Resources", href: "/resources" },
   { label: "Blog", href: "/blog" },
@@ -488,19 +498,19 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     title: "Services",
     links: [
+      { label: "Post-Go-Live Support", href: "/netsuite-post-go-live-support" },
+      { label: "NetSuite Care Plans", href: "/netsuite-care" },
+      { label: "Partner Replacement", href: "/netsuite-partner-replacement" },
+      { label: "Health Check", href: "/netsuite-health-check" },
+      { label: "Emergency Support", href: "/netsuite-emergency-support" },
       { label: "SuiteScript Development", href: "/netsuite-suitescript-development" },
       { label: "Workflow Automation", href: "/netsuite-workflow-automation" },
-      { label: "Saved Searches & Dashboards", href: "/netsuite-saved-searches-dashboards" },
-      { label: "Advanced PDF Templates", href: "/netsuite-advanced-pdf-templates" },
       { label: "NetSuite Integrations", href: "/netsuite-integrations" },
       { label: "Administrator Support", href: "/netsuite-administrator-support" },
-      { label: "Admin Support for SMBs", href: "/netsuite-admin-support-small-business" },
-      { label: "NetSuite Consulting", href: "/netsuite-consulting-services" },
       { label: "Account Optimization", href: "/netsuite-account-optimization" },
-      { label: "Post-Go-Live Support", href: "/netsuite-post-go-live-support" },
-      { label: "Health Check", href: "/netsuite-health-check" },
+      { label: "Advanced PDF Templates", href: "/netsuite-advanced-pdf-templates" },
+      { label: "Saved Searches & Dashboards", href: "/netsuite-saved-searches-dashboards" },
       { label: "Technical Debt", href: "/netsuite-technical-debt" },
-      { label: "Partner Replacement", href: "/netsuite-partner-replacement" },
     ],
   },
   {
@@ -513,6 +523,26 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     ],
   },
   {
+    title: "Locations",
+    links: [
+      { label: "NetSuite Consultant Chicago", href: "/netsuite-consultant-chicago" },
+      { label: "NetSuite Consultant New York", href: "/netsuite-consultant-new-york" },
+      { label: "NetSuite Consultant Los Angeles", href: "/netsuite-consultant-los-angeles" },
+      { label: "NetSuite Consultant San Francisco", href: "/netsuite-consultant-san-francisco" },
+      { label: "NetSuite Consultant Texas", href: "/netsuite-consultant-texas" },
+    ],
+  },
+  {
+    title: "Compare",
+    links: [
+      { label: "ACS Alternative", href: "/netsuite-acs-alternative" },
+      { label: "Support Alternative", href: "/netsuite-support-alternative" },
+      { label: "Freelancer vs Firm", href: "/netsuite-freelancer-vs-consulting-firm" },
+      { label: "Implementation vs Managed", href: "/netsuite-implementation-partner-vs-managed-support" },
+      { label: "Oracle Support vs Third-Party", href: "/netsuite-oracle-support-vs-third-party" },
+    ],
+  },
+  {
     title: "Resources",
     links: [
       { label: "SuiteCompare", href: "/suitecompare" },
@@ -521,8 +551,6 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: "Case Studies", href: "/case-studies" },
       { label: "FAQ", href: "/#faq" },
       { label: "Hire a NetSuite Developer", href: "/hire-netsuite-developer" },
-      { label: "Post-Go-Live Support Guide", href: "/netsuite-post-go-live-support" },
-      { label: "Implementation vs. Managed Support", href: "/netsuite-implementation-partner-vs-managed-support" },
     ],
   },
   {

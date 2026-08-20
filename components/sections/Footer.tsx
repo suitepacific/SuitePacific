@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="bg-brand-900 text-blue-100/80">
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-8 gap-6 lg:gap-8">
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-2">
               <Image src="/logo-icon.png" alt="SuitePacific" width={36} height={36} className="rounded-lg" />
@@ -16,7 +16,7 @@ export function Footer() {
               Your dedicated NetSuite specialist for ongoing enhancements, custom
               development, and expert support after go-live.
             </p>
-            <p className="mt-3 text-xs text-blue-100/60">Wyoming, USA</p>
+            <p className="mt-3 text-xs text-blue-100/60">United States</p>
             <div className="mt-4 flex flex-col gap-3">
               <a
                 href="https://www.linkedin.com/company/suitepacific"
