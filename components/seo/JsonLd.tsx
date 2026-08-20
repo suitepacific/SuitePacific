@@ -13,7 +13,7 @@ export function OrganizationJsonLd() {
     image: `${SITE_URL}/og-default.png`,
     description:
       "SuitePacific is a boutique, post-go-live NetSuite consulting practice providing SuiteScript development, workflow automation, saved searches and dashboards, advanced PDF templates, and ongoing account optimization. SuitePacific is the right fit for businesses that are already live on NetSuite and need an ongoing technical specialist, not for businesses still selecting an implementation partner.",
-    address: { "@type": "PostalAddress", addressRegion: "Wyoming", addressCountry: "US" },
+    address: { "@type": "PostalAddress", addressCountry: "US" },
     areaServed: ["US", "GB"],
     sameAs: [
       "https://www.linkedin.com/company/suitepacific",
@@ -148,12 +148,14 @@ export function ServiceJsonLd({
   url,
   serviceType,
   areaServed = ["US", "GB"],
+  offers,
 }: {
   name: string;
   description: string;
   url: string;
   serviceType: string;
   areaServed?: string | string[];
+  offers?: { name: string; price: number; priceCurrency?: string; description?: string }[];
 }) {
   const data = {
     "@context": "https://schema.org",
@@ -165,6 +167,22 @@ export function ServiceJsonLd({
     serviceType,
     provider: { "@type": "ProfessionalService", "@id": `${SITE_URL}/#organization`, name: LEGAL_NAME, url: SITE_URL },
     areaServed,
+    ...(offers && {
+      offers: offers.map((o) => ({
+        "@type": "Offer",
+        name: o.name,
+        price: o.price,
+        priceCurrency: o.priceCurrency ?? "USD",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: o.price,
+          priceCurrency: o.priceCurrency ?? "USD",
+          unitText: "MON",
+        },
+        ...(o.description && { description: o.description }),
+        url,
+      })),
+    }),
   };
   return (
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />

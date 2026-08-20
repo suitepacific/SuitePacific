@@ -201,6 +201,11 @@ export default function NetSuiteCarePage() {
         description="SuitePacific NetSuite Care is a monthly retainer for businesses already live on NetSuite that need ongoing SuiteScript development, workflow automation, reporting, troubleshooting, and technical support. Plans start at $799/month for 10 hours and scale to $2,499/month for 35 hours. 3-month minimum, then month-to-month. No SOW required per request."
         url={`${SITE_URL}/netsuite-care`}
         serviceType="NetSuite Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month of NetSuite SuiteScript, workflow, reporting, and troubleshooting support." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month with priority support, monthly technical review, and proactive recommendations." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month for businesses that need a deeper NetSuite technical partnership." },
+        ]}
       />
       <OrganizationJsonLd />
 
@@ -230,6 +235,18 @@ export default function NetSuiteCarePage() {
             Starting at $799/month. 3-month minimum, then month-to-month.
           </p>
         </FadeIn>
+      </section>
+
+      {/* Quick answer */}
+      <section className="mx-auto max-w-3xl px-6 lg:px-8 mt-10">
+        <div style={{ background: "#eef2fb", border: "1px solid #b2c2e6", borderRadius: "10px", padding: "1.25rem 1.5rem" }}>
+          <p style={{ margin: "0 0 0.5rem", fontSize: "0.7rem", fontWeight: 700, color: "#4f7fff", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+            What is a NetSuite Care plan?
+          </p>
+          <p style={{ margin: 0, color: "#14306b", fontSize: "0.9rem", lineHeight: 1.6 }}>
+            A NetSuite Care plan is a monthly retainer that gives your team access to an experienced NetSuite technical specialist without hiring a full-time developer. Each month you receive a set number of hours for SuiteScript development, workflow automation, saved searches, reporting, troubleshooting, and configuration changes. Plans are structured, not time-and-materials: you know the cost, the scope, and the response commitment before the month starts. Care plans start at $799/month and operate on a 3-month minimum, then month-to-month with no long-term contract.
+          </p>
+        </div>
       </section>
 
       {/* Lead form - top */}

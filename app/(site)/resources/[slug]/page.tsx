@@ -58,22 +58,23 @@ export default async function ResourcePage({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "TechArticle",
+            "@id": `${SITE_URL}/resources/${slug}#article`,
             url: `${SITE_URL}/resources/${slug}`,
             headline: resource.title,
             description: resource.description,
+            isAccessibleForFree: true,
+            speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", "h2"] },
             image: { "@type": "ImageObject", url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 },
             datePublished: resource.publishedAt,
             dateModified: resource.updatedAt ?? resource.publishedAt,
-            author: { "@type": "Organization", name: LEGAL_NAME },
+            author: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: LEGAL_NAME },
             publisher: {
               "@type": "Organization",
+              "@id": `${SITE_URL}/#organization`,
               name: LEGAL_NAME,
               logo: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png`, width: 256, height: 256 },
             },
-            mainEntityOfPage: {
-              "@type": "WebPage",
-              "@id": `${SITE_URL}/resources/${slug}`,
-            },
+            mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/resources/${slug}` },
           }),
         }}
       />

@@ -159,12 +159,12 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Integrations",
+  title: "NetSuite Integration Development and Maintenance",
   description:
     "Custom NetSuite integration development: RESTlets, SuiteTalk APIs, scheduled data sync, and file-based integrations connecting NetSuite to e-commerce platforms, 3PLs, CRMs, and other business systems.",
   alternates: { canonical: "/netsuite-integrations" },
   openGraph: {
-    title: "NetSuite Integrations",
+    title: "NetSuite Integration Development and Maintenance",
     description: "Custom NetSuite integrations: RESTlet-based connections, scheduled sync scripts, and API integrations connecting NetSuite to e-commerce platforms, 3PLs, payment processors, and custom applications.",
     url: "https://suitepacific.com/netsuite-integrations",
     type: "website",

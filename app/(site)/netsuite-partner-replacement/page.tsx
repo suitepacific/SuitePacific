@@ -252,6 +252,34 @@ export default function NetSuitePartnerReplacementPage() {
           relationship, not a series of individual projects.
         </p>
 
+        {/* Advisory: what switching actually involves */}
+        <div className="mt-10" data-section="what-to-expect">
+          <div style={{ background: "#eef2fb", border: "1px solid #b2c2e6", borderRadius: "10px", padding: "1.25rem 1.5rem", marginBottom: "2rem" }}>
+            <p style={{ margin: "0 0 0.5rem", fontSize: "0.7rem", fontWeight: 700, color: "#4f7fff", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+              What does switching NetSuite partners actually involve?
+            </p>
+            <p style={{ margin: 0, color: "#14306b", fontSize: "0.9rem", lineHeight: 1.6 }}>
+              Switching NetSuite partners does not require migration, data transfer, or disruption to your live system. Your NetSuite account, all your customizations, your data, and your users stay exactly where they are. What changes is who has administrator access and who performs ongoing development and support work. The transition typically takes one to two weeks: a new partner performs an account review to understand your scripts, workflows, integrations, and configuration; you grant them the necessary access roles; and you notify your existing partner when the transition is complete. Your NetSuite system does not go offline and nothing needs to be rebuilt.
+            </p>
+          </div>
+
+          <h2 className="text-lg font-semibold text-brand-900 mb-4">What to check before you switch</h2>
+          <div className="space-y-4 text-sm text-brand-400">
+            <p>
+              <strong className="text-brand-900">Confirm what documentation exists.</strong> Your implementation partner should have delivered technical documentation covering your custom scripts, workflows, integration configurations, and any non-standard customizations. If you do not have this documentation, your new partner will need to reverse-engineer your account configuration during the onboarding review. That adds time but is manageable; knowing in advance sets the right expectation.
+            </p>
+            <p>
+              <strong className="text-brand-900">Check what access roles your current partner holds.</strong> In NetSuite, go to Setup &gt; Users/Roles &gt; Manage Users and filter by your partner&apos;s email domain. Note which accounts have administrator access. You will revoke these after your new partner has been granted their own access roles; do not revoke existing access before the new partner is set up, or you risk a gap in support coverage.
+            </p>
+            <p>
+              <strong className="text-brand-900">Identify any in-progress work.</strong> If your current partner has active development work in your sandbox, confirm the status of that work before the transition. Partially deployed customizations are the most common source of post-transition issues; a handover call or written status summary from the outgoing partner prevents avoidable problems.
+            </p>
+            <p>
+              <strong className="text-brand-900">Understand your contract terms.</strong> Review your current partner agreement for notice periods and any terms covering transition assistance. Most implementation agreements do not require the partner to provide handover support, but some include it. Knowing your contractual position before you initiate the conversation prevents misaligned expectations on both sides.
+            </p>
+          </div>
+        </div>
+
         {/* Why companies switch */}
         <div className="mt-12" data-section="trigger-points">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">Why do companies switch NetSuite partners?</h2>

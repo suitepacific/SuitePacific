@@ -12,6 +12,7 @@ import { MidCta } from "@/components/sections/MidCta";
 import { Insights } from "@/components/sections/Insights";
 import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
+import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { getAllPosts } from "@/lib/blog";
 import { OrganizationJsonLd, WebSiteJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import type { Metadata } from "next";
@@ -39,6 +40,13 @@ export default async function Home() {
       <Hero />
       <SocialProof />
       <PainPoints />
+      <section className="py-10 sm:py-12">
+        <div className="mx-auto max-w-xl px-4 sm:px-6">
+          <p className="text-sm font-semibold text-brand-900 mb-1">Ready to fix it?</p>
+          <p className="text-sm text-brand-400 mb-5">Tell us what you are working on. We will respond within one business day.</p>
+          <LeadFormLight />
+        </div>
+      </section>
       <Timeline />
       <Services />
       <Comparison />
@@ -60,6 +68,9 @@ export default async function Home() {
                   src="https://i.ytimg.com/vi/IQvWN_yZ24A/hqdefault.jpg"
                   alt="SuitePacific introduction video"
                   className="w-full h-full object-cover"
+                  width={480}
+                  height={360}
+                  fetchPriority="high"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/25 group-hover:bg-black/35 transition-colors">
                   <div className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center shadow-md">
