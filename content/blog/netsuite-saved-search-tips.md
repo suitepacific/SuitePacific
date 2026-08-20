@@ -102,6 +102,11 @@ Click Preview to run the search against live data. Review the first few rows to 
 
 The saved search is now accessible from Reports > Saved Searches > All Saved Searches, and can be added to any dashboard as a portlet or scheduled to email its results automatically from the Email subtab.
 
+<figure style="margin:2rem 0">
+<img src="/blog/netsuite-saved-search-tips/post1.png" alt="NetSuite saved search Results tab showing a Formula (Text) column configured with a CASE WHEN conditional expression and the Formula Type dropdown set to Formula (Text)" style="width:100%;border-radius:8px;border:1px solid #e2e8f0" loading="lazy" />
+<figcaption style="font-size:0.75rem;color:#64748b;margin-top:0.5rem">The Results tab of a NetSuite saved search, with a Formula (Text) column selected and a CASE WHEN expression entered in the formula input. The Formula Type dropdown must match the return value type or the column will be blank.</figcaption>
+</figure>
+
 ## Ten saved search techniques
 
 Here are ten techniques we use constantly when cleaning up or building out a client's saved searches.
