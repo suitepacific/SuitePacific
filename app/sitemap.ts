@@ -9,7 +9,7 @@ const SEO_REFRESH_DATE = new Date("2026-08-05");
 const NEW_PAGES_DATE = new Date("2026-08-11");
 const KW_GAP_DATE = new Date("2026-08-13");
 
-// These resource slugs redirect to /blog/* equivalents — exclude from sitemap to avoid 301s
+// These resource slugs redirect to /blog/* equivalents - exclude from sitemap to avoid 301s
 const REDIRECTED_RESOURCE_SLUGS = new Set([
   "netsuite-user-event-vs-client-script",
   "netsuite-rest-batch-sequential",

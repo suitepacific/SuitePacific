@@ -139,7 +139,8 @@ export default function OracleSupportVsThirdPartyPage() {
             for day-to-day work. The two options can run in parallel: Oracle support handles
             confirmed platform defects through internal channels, while the third-party firm handles
             everything above the platform. For most mid-market accounts, the third-party firm covers
-            the full scope without needing Oracle support for routine work.
+            the full scope without needing Oracle support for routine work, and typically provides
+            faster response on active production issues than Oracle&apos;s standard case queue.
           </p>
         </div>
 

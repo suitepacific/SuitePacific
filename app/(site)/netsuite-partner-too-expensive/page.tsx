@@ -121,6 +121,24 @@ export default function NetSuitePartnerTooExpensivePage() {
           Care plans from $799/month &middot; No SOW per request &middot; Direct developer access &middot; 3-month minimum
         </p>
 
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            Large NetSuite implementation partners charge $150 to $300 per hour on time-and-materials,
+            but the hourly rate understates the actual cost for ongoing support work. Every request
+            requires a scoping call, a proposal, and an approval cycle. That overhead typically adds
+            two to four hours of billable time before development begins on a request that takes
+            three hours to complete. The partner also rotates staff, so the consultant who knew your
+            account is replaced by someone who re-onboards at your expense. A boutique retainer
+            model eliminates all of this overhead. SuitePacific Care plans run from $799 per month
+            for 10 hours to $2,499 per month for 35 hours, with no statement of work required per
+            request, no account manager relay, and retained context across every request. For
+            accounts with four or more hours of work per month, the total cost under a retainer is
+            almost always lower than time-and-materials from a larger firm at any comparable hourly
+            rate.
+          </p>
+        </div>
+
         <p className="mt-8 text-sm text-brand-400 leading-relaxed">
           Most NetSuite accounts that are paying too much for support are not doing anything wrong.
           They are using the same firm that did their implementation because it felt like the safe

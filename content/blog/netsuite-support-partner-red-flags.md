@@ -8,6 +8,11 @@ tags: ["netsuite", "consulting", "netsuite-support", "vendor-evaluation"]
 
 Companies looking for ongoing NetSuite support after an implementation often find themselves evaluating multiple partners with similar-sounding capabilities and pricing. The differences that matter are rarely visible on a website. They surface in how a partner is staffed, how they handle requests, and what happens when something breaks. Below are the red flags that appear most consistently in engagements that do not go well.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The most reliable red flags when evaluating a NetSuite support partner: the person handling your discovery call is not the developer who will work on your account; the partner cannot name specific certification levels held by the people assigned to your work; every request requires a new scope document regardless of size; and there is no defined Sandbox testing policy before Production deployment. A fourth red flag specific to ongoing support: when a production issue occurs on a Friday, the partner's response involves a ticket queue rather than a direct call to the developer who knows your account. These patterns are structural, not exceptions. A firm routing all work through an account manager layer will do that consistently. A firm deploying to Production without Sandbox testing will do that consistently. The delivery model a partner uses is visible before you sign, through the questions you ask during evaluation, not only after something goes wrong.</p>
+</div>
+
 ## What Does It Mean When the Sales Team Is Not the Delivery Team?
 
 The most common pattern in disappointing NetSuite engagements: the discovery call is handled by a senior consultant or sales person, and the actual development work is handed to a junior resource or offshore team. The client never meets the person doing the work until something goes wrong.

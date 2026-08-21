@@ -41,6 +41,15 @@ export const metadata: Metadata = {
   },
 };
 
+const SIDE_BY_SIDE = [
+  { aspect: "Primary job", impl: "Get a company onto NetSuite for the first time", managed: "Maintain and extend a live NetSuite account over time" },
+  { aspect: "Billing model", impl: "Project-based; one-time or phased SOW", managed: "Monthly retainer; no SOW per request" },
+  { aspect: "Engagement duration", impl: "Fixed; ends at or shortly after go-live", managed: "Continuous; month-to-month after initial period" },
+  { aspect: "When you need it", impl: "Pre-go-live or mid-implementation", managed: "Any time after the implementation ends" },
+  { aspect: "Covers customizations", impl: "Builds them during implementation", managed: "Modifies and extends what was already built" },
+  { aspect: "Response model", impl: "Project milestones, not ongoing tickets", managed: "Defined response windows for ongoing requests" },
+];
+
 const IMPLEMENTATION_PARTNER = [
   "Initial NetSuite setup and configuration",
   "Data migration from your previous system",
@@ -100,6 +109,25 @@ export default function ComparisonPage() {
           <LeadFormLight />
         </div>
 
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            A NetSuite implementation partner handles the initial project of getting a company onto
+            NetSuite: configuration, data migration, workflow setup, go-live training, and
+            stabilization. The engagement is project-based and ends after go-live. A managed support
+            provider handles everything that comes after: ongoing SuiteScript development, workflow
+            modifications as processes change, saved searches and reporting, integration maintenance,
+            and troubleshooting as the account evolves. The confusion arises because many companies
+            assume their implementation partner stays involved after go-live in the same capacity.
+            Most implementation partners offer post-go-live support as an add-on, but it is
+            typically a break-fix model billed per request, not a retained technical team with
+            ongoing context on the account. If your implementation ended and your NetSuite account
+            is still changing, what you need is a managed support provider, not a new implementation
+            engagement. SuitePacific handles only post-go-live accounts and does not do
+            implementations.
+          </p>
+        </div>
+
         <div className="prose prose-blue mt-12 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
           <p>
             “NetSuite consulting” covers two genuinely different jobs that happen to use the
@@ -138,6 +166,33 @@ export default function ComparisonPage() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+
+        {/* Comparison table */}
+        <div className="mt-12">
+          <h2 className="text-lg font-semibold text-brand-900 mb-4">
+            Implementation partner vs. managed support: key differences
+          </h2>
+          <div className="overflow-x-auto rounded-2xl border border-brand-100">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr>
+                  <th className="bg-brand-50/60 px-5 py-3 text-left text-xs font-semibold text-brand-900 w-1/3"></th>
+                  <th className="bg-brand-50/60 px-5 py-3 text-left text-xs font-semibold text-brand-600">Implementation Partner</th>
+                  <th className="bg-brand px-5 py-3 text-left text-xs font-semibold text-white">Managed Support</th>
+                </tr>
+              </thead>
+              <tbody>
+                {SIDE_BY_SIDE.map((row, i) => (
+                  <tr key={row.aspect} className={i % 2 === 0 ? "bg-white" : "bg-brand-50/30"}>
+                    <td className="px-5 py-3 text-xs font-semibold text-brand-900 align-top border-t border-brand-100">{row.aspect}</td>
+                    <td className="px-5 py-3 text-xs text-brand-600 align-top border-t border-brand-100">{row.impl}</td>
+                    <td className="px-5 py-3 text-xs text-brand-600 align-top border-t border-brand-100 bg-brand/5">{row.managed}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
 

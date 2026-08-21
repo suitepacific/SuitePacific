@@ -17,6 +17,54 @@ Most saved search users never touch formula fields because the syntax looks unfa
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Saved search formulas use Oracle SQL syntax. Field references are wrapped in curly braces: {trandate}, {entity}, {amount}. SYSDATE returns the current date. Subtracting one date from another returns the difference in days as a number. CASE WHEN...THEN...ELSE...END handles conditional logic. NVL(field, default) returns the default value when a field is null. TO_CHAR(date, 'format') converts a date to a string in the format you specify. ROUND(number, 0) rounds to the nearest integer. These functions are added in the Results tab of a saved search by clicking Add Formula and selecting the formula type that matches the return value: Formula(Text) for strings, Formula(Numeric) for numbers, Formula(Date) for dates. Getting the formula type wrong produces a blank column or an error rather than the expected output. Formula fields can also be added to the Criteria tab of a saved search, not only the Results tab, which allows filtering records by a calculated value that does not exist as a standard field on the record type.</p>
 </div>
 
+<figure style="margin:1.75rem 0">
+<svg viewBox="0 0 680 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;font-family:system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="fa-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#4f7fff"/></marker>
+  </defs>
+  <text x="340" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#14306b" letter-spacing="0.05em">FORMULA FIELD: HOW THE PIECES FIT TOGETHER</text>
+  <rect x="0" y="24" width="138" height="100" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <rect x="0" y="24" width="138" height="28" rx="7" fill="#0b1f4d"/>
+  <rect x="0" y="42" width="138" height="10" fill="#0b1f4d"/>
+  <text x="69" y="42" text-anchor="middle" font-size="9" font-weight="700" fill="#eef2fb">1. Field Reference</text>
+  <text x="69" y="66" text-anchor="middle" font-size="8.5" fill="#14306b" font-family="monospace">{trandate}</text>
+  <text x="69" y="82" text-anchor="middle" font-size="8.5" fill="#14306b" font-family="monospace">{amount}</text>
+  <text x="69" y="98" text-anchor="middle" font-size="8.5" fill="#14306b" font-family="monospace">{duedate}</text>
+  <text x="69" y="113" text-anchor="middle" font-size="7.5" fill="#4f6fb0">Internal ID in braces</text>
+  <line x1="141" y1="74" x2="162" y2="74" stroke="#4f7fff" stroke-width="2" marker-end="url(#fa-arrow)"/>
+  <rect x="166" y="24" width="160" height="100" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <rect x="166" y="24" width="160" height="28" rx="7" fill="#0b1f4d"/>
+  <rect x="166" y="42" width="160" height="10" fill="#0b1f4d"/>
+  <text x="246" y="42" text-anchor="middle" font-size="9" font-weight="700" fill="#eef2fb">2. SQL Expression</text>
+  <text x="246" y="64" text-anchor="middle" font-size="7.5" fill="#14306b" font-family="monospace">CASE WHEN ... END</text>
+  <text x="246" y="80" text-anchor="middle" font-size="7.5" fill="#14306b" font-family="monospace">SYSDATE - {duedate}</text>
+  <text x="246" y="96" text-anchor="middle" font-size="7.5" fill="#14306b" font-family="monospace">NVL({field}, default)</text>
+  <text x="246" y="113" text-anchor="middle" font-size="7.5" fill="#4f6fb0">Oracle SQL syntax</text>
+  <line x1="329" y1="74" x2="350" y2="74" stroke="#4f7fff" stroke-width="2" marker-end="url(#fa-arrow)"/>
+  <rect x="354" y="24" width="148" height="100" rx="7" fill="#eef2fb" stroke="#4f7fff" stroke-width="1.5"/>
+  <rect x="354" y="24" width="148" height="28" rx="7" fill="#0b1f4d"/>
+  <rect x="354" y="42" width="148" height="10" fill="#0b1f4d"/>
+  <text x="428" y="42" text-anchor="middle" font-size="9" font-weight="700" fill="#eef2fb">3. Formula Type</text>
+  <text x="428" y="64" text-anchor="middle" font-size="8" fill="#14306b">Formula(Text)</text>
+  <text x="428" y="78" text-anchor="middle" font-size="8" fill="#14306b">Formula(Numeric)</text>
+  <text x="428" y="92" text-anchor="middle" font-size="8" fill="#14306b">Formula(Date)</text>
+  <text x="428" y="106" text-anchor="middle" font-size="8" fill="#14306b">Formula(Checkbox)</text>
+  <text x="428" y="119" text-anchor="middle" font-size="7" fill="#e05252" font-weight="600">Must match return type</text>
+  <line x1="505" y1="74" x2="526" y2="74" stroke="#4f7fff" stroke-width="2" marker-end="url(#fa-arrow)"/>
+  <rect x="530" y="24" width="150" height="100" rx="7" fill="#eef2fb" stroke="#b2c2e6" stroke-width="1.5"/>
+  <rect x="530" y="24" width="150" height="28" rx="7" fill="#14306b"/>
+  <rect x="530" y="42" width="150" height="10" fill="#14306b"/>
+  <text x="605" y="42" text-anchor="middle" font-size="9" font-weight="700" fill="#eef2fb">4. Result Column</text>
+  <text x="605" y="64" text-anchor="middle" font-size="8" fill="#4f6fb0">Appears in Results tab</text>
+  <text x="605" y="78" text-anchor="middle" font-size="8" fill="#4f6fb0">alongside standard cols</text>
+  <text x="605" y="92" text-anchor="middle" font-size="8" fill="#4f6fb0">Can also filter records</text>
+  <text x="605" y="106" text-anchor="middle" font-size="8" fill="#4f6fb0">in Criteria tab</text>
+  <text x="605" y="120" text-anchor="middle" font-size="7.5" fill="#4f7fff">Blank = type mismatch</text>
+  <text x="340" y="155" text-anchor="middle" font-size="8" fill="#e05252" font-weight="600">Type mismatch produces a blank column, not an error. Check this first when debugging a formula that returns nothing.</text>
+</svg>
+<figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">The four steps to build a formula field. The most common mistake: a text expression in Formula(Numeric) produces a blank column with no error message.</figcaption>
+</figure>
+
 ## How do you add a formula field to a saved search?
 
 In the Results tab of a saved search, click the field selector dropdown and scroll to the Formula entries: Formula(Text), Formula(Numeric), Formula(Date), and Formula(Checkbox). Select the type that matches what your formula returns.
@@ -24,6 +72,57 @@ In the Results tab of a saved search, click the field selector dropdown and scro
 After selecting the formula type, an input field appears where you enter the expression. The formula references record fields using curly braces around the field's internal ID: `{trandate}` for the transaction date, `{entity}` for the customer, `{amount}` for the total.
 
 The formula type must match the return type of the expression. If your CASE WHEN formula returns a text string, use Formula(Text). If it returns a number, use Formula(Numeric). Using the wrong type produces a blank column rather than an error message, which makes the mismatch hard to diagnose.
+
+<div style="overflow-x:auto;margin:1.5rem 0">
+<table style="width:100%;border-collapse:collapse;font-size:0.82rem;font-family:system-ui,-apple-system,sans-serif">
+<thead>
+<tr style="background:#0b1f4d;color:#eef2fb">
+<th style="padding:0.6rem 0.85rem;text-align:left;font-weight:700;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase">Formula type</th>
+<th style="padding:0.6rem 0.85rem;text-align:left;font-weight:700;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase">Returns</th>
+<th style="padding:0.6rem 0.85rem;text-align:left;font-weight:700;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase">Use case</th>
+<th style="padding:0.6rem 0.85rem;text-align:left;font-weight:700;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase">Common functions</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid #e2e8f0">
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-weight:600">Formula(Text)</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">String</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">Labels, categories, formatted dates, concatenated fields</td>
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-size:0.78rem">CASE WHEN, TO_CHAR, NVL, ||</td>
+</tr>
+<tr style="background:#f8faff;border-bottom:1px solid #e2e8f0">
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-weight:600">Formula(Numeric)</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">Number</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">Days-old calculations, ratios, arithmetic</td>
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-size:0.78rem">SYSDATE - {date}, ROUND, NVL</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0">
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-weight:600">Formula(Date)</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">Date</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">Computed dates, date offsets</td>
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-size:0.78rem">ADD_MONTHS, NVL</td>
+</tr>
+<tr style="background:#f8faff;border-bottom:1px solid #e2e8f0">
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-weight:600">Formula(Checkbox)</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">T / F</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">Boolean filter flags, yes/no conditions</td>
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-size:0.78rem">CASE WHEN ... 'T' ELSE 'F'</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0">
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-weight:600">Formula(Percent)</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">Percentage</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">Margin rates, completion percentages</td>
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-size:0.78rem">Division on numeric fields</td>
+</tr>
+<tr style="background:#f8faff">
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-weight:600">Formula(Currency)</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">Currency</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">Calculated amounts, multi-field totals</td>
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-size:0.78rem">Arithmetic on currency fields</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 ## What is the formula for calculating invoice age in days?
 

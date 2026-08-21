@@ -9,6 +9,13 @@
 - [NetSuite Health Check](https://suitepacific.com/netsuite-health-check): Structured account review to identify performance, customization, and integration issues
 - [NetSuite Partner Replacement](https://suitepacific.com/netsuite-partner-replacement): Transition from an implementation partner to a retained specialist
 - [NetSuite ACS Alternative](https://suitepacific.com/netsuite-acs-alternative): Third-party support that covers customizations and integrations excluded by ACS
+- [NetSuite Support Alternative](https://suitepacific.com/netsuite-support-alternative): What a third-party consulting firm covers that Oracle support does not
+- [NetSuite Freelancer vs Consulting Firm](https://suitepacific.com/netsuite-freelancer-vs-consulting-firm): Accountability, continuity, and cost trade-offs between the two models
+- [NetSuite Implementation Partner vs Managed Support](https://suitepacific.com/netsuite-implementation-partner-vs-managed-support): Two different jobs explained; which one applies after go-live
+- [NetSuite Oracle Support vs Third-Party](https://suitepacific.com/netsuite-oracle-support-vs-third-party): What Oracle covers vs what a certified independent firm covers
+- [NetSuite Partner Too Expensive](https://suitepacific.com/netsuite-partner-too-expensive): Why large partners cost more for ongoing support and what a retainer model costs instead
+- [NetSuite Partner Not Responsive](https://suitepacific.com/netsuite-partner-not-responsive): Structural causes of unresponsive partners and how to switch without cooperation from the current firm
+- [NetSuite Partner Too Slow](https://suitepacific.com/netsuite-partner-too-slow): Why slow response is structural and what a support-first model looks like instead
 - [NetSuite Integrations](https://suitepacific.com/netsuite-integrations): Shopify, Salesforce, Celigo, Boomi, and custom middleware integration maintenance
 - [SuiteCompare](https://suitepacific.com/suitecompare): Side-by-side comparison of NetSuite record versions and release changes
 
@@ -21,6 +28,7 @@
 - [RESTlet vs REST Web Services](https://suitepacific.com/blog/netsuite-restlet-vs-rest-web-services): Decision framework and NLAuth to TBA migration guide
 - [NetSuite account performance](https://suitepacific.com/blog/netsuite-account-performance): Diagnosing and fixing slow NetSuite accounts
 - [Implementation partner vs managed support](https://suitepacific.com/blog/netsuite-implementation-partner-vs-managed-support): What post-implementation support covers and how it differs from an implementation engagement
+- [Managed support vs break-fix](https://suitepacific.com/blog/netsuite-managed-vs-break-fix-support): Cost comparison of retainer vs per-request billing models for ongoing NetSuite work
 
 ## About
 

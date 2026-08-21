@@ -10,6 +10,11 @@ A release-related script failure is a SuiteScript customization that ran correct
 
 NetSuite pushes two major releases per year and several minor updates in between. Scripts that have run without issue for years can fail silently after an update with no warning to the account administrator. This guide walks through how to diagnose a release-related script failure, identify what changed, and restore function.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A NetSuite script that breaks after an upgrade has not changed; the platform around it has. NetSuite releases two major updates per year and several minor updates between them. The most common causes of release-related script failures are API behavior changes, deprecated methods, field ID changes on specific record types, and governance limit adjustments that push a script over its limit. The diagnosis path: check the Script Execution Log at Customization &gt; Scripting &gt; Script Execution Log for failed entries, identify the first failure timestamp, compare it to the release date shown at Setup &gt; Company &gt; Release Notes, then search the release notes for the affected API call or field under the SuiteScript and Record changes sections. The fix should be built and tested in Sandbox before Production deployment. If data was affected during the failure window, a one-time cleanup script may be needed to backfill records that the failing script missed while it was not running correctly.</p>
+</div>
+
 ## How Do Release-Related Script Failures Typically Appear?
 
 The most common symptoms:

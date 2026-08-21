@@ -167,6 +167,25 @@ export default function FreelancerVsConsultingFirmPage() {
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
 
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            A NetSuite freelancer is appropriate for a single, well-scoped project with a defined
+            deliverable and an end date. A consulting firm is appropriate when the work is ongoing,
+            spans multiple service areas, or requires documentation and continuity over time. The
+            practical differences are accountability, continuity, and scope breadth. A freelancer
+            carries no backup coverage: illness, departure, or taking on additional clients pauses
+            all work with no recourse. A consulting firm maintains continuity regardless of
+            individual availability and retains institutional knowledge across every engagement.
+            Documentation practices also differ: freelancers vary widely; firms document changes as
+            part of delivery because account knowledge must stay intact for the next request. For
+            ongoing NetSuite work involving SuiteScript, workflow automation, reporting, and
+            integrations without an internal technical resource to manage the relationship, a
+            consulting firm is almost always the better structural fit. For a single, tightly-scoped
+            project with internal review capacity, a freelancer can be cost-effective.
+          </p>
+        </div>
+
         {/* Intro */}
         <div className="prose prose-blue mt-10 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
           <p>

@@ -362,7 +362,9 @@ export default function AcsAlternativePage() {
             consulting firm that covers both layers: the standard platform guidance ACS handles and
             the customization layer ACS does not. The alternative provides direct access to the
             consultant doing the work, retained context across every request, and same-day response
-            on active production issues without a shared-resource queue.
+            on active production issues without a shared-resource queue. The four ACS tiers are
+            Advise, Monitor, Optimize, and Architect; none includes SuiteScript development or
+            integration maintenance.
           </p>
         </div>
 

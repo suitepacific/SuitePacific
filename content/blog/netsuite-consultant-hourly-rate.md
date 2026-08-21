@@ -64,6 +64,45 @@ Four factors drive cost beyond the stated hourly rate:
 
 **Specialization.** SuiteScript developers and integration architects command higher rates than generalists. The relevant question is whether you need specialized expertise consistently or only occasionally.
 
+## Cost comparison: three consulting models
+
+<div style="overflow-x:auto;margin:1.5rem 0">
+<table style="width:100%;border-collapse:collapse;font-size:0.82rem;font-family:system-ui,-apple-system,sans-serif">
+<thead>
+<tr style="background:#0b1f4d;color:#eef2fb">
+<th style="padding:0.6rem 0.85rem;text-align:left;font-weight:700;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase">Model</th>
+<th style="padding:0.6rem 0.85rem;text-align:left;font-weight:700;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase">Stated rate</th>
+<th style="padding:0.6rem 0.85rem;text-align:left;font-weight:700;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase">Re-onboarding per request</th>
+<th style="padding:0.6rem 0.85rem;text-align:left;font-weight:700;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase">Typical cost: 3h task</th>
+<th style="padding:0.6rem 0.85rem;text-align:left;font-weight:700;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase">Best for</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid #e2e8f0">
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-weight:600">Large implementation partner</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">$150-$300/hr</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">2-4 hrs (billed at full rate)</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">$875-$2,100</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">One-time implementation projects</td>
+</tr>
+<tr style="background:#f8faff;border-bottom:1px solid #e2e8f0">
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-weight:600">Independent freelancer</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">$75-$175/hr</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">1-2 hrs per request</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">$300-$875</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">Isolated tasks, specific skills</td>
+</tr>
+<tr>
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-weight:600">Boutique retainer firm</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">$75-$80/hr effective</td>
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-weight:600">None (context retained)</td>
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-weight:600">$225-$240</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">Ongoing support, 4+ hrs/month</td>
+</tr>
+</tbody>
+</table>
+</div>
+
 ---
 
 See also: [NetSuite consultant cost](/netsuite-consultant-cost) for the full pricing comparison, [NetSuite Care plans](/netsuite-care) for fixed retainer pricing, and [why large partner billing inflates ongoing support cost](/netsuite-partner-too-expensive).

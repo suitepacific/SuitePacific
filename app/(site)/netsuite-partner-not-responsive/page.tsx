@@ -7,6 +7,14 @@ import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
 
+const RESPONSIVE_COMPARISON = [
+  { aspect: "Response on urgent issues", unresponsive: "No defined SLA; may sit open for days", responsive: "Same-day escalation for production issues" },
+  { aspect: "Context across requests", unresponsive: "Lost when consultant rotates off the account", responsive: "Retained across every request; no re-onboarding" },
+  { aspect: "Starting a new request", unresponsive: "SOW required; days before work begins", responsive: "Falls within active engagement; starts within the same week" },
+  { aspect: "Who you talk to", unresponsive: "Account manager who relays to the developer", responsive: "Direct access to the developer doing the work" },
+  { aspect: "Escalation path", unresponsive: "Unclear; depends on the individual relationship", responsive: "Named contact with a defined path for urgent issues" },
+];
+
 const FAQ = [
   {
     question: "What should I do if my NetSuite partner is not responding?",
@@ -79,6 +87,25 @@ export default function NetSuitePartnerNotResponsivePage() {
           SuitePacific responds same-day for urgent issues &middot; Direct developer access &middot; No SOW per request
         </p>
 
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            An unresponsive NetSuite partner is almost always a structural problem rather than a
+            temporary communication issue. Large implementation firms prioritize active project work
+            over post-go-live support accounts. When your consultant is reassigned to a new
+            implementation, your requests enter a shared queue with no dedicated resource or defined
+            response time. The signs that the situation is structural: escalations that improve
+            briefly then revert, different consultants handling the account each time with no
+            retained context, production issues sitting open for more than one business day, and
+            requests that require a new statement of work before any work begins. If two or more of
+            these apply, the relationship has run its course. Switching to a dedicated support firm
+            does not require cooperation from the current partner. A new partner can read all
+            scripts, workflows, and configurations directly from your NetSuite account. Administrator
+            access is the only requirement to begin onboarding, and a transition typically takes two
+            to four weeks.
+          </p>
+        </div>
+
         <p className="mt-8 text-sm text-brand-400 leading-relaxed">
           Most businesses wait too long before switching a NetSuite partner that has stopped being
           responsive. The pattern is familiar: a request sits open for a week, there is an escalation
@@ -106,6 +133,33 @@ export default function NetSuitePartnerNotResponsivePage() {
                 {sign}
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Comparison table */}
+        <div className="mt-14">
+          <h2 className="text-lg font-semibold text-brand-900 mb-4">
+            Unresponsive partner vs. responsive support: what actually differs
+          </h2>
+          <div className="overflow-x-auto rounded-2xl border border-brand-100">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr>
+                  <th className="bg-brand-50/60 px-5 py-3 text-left text-xs font-semibold text-brand-900 w-1/3"></th>
+                  <th className="bg-brand-50/60 px-5 py-3 text-left text-xs font-semibold text-brand-600">Unresponsive partner</th>
+                  <th className="bg-brand px-5 py-3 text-left text-xs font-semibold text-white">Responsive support firm</th>
+                </tr>
+              </thead>
+              <tbody>
+                {RESPONSIVE_COMPARISON.map((row, i) => (
+                  <tr key={row.aspect} className={i % 2 === 0 ? "bg-white" : "bg-brand-50/30"}>
+                    <td className="px-5 py-3 text-xs font-semibold text-brand-900 align-top border-t border-brand-100">{row.aspect}</td>
+                    <td className="px-5 py-3 text-xs text-brand-600 align-top border-t border-brand-100">{row.unresponsive}</td>
+                    <td className="px-5 py-3 text-xs text-brand-600 align-top border-t border-brand-100 bg-brand/5">{row.responsive}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
 

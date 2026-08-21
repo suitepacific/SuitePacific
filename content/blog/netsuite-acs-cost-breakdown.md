@@ -10,6 +10,11 @@ NetSuite Advanced Customer Support (ACS) is Oracle's premium support tier for li
 
 This is a breakdown of all four ACS tiers, what each includes, the hour allocations, the pricing ranges reported by customers and partners, and what a third-party alternative costs in comparison.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite Advanced Customer Support (ACS) is Oracle's premium support tier for live NetSuite accounts. Oracle does not publish ACS pricing publicly. Quotes are negotiated as a percentage of your annual NetSuite license fee and are paid upfront for the full year. The four tiers are ACS Advise (shared pool access, no dedicated consultant), ACS Monitor (dedicated consultant, approximately 36 hours per quarter), ACS Optimize (Customer Success Manager plus functional consultant, approximately 20 hours per month), and ACS Architect (Senior CSM with a named expert team, approximately 40 hours per month). The important limitation across all tiers: ACS does not cover custom SuiteScript, third-party integrations, or anything outside the standard NetSuite platform. For most accounts live for more than a year, that exclusion covers the majority of actual support requests generated. A third-party NetSuite consulting firm covers both the platform layer ACS handles and the customization layer it does not.</p>
+</div>
+
 ## What is NetSuite ACS?
 
 ACS is a premium support subscription sold by Oracle alongside your NetSuite license. It provides access to a Customer Success Manager (CSM), senior NetSuite resources, proactive guidance, and faster escalation paths for confirmed platform defects to Oracle's engineering team.

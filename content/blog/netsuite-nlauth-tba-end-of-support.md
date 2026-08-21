@@ -10,7 +10,7 @@ NLAuth is a legacy credential-based authentication method in NetSuite that trans
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
-<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite is ending support for NLAuth, the authentication method that passes credentials directly in HTTP Authorization headers. Two retirement dates apply. In 2027.1, new integrations using NLAuth will be blocked, and existing NLAuth integrations that have not migrated will stop working. A second deprecation tentatively planned for 2028.1 completes the removal for any remaining connections. Any RESTlet, custom integration, or third-party connection that currently authenticates with NLAuth must migrate to Token-Based Authentication using Integration Records in NetSuite before 2027.1. Migration generates a Consumer Key, Consumer Secret, Token ID, and Token Secret for each integration. Organizations with large integration inventories should audit all connections for NLAuth usage now and prioritize migration of the highest-risk connections, particularly those that touch financial records or run unattended on a schedule.</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite is ending support for NLAuth, the authentication method that passes credentials directly in HTTP Authorization headers. Two retirement dates apply. In 2027.1, new integrations using NLAuth will be blocked, and existing NLAuth integrations that have not migrated will stop working. A second deprecation tentatively planned for 2028.1 completes the removal for any remaining connections. Any RESTlet, custom integration, or third-party connection that currently authenticates with NLAuth must migrate to Token-Based Authentication using Integration Records in NetSuite before 2027.1. Migration generates a Consumer Key, Consumer Secret, Token ID, and Token Secret for each integration. Organizations with large integration inventories should audit all connections for NLAuth usage now and prioritize migration of the highest-risk connections, particularly those that touch financial records or run unattended on a schedule. The migration path requires creating an Integration Record in NetSuite under Setup > Integration > Manage Integrations, then updating each external system with the new OAuth 1.0 Consumer Key, Consumer Secret, Token ID, and Token Secret.</p>
 </div>
 
 
@@ -48,6 +48,12 @@ The 2026.2 release notes confirm two changes coming in 2027.1 and one tentativel
 </svg>
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">Migrating to TBA now buys time but is not the final destination. OAuth 2.0 is the long-term target.</figcaption>
 </figure>
+
+<div style="background:#fff8ed;border:1px solid #fbbf24;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.25rem;font-size:0.7rem;font-weight:700;color:#b45309;text-transform:uppercase;letter-spacing:0.08em">Deadline: NetSuite 2027.1</p>
+<p style="margin:0 0 0.75rem;color:#78350f;font-size:0.875rem;line-height:1.6">All NLAuth integrations stop working at 2027.1. If your account has RESTlets or third-party connections still using NLAuth, the clock is running. Most migration projects take 2 to 4 weeks depending on integration count. That leaves narrow runway if you are also managing a 2026.2 release cycle and a year-end close.</p>
+<a href="/contact" style="display:inline-block;background:#b45309;color:#fff;font-size:0.8rem;font-weight:600;padding:0.5rem 1.25rem;border-radius:6px;text-decoration:none">Get your integration audit started</a>
+</div>
 
 ## What Is Being Retired in NetSuite and When?
 

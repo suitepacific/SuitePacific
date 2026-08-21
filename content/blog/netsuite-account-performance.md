@@ -137,7 +137,7 @@ The common pattern that causes this: a search built with no date criteria that r
 
 <figure style="margin:2rem 0">
 <img src="/blog/netsuite-account-performance/script-execution-log.png" alt="NetSuite Script Execution Log under Customization > Scripting showing six script executions including one Failed User Event script highlighted in red, with execution times ranging from 842 ms to 45,672 ms" style="width:100%;border-radius:8px;border:1px solid #e2e8f0" loading="lazy" />
-<figcaption style="font-size:0.75rem;color:#64748b;margin-top:0.5rem">The Script Execution Log at Customization &gt; Scripting &gt; Script Execution Log. A Failed status row (red) indicates a script error affecting that record type. High execution times — such as the 45,672 ms Map/Reduce job above — are the first place to look when an account feels slow across multiple users.</figcaption>
+<figcaption style="font-size:0.75rem;color:#64748b;margin-top:0.5rem">The Script Execution Log at Customization &gt; Scripting &gt; Script Execution Log. A Failed status row (red) indicates a script error affecting that record type. High execution times (such as the 45,672 ms Map/Reduce job above) are the first place to look when an account feels slow across multiple users.</figcaption>
 </figure>
 
 ## What does normal NetSuite performance look like?

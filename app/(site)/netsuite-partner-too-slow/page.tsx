@@ -30,6 +30,14 @@ const WHY_SLOW = [
   },
 ];
 
+const DELIVERY_COMPARISON = [
+  { aspect: "Request start time", slow: "Scoping call, SOW, approval: 3-7 days before work begins", fast: "No SOW within an active engagement; starts within the same week" },
+  { aspect: "Urgent issue response", slow: "Enters shared queue; no defined same-day path", fast: "Same-day escalation for production-affecting issues" },
+  { aspect: "Context per request", slow: "Re-onboarding each engagement billed at full hourly rate", fast: "Retained context; no re-onboarding time on any request" },
+  { aspect: "Who responds", slow: "Account manager relay to a rotating consultant", fast: "Direct access to the developer with ongoing account knowledge" },
+  { aspect: "Ongoing work model", slow: "Per-project; each change requires a new engagement overhead", fast: "Monthly allocation; no per-request engagement overhead" },
+];
+
 const FAQ = [
   {
     question: "How quickly does SuitePacific respond to support requests?",
@@ -97,6 +105,25 @@ export default function NetSuitePartnerTooSlowPage() {
           Urgent issues escalated same-day &middot; Direct developer access &middot; No SOW per request
         </p>
 
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            Slow NetSuite partner response is structural, not a communication problem that escalation
+            will fix. Large consulting firms run shared resource pools: your consultant handles
+            several clients simultaneously and your request waits behind whichever project is most
+            urgent to the firm that week. A statement of work requirement for each request adds days
+            of back-and-forth before a two-hour fix can begin. When the consultant who knew your
+            account moves to another project, the replacement re-onboards at your expense before
+            making any changes. The combination of shared resources, per-request overhead, and zero
+            retained context produces consistently slow turnaround on accounts with regular ongoing
+            needs. A support-first model removes these bottlenecks: direct access to the developer
+            doing the work with no account manager relay, no statement of work for routine requests
+            within an active engagement, and retained account context that eliminates re-onboarding
+            time. Urgent production issues are escalated same-day rather than entering a shared
+            queue.
+          </p>
+        </div>
+
         <p className="mt-8 text-sm text-brand-400 leading-relaxed">
           When a small NetSuite request sits open for a week or a production issue waits two days
           for someone to look at it, the instinct is to escalate or wait and see if things improve.
@@ -140,6 +167,33 @@ export default function NetSuitePartnerTooSlowPage() {
                 {sign}
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Comparison table */}
+        <div className="mt-14">
+          <h2 className="text-lg font-semibold text-brand-900 mb-4">
+            Project-delivery model vs. support-first model: how response differs
+          </h2>
+          <div className="overflow-x-auto rounded-2xl border border-brand-100">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr>
+                  <th className="bg-brand-50/60 px-5 py-3 text-left text-xs font-semibold text-brand-900 w-1/3"></th>
+                  <th className="bg-brand-50/60 px-5 py-3 text-left text-xs font-semibold text-brand-600">Project-delivery firm</th>
+                  <th className="bg-brand px-5 py-3 text-left text-xs font-semibold text-white">Support-first firm</th>
+                </tr>
+              </thead>
+              <tbody>
+                {DELIVERY_COMPARISON.map((row, i) => (
+                  <tr key={row.aspect} className={i % 2 === 0 ? "bg-white" : "bg-brand-50/30"}>
+                    <td className="px-5 py-3 text-xs font-semibold text-brand-900 align-top border-t border-brand-100">{row.aspect}</td>
+                    <td className="px-5 py-3 text-xs text-brand-600 align-top border-t border-brand-100">{row.slow}</td>
+                    <td className="px-5 py-3 text-xs text-brand-600 align-top border-t border-brand-100 bg-brand/5">{row.fast}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
 

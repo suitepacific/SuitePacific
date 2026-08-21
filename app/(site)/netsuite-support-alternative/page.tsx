@@ -250,7 +250,7 @@ export default function SupportAlternativePage() {
             active production issues, and coverage across the full account rather than only the
             standard-functionality tier. For most live accounts two or more years past go-live,
             the customization layer generates more support work than the platform itself, making a
-            third-party firm the practical choice.
+            third-party firm the practical choice for most live accounts, not an optional add-on.
           </p>
         </div>
 

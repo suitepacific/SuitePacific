@@ -66,10 +66,13 @@ export function SectionTracker() {
     const send = () => {
       if (sent) return;
       sent = true;
+      const durationMs = Date.now() - startedAt;
+      // Discard sessions under 5 seconds - these are back-navigations or prefetch artifacts
+      if (durationMs < 5000) return;
       const payload = JSON.stringify({
         path: pathname,
         referrer: document.referrer || null,
-        durationMs: Date.now() - startedAt,
+        durationMs,
         sectionsViewed: viewedOrder,
         exitSection,
         ...firstTouch,

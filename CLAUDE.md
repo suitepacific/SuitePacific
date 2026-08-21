@@ -35,7 +35,7 @@ Build every UI mobile-first. Before shipping any page or component:
 
 ### Navigation
 - Nav is simplified to 5 items: Services, Case Studies, Resources, Blog, Products.
-- Products is a dropdown (`children` array in `NAV_LINKS`). SuiteCompare is the only entry. Add new products here, not as top-level links.
+- Products is a dropdown (`children` array in `NAV_LINKS`). Current entries: SuiteCompare, NetSuite Care. Add new products here, not as top-level links.
 - `NavLink` in `lib/types.ts` is a discriminated union — items either have `href` or `children`, never both.
 
 ### SuiteCompare

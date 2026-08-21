@@ -132,6 +132,62 @@ Or use the full currency field if available:
 ${record.currencysymbol!"$"}${record.total?string["#,##0.00"]}
 ```
 
+## FreeMarker syntax quick reference
+
+<div style="overflow-x:auto;margin:1.5rem 0">
+<table style="width:100%;border-collapse:collapse;font-size:0.82rem;font-family:system-ui,-apple-system,sans-serif">
+<thead>
+<tr style="background:#0b1f4d;color:#eef2fb">
+<th style="padding:0.6rem 0.85rem;text-align:left;font-weight:700;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase">Construct</th>
+<th style="padding:0.6rem 0.85rem;text-align:left;font-weight:700;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase">Purpose</th>
+<th style="padding:0.6rem 0.85rem;text-align:left;font-weight:700;font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid #e2e8f0">
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-weight:600">${...}</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">Output a value from the data model</td>
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-size:0.78rem">${record.tranid}</td>
+</tr>
+<tr style="background:#f8faff;border-bottom:1px solid #e2e8f0">
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-weight:600">${field!} or ${field!"default"}</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">Null fallback: blank or specified string when field is null</td>
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-size:0.78rem">${record.memo!""}</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0">
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-weight:600">&lt;#list coll as item&gt;</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">Loop over a collection (line items)</td>
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-size:0.78rem">&lt;#list record.item as line&gt;</td>
+</tr>
+<tr style="background:#f8faff;border-bottom:1px solid #e2e8f0">
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-weight:600">&lt;#if ...&gt; &lt;#else&gt; &lt;/#if&gt;</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">Conditional: show or hide template sections</td>
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-size:0.78rem">&lt;#if record.memo?has_content&gt;</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0">
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-weight:600">?has_content</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">True if field is not null and not empty string</td>
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-size:0.78rem">line.item?has_content</td>
+</tr>
+<tr style="background:#f8faff;border-bottom:1px solid #e2e8f0">
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-weight:600">?string["format"]</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">Format a number or date</td>
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-size:0.78rem">record.total?string["#,##0.00"]</td>
+</tr>
+<tr style="border-bottom:1px solid #e2e8f0">
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-weight:600">&lt;#assign var = value&gt;</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">Assign a local variable for reuse</td>
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-size:0.78rem">&lt;#assign tax = record.taxtotal&gt;</td>
+</tr>
+<tr style="background:#f8faff">
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-weight:600">?upper_case / ?lower_case</td>
+<td style="padding:0.55rem 0.85rem;color:#4f6fb0">String case transformation</td>
+<td style="padding:0.55rem 0.85rem;color:#14306b;font-family:monospace;font-size:0.78rem">record.tranid?upper_case</td>
+</tr>
+</tbody>
+</table>
+</div>
+
 ## How Do You Loop Through Line Items in FreeMarker?
 
 The sublist of line items on a transaction is accessed as `record.item`. Loop over it with `<#list>`:

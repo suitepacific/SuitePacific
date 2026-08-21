@@ -60,38 +60,6 @@ export const NAV_LINKS: NavLink[] = [
       { label: "Hire a NetSuite Developer", href: "/hire-netsuite-developer", description: "Dedicated NetSuite developer, no long-term contracts." },
     ],
   },
-  {
-    label: "AI Services",
-    children: [
-      { label: "NetSuite AI Integration", href: "/netsuite-ai-integration", description: "Connect AI tools and APIs to your live NetSuite account." },
-      { label: "AI Optimization Assessment", href: "/netsuite-ai-optimization-assessment", description: "Identify where AI automation delivers the most value in your workflows." },
-      { label: "AI Invoice Processing", href: "/netsuite-ai-invoice-processing", description: "Automate invoice capture, line-item extraction, and PO matching." },
-      { label: "AI Reporting", href: "/netsuite-ai-reporting", description: "AI-powered reporting and financial insights directly in NetSuite." },
-    ],
-  },
-  {
-    label: "Industries",
-    children: [
-      { label: "Manufacturing", href: "/industries/manufacturing", description: "NetSuite support for manufacturing operations." },
-      { label: "Wholesale & Distribution", href: "/industries/wholesale-distribution", description: "NetSuite support for inventory-driven businesses." },
-      { label: "Construction", href: "/industries/construction", description: "NetSuite support for project-driven businesses." },
-      { label: "Real Estate", href: "/industries/real-estate", description: "NetSuite support for property and project businesses." },
-      { label: "SaaS & Technology", href: "/industries/saas-technology", description: "NetSuite support for technology companies." },
-      { label: "Retail & E-commerce", href: "/industries/retail-ecommerce", description: "NetSuite support for commerce businesses." },
-      { label: "Professional Services", href: "/industries/professional-services", description: "NetSuite support for project-based firms." },
-      { label: "Nonprofit", href: "/industries/nonprofit", description: "NetSuite support for nonprofit organizations." },
-    ],
-  },
-  {
-    label: "Locations",
-    children: [
-      { label: "NetSuite Consultant Chicago", href: "/netsuite-consultant-chicago", description: "Post-go-live support for Chicago-area manufacturers and distributors." },
-      { label: "NetSuite Consultant New York", href: "/netsuite-consultant-new-york", description: "Post-go-live support for New York financial services and professional firms." },
-      { label: "NetSuite Consultant Los Angeles", href: "/netsuite-consultant-los-angeles", description: "Post-go-live support for LA apparel, media, and distribution companies." },
-      { label: "NetSuite Consultant San Francisco", href: "/netsuite-consultant-san-francisco", description: "Post-go-live support for SF SaaS and technology companies." },
-      { label: "NetSuite Consultant Texas", href: "/netsuite-consultant-texas", description: "Post-go-live support for Texas manufacturers and energy services companies." },
-    ],
-  },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Resources", href: "/resources" },
   { label: "Blog", href: "/blog" },
@@ -113,13 +81,13 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const CTA_SUPPORT_LINE =
-  "Experienced NetSuite specialists focused on solving problems quickly and getting your system working better.";
+  "Same-day response on urgent issues. Most retainers start within a week of the first conversation.";
 
 export const TRUST_BADGES: string[] = [
   "NetSuite Certified Professional",
-  "Boutique & Responsive",
-  "Focused on Post-Go-Live",
+  "Same-day response on production issues",
   "No Long-Term Contracts",
+  "Release prep included every cycle",
 ];
 
 export const KPI_STATS: KpiStat[] = [
@@ -540,6 +508,9 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: "Freelancer vs Firm", href: "/netsuite-freelancer-vs-consulting-firm" },
       { label: "Implementation vs Managed", href: "/netsuite-implementation-partner-vs-managed-support" },
       { label: "Oracle Support vs Third-Party", href: "/netsuite-oracle-support-vs-third-party" },
+      { label: "Partner Too Expensive", href: "/netsuite-partner-too-expensive" },
+      { label: "Partner Not Responsive", href: "/netsuite-partner-not-responsive" },
+      { label: "Partner Too Slow", href: "/netsuite-partner-too-slow" },
     ],
   },
   {

@@ -108,3 +108,9 @@ A: No. Automated fulfillment processes are independent of this user interface ch
 A: The list-level action appears for orders eligible for fulfillment based on their current status and your account's fulfillment rules. Orders not eligible for fulfillment at their current status will not show the action.
 
 If you are looking to go further and automate order fulfillment entirely, [NetSuite workflow automation](/netsuite-workflow-automation) covers how SuiteFlow and SuiteScript can eliminate the manual steps in order processing workflows.
+
+<div style="background:#f0f4ff;border-left:3px solid #4f7fff;border-radius:0 10px 10px 0;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.25rem;font-size:0.75rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Automate beyond the list</p>
+<p style="margin:0 0 0.75rem;color:#14306b;font-size:0.875rem;line-height:1.6">The 2026.2 list action reduces manual steps. Fully automated fulfillment, triggered by warehouse confirmation, carrier API, or a scheduled workflow, eliminates them. If your operations team still manually touches every order to initiate fulfillment, that is solvable with SuiteScript or SuiteFlow depending on the trigger logic your account needs.</p>
+<a href="/contact" style="display:inline-block;background:#4f7fff;color:#fff;font-size:0.8rem;font-weight:600;padding:0.5rem 1.25rem;border-radius:6px;text-decoration:none">Talk through the automation</a>
+</div>
