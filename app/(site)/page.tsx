@@ -19,7 +19,7 @@ import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
-  alternates: { canonical: SITE_URL },
+  alternates: { canonical: `${SITE_URL}/` },
 };
 
 export default async function Home() {
