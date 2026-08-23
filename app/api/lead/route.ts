@@ -13,6 +13,7 @@ export async function POST(request: NextRequest) {
   const email = String(formData.get("email") ?? "").trim().toLowerCase();
   const company = String(formData.get("company") ?? "").trim();
   const message = formData.get("message") ? String(formData.get("message")).trim() : null;
+  const sourcePage = formData.get("sourcePage") ? String(formData.get("sourcePage")).trim() : null;
 
   if (!email) {
     return NextResponse.json({ success: false, error: "Missing required fields." }, { status: 400 });
@@ -33,6 +34,7 @@ export async function POST(request: NextRequest) {
         email: email.slice(0, 254),
         company: company.slice(0, 200),
         message: message?.slice(0, 5000) ?? null,
+        sourcePage: sourcePage?.slice(0, 2000) ?? null,
       },
     });
   } catch (error) {

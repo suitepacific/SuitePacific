@@ -31,12 +31,13 @@ model PageView {
 }
 
 model LeadSubmission {
-  id        String   @id @default(cuid())
-  name      String
-  email     String
-  company   String
-  message   String?
-  createdAt DateTime @default(now())
+  id         String   @id @default(cuid())
+  name       String
+  email      String
+  company    String
+  message    String?
+  sourcePage String?
+  createdAt  DateTime @default(now())
 }
 
 model VisitorSession {

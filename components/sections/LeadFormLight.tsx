@@ -59,7 +59,7 @@ export function LeadFormLight() {
         <input type="hidden" name="_template" value="table" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
-        <input type="hidden" name="name" value={sourceUrl} />
+        <input type="hidden" name="sourcePage" value={sourceUrl} />
 
         <input
           name="email"

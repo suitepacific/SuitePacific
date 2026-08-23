@@ -15,6 +15,7 @@ export default async function AdminLeadsPage() {
               <th className="px-5 py-3 font-medium">Name</th>
               <th className="px-5 py-3 font-medium">Email</th>
               <th className="px-5 py-3 font-medium">Company</th>
+              <th className="px-5 py-3 font-medium">Source Page</th>
               <th className="px-5 py-3 font-medium">Message</th>
               <th className="px-5 py-3 font-medium">Date</th>
             </tr>
@@ -25,6 +26,13 @@ export default async function AdminLeadsPage() {
                 <td className="px-5 py-3 font-medium text-brand-900 whitespace-nowrap">{lead.name}</td>
                 <td className="px-5 py-3 text-brand-600 whitespace-nowrap">{lead.email}</td>
                 <td className="px-5 py-3 text-brand-600 whitespace-nowrap">{lead.company}</td>
+                <td className="px-5 py-3 text-brand-400 max-w-xs">
+                  {lead.sourcePage ? (
+                    <span className="text-xs">{lead.sourcePage.replace("https://suitepacific.com", "")}</span>
+                  ) : (
+                    <span className="text-brand-200">—</span>
+                  )}
+                </td>
                 <td className="px-5 py-3 text-brand-400 max-w-sm whitespace-pre-wrap break-words">{lead.message ?? "No message"}</td>
                 <td className="px-5 py-3 text-brand-300 whitespace-nowrap">
                   {lead.createdAt.toLocaleDateString("en-US", {
