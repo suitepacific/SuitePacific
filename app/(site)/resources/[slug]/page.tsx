@@ -9,6 +9,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL, LEGAL_NAME } from "@/lib/content";
 import { getAllResourceSlugs, getAllResources, getResourceBySlug } from "@/lib/resources";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { PreferredSourceButton } from "@/components/ui/PreferredSourceButton";
 
 export function generateStaticParams() {
   return getAllResourceSlugs().map((slug) => ({ slug }));
@@ -169,6 +170,8 @@ export default async function ResourcePage({
             <LeadFormLight />
           </div>
         </div>
+
+        <PreferredSourceButton />
       </article>
     </main>
   );

@@ -7,6 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, VideoObjectJsonLd } from "@/compon
 import { Card } from "@/components/ui/Card";
 import { getAllPosts, getAllSlugs, getPostBySlug } from "@/lib/blog";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { PreferredSourceButton } from "@/components/ui/PreferredSourceButton";
 import { SITE_URL } from "@/lib/content";
 
 export async function generateStaticParams() {
@@ -147,6 +148,8 @@ export default async function BlogPostPage({
             <LeadFormLight />
           </div>
         </div>
+
+        <PreferredSourceButton />
       </article>
     </main>
   );
