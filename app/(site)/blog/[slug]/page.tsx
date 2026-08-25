@@ -7,7 +7,7 @@ import { BlogPostingJsonLd, BreadcrumbJsonLd, VideoObjectJsonLd } from "@/compon
 import { Card } from "@/components/ui/Card";
 import { getAllPosts, getAllSlugs, getPostBySlug } from "@/lib/blog";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
-import { PreferredSourceButton } from "@/components/ui/PreferredSourceButton";
+import { PreferredSourceButton, splitAtQABlock } from "@/components/ui/PreferredSourceButton";
 import { SITE_URL } from "@/lib/content";
 
 export async function generateStaticParams() {
@@ -114,12 +114,17 @@ export default async function BlogPostPage({
           <LeadFormLight />
         </div>
 
-        <div className="overflow-x-auto">
-          <div
-            className="prose prose-blue mt-10 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900"
-            dangerouslySetInnerHTML={{ __html: post.contentHtml }}
-          />
-        </div>
+        {(() => {
+          const proseClass = "prose prose-blue max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900";
+          const [part1, part2] = splitAtQABlock(post.contentHtml);
+          return (
+            <div className="overflow-x-auto">
+              <div className={`${proseClass} mt-10`} dangerouslySetInnerHTML={{ __html: part1 }} />
+              {part2 && <PreferredSourceButton />}
+              {part2 && <div className={proseClass} dangerouslySetInnerHTML={{ __html: part2 }} />}
+            </div>
+          );
+        })()}
 
         {relatedPosts.length > 0 && (
           <div className="mt-14 pt-10 border-t border-brand-50">
@@ -149,7 +154,6 @@ export default async function BlogPostPage({
           </div>
         </div>
 
-        <PreferredSourceButton />
       </article>
     </main>
   );

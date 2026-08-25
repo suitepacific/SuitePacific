@@ -9,7 +9,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL, LEGAL_NAME } from "@/lib/content";
 import { getAllResourceSlugs, getAllResources, getResourceBySlug } from "@/lib/resources";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
-import { PreferredSourceButton } from "@/components/ui/PreferredSourceButton";
+import { PreferredSourceButton, splitAtQABlock } from "@/components/ui/PreferredSourceButton";
 
 export function generateStaticParams() {
   return getAllResourceSlugs().map((slug) => ({ slug }));
@@ -135,12 +135,17 @@ export default async function ResourcePage({
           <LeadFormLight />
         </div>
 
-        <div className="overflow-x-auto">
-          <div
-            className="prose prose-blue mt-10 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900 prose-code:text-accent prose-code:bg-brand-50 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:font-mono"
-            dangerouslySetInnerHTML={{ __html: resource.contentHtml }}
-          />
-        </div>
+        {(() => {
+          const proseClass = "prose prose-blue max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900 prose-code:text-accent prose-code:bg-brand-50 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:font-mono";
+          const [part1, part2] = splitAtQABlock(resource.contentHtml);
+          return (
+            <div className="overflow-x-auto">
+              <div className={`${proseClass} mt-10`} dangerouslySetInnerHTML={{ __html: part1 }} />
+              {part2 && <PreferredSourceButton />}
+              {part2 && <div className={proseClass} dangerouslySetInnerHTML={{ __html: part2 }} />}
+            </div>
+          );
+        })()}
 
         {related.length > 0 && (
           <div className="mt-14 pt-10 border-t border-brand-50">
@@ -171,7 +176,6 @@ export default async function ResourcePage({
           </div>
         </div>
 
-        <PreferredSourceButton />
       </article>
     </main>
   );

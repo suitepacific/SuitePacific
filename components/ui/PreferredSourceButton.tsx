@@ -1,19 +1,17 @@
 export function PreferredSourceButton() {
   return (
-    <div className="mt-10 pt-8 border-t border-brand-50 flex flex-col sm:flex-row sm:items-center gap-4">
+    <div className="flex flex-col sm:flex-row sm:items-center gap-3 rounded-lg border border-brand-50 bg-brand-50/40 px-4 py-3 my-6 not-prose">
       <div className="flex-1 min-w-0">
-        <p className="text-sm font-medium text-brand-900">Find us in Google AI Search?</p>
-        <p className="mt-0.5 text-xs text-brand-400">
-          Add SuitePacific as a Preferred Source so Google surfaces our content in your AI answers.
-        </p>
+        <span className="text-xs font-medium text-brand-700">Using Google AI Search? </span>
+        <span className="text-xs text-brand-400">Add SuitePacific as a Preferred Source so we show up in your AI answers.</span>
       </div>
       <a
         href="https://www.google.com/preferences/source?q=suitepacific.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="shrink-0 inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-4 py-2 text-xs font-medium text-brand-900 hover:border-brand-200 hover:shadow-sm transition-all"
+        className="shrink-0 inline-flex items-center gap-1.5 rounded-full border border-brand-100 bg-white px-3 py-1.5 text-xs font-medium text-brand-900 hover:border-brand-200 hover:shadow-sm transition-all whitespace-nowrap"
       >
-        <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+        <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true" className="shrink-0">
           <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
           <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
           <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
@@ -23,4 +21,17 @@ export function PreferredSourceButton() {
       </a>
     </div>
   );
+}
+
+/** Splits contentHtml at the closing tag of the Quick Answer block.
+ *  Returns [beforeAndQA, rest]. If no QA block found, returns [html, ""].
+ */
+export function splitAtQABlock(html: string): [string, string] {
+  const marker = 'background:#eef2fb';
+  const markerIdx = html.indexOf(marker);
+  if (markerIdx === -1) return [html, ''];
+  const closeIdx = html.indexOf('</div>', markerIdx);
+  if (closeIdx === -1) return [html, ''];
+  const splitAt = closeIdx + 6;
+  return [html.slice(0, splitAt), html.slice(splitAt)];
 }
