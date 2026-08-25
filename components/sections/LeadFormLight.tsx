@@ -1,19 +1,16 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import type { FormEvent } from "react";
 import { CheckCircle2, Loader2 } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { FORMSUBMIT_ENDPOINT } from "@/lib/content";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
 export function LeadFormLight() {
   const [status, setStatus] = useState<Status>("idle");
-  const [sourceUrl, setSourceUrl] = useState("");
-
-  useEffect(() => {
-    setSourceUrl(window.location.href);
-  }, []);
+  const pathname = usePathname();
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -59,7 +56,7 @@ export function LeadFormLight() {
         <input type="hidden" name="_template" value="table" />
         <input type="hidden" name="_captcha" value="false" />
         <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
-        <input type="hidden" name="sourcePage" value={sourceUrl} />
+        <input type="hidden" name="sourcePage" value={pathname} />
 
         <input
           name="email"
