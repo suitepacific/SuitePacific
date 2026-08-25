@@ -18,6 +18,12 @@ const apiAttempts = new Map<string, number[]>();
 const API_RATE_WINDOW_MS = 60 * 1000; // 1 minute
 const API_RATE_MAX = 20;
 
+// Rate limiting for the lead / contact form.
+// 5 submissions per IP per hour is generous for real users and stops floods.
+const leadAttempts = new Map<string, number[]>();
+const LEAD_RATE_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+const LEAD_RATE_MAX = 5;
+
 const LOGIN_PATHS = new Set([
   "/admin/login",
   "/partner-portal/login",
@@ -28,6 +34,20 @@ const LOGIN_PATHS = new Set([
   "/suitecompare/forgot-password",
   "/suitecompare/reset-password",
 ]);
+
+function isLeadRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const prev = leadAttempts.get(ip) ?? [];
+  const recent = prev.filter((t) => now - t < LEAD_RATE_WINDOW_MS);
+  recent.push(now);
+  leadAttempts.set(ip, recent);
+  if (leadAttempts.size > 5000) {
+    for (const [key, times] of leadAttempts) {
+      if (times.every((t) => now - t >= LEAD_RATE_WINDOW_MS)) leadAttempts.delete(key);
+    }
+  }
+  return recent.length > LEAD_RATE_MAX;
+}
 
 function isApiRateLimited(ip: string): boolean {
   const now = Date.now();
@@ -75,6 +95,21 @@ export async function middleware(request: NextRequest) {
         headers: { "Retry-After": "900", "Content-Type": "text/plain" },
       });
     }
+  }
+
+  // Lead form: rate-limit to 5 submissions per IP per hour
+  if (pathname === "/api/lead" && request.method === "POST") {
+    const ip =
+      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+      request.headers.get("x-real-ip") ??
+      "unknown";
+    if (isLeadRateLimited(ip)) {
+      return new NextResponse("Too many submissions. Please try again later.", {
+        status: 429,
+        headers: { "Retry-After": "3600", "Content-Type": "text/plain" },
+      });
+    }
+    return NextResponse.next();
   }
 
   // SC API routes: require valid session token + per-IP rate limit
@@ -176,5 +211,6 @@ export const config = {
     "/suitecompare/:path*",
     "/importDetector/:path*",
     "/api/sc/:path*",
+    "/api/lead",
   ],
 };

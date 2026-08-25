@@ -7,6 +7,13 @@ tags: ["Health Check", "Account Optimization", "Technical Debt"]
 
 The value of a NetSuite health check is entirely in its report. An assessment that produces a thorough, well-structured written report is actionable. One that produces a vague summary or a slide deck is not. Knowing what a good report should contain lets you evaluate what you receive and identify gaps.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A thorough NetSuite health check report covers findings across five layers: Script Deployments (active scripts and their governance and trigger configuration), Workflows (entry conditions, trigger scope, record type volume), Saved Searches (searches without conditions driving scripts or workflows, performance-heavy searches), Custom Fields and Records (unused fields, fields without descriptions, orphaned custom records), and Roles and Permissions (overpermissioned roles, access not reviewed since implementation). Each finding should include the specific customization name and internal ID, a description of the issue, the consequence if not addressed, and a recommended resolution. Findings should be classified by severity: Critical (actively causing incorrect data or Production failures), High (meaningful risk that has not yet materialized), and Maintenance (inefficient or undocumented but not actively harmful). A report that covers all five layers with specific findings is actionable; one that covers only general observations is not.</p>
+</div>
+
+
+
 ---
 
 ## Section 1: Executive summary

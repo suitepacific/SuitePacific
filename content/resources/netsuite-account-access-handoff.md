@@ -7,6 +7,13 @@ tags: ["Partner Replacement"]
 
 When switching NetSuite partners, the account itself stays intact. What needs to be actively managed is access: making sure the new partner has what they need, verifying that internal access is not dependent on a departing consultant's credentials, and removing the previous partner's access cleanly after the handoff is complete.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">When switching NetSuite partners, the account itself stays intact, but access must be actively managed. The three most common transition gaps are: integration credentials stored only in the previous partner's systems rather than your own records; internal team members who can only access NetSuite through a departing consultant's credentials; and third-party platform accounts (Celigo, Boomi, or similar) owned by the partner rather than your organization. Before the previous partner disengages, collect all integration credentials, verify that your internal team has their own NetSuite login credentials independent of the partner, and confirm that you hold administrator access to any middleware or integration platforms. Remove the previous partner's role access from NetSuite under Setup > Users/Roles > Manage Users after the handoff is confirmed complete. An overlap period of two to four weeks between partners prevents a coverage gap and gives the new partner time to review the account while the previous partner is still reachable.</p>
+</div>
+
+
+
 This guide covers each access category in sequence.
 
 ---

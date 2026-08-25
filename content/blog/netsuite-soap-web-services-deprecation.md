@@ -2,6 +2,7 @@
 title: "NetSuite SOAP Web Services Are Being Retired: What You Need to Know"
 description: "Oracle has announced a phased retirement of NetSuite SOAP Web Services, with full removal in 2028.2. If your business runs integrations built on the SOAP API, here is what the timeline means and what to do before the deadlines hit."
 date: "2026-08-24"
+updated: "2026-08-26"
 tags: ["Integrations", "SuiteTalk", "REST API", "Development"]
 ---
 
@@ -9,7 +10,7 @@ Oracle has announced that NetSuite SOAP Web Services are being phased out, with 
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
-<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite SOAP Web Services will be fully removed in the 2028.2 release. Oracle is retiring them in stages: new SOAP integrations cannot be created after 2027.1, only the 2025.2 SOAP endpoint remains after 2027.2, and 2028.2 removes SOAP entirely. The replacement is NetSuite REST Web Services, which has been available since 2020.1. Businesses running SOAP-based integrations, whether custom-built or through an iPaaS platform, need to plan their migration before the 2027.1 cutoff to avoid being forced into an emergency rewrite under deadline pressure.</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite SOAP Web Services will be fully removed in the 2028.2 release. Oracle is retiring them in four stages: after 2027.1, no new SOAP integrations can be created; after 2027.2, only the 2025.2 SOAP endpoint remains active and all older WSDL versions stop working; 2028.1 disables additional legacy endpoints; and 2028.2 removes SOAP entirely. The replacement is NetSuite REST Web Services, which launched in 2020.1 and has expanded coverage with every release since. Most integration platforms including Celigo, Boomi, and MuleSoft have REST connectors for NetSuite. The 2027.2 milestone is the one that catches most businesses off guard: integrations pinned to a pre-2025.2 WSDL version will stop working at that point, not at final SOAP removal. Businesses should audit active SOAP integrations now, identify the WSDL version each references, and begin REST migration planning before 2027.1 to preserve the ability to test in parallel.</p>
 </div>
 
 This post covers the retirement timeline, what it affects, and how to approach the migration to REST.

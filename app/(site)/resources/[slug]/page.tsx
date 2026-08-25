@@ -107,7 +107,22 @@ export default async function ResourcePage({
         </h1>
 
         <div className="mt-3 text-sm text-brand-400">
-          {resource.readingTime}
+          {new Date(resource.publishedAt).toLocaleDateString("en-US", {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          })}
+          {resource.updatedAt && resource.updatedAt !== resource.publishedAt && (
+            <span>
+              {" · Updated "}
+              {new Date(resource.updatedAt).toLocaleDateString("en-US", {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              })}
+            </span>
+          )}
+          {" · "}{resource.readingTime}
           {resource.linkedinDay && (
             <span className="ml-3 text-brand-300">· Part of the 100 NetSuite Tips series</span>
           )}

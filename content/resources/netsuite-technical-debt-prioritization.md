@@ -7,6 +7,13 @@ tags: ["Technical Debt", "Account Optimization"]
 
 After a technical debt audit, you have a list of findings. Most accounts that have been live for two or more years produce more findings than can be addressed immediately. The question is how to sequence them.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">After a NetSuite technical debt audit, the prioritization framework has three tiers: Critical (actively causing incorrect data or Production failures, address immediately), High (meaningful risk not yet materialized, address within 30 days), and Maintenance (inefficient or undocumented but not actively harmful, address during scheduled work). Within Critical, sequence in this order: data integrity issues before performance issues; revenue-affecting systems before internal systems; high-volume record types before low-volume ones. Within High, sequence by proximity to go-live risk: scripts referencing deprecated APIs with approaching deadlines, integrations with recent intermittent errors, workflows firing on every save of high-volume records without entry conditions. Maintenance items are addressed opportunistically or batched quarterly. Communicate the three-tier classification to business stakeholders before presenting findings so they understand why Critical items are not sequenced by business preference. Present the full prioritized list to stakeholders before beginning remediation, so expectations are aligned before any work starts.</p>
+</div>
+
+
+
 This guide covers the prioritization framework used in professional NetSuite technical debt remediation: the three-tier classification system, how to sequence within each tier, how to handle cross-tier dependencies, and how to communicate priority decisions to business stakeholders.
 
 ---

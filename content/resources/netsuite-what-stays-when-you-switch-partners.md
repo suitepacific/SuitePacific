@@ -7,6 +7,13 @@ tags: ["Partner Replacement"]
 
 One of the most common concerns before switching NetSuite partners is whether changing partners means losing customizations. The answer is no. All work built during the previous engagement remains in your NetSuite account regardless of which partner built it or whether that partner is still engaged.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">When switching NetSuite partners, all work built during the previous engagement stays in the account. Scripts, workflows, saved searches, custom fields, custom records, roles, and configurations are stored in the NetSuite account, not with the partner who built them. Switching partners does not require rebuilding or reimporting any of these customizations. What does not stay automatically is institutional knowledge: why a specific script was built with a particular condition, what was attempted before the current approach, and the business context behind each workflow. This knowledge lives with the individuals who built and maintained the account and can be partially recovered through documentation captured before the partner disengages, and through an independent account review by the incoming partner. What also requires explicit action before disengagement is credentials: integration credentials and third-party platform accounts managed by the previous partner must be transferred to your ownership before the engagement ends.</p>
+</div>
+
+
+
 Here is exactly what stays, what does not transfer automatically, and what to verify before the previous partner is off the account.
 
 ---

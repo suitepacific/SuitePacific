@@ -7,6 +7,13 @@ tags: ["Technical Debt", "Account Optimization"]
 
 Custom field and record cleanup is one of the most impactful forms of technical debt remediation in a live NetSuite account. Unused fields add to every form load, clutter every saved search field picker, and confuse new users and developers. Unused custom records add to global navigation and create confusion about where data lives.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Custom field and record cleanup is one of the most impactful forms of technical debt remediation in a live NetSuite account. Unused custom fields add to every form load, clutter every saved search field picker, and confuse new users and developers. The critical risk in cleanup is deleting a field that appears unused but is still referenced by a script, workflow entry condition, or integration. Before deleting any custom field, check four dependency types: active saved searches that use it as a filter or result column, scripts that reference its internal ID, workflows that evaluate it in entry conditions or action criteria, and SuiteQL or REST queries that select it by field ID. Run the dependency check in Sandbox first and confirm nothing breaks before deleting from Production. Document each field removed, the date, and the reason, to support future audit trails and to explain missing fields to future developers.</p>
+</div>
+
+
+
 The risk in cleanup is deletion without understanding dependencies. A custom field that appears unused may be referenced in a script, a saved search used inside a workflow entry condition, or an integration transformation. Deleting it breaks the thing that references it.
 
 This guide covers how to find dependencies before deleting, how to sequence cleanup safely, and what documentation to create as you go.

@@ -1,13 +1,29 @@
 # SuitePacific
 
-> Boutique NetSuite post-go-live support and consulting. SuiteScript development, workflow automation, integration maintenance, and ongoing account management for companies already live on NetSuite.
+> Boutique NetSuite post-go-live support and consulting. SuiteScript development, workflow automation, integration maintenance, advanced PDF templates, saved searches and dashboards, and ongoing account management for companies already live on NetSuite.
 
 ## Services
 
 - [NetSuite Post-Go-Live Support](https://suitepacific.com/netsuite-post-go-live-support): What ongoing support covers after the implementation ends
 - [NetSuite Managed Support](https://suitepacific.com/netsuite-managed-support): Fixed monthly retainer covering development, administration, break-fix, and upgrade preparation
+- [NetSuite Care Plans](https://suitepacific.com/netsuite-care): Monthly retainer plans from $799 to $2,499/month for ongoing SuiteScript, workflow, reporting, and troubleshooting support; 3-month minimum then month-to-month
+- [Hire a NetSuite Developer](https://suitepacific.com/hire-netsuite-developer): Dedicated SuiteScript developer for custom scripts, integrations, and automation; no long-term lock-in
+- [NetSuite SuiteScript Development](https://suitepacific.com/netsuite-suitescript-development): Custom SuiteScript 2.1 user event, scheduled, map/reduce, client, and RESTlet scripts
+- [NetSuite Workflow Automation](https://suitepacific.com/netsuite-workflow-automation): Multi-step approval routing, notification automation, and SuiteFlow process management
+- [NetSuite Advanced PDF Templates](https://suitepacific.com/netsuite-advanced-pdf-templates): FreeMarker-based invoice, purchase order, statement, and custom document templates
+- [NetSuite Saved Searches and Dashboards](https://suitepacific.com/netsuite-saved-searches-dashboards): Real-time operational visibility through saved searches, KPI tiles, and dashboards
 - [NetSuite Health Check](https://suitepacific.com/netsuite-health-check): Structured account review to identify performance, customization, and integration issues
+- [NetSuite Account Optimization](https://suitepacific.com/netsuite-account-optimization): Systematic improvement of an existing NetSuite account: scripts, workflows, integrations, and configuration
+- [NetSuite Technical Debt](https://suitepacific.com/netsuite-technical-debt): Assessment and remediation of accumulated technical debt from rapid implementation or staff turnover
 - [NetSuite Partner Replacement](https://suitepacific.com/netsuite-partner-replacement): Transition from an implementation partner to a retained specialist
+- [NetSuite Emergency Support](https://suitepacific.com/netsuite-emergency-support): Urgent break-fix for scripts, workflows, and integrations failing in production
+- [NetSuite Administrator Support](https://suitepacific.com/netsuite-administrator-support): Day-to-day NetSuite administration: roles, permissions, records, reports, and configuration
+- [NetSuite Consulting Services](https://suitepacific.com/netsuite-consulting-services): Scoped consulting engagements for specific NetSuite challenges after go-live
+- [NetSuite Implementation Rescue](https://suitepacific.com/netsuite-implementation-rescue): Stabilizing a NetSuite account after a failed or incomplete implementation
+- [NetSuite Integrations](https://suitepacific.com/netsuite-integrations): Shopify, Salesforce, Celigo, Boomi, and custom middleware integration maintenance
+- [NetSuite SuiteBilling Support](https://suitepacific.com/netsuite-suitebilling-support): Ongoing SuiteBilling configuration, charge generation, ARM, and billing automation support
+- [NetSuite FSM Support](https://suitepacific.com/netsuite-fsm-support): NetSuite Field Service Management configuration, customization, and upgrade support
+- [NetSuite Support UK](https://suitepacific.com/netsuite-support-uk): Post-go-live NetSuite support for UK-based businesses
 - [NetSuite ACS Alternative](https://suitepacific.com/netsuite-acs-alternative): Third-party support that covers customizations and integrations excluded by ACS
 - [NetSuite Support Alternative](https://suitepacific.com/netsuite-support-alternative): What a third-party consulting firm covers that Oracle support does not
 - [NetSuite Freelancer vs Consulting Firm](https://suitepacific.com/netsuite-freelancer-vs-consulting-firm): Accountability, continuity, and cost trade-offs between the two models
@@ -16,8 +32,11 @@
 - [NetSuite Partner Too Expensive](https://suitepacific.com/netsuite-partner-too-expensive): Why large partners cost more for ongoing support and what a retainer model costs instead
 - [NetSuite Partner Not Responsive](https://suitepacific.com/netsuite-partner-not-responsive): Structural causes of unresponsive partners and how to switch without cooperation from the current firm
 - [NetSuite Partner Too Slow](https://suitepacific.com/netsuite-partner-too-slow): Why slow response is structural and what a support-first model looks like instead
-- [NetSuite Integrations](https://suitepacific.com/netsuite-integrations): Shopify, Salesforce, Celigo, Boomi, and custom middleware integration maintenance
-- [SuiteCompare](https://suitepacific.com/suitecompare): Side-by-side comparison of NetSuite record versions and release changes
+
+## Tools
+
+- [SuiteCompare](https://suitepacific.com/suitecompare): Side-by-side comparison of NetSuite record versions and release changes; diff any two records visually
+- [Import Doctor](https://suitepacific.com/importDetector): NetSuite CSV import validator that checks reference fields, required columns, and format issues before import
 
 ## Key resources
 
@@ -29,6 +48,23 @@
 - [NetSuite account performance](https://suitepacific.com/blog/netsuite-account-performance): Diagnosing and fixing slow NetSuite accounts
 - [Implementation partner vs managed support](https://suitepacific.com/blog/netsuite-implementation-partner-vs-managed-support): What post-implementation support covers and how it differs from an implementation engagement
 - [Managed support vs break-fix](https://suitepacific.com/blog/netsuite-managed-vs-break-fix-support): Cost comparison of retainer vs per-request billing models for ongoing NetSuite work
+- [NetSuite SOAP Web Services retirement timeline](https://suitepacific.com/blog/netsuite-soap-web-services-deprecation): Oracle's phased SOAP deprecation schedule (2027.1 through 2028.2) and what to do before the deadlines
+- [NetSuite SuiteQL default sort change in 2026.2](https://suitepacific.com/blog/netsuite-suiteql-sort-change-2026-2): How the default transaction sort order changed from tranDisplayName to tranDate and which queries are affected
+- [NetSuite 2026.2 finance updates](https://suitepacific.com/blog/netsuite-2026-2-finance-updates): Payment Runs for batch AP processing and the redesigned Match Bank Data interface
+- [NLAuth end-of-support and TBA migration](https://suitepacific.com/blog/netsuite-nlauth-tba-end-of-support): What NLAuth deprecation means for RESTlets and integrations, and how to migrate to TBA
+- [NetSuite Map/Reduce script guide](https://suitepacific.com/blog/netsuite-map-reduce-script-guide): How Map/Reduce phases work, governance, error handling, and idempotency patterns
+- [SuiteQL guide](https://suitepacific.com/blog/netsuite-suiteql-guide): Writing SuiteQL queries, joins, and aggregates for NetSuite data
+- [NetSuite SuiteBilling and ARM integration](https://suitepacific.com/blog/netsuite-suitebilling-arm-integration): How SuiteBilling and ARM interact for deferred revenue recognition
+- [NetSuite technical debt after go-live](https://suitepacific.com/blog/netsuite-technical-debt-after-go-live): What technical debt accumulates in NetSuite accounts and how to address it
+
+## Checklists and tools
+
+- [NetSuite 2026.2 Release Readiness Checklist](https://suitepacific.com/netsuite-2026-2-release-readiness-checklist): Pre-upgrade checklist covering Finance, Integrations, SuiteScript, Reporting, Manufacturing, Inventory, Security, and more for the 2026.2 release
+
+## Industries
+
+- [NetSuite for Manufacturing](https://suitepacific.com/industries/manufacturing): Post-go-live support for manufacturing companies on NetSuite, covering production, inventory, and WO customizations
+- [NetSuite for Nonprofits](https://suitepacific.com/industries/nonprofit): Post-go-live NetSuite support for nonprofits, including fund accounting and grant management
 
 ## About
 

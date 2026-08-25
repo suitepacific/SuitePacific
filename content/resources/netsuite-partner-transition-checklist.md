@@ -7,6 +7,13 @@ tags: ["Partner Replacement", "Checklist"]
 
 Switching NetSuite partners is straightforward when handled in the right order. The most common mistakes: switching without documenting what is in the account, losing access credentials when a partner disengages, and skipping the overlap period that eliminates a coverage gap. This checklist covers each phase of the transition.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Switching NetSuite partners requires handling three phases in the right order to avoid coverage gaps and access loss. Phase 1 is documentation: collect all active customization documentation from the current partner before announcing the change; specifically request a script inventory, integration credential list, and known issue list. Phase 2 is overlap: start the new partner with an Administrator role in the account before the previous partner's engagement ends; two to four weeks of overlap allows the new partner to review the account while the previous partner is still reachable. Phase 3 is access cleanup: after the new partner confirms they have the context they need, remove the previous partner's role and login access from NetSuite under Setup > Users/Roles > Manage Users. The most common transition mistake is removing the previous partner's access before the new partner has had time to review the account and ask follow-up questions.</p>
+</div>
+
+
+
 ---
 
 ## Phase 1: Before the previous partner disengages

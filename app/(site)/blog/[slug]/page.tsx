@@ -91,8 +91,18 @@ export default async function BlogPostPage({
             month: "long",
             day: "numeric",
             year: "numeric",
-          })}{" "}
-          · {post.readingTime}
+          })}
+          {post.updated && post.updated !== post.date && (
+            <span>
+              {" · Updated "}
+              {new Date(post.updated).toLocaleDateString("en-US", {
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              })}
+            </span>
+          )}
+          {" · "}{post.readingTime}
         </div>
 
         {/* Early callout, catches readers before they scroll */}

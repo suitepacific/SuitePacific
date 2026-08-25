@@ -7,6 +7,13 @@ tags: ["Technical Debt", "Account Optimization"]
 
 A technical debt audit reviews a live NetSuite account across five layers to produce a prioritized list of what needs attention. Use this checklist layer by layer. For each item found, classify it before moving to the next: Critical (actively causing incorrect results in Production), High (meaningful risk not yet visible), or Maintenance (inefficient or undocumented but not actively harmful).
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A NetSuite technical debt audit reviews a live account across five layers to produce a prioritized list of what needs attention. The five layers are: Script Deployments (active scripts with execution contexts broader than necessary, governance issues, or references to deprecated APIs); Workflows (workflows without entry conditions, workflows for retired business processes, workflows that overlap with scripts on the same record type); Saved Searches (searches driving scripts with no execution conditions, performance-heavy searches without date filters); Custom Fields and Records (unused fields still loading on forms, fields with no descriptions, orphaned custom records); and Roles and Permissions (overpermissioned roles, roles unchanged since implementation). Complete each layer fully and classify findings as Critical, High, or Maintenance before beginning remediation. Starting fixes mid-audit risks addressing symptoms before understanding the full scope of the account's technical state.</p>
+</div>
+
+
+
 Complete the full audit before beginning remediation. Starting remediation mid-audit introduces the risk of addressing symptoms before understanding the full scope.
 
 ---

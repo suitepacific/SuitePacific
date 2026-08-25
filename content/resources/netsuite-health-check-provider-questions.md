@@ -7,6 +7,13 @@ tags: ["Health Check", "Post-Go-Live"]
 
 A NetSuite health check is only as useful as the review behind it. A thorough independent assessment surfaces findings that the account owner could not identify on their own. A superficial one produces a report that covers obvious issues and misses the ones that matter.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The quality of a NetSuite health check depends entirely on how the assessment is conducted. The right questions to ask a provider before engaging: Do they read the account directly or rely on your documentation? How do they check whether workflows have correct entry conditions and correctly scoped triggers? How do they test whether scripts are causing governance limit errors under realistic save volumes? What does their output look like, and does it include specific finding entries with internal IDs, script names, and deployment records rather than general recommendations? How do they classify findings by severity and prioritize remediation? Ask to see a sample report from a previous engagement with findings anonymized. A provider who cannot explain their methodology for checking workflow entry conditions specifically, or who cannot produce a sample report, is unlikely to surface the findings that matter most in a live account.</p>
+</div>
+
+
+
 The quality of the assessment is not visible in the price or in the provider's marketing. It is visible in how they answer specific questions. These questions help you assess whether a health check will produce findings worth acting on.
 
 ---

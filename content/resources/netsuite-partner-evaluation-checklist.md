@@ -7,6 +7,13 @@ tags: ["Post-Go-Live", "Partner Replacement"]
 
 Most businesses evaluate a NetSuite support partner by asking for references and reviewing a proposal. Those two steps miss most of the questions that actually determine whether the relationship will work.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Most businesses evaluate a NetSuite support partner by reviewing proposals and checking references. Those two steps miss the questions that actually reveal whether a partner is a good fit. The six areas that distinguish a capable ongoing support partner from a poor-fit one are: technical certifications held by the consultants who will actually work on your account; account documentation practices (do they maintain written documentation of every active script and workflow with the business context behind it); continuity planning (does account knowledge survive personnel changes at the firm); response time and engagement model (do they handle small requests efficiently without project overhead); release readiness (do they proactively review each NetSuite release in Sandbox before it reaches Production); and escalation path (what happens when a problem exceeds one consultant's expertise). Get specific, answerable responses to each area before signing an engagement.</p>
+</div>
+
+
+
 This checklist covers the questions to ask before signing an engagement, organized by the six areas that separate good-fit partners from poor-fit ones.
 
 ---

@@ -7,6 +7,13 @@ tags: ["Post-Go-Live", "SuiteScript"]
 
 NetSuite releases twice per year. Each release potentially changes something that affects existing customizations: an API behavior, a record type default, a field handling change, or a platform-level update that interacts with scripts or workflows built during your implementation.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite releases twice per year, and each release can change behavior that affects existing customizations. The four areas most likely to interact with account customizations are: SuiteScript API changes (deprecations, changed method behavior, new required parameters); SuiteFlow changes (trigger behavior, deprecated workflow actions); record type and field changes (new standard fields, renamed internal IDs, changed field handling); and authentication changes (NLAuth deprecation progress, OAuth behavior updates). The release readiness process is: read the release notes for all four areas before the release reaches your account; deploy the release to Sandbox; run your active scripts and workflows against representative data in Sandbox; test the full save cycle for your highest-volume record types; and check whether any script or workflow produces an error, takes longer than expected, or produces different output than before the release. Document the results and promote to Production only after confirming Sandbox stability.</p>
+</div>
+
+
+
 Most release failures are preventable. This checklist covers how to review each release in Sandbox before it reaches Production.
 
 ---

@@ -7,6 +7,13 @@ tags: ["Partner Replacement"]
 
 When a NetSuite partner engagement ends, most of what they built stays in your account. What does not stay automatically is their knowledge of it: why certain customizations were built a certain way, what was left unfinished, what is known to have issues, and what access they held on your behalf.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">When a NetSuite partner engagement ends, documentation priority one is credentials: collect all integration credentials, API keys, third-party platform login credentials, and integration record configurations before the partner disengages. Credentials stored only with the partner become inaccessible and may require rebuilding integrations from scratch. Priority two is active work: ask the partner for a list of everything in Sandbox not yet deployed to Production, all open known issues including intermittent bugs, and any scoped-but-not-started work with its context. Priority three is business context: for each active script and workflow, capture why it was built the way it was, any known limitations, and what business process it supports. Priority four is access verification: confirm that your internal team has their own NetSuite login credentials and can access the account independently without relying on any credential the partner held on your behalf.</p>
+</div>
+
+
+
 This guide covers what to capture before the engagement ends, in the order that matters most.
 
 ---

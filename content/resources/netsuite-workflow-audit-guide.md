@@ -7,6 +7,13 @@ tags: ["Technical Debt", "Account Optimization"]
 
 A SuiteFlow workflow audit reviews all active workflow configurations in a live NetSuite account to identify what is running, whether entry conditions are correctly scoped, whether any workflows are for retired business processes, and whether any overlap with scripts running on the same record types. This guide covers each step.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A SuiteFlow workflow audit reviews all active workflow configurations in a live NetSuite account to identify workflows without correctly scoped entry conditions, workflows for retired business processes still evaluating on every record save, and workflows that overlap with scripts running the same logic on the same record type. Start the audit at Customization > Workflow > Workflows. For each active workflow, check the record type, the trigger event (Create, Edit, or both), whether entry conditions are set, and whether the workflow has been reviewed since the business process it supports was last modified. A workflow without entry conditions that fires on Edit of a high-volume record type such as Sales Order consumes governance resources on every save even when the workflow logic is irrelevant to that record. Cross-reference each workflow against the script deployment audit to identify duplicate logic running in both a workflow and a script on the same record type and trigger event.</p>
+</div>
+
+
+
 ---
 
 ## Where to start: the workflow list

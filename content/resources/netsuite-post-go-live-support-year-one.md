@@ -7,6 +7,13 @@ tags: ["Post-Go-Live", "Account Optimization"]
 
 The first year after NetSuite go-live has a predictable pattern of challenges that differ from what a live account faces in year two and beyond. Understanding what to expect at each stage helps you determine whether your support engagement is providing the right coverage and addressing problems before they accumulate.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The first year after NetSuite go-live has a predictable four-phase pattern. Month 1 is stabilization: the account needs immediate attention for items deferred during implementation and performance issues that only surface at full production volume. Months 2 through 4 are backlog clearance: development work scoped during implementation but not completed before go-live. Months 5 through 8 cover the first release cycle: each semiannual NetSuite release must be tested in Sandbox to verify existing customizations remain stable. Months 9 through 12 reveal second-generation requirements: workflows and reports that were designed before the team understood how they would actually use the system in practice. A support engagement that addresses all four phases avoids the common pattern where Month 1 wins are erased by a release failure in Month 6 or by an untouched backlog accumulating into a larger remediation project in Year 2.</p>
+</div>
+
+
+
 ---
 
 ## Month 1: Stabilization

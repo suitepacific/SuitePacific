@@ -7,6 +7,13 @@ tags: ["Technical Debt", "SuiteScript", "Account Optimization"]
 
 A SuiteScript audit reviews all active script deployments in a live NetSuite account to identify what is running, whether it is running correctly, whether it is consuming excessive governance, and whether any scripts conflict with each other. This guide covers each step in detail.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A SuiteScript audit reviews all active script deployments in a live NetSuite account to identify scripts causing governance limit errors, scripts with execution contexts broader than the business logic requires, scripts that overlap with workflows on the same record type, and scripts that reference deprecated APIs approaching a removal deadline. Start the audit at Customization > Scripting > Script Deployments. For each active deployment, review the record type, event type, execution context settings, and whether execution conditions are set to limit when the script runs. A script running on every save of every Sales Order with no execution conditions consumes governance units even when nothing relevant to the script has changed. Cross-reference each script deployment against the workflow audit to identify cases where both a script and a workflow run on the same trigger event and record type, which can cause unexpected ordering issues or redundant processing.</p>
+</div>
+
+
+
 ---
 
 ## Where to start: the deployment list

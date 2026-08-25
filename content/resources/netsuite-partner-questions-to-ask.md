@@ -7,6 +7,13 @@ tags: ["Partner Replacement"]
 
 Evaluating a NetSuite support partner is different from evaluating an implementation partner. An implementation partner needs to demonstrate project management capability, industry experience, and the ability to configure NetSuite from scratch. An ongoing support partner needs to demonstrate something different: the ability to inherit an existing account, retain context across requests over months and years, and handle small work without the overhead of a project-delivery model.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Evaluating a NetSuite ongoing support partner requires different questions than evaluating an implementation partner. An ongoing support partner needs to demonstrate the ability to inherit an existing account, retain context across requests over months and years, and handle small work efficiently without project-delivery overhead. The most important questions to ask: How do they document and retain account knowledge across the engagement? What happens to account context if the consultant who works on your account leaves their firm? How do they onboard a new account when the previous partner left no documentation? How do they handle requests that come in without a defined scope? How do they stay current on NetSuite releases and proactively notify clients of relevant changes? Ask for a reference from a client who switched to them from a previous partner, since that scenario reveals how well they handle account inheritance under real conditions.</p>
+</div>
+
+
+
 Most evaluation processes ask the wrong questions. These are the right ones.
 
 ---
