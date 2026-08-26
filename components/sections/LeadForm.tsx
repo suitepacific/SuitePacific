@@ -3,14 +3,12 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
 import { CheckCircle2, Loader2 } from "lucide-react";
-import { usePathname } from "next/navigation";
 import { FORMSUBMIT_ENDPOINT, CTA_SUPPORT_LINE } from "@/lib/content";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
 export function LeadForm() {
   const [status, setStatus] = useState<Status>("idle");
-  const pathname = usePathname();
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -18,6 +16,7 @@ export function LeadForm() {
 
     const form = event.currentTarget;
     const formData = new FormData(form);
+    formData.set("sourcePage", window.location.href);
 
     try {
       const response = await fetch("/api/lead", {
@@ -56,7 +55,6 @@ export function LeadForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <input type="hidden" name="sourcePage" value={pathname} />
       <input type="hidden" name="_subject" value="New SuitePacific Consultation Request" />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
