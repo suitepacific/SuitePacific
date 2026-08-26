@@ -38,34 +38,133 @@
 - [SuiteCompare](https://suitepacific.com/suitecompare): Side-by-side comparison of NetSuite record versions and release changes; diff any two records visually
 - [Import Doctor](https://suitepacific.com/importDetector): NetSuite CSV import validator that checks reference fields, required columns, and format issues before import
 
-## Key resources
-
-- [How to evaluate a NetSuite support partner](https://suitepacific.com/blog/how-to-evaluate-netsuite-support-partner): Criteria and questions for selecting a post-go-live provider
-- [How to switch NetSuite partners](https://suitepacific.com/blog/how-to-switch-netsuite-partners): Transition process, knowledge transfer, and what to do when the outgoing partner is uncooperative
-- [NetSuite saved search formula examples](https://suitepacific.com/blog/netsuite-saved-search-formula-examples): Oracle SQL patterns for CASE WHEN, NVL, date math, and AR aging buckets
-- [NetSuite saved search tips](https://suitepacific.com/blog/netsuite-saved-search-tips): Practical techniques for finance and operations teams
-- [RESTlet vs REST Web Services](https://suitepacific.com/blog/netsuite-restlet-vs-rest-web-services): Decision framework and NLAuth to TBA migration guide
-- [NetSuite account performance](https://suitepacific.com/blog/netsuite-account-performance): Diagnosing and fixing slow NetSuite accounts
-- [Implementation partner vs managed support](https://suitepacific.com/blog/netsuite-implementation-partner-vs-managed-support): What post-implementation support covers and how it differs from an implementation engagement
-- [Managed support vs break-fix](https://suitepacific.com/blog/netsuite-managed-vs-break-fix-support): Cost comparison of retainer vs per-request billing models for ongoing NetSuite work
-- [NetSuite SOAP Web Services retirement timeline](https://suitepacific.com/blog/netsuite-soap-web-services-deprecation): Oracle's phased SOAP deprecation schedule (2027.1 through 2028.2) and what to do before the deadlines
-- [NetSuite SuiteQL default sort change in 2026.2](https://suitepacific.com/blog/netsuite-suiteql-sort-change-2026-2): How the default transaction sort order changed from tranDisplayName to tranDate and which queries are affected
-- [NetSuite 2026.2 finance updates](https://suitepacific.com/blog/netsuite-2026-2-finance-updates): Payment Runs for batch AP processing and the redesigned Match Bank Data interface
-- [NLAuth end-of-support and TBA migration](https://suitepacific.com/blog/netsuite-nlauth-tba-end-of-support): What NLAuth deprecation means for RESTlets and integrations, and how to migrate to TBA
-- [NetSuite Map/Reduce script guide](https://suitepacific.com/blog/netsuite-map-reduce-script-guide): How Map/Reduce phases work, governance, error handling, and idempotency patterns
-- [SuiteQL guide](https://suitepacific.com/blog/netsuite-suiteql-guide): Writing SuiteQL queries, joins, and aggregates for NetSuite data
-- [NetSuite SuiteBilling and ARM integration](https://suitepacific.com/blog/netsuite-suitebilling-arm-integration): How SuiteBilling and ARM interact for deferred revenue recognition
-- [NetSuite technical debt after go-live](https://suitepacific.com/blog/netsuite-technical-debt-after-go-live): What technical debt accumulates in NetSuite accounts and how to address it
-
 ## Checklists and tools
 
 - [NetSuite 2026.2 Release Readiness Checklist](https://suitepacific.com/netsuite-2026-2-release-readiness-checklist): Pre-upgrade checklist covering Finance, Integrations, SuiteScript, Reporting, Manufacturing, Inventory, Security, and more for the 2026.2 release
+
+## Blog: Partner selection and support models
+
+- [How to evaluate a NetSuite post-go-live support partner](https://suitepacific.com/blog/how-to-evaluate-netsuite-support-partner): Criteria and questions for selecting a post-go-live provider
+- [How to switch NetSuite partners without losing account context](https://suitepacific.com/blog/how-to-switch-netsuite-partners): Transition process, knowledge transfer, and what to do when the outgoing partner is uncooperative
+- [How to choose a NetSuite consulting partner](https://suitepacific.com/blog/how-to-choose-netsuite-consulting-partner): Framework for evaluating NetSuite partners by engagement type, not just certification
+- [Post-implementation NetSuite support: implementation partner vs managed support](https://suitepacific.com/blog/netsuite-implementation-partner-vs-managed-support): What post-implementation support covers and how it differs from an implementation engagement
+- [NetSuite managed support vs break-fix](https://suitepacific.com/blog/netsuite-managed-vs-break-fix-support): Cost comparison of retainer vs per-request billing models for ongoing NetSuite work
+- [NetSuite support partner red flags](https://suitepacific.com/blog/netsuite-support-partner-red-flags): Warning signs that a NetSuite support partner is not the right fit
+- [NetSuite support partner evaluation](https://suitepacific.com/blog/netsuite-support-partner-evaluation): Structured evaluation process for comparing NetSuite support providers
+- [Signs your NetSuite partner relationship is over](https://suitepacific.com/blog/signs-netsuite-partner-relationship-over): Behavioral patterns that indicate a NetSuite partner engagement has run its course
+- [Signs it is time to replace your NetSuite partner](https://suitepacific.com/blog/signs-time-to-replace-netsuite-partner): Specific triggers that justify switching NetSuite partners
+- [What your new NetSuite partner finds in your account](https://suitepacific.com/blog/what-new-netsuite-partner-finds): Common account issues that surface when a new partner reviews a live NetSuite environment
+- [NetSuite partner response time](https://suitepacific.com/blog/netsuite-partner-response-time): What reasonable response times look like for ongoing NetSuite support
+
+## Blog: Cost and pricing
+
+- [What does NetSuite ACS actually cost](https://suitepacific.com/blog/netsuite-acs-cost-breakdown): Breakdown of all four ACS tiers, hour caps, renewal escalation, and comparison to third-party support
+- [NetSuite consultant hourly rate](https://suitepacific.com/blog/netsuite-consultant-hourly-rate): What you are actually paying per completed request across different firm types
+- [NetSuite development cost](https://suitepacific.com/blog/netsuite-development-cost): How NetSuite custom development is scoped and priced in practice
+- [NetSuite support pricing guide](https://suitepacific.com/blog/netsuite-support-pricing-guide): How NetSuite post-go-live support is priced: retainer, break-fix, and hybrid models
+- [NetSuite partner too expensive](https://suitepacific.com/blog/netsuite-partner-too-expensive): Why large implementation partners cost more for ongoing support and what alternatives exist
+
+## Blog: Health check and technical debt
+
+- [What does a NetSuite health check include](https://suitepacific.com/blog/netsuite-health-check-what-it-includes): Six audit areas, findings report structure, and what the deliverable looks like
+- [NetSuite health check vs account optimization](https://suitepacific.com/blog/netsuite-health-check-vs-account-optimization): Diagnosis vs remediation: what each engagement covers and when to use each
+- [When to get a NetSuite health check](https://suitepacific.com/blog/when-to-get-netsuite-health-check): Triggers and timing for commissioning a NetSuite account review
+- [What is NetSuite technical debt](https://suitepacific.com/blog/netsuite-technical-debt): What accumulates in live NetSuite accounts and why it compounds
+- [How to audit NetSuite technical debt](https://suitepacific.com/blog/netsuite-technical-debt-audit): Step-by-step approach to reviewing a live account across scripts, workflows, searches, and custom fields
+- [NetSuite technical debt after go-live](https://suitepacific.com/blog/netsuite-technical-debt-after-go-live): What technical debt accumulates in NetSuite accounts and how to address it
+- [Signs a NetSuite implementation failed](https://suitepacific.com/blog/signs-netsuite-implementation-failed): Indicators that a NetSuite go-live did not deliver a stable, usable account
+- [Signs NetSuite support is not working](https://suitepacific.com/blog/signs-netsuite-support-not-working): Patterns that indicate a support engagement is failing to deliver value
+- [Why your NetSuite account feels slow](https://suitepacific.com/blog/netsuite-account-performance): Most common fixable causes of slow NetSuite performance and a diagnostic checklist
+- [Why NetSuite accounts get harder to maintain over time](https://suitepacific.com/blog/netsuite-account-gets-harder-to-maintain): How accumulated customizations and poor documentation compound maintenance costs
+- [Nobody owns the NetSuite customizations](https://suitepacific.com/blog/netsuite-nobody-owns-customizations): What happens to institutional knowledge when staff or partners turn over
+- [NetSuite optimization](https://suitepacific.com/blog/netsuite-optimization): Practical optimization across scripts, workflows, saved searches, and configuration
+
+## Blog: SuiteScript development
+
+- [NetSuite SuiteScript best practices](https://suitepacific.com/blog/suitescript-best-practices): Production-grade SuiteScript patterns: governance, error handling, idempotency, and deployment
+- [User event vs client script](https://suitepacific.com/blog/netsuite-user-event-vs-client-script): When to use each script type and what the trigger model means for business logic
+- [NetSuite workflow vs SuiteScript](https://suitepacific.com/blog/netsuite-workflow-vs-suitescript): Decision framework for choosing between SuiteFlow and SuiteScript for a given requirement
+- [NetSuite Map/Reduce script guide](https://suitepacific.com/blog/netsuite-map-reduce-script-guide): How Map/Reduce phases work, governance, error handling, and idempotency patterns
+- [NetSuite script governance limit](https://suitepacific.com/blog/netsuite-script-governance-limit): What governance limits are, how they are consumed, and how to stay within them
+- [NetSuite script broke after upgrade](https://suitepacific.com/blog/netsuite-script-broke-after-upgrade): How to diagnose and fix SuiteScript failures after a NetSuite release update
+- [NetSuite 2026.2 Event Subscriber Script](https://suitepacific.com/blog/netsuite-event-subscribers-script-2026-2): New SuiteScript 2.1 type that runs asynchronously after record events, replacing heavy afterSubmit logic
+
+## Blog: SuiteQL and analytics
+
+- [SuiteQL guide](https://suitepacific.com/blog/netsuite-suiteql-guide): Writing SuiteQL queries, joins, and aggregates for NetSuite data
+- [NetSuite saved search formula examples](https://suitepacific.com/blog/netsuite-saved-search-formula-examples): Oracle SQL patterns for CASE WHEN, NVL, date math, and AR aging buckets
+- [NetSuite saved search tips](https://suitepacific.com/blog/netsuite-saved-search-tips): Practical techniques for finance and operations teams
+- [NetSuite saved search examples](https://suitepacific.com/blog/netsuite-saved-search-examples): Real-world saved searches for AR aging, open orders, and inventory visibility
+- [NetSuite SuiteQL bound parameters](https://suitepacific.com/blog/netsuite-suiteql-bound-parameters): Using parameterized queries to avoid manual quoting and reduce injection risk
+- [NetSuite SuiteQL default sort change in 2026.2](https://suitepacific.com/blog/netsuite-suiteql-sort-change-2026-2): How the default transaction sort order changed from tranDisplayName to tranDate
+- [NetSuite roles and permissions guide](https://suitepacific.com/blog/netsuite-roles-permissions-guide): How NetSuite roles, permission levels, and restrictions work in practice
+
+## Blog: Integrations and APIs
+
+- [RESTlet vs REST Web Services](https://suitepacific.com/blog/netsuite-restlet-vs-rest-web-services): Decision framework and NLAuth to TBA migration guide
+- [NetSuite REST batch sequential](https://suitepacific.com/blog/netsuite-rest-batch-sequential): How to handle sequential and dependent REST API calls in NetSuite integrations
+- [NLAuth end-of-support and TBA migration](https://suitepacific.com/blog/netsuite-nlauth-tba-end-of-support): What NLAuth deprecation means for RESTlets and integrations, and how to migrate to TBA
+- [NetSuite SOAP Web Services retirement timeline](https://suitepacific.com/blog/netsuite-soap-web-services-deprecation): Oracle's phased SOAP deprecation schedule (2027.1 through 2028.2) and what to do before the deadlines
+
+## Blog: Release notes and upgrades
+
+- [NetSuite 2026.2 finance updates](https://suitepacific.com/blog/netsuite-2026-2-finance-updates): Payment Runs for batch AP processing and the redesigned Match Bank Data interface
+- [NetSuite bank reconciliation changes in 2026.2](https://suitepacific.com/blog/netsuite-bank-reconciliation-changes-2026-2): New Match Suggestions subtab, renamed tabs, filter chips, and audit columns
+- [NetSuite Advanced Record Customization in 2026.2](https://suitepacific.com/blog/netsuite-advanced-record-customization-2026-2): New centralized area for managing AI descriptions for standard and custom record types
+- [NetSuite Bill Capture Preferences changed in 2026.2](https://suitepacific.com/blog/netsuite-bill-capture-preferences-2026-2): How blank Save Tax As and Save Shipping Cost As fields now behave after the update
+- [NetSuite passkey second factor in 2026.2](https://suitepacific.com/blog/netsuite-passkey-second-factor-2026-2): FIDO2-compliant passkeys now satisfy the second factor requirement
+- [NetSuite payment runs in 2026.2](https://suitepacific.com/blog/netsuite-payment-runs-2026-2): Batch vendor bill processing with unified review, approval, and payment run
+- [NetSuite payment adjustments in 2026.2](https://suitepacific.com/blog/netsuite-payment-adjustments-2026-2): How payment adjustments work after the 2026.2 changes
+- [NetSuite project health indicators in 2026.2](https://suitepacific.com/blog/netsuite-project-health-indicators-2026-2): New project health tracking features introduced in the 2026.2 release
+- [NetSuite SuiteQL sort change in 2026.2](https://suitepacific.com/blog/netsuite-suiteql-sort-change-2026-2): Default transaction sort order changed from tranDisplayName to tranDate
+
+## Blog: FSM (Field Service Management)
+
+- [NetSuite FSM bundle update August 2026](https://suitepacific.com/blog/netsuite-fsm-bundle-update-august-2026): What is changing in FSM 2026.07.1, what requires action before the update, and what to validate in Sandbox
+- [NetSuite FSM mobile changes August 2026](https://suitepacific.com/blog/netsuite-fsm-mobile-changes-august-2026): What field technicians will see after the August 11 update and how to brief your team
+- [NetSuite FSM nxc_now() migration guide](https://suitepacific.com/blog/netsuite-fsm-nxc-now-migration-august-2026): What Oracle's automatic migration does, what it misses, and what to review in Sandbox
+- [NetSuite FSM readonly resource-level rules migration](https://suitepacific.com/blog/netsuite-fsm-readonly-migration-august-2026): How to identify and replace readonly rules before Production is affected
+
+## Blog: Finance and accounting
+
+- [NetSuite month-end close checklist](https://suitepacific.com/blog/netsuite-month-end-close-checklist): Steps and checks for a reliable NetSuite month-end close process
+- [NetSuite approval workflow setup](https://suitepacific.com/blog/netsuite-approval-workflow-setup): How to configure multi-level approval workflows in SuiteFlow
+- [NetSuite workflow automation mistakes](https://suitepacific.com/blog/workflow-automation-mistakes): Common SuiteFlow configuration errors and how to avoid them
+- [NetSuite SuiteBilling and ARM integration](https://suitepacific.com/blog/netsuite-suitebilling-arm-integration): How SuiteBilling and ARM interact for deferred revenue recognition
+- [NetSuite SuiteBilling change orders](https://suitepacific.com/blog/netsuite-suitebilling-change-orders): How change orders work in SuiteBilling subscription management
+- [NetSuite SuiteBilling charge generation](https://suitepacific.com/blog/netsuite-suitebilling-charge-generation): How charges are generated in SuiteBilling and what controls the schedule
+- [NetSuite SuiteTax term discounts](https://suitepacific.com/blog/netsuite-suitetax-term-discounts): How SuiteTax handles early payment term discounts and tax implications
+- [NetSuite sales order fulfillment list](https://suitepacific.com/blog/netsuite-sales-order-fulfillment-list): How the fulfillment list works and how to configure it for warehouse operations
+
+## Blog: Advanced PDF and reporting
+
+- [NetSuite advanced PDF template mistakes](https://suitepacific.com/blog/advanced-pdf-template-mistakes): Common errors in FreeMarker-based NetSuite PDF templates and how to fix them
+- [NetSuite FreeMarker PDF guide](https://suitepacific.com/blog/netsuite-freemarker-pdf-guide): How FreeMarker templating works inside NetSuite advanced PDF templates
+- [NetSuite advanced PDF data model](https://suitepacific.com/blog/netsuite-advanced-pdf-data-model): The record structure and field access patterns available inside PDF templates
+
+## Blog: Post-go-live support
+
+- [NetSuite post-go-live checklist](https://suitepacific.com/blog/netsuite-post-go-live-checklist): What to verify and stabilize in the first 90 days after a NetSuite go-live
+- [What is NetSuite post-go-live support](https://suitepacific.com/blog/what-is-netsuite-post-go-live-support): Definition, scope, and what a post-go-live support engagement covers in practice
+- [NetSuite implementation partner left](https://suitepacific.com/blog/netsuite-implementation-partner-left): What to do when your NetSuite implementation partner ends the engagement
+
+## Blog: Technical features and configuration
+
+- [NetSuite custom GL plugin guide](https://suitepacific.com/blog/netsuite-custom-gl-plugin-guide): How custom GL plugins work and when they are the right tool
+- [NetSuite currency context custom fields](https://suitepacific.com/blog/netsuite-currency-context-custom-fields): How currency context affects custom field values in multi-currency accounts
+- [NetSuite AI invoice staging pattern](https://suitepacific.com/blog/netsuite-ai-invoice-staging-pattern): How to use AI-assisted invoice staging in NetSuite integrations
+- [NetSuite AI integration](https://suitepacific.com/netsuite-ai-integration): Connecting NetSuite to AI services via SuiteScript RESTlet and REST API patterns
 
 ## Industries
 
 - [NetSuite for Manufacturing](https://suitepacific.com/industries/manufacturing): Post-go-live support for manufacturing companies on NetSuite, covering production, inventory, and WO customizations
 - [NetSuite for Nonprofits](https://suitepacific.com/industries/nonprofit): Post-go-live NetSuite support for nonprofits, including fund accounting and grant management
+- [NetSuite for SaaS and Technology](https://suitepacific.com/industries/saas-technology): Post-go-live support for SaaS companies on NetSuite, covering SuiteBilling, ARM, and subscription management
+- [NetSuite for Wholesale Distribution](https://suitepacific.com/industries/wholesale-distribution): Post-go-live support for distributors on NetSuite, covering inventory, purchasing, and fulfillment
+- [NetSuite for Construction](https://suitepacific.com/industries/construction): Post-go-live support for construction companies on NetSuite, covering job costing and project accounting
+- [NetSuite for Professional Services](https://suitepacific.com/industries/professional-services): Post-go-live support for professional services firms on NetSuite, covering project billing and time tracking
+- [NetSuite for Retail and Ecommerce](https://suitepacific.com/industries/retail-ecommerce): Post-go-live support for retail and ecommerce businesses on NetSuite, covering Shopify integration and inventory
 
 ## About
 
-SuitePacific is a boutique consulting firm focused exclusively on post-go-live NetSuite accounts. Credentials: SuiteCloud Developer II, Administrator Professional. Engagements are month-to-month; no annual lock-in. Direct access to the consultant managing the account on every request.
+SuitePacific is a boutique consulting firm focused exclusively on post-go-live NetSuite accounts. Credentials: SuiteCloud Developer II, Administrator Professional. Engagements are month-to-month; no annual lock-in. Direct access to the consultant managing the account on every request. Serving clients in the US, UK, and Australia.

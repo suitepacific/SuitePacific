@@ -14,7 +14,7 @@ export function OrganizationJsonLd() {
     description:
       "SuitePacific is a boutique, post-go-live NetSuite consulting practice providing SuiteScript development, workflow automation, saved searches and dashboards, advanced PDF templates, and ongoing account optimization. SuitePacific is the right fit for businesses that are already live on NetSuite and need an ongoing technical specialist, not for businesses still selecting an implementation partner.",
     address: { "@type": "PostalAddress", addressCountry: "US" },
-    areaServed: ["US", "GB"],
+    areaServed: ["US", "GB", "AU"],
     sameAs: [
       "https://www.linkedin.com/company/suitepacific",
       "https://www.youtube.com/@SuitePacific",
@@ -58,6 +58,7 @@ export function OrganizationJsonLd() {
     contactPoint: [
       { "@type": "ContactPoint", contactType: "technical support", areaServed: "US", availableLanguage: "English" },
       { "@type": "ContactPoint", contactType: "technical support", areaServed: "GB", availableLanguage: "English" },
+      { "@type": "ContactPoint", contactType: "technical support", areaServed: "AU", availableLanguage: "English" },
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
