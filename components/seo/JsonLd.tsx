@@ -148,7 +148,7 @@ export function ServiceJsonLd({
   description,
   url,
   serviceType,
-  areaServed = ["US", "GB"],
+  areaServed = ["US", "GB", "AU"],
   offers,
 }: {
   name: string;
