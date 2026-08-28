@@ -197,6 +197,96 @@ export const CASE_STUDIES_DETAIL: CaseStudyData[] = [
       ],
     },
   },
+  {
+    slug: "partner-replacement-onboarding",
+    title: "NetSuite Partner Replacement and Account Takeover",
+    publishedAt: "2026-08-01",
+    metaDescription:
+      "How SuitePacific took over a post-go-live NetSuite account after the original implementation partner disengaged, completed access onboarding in under two weeks, documented the existing customization layer, and resolved three outstanding issues the previous partner had left open.",
+    tags: ["Post-Go-Live Support"],
+    relatedServices: [
+      { label: "Post-Go-Live Support", href: "/netsuite-post-go-live-support" },
+      { label: "Partner Not Responsive", href: "/netsuite-partner-not-responsive" },
+    ],
+    cardChallenge:
+      "The implementation partner had disengaged. The account had undocumented customizations, three unresolved open issues, and no clear owner for ongoing support.",
+    cardOutcome:
+      "SuitePacific completed access onboarding and account documentation within two weeks, then resolved all three outstanding issues before the end of the first month.",
+    sections: {
+      challenge: [
+        "The client had been live on NetSuite for fourteen months when their implementation partner disengaged without a formal handoff. The account had a customization layer built during implementation: eight SuiteScript scripts covering purchase order generation, approval routing, and item fulfillment; three SuiteFlow workflows managing invoice approval and customer notification; and a suite of saved searches and dashboards configured for the finance and operations teams.",
+        "None of it was documented. When the partner left, the client had no record of what each script did, which workflows depended on which scripts, or how to safely modify any of it. Three issues that had been open with the partner since before disengagement were unresolved: a script error appearing on high-volume transaction days, an approval workflow routing to a deactivated user, and a saved search returning incorrect aging data for a subset of customers.",
+      ],
+      solution: [
+        "We began with account access: NetSuite role provisioning, Sandbox access, and a review of the existing customization layer before touching anything. Within the first week, we produced a customization inventory documenting each script by ID, type, and trigger, each workflow by entry condition and action, and each saved search by criteria and intended audience. The inventory identified the dependency between the approval workflow and the deactivated user immediately.",
+        "The three outstanding issues were prioritized by operational impact. The deactivated user routing was corrected in the first week. The saved search criteria error, which was filtering on a field that had been reclassified after go-live, was corrected in the second week. The script error on high-volume days required more investigation: the root cause was a governance limit issue on the Map/Reduce script used for PO generation, fixed by restructuring the input data stage to process in smaller batches. All three fixes were tested in Sandbox and deployed to Production within the first month.",
+      ],
+      outcome: [
+        "The account had a documented customization layer and a functional support relationship within two weeks of engagement start. The three issues that had been unresolved with the previous partner were closed before the end of the first month. From that point, the client moved to a monthly retainer covering ongoing administration and development.",
+        "The account documentation produced during onboarding became the foundation for all subsequent support work: each new request is evaluated against the documented customization layer, and each change is added to the documentation as it is deployed. The client no longer faces the situation they were in at handoff, where no one could safely modify the account without risk of breaking something undocumented.",
+      ],
+    },
+  },
+  {
+    slug: "managed-support-retainer",
+    title: "Ongoing Managed Support: Twelve Months of Post-Go-Live Coverage",
+    publishedAt: "2026-08-01",
+    metaDescription:
+      "What twelve months of NetSuite managed support looks like in practice: the types of requests handled each month, how the account evolves under a retainer model, and what changes compared to break-fix support.",
+    tags: ["Post-Go-Live Support"],
+    relatedServices: [
+      { label: "Post-Go-Live Support", href: "/netsuite-post-go-live-support" },
+      { label: "NetSuite Managed Support", href: "/netsuite-managed-support" },
+    ],
+    cardChallenge:
+      "A distribution company with twelve employees on NetSuite had no internal administrator. Requests accumulated until they were urgent, then got handled reactively at unpredictable cost.",
+    cardOutcome:
+      "Under a monthly retainer, requests are handled as they arrive, the account stays current with two annual releases, and there are no surprise invoices for urgent fixes.",
+    sections: {
+      challenge: [
+        "The client, a distribution company with approximately forty NetSuite users across operations, finance, and sales, had no dedicated internal NetSuite administrator. When something needed to change in the account, they contacted the implementation partner that had built the system. Some requests took days to get a response. Others required a new statement of work before work could begin. Urgent issues, a failed script on a month-end batch run, a permission error blocking a key user, a workflow that stopped routing correctly, went to the front of the queue but still took longer than the situation warranted.",
+        "The cost was also unpredictable. Some months had no NetSuite spend. Others had three or four separate invoices for unrelated requests. Budgeting for NetSuite support was difficult because the number and complexity of requests varied, and the billing model charged the same hourly rate whether the request took thirty minutes or three days.",
+      ],
+      solution: [
+        "We onboarded the account and moved to a monthly retainer covering twenty hours per month, sized to their historical request volume. The retainer covers all standard requests: user management, role and permission changes, custom field and form updates, saved search creation and modification, workflow adjustments, and SuiteScript fixes. Requests are submitted directly by email, without a ticketing system, and most are handled same or next business day.",
+        "Release preparation is included in the retainer rather than treated as a separate project. Each of the two annual NetSuite releases triggers a review of affected customizations, testing in Sandbox against the client's real transaction types, and deployment of any fixes before Production upgrades. Over the twelve months, this covered seven scripts and two workflows that had minor release interactions, none of which became production issues because they were caught in Sandbox first.",
+      ],
+      outcome: [
+        "Over twelve months, the retainer covered more than sixty administration and development requests. These included new user provisioning and access changes as the team grew, two new saved searches for the operations team, three workflow modifications as approval processes evolved, and fixes to four scripts across two release cycles. No request required a new statement of work. No release caused a production script failure.",
+        "The finance team's primary feedback was predictability: a fixed monthly cost, a known response time, and no surprise invoices for urgent work. From the account's perspective, the changes that accumulated in the twelve months reflect how the business actually changed: new processes, new team members, and evolving reporting needs, all handled incrementally rather than in reactive bursts.",
+      ],
+    },
+  },
+  {
+    slug: "account-optimization-technical-debt",
+    title: "Account Optimization: Clearing Technical Debt After Go-Live",
+    publishedAt: "2026-08-01",
+    metaDescription:
+      "How SuitePacific conducted a NetSuite account optimization for a company that had accumulated technical debt over two years post-go-live: unused scripts, broken workflow references, stale roles, and a customization layer nobody understood.",
+    tags: ["Account Optimization"],
+    relatedServices: [
+      { label: "Account Optimization", href: "/netsuite-account-optimization" },
+      { label: "NetSuite Health Check", href: "/netsuite-health-check" },
+    ],
+    cardChallenge:
+      "Two years after go-live, the account had accumulated unused scripts still triggering on every transaction, broken workflow references, and forty-plus roles that had never been reviewed since implementation.",
+    cardOutcome:
+      "The optimization cleared the unused customization load, corrected the broken references, and documented what remained, leaving the account faster and maintainable going forward.",
+    sections: {
+      challenge: [
+        "The client had been live on NetSuite for slightly over two years. In that time, the original implementation had been extended incrementally: scripts added for specific requirements, workflows modified when processes changed, roles duplicated when access requests came in without a clear place to put them. Nobody had taken stock of what the account contained since go-live.",
+        "By the time they engaged us, the account had forty-three active roles, most with names that no longer matched their function or the team members assigned to them. Eleven deployed scripts were active on transaction types they no longer needed to touch, some left over from a process that had been retired, others from an integration that had been replaced. Four workflow references pointed to fields or records that no longer existed, generating silent errors that no one had traced. The client noticed the account was slower than it should be on period-close days and suspected the customization layer was part of the cause.",
+      ],
+      solution: [
+        "We began with an audit rather than remediation. Over the first two weeks, we documented every script by type, trigger, and current status: active and in use, active but triggering on irrelevant transaction types, or effectively orphaned. We traced each workflow reference to determine whether the target field or record still existed. We reviewed every role against its current assignees and their actual function.",
+        "The remediation was sequenced by risk. Broken workflow references were corrected first because they were generating silent errors on live transactions. Scripts triggering on irrelevant transaction types were updated to narrow their triggers or deactivated if the underlying process was retired. Seven scripts were deactivated after confirming with the client that the processes they supported were no longer active. The role structure was consolidated from forty-three to twenty-two by merging roles with identical effective permissions and renaming the remainder to match current team function.",
+      ],
+      outcome: [
+        "The account's customization layer went from an undocumented accumulation to a known, named set of scripts, workflows, and roles with documented purpose and current status. Period-close performance improved as the scripts that had been triggering unnecessarily on high-volume transaction days were narrowed or removed. The four broken workflow references were corrected before they surfaced as visible errors.",
+        "The client moved to a monthly support retainer after the optimization completed. The documentation produced during the audit became the baseline: every subsequent change is evaluated against it and added to it, so the account does not return to the undocumented state it was in before the optimization.",
+      ],
+    },
+  },
 ];
 
 export function getCaseStudy(slug: string): CaseStudyData | undefined {
