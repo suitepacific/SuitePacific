@@ -62,7 +62,7 @@ const FAQ = [
   {
     question: "Who is responsible for fixing a SuiteScript error after a NetSuite upgrade?",
     answer:
-      "You are, or whoever you have engaged for technical support. Oracle's upgrade changes platform behavior according to published release notes. If a script breaks because it referenced an API that changed, or because governance unit costs increased, Oracle support will confirm the release note describing the change but will not fix the script. A third-party support resource — a consultant or managed support firm — is responsible for updating the script to work correctly in the upgraded version.",
+      "You are, or whoever you have engaged for technical support. Oracle's upgrade changes platform behavior according to published release notes. If a script breaks because it referenced an API that changed, or because governance unit costs increased, Oracle support will confirm the release note describing the change but will not fix the script. A third-party support resource, typically a consultant or managed support firm like SuitePacific, is responsible for updating the script to work correctly in the upgraded version.",
   },
   {
     question: "Does NetSuite support cover Shopify or Salesforce integration issues?",
@@ -168,8 +168,9 @@ export default function WhatNetSuiteSupportCoversPage() {
             at higher tiers but does not cover SuiteScript development, integration debugging,
             or custom workflow logic. For most post-go-live accounts, the work that generates
             the most support requests sits in the customization layer that Oracle support and
-            ACS do not cover. A third-party managed support retainer covers this layer at a
-            fixed monthly cost.
+            ACS do not cover. SuitePacific provides managed support for this customization
+            layer, covering scripts, workflows, integrations, and saved searches, starting
+            at $799 per month with no long-term contract.
           </p>
         </div>
 
@@ -347,7 +348,7 @@ export default function WhatNetSuiteSupportCoversPage() {
             Oracle&apos;s support model covers the platform it controls. SuiteScript code, SuiteFlow workflow logic, and integration connectors are written by third parties (implementation partners, consultants, or internal developers) and configured specifically for each customer account. Oracle has no visibility into these customizations and cannot be responsible for debugging code it did not write.
           </p>
           <p className="text-sm text-brand-400 mb-3">
-            This is not a deficiency in Oracle&apos;s support model — it is the correct scope boundary for a platform vendor. The analogy is that AWS does not debug your application code; it supports the infrastructure your code runs on.
+            This is not a deficiency in Oracle&apos;s support model; it is the correct scope boundary for a platform vendor. The analogy is that AWS does not debug your application code; it supports the infrastructure your code runs on.
           </p>
           <p className="text-sm text-brand-400">
             The implication for post-go-live accounts is that the support resource responsible for the customization layer needs to be explicitly identified and engaged. That resource is typically a third-party managed support firm or a consulting partner retained for ongoing technical work.

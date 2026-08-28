@@ -19,7 +19,7 @@ const CHECKLIST_PHASES = [
       "Verify all SuiteApps and bundle versions in Sandbox match production",
       "Confirm any pending customization deployments are promoted to production before the refresh",
     ],
-    note: "A stale Sandbox — one that does not reflect current production customizations — produces false-positive test results. Scripts and workflows that pass in a stale Sandbox may fail against the actual data and record structure in production.",
+    note: "A stale Sandbox, one that does not reflect current production customizations, produces false-positive test results. Scripts and workflows that pass in a stale Sandbox may fail against the actual data and record structure in production.",
   },
   {
     phase: "02",
@@ -32,7 +32,7 @@ const CHECKLIST_PHASES = [
       "Test Restlet and Suitelet endpoints with actual integration payloads",
       "Check governance unit consumption on Scheduled and Map/Reduce scripts; release notes sometimes change unit costs",
     ],
-    note: "Governance unit costs and API behavior changes are the most common source of script failures after a NetSuite upgrade. Oracle documents these changes in the release notes but they require a deliberate review pass — they are not flagged automatically.",
+    note: "Governance unit costs and API behavior changes are the most common source of script failures after a NetSuite upgrade. Oracle documents these changes in the release notes but they require a deliberate review pass; they are not flagged automatically.",
   },
   {
     phase: "03",
@@ -68,7 +68,7 @@ const CHECKLIST_PHASES = [
       "Review Advanced PDF template changes, particularly for invoice, sales order, and purchase order templates",
       "Audit custom field formulas that reference native field IDs or system values that may have changed",
     ],
-    note: "Release notes are dense. The risk is not that a change is undocumented — Oracle documents changes thoroughly — it is that a relevant change is missed because the review was not systematic. Organize the review by module, not by reading the notes cover-to-cover.",
+    note: "Release notes are dense. The risk is not that a change is undocumented (Oracle documents changes thoroughly); it is that a relevant change is missed because the review was not systematic. Organize the review by module, not by reading the notes cover-to-cover.",
   },
   {
     phase: "06",
@@ -154,7 +154,7 @@ const FAQ = [
   {
     question: "What if something breaks after the upgrade goes live?",
     answer:
-      "If a critical process fails after the upgrade, the resolution path is to open a support case with Oracle for platform-level issues, and to engage a technical resource with account context for script, workflow, and integration failures. Oracle standard support does not cover custom SuiteScript debugging. Having a third-party support resource already engaged with your account — with documentation from the pre-upgrade testing pass — significantly reduces time-to-resolution for post-upgrade failures.",
+      "If a critical process fails after the upgrade, the resolution path is to open a support case with Oracle for platform-level issues, and to engage a technical resource with account context for script, workflow, and integration failures. Oracle standard support does not cover custom SuiteScript debugging. Having a third-party support resource already engaged with your account, with documentation from the pre-upgrade testing pass, significantly reduces time-to-resolution for post-upgrade failures.",
   },
   {
     question: "Can NetSuite upgrade preparation be done on a fixed-fee basis?",
@@ -232,7 +232,8 @@ export default function NetSuiteUpgradePreparationPage() {
             passing records after an API behavior change, and workflow entry conditions that
             match unintended records because a native field value changed. A documented test
             pass before the upgrade significantly reduces time-to-resolution for any issues
-            that surface after the production upgrade.
+            that surface after the production upgrade. SuitePacific provides upgrade preparation
+            as a fixed-fee engagement and includes it in ongoing managed support retainers.
           </p>
         </div>
 

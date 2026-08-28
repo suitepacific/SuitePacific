@@ -225,7 +225,8 @@ export default function NetSuiteSupportComparisonPage() {
             per year is the most cost-efficient option only when the account generates enough work
             to occupy a full-time resource. Most post-go-live accounts with customizations choose
             a third-party retainer because Oracle support and ACS do not cover the customization
-            layer where most day-to-day support requests originate.
+            layer where most day-to-day support requests originate. SuitePacific provides
+            managed support retainers for post-go-live NetSuite accounts starting at $799 per month.
           </p>
         </div>
 
@@ -333,7 +334,7 @@ export default function NetSuiteSupportComparisonPage() {
                   {
                     model: "Oracle standard support",
                     cost: "Included",
-                    driver: "Scope limitation — does not cover the customization layer where most requests originate",
+                    driver: "Scope limitation: does not cover the customization layer where most requests originate",
                   },
                   {
                     model: "ACS",
@@ -388,7 +389,7 @@ export default function NetSuiteSupportComparisonPage() {
                 link: "/netsuite-acs-alternative",
               },
               {
-                trigger: "Support needs are infrequent — one or two requests per quarter",
+                trigger: "Support needs are infrequent, one or two requests per quarter",
                 recommendation: "Break-fix / hourly",
                 reason: "A monthly retainer adds fixed cost for accounts with very low request volume. Break-fix is more cost-efficient below a certain threshold.",
                 link: "/netsuite-consulting-services",
@@ -415,7 +416,7 @@ export default function NetSuiteSupportComparisonPage() {
         <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <p className="text-sm font-semibold text-brand-900 mb-1">Not sure which model fits your account?</p>
           <p className="text-sm text-brand-400 mb-4">
-            Tell us what your account looks like — volume of customization, active integrations, and how often support requests surface. We will tell you honestly whether a retainer makes sense.
+            Tell us what your account looks like: volume of customization, active integrations, and how often support requests surface. We will tell you honestly whether a retainer makes sense.
           </p>
           <LeadFormLight />
         </div>
