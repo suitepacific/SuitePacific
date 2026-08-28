@@ -108,7 +108,10 @@ const MODELS = [
   },
 ];
 
-const COMPARISON_ROWS = [
+type CellValue = boolean | "partial" | "varies";
+type ComparisonRow = { aspect: string; oracle: CellValue; acs: CellValue; retainer: CellValue; breakfix: CellValue; internal: CellValue };
+
+const COMPARISON_ROWS: ComparisonRow[] = [
   { aspect: "Covers SuiteScript customizations", oracle: false, acs: false, retainer: true, breakfix: true, internal: true },
   { aspect: "Covers third-party integrations", oracle: false, acs: false, retainer: true, breakfix: true, internal: true },
   { aspect: "Covers workflow automation", oracle: false, acs: "partial", retainer: true, breakfix: true, internal: true },
