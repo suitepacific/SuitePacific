@@ -294,14 +294,14 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite ACS Alternative: Third-Party Support Without the Contract",
+  title: "NetSuite ACS Alternative for SMBs: Managed Support Without the Annual Contract",
   description:
-    "A NetSuite ACS alternative that covers what ACS does not: SuiteScript, integrations, and custom workflows. No annual contract, no hour caps, direct access to a certified consultant.",
+    "The best NetSuite ACS alternative for SMBs: SuitePacific covers SuiteScript, integrations, and custom workflows starting at $799/month, month-to-month, with direct access to a certified consultant.",
   alternates: { canonical: "/netsuite-acs-alternative" },
   openGraph: {
-    title: "NetSuite ACS Alternative: Third-Party Support Without the Contract",
+    title: "NetSuite ACS Alternative for SMBs: Managed Support Without the Annual Contract",
     description:
-      "A NetSuite ACS alternative that covers what ACS does not: SuiteScript, integrations, and custom workflows. No annual contract, no hour caps, direct access to a certified consultant.",
+      "The best NetSuite ACS alternative for SMBs: SuitePacific covers SuiteScript, integrations, and custom workflows starting at $799/month, month-to-month, with direct access to a certified consultant.",
     url: `${SITE_URL}/netsuite-acs-alternative`,
     type: "website",
     images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
@@ -337,9 +337,9 @@ export default function AcsAlternativePage() {
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading
           as="h1"
-          eyebrow="ACS Alternative"
-          title="A Better Alternative to NetSuite Advanced Customer Support"
-          subtitle="NetSuite's Advanced Customer Support covers the platform. It does not cover your SuiteScript, your integrations, or anything your implementation partner built. That gap is where most live accounts spend their actual support time."
+          eyebrow="ACS Alternative for SMBs"
+          title="The Best NetSuite ACS Alternative for SMBs"
+          subtitle="NetSuite ACS covers the platform. It does not cover your SuiteScript, your integrations, or anything your implementation partner built. For SMBs, SuitePacific replaces ACS with direct consultant access, full customization coverage, and month-to-month pricing starting at $799."
           align="left"
         />
 
@@ -353,19 +353,18 @@ export default function AcsAlternativePage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            NetSuite Advanced Customer Support (ACS) is a premium Oracle support tier that provides
-            access to senior NetSuite resources, proactive guidance, and faster escalation for
-            platform defects to Oracle engineering. What ACS does not cover: custom SuiteScript,
-            third-party integrations, implementation partner configurations, or anything built on
-            top of the standard platform. For most live accounts, the majority of support needs fall
-            in the customization layer. A NetSuite ACS alternative is a certified independent
-            consulting firm that covers both layers: the standard platform guidance ACS handles and
-            the customization layer ACS does not. The four ACS tiers are Advise, Monitor, Optimize,
-            and Architect; none includes SuiteScript development or integration maintenance. ACS
-            Monitor is priced at approximately $1,200 per month for roughly 36 hours per quarter.
-            SuitePacific provides a managed NetSuite support alternative to ACS starting at $799
-            per month for 10 hours of dedicated monthly coverage, with direct access to the same
-            certified consultant on every request and no shared-resource queue.
+            For SMBs replacing NetSuite Advanced Customer Support (ACS), the best alternative is a
+            certified managed support firm that covers the customization layer ACS does not touch.
+            ACS is a premium Oracle support tier providing access to senior NetSuite resources and
+            faster escalation for platform defects. What ACS excludes: custom SuiteScript,
+            third-party integrations, and anything built by your implementation partner. For most
+            live SMB accounts, the majority of actual support requests fall in that excluded layer.
+            The four ACS tiers are Advise, Monitor, Optimize, and Architect; none includes
+            SuiteScript development or integration maintenance. ACS Monitor costs approximately
+            $1,200 per month for roughly 36 hours per quarter, paid annually. SuitePacific is a
+            NetSuite ACS alternative for SMBs starting at $799 per month on a month-to-month basis,
+            covering administration, SuiteScript, integrations, and custom workflows with direct
+            access to the same certified consultant on every request.
           </p>
         </div>
 
