@@ -189,6 +189,26 @@ export default function WorkflowAutomationPage() {
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
 
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            NetSuite workflow automation refers to business process logic built using
+            NetSuite&apos;s SuiteFlow engine, which allows rules, approvals, notifications, and
+            field updates to run automatically in response to record events without custom
+            scripting. Common applications include multi-level purchase order approval routing,
+            vendor bill approval chains, automated email notifications when a record reaches a
+            specific status, and conditional field updates based on record state. SuiteFlow handles
+            most automation requirements natively. When native actions are not sufficient, for
+            example when a workflow needs to call an external API or manipulate records across
+            subtypes, SuiteScript extends the workflow at a specific action step. SuitePacific
+            designs and builds these automations for post-go-live accounts, testing in Sandbox
+            first and documenting trigger conditions and action logic so the workflow can be
+            maintained as business processes evolve. Poorly designed workflows that trigger in
+            loops or conflict with scripts are a common source of production issues; correct entry
+            conditions and action sequencing prevent these problems at build time.
+          </p>
+        </div>
+
         <p className="mt-6 text-sm text-brand-400">
           A well-built workflow removes the need for someone to manually check whether an approval
           has been sitting for three days, remember to send a notification when a status changes, or

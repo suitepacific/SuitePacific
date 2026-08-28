@@ -212,6 +212,24 @@ export default function NetSuiteIntegrationsPage() {
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
 
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            NetSuite integration support covers the ongoing maintenance, troubleshooting, and
+            rebuilding of connections between NetSuite and external systems. Common integrations
+            include Shopify for e-commerce order and inventory sync, Salesforce for CRM-to-ERP
+            record flow, 3PL providers for fulfillment and inventory updates, Avalara for tax
+            calculation, and HubSpot for marketing-to-sales pipeline data. Integration failures
+            are among the most disruptive issues in a live NetSuite account because they often
+            fail silently: data stops syncing without an error that surfaces to end users, and
+            the discrepancy grows until someone notices a mismatch. SuitePacific builds
+            integrations using RESTlets and REST Web Services with error logging and failure
+            alerting built in by default. Integrations built on middleware platforms including
+            Celigo, Boomi, and custom Node.js scripts are also maintained and debugged. All
+            changes are tested against Sandbox before touching Production order or inventory data.
+          </p>
+        </div>
+
         <p className="mt-6 text-sm text-brand-400">
           Most businesses running NetSuite don&apos;t run it alone. When data needs to flow
           between NetSuite and a 3PL, an e-commerce platform, or a CRM, the difference between

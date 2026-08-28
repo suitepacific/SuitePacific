@@ -187,6 +187,26 @@ export default function AccountOptimizationPage() {
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
 
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            NetSuite account optimization is the process of improving the performance, reliability,
+            and maintainability of a live NetSuite account without disrupting operations. It differs
+            from a health check, which identifies problems, by focusing on remediation: fixing what
+            the review found. Optimization work typically covers four areas. Script optimization
+            reviews SuiteScript deployments for governance inefficiency, unnecessary database
+            calls, and redundant logic that has accumulated since go-live. Workflow cleanup
+            addresses over-broad entry conditions, duplicate actions, and trigger conflicts with
+            scripts. Saved search and reporting optimization fixes formula-heavy searches that
+            perform poorly under production data volume. Configuration cleanup removes unused
+            custom fields, inactive records, and orphaned deployment records that add noise to the
+            account without serving a current purpose. SuitePacific conducts optimization
+            engagements for post-go-live accounts, auditing before touching anything, making all
+            changes in Sandbox first, and documenting every modification so the account state is
+            understood after the engagement ends.
+          </p>
+        </div>
+
         <p className="mt-6 text-sm text-brand-400">
           NetSuite accounts that have been live for a few years accumulate technical debt the same
           way any software system does: scripts added in a hurry, custom fields from projects that

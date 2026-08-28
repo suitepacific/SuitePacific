@@ -180,6 +180,23 @@ export default function NetSuiteEmergencySupportPage() {
         </div>
         <p className="mt-3 text-xs text-brand-400">Same-day response · NetSuite-certified · Direct developer access · No ticket queue</p>
 
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            NetSuite emergency support covers break-fix situations where a live account is failing
+            and normal support response times are not acceptable. The most common scenarios are a
+            SuiteScript error breaking a critical record type after a NetSuite release update, an
+            integration stopping mid-sync and leaving data in an inconsistent state, a workflow
+            triggering incorrectly and generating erroneous records, or a permission or
+            configuration change that locked out users or corrupted a process. SuitePacific
+            provides same-business-day response for active emergencies, with direct access to the
+            developer diagnosing and fixing the issue. No ticket queue, no Tier 1 triage, no
+            account manager relay. The fix is diagnosed, explained, built in Sandbox where
+            possible, and deployed to Production. Post-fix documentation covers what broke, why
+            it broke, and what was changed so the fix can be understood and maintained.
+          </p>
+        </div>
+
         <p className="mt-6 text-sm text-brand-400">
           NetSuite emergencies usually fall into one of a few categories: a script that broke after a
           release, an integration that stopped syncing, or a data issue that needs assessment and
