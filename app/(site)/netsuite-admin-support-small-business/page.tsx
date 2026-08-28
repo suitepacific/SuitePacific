@@ -243,6 +243,25 @@ export default function NetSuiteAdminSupportSmallBusinessPage() {
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
 
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            Fractional NetSuite administrator support gives small businesses access to an
+            experienced NetSuite administrator on a dedicated monthly retainer, covering the
+            full range of ongoing configuration work without the cost of a full-time internal
+            hire. A full-time NetSuite administrator at a mid-market company earns $80,000 to
+            $130,000 per year. Most small businesses do not generate enough ongoing NetSuite
+            administration work to justify that cost. Common monthly requests include user
+            provisioning and deactivation, role and permission adjustments, custom field
+            additions and modifications, saved search creation and troubleshooting, form layout
+            changes, and periodic review of inactive records and configurations. SuitePacific
+            provides fractional NetSuite administrator support for small businesses on a monthly
+            retainer starting at $799 per month, covering all standard administration requests
+            with direct access to the same certified administrator on every request and no
+            long-term contract.
+          </p>
+        </div>
+
         <p className="mt-6 text-sm text-brand-400">
           SuitePacific provides certified NetSuite administration through dedicated monthly
           support for companies that went live on NetSuite but do not have a dedicated internal

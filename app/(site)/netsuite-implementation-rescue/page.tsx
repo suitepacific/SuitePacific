@@ -208,6 +208,25 @@ export default function NetSuiteImplementationRescuePage() {
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Assessment before remediation · Sandbox-first · Direct access</p>
 
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            A NetSuite implementation rescue engagement addresses accounts that went live but do
+            not work correctly for the business using them. Common scenarios include an account
+            configured to match a template rather than actual business processes, custom scripts
+            delivered but never tested against production data, integrations scoped but never
+            completed, workflows routing approvals to the wrong people, and a customization layer
+            with no documentation that cannot safely be changed without risk of breaking something
+            else. A rescue engagement begins with an assessment rather than immediate changes,
+            because making changes to an undocumented account can create new problems while
+            fixing existing ones. The assessment produces a prioritized remediation roadmap with
+            severity classifications and dependency ordering. SuitePacific conducts NetSuite
+            implementation rescue engagements for accounts that went live with an implementation
+            partner but are not functioning as expected, starting with a structured assessment
+            before any remediation work begins.
+          </p>
+        </div>
+
         <p className="mt-6 text-sm text-brand-400">
           A failed or incomplete NetSuite implementation is not unusual. Timelines get compressed,
           scope gets cut, implementation partners disengage before everything works, and businesses

@@ -214,6 +214,25 @@ export default function NetSuiteFSMSupportPage() {
           Same-day response · NetSuite-certified · FSM bundle expertise · Direct developer access
         </p>
 
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            NetSuite Field Service Management (FSM) is a SuiteApp bundle that extends NetSuite
+            with scheduling, dispatch, mobile technician access, and job completion tracking for
+            field service operations. FSM operates as a layer on top of NetSuite&apos;s standard record
+            types and introduces its own configuration, bundle dependencies, and mobile sync
+            behavior. Common FSM issues in post-go-live accounts include mobile sync failures
+            where technician updates do not flow back to NetSuite records, bundle update conflicts
+            that break custom workflows or scripts dependent on FSM record types, configuration
+            errors in the dispatch console, and broken field mappings between FSM job records
+            and native NetSuite transactions. FSM troubleshooting requires both knowledge of the
+            FSM bundle architecture and SuiteScript access to diagnose issues that originate in
+            bundle code or integration points. SuitePacific provides FSM support for post-go-live
+            NetSuite accounts, diagnosing and resolving sync failures, bundle conflicts, and
+            configuration issues with direct access to certified NetSuite developers.
+          </p>
+        </div>
+
         <p className="mt-6 text-sm text-brand-400">
           Oracle pushes FSM bundle updates automatically. Configuration changes, mobile interface
           overhauls, and breaking deprecations land in Production accounts on Oracle&apos;s schedule,

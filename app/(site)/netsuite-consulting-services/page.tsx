@@ -279,6 +279,25 @@ export default function NetSuiteConsultingServicesPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
         <p className="mt-2 text-xs text-brand-300"><time dateTime="2026-08">Published August 2026</time></p>
 
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            NetSuite consulting services for post-go-live accounts cover the technical work that
+            keeps a live account aligned with a growing business: SuiteScript development,
+            workflow and automation design, integration maintenance, administration and
+            configuration, saved search and reporting, and break-fix support for issues that
+            surface in production. Post-go-live consulting is structurally different from
+            implementation work. Implementation projects have a defined scope and a go-live
+            deadline. Post-go-live consulting is ongoing: the account changes as the business
+            changes, integrations need updating as platforms release new API versions, and scripts
+            built during implementation need updating as data volumes grow. The right consulting
+            model for most post-go-live accounts is a retainer rather than per-project billing,
+            which eliminates the overhead of scoping each request before work begins. SuitePacific
+            provides post-go-live NetSuite consulting on a monthly retainer covering development,
+            administration, integrations, and support with no long-term commitment.
+          </p>
+        </div>
+
         <p className="mt-6 text-sm text-brand-400">
           Companies that go live on NetSuite with an implementation partner typically discover
           within six months that the technical work does not stop at go-live: SuiteScript

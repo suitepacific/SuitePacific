@@ -188,6 +188,25 @@ export default function AdvancedPdfTemplatesPage() {
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
 
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            NetSuite Advanced PDF templates are the print and email documents generated directly
+            from NetSuite records: invoices, sales orders, purchase orders, statements, packing
+            slips, and any other document sent to customers or vendors. NetSuite generates these
+            using its Advanced PDF/HTML template engine, which uses HTML and CSS for layout and
+            FreeMarker for dynamic content. Template development requires knowledge of both
+            FreeMarker syntax and NetSuite&apos;s field access model, since data is pulled through
+            NetSuite-specific template syntax rather than standard HTML. Common requirements
+            include company branding, conditional content based on record values, multi-currency
+            formatting, language localization, multi-column line item tables with configurable
+            columns, and footer calculations. Templates also break after NetSuite version upgrades
+            when field accessor behavior or rendering behavior changes. SuitePacific builds and
+            modifies NetSuite Advanced PDF templates for post-go-live accounts, handling layout
+            changes, conditional logic, FreeMarker errors, and upgrade-related rendering failures.
+          </p>
+        </div>
+
         <p className="mt-6 text-sm text-brand-400">
           NetSuite&apos;s standard PDF templates break down quickly when documents need conditional
           sections, complex line-level formatting, or multi-brand logos. The Advanced PDF/HTML

@@ -188,6 +188,25 @@ export default function SavedSearchesDashboardsPage() {
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
 
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            NetSuite saved searches are the primary mechanism for querying and surfacing data
+            inside the platform. A saved search defines criteria and result columns, then makes
+            those results available as a report, a dashboard portlet, or a data source for other
+            saved searches and scripts. Dashboards aggregate portlets driven by saved searches
+            or system-generated summaries. The gap between what a default NetSuite account shows
+            and what a post-go-live business needs to see is typically closed through saved
+            searches: open purchase orders by vendor with aging, fulfillment status by region,
+            revenue by product category versus prior period, or workflow queue counts by approver.
+            Building accurate saved searches requires understanding NetSuite&apos;s data model and
+            its formula engine, which uses SQL-like syntax with NetSuite-specific functions.
+            Common problems include searches that return the wrong records, slow under production
+            data volume, or break after a version upgrade. SuitePacific builds, optimizes, and
+            maintains saved searches and dashboards for post-go-live NetSuite accounts.
+          </p>
+        </div>
+
         <p className="mt-6 text-sm text-brand-400">
           Most teams that rely on Excel exports are doing it because the right saved search was
           never built. NetSuite&apos;s search engine supports formula fields, summary types, cross-record

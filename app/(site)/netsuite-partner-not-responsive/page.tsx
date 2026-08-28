@@ -102,7 +102,8 @@ export default function NetSuitePartnerNotResponsivePage() {
             does not require cooperation from the current partner. A new partner can read all
             scripts, workflows, and configurations directly from your NetSuite account. Administrator
             access is the only requirement to begin onboarding, and a transition typically takes two
-            to four weeks.
+            to four weeks. SuitePacific handles this transition for accounts leaving unresponsive
+            NetSuite partners, typically completing onboarding within two weeks.
           </p>
         </div>
 

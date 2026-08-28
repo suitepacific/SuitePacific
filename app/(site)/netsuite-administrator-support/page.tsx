@@ -212,6 +212,26 @@ export default function NetSuiteAdministratorSupportPage() {
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
 
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            NetSuite administrator support covers the ongoing configuration work that keeps a live
+            account aligned with a growing business: adding users and adjusting roles, creating and
+            modifying custom fields, updating saved searches and dashboards, maintaining forms and
+            record layouts, and handling the configuration changes that surface as processes evolve.
+            This work does not require custom scripting but does require someone who understands
+            how NetSuite&apos;s permission model works, how role-based field visibility interacts with
+            workflow conditions, and how form changes can break saved searches that reference the
+            previous layout. Most businesses going live on NetSuite underestimate how much ongoing
+            administration work a live account generates. Common monthly requests include role
+            changes, field additions, saved search updates, form modifications, and periodic
+            clean-up of inactive records and stale configurations. SuitePacific provides dedicated
+            NetSuite administrator support on a monthly retainer for post-go-live accounts, with
+            direct access to the same certified administrator on every request and no long-term
+            contract.
+          </p>
+        </div>
+
         <p className="mt-6 text-sm text-brand-400">
           When a new department is added, a role needs to change, or month-end closes with a period
           lock question, that work falls to whoever is available. NetSuite administrator support

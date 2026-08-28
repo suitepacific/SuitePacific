@@ -120,7 +120,7 @@ export default function NetSuitePartnerTooSlowPage() {
             doing the work with no account manager relay, no statement of work for routine requests
             within an active engagement, and retained account context that eliminates re-onboarding
             time. Urgent production issues are escalated same-day rather than entering a shared
-            queue.
+            queue. SuitePacific operates this support-first model for post-go-live NetSuite accounts.
           </p>
         </div>
 

@@ -257,6 +257,8 @@ export default function NetSuiteManagedSupportPage() {
             as it surfaces. Unlike Oracle NetSuite support, managed support covers the full
             customization layer. Engagements run month-to-month, scale with the account, and provide
             direct access to the consultant who knows your account history across every request.
+            SuitePacific provides NetSuite managed support at $799, $1,499, and $2,499 per month
+            with no long-term contract.
           </p>
         </div>
 
