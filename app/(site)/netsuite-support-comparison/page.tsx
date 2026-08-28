@@ -434,7 +434,7 @@ export default function NetSuiteSupportComparisonPage() {
               <Link href="/netsuite-oracle-support-vs-third-party" className="text-accent hover:underline">
                 Oracle NetSuite support vs. third-party
               </Link>{" "}
-              explains the structural difference between Oracle's support model and an independent firm.
+              explains the structural difference between Oracle&apos;s support model and an independent firm.
             </li>
             <li className="text-sm text-brand-400">
               <Link href="/netsuite-managed-support" className="text-accent hover:underline">
