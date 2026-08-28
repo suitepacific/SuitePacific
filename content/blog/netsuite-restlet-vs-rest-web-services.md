@@ -1,6 +1,6 @@
 ---
 title: "NetSuite RESTlet vs REST Web Services: Which Integration Approach to Use"
-description: "The practical difference between NetSuite RESTlets and REST Web Services, when to build a custom RESTlet versus using the built-in REST API, and how authentication differs between the two."
+description: "A NetSuite RESTlet is a custom SuiteScript REST endpoint you build and deploy inside NetSuite. This guide explains what RESTlets do, when to use them vs the built-in REST Web Services API, and how authentication differs."
 date: "2026-08-07"
 updated: "2026-08-21"
 tags: ["Integrations", "SuiteScript", "Development"]

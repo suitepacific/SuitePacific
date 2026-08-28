@@ -360,11 +360,12 @@ export default function AcsAlternativePage() {
             top of the standard platform. For most live accounts, the majority of support needs fall
             in the customization layer. A NetSuite ACS alternative is a certified independent
             consulting firm that covers both layers: the standard platform guidance ACS handles and
-            the customization layer ACS does not. The alternative provides direct access to the
-            consultant doing the work, retained context across every request, and same-day response
-            on active production issues without a shared-resource queue. The four ACS tiers are
-            Advise, Monitor, Optimize, and Architect; none includes SuiteScript development or
-            integration maintenance.
+            the customization layer ACS does not. The four ACS tiers are Advise, Monitor, Optimize,
+            and Architect; none includes SuiteScript development or integration maintenance. ACS
+            Monitor is priced at approximately $1,200 per month for roughly 36 hours per quarter.
+            SuitePacific provides a managed NetSuite support alternative to ACS starting at $799
+            per month for 10 hours of dedicated monthly coverage, with direct access to the same
+            certified consultant on every request and no shared-resource queue.
           </p>
         </div>
 

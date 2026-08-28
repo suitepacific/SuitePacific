@@ -1,6 +1,6 @@
 ---
 title: "Why Your NetSuite Account Feels Slow (and What Actually Fixes It)"
-description: "Why is NetSuite so slow? The most common, fixable causes: bloated dashboard searches, unyielding scheduled scripts, and metadata accumulation, plus a diagnostic checklist to find the root cause."
+description: "Why is NetSuite so slow? The most common causes are dashboard saved searches loading on every page, scripts hitting governance limits, and record volume accumulation. A diagnostic checklist to find and fix each one."
 date: "2026-06-29"
 updated: "2026-08-21"
 tags: ["Performance", "Account Optimization"]
