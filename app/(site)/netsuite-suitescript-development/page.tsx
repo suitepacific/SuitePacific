@@ -185,6 +185,25 @@ export default function SuiteScriptDevelopmentPage() {
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
 
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            NetSuite SuiteScript development refers to custom JavaScript scripts built on
+            NetSuite&apos;s SuiteScript 2.1 platform to extend account behavior beyond what standard
+            configuration can reach. The six main script types each serve a different purpose:
+            User Event scripts run automatically before or after a record is saved; Client scripts
+            run in real time as a user edits a form; Scheduled scripts run on a defined timetable
+            for batch processing; Map/Reduce scripts handle high-volume data operations without
+            hitting governance limits; Suitelets build custom pages and tools inside NetSuite;
+            RESTlets create custom API endpoints for integrations. SuitePacific builds and
+            maintains all six types for post-go-live accounts. Every script is scoped against your
+            specific record types, built and tested in your Sandbox account before touching
+            Production, and documented as part of the deliverable. Engagements run month-to-month
+            with direct access to the certified developer managing the account, without
+            statement-of-work requirements for individual requests.
+          </p>
+        </div>
+
         <p className="mt-6 text-sm text-brand-400">
           SuiteScript is NetSuite&apos;s built-in JavaScript development platform. When configuration
           runs out, a script in the right place automates what currently takes an hour, enforces

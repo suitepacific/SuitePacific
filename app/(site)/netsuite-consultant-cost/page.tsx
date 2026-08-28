@@ -103,6 +103,24 @@ export default function NetSuiteConsultantCostPage() {
           align="left"
         />
 
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            NetSuite consultant rates range from $75 to $300 per hour depending on the engagement
+            type, but the hourly rate understates the real cost difference between models. A
+            break-fix arrangement at $150 per hour involves re-onboarding time with each request:
+            the consultant reads the account, locates the relevant scripts or workflows, understands
+            the context, then executes the fix. That overhead adds hours to every request. A monthly
+            retainer at $799 to $2,499 per month eliminates re-onboarding: the consultant already
+            knows the account, so each request starts from context rather than discovery. Large
+            implementation-style firms bill at $200 to $300 per hour but add overhead for account
+            managers, proposal processes, and statement-of-work requirements that make small requests
+            expensive in time as well as cost. The right comparison for ongoing support is not hourly
+            rate but total cost per completed request, which accounts for re-onboarding, response
+            time, and the friction of each billing model.
+          </p>
+        </div>
+
         <p className="mt-8 text-sm text-brand-400 leading-relaxed">
           The most common mistake when evaluating NetSuite consultant cost is comparing hourly
           rates without accounting for the overhead that inflates the cost per completed item.

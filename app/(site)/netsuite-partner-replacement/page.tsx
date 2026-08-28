@@ -240,6 +240,25 @@ export default function NetSuitePartnerReplacementPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · No SOW per request · Direct developer access · Month-to-month</p>
         <p className="mt-2 text-xs text-brand-300"><time dateTime="2026-08">Published August 2026</time></p>
 
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            NetSuite partner replacement is the process of transitioning a live NetSuite account
+            from one consulting firm to another without a gap in support coverage. The outgoing
+            partner typically built or maintained the account&apos;s SuiteScript files, workflows,
+            integrations, and configurations. A transition involves transferring access credentials,
+            reviewing the existing customization layer, documenting what was built and why, and
+            resolving in-progress work. SuitePacific handles transitions regularly, including cases
+            where the outgoing partner is unresponsive or unwilling to cooperate with a formal
+            handoff. The review process reads the account directly rather than relying on the
+            previous partner&apos;s documentation, which is often incomplete. The most common trigger
+            for a partner switch is slow response time, high per-request cost from
+            statement-of-work requirements, or an implementation partner that closed a project and
+            is not structured for ongoing support. Month-to-month engagements with no annual
+            lock-in begin after a documented onboarding review of the existing account.
+          </p>
+        </div>
+
         <p className="mt-6 text-sm text-brand-400">
           Large NetSuite consulting firms are built for implementations: defined scope, fixed team, one delivery.
           That model delivers a go-live. It does not deliver responsive, context-retained ongoing support.

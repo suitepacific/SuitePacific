@@ -203,6 +203,25 @@ export default function NetSuiteHealthCheckPage() {
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Written report within 5-7 days · Fixed fee $799 · No upsell obligation</p>
 
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            A NetSuite health check is a structured review of a live NetSuite account by an
+            independent certified consultant who did not configure it. The review covers the full
+            customization layer: SuiteScript deployments, workflow configurations, saved search
+            performance, custom fields and forms, roles and permissions, and active integrations.
+            Each area is evaluated against what was built, whether it is actually being used, and
+            where the account has accumulated technical debt or operational risk. SuitePacific
+            delivers findings as a written report within five to seven business days, with each
+            issue categorized by severity. The report identifies what is safe to leave, what needs
+            attention, and what creates risk as the account evolves. The health check is a
+            fixed-fee engagement at $799. It is designed for accounts that are already live and
+            functioning but carry uncertainty about what was built during implementation, whether
+            current customizations are stable, or whether the account can support planned changes
+            without breaking existing processes.
+          </p>
+        </div>
+
         <p className="mt-6 text-sm text-brand-400">
           A NetSuite health check is a structured review of your live account by someone who did
           not configure it. We look at what exists, what is actually in use, and where the account
