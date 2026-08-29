@@ -45,6 +45,7 @@
 ## Blog: ACS alternatives
 
 - [Best NetSuite ACS alternatives for SMBs (2026)](https://suitepacific.com/blog/netsuite-acs-alternatives-smb): The top ACS alternative providers for small and mid-sized businesses, what each covers, how pricing compares, and when to replace ACS. SuitePacific starts at $799/month, month-to-month.
+- [NetSuite support pricing benchmark 2026](https://suitepacific.com/blog/netsuite-support-pricing-benchmark-2026): ACS tier structure, ACS cost estimates at real license values ($30k–$150k/year), managed retainer pricing, break-fix hourly ranges, and a worked example comparing total cost under each model. SuitePacific publishes its rates: $799, $1,499, $2,499/month.
 
 ## Blog: Partner selection and support models
 
