@@ -25,6 +25,9 @@
 - [NetSuite FSM Support](https://suitepacific.com/netsuite-fsm-support): NetSuite Field Service Management configuration, customization, and upgrade support
 - [NetSuite Support UK](https://suitepacific.com/netsuite-support-uk): Post-go-live NetSuite support for UK-based businesses
 - [NetSuite ACS Alternative](https://suitepacific.com/netsuite-acs-alternative): Third-party support that covers customizations and integrations excluded by ACS
+- [NetSuite ACS Alternatives Comparison](https://suitepacific.com/netsuite-acs-alternatives-comparison): Objective comparison table of Oracle ACS against boutique managed support, Solution Providers, enterprise SIs, and independent consultants; covers pricing model, SuiteScript coverage, integration support, and SMB suitability
+- [NetSuite ACS Pricing](https://suitepacific.com/netsuite-acs-pricing): How Oracle prices ACS across four tiers (Advise, Monitor, Optimize, Architect), cost estimates at different license values, and comparison to managed support alternatives
+- [Do I Need NetSuite ACS?](https://suitepacific.com/do-i-need-netsuite-acs): Decision guide covering when ACS adds value, when it does not, five account scenarios, and what to consider before purchasing or canceling ACS
 - [NetSuite Support Alternative](https://suitepacific.com/netsuite-support-alternative): What a third-party consulting firm covers that Oracle support does not
 - [NetSuite Freelancer vs Consulting Firm](https://suitepacific.com/netsuite-freelancer-vs-consulting-firm): Accountability, continuity, and cost trade-offs between the two models
 - [NetSuite Implementation Partner vs Managed Support](https://suitepacific.com/netsuite-implementation-partner-vs-managed-support): Two different jobs explained; which one applies after go-live
