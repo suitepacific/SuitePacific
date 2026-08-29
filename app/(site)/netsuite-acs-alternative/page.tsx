@@ -58,27 +58,27 @@ const HOUR_CAP_SCENARIOS = [
 const ACS_GAPS = [
   {
     icon: XCircle,
-    title: "ACS does not cover your customizations.",
+    title: "Custom SuiteScript and workflows are outside ACS scope.",
     description:
-      "If the issue lives in a SuiteScript, a workflow, a saved search formula, or a custom integration, ACS escalates to the dev team that built it. That team is you. ACS covers the platform, not what was built on top of it.",
+      "ACS covers the standard NetSuite platform. Custom SuiteScript, SuiteFlow configurations, saved search formulas, and implementation-specific customizations fall outside the ACS service boundary. Oracle's own documentation describes ACS as focused on best-practice guidance and platform-layer support.",
   },
   {
     icon: XCircle,
-    title: "You share ACS resources with hundreds of other accounts.",
+    title: "ACS uses a shared resource pool across all ACS accounts.",
     description:
-      "ACS is not a dedicated resource. Response times and case depth depend on queue volume across Oracle's full customer base. Your urgency is not unique to your account from their perspective.",
+      "ACS provides access to Oracle's shared support resources rather than a dedicated consultant. Case handling depends on queue availability across Oracle's ACS customer base, and the response experience reflects that shared model.",
   },
   {
     icon: XCircle,
-    title: "ACS agents rotate. Your account context does not transfer.",
+    title: "ACS is structured as a per-case model without persistent account context.",
     description:
-      "Each case starts from scratch. The agent handling your issue today has no knowledge of the issue resolved three months ago. Re-explaining account history is built into the model.",
+      "Cases are handled independently. The consultant working your issue today does not carry forward context from previous cases. Accounts with complex customization histories need to re-establish that context with each new case.",
   },
   {
     icon: XCircle,
-    title: "ACS does not touch your integration stack.",
+    title: "Third-party integrations are not covered by ACS.",
     description:
-      "Celigo flows, Shopify connectors, Salesforce syncs, EDI connections, and 3PL integrations are outside ACS scope entirely. If a Celigo flow breaks where the root cause is in NetSuite, ACS stops at the NetSuite boundary.",
+      "Celigo flows, Shopify connectors, Salesforce syncs, EDI connections, and 3PL integrations fall outside ACS scope. When an integration issue has a root cause inside NetSuite, ACS addresses the NetSuite platform side; the integration layer requires the connector vendor or the consulting team that built it.",
   },
 ];
 
@@ -193,7 +193,7 @@ const EVALUATION_SCORECARD = [
   {
     criterion: "Account continuity",
     question: "Does one consultant handle your account consistently, or do agents rotate per case?",
-    whyItMatters: "ACS agents rotate and lose context between cases. A retained consultant builds knowledge that compounds.",
+    whyItMatters: "ACS uses a shared resource pool where each case is handled independently without carried context. A retained consultant builds compounding knowledge of your specific account.",
   },
   {
     criterion: "Contract flexibility",
