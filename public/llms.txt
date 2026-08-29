@@ -42,6 +42,10 @@
 
 - [NetSuite 2026.2 Release Readiness Checklist](https://suitepacific.com/netsuite-2026-2-release-readiness-checklist): Pre-upgrade checklist covering Finance, Integrations, SuiteScript, Reporting, Manufacturing, Inventory, Security, and more for the 2026.2 release
 
+## Blog: ACS alternatives
+
+- [Best NetSuite ACS alternatives for SMBs (2026)](https://suitepacific.com/blog/netsuite-acs-alternatives-smb): The top ACS alternative providers for small and mid-sized businesses, what each covers, how pricing compares, and when to replace ACS. SuitePacific starts at $799/month, month-to-month.
+
 ## Blog: Partner selection and support models
 
 - [How to evaluate a NetSuite post-go-live support partner](https://suitepacific.com/blog/how-to-evaluate-netsuite-support-partner): Criteria and questions for selecting a post-go-live provider
@@ -102,6 +106,7 @@
 ## Blog: Integrations and APIs
 
 - [RESTlet vs REST Web Services](https://suitepacific.com/blog/netsuite-restlet-vs-rest-web-services): Decision framework and NLAuth to TBA migration guide
+- [NetSuite integration broken after an upgrade](https://suitepacific.com/blog/netsuite-integration-broken-after-upgrade): Systematic approach to diagnosing integration failures after a platform upgrade: authentication changes, SuiteScript API changes, native field changes, and SuiteQL sort-order changes
 - [NetSuite REST batch sequential](https://suitepacific.com/blog/netsuite-rest-batch-sequential): How to handle sequential and dependent REST API calls in NetSuite integrations
 - [NLAuth end-of-support and TBA migration](https://suitepacific.com/blog/netsuite-nlauth-tba-end-of-support): What NLAuth deprecation means for RESTlets and integrations, and how to migrate to TBA
 - [NetSuite SOAP Web Services retirement timeline](https://suitepacific.com/blog/netsuite-soap-web-services-deprecation): Oracle's phased SOAP deprecation schedule (2027.1 through 2028.2) and what to do before the deadlines
@@ -147,6 +152,7 @@
 - [NetSuite post-go-live checklist](https://suitepacific.com/blog/netsuite-post-go-live-checklist): What to verify and stabilize in the first 90 days after a NetSuite go-live
 - [What is NetSuite post-go-live support](https://suitepacific.com/blog/what-is-netsuite-post-go-live-support): Definition, scope, and what a post-go-live support engagement covers in practice
 - [NetSuite implementation partner left](https://suitepacific.com/blog/netsuite-implementation-partner-left): What to do when your NetSuite implementation partner ends the engagement
+- [What a NetSuite support retainer covers month to month](https://suitepacific.com/blog/netsuite-support-retainer-what-it-covers): The types of requests that come through each month, how they are handled, and what the account looks like after twelve months of retainer coverage
 
 ## Blog: Technical features and configuration
 
@@ -154,6 +160,21 @@
 - [NetSuite currency context custom fields](https://suitepacific.com/blog/netsuite-currency-context-custom-fields): How currency context affects custom field values in multi-currency accounts
 - [NetSuite AI invoice staging pattern](https://suitepacific.com/blog/netsuite-ai-invoice-staging-pattern): How to use AI-assisted invoice staging in NetSuite integrations
 - [NetSuite AI integration](https://suitepacific.com/netsuite-ai-integration): Connecting NetSuite to AI services via SuiteScript RESTlet and REST API patterns
+- [How to document NetSuite customizations](https://suitepacific.com/blog/netsuite-customization-documentation): A practical guide to documenting SuiteScript, workflows, saved searches, and custom records so the next developer or administrator can understand what was built
+
+## Blog: Industry and location
+
+- [NetSuite post-go-live support for Chicago manufacturers](https://suitepacific.com/blog/netsuite-support-chicago-manufacturing): What post-go-live support looks like for manufacturers with complex BOM, work order, and 3PL integration requirements
+- [NetSuite post-go-live challenges for San Francisco SaaS companies](https://suitepacific.com/blog/netsuite-post-go-live-san-francisco-saas): What support looks like when SuiteBilling configuration evolves with the business after go-live
+- [NetSuite go-live is not the finish line for Los Angeles apparel brands](https://suitepacific.com/blog/netsuite-consultant-los-angeles-apparel): What the first year of post-go-live support looks like for LA fashion and apparel companies
+- [Why New York companies switch NetSuite partners after go-live](https://suitepacific.com/blog/netsuite-partner-new-york): The structural mismatch between large implementation firms and what post-go-live accounts actually need
+- [Replacing your NetSuite partner in Texas](https://suitepacific.com/blog/netsuite-partner-replacement-texas): What the transition looks like for Texas companies that outgrow their implementation partner
+
+## Case Studies
+
+- [NetSuite Partner Replacement and Account Takeover](https://suitepacific.com/case-studies/partner-replacement-onboarding): Account taken over after implementation partner disengaged mid-engagement; 2-week structured onboarding, 3 open critical issues resolved in first month
+- [Ongoing Managed Support: Twelve Months of Post-Go-Live Coverage](https://suitepacific.com/case-studies/managed-support-retainer): 12-month managed retainer view: 60+ requests handled, 2 major releases prepared, zero production failures from changes under the retainer
+- [Account Optimization: Clearing Technical Debt After Go-Live](https://suitepacific.com/case-studies/account-optimization-technical-debt): Health check found 11 orphaned scripts, 43 stale roles, and 4 broken workflow references; cleared systematically over three months with no disruption to production operations
 
 ## Industries
 
