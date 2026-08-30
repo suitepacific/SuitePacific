@@ -177,7 +177,7 @@ export default function SuiteScriptDevelopmentPage() {
           as="h1"
           eyebrow="SuiteScript Development"
           title="NetSuite SuiteScript Development"
-          subtitle="Custom scripts that extend NetSuite beyond what standard configuration can reach, built and tested in Sandbox before touching your live account."
+          subtitle="Most NetSuite customisations break in production because they were never properly tested or documented. SuitePacific builds and maintains SuiteScript for live accounts: Sandbox-first, fully documented, with a certified developer on the account."
           align="left"
         />
 
@@ -374,6 +374,26 @@ export default function SuiteScriptDevelopmentPage() {
               </Link>{" "}
               covers the transaction types where the plugin does not execute and the design principles for using it correctly.
             </li>
+          </ul>
+        </div>
+
+        
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            When your NetSuite account needs a script, it needs a certified developer who knows the platform and documents what they build.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Most post-go-live accounts hit configuration limits within 12-18 months. Standard workflows and saved searches cannot enforce complex business logic, automate multi-record operations, or power external integrations. SuiteScript fills that gap. The difference between a good SuiteScript engagement and a bad one is testing discipline, documentation, and long-term maintenance, not just whether the script works at launch.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific holds the Oracle SuiteCloud Developer II certification, the most technically demanding NetSuite credential. Every script is scoped against your specific record types, built and tested in your Sandbox account, and fully documented before touching Production. Engagements run at $799 per month on month-to-month terms. No statement-of-work required per request within the retainer.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> SuiteCloud Developer II certified, the highest SuiteScript credential Oracle issues</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Sandbox-first every time: no untested code goes to Production</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Full change documentation delivered with every script, no institutional knowledge locked in a developer's head</li>
           </ul>
         </div>
 

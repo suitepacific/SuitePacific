@@ -181,7 +181,7 @@ export default function WorkflowAutomationPage() {
           as="h1"
           eyebrow="Workflow Automation"
           title="NetSuite Workflow Automation"
-          subtitle="Remove manual steps from approvals, notifications, and recurring processes using NetSuite's SuiteFlow engine, extended with SuiteScript where native actions fall short."
+          subtitle="Workflows built without proper entry conditions and action sequencing create infinite loops and conflict with scripts. SuitePacific designs, builds, and maintains SuiteFlow automation for post-go-live accounts that stays reliable across releases."
           align="left"
         />
 
@@ -320,6 +320,26 @@ export default function WorkflowAutomationPage() {
               </Link>{" "}
               walks through states, transitions, role-restricted approval buttons, and email notifications.
             </li>
+          </ul>
+        </div>
+
+        
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            Workflow automation that breaks after every upgrade is not automation: it is a liability. SuitePacific builds and maintains SuiteFlow workflows that hold up over time.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            NetSuite workflows are powerful but fragile without proper construction. Poorly built workflows fire on the wrong triggers, create infinite loops, or silently fail after a platform upgrade. For businesses that depend on automations for approvals, notifications, and fulfillment, a broken workflow is a broken business process.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific designs, builds, and maintains SuiteFlow workflows for post-go-live accounts. Where native SuiteFlow actions fall short, we extend with SuiteScript action scripts. Oracle-certified, US-based, sandbox-tested before production. Plans from $799 per month, month-to-month.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Workflows built by Oracle-certified NetSuite developers, not configuration generalists</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> SuiteScript extensions where SuiteFlow alone cannot cover the logic</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Proactive upgrade testing: workflows verified before each NetSuite release</li>
           </ul>
         </div>
 

@@ -270,7 +270,7 @@ export default function NetSuiteConsultingServicesPage() {
           as="h1"
           eyebrow="NetSuite Consulting"
           title="NetSuite Consulting Services"
-          subtitle="Technical consulting for companies already live on NetSuite: development, automation, integrations, and ongoing support from a team that works exclusively in the NetSuite ecosystem."
+          subtitle="Post-go-live NetSuite consulting requires a different firm than the one that did your implementation. SuitePacific works exclusively with companies already live: development, automation, integrations, and ongoing support in a single certified engagement."
           align="left"
         />
 
@@ -476,6 +476,26 @@ export default function NetSuiteConsultingServicesPage() {
               </Link>
             ))}
           </div>
+        </div>
+
+        
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            Post-go-live NetSuite consulting requires a different firm than the one that did your implementation. SuitePacific works exclusively with companies already live.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Implementation partners are optimised for go-live delivery. Their teams, their processes, and their pricing structures are built around projects with a defined start, scope, and end date. Post-go-live consulting is different: the account is live, changes carry production risk, the scope evolves continuously, and the relationship is ongoing. Treating it as a series of projects is more expensive and less effective than a managed retainer.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific provides post-go-live NetSuite consulting exclusively: development, automation, integrations, administration, and ongoing support from Oracle-certified specialists. Three engagement models: dedicated monthly retainer starting at $799, on-demand access for occasional work, and fixed-scope project engagements. Month-to-month, no annual contract.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Exclusive post-go-live focus: we only work with accounts that are already live</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> One team covers all technical areas: no separate SuiteScript, integration, and admin vendors</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Certified: Oracle SuiteCloud Developer II and Administrator Professional</li>
+          </ul>
         </div>
 
         <SuitePacificCallout

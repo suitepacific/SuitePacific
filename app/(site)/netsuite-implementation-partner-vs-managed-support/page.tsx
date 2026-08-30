@@ -221,6 +221,25 @@ export default function ComparisonPage() {
           </div>
         </div>
 
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            Your implementation partner delivered the go-live. A managed support firm owns everything that follows.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Implementation partners are project-oriented. Their engagement is scoped for delivery, not for the years of ongoing change that follow. Once they disengage, the account is yours to maintain, and the technical layer (SuiteScript, integrations, workflows, configuration) keeps evolving whether or not someone is assigned to it. Most post-go-live businesses discover this gap within the first 12 months.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific is a post-go-live managed support firm. We do not do implementations. Every client we work with has already gone live, and our entire practice is built around maintaining, extending, and optimising accounts that are actively in use. Oracle SuiteCloud Developer II and Administrator Professional certified. Plans from $799 per month on month-to-month terms.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Specialists in post-go-live accounts, not implementation generalists</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Covers SuiteScript, integrations, workflows, administration in one retainer</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> No long-term contract, no minimum commitment beyond three months</li>
+          </ul>
+        </div>
+
         <SuitePacificCallout
           heading="SuitePacific provides ongoing post-go-live managed support"
           linkHref="/netsuite-managed-support"

@@ -179,7 +179,7 @@ export default function AccountOptimizationPage() {
           as="h1"
           eyebrow="Account Optimization"
           title="NetSuite Account Optimization"
-          subtitle="Clean up and tune a NetSuite account that has gotten slower, harder to maintain, or more complex than it needs to be, without disrupting live operations."
+          subtitle="After two or more years in production, most NetSuite accounts are running scripts that are no longer needed, workflows that conflict, and saved searches with no indexes. SuitePacific assesses and remediates account technical debt without disrupting live operations."
           align="left"
         />
 
@@ -352,6 +352,26 @@ export default function AccountOptimizationPage() {
               </Link>{" "}
               walks through the key levers for improving performance, reducing technical debt, and simplifying customizations.
             </li>
+          </ul>
+        </div>
+
+        
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            An unoptimized NetSuite account costs time on every transaction, every report, and every upgrade. SuitePacific makes it faster and easier to maintain.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            NetSuite accounts accumulate debt over time: scripts that are no longer used but still fire on every save, workflows that overlap or conflict, saved searches that run without indexes, custom fields that were added but abandoned. This overhead shows up as slow page loads, confusing interfaces, and upgrade complications. Left unaddressed, it compounds.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific conducts structured account optimization for live NetSuite accounts: audit first, remediate with full documentation, validate in Sandbox before production. Oracle-certified. Plans from $799 per month, month-to-month.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Structured audit before any changes: nothing is removed or modified without analysis</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Sandbox validation: every optimization is tested before touching Production</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Documentation of what was found, what was changed, and why</li>
           </ul>
         </div>
 

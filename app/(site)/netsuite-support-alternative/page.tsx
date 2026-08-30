@@ -421,6 +421,25 @@ export default function SupportAlternativePage() {
           </ul>
         </div>
 
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            The most effective alternative to Oracle standard support is a certified independent firm that actually covers what Oracle excludes.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Oracle standard support handles platform bugs and licensing questions. It does not debug your SuiteScript, it does not fix your integrations, and it does not maintain the workflows your implementation partner built. For the majority of post-go-live support requests, Oracle is not the right contact. A certified independent firm is.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific is that firm. US-based, Oracle-certified (SuiteCloud Developer II + Administrator Professional), and focused exclusively on post-go-live accounts. Every plan includes SuiteScript, integrations, workflow automation, administration, and break-fix coverage in a single monthly retainer. Starting at $799 per month on month-to-month terms. No annual commitment, no offshore handoffs, no ticket queues.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Covers SuiteScript, Celigo, Shopify, Salesforce, workflows, and administration</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> One business day response, direct access to your developer</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Three plan tiers: $799, $1,499, $2,499 per month depending on volume</li>
+          </ul>
+        </div>
+
         <SuitePacificCallout
           heading="SuitePacific is an independent NetSuite support alternative"
           linkHref="/netsuite-care"

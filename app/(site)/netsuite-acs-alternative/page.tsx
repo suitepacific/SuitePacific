@@ -659,6 +659,25 @@ export default function AcsAlternativePage() {
           </ul>
         </div>
 
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            For SMBs with post-go-live customisations, SuitePacific covers more of the actual support work at a lower annual cost than ACS.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            ACS is a useful service for the functional layer: Oracle consultation, upgrade guidance, and internal escalation. But it explicitly excludes SuiteScript, integrations, and custom workflow support, which is where most ongoing support requests originate. Accounts that pay for ACS and then separately pay for technical support are running two parallel engagements for work that a single boutique managed retainer covers in one.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific is the most direct ACS alternative for SMBs: Oracle-certified (SuiteCloud Developer II + Administrator Professional), US-based, and covering the full technical layer ACS excludes. Plans start at $799 per month on month-to-month terms. No annual contract, no minimum beyond three months.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> SuiteScript, integrations, workflows, administration in one retainer</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Month-to-month with no annual commitment, unlike ACS</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Oracle-certified developers, not functional-only consultants</li>
+          </ul>
+        </div>
+
         <ServiceFaqSection items={FAQ} />
 
         <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">

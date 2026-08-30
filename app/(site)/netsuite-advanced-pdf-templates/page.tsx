@@ -180,7 +180,7 @@ export default function AdvancedPdfTemplatesPage() {
           as="h1"
           eyebrow="Advanced PDF Templates"
           title="NetSuite Advanced PDF Templates"
-          subtitle="Professional, on-brand business documents generated directly from NetSuite, with conditional layouts, dynamic content, and no manual formatting before they reach a customer or vendor."
+          subtitle="Customer-facing documents reflect on your business. Standard NetSuite PDF output rarely meets professional standards. SuitePacific builds Advanced PDF templates in BFO XML and FreeMarker: on-brand, conditional layouts, multi-currency, no manual formatting."
           align="left"
         />
 
@@ -313,6 +313,26 @@ export default function AdvancedPdfTemplatesPage() {
               </Link>{" "}
               covers how to access header fields, line items, entity data, and computed amounts in templates.
             </li>
+          </ul>
+        </div>
+
+        
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            A professional invoice or packing slip reflects directly on your business. SuitePacific builds Advanced PDF templates that match your brand and handle your edge cases.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            NetSuite's standard PDF output rarely meets professional standards for customer-facing documents. Custom logos, conditional content based on transaction type, multi-currency formatting, line item grouping, subtotals and taxes by jurisdiction: these all require BFO (Big Faceless Organization) XML and FreeMarker, the template language NetSuite uses for Advanced PDF. Most NetSuite generalists are not experienced in this area.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific builds and maintains Advanced PDF templates for invoices, sales orders, purchase orders, packing slips, and statements. Oracle-certified. Plans from $799 per month, month-to-month.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Complex conditional logic: different layouts by transaction type, subsidiary, or customer group</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Multi-currency and multi-language support within a single template</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Sandbox testing against real transaction data before production deployment</li>
           </ul>
         </div>
 

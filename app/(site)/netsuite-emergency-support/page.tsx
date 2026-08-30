@@ -172,7 +172,7 @@ export default function NetSuiteEmergencySupportPage() {
           as="h1"
           eyebrow="Emergency Support"
           title="NetSuite Emergency Support"
-          subtitle="Same-day diagnosis and fixes for broken scripts, failed integrations, data issues, and anything else that stops your NetSuite from working as it should."
+          subtitle="When a NetSuite script breaks production, every hour matters. Oracle standard support cannot debug your custom code. SuitePacific provides same-day emergency response from Oracle-certified developers who can diagnose and fix the actual issue."
           align="left"
         />
 
@@ -274,6 +274,26 @@ export default function NetSuiteEmergencySupportPage() {
               <Link href="/netsuite-fsm-support" className="text-accent hover:underline">NetSuite FSM support</Link>{" "}
               covers FSM-specific emergencies: bundle update breaks, sync failures, broken configurations, and nxc_now() migration issues.
             </li>
+          </ul>
+        </div>
+
+        
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            When NetSuite breaks in production, minutes matter. SuitePacific provides same-day emergency response from Oracle-certified developers who can diagnose and fix the actual issue.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Most NetSuite emergencies are not platform failures. They are broken scripts, failed integrations, incorrect workflow triggers, or data issues from a bad import or configuration change. Oracle standard support cannot debug your custom code. Your implementation partner may not be responsive on short notice. A break-fix consultant who does not know your account starts from zero.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific provides same-day emergency support for live NetSuite accounts. We respond within hours, diagnose the root cause in your actual environment, and provide a fix in the same engagement. No minimum commitment required for emergency access. Oracle SuiteCloud Developer II and Administrator Professional certified.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Same-day response from certified developers, not first-level support screeners</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Direct access to the developer doing the work, no ticket queue</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Root cause diagnosis and fix in one engagement, not a diagnosis-only service</li>
           </ul>
         </div>
 

@@ -200,7 +200,7 @@ export default function NetSuiteImplementationRescuePage() {
           as="h1"
           eyebrow="Implementation Rescue"
           title="NetSuite Implementation Rescue"
-          subtitle="For companies that went live on NetSuite but ended up with an account that doesn't work for them, assessment, remediation roadmap, and targeted rebuilding by Oracle-certified developers."
+          subtitle="Accounts that went live with incomplete or incorrect customisations do not have to stay that way. SuitePacific specialises in stabilising post-go-live accounts that were never quite right: assessment, prioritised remediation, and certified rebuilds."
           align="left"
         />
 
@@ -334,6 +334,26 @@ export default function NetSuiteImplementationRescuePage() {
               </Link>{" "}
               is where most rescue clients land after the remediation is complete.
             </li>
+          </ul>
+        </div>
+
+        
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            A failed NetSuite implementation is recoverable. SuitePacific specializes in stabilising accounts that went live wrong and building them into something that actually works.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Implementation failures are more common than the industry acknowledges. Accounts go live with critical customizations that do not work as specified, integrations that silently drop records, workflows that fire in the wrong sequence, and configuration decisions that seemed logical at the time but break as the business scales. The implementation partner is often unavailable or unwilling to return, and internal resources do not know the system well enough to fix it.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific conducts structured implementation rescue: a full account assessment with severity classifications, a prioritized remediation roadmap, and targeted rebuilds of the components that are not working. Oracle SuiteCloud Developer II and Administrator Professional certified. Fixed-scope assessment available alongside the $799 per month managed retainer.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Assessment first: we tell you exactly what is broken before any rebuild begins</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Prioritized roadmap: highest-impact issues addressed first, not a random cleanup</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Post-rescue managed support available to prevent re-accumulation of the same issues</li>
           </ul>
         </div>
 

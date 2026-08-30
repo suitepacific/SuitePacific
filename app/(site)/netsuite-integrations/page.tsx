@@ -204,7 +204,7 @@ export default function NetSuiteIntegrationsPage() {
           as="h1"
           eyebrow="Integration Development"
           title="NetSuite Integrations"
-          subtitle="Connect NetSuite to your other business systems, reliably, with proper error handling, and without silent failures."
+          subtitle="Most NetSuite integration failures are silent: the sync stops, records diverge, and nobody notices until a reconciliation catches it weeks later. SuitePacific builds integrations with active monitoring and error alerting so problems surface immediately."
           align="left"
         />
 
@@ -375,6 +375,26 @@ export default function NetSuiteIntegrationsPage() {
               </Link>{" "}
               covers when to build a custom RESTlet versus using the built-in REST API, including authentication differences.
             </li>
+          </ul>
+        </div>
+
+        
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            A NetSuite integration that runs without monitoring is not maintained: it is waiting to fail silently at the worst possible time.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Integration failures are expensive because they are often invisible until the damage is done. A Celigo flow that stops syncing orders, a Shopify connector that drops transactions, a Salesforce integration that creates duplicate records: none of these produce an error alert that reaches the right person. They produce data discrepancies that surface weeks later during reconciliation.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific builds and maintains NetSuite integrations with proper error handling, alerting, and documentation. Celigo, Shopify, Salesforce, Amazon, HubSpot, and custom RESTlet-based integrations. Oracle-certified. Plans from $799 per month, month-to-month.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Error handling and alerting built into every integration, not added as an afterthought</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Active monitoring so silent failures are caught before they corrupt records</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Experience across Celigo, Shopify, Salesforce, Amazon, and custom RESTlet integrations</li>
           </ul>
         </div>
 

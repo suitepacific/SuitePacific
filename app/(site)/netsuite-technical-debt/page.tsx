@@ -197,7 +197,7 @@ export default function NetSuiteTechnicalDebtPage() {
           as="h1"
           eyebrow="Technical Debt"
           title="NetSuite Technical Debt: What It Is, How It Accumulates, and How to Address It"
-          subtitle="Every live NetSuite account accumulates technical debt over time. Unused scripts, over-broad workflows, unindexed saved searches, undocumented customizations. Left unaddressed, debt compounds: each release is riskier, each new development takes longer, each problem is harder to diagnose."
+          subtitle="Every post-go-live NetSuite account accumulates debt: scripts firing unnecessarily, workflows conflicting, customisations undocumented. SuitePacific assesses and remediates NetSuite technical debt before it compounds into production failures and upgrade risk."
           align="left"
         />
 
@@ -422,6 +422,26 @@ export default function NetSuiteTechnicalDebtPage() {
                 {item.desc}
               </li>
             ))}
+          </ul>
+        </div>
+
+        
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            Technical debt is not a cosmetic problem. Left unresolved, it makes every upgrade riskier, every new development slower, and every issue harder to diagnose.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            A NetSuite account in production for two or more years typically has unused scripts still firing on every record save, workflows that conflict with newer configurations, undocumented customizations that no current team member can explain, and saved searches that run full-table scans because they were built before performance was a concern. Every one of these adds overhead to every transaction and complicates every release.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific assesses and remediates NetSuite technical debt through a structured account review. We identify what is safe to remove, what needs to be rebuilt, and what can be optimized without a full rewrite. Oracle-certified. Assessment engagements are available alongside the $799 per month managed retainer.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Structured audit with severity classifications before any remediation work begins</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Dependency mapping: nothing is removed without confirming what uses it</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Full documentation of every change, so the account is cleaner after the engagement than before</li>
           </ul>
         </div>
 

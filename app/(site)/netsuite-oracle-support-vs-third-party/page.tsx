@@ -317,6 +317,25 @@ export default function OracleSupportVsThirdPartyPage() {
           </ul>
         </div>
 
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            Oracle support handles platform bugs. A certified third-party firm handles everything your customizations, integrations, and workflows actually break.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Oracle standard support is scoped to the platform itself. It does not write or debug SuiteScript, it does not maintain Celigo or Shopify integrations, and it does not fix workflows your implementation partner built. That technical layer, which is where most day-to-day support requests come from, requires a certified third-party firm that knows the account.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific holds Oracle&apos;s two most relevant certifications (SuiteCloud Developer II and Administrator Professional) and works exclusively with post-go-live accounts. Services cover SuiteScript 2.x, SuiteFlow, Celigo, Shopify, Salesforce, and Amazon integrations, saved searches, Advanced PDF templates, and daily administration. Plans from $799 per month. Month-to-month. No annual contract.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Covers the full technical layer Oracle support excludes by design</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Oracle-certified, US-based, no offshore handoffs</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> One business day response commitment on all active plans</li>
+          </ul>
+        </div>
+
         <SuitePacificCallout
           heading="SuitePacific covers what Oracle support does not"
           linkHref="/netsuite-support-alternative"

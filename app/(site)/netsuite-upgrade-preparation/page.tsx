@@ -207,7 +207,7 @@ export default function NetSuiteUpgradePreparationPage() {
           as="h1"
           eyebrow="Upgrade Preparation"
           title="NetSuite Upgrade Preparation"
-          subtitle="A systematic pre-upgrade process for live NetSuite accounts with SuiteScript customizations, active workflows, and third-party integrations."
+          subtitle="NetSuite releases twice per year and each one can break customisations that worked last month. SuitePacific tests every script, workflow, and integration against each release preview in Sandbox before production is touched. Included in all managed retainer plans."
           align="left"
         />
 
@@ -440,6 +440,26 @@ export default function NetSuiteUpgradePreparationPage() {
               </Link>{" "}
               covers governance unit consumption patterns and how to identify scripts at risk of hitting limits after an upgrade.
             </li>
+          </ul>
+        </div>
+
+        
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            NetSuite releases twice per year. Without preparation, each release is a risk to every customisation in your account. With SuitePacific, it is not.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            NetSuite's bi-annual releases regularly deprecate APIs, change workflow behaviour, and modify record schemas. SuiteScript that ran cleanly last week may throw governance errors after an upgrade. Saved searches that joined records efficiently may hit new index requirements. Without testing in a Sandbox refreshed with current data before the release window, production issues are discovered by users, not caught by a developer.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific provides NetSuite upgrade preparation for post-go-live accounts: Sandbox testing of all custom scripts, workflows, and integrations against the release preview, identification of breaking changes before production impact, and documented remediation of anything that fails testing. Oracle-certified. Included in all managed retainer plans from $799 per month.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Sandbox testing of all customisations against each release preview before production is affected</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Included in all managed retainer plans: no separate engagement required for upgrades</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Release notes reviewed and translated into account-specific impact assessments</li>
           </ul>
         </div>
 

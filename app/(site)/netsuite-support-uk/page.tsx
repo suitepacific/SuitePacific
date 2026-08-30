@@ -200,7 +200,7 @@ export default function NetSuiteSupportUKPage() {
           as="h1"
           eyebrow="NetSuite Consulting"
           title="NetSuite Support for UK Companies"
-          subtitle="Post-go-live NetSuite support, SuiteScript development, VAT configuration, and ongoing technical support for UK businesses already live on NetSuite."
+          subtitle="UK NetSuite accounts need support that covers both the platform and UK-specific requirements: VAT, Making Tax Digital, multi-currency, and HMRC reporting. SuitePacific provides certified NetSuite managed support for UK businesses from $799 per month."
           align="left"
         />
 
@@ -294,6 +294,26 @@ export default function NetSuiteSupportUKPage() {
               </Card>
             ))}
           </div>
+        </div>
+
+        
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            UK-based NetSuite accounts need support that understands both the platform and the specific configuration requirements of UK businesses: VAT, Making Tax Digital, multi-currency, and UK-standard reporting.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            NetSuite is widely used in the UK but support options are limited. Oracle standard support does not cover custom development. UK-based NetSuite partners are often expensive and scoped for projects, not ongoing maintenance. US-based firms may not be familiar with UK VAT configurations, MTD requirements, or HMRC-specific reporting. The gap is real and leaves many UK NetSuite accounts under-supported.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific provides ongoing NetSuite managed support for UK accounts. We work with multi-currency configurations, VAT and MTD setup, Avalara/AvaTax for UK tax, and all standard post-go-live services: SuiteScript, workflows, integrations, administration. Oracle-certified. Plans from $799 per month, month-to-month.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Familiar with UK VAT, Making Tax Digital, and HMRC reporting requirements in NetSuite</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Multi-currency and multi-subsidiary configurations common in UK businesses</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Same Oracle certifications and response standards as all SuitePacific accounts</li>
+          </ul>
         </div>
 
         <SuitePacificCallout

@@ -404,6 +404,25 @@ export default function FreelancerVsConsultingFirmPage() {
           </ul>
         </div>
 
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            For ongoing NetSuite work, a certified boutique firm outperforms a freelancer on every structural dimension that matters.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Freelancers can be cost-effective for a single, tightly scoped project. But for accounts with ongoing SuiteScript, integrations, workflow automation, and administration needs, the absence of continuity, documentation, and accountability backup is a structural liability. When a freelancer is unavailable, work stops. When quality falls short, recourse is informal. Neither is acceptable for a business-critical system like NetSuite.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific is a US-based boutique NetSuite managed support firm built specifically for this scenario. Every engagement includes sandbox-first testing, full change documentation, a named technical contact, and a defined response commitment. Two Oracle certifications on the account: SuiteCloud Developer II and Administrator Professional. Plans start at $799 per month on month-to-month terms. No annual contract, no minimum tenure, no hidden scope limitations.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Direct access to the certified developer doing the work, not a support queue</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Institutional account knowledge that stays with SuitePacific across every request</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Predictable monthly cost with no surprise invoices when scope shifts</li>
+          </ul>
+        </div>
+
         <SuitePacificCallout
           heading="SuitePacific: boutique firm accountability with direct developer access"
           linkHref="/netsuite-care"

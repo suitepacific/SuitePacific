@@ -204,7 +204,7 @@ export default function NetSuiteAdministratorSupportPage() {
           as="h1"
           eyebrow="NetSuite Administration"
           title="NetSuite Administrator Support"
-          subtitle="Ongoing configuration support for live NetSuite accounts: users, roles, fields, saved searches, and the day-to-day changes that keep pace with a growing business."
+          subtitle="Without a dedicated NetSuite administrator, configuration changes fall behind, upgrades carry unchecked risk, and informal fixes accumulate. SuitePacific provides certified NetSuite administrator support as a monthly retainer from $799."
           align="left"
         />
 
@@ -356,6 +356,26 @@ export default function NetSuiteAdministratorSupportPage() {
               </Link>{" "}
               covers the authentication requirement changes NetSuite administrators need to act on before the 2026.2 upgrade.
             </li>
+          </ul>
+        </div>
+
+        
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            A capable NetSuite administrator keeps the account current with the business. Without one, every change becomes a backlog and every upgrade a risk.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Post-go-live NetSuite accounts need ongoing administration: new users and roles as the team changes, custom fields and forms as processes evolve, saved searches and dashboards as reporting needs shift, and configuration review before each bi-annual release. Most SMBs cannot justify a full-time NetSuite administrator, and ad-hoc fixes from whoever is available produce inconsistent configuration.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific provides dedicated NetSuite administrator support for post-go-live accounts. Oracle Administrator Professional certified. Day-to-day configuration, user management, saved searches, and upgrade preparation covered in a single monthly retainer. Plans from $799 per month, month-to-month.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Oracle Administrator Professional certified: not self-declared experience</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> One retainer covers administration and SuiteScript development, no separate engagements</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> One business day response for all active plans</li>
           </ul>
         </div>
 

@@ -180,7 +180,7 @@ export default function SavedSearchesDashboardsPage() {
           as="h1"
           eyebrow="Saved Searches & Dashboards"
           title="NetSuite Saved Searches & Dashboards"
-          subtitle="Get the data your team needs out of NetSuite and in front of the right people, without exporting to spreadsheets or waiting on someone to build a custom report."
+          subtitle="NetSuite has the data your team needs. Poor saved search construction returns duplicates, wrong date ranges understate revenue, and dashboards show stale snapshots. SuitePacific builds accurate searches and role-specific dashboards that actually get used."
           align="left"
         />
 
@@ -309,6 +309,26 @@ export default function SavedSearchesDashboardsPage() {
               </Link>{" "}
               explains date math, CASE WHEN conditionals, null handling, and number formatting using Oracle SQL formulas.
             </li>
+          </ul>
+        </div>
+
+        
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            If your team cannot see what is happening in NetSuite, they cannot act on it. SuitePacific builds saved searches and dashboards that surface the right data to the right people.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            NetSuite has powerful reporting capabilities, but they require proper construction. A saved search with the wrong join type returns duplicates. A formula field with the wrong date range understates revenue. A dashboard that shows last month's data because it was not set to dynamic misleads every person who looks at it. These are not rare edge cases; they are common in accounts where reporting was configured informally.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific builds saved searches, KPI metrics, report snapshots, and role-specific dashboards for post-go-live accounts. Oracle-certified. Plans from $799 per month, month-to-month.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Proper join types, filters, and formulas: reports that return accurate data</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Role-specific dashboards: each team sees what is relevant to their function</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> SuiteScript-enhanced searches where native search formulas cannot reach the logic required</li>
           </ul>
         </div>
 

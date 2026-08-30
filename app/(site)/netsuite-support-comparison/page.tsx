@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 
 const MODELS = [
@@ -457,6 +458,33 @@ export default function NetSuiteSupportComparisonPage() {
             </li>
           </ul>
         </div>
+
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            For accounts with ongoing technical needs, a dedicated boutique managed retainer delivers broader coverage at a more predictable cost than any other model.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Oracle standard support and ACS both exclude the technical layer where most daily requests originate: SuiteScript, integrations, and custom workflows. Freelancers lack continuity and accountability. Enterprise SIs are scoped for projects, not ongoing maintenance. A boutique managed retainer from a certified firm covers all of it in one monthly engagement.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific is a US-based boutique NetSuite managed support firm. Oracle SuiteCloud Developer II and Administrator Professional certified. Plans start at $799 per month and cover SuiteScript, integrations, workflow automation, saved searches, Advanced PDF templates, and daily administration. Month-to-month terms, one business day response, direct developer access.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> All technical areas in one retainer, no separate engagements for different services</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Predictable monthly cost with a defined hours allocation</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Three tiers: $799, $1,499, and $2,499 per month</li>
+          </ul>
+        </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific: the broadest technical coverage in a single managed retainer"
+          linkHref="/netsuite-care"
+          linkLabel="View SuitePacific plans"
+          secondaryHref="/netsuite-managed-support"
+          secondaryLabel="How managed support works"
+        />
 
         <ServiceFaqSection items={FAQ} />
 

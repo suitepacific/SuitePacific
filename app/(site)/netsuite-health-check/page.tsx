@@ -358,6 +358,25 @@ export default function NetSuiteHealthCheckPage() {
           </p>
         </div>
 
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            The SuitePacific NetSuite Health Check gives you an honest account of what is working, what is fragile, and what carries real risk before anything breaks.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Most NetSuite accounts are never formally reviewed after go-live. Customisations accumulate, integrations drift, workflows conflict, and nobody maps the risk until something goes wrong in production. The Health Check exists to get ahead of that. It is a structured review conducted by Oracle-certified developers with direct access to your account, producing a written findings report with clear priority classifications.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific holds the Oracle SuiteCloud Developer II and Administrator Professional certifications. The Health Check is $799 fixed fee, delivered within two weeks of account access. If the findings surface work that needs to be done, a managed retainer engagement is available starting at $799 per month. There is no obligation to continue beyond the assessment.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Oracle-certified review across scripts, workflows, integrations, and configuration</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Written findings report with priority classifications, not a verbal debrief</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> $799 fixed fee, no obligation to continue to a retainer</li>
+          </ul>
+        </div>
+
         <ServiceFaqSection items={FAQ} />
       </div>
     </main>
