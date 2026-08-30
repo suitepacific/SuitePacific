@@ -443,13 +443,13 @@ export default function NetSuiteAiIntegrationPage() {
         <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
           <h2 className="text-base font-semibold text-brand-900 mb-3">
-            AI integration in NetSuite requires both platform knowledge and production-grade SuiteScript. SuitePacific configures Oracle's native AI tools and builds the custom connectors that go beyond them.
+            AI integration in NetSuite requires both platform knowledge and production-grade SuiteScript. SuitePacific configures Oracle&apos;s native AI tools and builds the custom connectors that go beyond them.
           </h2>
           <p className="text-sm text-brand-500 mb-4">
-            Oracle's native AI features (Bill Capture, Intelligent Document Recognition, the AI Connector Service) are configuration-level integrations that work within Oracle's predefined scope. When the use case requires a custom AI model, an external LLM API, or account-specific logic before and after the AI call, SuiteScript is the implementation path. Most firms can do one or the other.
+            Oracle&apos;s native AI features (Bill Capture, Intelligent Document Recognition, the AI Connector Service) are configuration-level integrations that work within Oracle&apos;s predefined scope. When the use case requires a custom AI model, an external LLM API, or account-specific logic before and after the AI call, SuiteScript is the implementation path. Most firms can do one or the other.
           </p>
           <p className="text-sm text-brand-500 mb-4">
-            SuitePacific configures Oracle's native AI features and builds production-ready SuiteScript connectors to external AI APIs for live NetSuite accounts. Oracle SuiteCloud Developer II certified. Tested in Sandbox, fully documented, with error handling and monitoring built in. Plans from $799 per month, month-to-month.
+            SuitePacific configures Oracle&apos;s native AI features and builds production-ready SuiteScript connectors to external AI APIs for live NetSuite accounts. Oracle SuiteCloud Developer II certified. Tested in Sandbox, fully documented, with error handling and monitoring built in. Plans from $799 per month, month-to-month.
           </p>
           <ul className="space-y-2 text-sm text-brand-500">
             <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Native Oracle AI features configured correctly, not partially enabled and abandoned</li>

@@ -364,7 +364,7 @@ export default function CertifiedNetSuiteSupportPage() {
             Certification is verifiable. SuitePacific holds both certifications Oracle issues for post-go-live NetSuite accounts, and every plan is delivered by the certified developer, not delegated to an uncertified resource.
           </h2>
           <p className="text-sm text-brand-500 mb-4">
-            NetSuite certifications are listed publicly on Oracle's credential portal. SuiteCloud Developer II and Administrator Professional are the two most relevant for post-go-live support: they cover SuiteScript, API integration, account configuration, workflow administration, and release management. Most firms claim certified support; few have both certifications on the developer doing the actual work.
+            NetSuite certifications are listed publicly on Oracle&apos;s credential portal. SuiteCloud Developer II and Administrator Professional are the two most relevant for post-go-live support: they cover SuiteScript, API integration, account configuration, workflow administration, and release management. Most firms claim certified support; few have both certifications on the developer doing the actual work.
           </p>
           <p className="text-sm text-brand-500 mb-4">
             SuitePacific holds both. Every account engagement is managed by the certified developer directly, with no offshore handoffs or uncertified intermediaries. Plans from $799 per month, month-to-month.
@@ -372,7 +372,7 @@ export default function CertifiedNetSuiteSupportPage() {
           <ul className="space-y-2 text-sm text-brand-500">
             <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> SuiteCloud Developer II + Administrator Professional: both certifications, not just one</li>
             <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Certifications held by the developer on your account, not just at the firm level</li>
-            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Verifiable on Oracle's public credential portal: no self-declared credentials</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Verifiable on Oracle&apos;s public credential portal: no self-declared credentials</li>
           </ul>
         </div>
 

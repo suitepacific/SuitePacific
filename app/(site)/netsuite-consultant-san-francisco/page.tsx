@@ -253,7 +253,7 @@ export default function NetSuiteConsultantSanFranciscoPage() {
             Bay Area SaaS companies and tech businesses on NetSuite need support that understands subscription billing, deferred revenue, Salesforce integrations, and rapid product iteration. SuitePacific specialises in exactly these configurations.
           </h2>
           <p className="text-sm text-brand-500 mb-4">
-            Bay Area NetSuite partners often carry premium rates and project-oriented billing that does not fit the ongoing support model most SaaS companies need. For accounts with SuiteBilling configurations, ARR and MRR reporting requirements, HubSpot or Salesforce CRM integrations, and development velocity that matches a software company's pace, the right support model is a retainer with direct access.
+            Bay Area NetSuite partners often carry premium rates and project-oriented billing that does not fit the ongoing support model most SaaS companies need. For accounts with SuiteBilling configurations, ARR and MRR reporting requirements, HubSpot or Salesforce CRM integrations, and development velocity that matches a software company&apos;s pace, the right support model is a retainer with direct access.
           </p>
           <p className="text-sm text-brand-500 mb-4">
             SuitePacific works with San Francisco and Bay Area companies: SaaS businesses, e-commerce brands, and technology companies already live on NetSuite. Oracle-certified, direct developer access, no offshore handoffs. Plans from $799 per month, month-to-month.

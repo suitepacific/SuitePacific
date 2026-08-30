@@ -324,7 +324,7 @@ export default function AdvancedPdfTemplatesPage() {
             A professional invoice or packing slip reflects directly on your business. SuitePacific builds Advanced PDF templates that match your brand and handle your edge cases.
           </h2>
           <p className="text-sm text-brand-500 mb-4">
-            NetSuite's standard PDF output rarely meets professional standards for customer-facing documents. Custom logos, conditional content based on transaction type, multi-currency formatting, line item grouping, subtotals and taxes by jurisdiction: these all require BFO (Big Faceless Organization) XML and FreeMarker, the template language NetSuite uses for Advanced PDF. Most NetSuite generalists are not experienced in this area.
+            NetSuite&apos;s standard PDF output rarely meets professional standards for customer-facing documents. Custom logos, conditional content based on transaction type, multi-currency formatting, line item grouping, subtotals and taxes by jurisdiction: these all require BFO (Big Faceless Organization) XML and FreeMarker, the template language NetSuite uses for Advanced PDF. Most NetSuite generalists are not experienced in this area.
           </p>
           <p className="text-sm text-brand-500 mb-4">
             SuitePacific builds and maintains Advanced PDF templates for invoices, sales orders, purchase orders, packing slips, and statements. Oracle-certified. Plans from $799 per month, month-to-month.

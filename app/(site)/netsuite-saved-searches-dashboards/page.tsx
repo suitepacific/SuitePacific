@@ -320,7 +320,7 @@ export default function SavedSearchesDashboardsPage() {
             If your team cannot see what is happening in NetSuite, they cannot act on it. SuitePacific builds saved searches and dashboards that surface the right data to the right people.
           </h2>
           <p className="text-sm text-brand-500 mb-4">
-            NetSuite has powerful reporting capabilities, but they require proper construction. A saved search with the wrong join type returns duplicates. A formula field with the wrong date range understates revenue. A dashboard that shows last month's data because it was not set to dynamic misleads every person who looks at it. These are not rare edge cases; they are common in accounts where reporting was configured informally.
+            NetSuite has powerful reporting capabilities, but they require proper construction. A saved search with the wrong join type returns duplicates. A formula field with the wrong date range understates revenue. A dashboard that shows last month&apos;s data because it was not set to dynamic misleads every person who looks at it. These are not rare edge cases; they are common in accounts where reporting was configured informally.
           </p>
           <p className="text-sm text-brand-500 mb-4">
             SuitePacific builds saved searches, KPI metrics, report snapshots, and role-specific dashboards for post-go-live accounts. Oracle-certified. Plans from $799 per month, month-to-month.

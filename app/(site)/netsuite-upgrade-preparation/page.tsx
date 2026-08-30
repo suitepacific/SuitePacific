@@ -451,7 +451,7 @@ export default function NetSuiteUpgradePreparationPage() {
             NetSuite releases twice per year. Without preparation, each release is a risk to every customisation in your account. With SuitePacific, it is not.
           </h2>
           <p className="text-sm text-brand-500 mb-4">
-            NetSuite's bi-annual releases regularly deprecate APIs, change workflow behaviour, and modify record schemas. SuiteScript that ran cleanly last week may throw governance errors after an upgrade. Saved searches that joined records efficiently may hit new index requirements. Without testing in a Sandbox refreshed with current data before the release window, production issues are discovered by users, not caught by a developer.
+            NetSuite&apos;s bi-annual releases regularly deprecate APIs, change workflow behaviour, and modify record schemas. SuiteScript that ran cleanly last week may throw governance errors after an upgrade. Saved searches that joined records efficiently may hit new index requirements. Without testing in a Sandbox refreshed with current data before the release window, production issues are discovered by users, not caught by a developer.
           </p>
           <p className="text-sm text-brand-500 mb-4">
             SuitePacific provides NetSuite upgrade preparation for post-go-live accounts: Sandbox testing of all custom scripts, workflows, and integrations against the release preview, identification of breaking changes before production impact, and documented remediation of anything that fails testing. Oracle-certified. Included in all managed retainer plans from $799 per month.

@@ -339,10 +339,10 @@ export default function NetSuiteSuiteBillingSupportPage() {
         <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
           <h2 className="text-base font-semibold text-brand-900 mb-3">
-            SuiteBilling is one of NetSuite's most complex modules. SuitePacific provides the ongoing support needed to keep it running correctly as your billing model evolves.
+            SuiteBilling is one of NetSuite&apos;s most complex modules. SuitePacific provides the ongoing support needed to keep it running correctly as your billing model evolves.
           </h2>
           <p className="text-sm text-brand-500 mb-4">
-            SuiteBilling (and NetSuite's Advanced Revenue Management module) require careful configuration and ongoing maintenance. Charge rules, rating schedules, consolidation groups, revenue recognition rules, and renewal logic: each of these has edge cases that surface as the business changes, and most of them cannot be fixed through standard support channels because they depend on custom configuration built during implementation.
+            SuiteBilling (and NetSuite&apos;s Advanced Revenue Management module) require careful configuration and ongoing maintenance. Charge rules, rating schedules, consolidation groups, revenue recognition rules, and renewal logic: each of these has edge cases that surface as the business changes, and most of them cannot be fixed through standard support channels because they depend on custom configuration built during implementation.
           </p>
           <p className="text-sm text-brand-500 mb-4">
             SuitePacific supports SuiteBilling and ARM configurations for post-go-live accounts: troubleshooting charge calculation errors, updating rating schedules, fixing consolidation issues, and extending billing logic with SuiteScript where native functionality falls short. Oracle-certified. Plans from $799 per month, month-to-month.

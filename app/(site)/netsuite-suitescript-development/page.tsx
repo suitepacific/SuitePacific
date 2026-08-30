@@ -393,7 +393,7 @@ export default function SuiteScriptDevelopmentPage() {
           <ul className="space-y-2 text-sm text-brand-500">
             <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> SuiteCloud Developer II certified, the highest SuiteScript credential Oracle issues</li>
             <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Sandbox-first every time: no untested code goes to Production</li>
-            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Full change documentation delivered with every script, no institutional knowledge locked in a developer's head</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Full change documentation delivered with every script, no institutional knowledge locked in a developer&apos;s head</li>
           </ul>
         </div>
 

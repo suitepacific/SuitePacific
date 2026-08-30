@@ -459,7 +459,7 @@ export default function NetSuiteAiOptimizationAssessmentPage() {
             Most NetSuite AI implementations start in the wrong place. The SuitePacific AI Optimization Assessment identifies the specific processes where AI delivers real efficiency before any build begins.
           </h2>
           <p className="text-sm text-brand-500 mb-4">
-            The mistake most accounts make is choosing an AI tool and then looking for a use case. The assessment works in the other direction: starting with the account's actual processes, identifying where manual work is highest, and evaluating which AI implementation path is technically feasible, cost-effective, and production-ready. The output is a scored roadmap, not a vendor recommendation.
+            The mistake most accounts make is choosing an AI tool and then looking for a use case. The assessment works in the other direction: starting with the account&apos;s actual processes, identifying where manual work is highest, and evaluating which AI implementation path is technically feasible, cost-effective, and production-ready. The output is a scored roadmap, not a vendor recommendation.
           </p>
           <p className="text-sm text-brand-500 mb-4">
             SuitePacific conducts AI Optimization Assessments for live NetSuite accounts. Fixed fee, delivered within two weeks of account access, with a written findings report and prioritised implementation roadmap. Oracle-certified. For accounts that proceed to implementation, the retainer starts at $799 per month.
