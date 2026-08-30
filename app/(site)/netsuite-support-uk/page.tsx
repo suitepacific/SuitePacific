@@ -23,6 +23,7 @@ import {
 } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 
 const INDUSTRIES = [
@@ -294,6 +295,12 @@ export default function NetSuiteSupportUKPage() {
             ))}
           </div>
         </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific: NetSuite support for UK businesses"
+          linkHref="/netsuite-support-uk"
+          linkLabel="View SuitePacific plans"
+        />
 
         <ServiceFaqSection items={FAQ} />
 

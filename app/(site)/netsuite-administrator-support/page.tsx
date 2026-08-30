@@ -11,6 +11,7 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 
 const PAIN_POINTS = [
@@ -357,6 +358,12 @@ export default function NetSuiteAdministratorSupportPage() {
             </li>
           </ul>
         </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific: dedicated NetSuite administrator support"
+          linkHref="/netsuite-care"
+          linkLabel="View SuitePacific plans"
+        />
 
         <ServiceFaqSection items={FAQ} />
       </div>

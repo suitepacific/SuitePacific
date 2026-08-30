@@ -11,6 +11,7 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
 
@@ -321,6 +322,12 @@ export default function WorkflowAutomationPage() {
             </li>
           </ul>
         </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific: NetSuite workflow automation and SuiteFlow support"
+          linkHref="/netsuite-care"
+          linkLabel="View SuitePacific plans"
+        />
 
         <ServiceFaqSection items={FAQ} />
 

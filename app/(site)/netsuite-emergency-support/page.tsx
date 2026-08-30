@@ -10,6 +10,7 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 
 const SCENARIOS = [
@@ -275,6 +276,12 @@ export default function NetSuiteEmergencySupportPage() {
             </li>
           </ul>
         </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific: emergency NetSuite break-fix and escalation support"
+          linkHref="/netsuite-emergency-support"
+          linkLabel="View SuitePacific plans"
+        />
 
         <ServiceFaqSection items={FAQ} />
       </div>

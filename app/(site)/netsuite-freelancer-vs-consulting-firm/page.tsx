@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { BreadcrumbJsonLd, FaqJsonLd, OrganizationJsonLd, VideoObjectJsonLd, ArticleJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL, LEGAL_NAME } from "@/lib/content";
 
 const COMPARISON_ROWS = [
@@ -402,6 +403,12 @@ export default function FreelancerVsConsultingFirmPage() {
             </li>
           </ul>
         </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific: boutique firm accountability with direct developer access"
+          linkHref="/netsuite-care"
+          linkLabel="View SuitePacific plans"
+        />
 
         <ServiceFaqSection items={FAQ} />
 

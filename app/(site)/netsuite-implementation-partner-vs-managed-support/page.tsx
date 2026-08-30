@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd, FaqJsonLd, OrganizationJsonLd, VideoObjectJsonLd, ArticleJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL, LEGAL_NAME } from "@/lib/content";
 
 const FAQ = [
@@ -219,6 +220,12 @@ export default function ComparisonPage() {
             </div>
           </div>
         </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific provides ongoing post-go-live managed support"
+          linkHref="/netsuite-managed-support"
+          linkLabel="View SuitePacific plans"
+        />
 
         <ServiceFaqSection items={FAQ} />
 

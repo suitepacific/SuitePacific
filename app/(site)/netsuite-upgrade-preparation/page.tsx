@@ -7,6 +7,7 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 
 const CHECKLIST_PHASES = [
@@ -441,6 +442,12 @@ export default function NetSuiteUpgradePreparationPage() {
             </li>
           </ul>
         </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific: NetSuite upgrade preparation and release testing"
+          linkHref="/netsuite-care"
+          linkLabel="View SuitePacific plans"
+        />
 
         <ServiceFaqSection items={FAQ} />
 

@@ -24,6 +24,7 @@ import {
 } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 
 const FAILURE_MODES = [
@@ -332,6 +333,12 @@ export default function NetSuiteSuiteBillingSupportPage() {
             ))}
           </div>
         </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific: NetSuite SuiteBilling and ARM support"
+          linkHref="/netsuite-care"
+          linkLabel="View SuitePacific plans"
+        />
 
         <ServiceFaqSection items={FAQ} />
 
