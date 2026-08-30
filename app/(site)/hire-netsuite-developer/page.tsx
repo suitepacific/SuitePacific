@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadForm } from "@/components/sections/LeadForm";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 
 const FAQ = [
@@ -382,7 +383,7 @@ export default function HireNetSuiteDeveloperPage() {
           as="h1"
           eyebrow="NetSuite Development"
           title="Hire a NetSuite Developer"
-          subtitle="NetSuite-Certified Developers for Customization, Automation, Integrations & Ongoing Support"
+          subtitle="Most NetSuite developer searches end with an expensive re-onboarding cycle or a freelancer who disappears mid-project. SuitePacific provides Oracle-certified NetSuite development as a managed monthly retainer, with direct developer access and full documentation."
           align="left"
         />
 
@@ -755,6 +756,32 @@ export default function HireNetSuiteDeveloperPage() {
         </div>
 
         {/* FAQ */}
+
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            The difference between a good NetSuite developer and a costly mistake is certification, documentation discipline, and whether they test in Sandbox before touching Production.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Most NetSuite developer searches end in one of two places: an expensive enterprise partner with account manager overhead on every request, or a freelancer who knows one script type and disappears when the project scope changes. Neither is the right model for ongoing post-go-live development.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific provides Oracle-certified NetSuite development as a managed retainer. SuiteCloud Developer II certified. Every script is built and tested in Sandbox, fully documented, and delivered with change notes. Direct developer access on all plans. From $799 per month, month-to-month.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> SuiteCloud Developer II: the most technically demanding NetSuite certification Oracle issues</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Sandbox-first on every build: no untested code goes to Production</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Direct access to the developer, not an account manager relay</li>
+          </ul>
+        </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific: Oracle-certified NetSuite developers on a managed retainer"
+          linkHref="/netsuite-care"
+          linkLabel="View developer retainer plans"
+        />
+
         <ServiceFaqSection items={FAQ} />
 
         {/* Inline contact form */}

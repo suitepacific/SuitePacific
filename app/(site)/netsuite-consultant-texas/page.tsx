@@ -10,6 +10,7 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 
 const INDUSTRIES = [
@@ -242,6 +243,32 @@ export default function NetSuiteConsultantTexasPage() {
             ))}
           </div>
         </div>
+
+
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            Texas businesses on NetSuite range from manufacturers and distributors to energy services companies and technology firms. SuitePacific works with all of them on the ongoing technical support that post-go-live accounts need.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Large Dallas and Houston-based NetSuite partners carry partner overhead that adds cost and slows turnaround on every request. For Texas companies with ongoing SuiteScript, integration, and workflow needs, a boutique managed retainer with direct developer access is a more effective and cost-efficient model.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific works with Texas companies remotely: manufacturers, energy services businesses, distributors, and SaaS companies in Dallas, Houston, Austin, and San Antonio already live on NetSuite. Oracle-certified, US-based, direct developer access. Plans from $799 per month, month-to-month.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Manufacturing, distribution, and energy industry configurations handled regularly</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> SuiteBilling for Texas SaaS companies and subscription billing structures</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Direct developer access with same-day escalation for urgent production issues</li>
+          </ul>
+        </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific: NetSuite support for Texas businesses"
+          linkHref="/netsuite-care"
+          linkLabel="View support plans"
+        />
 
         <ServiceFaqSection items={FAQ} />
 

@@ -18,6 +18,7 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 
 const EXAMPLE_QUESTIONS = [
@@ -550,6 +551,32 @@ export default function NetSuiteAiReportingPage() {
             </li>
           </ul>
         </div>
+
+
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            AI reporting in NetSuite should answer account-specific questions with role-aware access and business logic built in. SuitePacific builds it that way from the start.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Generic AI reporting tools connected to NetSuite return unreliable answers when the question touches account-specific custom fields, non-standard record structures, or business logic that differs from NetSuite defaults. Building it correctly requires understanding the data model, the SuiteQL schema, and the SuiteScript layer available for custom query logic.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific builds AI Connector configurations and Suitelet-based reporting assistants for live NetSuite accounts. Account-specific SuiteQL, role-aware access controls, and custom business logic built in before deployment. Oracle SuiteCloud Developer II certified. Tested against representative questions with known answers before production rollout. Retainers from $799 per month.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Account-specific SuiteQL and custom field mapping: not a generic AI wrapper</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Role-aware access so each user sees only their authorised data</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Tested against known answers before production: no unreliable AI responses at launch</li>
+          </ul>
+        </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific: account-specific AI reporting for NetSuite"
+          linkHref="/netsuite-ai-reporting"
+          linkLabel="View AI reporting services"
+        />
 
         <ServiceFaqSection items={FAQ} />
 

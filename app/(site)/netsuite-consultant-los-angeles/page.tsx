@@ -10,6 +10,7 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 
 const INDUSTRIES = [
@@ -243,6 +244,32 @@ export default function NetSuiteConsultantLosAngelesPage() {
             ))}
           </div>
         </div>
+
+
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            Los Angeles businesses on NetSuite need technical support that understands e-commerce, entertainment, apparel, and multi-entity structures. SuitePacific works with LA companies on exactly these configurations.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Large LA-area NetSuite partners add account manager overhead and project-oriented billing to every request. For ongoing post-go-live support of accounts with SuiteScript, Shopify integrations, multi-subsidiary structures, or advanced billing configurations, that model is expensive and slow.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific works with Los Angeles-area companies remotely: apparel brands, e-commerce operations, media and entertainment businesses, and professional services firms already live on NetSuite. Oracle-certified, direct developer access, no offshore handoffs. Plans from $799 per month, month-to-month.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Shopify, Celigo, and Salesforce integrations common in LA e-commerce and media accounts</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Multi-subsidiary and multi-currency configurations for entertainment and holding companies</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Direct developer access: faster turnaround than firms with account manager layers</li>
+          </ul>
+        </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific: NetSuite support for Los Angeles businesses"
+          linkHref="/netsuite-care"
+          linkLabel="View support plans"
+        />
 
         <ServiceFaqSection items={FAQ} />
 

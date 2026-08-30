@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 
 const COVERED = [
@@ -385,6 +386,32 @@ export default function WhatNetSuiteSupportCoversPage() {
             </li>
           </ul>
         </div>
+
+
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            Oracle support covers the platform. Everything your business depends on, the scripts, integrations, and workflows your implementation partner built, is yours to maintain. SuitePacific maintains it.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            This is the most important thing to understand before your NetSuite implementation partner disengages: Oracle standard support will not fix a broken SuiteScript, will not debug your Celigo integration, and will not maintain the workflows that run your fulfilment process. Those customisations are your responsibility, and they need a qualified technical resource to maintain them.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific is that resource for post-go-live accounts. Oracle SuiteCloud Developer II and Administrator Professional certified. Covers the full technical layer Oracle support excludes: SuiteScript, integrations, SuiteFlow, Advanced PDF templates, saved searches, and daily administration. Plans from $799 per month, month-to-month.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Covers SuiteScript, Celigo, Shopify, Salesforce, SuiteFlow, and administration in one retainer</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Takes over where Oracle support and your implementation partner leave off</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Oracle-certified, US-based, one business day response</li>
+          </ul>
+        </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific: post-go-live NetSuite support covering what Oracle does not"
+          linkHref="/netsuite-care"
+          linkLabel="View managed support plans"
+        />
 
         <ServiceFaqSection items={FAQ} />
 

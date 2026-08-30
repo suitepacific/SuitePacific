@@ -10,6 +10,7 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 
 const INDUSTRIES = [
@@ -243,6 +244,32 @@ export default function NetSuiteConsultantNewYorkPage() {
             ))}
           </div>
         </div>
+
+
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            New York businesses on NetSuite deserve support that matches the pace of a New York operation: fast response, certified credentials, and no account manager in the way.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            New York-based NetSuite partners typically carry Manhattan overhead rates of $200 to $300 per hour and multi-week turnaround on scoped requests. For financial services firms, media companies, real estate businesses, and professional services organisations already live on NetSuite, that model is neither fast nor cost-effective for ongoing technical support.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific works with New York businesses remotely: same Oracle certifications, same response standards, and the same direct developer access as any account we serve. Plans from $799 per month, month-to-month. No local premium, no account manager overhead.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Same-day response for urgent issues, one business day for standard requests</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Oracle SuiteCloud Developer II + Administrator Professional certified</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Covers multi-entity structures common in NYC holding companies and financial firms</li>
+          </ul>
+        </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific: NetSuite support for New York businesses"
+          linkHref="/netsuite-care"
+          linkLabel="View support plans"
+        />
 
         <ServiceFaqSection items={FAQ} />
 

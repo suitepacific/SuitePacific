@@ -12,6 +12,7 @@ import {
 } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 
 const FAILURE_MODES = [
@@ -314,6 +315,32 @@ export default function NetSuiteFSMSupportPage() {
             ))}
           </div>
         </div>
+
+
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            NetSuite FSM support requires both configuration knowledge and SuiteScript capability. Most generic support firms handle one but not the other. SuitePacific handles both.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            FSM issues are rarely pure configuration problems. Work order completion logic, FSM-triggered workflows, and integration flows that sync field data with back-office records all require SuiteScript development. Firms that only do configuration cannot fix script errors, and firms that only do scripting may not understand FSM entity relationships well enough to build correctly.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific provides ongoing FSM support for live NetSuite accounts: SuiteFlow workflows, work order and project script development, FSM-to-integration maintenance, and undocumented configuration inherited from implementation partners. Oracle SuiteCloud Developer II and Administrator Professional certified. Plans from $799 per month, month-to-month.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> SuiteScript and FSM configuration covered in one retainer, not separate engagements</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Takes over undocumented FSM implementations without requiring the original partner</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Oracle-certified: SuiteCloud Developer II + Administrator Professional</li>
+          </ul>
+        </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific: NetSuite FSM support from certified developers"
+          linkHref="/netsuite-care"
+          linkLabel="View FSM support plans"
+        />
 
         <ServiceFaqSection items={FAQ} />
 

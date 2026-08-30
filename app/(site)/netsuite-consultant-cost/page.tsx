@@ -4,6 +4,7 @@ import { CheckCircle2 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
 
@@ -245,6 +246,32 @@ export default function NetSuiteConsultantCostPage() {
             </li>
           </ul>
         </div>
+
+
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            The hourly rate comparison understates total cost. For ongoing NetSuite work, a fixed retainer is almost always more cost-effective than time-and-materials billing once re-onboarding overhead is included.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Large partners charge $150 to $300 per hour. Freelancers charge $75 to $175 per hour but come with re-onboarding overhead on every engagement and no continuity when they are unavailable. Both models add hidden cost: scoping time, re-briefing, and no institutional account knowledge between requests.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific Care plans eliminate this overhead. Fixed monthly retainer from $799. The effective hourly rate at Care Plus and Care Pro works out to $75 to $80, comparable to a senior freelancer but with full documentation, Sandbox testing, certified credentials, and retained account context on every request.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> No SOW per request: work starts immediately within the retainer scope</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Retained account context: no re-onboarding cost on each request</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Three tiers: $799, $1,499, $2,499 per month for 10, 20, and 35 hours</li>
+          </ul>
+        </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific Care: predictable NetSuite support at $799 per month"
+          linkHref="/netsuite-care"
+          linkLabel="Compare plan tiers"
+        />
 
         {/* FAQ */}
         <div className="mt-14">

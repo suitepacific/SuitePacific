@@ -246,6 +246,26 @@ export default function NetSuiteAcsPricingPage() {
           </div>
         </div>
 
+
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            For accounts where ACS cost is disproportionate to the value received, a boutique managed retainer covers more of the actual support work at a comparable or lower annual cost.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            ACS is priced as a percentage of the annual license and paid upfront for the year. At entry tier, for a $60,000 license, that is $3,000 to $5,000 per year for functional guidance that excludes the technical layer. For accounts whose primary support requests are SuiteScript and integration-related, that ACS spend covers almost none of the actual work.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific Care at $799 per month ($9,588 per year) covers SuiteScript development, integration maintenance, workflow automation, administration, and break-fix support. Month-to-month after the initial three-month period. No annual prepayment. For accounts with active technical needs, the coverage comparison is clear.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Monthly not annual: $799/month versus a lump-sum ACS annual payment</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Covers the technical layer ACS explicitly excludes</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Month-to-month after three months, no annual prepayment or renewal escalation</li>
+          </ul>
+        </div>
+
         {/* SuitePacific CTA */}
         <div className="mt-10 rounded-xl border border-accent/20 bg-accent/5 p-5">
           <p className="text-xs font-semibold text-accent uppercase tracking-wide mb-2">ACS alternative with published pricing</p>

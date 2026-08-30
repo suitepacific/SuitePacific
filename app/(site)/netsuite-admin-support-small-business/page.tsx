@@ -20,6 +20,7 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 
 const PAIN_POINTS = [
@@ -411,6 +412,32 @@ export default function NetSuiteAdminSupportSmallBusinessPage() {
             </li>
           </ul>
         </div>
+
+
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            A small business does not need a full-time NetSuite administrator. It needs a certified one available when required, with enough context to act without being re-briefed every time.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Full-time NetSuite administrators cost $80,000 to $130,000 per year. For small businesses with ongoing but not daily administration needs, that is the wrong cost structure. Ad-hoc fixes from whoever is available produce inconsistent configuration and no documentation. Neither option is right.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific provides NetSuite administration for small businesses as a managed monthly retainer. Oracle Administrator Professional certified. Users, roles, saved searches, dashboards, workflows, and configuration changes covered in a single plan. Starts at $799 per month, month-to-month. No full-time commitment.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Oracle Administrator Professional certified, not self-declared administration experience</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Monthly retainer includes SuiteScript development alongside administration, no separate engagements</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Retained account knowledge: no re-briefing on every request</li>
+          </ul>
+        </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific: certified NetSuite administration for small businesses"
+          linkHref="/netsuite-care"
+          linkLabel="View admin support plans"
+        />
 
         <ServiceFaqSection items={FAQ} />
       </div>

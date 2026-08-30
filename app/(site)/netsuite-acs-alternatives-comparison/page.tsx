@@ -297,6 +297,26 @@ export default function NetsAcsAlternativesComparisonPage() {
           </div>
         </div>
 
+
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            For SMB accounts with active customisations, a boutique managed retainer covers more of the actual support work than any other model at a predictable monthly cost.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            ACS, enterprise SIs, and freelancers all have structural limitations for post-go-live accounts with ongoing technical needs. ACS excludes the technical layer. Enterprise SIs carry project overhead on every request. Freelancers lack continuity and accountability. A boutique managed retainer from a certified firm covers everything in one engagement.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific is a US-based boutique managed support firm covering SuiteScript, integrations, workflow automation, administration, and break-fix in a single retainer. Oracle SuiteCloud Developer II and Administrator Professional certified. Plans from $799 per month, month-to-month.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> All technical areas in one retainer: SuiteScript, integrations, workflows, administration</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Predictable monthly cost with no per-request SOW overhead</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Oracle-certified, US-based, direct developer access on all plans</li>
+          </ul>
+        </div>
+
         {/* SuitePacific callout */}
         <div className="mt-10 rounded-xl border border-accent/20 bg-accent/5 p-5">
           <p className="text-xs font-semibold text-accent uppercase tracking-wide mb-2">Boutique managed support example</p>

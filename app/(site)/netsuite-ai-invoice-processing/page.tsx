@@ -17,6 +17,7 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 
 const WHAT_IT_HANDLES = [
@@ -231,7 +232,7 @@ export default function NetSuiteAiInvoiceProcessingPage() {
           as="h1"
           eyebrow="AI Invoice Processing"
           title="NetSuite AI Invoice Processing"
-          subtitle="Extend NetSuite invoice automation with AI-powered extraction, validation, PO matching, and exception handling built on SuiteScript and Oracle's N/documentCapture API."
+          subtitle="Manual AP processing is the most common NetSuite inefficiency SuitePacific encounters. AI-powered invoice extraction and PO matching built on SuiteScript and Oracle's N/documentCapture API eliminates it without leaving NetSuite."
           align="left"
         />
 
@@ -465,6 +466,32 @@ export default function NetSuiteAiInvoiceProcessingPage() {
             </li>
           </ul>
         </div>
+
+
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            AI invoice processing in NetSuite requires a working SuiteScript implementation, not just enabling a feature. SuitePacific builds and maintains the logic that makes it reliable in production.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Oracle's N/documentCapture module and Bill Capture AI provide the extraction infrastructure. The reliability of the system, the exception handling, the PO matching logic, and the routing for unmatched bills, depends on the SuiteScript layer built on top of it. Accounts that enable the feature without the SuiteScript layer get partial extraction with manual intervention for everything the AI cannot handle.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific builds complete AI invoice processing implementations: document capture configuration, custom extraction rules, SuiteScript-based PO matching, exception routing workflows, and monitoring for processing failures. Oracle SuiteCloud Developer II certified. Retainers from $799 per month cover ongoing maintenance as invoice formats and vendor processes change.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> End-to-end implementation: extraction, matching, exception handling, and monitoring</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> SuiteScript layer built correctly: no partial implementations that require manual fallback</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Ongoing maintenance included in retainer plans as invoice formats change</li>
+          </ul>
+        </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific: complete NetSuite AI invoice processing implementation"
+          linkHref="/netsuite-ai-invoice-processing"
+          linkLabel="View AI invoice processing"
+        />
 
         <ServiceFaqSection items={FAQ} />
 

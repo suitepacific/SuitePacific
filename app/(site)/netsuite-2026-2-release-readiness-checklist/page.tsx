@@ -4,6 +4,7 @@ import { AlertTriangle, CheckCircle2, ShieldAlert } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { BreadcrumbJsonLd, FaqJsonLd, ArticleJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { ChecklistDownloadForm } from "@/components/sections/ChecklistDownloadForm";
 import { SITE_URL } from "@/lib/content";
 import { CHECKLIST_ITEMS, SECTIONS, type Priority } from "./checklist-data";
@@ -185,7 +186,7 @@ export default function ReleaseChecklistPage() {
           as="h1"
           eyebrow="2026.2 Release Readiness"
           title="NetSuite 2026.2 Release Readiness Checklist"
-          subtitle="Know what changed. Know what could affect your account. Know what to test."
+          subtitle="The 2026.2 release changes APIs, governance limits, and workflow behaviour. Accounts with active SuiteScript and integrations need to test in Sandbox before the release window opens. SuitePacific identifies which changes affect your specific account and remediates what breaks."
           align="left"
         />
 
@@ -654,6 +655,32 @@ export default function ReleaseChecklistPage() {
             </li>
           </ul>
         </div>
+
+
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            The 2026.2 release touches APIs, governance limits, and workflow behaviour. Accounts with active SuiteScript and integrations that do not test in Sandbox before the release window open in production risk.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Release readiness is not optional for accounts with SuiteScript customisations. Oracle changes APIs and governance behaviours in every release, and scripts that ran correctly last month may break, hit new limits, or behave differently after the upgrade. The release preview environment exists to find these issues before production is affected.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific tests every script, workflow, and integration against each release preview for all active managed retainer clients. For accounts not on a retainer, release readiness testing is available as a standalone engagement. Oracle SuiteCloud Developer II and Administrator Professional certified. Retainers from $799 per month include release preparation.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Pre-release Sandbox testing of all custom scripts and integrations, not just a checklist review</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Included in all managed retainer plans: no separate engagement or additional fee</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Oracle-certified developers who understand which release changes affect which script types</li>
+          </ul>
+        </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific: release readiness testing included in all managed support plans"
+          linkHref="/netsuite-care"
+          linkLabel="View managed support plans"
+        />
 
         {/* FAQ */}
         <div className="mt-16 pt-10 border-t border-brand-100">

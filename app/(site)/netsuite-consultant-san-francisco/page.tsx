@@ -10,6 +10,7 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 
 const INDUSTRIES = [
@@ -243,6 +244,32 @@ export default function NetSuiteConsultantSanFranciscoPage() {
             ))}
           </div>
         </div>
+
+
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            Bay Area SaaS companies and tech businesses on NetSuite need support that understands subscription billing, deferred revenue, Salesforce integrations, and rapid product iteration. SuitePacific specialises in exactly these configurations.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Bay Area NetSuite partners often carry premium rates and project-oriented billing that does not fit the ongoing support model most SaaS companies need. For accounts with SuiteBilling configurations, ARR and MRR reporting requirements, HubSpot or Salesforce CRM integrations, and development velocity that matches a software company's pace, the right support model is a retainer with direct access.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific works with San Francisco and Bay Area companies: SaaS businesses, e-commerce brands, and technology companies already live on NetSuite. Oracle-certified, direct developer access, no offshore handoffs. Plans from $799 per month, month-to-month.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> SuiteBilling and ARM support for SaaS subscription and revenue recognition requirements</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Salesforce and HubSpot integrations common in Bay Area tech accounts</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Direct developer access: same turnaround as an internal resource, without the headcount</li>
+          </ul>
+        </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific: NetSuite support for San Francisco Bay Area businesses"
+          linkHref="/netsuite-care"
+          linkLabel="View support plans"
+        />
 
         <ServiceFaqSection items={FAQ} />
 

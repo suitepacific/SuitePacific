@@ -13,6 +13,7 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 
 const CERTIFICATIONS = [
@@ -180,7 +181,7 @@ export default function CertifiedNetSuiteSupportPage() {
           as="h1"
           eyebrow="Certified Support"
           title="NetSuite Support from Certified Consultants"
-          subtitle="Certification verifies that platform knowledge was tested against Oracle's defined standard. It is the baseline for knowing whether the person working on your account actually knows the system."
+          subtitle="Oracle certification is the only externally verified proof that a NetSuite developer passed a standard technical assessment. SuitePacific holds both SuiteCloud Developer II and Administrator Professional, the two most relevant certifications for post-go-live accounts."
           align="left"
         />
 
@@ -354,6 +355,32 @@ export default function CertifiedNetSuiteSupportPage() {
             </li>
           </ul>
         </div>
+
+
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            Certification is verifiable. SuitePacific holds both certifications Oracle issues for post-go-live NetSuite accounts, and every plan is delivered by the certified developer, not delegated to an uncertified resource.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            NetSuite certifications are listed publicly on Oracle's credential portal. SuiteCloud Developer II and Administrator Professional are the two most relevant for post-go-live support: they cover SuiteScript, API integration, account configuration, workflow administration, and release management. Most firms claim certified support; few have both certifications on the developer doing the actual work.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific holds both. Every account engagement is managed by the certified developer directly, with no offshore handoffs or uncertified intermediaries. Plans from $799 per month, month-to-month.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> SuiteCloud Developer II + Administrator Professional: both certifications, not just one</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Certifications held by the developer on your account, not just at the firm level</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Verifiable on Oracle's public credential portal: no self-declared credentials</li>
+          </ul>
+        </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific: Oracle-certified NetSuite support from $799/month"
+          linkHref="/netsuite-care"
+          linkLabel="View certified support plans"
+        />
 
         <ServiceFaqSection items={FAQ} />
 

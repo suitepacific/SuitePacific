@@ -231,6 +231,26 @@ export default function DoINeedNetSuiteAcsPage() {
           </p>
         </div>
 
+
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            For most post-go-live accounts, ACS does not cover the support work that matters most. SuitePacific does.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            ACS provides value when the primary support need is functional guidance and Oracle escalation access. For accounts that depend on SuiteScript, integrations, and custom workflows, ACS scope runs out before the first real support request is addressed.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific is the most direct alternative: Oracle-certified (SuiteCloud Developer II + Administrator Professional), covering the full technical layer ACS excludes, on month-to-month terms from $799 per month. No annual contract, no functional-only scope limitation.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Covers SuiteScript, integrations, workflows, and administration in one retainer</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Month-to-month terms with no annual commitment, unlike ACS</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Oracle-certified technical developers, not functional consultants</li>
+          </ul>
+        </div>
+
         {/* SuitePacific CTA */}
         <div className="mt-10 rounded-xl border border-accent/20 bg-accent/5 p-5">
           <p className="text-xs font-semibold text-accent uppercase tracking-wide mb-2">If your account needs more than ACS covers</p>

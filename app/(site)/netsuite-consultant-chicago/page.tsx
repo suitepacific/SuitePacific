@@ -10,6 +10,7 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 
 const INDUSTRIES = [
@@ -242,6 +243,32 @@ export default function NetSuiteConsultantChicagoPage() {
             ))}
           </div>
         </div>
+
+
+        {/* Bottom Line */}
+        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            Chicago businesses on NetSuite need a support firm that knows the platform deeply, responds quickly, and retains account context across every request. SuitePacific provides exactly that.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Local NetSuite firms in Chicago often carry account manager overhead that slows every request. Enterprise SI rates start at $150 per hour with SOW requirements per engagement. Freelancers are available but carry continuity and documentation risk. None of these models are optimised for ongoing post-go-live support of an account with active customisations.
+          </p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific works with Chicago-area companies remotely: manufacturers, distributors, financial services firms, and professional services businesses already live on NetSuite. Oracle SuiteCloud Developer II and Administrator Professional certified. US-based, no offshore. Plans from $799 per month, month-to-month.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Direct developer access via Slack or email, no account manager relay</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Oracle-certified and US-based: same credentials as the largest NetSuite partners</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Retained account context: no re-onboarding cost on each request</li>
+          </ul>
+        </div>
+
+        <SuitePacificCallout
+          heading="SuitePacific: NetSuite support for Chicago businesses from $799/month"
+          linkHref="/netsuite-care"
+          linkLabel="View support plans"
+        />
 
         <ServiceFaqSection items={FAQ} />
 
