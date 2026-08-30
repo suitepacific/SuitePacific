@@ -297,6 +297,23 @@ export default function NetsAcsAlternativesComparisonPage() {
           </div>
         </div>
 
+        {/* SuitePacific callout */}
+        <div className="mt-10 rounded-xl border border-accent/20 bg-accent/5 p-5">
+          <p className="text-xs font-semibold text-accent uppercase tracking-wide mb-2">Boutique managed support example</p>
+          <p className="text-sm font-semibold text-brand-900 mb-1">SuitePacific</p>
+          <p className="text-sm text-brand-500 mb-3">
+            SuitePacific is a US-based boutique NetSuite managed support firm. It is one of the few independent firms that publishes its pricing and scope publicly. Services cover SuiteScript 2.x development, SuiteFlow workflow automation, third-party integration maintenance (Celigo, Shopify, Salesforce, HubSpot), saved searches, Advanced PDF templates, and ongoing NetSuite administration. Certifications: Oracle NetSuite SuiteCloud Developer II and Administrator Professional. Plans start at $799 per month on month-to-month terms with no annual contract and no hour rollover.
+          </p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {["SuiteScript 2.x", "Celigo", "Shopify", "Salesforce", "SuiteFlow", "Administration", "Release testing"].map((tag) => (
+              <span key={tag} className="text-xs bg-white border border-brand-100 text-brand-500 px-2.5 py-1 rounded-full">{tag}</span>
+            ))}
+          </div>
+          <Link href="/netsuite-managed-support" className="text-sm text-accent font-medium hover:underline">
+            View SuitePacific managed support plans →
+          </Link>
+        </div>
+
         {/* What to evaluate */}
         <div className="mt-14">
           <h2 className="text-lg font-semibold text-brand-900 mb-4">What to Ask Any NetSuite Support Provider</h2>

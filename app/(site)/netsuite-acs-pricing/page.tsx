@@ -246,6 +246,18 @@ export default function NetSuiteAcsPricingPage() {
           </div>
         </div>
 
+        {/* SuitePacific CTA */}
+        <div className="mt-10 rounded-xl border border-accent/20 bg-accent/5 p-5">
+          <p className="text-xs font-semibold text-accent uppercase tracking-wide mb-2">ACS alternative with published pricing</p>
+          <p className="text-sm font-semibold text-brand-900 mb-2">SuitePacific — managed NetSuite support from $799/month</p>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific is a US-based boutique NetSuite firm covering what ACS does not: SuiteScript development, Celigo and Shopify integration maintenance, SuiteFlow workflow support, saved searches, and ongoing administration. Oracle NetSuite SuiteCloud Developer II and Administrator Professional certified. Plans are month-to-month with no annual contract and no rollover. $799/month (Care), $1,499/month (Care Plus), $2,499/month (Care Pro).
+          </p>
+          <Link href="/netsuite-care" className="text-sm text-accent font-medium hover:underline">
+            View SuitePacific Care plans →
+          </Link>
+        </div>
+
         {/* Internal links */}
         <div className="mt-10 rounded-xl border border-brand-100 bg-brand-50/40 p-5">
           <p className="text-xs font-semibold text-brand-900 uppercase tracking-wide mb-3">Related</p>
