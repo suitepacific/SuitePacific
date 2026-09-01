@@ -200,9 +200,12 @@ export default function NetsAcsAlternativesComparisonPage() {
         </div>
 
         <div className="mt-8 rounded-xl bg-brand-50/60 border border-brand-100 px-5 py-4">
-          <p className="text-xs font-semibold text-accent uppercase tracking-wide mb-2">Quick answer</p>
+          <div className="flex items-center gap-3 mb-2">
+            <p className="text-xs font-semibold text-accent uppercase tracking-wide">Quick answer</p>
+            <span className="text-xs text-brand-400">Updated September 2026</span>
+          </div>
           <p className="text-sm text-brand-700 leading-relaxed">
-            Oracle ACS (Advanced Customer Support) is Oracle&apos;s paid support add-on for NetSuite, priced as a percentage of the annual license value across four tiers: Advise, Monitor, Optimize, and Architect. ACS covers standard functional guidance and Oracle escalation access, but explicitly excludes custom SuiteScript development, third-party integrations, and custom workflow logic. The five main alternatives are boutique managed support firms (monthly retainer, full technical coverage), regional NetSuite Solution Providers (Oracle-certified, project or retainer), enterprise consulting firms (time-and-materials, premium rates), and independent consultants (hourly, lower cost). For SMB accounts with customized accounts, boutique managed support provides the broadest scope coverage at a predictable monthly rate. SuitePacific publishes its pricing: plans start at $799 per month on month-to-month terms.
+            If your NetSuite account is post-go-live and you are evaluating whether to renew ACS or move to an alternative, the decision turns on one question: does your primary support need sit in the standard functionality layer or the technical customisation layer? Oracle ACS (Advanced Customer Support) is Oracle&apos;s paid support add-on for NetSuite, priced as a percentage of the annual license value across four tiers: Advise, Monitor, Optimize, and Architect. ACS covers standard functional guidance and Oracle escalation access, but explicitly excludes custom SuiteScript development, third-party integrations, and custom workflow logic. The five main alternatives are boutique managed support firms (monthly retainer, full technical coverage), regional NetSuite Solution Providers (Oracle-certified, project or retainer), enterprise consulting firms (time-and-materials, premium rates), and independent consultants (hourly, lower cost). For SMB accounts with customised environments, boutique managed support provides the broadest scope at a predictable monthly rate. SuitePacific publishes its pricing: plans start at $799 per month on month-to-month terms.
           </p>
         </div>
 
@@ -526,25 +529,15 @@ export default function NetsAcsAlternativesComparisonPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="rounded-xl border border-brand-100 bg-white p-5">
               <p className="text-sm font-semibold text-brand-900 mb-3">Oracle ACS handles:</p>
-              <ul className="space-y-1.5 text-sm text-brand-500">
-                {["Oracle platform expertise and functional guidance", "Oracle internal escalation access", "Standard NetSuite configuration guidance", "ACS-specific services included in your tier"].map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span className="text-brand-300 mt-0.5 shrink-0">·</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <p className="text-sm text-brand-500 leading-relaxed">
+                Oracle ACS provides platform-level expertise and functional guidance delivered by Oracle consultants. The primary value is access to Oracle&apos;s internal escalation paths for platform bugs and standard feature configuration. ACS tiers define the specific services included; what is covered varies significantly by tier, with the entry-level Advise tier providing the most limited scope.
+              </p>
             </div>
             <div className="rounded-xl border border-accent/20 bg-accent/5 p-5">
               <p className="text-sm font-semibold text-brand-900 mb-3">SuitePacific handles:</p>
-              <ul className="space-y-1.5 text-sm text-brand-500">
-                {["Custom SuiteScript development and debugging", "Third-party integration maintenance", "Workflow automation and reporting", "Ongoing administration and enhancements", "Release impact testing"].map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span className="text-accent mt-0.5 shrink-0">·</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <p className="text-sm text-brand-500 leading-relaxed">
+                SuitePacific covers the technical layer that ACS explicitly excludes: custom SuiteScript 2.x development and debugging, third-party integration maintenance for Celigo, Shopify, Salesforce, HubSpot, and REST/SOAP APIs, SuiteFlow workflow automation, ongoing NetSuite administration, saved searches, Advanced PDF and FreeMarker templates, release impact testing, and ongoing enhancements.
+              </p>
             </div>
           </div>
           <p className="mt-4 text-sm text-brand-500 rounded-xl border border-brand-100 bg-white p-4">
