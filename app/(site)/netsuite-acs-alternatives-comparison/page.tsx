@@ -116,6 +116,26 @@ const FAQ = [
     answer:
       "Published pricing and transparent scope are the most important signals. A firm that publishes its monthly retainer price and clearly states what is and is not included is demonstrating the same transparency a buyer deserves. Beyond that: certifications (SuiteCloud Developer II, Administrator Professional), dedicated resource assignment, response time SLA, Sandbox testing practice before production changes, and month-to-month vs. annual contract terms.",
   },
+  {
+    question: "What is the best alternative to NetSuite ACS?",
+    answer:
+      "The best alternative depends on what your account actually needs. If your primary support requirements involve SuiteScript development, third-party integration maintenance, custom workflow logic, and ongoing administration, a boutique managed support firm is the strongest fit. ACS does not cover custom SuiteScript or integrations, which are the most common ongoing technical needs for post-go-live accounts. If your requirements are limited to standard functional guidance and Oracle escalation access, ACS may still be the right model. For accounts that need both, a hybrid approach using ACS for Oracle-specific needs and a managed firm for the technical layer is a common and practical arrangement.",
+  },
+  {
+    question: "Can SuitePacific replace NetSuite ACS?",
+    answer:
+      "SuitePacific can replace ACS for the day-to-day technical support that most post-go-live accounts require: SuiteScript development, integration maintenance, SuiteFlow workflows, administration, saved searches, Advanced PDF templates, and ongoing enhancements. SuitePacific does not provide Oracle-direct escalation access, which is one function ACS provides. For accounts where Oracle escalation is a regular need, a hybrid model using both ACS and SuitePacific may be the right arrangement. For accounts where the primary support need is the technical and customisation layer, SuitePacific covers more of the actual day-to-day workload than ACS does.",
+  },
+  {
+    question: "Is SuitePacific month-to-month?",
+    answer:
+      "Yes. SuitePacific managed support plans are month-to-month after an initial three-month minimum engagement. There is no annual contract requirement. Plans start at $799 per month. Hours do not roll over between months.",
+  },
+  {
+    question: "Does SuitePacific cover SuiteScript, integrations, and NetSuite administration?",
+    answer:
+      "Yes. SuitePacific covers SuiteScript 2.x development and debugging, third-party integration maintenance (Celigo, Shopify, Salesforce, HubSpot, SFTP, REST and SOAP APIs), SuiteFlow workflow automation, NetSuite administration, saved searches, Advanced PDF and FreeMarker templates, custom records and fields, release impact testing, and ongoing enhancements. All of these are within scope on every plan. Oracle SuiteCloud Developer II and Administrator Professional certified.",
+  },
 ];
 
 export const metadata: Metadata = {
@@ -173,12 +193,74 @@ export default function NetsAcsAlternativesComparisonPage() {
           <LeadFormLight />
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · US-based · Month-to-month · $799/month</p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {["Oracle SuiteCloud Developer II", "Oracle Administrator Professional", "Celigo Mastery Level 4", "Direct developer access", "No annual contract"].map((badge) => (
+            <span key={badge} className="text-xs bg-brand-50 border border-brand-100 text-brand-600 px-3 py-1 rounded-full">{badge}</span>
+          ))}
+        </div>
 
         <div className="mt-8 rounded-xl bg-brand-50/60 border border-brand-100 px-5 py-4">
           <p className="text-xs font-semibold text-accent uppercase tracking-wide mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
             Oracle ACS (Advanced Customer Support) is Oracle&apos;s paid support add-on for NetSuite, priced as a percentage of the annual license value across four tiers: Advise, Monitor, Optimize, and Architect. ACS covers standard functional guidance and Oracle escalation access, but explicitly excludes custom SuiteScript development, third-party integrations, and custom workflow logic. The five main alternatives are boutique managed support firms (monthly retainer, full technical coverage), regional NetSuite Solution Providers (Oracle-certified, project or retainer), enterprise consulting firms (time-and-materials, premium rates), and independent consultants (hourly, lower cost). For SMB accounts with customized accounts, boutique managed support provides the broadest scope coverage at a predictable monthly rate. SuitePacific publishes its pricing: plans start at $799 per month on month-to-month terms.
           </p>
+        </div>
+
+        <div className="mt-6 rounded-xl border border-accent/20 bg-accent/5 px-5 py-4">
+          <p className="text-sm text-brand-700 leading-relaxed">
+            <strong>For SMB and mid-market companies that need ongoing hands-on technical support for SuiteScript, integrations, workflows and customisations, boutique managed support is the most practical alternative to ACS.</strong>
+          </p>
+          <p className="text-sm text-brand-500 mt-2">
+            ACS does not cover custom SuiteScript development, third-party integrations, or custom workflow logic. If those are your primary ongoing support needs, ACS scope runs out before the first request is addressed.
+          </p>
+          <Link href="/netsuite-care" className="mt-3 inline-block text-sm text-accent font-medium hover:underline">
+            Explore SuitePacific managed support plans →
+          </Link>
+        </div>
+
+        {/* Why customers look for ACS alternatives */}
+        <div className="mt-14">
+          <h2 className="text-lg font-semibold text-brand-900 mb-4">Why NetSuite Customers Look for an ACS Alternative</h2>
+          <p className="text-sm text-brand-400 mb-5">
+            The decision to evaluate ACS alternatives usually comes from one of five recurring situations.
+          </p>
+          <div className="space-y-3">
+            {[
+              {
+                n: "1",
+                heading: "They need hands-on development",
+                body: "The business needs someone to actually build and modify scripts, workflows, searches and integrations, not provide guidance on how to do it themselves.",
+              },
+              {
+                n: "2",
+                heading: "They need faster turnaround",
+                body: "Small changes become slow when every request moves through a formal support queue. A managed retainer with direct developer access changes that dynamic.",
+              },
+              {
+                n: "3",
+                heading: "They need continuity",
+                body: "They want a technical team that understands their account&apos;s customisations and integrations over time, without re-briefing on every request.",
+              },
+              {
+                n: "4",
+                heading: "They need coverage beyond standard NetSuite",
+                body: "Their environment includes custom scripts, integrations, workflows, custom records and PDFs. ACS does not cover any of these.",
+              },
+              {
+                n: "5",
+                heading: "They want flexible terms",
+                body: "They do not want another annual contract. They want reliable technical help on a monthly basis that they can adjust as their needs change.",
+              },
+            ].map((item) => (
+              <div key={item.n} className="flex items-start gap-4 rounded-xl border border-brand-100 bg-white p-4">
+                <span className="text-xs font-mono font-semibold text-accent mt-0.5 w-5 shrink-0">{item.n}.</span>
+                <div>
+                  <p className="text-sm font-semibold text-brand-900 mb-1">{item.heading}</p>
+                  <p className="text-sm text-brand-500" dangerouslySetInnerHTML={{ __html: item.body }} />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Comparison table */}
@@ -298,6 +380,61 @@ export default function NetsAcsAlternativesComparisonPage() {
         </div>
 
 
+        {/* Decision framework */}
+        <div className="mt-14">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">Which NetSuite ACS Alternative Is Right for You?</h2>
+          <p className="text-sm text-brand-400 mb-6">Use your actual support requirements to identify the right model before evaluating individual providers.</p>
+          <div className="space-y-4">
+            <div className="rounded-xl border border-brand-100 bg-white p-5">
+              <p className="text-sm font-semibold text-brand-900 mb-2">Choose Oracle ACS if:</p>
+              <ul className="space-y-1.5">
+                {["You primarily need Oracle platform expertise and functional guidance", "You need Oracle&apos;s internal escalation access", "Your environment uses mostly standard NetSuite features with minimal customisation", "Your requirements align with the specific ACS tier you have purchased"].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-brand-500">
+                    <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 shrink-0" />
+                    <span dangerouslySetInnerHTML={{ __html: item }} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-5">
+              <p className="text-sm font-semibold text-brand-900 mb-2">Choose a boutique managed support firm if:</p>
+              <ul className="space-y-1.5">
+                {["You need ongoing SuiteScript development and debugging", "You rely on third-party integrations (Celigo, Shopify, Salesforce, HubSpot)", "You need workflow automation and reporting support", "You want a long-term technical partner who knows your account", "You want direct developer access and month-to-month terms", "You do not want to hire a full-time NetSuite developer"].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm text-brand-500">
+                    <CheckCircle2 className="h-4 w-4 text-accent mt-0.5 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-3 text-xs font-semibold text-accent">SuitePacific is built for this use case. Plans from $799/month, month-to-month.</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {[
+                { heading: "Choose a Solution Provider if:", items: ["You need a large implementation project", "You are adding significant new functionality", "You need an Oracle-certified partner for a scoped engagement"] },
+                { heading: "Choose an enterprise firm if:", items: ["You have complex global requirements", "You need a large consulting team", "You are undertaking a major ERP transformation"] },
+                { heading: "Choose an independent consultant if:", items: ["Your needs are small and well-defined", "You have a bounded technical project", "You do not need ongoing coverage or continuity"] },
+              ].map((card) => (
+                <div key={card.heading} className="rounded-xl border border-brand-100 bg-white p-4">
+                  <p className="text-sm font-semibold text-brand-900 mb-2">{card.heading}</p>
+                  <ul className="space-y-1.5">
+                    {card.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-xs text-brand-500">
+                        <span className="text-brand-300 mt-0.5 shrink-0">·</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mt-5 text-center">
+            <Link href="/netsuite-care" className="inline-block rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white hover:bg-accent/90 transition-colors">
+              Get your support recommendation →
+            </Link>
+          </div>
+        </div>
+
         {/* Bottom Line */}
         <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
@@ -317,20 +454,127 @@ export default function NetsAcsAlternativesComparisonPage() {
           </ul>
         </div>
 
-        {/* SuitePacific callout */}
-        <div className="mt-10 rounded-xl border border-accent/20 bg-accent/5 p-5">
-          <p className="text-xs font-semibold text-accent uppercase tracking-wide mb-2">Boutique managed support example</p>
-          <p className="text-sm font-semibold text-brand-900 mb-1">SuitePacific</p>
-          <p className="text-sm text-brand-500 mb-3">
-            SuitePacific is a US-based boutique NetSuite managed support firm. It is one of the few independent firms that publishes its pricing and scope publicly. Services cover SuiteScript 2.x development, SuiteFlow workflow automation, third-party integration maintenance (Celigo, Shopify, Salesforce, HubSpot), saved searches, Advanced PDF templates, and ongoing NetSuite administration. Certifications: Oracle NetSuite SuiteCloud Developer II and Administrator Professional. Plans start at $799 per month on month-to-month terms with no annual contract and no hour rollover.
+        {/* SuitePacific detailed section */}
+        <div className="mt-10">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">SuitePacific: A Hands-On NetSuite ACS Alternative</h2>
+          <p className="text-sm text-brand-400 mb-5">
+            SuitePacific is a US-based boutique NetSuite consultancy focused specifically on post-go-live technical support. Instead of treating every request as a separate project, SuitePacific provides ongoing access to NetSuite developers and administrators who maintain, troubleshoot and improve the technical layer of your existing account.
           </p>
-          <div className="flex flex-wrap gap-2 mb-4">
-            {["SuiteScript 2.x", "Celigo", "Shopify", "Salesforce", "SuiteFlow", "Administration", "Release testing"].map((tag) => (
-              <span key={tag} className="text-xs bg-white border border-brand-100 text-brand-500 px-2.5 py-1 rounded-full">{tag}</span>
-            ))}
+          <div className="rounded-xl border border-accent/20 bg-accent/5 p-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <p className="text-xs font-semibold text-brand-900 uppercase tracking-wide mb-3">What SuitePacific handles</p>
+                <ul className="space-y-1.5">
+                  {[
+                    "SuiteScript 2.x development and debugging",
+                    "SuiteFlow workflow automation",
+                    "Saved searches and dashboards",
+                    "Advanced PDF and FreeMarker templates",
+                    "Custom records and fields",
+                    "NetSuite administration",
+                    "Celigo integration maintenance",
+                    "Shopify, Salesforce, HubSpot integrations",
+                    "SFTP and REST/SOAP API integrations",
+                    "Bug fixes and break-fix support",
+                    "Release impact analysis and testing",
+                    "Ongoing enhancements",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-brand-600">
+                      <CheckCircle2 className="h-4 w-4 text-accent mt-0.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <p className="text-xs font-semibold text-brand-900 uppercase tracking-wide mb-3">Certifications</p>
+                  <ul className="space-y-1.5">
+                    {["Oracle NetSuite SuiteCloud Developer II", "Oracle NetSuite Administrator Professional", "Celigo integrator.io Mastery Level 4"].map((cert) => (
+                      <li key={cert} className="flex items-start gap-2 text-sm text-brand-600">
+                        <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 shrink-0" />
+                        {cert}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="rounded-lg border border-accent/20 bg-white p-4">
+                  <p className="text-xs font-semibold text-brand-900 mb-2">Plan details</p>
+                  <p className="text-2xl font-bold text-accent mb-1">$799<span className="text-sm font-normal text-brand-400">/month</span></p>
+                  <p className="text-xs text-brand-400 mb-3">Starting price. Month-to-month after 3-month minimum.</p>
+                  <ul className="space-y-1 text-xs text-brand-500">
+                    <li>· Direct developer access on all plans</li>
+                    <li>· US-based, no offshore handoffs</li>
+                    <li>· No annual contract required</li>
+                    <li>· 1 business day response SLA</li>
+                  </ul>
+                </div>
+                <Link href="/netsuite-care" className="inline-block w-full text-center rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-white hover:bg-accent/90 transition-colors">
+                  View SuitePacific support plans →
+                </Link>
+              </div>
+            </div>
           </div>
-          <Link href="/netsuite-managed-support" className="text-sm text-accent font-medium hover:underline">
-            View SuitePacific managed support plans →
+        </div>
+
+        {/* ACS + SuitePacific hybrid */}
+        <div className="mt-14">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">You Do Not Have to Choose Between ACS and a Technical Partner</h2>
+          <p className="text-sm text-brand-400 mb-5">
+            Some accounts benefit from both. ACS and SuitePacific address different parts of the support equation and can run in parallel.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="rounded-xl border border-brand-100 bg-white p-5">
+              <p className="text-sm font-semibold text-brand-900 mb-3">Oracle ACS handles:</p>
+              <ul className="space-y-1.5 text-sm text-brand-500">
+                {["Oracle platform expertise and functional guidance", "Oracle internal escalation access", "Standard NetSuite configuration guidance", "ACS-specific services included in your tier"].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="text-brand-300 mt-0.5 shrink-0">·</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-xl border border-accent/20 bg-accent/5 p-5">
+              <p className="text-sm font-semibold text-brand-900 mb-3">SuitePacific handles:</p>
+              <ul className="space-y-1.5 text-sm text-brand-500">
+                {["Custom SuiteScript development and debugging", "Third-party integration maintenance", "Workflow automation and reporting", "Ongoing administration and enhancements", "Release impact testing"].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="text-accent mt-0.5 shrink-0">·</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <p className="mt-4 text-sm text-brand-500 rounded-xl border border-brand-100 bg-white p-4">
+            Keeping ACS for the areas where Oracle provides unique value while using SuitePacific for the day-to-day technical layer is a practical arrangement for accounts that genuinely need both.
+          </p>
+        </div>
+
+        {/* ACS Renewal section */}
+        <div className="mt-14 rounded-2xl border-2 border-brand-100 bg-white p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">ACS Renewal</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">Your ACS Renewal Is Coming. Is It Still the Right Fit?</h2>
+          <p className="text-sm text-brand-500 mb-4">
+            Before renewing another ACS engagement, look at what your account actually needed over the past year. If the majority of requests involved SuiteScript, integrations, workflows, administration and ongoing enhancements, a managed technical support model may provide better coverage for your day-to-day requirements.
+          </p>
+          <p className="text-sm font-semibold text-brand-700 mb-3">We can help you evaluate:</p>
+          <ul className="space-y-2 text-sm text-brand-500 mb-5">
+            {[
+              "What your team actually needed from support over the past year",
+              "How much of your support workload is in the technical layer vs. standard functionality",
+              "Which work required Oracle involvement and which could be handled independently",
+              "Whether ACS should be replaced, supplemented, or continued as-is",
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-2">
+                <span className="text-accent font-bold mt-0.5 shrink-0">→</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <Link href="/contact" className="inline-block rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white hover:bg-accent/90 transition-colors">
+            Get a free ACS alternative assessment →
           </Link>
         </div>
 
