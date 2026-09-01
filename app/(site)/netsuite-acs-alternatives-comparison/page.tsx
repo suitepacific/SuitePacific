@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CheckCircle2, XCircle, MinusCircle } from "lucide-react";
+import { CheckCircle2, XCircle } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
@@ -14,13 +14,13 @@ const PROVIDERS = [
     pricing: "% of annual license (4–8%+)",
     model: "Quarterly or annual contract",
     commitment: "Annual minimum",
-    smbFocus: false,
-    suiteScript: false,
-    integrations: false,
+    smbFocus: "No",
+    suiteScript: "No",
+    integrations: "Out of scope",
     dedicatedResource: "Monitor tier and above",
-    adminConfig: true,
+    adminConfig: "Tier/scope only",
     releaseTesting: "Limited",
-    publishedPricing: true,
+    publishedPricing: "Tier names only",
     bestFor: "Accounts using mostly standard NetSuite features with minimal customization.",
   },
   {
@@ -29,13 +29,13 @@ const PROVIDERS = [
     pricing: "$500–$2,500/month fixed",
     model: "Monthly retainer",
     commitment: "Month-to-month typical",
-    smbFocus: true,
-    suiteScript: true,
-    integrations: true,
+    smbFocus: "Yes",
+    suiteScript: "Yes",
+    integrations: "Yes",
     dedicatedResource: "Yes",
-    adminConfig: true,
+    adminConfig: "Yes",
     releaseTesting: "Yes",
-    publishedPricing: false,
+    publishedPricing: "Varies by firm",
     bestFor: "Accounts with customizations, integrations, and ongoing technical needs beyond ACS scope.",
   },
   {
@@ -44,13 +44,13 @@ const PROVIDERS = [
     pricing: "Not typically published",
     model: "Project or retainer",
     commitment: "Project-based",
-    smbFocus: null,
-    suiteScript: true,
-    integrations: true,
+    smbFocus: "Varies",
+    suiteScript: "Yes",
+    integrations: "Yes",
     dedicatedResource: "Assigned per project",
-    adminConfig: true,
+    adminConfig: "Yes",
     releaseTesting: "Varies",
-    publishedPricing: false,
+    publishedPricing: "No",
     bestFor: "Accounts needing project-based development work from an Oracle-certified partner.",
   },
   {
@@ -59,13 +59,13 @@ const PROVIDERS = [
     pricing: "$150–$350/hour",
     model: "Time and materials",
     commitment: "None (project-based)",
-    smbFocus: false,
-    suiteScript: true,
-    integrations: true,
+    smbFocus: "No",
+    suiteScript: "Yes",
+    integrations: "Yes",
     dedicatedResource: "Assigned per engagement",
-    adminConfig: true,
+    adminConfig: "Yes",
     releaseTesting: "Billable",
-    publishedPricing: false,
+    publishedPricing: "No",
     bestFor: "Large enterprises with complex requirements and budget for premium-rate consulting.",
   },
   {
@@ -74,13 +74,13 @@ const PROVIDERS = [
     pricing: "$75–$200/hour",
     model: "Hourly or small retainer",
     commitment: "None",
-    smbFocus: true,
-    suiteScript: true,
-    integrations: true,
+    smbFocus: "Varies",
+    suiteScript: "Yes",
+    integrations: "Varies",
     dedicatedResource: "Yes (one person)",
-    adminConfig: true,
+    adminConfig: "Yes",
     releaseTesting: "Varies",
-    publishedPricing: false,
+    publishedPricing: "No",
     bestFor: "Accounts with specific, bounded tasks and tolerance for capacity and continuity risk.",
   },
 ];
@@ -97,9 +97,9 @@ const FAQ = [
       "Oracle ACS does not cover custom SuiteScript development or debugging, third-party integration maintenance (Celigo, Shopify, Salesforce, HubSpot, Amazon), custom workflow logic beyond standard SuiteFlow configuration, Advanced PDF and FreeMarker template work, or any work Oracle classifies outside its approved ACS scope. Accounts with significant customizations typically find ACS insufficient as a standalone support solution.",
   },
   {
-    question: "Is boutique managed support cheaper than Oracle ACS?",
+    question: "Can boutique managed support provide better value than Oracle ACS?",
     answer:
-      "For most SMB accounts, yes. Oracle ACS pricing is tied to the annual license value, typically 4–8% or more per year. A NetSuite account with a $60,000 annual license pays $2,400–$4,800 per year for ACS entry-level tiers, which provide shared pool hours and no SuiteScript coverage. A boutique managed support retainer at $799–$999/month costs more in absolute terms but covers SuiteScript, integrations, and administration that ACS excludes.",
+      "For accounts with ongoing technical needs, yes. The relevant comparison is not simply the monthly cost but what each model actually covers against what the account needs. ACS pricing is tied to the annual license value, typically 4–8% or more per year, with entry-level tiers providing shared pool hours and no coverage for SuiteScript, integrations, or custom workflow logic. A boutique managed support retainer covers all of those areas. If the majority of day-to-day requests involve SuiteScript development, integration maintenance, workflow automation, and administration, a technical managed support model provides broader coverage for the actual work being done.",
   },
   {
     question: "Which NetSuite support option is best for small businesses?",
@@ -141,25 +141,23 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite ACS Alternatives: 2026 Provider Comparison",
   description:
-    "Compare Oracle ACS against boutique managed support, Solution Providers, enterprise consulting firms, and independent consultants. Objective criteria including pricing model, SuiteScript coverage, integration support, and SMB suitability.",
+    "Compare Oracle ACS against boutique managed support, Solution Providers, enterprise consulting firms, and independent consultants. Pricing model, SuiteScript coverage, integration support, and SMB suitability compared.",
   alternates: { canonical: "/netsuite-acs-alternatives-comparison" },
   openGraph: {
     title: "NetSuite ACS Alternatives: 2026 Provider Comparison",
-    description: "Objective comparison of Oracle ACS against the five main alternatives for NetSuite post-go-live support. Pricing, scope, SuiteScript coverage, and SMB suitability compared.",
+    description: "Practical comparison of Oracle ACS against the five main alternatives for NetSuite post-go-live support. Pricing, scope, SuiteScript coverage, and SMB suitability compared.",
     url: "https://suitepacific.com/netsuite-acs-alternatives-comparison",
     type: "website",
     images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
   },
 };
 
-function Check() {
-  return <CheckCircle2 className="h-4 w-4 text-green-600 mx-auto" />;
-}
-function Cross() {
-  return <XCircle className="h-4 w-4 text-red-500 mx-auto" />;
-}
-function Partial() {
-  return <MinusCircle className="h-4 w-4 text-amber-500 mx-auto" />;
+function CellText({ value }: { value: string }) {
+  const cls =
+    value === "Yes" ? "text-green-700 font-medium" :
+    value === "No" || value === "Out of scope" ? "text-red-600" :
+    "text-brand-500";
+  return <span className={cls}>{value}</span>;
 }
 
 export default function NetsAcsAlternativesComparisonPage() {
@@ -185,7 +183,7 @@ export default function NetsAcsAlternativesComparisonPage() {
           as="h1"
           eyebrow="NetSuite Support"
           title="NetSuite ACS Alternatives: 2026 Provider Comparison"
-          subtitle="An objective comparison of Oracle ACS and the five main support alternatives for companies already live on NetSuite."
+          subtitle="A practical comparison of Oracle ACS and the main support alternatives for companies already live on NetSuite."
           align="left"
         />
 
@@ -292,8 +290,8 @@ export default function NetsAcsAlternativesComparisonPage() {
                 <tr className="hover:bg-brand-50/40 transition-colors">
                   <td className="px-4 py-3 text-brand-600 font-medium">Published pricing</td>
                   {PROVIDERS.map((p) => (
-                    <td key={p.name} className="px-3 py-3 text-center">
-                      {p.publishedPricing ? <Check /> : <Cross />}
+                    <td key={p.name} className="px-3 py-3 text-center text-xs">
+                      <CellText value={p.publishedPricing} />
                     </td>
                   ))}
                 </tr>
@@ -312,32 +310,32 @@ export default function NetsAcsAlternativesComparisonPage() {
                 <tr className="hover:bg-brand-50/40 transition-colors">
                   <td className="px-4 py-3 text-brand-600 font-medium">SMB/mid-market focus</td>
                   {PROVIDERS.map((p) => (
-                    <td key={p.name} className="px-3 py-3 text-center">
-                      {p.smbFocus === true ? <Check /> : p.smbFocus === false ? <Cross /> : <Partial />}
+                    <td key={p.name} className="px-3 py-3 text-center text-xs">
+                      <CellText value={p.smbFocus} />
                     </td>
                   ))}
                 </tr>
                 <tr className="hover:bg-brand-50/40 transition-colors">
                   <td className="px-4 py-3 text-brand-600 font-medium">SuiteScript development</td>
                   {PROVIDERS.map((p) => (
-                    <td key={p.name} className="px-3 py-3 text-center">
-                      {p.suiteScript ? <Check /> : <Cross />}
+                    <td key={p.name} className="px-3 py-3 text-center text-xs">
+                      <CellText value={p.suiteScript} />
                     </td>
                   ))}
                 </tr>
                 <tr className="hover:bg-brand-50/40 transition-colors">
                   <td className="px-4 py-3 text-brand-600 font-medium">Integration support</td>
                   {PROVIDERS.map((p) => (
-                    <td key={p.name} className="px-3 py-3 text-center">
-                      {p.integrations ? <Check /> : <Cross />}
+                    <td key={p.name} className="px-3 py-3 text-center text-xs">
+                      <CellText value={p.integrations} />
                     </td>
                   ))}
                 </tr>
                 <tr className="hover:bg-brand-50/40 transition-colors">
                   <td className="px-4 py-3 text-brand-600 font-medium">Admin / config support</td>
                   {PROVIDERS.map((p) => (
-                    <td key={p.name} className="px-3 py-3 text-center">
-                      {p.adminConfig ? <Check /> : <Cross />}
+                    <td key={p.name} className="px-3 py-3 text-center text-xs">
+                      <CellText value={p.adminConfig} />
                     </td>
                   ))}
                 </tr>
@@ -359,6 +357,30 @@ export default function NetsAcsAlternativesComparisonPage() {
           <p className="mt-3 text-xs text-brand-400">
             Last updated August 2026. ACS tier details from Oracle&apos;s published documentation. Independent firm pricing based on publicly available market rates.
           </p>
+        </div>
+
+        {/* Early decision block — for high-intent visitors who have seen enough */}
+        <div className="mt-8 rounded-xl border-2 border-accent/25 bg-gradient-to-br from-accent/5 to-transparent p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Does your account look like this?</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
+            {[
+              "Custom SuiteScript scripts or user events",
+              "Third-party integrations (Celigo, Shopify, Salesforce)",
+              "SuiteFlow workflows and approval logic",
+              "Saved searches and reporting builds",
+              "Ongoing administration and configuration",
+              "No full-time NetSuite developer in-house",
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-1.5 text-xs text-brand-600">
+                <CheckCircle2 className="h-3.5 w-3.5 text-accent mt-0.5 shrink-0" />
+                {item}
+              </div>
+            ))}
+          </div>
+          <p className="text-sm text-brand-700 font-medium mb-3">Boutique managed support is the model built for this situation. SuitePacific plans start at $799/month, month-to-month.</p>
+          <Link href="/netsuite-care" className="inline-block rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white hover:bg-accent/90 transition-colors">
+            View support plans →
+          </Link>
         </div>
 
         {/* Provider breakdowns */}
@@ -516,6 +538,21 @@ export default function NetsAcsAlternativesComparisonPage() {
                   View SuitePacific support plans →
                 </Link>
               </div>
+            </div>
+          </div>
+          <div className="mt-5 rounded-xl border border-brand-100 bg-white p-4">
+            <p className="text-xs font-semibold text-brand-900 uppercase tracking-wide mb-3">Client outcomes</p>
+            <div className="space-y-3">
+              {[
+                { title: "Partner replacement and account takeover", desc: "2-week onboarding, 3 critical issues resolved in month one after implementation partner disengaged", href: "/case-studies/partner-replacement-onboarding" },
+                { title: "12 months of post-go-live managed support", desc: "60+ requests handled, 2 major releases prepared, zero production failures under the retainer", href: "/case-studies/managed-support-retainer" },
+                { title: "Technical debt cleared after go-live", desc: "11 orphaned scripts, 43 stale roles, 4 broken workflow references resolved over three months", href: "/case-studies/account-optimization-technical-debt" },
+              ].map((cs) => (
+                <Link key={cs.href} href={cs.href} className="block group">
+                  <p className="text-sm font-medium text-brand-900 group-hover:text-accent transition-colors">{cs.title}</p>
+                  <p className="text-xs text-brand-400 mt-0.5">{cs.desc}</p>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
