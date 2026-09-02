@@ -295,6 +295,13 @@ export default function NetSuiteEmergencySupportPage() {
             <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Direct access to the developer doing the work, no ticket queue</li>
             <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Root cause diagnosis and fix in one engagement, not a diagnosis-only service</li>
           </ul>
+          <p className="text-sm text-brand-500 mt-4">
+            Accounts that need ongoing protection beyond a one-time emergency fix can move to a managed
+            support retainer. Plans start at $799 per month, month-to-month after a three-month minimum,
+            covering development, administration, break-fix, and upgrade preparation as a continuous
+            engagement. Accounts on a retainer have faster incident response and a consultant who already
+            knows the account when an emergency occurs.
+          </p>
         </div>
 
         <SuitePacificCallout
