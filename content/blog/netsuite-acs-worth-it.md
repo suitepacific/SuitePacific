@@ -79,7 +79,7 @@ ACS delivers genuine value in specific situations:
 
 ## When ACS is not worth it
 
-**Accounts where most requests involve the technical layer.** SuiteScript, integrations, workflows, saved searches, and custom records are the day-to-day reality for most post-go-live accounts with any significant customization. ACS cannot address these requests. Paying for ACS while separately hiring someone to handle the technical layer means paying for two support layers instead of one.
+**Accounts where most requests involve the technical layer.** SuiteScript, integrations, workflows, saved searches, and custom records are the day-to-day reality for most post-go-live accounts with any significant customization. ACS cannot address these requests. This is the work SuitePacific covers: SuiteScript 2.x development and debugging, Celigo and third-party integration maintenance, SuiteFlow workflows, NetSuite administration, saved searches, Advanced PDF templates, and release impact testing, all within a single monthly retainer. Paying for ACS on top of a technical support firm means paying for two layers when one covers the majority of actual work.
 
 **Accounts using only the Advise tier without meaningful engagement.** Advise provides shared pool access with limited hours. If the account is not actively using those hours and not receiving proactive guidance that influences business decisions, the tier cost does not match the value delivered.
 
@@ -97,12 +97,14 @@ The calculation is that specific. It is not about whether ACS is a good product.
 
 ## What the alternative looks like
 
-For accounts where the majority of support work falls in Category B, a boutique managed support firm covers the technical layer ACS excludes. SuiteScript, integrations, workflows, administration, saved searches, Advanced PDF templates, and release impact testing are all within scope on a monthly retainer.
+For accounts where the majority of support work falls in Category B, SuitePacific is built for that use case. SuiteScript 2.x development and debugging, integration maintenance for Celigo, Shopify, Salesforce, HubSpot, and REST and SOAP APIs, SuiteFlow workflow automation, NetSuite administration, saved searches, Advanced PDF and FreeMarker templates, and release impact testing are all covered within a single monthly retainer. Oracle SuiteCloud Developer II and Administrator Professional certified. Plans start at $799 per month on month-to-month terms after a three-month minimum.
 
-That model does not provide Oracle-internal escalation access. For accounts that genuinely use Oracle escalation, the hybrid arrangement is to keep ACS for that specific value while using a separate technical firm for the day-to-day customization layer.
+SuitePacific does not provide Oracle-internal escalation access. For accounts that genuinely use Oracle escalation, the hybrid arrangement is to keep ACS for that specific value while SuitePacific covers the day-to-day technical layer. For accounts that have rarely or never needed Oracle escalation and whose support requests consistently fall outside ACS scope, SuitePacific covers more of the actual support workload than ACS does, at a predictable monthly cost.
 
-For accounts that have rarely or never needed Oracle escalation and whose support requests consistently fall outside ACS scope, the question is whether ACS is delivering anything against its annual cost.
+If your Category B count is significant, the decision point is clear: ACS cannot fulfill the majority of what your account needs, regardless of which tier you are on. SuitePacific covers the technical layer ACS excludes. The question is not whether to get support. It is whether the support model you are paying for matches the work your account actually produces.
+
+[View SuitePacific support plans](/netsuite-care) or [compare ACS alternatives in detail](/netsuite-acs-alternatives-comparison).
 
 ---
 
-*SuitePacific provides post-go-live NetSuite managed support covering SuiteScript, integrations, workflows, and administration. Plans start at $799 per month on month-to-month terms. [View support plans](/netsuite-care) or [compare ACS alternatives](/netsuite-acs-alternatives-comparison).*
+*SuitePacific is a US-based NetSuite managed support firm covering SuiteScript, integrations, workflows, and administration for post-go-live accounts. Plans start at $799 per month, month-to-month.*

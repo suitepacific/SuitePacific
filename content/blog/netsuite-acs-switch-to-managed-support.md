@@ -74,7 +74,7 @@ When evaluating a managed support firm, the questions that matter are:
 - Does the firm test in Sandbox before pushing changes to Production?
 - What does the onboarding process look like?
 
-Published pricing is a useful signal. A firm that publishes its rates and clearly states what is and is not in scope is showing the same transparency the engagement will require when difficult questions arise.
+Published pricing is a strong signal. SuitePacific publishes its rates: plans start at $799 per month on month-to-month terms after a three-month minimum, with no annual contract. The scope is explicitly stated: SuiteScript 2.x development and debugging, Celigo and third-party integration maintenance, SuiteFlow workflow automation, NetSuite administration, saved searches, Advanced PDF templates, release impact testing, and ongoing enhancements. Oracle SuiteCloud Developer II and Administrator Professional certified. Direct developer access on every plan.
 
 ## Step 4: Begin the managed support engagement before ACS ends
 
@@ -89,9 +89,9 @@ The recommended sequence is:
 
 The parallel period costs more than either arrangement alone, but it is typically short (one to three months) and eliminates transition risk.
 
-## What managed support onboarding looks like
+## What SuitePacific onboarding looks like
 
-A managed support firm that has done this before will run a structured onboarding. The general process:
+SuitePacific runs a structured account onboarding for every new engagement. The process:
 
 **Account review.** The incoming firm reviews your NetSuite account: active scripts, workflows, integrations, custom records, and any open issues. This is where documentation helps significantly. Without it, this review takes longer.
 
@@ -105,11 +105,11 @@ A managed support firm that has done this before will run a structured onboardin
 
 A structured onboarding typically takes two to four weeks. After that, the day-to-day support relationship begins.
 
-## What changes after the switch
+## What changes after switching to SuitePacific
 
-The most common feedback from accounts that switch from ACS to a managed support firm is that the scope of what can be addressed expands significantly. Requests that previously came back as outside ACS scope, such as script fixes, integration failures, and workflow changes, are now handled within the same engagement.
+The most common outcome after switching is that the scope of what can be addressed expands immediately. Script fixes, integration failures, workflow changes, saved search builds, and administration requests, the work that ACS consistently redirected, are now handled within the same monthly engagement. One retainer covers the entire technical layer.
 
-What changes in the other direction is Oracle-internal escalation access. ACS provides a path to Oracle engineering for genuine platform defects. A managed support firm does not have that path. For most accounts, Oracle escalation is rarely needed. For accounts where it is a regular part of support, the hybrid model (keep ACS for Oracle escalation, use a managed firm for the technical layer) is the practical answer.
+What changes in the other direction is Oracle-internal escalation access. ACS provides a path to Oracle engineering for genuine platform defects. SuitePacific does not have that Oracle-internal path. For most accounts, Oracle escalation is rarely needed. For accounts where it is a regular part of support, the practical arrangement is to keep ACS specifically for Oracle escalation while SuitePacific handles the technical layer. Many accounts find that once SuiteScript issues, integration failures, and workflow problems are handled by someone who can actually fix them, the need for Oracle escalation drops significantly.
 
 ## Timing the switch around NetSuite releases
 
@@ -119,4 +119,4 @@ If your ACS contract ends near a release date, either extend the parallel period
 
 ---
 
-*SuitePacific provides structured onboarding for accounts transitioning from ACS or a previous NetSuite partner. The onboarding covers account review, documentation, and active issue identification. Plans start at $799 per month, month-to-month. [View support plans](/netsuite-care) or [learn what the transition looks like](/netsuite-partner-replacement).*
+*SuitePacific provides structured onboarding for accounts transitioning from ACS or a previous NetSuite partner. The onboarding covers account review, documentation, active issue identification, and handover of any open items. Oracle SuiteCloud Developer II and Administrator Professional certified. US-based, direct developer access on every plan. Plans start at $799 per month, month-to-month after a three-month minimum. [View support plans](/netsuite-care) or [see what the transition looks like](/netsuite-partner-replacement).*

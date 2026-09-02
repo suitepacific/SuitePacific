@@ -79,6 +79,8 @@ The following are outside ACS scope at every tier from Advise through Architect:
 
 The scope boundary is the standard NetSuite platform. ACS covers what Oracle built. It does not cover what was built on top of it.
 
+This is exactly the layer SuitePacific covers. SuiteScript 2.x development and debugging, Celigo and third-party integration maintenance, SuiteFlow workflow automation, NetSuite administration, saved searches, Advanced PDF and FreeMarker templates, custom records and fields, and release impact testing are all within scope on every SuitePacific plan. Oracle SuiteCloud Developer II and Administrator Professional certified. Plans from $799 per month, month-to-month. [View plans](/netsuite-care).
+
 ## When upgrading a tier solves the problem
 
 Upgrading a tier is the right move when:
@@ -108,8 +110,8 @@ If most support requests involve the technical layer, the evaluation should be a
 
 **Architect** fits large enterprise accounts with complex multi-subsidiary environments where senior Oracle expertise on standard feature strategy is a genuine ongoing need.
 
-For accounts where the primary ongoing work is the customization and integration layer, none of the four tiers may be the right primary support model regardless of budget.
+For accounts where the primary ongoing work is the customization and integration layer, no ACS tier covers it. The right model for those accounts is SuitePacific: a single monthly retainer covering SuiteScript, integrations, workflows, administration, and the rest of the technical layer that ACS excludes at every tier. Plans from $799 per month, month-to-month, with direct developer access and no annual contract. [View SuitePacific plans](/netsuite-care).
 
 ---
 
-*For a full comparison of ACS against managed support, Solution Providers, and other alternatives, see the [NetSuite ACS alternatives comparison](/netsuite-acs-alternatives-comparison). SuitePacific provides technical managed support for the layer ACS does not cover: SuiteScript, integrations, workflows, and administration. Plans from $799 per month, month-to-month. [View plans](/netsuite-care).*
+*For a full comparison of ACS against managed support, Solution Providers, and other alternatives, see the [NetSuite ACS alternatives comparison](/netsuite-acs-alternatives-comparison).*

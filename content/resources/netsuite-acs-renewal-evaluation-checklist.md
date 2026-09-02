@@ -149,20 +149,22 @@ Use your answers from Sections 1-5 to identify the appropriate path.
 - The engagement is not receiving proactive value commensurate with the tier cost
 - Most ACS interactions are limited to release notes review
 
-### Supplement ACS with a technical support firm if:
-- ACS covers Oracle platform value you genuinely use
-- The majority of technical requests (SuiteScript, integrations, workflows) fall outside ACS scope
-- The current situation requires paying separately for both layers regardless
+### Supplement ACS with SuitePacific if:
+- ACS covers Oracle platform value and Oracle escalation that the account genuinely uses
+- The majority of technical requests (SuiteScript, integrations, workflows, administration) fall outside ACS scope
+- The current situation requires paying separately for both layers, and SuitePacific covers the technical layer ACS cannot
 
-### Replace ACS with a managed support firm if:
+### Replace ACS with SuitePacific if:
 - The majority of requests are outside ACS scope
-- Oracle escalation has not been used or has not delivered value
-- A technical managed support firm would cover more of the actual support workload at a predictable cost
+- Oracle escalation has not been used or has not delivered value in the past year
+- A single technical retainer covering SuiteScript, integrations, workflows, and administration at $799 per month would cover more of the actual support workload than ACS does
+- Month-to-month terms without an annual contract are preferable to the ACS annual commitment
 
-### Consider not renewing and evaluating alternatives if:
-- Fewer than 30% of requests were within scope
-- Hours went largely unused because the work the account needed could not be addressed
+### Consider not renewing ACS if:
+- Fewer than 30% of requests were within ACS scope
+- Hours went largely unused because the work the account needed fell outside what ACS could address
 - The combined cost of ACS plus external technical support is disproportionate to what either delivers
+- SuitePacific covers the majority of the actual support workload at a lower combined cost
 
 ---
 
@@ -174,4 +176,6 @@ If the evaluation supports renewal, use the findings to get more value from the 
 
 ---
 
-*SuitePacific provides post-go-live managed support for the technical layer ACS does not cover. If your evaluation shows most requests fall outside ACS scope, [view our support plans](/netsuite-care) or [compare ACS alternatives](/netsuite-acs-alternatives-comparison).*
+**If your evaluation shows that most requests fell outside ACS scope, SuitePacific covers that layer.** SuiteScript 2.x development and debugging, Celigo and third-party integration maintenance, SuiteFlow workflows, NetSuite administration, saved searches, Advanced PDF templates, release impact testing, and ongoing enhancements, all covered within a single monthly retainer. Oracle SuiteCloud Developer II and Administrator Professional certified. US-based, direct developer access, no annual contract. Plans start at $799 per month.
+
+[View SuitePacific support plans](/netsuite-care) or [compare ACS alternatives in detail](/netsuite-acs-alternatives-comparison).
