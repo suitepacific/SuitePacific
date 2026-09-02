@@ -477,6 +477,12 @@ export default function NetSuiteManagedSupportPage() {
           <p className="text-sm font-semibold text-brand-900 mb-3">Related reading</p>
           <ul className="space-y-2.5">
             <li className="text-sm text-brand-400">
+              <Link href="/netsuite-support" className="text-accent hover:underline">
+                NetSuite support overview
+              </Link>{" "}
+              covers all post-go-live support services and plans from $799/month.
+            </li>
+            <li className="text-sm text-brand-400">
               <Link href="/netsuite-post-go-live-support" className="text-accent hover:underline">
                 NetSuite post-go-live support
               </Link>{" "}

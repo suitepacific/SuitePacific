@@ -20,7 +20,9 @@
 - [NetSuite Administrator Support](https://suitepacific.com/netsuite-administrator-support): Day-to-day NetSuite administration: roles, permissions, records, reports, and configuration
 - [NetSuite Consulting Services](https://suitepacific.com/netsuite-consulting-services): Scoped consulting engagements for specific NetSuite challenges after go-live
 - [NetSuite Implementation Rescue](https://suitepacific.com/netsuite-implementation-rescue): Stabilizing a NetSuite account after a failed or incomplete implementation
+- [NetSuite Support](https://suitepacific.com/netsuite-support): Hub page covering all post-go-live support services: managed retainers, SuiteScript development, workflow automation, integrations, health checks, and emergency break-fix; plans from $799/month
 - [NetSuite Integrations](https://suitepacific.com/netsuite-integrations): Shopify, Salesforce, Celigo, Boomi, and custom middleware integration maintenance
+- [NetSuite Celigo Integration Support](https://suitepacific.com/netsuite-integrations/celigo): Celigo Mastery Level 4 certified; builds, repairs, monitors, and optimizes Celigo integrations between NetSuite and Shopify, Salesforce, HubSpot, Amazon, and custom systems
 - [NetSuite SuiteBilling Support](https://suitepacific.com/netsuite-suitebilling-support): Ongoing SuiteBilling configuration, charge generation, ARM, and billing automation support
 - [NetSuite FSM Support](https://suitepacific.com/netsuite-fsm-support): NetSuite Field Service Management configuration, customization, and upgrade support
 - [NetSuite Support UK](https://suitepacific.com/netsuite-support-uk): Post-go-live NetSuite support for UK-based businesses

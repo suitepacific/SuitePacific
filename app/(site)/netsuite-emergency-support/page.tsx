@@ -259,6 +259,10 @@ export default function NetSuiteEmergencySupportPage() {
           <p className="text-sm font-semibold text-brand-900 mb-3">Ongoing support after the emergency</p>
           <ul className="space-y-2.5">
             <li className="text-sm text-brand-400">
+              <Link href="/netsuite-support" className="text-accent hover:underline">NetSuite support overview</Link>{" "}
+              covers all post-go-live support services: managed retainers, SuiteScript development, integrations, health checks, and emergency break-fix.
+            </li>
+            <li className="text-sm text-brand-400">
               <Link href="/netsuite-post-go-live-support" className="text-accent hover:underline">NetSuite post-go-live support</Link>{" "}
               covers ongoing development, fixes, and release testing on a month-to-month retainer so the next emergency is caught sooner.
             </li>

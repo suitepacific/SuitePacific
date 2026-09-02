@@ -316,8 +316,46 @@ export default function SuiteScriptDevelopmentPage() {
           </div>
         </div>
 
+        {/* Failure scenarios */}
+        <div className="mt-14" data-section="failure-scenarios">
+          <h2 className="text-lg font-semibold text-brand-900 mb-4">Common SuiteScript failures we diagnose</h2>
+          <p className="text-sm text-brand-400 mb-5">
+            Most SuiteScript emergencies fall into a small set of patterns. These are the ones we see most often and diagnose fastest.
+          </p>
+          <div className="space-y-5">
+            {[
+              {
+                q: "NetSuite scheduled script not running",
+                a: "A scheduled script that stops executing is almost always one of four things: the script was set to inactive, a prior execution logged an unhandled error that killed the schedule, a governance limit was hit and the script is in a retry-exhausted state, or a deployment change accidentally set the status to testing. Check the script deployment status first, then the execution log for the last known run, then the scheduled script queue in Setup.",
+              },
+              {
+                q: "NetSuite user event script not firing",
+                a: "User event scripts fail silently when the deployment is not scoped to the correct record type, the script entry point is wrong (beforeLoad vs. beforeSubmit vs. afterSubmit), the deployment status is not set to Released, or the record type the script is deployed to does not match the form the user is saving on. Check the deployment record first, then confirm the record type and entry point match the expected trigger.",
+              },
+              {
+                q: "NetSuite governance limit exceeded",
+                a: "Governance failures in SuiteScript 2.x occur when a script uses more than its allocated units within a single execution. Scheduled scripts have a 10,000-unit limit per execution. Map/Reduce scripts partition work across stages to avoid this limit. If a User Event script is hitting governance, it is usually because it is doing search or record operations that belong in a scheduled or Map/Reduce context instead. The fix is usually architectural, not just optimization.",
+              },
+            ].map((item) => (
+              <div key={item.q} className="rounded-xl border border-brand-100 bg-white p-5">
+                <p className="text-sm font-semibold text-brand-900 mb-2">{item.q}</p>
+                <p className="text-sm text-brand-500 leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Hub link */}
+        <div className="mt-10 rounded-xl border border-brand-100 bg-brand-50/30 px-5 py-4">
+          <p className="text-sm text-brand-600">
+            SuiteScript development is one service within a full post-go-live support model.{" "}
+            <Link href="/netsuite-support" className="text-accent hover:underline">View all NetSuite support services</Link>
+            {" "}including managed retainers, integrations, health checks, and emergency break-fix.
+          </p>
+        </div>
+
         {/* Related reading */}
-        <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
+        <div className="mt-6 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
           <p className="text-sm font-semibold text-brand-900 mb-3">From the blog</p>
           <ul className="space-y-2.5">
             <li className="text-sm text-brand-400">

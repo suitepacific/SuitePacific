@@ -125,9 +125,9 @@ const WHY_SP = [
   },
   {
     icon: Award,
-    title: "Enterprise Expertise, SMB Price",
+    title: "Celigo Mastery Level 4",
     description:
-      "The same depth of NetSuite expertise large companies staff internally, available without the overhead of a full-time hire or an enterprise consulting contract.",
+      "SuitePacific holds Celigo Mastery Level 4 certification, the highest tier in the Celigo partner program. Celigo integrations are built and maintained by a certified specialist, not a generalist.",
   },
 ];
 
@@ -344,6 +344,7 @@ export default function NetSuiteIntegrationsPage() {
               { href: "/netsuite-integrations/hubspot", label: "NetSuite HubSpot Integration", desc: "Contact sync, deal-to-sales-order, and invoice status in HubSpot." },
               { href: "/netsuite-integrations/avalara", label: "NetSuite Avalara Integration", desc: "Real-time tax calculation, exemption management, and transaction reconciliation." },
               { href: "/netsuite-integrations/amazon", label: "NetSuite Amazon Integration", desc: "Seller Central order import, FBA inventory sync, and settlement reconciliation." },
+              { href: "/netsuite-integrations/celigo", label: "NetSuite Celigo Integration", desc: "Celigo Mastery Level 4 certified. Build, repair, and monitor Celigo flows between NetSuite and any connected system." },
             ].map((item) => (
               <Link key={item.href} href={item.href} className="group block rounded-xl border border-brand-100 bg-white p-4 hover:border-accent/30 hover:shadow-sm transition-all">
                 <p className="text-sm font-semibold text-brand-900 group-hover:text-accent transition-colors">{item.label}</p>
