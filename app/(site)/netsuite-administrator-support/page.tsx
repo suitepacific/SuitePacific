@@ -160,13 +160,13 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Administrator Support",
+  title: "NetSuite Administrator Support | Fractional NetSuite Admin",
   description:
-    "Ongoing NetSuite administrator support for post-go-live accounts: user management, roles and permissions, custom fields, saved searches, period management, and data imports.",
+    "Fractional NetSuite administrator support for post-go-live accounts: user management, roles and permissions, custom fields, saved searches, period management, and data imports. Plans from $799/month, month-to-month.",
   alternates: { canonical: "/netsuite-administrator-support" },
   openGraph: {
-    title: "NetSuite Administrator Support",
-    description: "Ongoing NetSuite administrator support for post-go-live accounts: user management, roles and permissions, custom fields, saved searches, period management, and data imports.",
+    title: "NetSuite Administrator Support | Fractional NetSuite Admin",
+    description: "Fractional NetSuite administrator support for post-go-live accounts: user management, roles and permissions, custom fields, saved searches, period management, and data imports. Plans from $799/month.",
     url: "https://suitepacific.com/netsuite-administrator-support",
     type: "website",
     images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
@@ -202,9 +202,9 @@ export default function NetSuiteAdministratorSupportPage() {
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading
           as="h1"
-          eyebrow="NetSuite Administration"
+          eyebrow="Fractional NetSuite Administrator"
           title="NetSuite Administrator Support"
-          subtitle="Without a dedicated NetSuite administrator, configuration changes fall behind, upgrades carry unchecked risk, and informal fixes accumulate. SuitePacific provides certified NetSuite administrator support as a monthly retainer from $799."
+          subtitle="Most post-go-live accounts need ongoing administration but cannot justify a full-time hire. SuitePacific provides fractional NetSuite administrator support: certified, direct-access, month-to-month from $799."
           align="left"
         />
 
@@ -226,10 +226,11 @@ export default function NetSuiteAdministratorSupportPage() {
             previous layout. Most businesses going live on NetSuite underestimate how much ongoing
             administration work a live account generates. Common monthly requests include role
             changes, field additions, saved search updates, form modifications, and periodic
-            clean-up of inactive records and stale configurations. SuitePacific provides dedicated
-            NetSuite administrator support on a monthly retainer for post-go-live accounts, with
-            direct access to the same certified administrator on every request and no long-term
-            contract.
+            clean-up of inactive records and stale configurations. SuitePacific provides this as a
+            fractional NetSuite administrator model: a dedicated Oracle-certified administrator on
+            a monthly retainer, with direct access to the same person on every request, at a
+            fraction of the cost of a full-time hire. Plans from $799 per month, month-to-month,
+            no annual contract.
           </p>
         </div>
 
@@ -344,6 +345,32 @@ export default function NetSuiteAdministratorSupportPage() {
               </Card>
             ))}
           </div>
+        </div>
+
+        {/* Fractional admin answer block */}
+        <div className="mt-14" data-section="fractional-admin">
+          <h2 className="text-lg font-semibold text-brand-900 mb-4">What is a fractional NetSuite administrator?</h2>
+          <p className="text-sm text-brand-500 leading-relaxed">
+            A fractional NetSuite administrator is a certified NetSuite admin who works with an
+            account on a part-time or retainer basis rather than as a full-time employee. The model
+            exists because most post-go-live NetSuite accounts need regular administrator attention
+            but do not generate enough configuration work to justify a full-time hire at $80,000 to
+            $130,000 per year. A fractional administrator handles the same tasks a full-time admin
+            would: user management, role design, custom fields, saved searches, workflow
+            configuration, period management, and upgrade preparation. The difference is the
+            engagement model. A fractional NetSuite administrator works across a defined scope of
+            hours per month, responds within a business day, and provides direct continuity because
+            the same person handles every request. SuitePacific operates on this model for
+            post-go-live accounts, with Oracle Administrator Professional certification, plans from
+            $799 per month, and no annual commitment.
+          </p>
+          <p className="mt-3 text-sm text-brand-400">
+            For small businesses with lighter administration needs, see the{" "}
+            <Link href="/netsuite-admin-support-small-business" className="text-accent hover:underline">
+              fractional NetSuite administrator for small business
+            </Link>
+            {" "}page for plans and scope details specific to smaller accounts.
+          </p>
         </div>
 
         {/* Related reading */}

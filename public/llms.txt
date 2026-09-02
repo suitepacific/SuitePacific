@@ -17,7 +17,8 @@
 - [NetSuite Technical Debt](https://suitepacific.com/netsuite-technical-debt): Assessment and remediation of accumulated technical debt from rapid implementation or staff turnover
 - [NetSuite Partner Replacement](https://suitepacific.com/netsuite-partner-replacement): Transition from an implementation partner to a retained specialist
 - [NetSuite Emergency Support](https://suitepacific.com/netsuite-emergency-support): Urgent break-fix for scripts, workflows, and integrations failing in production
-- [NetSuite Administrator Support](https://suitepacific.com/netsuite-administrator-support): Day-to-day NetSuite administration: roles, permissions, records, reports, and configuration
+- [NetSuite Administrator Support](https://suitepacific.com/netsuite-administrator-support): Fractional NetSuite administrator support for post-go-live accounts: user management, roles, custom fields, saved searches, period management, upgrade prep; plans from $799/month, month-to-month, Oracle Administrator Professional certified
+- [Fractional NetSuite Administrator for Small Business](https://suitepacific.com/netsuite-admin-support-small-business): Fractional NetSuite admin for small businesses; lighter-touch model covering user management, roles, saved searches, and configuration on a monthly retainer without a full-time hire
 - [NetSuite Consulting Services](https://suitepacific.com/netsuite-consulting-services): Scoped consulting engagements for specific NetSuite challenges after go-live
 - [NetSuite Implementation Rescue](https://suitepacific.com/netsuite-implementation-rescue): Stabilizing a NetSuite account after a failed or incomplete implementation
 - [NetSuite Support](https://suitepacific.com/netsuite-support): Hub page covering all post-go-live support services: managed retainers, SuiteScript development, workflow automation, integrations, health checks, and emergency break-fix; plans from $799/month
