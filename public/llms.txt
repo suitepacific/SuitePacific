@@ -181,6 +181,7 @@
 - [NetSuite Partner Replacement and Account Takeover](https://suitepacific.com/case-studies/partner-replacement-onboarding): Account taken over after implementation partner disengaged mid-engagement; 2-week structured onboarding, 3 open critical issues resolved in first month
 - [Ongoing Managed Support: Twelve Months of Post-Go-Live Coverage](https://suitepacific.com/case-studies/managed-support-retainer): 12-month managed retainer view: 60+ requests handled, 2 major releases prepared, zero production failures from changes under the retainer
 - [Account Optimization: Clearing Technical Debt After Go-Live](https://suitepacific.com/case-studies/account-optimization-technical-debt): Health check found 11 orphaned scripts, 43 stale roles, and 4 broken workflow references; cleared systematically over three months with no disruption to production operations
+- [Celigo Integration Failure: Order Sync Restored After Silent Failure](https://suitepacific.com/case-studies/celigo-integration-failure-diagnosis): Celigo-Shopify flow stopped syncing silently after a NetSuite release update changed a field's internal ID; 847 unsynced orders recovered, flow restored within 4 hours; Celigo Mastery Level 4 certified
 
 ## Industries
 

@@ -317,6 +317,10 @@ export default function NetSuiteCeligoIntegrationPage() {
               <Link href="/netsuite-managed-support" className="text-accent hover:underline">NetSuite managed support</Link>{" "}
               includes Celigo integration maintenance as part of an ongoing monthly retainer.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/case-studies/celigo-integration-failure-diagnosis" className="text-accent hover:underline">Case study: Celigo order sync failure</Link>{" "}
+              walks through how a silent Celigo-Shopify failure was diagnosed and 847 unsynced orders were recovered.
+            </li>
           </ul>
         </div>
       </div>

@@ -287,6 +287,36 @@ export const CASE_STUDIES_DETAIL: CaseStudyData[] = [
       ],
     },
   },
+  {
+    slug: "celigo-integration-failure-diagnosis",
+    title: "Celigo Integration Failure: Order Sync Restored After Silent Failure",
+    publishedAt: "2026-09-03",
+    metaDescription:
+      "How SuitePacific diagnosed and restored a Celigo integration that had stopped syncing Shopify orders into NetSuite, caused by a field mapping conflict introduced by a NetSuite release update. 847 unsynced orders recovered.",
+    tags: ["Integrations", "Celigo"],
+    relatedServices: [
+      { label: "NetSuite Celigo Integration Support", href: "/netsuite-integrations/celigo" },
+      { label: "NetSuite Emergency Support", href: "/netsuite-emergency-support" },
+    ],
+    cardChallenge:
+      "A Celigo flow syncing Shopify orders into NetSuite stopped processing silently. No error alert reached the team. By the time the issue was escalated, 847 orders had not been created in NetSuite.",
+    cardOutcome:
+      "Root cause identified as a field mapping conflict introduced by a NetSuite release update. Flow restored within four hours. All 847 unsynced orders recovered via reprocessing.",
+    sections: {
+      challenge: [
+        "The client ran a Celigo integration syncing Shopify orders into NetSuite as Sales Orders. The flow had been stable for eight months. Following a scheduled NetSuite release, the flow continued to show as active in Celigo but stopped creating Sales Order records in NetSuite. Because Celigo was not configured to alert on silent failure, the team did not know the sync had stopped until a reconciliation review three days later flagged the discrepancy.",
+        "By the time the issue was escalated, 847 Shopify orders had processed through Celigo without creating corresponding NetSuite records. Inventory levels were wrong, fulfillment queues had not been triggered, and the finance team was working from incomplete data. The Celigo flow logs showed status green on the summary view, obscuring the per-record errors that were accumulating underneath.",
+      ],
+      solution: [
+        "The diagnosis began with the Celigo flow execution logs at the record level rather than the summary view. The per-record errors showed a consistent failure pattern: a field the Celigo mapping was writing to had changed its internal ID in the NetSuite release. The mapping was referencing the field by its prior ID, which now pointed to a different field type. NetSuite was rejecting the record creation silently because the field being written to no longer accepted the data type Celigo was sending.",
+        "The fix involved updating the Celigo field mapping to reference the correct internal ID for the affected field after the release change, then validating the corrected mapping against a test order before enabling the flow. We also added error alerting configuration to the flow: Celigo's built-in failure notification was enabled and routed to the operations team so future per-record failures would surface within the hour rather than days later. The 847 unsynced orders were reprocessed through the corrected flow by enabling Celigo's retry-on-failure for the affected execution window.",
+      ],
+      outcome: [
+        "The flow was restored within four hours of engagement. All 847 unsynced orders were reprocessed and created as NetSuite Sales Orders with the correct data from the original Shopify payloads. Inventory levels were corrected, fulfillment queues were populated, and the finance team had complete data for the affected period.",
+        "The Celigo Mastery Level 4 certification held by SuitePacific meant the diagnosis went directly to per-record log analysis rather than working through the surface-level flow summary view where the failure was not visible. The error alerting configuration added during remediation means the integration will now surface failures within the hour. The client moved to a monthly support retainer for ongoing Celigo and integration monitoring.",
+      ],
+    },
+  },
 ];
 
 export function getCaseStudy(slug: string): CaseStudyData | undefined {

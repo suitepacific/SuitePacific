@@ -343,6 +343,20 @@ export default function SuiteScriptDevelopmentPage() {
               </div>
             ))}
           </div>
+          <div className="mt-6 rounded-xl border border-accent/20 bg-accent/5 p-5">
+            <p className="text-sm font-semibold text-brand-900 mb-1">Dealing with one of these now?</p>
+            <p className="text-sm text-brand-500 mb-3">
+              SuitePacific diagnoses and fixes SuiteScript failures in live accounts. Same-day response, direct developer access, no ticket queue.
+            </p>
+            <Link
+              href="/netsuite-emergency-support"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline"
+            >
+              Get SuiteScript help
+              <span aria-hidden="true">→</span>
+            </Link>
+            <p className="mt-2 text-xs text-brand-400">For ongoing issues, managed NetSuite support starts at $799/month.</p>
+          </div>
         </div>
 
         {/* Hub link */}
