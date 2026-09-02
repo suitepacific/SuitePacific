@@ -8,7 +8,7 @@ tags: ["Post-Go-Live", "Partner Replacement", "Admin"]
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
-<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Switching from NetSuite ACS to a managed support firm starts with confirming your ACS contract end date and reviewing cancellation terms, then documenting your account's active customizations and integrations before the transition. The practical steps are: audit your contract, start evaluating managed support firms two to three months before your ACS renewal date, begin a parallel arrangement if needed during transition, and use the ACS exit to identify and document everything in the technical layer the incoming firm will need to support. Most managed support firms can complete an account onboarding in two to four weeks if documentation is available. The key risk is a coverage gap: do not cancel ACS before a replacement support arrangement is active.</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Switching from NetSuite ACS to a managed support firm requires confirming your ACS contract end date and reviewing cancellation terms before any other step. ACS is typically sold on an annual contract paid upfront, which is generally non-refundable for the current period; mid-contract switches mean running both arrangements in parallel for a time. The practical sequence: audit your contract and current ACS utilization, start evaluating managed support firms two to three months before your ACS renewal date, document your active SuiteScript files, integrations, workflows, and custom records, begin the new engagement before ACS ends, and use the overlap period for structured account onboarding. Most managed support firms complete onboarding in two to four weeks when documentation is available. The key risk is a coverage gap: never cancel ACS before a replacement support arrangement is active and the incoming firm has completed its account review.</p>
 </div>
 
 If you have already decided that ACS does not cover what your account needs, the next question is practical: how do you actually make the transition?
@@ -109,6 +109,19 @@ A structured onboarding typically takes two to four weeks. After that, the day-t
 
 The most common outcome after switching is that the scope of what can be addressed expands immediately. Script fixes, integration failures, workflow changes, saved search builds, and administration requests, the work that ACS consistently redirected, are now handled within the same monthly engagement. One retainer covers the entire technical layer.
 
+| Coverage area | ACS | SuitePacific |
+|---|---|---|
+| Standard feature guidance | Yes | No |
+| Oracle bug escalation | Yes | No |
+| SuiteScript development and debugging | No | Yes |
+| Third-party integrations (Celigo, Shopify, etc.) | No | Yes |
+| SuiteFlow workflow changes | No | Yes |
+| NetSuite administration | In-scope features only | Yes |
+| Advanced PDF templates | No | Yes |
+| Saved search and report builds | No | Yes |
+| Response time | Varies by tier | 1 business day |
+| Contract terms | Annual, paid upfront | Month-to-month after 3-month minimum |
+
 What changes in the other direction is Oracle-internal escalation access. ACS provides a path to Oracle engineering for genuine platform defects. SuitePacific does not have that Oracle-internal path. For most accounts, Oracle escalation is rarely needed. For accounts where it is a regular part of support, the practical arrangement is to keep ACS specifically for Oracle escalation while SuitePacific handles the technical layer. Many accounts find that once SuiteScript issues, integration failures, and workflow problems are handled by someone who can actually fix them, the need for Oracle escalation drops significantly.
 
 ## Timing the switch around NetSuite releases
@@ -116,6 +129,19 @@ What changes in the other direction is Oracle-internal escalation access. ACS pr
 NetSuite releases happen twice per year (2026.1 in February, 2026.2 in August). Avoid scheduling a support transition in the two weeks immediately before or after a release. That is a period of elevated risk in any NetSuite account, and it is not the right time to also be onboarding a new support firm.
 
 If your ACS contract ends near a release date, either extend the parallel period or begin the new engagement early enough that the incoming firm is fully onboarded before the release window.
+
+---
+
+## Frequently asked questions about switching from ACS
+
+**How long does it take to transition from ACS to a managed support firm?**
+The onboarding period for a managed support firm is typically two to four weeks when account documentation is available. The full transition process, including contract review, firm evaluation, and any parallel overlap period, is best started two to three months before the ACS renewal date to avoid rushing.
+
+**What happens to open ACS cases during a transition?**
+Open ACS cases remain Oracle's responsibility until the contract expires. Document any open items before the transition and share them with the incoming managed support firm during onboarding so they can track resolution and pick up any relevant ongoing work.
+
+**Do I need to cancel ACS before starting a managed support engagement?**
+No. Many accounts run ACS and a managed support engagement in parallel during the transition period, particularly when mid-contract. The parallel period is typically short, one to three months, and eliminates the risk of a coverage gap during handover.
 
 ---
 

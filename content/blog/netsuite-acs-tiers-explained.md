@@ -64,7 +64,7 @@ The Architect engagement is more advisory in nature: strategic guidance on how t
 
 Architect provides the highest level of Oracle-native expertise within ACS scope. For enterprise accounts with the budget and the right profile, it represents genuine value. For accounts whose complexity comes from the customization layer rather than the standard feature set, the tier does not change what can and cannot be addressed.
 
-## What none of the tiers cover
+## What does no ACS tier cover, regardless of level?
 
 This is the most important section for evaluating ACS regardless of tier.
 
@@ -81,7 +81,7 @@ The scope boundary is the standard NetSuite platform. ACS covers what Oracle bui
 
 This is exactly the layer SuitePacific covers. SuiteScript 2.x development and debugging, Celigo and third-party integration maintenance, SuiteFlow workflow automation, NetSuite administration, saved searches, Advanced PDF and FreeMarker templates, custom records and fields, and release impact testing are all within scope on every SuitePacific plan. Oracle SuiteCloud Developer II and Administrator Professional certified. Plans from $799 per month, month-to-month. [View plans](/netsuite-care).
 
-## When upgrading a tier solves the problem
+## When does upgrading an ACS tier solve the problem?
 
 Upgrading a tier is the right move when:
 
@@ -92,7 +92,7 @@ Upgrading a tier is the right move when:
 
 If the account is getting value from the current tier but running into hour constraints for work within ACS scope, upgrading makes sense.
 
-## When upgrading a tier does not solve the problem
+## When does upgrading an ACS tier not solve the problem?
 
 Upgrading a tier does not solve the problem when the issue is ACS scope, not ACS capacity. If requests are being redirected because they involve SuiteScript, integrations, or implementation-partner work, a higher tier will redirect those same requests with more hours available.
 
@@ -100,7 +100,7 @@ The common pattern is this: an account is on Advise and feels like ACS is not de
 
 If most support requests involve the technical layer, the evaluation should be about scope, not tier.
 
-## Which tier is appropriate for which account
+## Which ACS tier is right for which account?
 
 **Advise** fits accounts that are newer to NetSuite, still developing their standard feature usage, and have limited customization. The value is access to Oracle guidance when questions arise, not a high-volume support relationship.
 
@@ -111,6 +111,19 @@ If most support requests involve the technical layer, the evaluation should be a
 **Architect** fits large enterprise accounts with complex multi-subsidiary environments where senior Oracle expertise on standard feature strategy is a genuine ongoing need.
 
 For accounts where the primary ongoing work is the customization and integration layer, no ACS tier covers it. The right model for those accounts is SuitePacific: a single monthly retainer covering SuiteScript, integrations, workflows, administration, and the rest of the technical layer that ACS excludes at every tier. Plans from $799 per month, month-to-month, with direct developer access and no annual contract. [View SuitePacific plans](/netsuite-care).
+
+---
+
+## Frequently asked questions about NetSuite ACS tiers
+
+**Do higher ACS tiers cover more types of work?**
+No. All four ACS tiers cover the same scope: standard NetSuite platform guidance and Oracle escalation access. Upgrading from Advise to Architect adds more hours and a more dedicated or senior resource, but does not expand the scope of what ACS can address. SuiteScript, integrations, and custom workflows remain outside scope at every tier.
+
+**What is the difference between ACS Monitor and ACS Optimize?**
+Monitor provides approximately 36 hours per quarter with a named ACS contact. Optimize provides approximately 20 hours per month with a dedicated resource and monthly engagement cadence. The primary differences are hours available and engagement frequency, not the types of work covered.
+
+**Can an ACS tier be changed mid-contract?**
+Tier changes mid-contract depend on your Oracle agreement terms. In general, upgrades are more straightforward than downgrades. Contact your Oracle account representative for specifics on whether a tier change can happen at the current renewal date or requires a contract restructure.
 
 ---
 

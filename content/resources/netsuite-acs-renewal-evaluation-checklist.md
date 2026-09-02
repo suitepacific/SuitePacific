@@ -9,7 +9,7 @@ ACS renewal is typically treated as a default. This checklist turns it into a de
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
-<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Before renewing ACS, audit what you actually called support for over the past year and check how many of those requests fell within ACS scope versus outside it. ACS covers standard NetSuite platform guidance and Oracle escalation access. It does not cover SuiteScript, integrations, implementation-partner configurations, or custom workflow logic. If the majority of requests were in the out-of-scope category, ACS is funding a support layer that could not address most of what the account needed. The renewal decision should be based on actual usage data, not assumed value.</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Before renewing NetSuite ACS, audit what your account actually called support for over the past 12 months and categorize each request: within ACS scope (standard feature guidance, Oracle bug escalation, release notes review, proactive health checks) or outside ACS scope (SuiteScript development and debugging, third-party integration maintenance, custom SuiteFlow workflow logic, Advanced PDF templates, saved search builds, implementation-partner configurations). ACS covers the standard NetSuite platform layer and Oracle escalation access. It does not cover the technical customization layer at any tier from Advise through Architect. If more than 50% of requests were outside ACS scope, ACS is funding a support layer that could not address most of what the account needed. If Oracle escalation was rarely or never used and produced no resolution that standard support could not have achieved, that specific value driver is also absent. The renewal decision should be based on actual usage data against the six checklist sections below, not assumed value or automatic contract default.</p>
 </div>
 
 ---
@@ -179,3 +179,16 @@ If the evaluation supports renewal, use the findings to get more value from the 
 **If your evaluation shows that most requests fell outside ACS scope, SuitePacific covers that layer.** SuiteScript 2.x development and debugging, Celigo and third-party integration maintenance, SuiteFlow workflows, NetSuite administration, saved searches, Advanced PDF templates, release impact testing, and ongoing enhancements, all covered within a single monthly retainer. Oracle SuiteCloud Developer II and Administrator Professional certified. US-based, direct developer access, no annual contract. Plans start at $799 per month.
 
 [View SuitePacific support plans](/netsuite-care) or [compare ACS alternatives in detail](/netsuite-acs-alternatives-comparison).
+
+---
+
+## Frequently asked questions about ACS renewal
+
+**What happens if I let ACS lapse without renewing?**
+Your ACS access ends at the contract expiration date. You retain access to standard Oracle NetSuite support, but lose ACS-specific benefits: named or dedicated contact, proactive reviews and health checks, and the accelerated Oracle escalation path. Ensure any replacement support arrangement is active before the ACS end date to avoid a coverage gap.
+
+**Can I renew ACS at a lower tier to reduce cost?**
+Yes. If hours are consistently underutilized or the account does not need the engagement model of the current tier, downgrading at renewal is an option. Confirm with your Oracle account representative whether the tier change can be applied at the current renewal date or requires a separate contract amendment.
+
+**Does NetSuite ACS automatically renew?**
+ACS does not auto-cancel, but whether renewal is automatic or requires affirmative action depends on your Oracle agreement. Do not assume the contract lapses at expiration without your involvement. Contact your Oracle account representative in advance of the end date to confirm the non-renewal process and any required notice period.

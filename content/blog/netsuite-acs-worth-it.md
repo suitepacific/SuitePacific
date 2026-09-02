@@ -8,7 +8,7 @@ tags: ["Post-Go-Live", "Admin", "Consulting"]
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
-<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite ACS is worth it when your primary support needs are standard functional guidance, Oracle platform expertise, and Oracle escalation access. It is not worth it when the majority of your day-to-day requests involve SuiteScript development, third-party integration maintenance, custom workflow logic, or anything built on top of standard NetSuite. ACS explicitly excludes all of those areas at every tier. For accounts where most actual support work falls outside ACS scope, the cost covers a support layer that can not fulfill most requests. The honest evaluation is to look at what your account actually called support for over the past year, then check whether those requests fall within ACS scope.</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite ACS (Advanced Customer Support) is Oracle's premium support tier, offered across four levels: Advise (shared resource pool), Monitor (approximately 36 hours per quarter with a named contact), Optimize (approximately 20 hours per month), and Architect (approximately 40 hours per month with a senior architect). All four tiers cover the same scope: standard NetSuite platform guidance, proactive account reviews, and Oracle escalation access for platform defects. ACS is worth it when your primary support needs sit in that standard platform layer. It is not worth it when the majority of your day-to-day requests involve SuiteScript development, third-party integration maintenance, custom workflow logic, or anything built on top of standard NetSuite. ACS explicitly excludes all of those areas at every tier. For accounts where most actual support work falls outside ACS scope, the cost covers a support layer that cannot fulfill most requests. The evaluation starts with one question: what did your account actually call support for over the past year?</p>
 </div>
 
 NetSuite ACS renewal arrives annually. For most accounts, the renewal is treated as a default: renew, pay, move on. The question of whether ACS actually delivered value against what it cost rarely gets a structured answer.
@@ -17,7 +17,7 @@ That is a problem, because ACS is not cheap. At 4-8% of your annual NetSuite lic
 
 Whether that is worth it depends entirely on what your account actually needed support for.
 
-## What ACS covers
+## What does NetSuite ACS cover?
 
 ACS provides access to senior Oracle NetSuite resources, proactive account health reviews, best-practice guidance for standard features, and faster escalation of platform bugs to Oracle engineering. The four tiers scale the level of access:
 
@@ -30,7 +30,7 @@ ACS provides access to senior Oracle NetSuite resources, proactive account healt
 
 At every tier, ACS is focused on the standard NetSuite platform. That is the product Oracle builds and owns. ACS consultants can advise on how to configure standard features, how to use built-in functionality, and when to escalate product defects.
 
-## What ACS does not cover
+## What does NetSuite ACS not cover?
 
 This is the part that matters most for the worth-it evaluation. ACS does not cover, at any tier:
 
@@ -65,7 +65,7 @@ The evaluation is straightforward. Pull a record of what your account actually c
 
 If Category B is the majority, ACS is covering a support layer that can not fulfill most of what the account actually needs.
 
-## When ACS is worth it
+## When is NetSuite ACS worth it?
 
 ACS delivers genuine value in specific situations:
 
@@ -77,7 +77,7 @@ ACS delivers genuine value in specific situations:
 
 **Accounts that use ACS hours consistently.** If the account actively uses the included hours across multiple support areas within ACS scope, the cost-per-hour can be reasonable. The problem occurs when ACS hours go unused because the work that needs doing is outside scope.
 
-## When ACS is not worth it
+## When is NetSuite ACS not worth it?
 
 **Accounts where most requests involve the technical layer.** SuiteScript, integrations, workflows, saved searches, and custom records are the day-to-day reality for most post-go-live accounts with any significant customization. ACS cannot address these requests. This is the work SuitePacific covers: SuiteScript 2.x development and debugging, Celigo and third-party integration maintenance, SuiteFlow workflows, NetSuite administration, saved searches, Advanced PDF templates, and release impact testing, all within a single monthly retainer. Paying for ACS on top of a technical support firm means paying for two layers when one covers the majority of actual work.
 
@@ -95,7 +95,7 @@ If you spent the past year primarily asking for help with scripts, integrations,
 
 The calculation is that specific. It is not about whether ACS is a good product. It is about whether ACS scope matches your account's actual support pattern.
 
-## What the alternative looks like
+## What is the alternative to NetSuite ACS?
 
 For accounts where the majority of support work falls in Category B, SuitePacific is built for that use case. SuiteScript 2.x development and debugging, integration maintenance for Celigo, Shopify, Salesforce, HubSpot, and REST and SOAP APIs, SuiteFlow workflow automation, NetSuite administration, saved searches, Advanced PDF and FreeMarker templates, and release impact testing are all covered within a single monthly retainer. Oracle SuiteCloud Developer II and Administrator Professional certified. Plans start at $799 per month on month-to-month terms after a three-month minimum.
 
@@ -104,6 +104,19 @@ SuitePacific does not provide Oracle-internal escalation access. For accounts th
 If your Category B count is significant, the decision point is clear: ACS cannot fulfill the majority of what your account needs, regardless of which tier you are on. SuitePacific covers the technical layer ACS excludes. The question is not whether to get support. It is whether the support model you are paying for matches the work your account actually produces.
 
 [View SuitePacific support plans](/netsuite-care) or [compare ACS alternatives in detail](/netsuite-acs-alternatives-comparison).
+
+---
+
+## Frequently asked questions about NetSuite ACS value
+
+**Does NetSuite ACS cover SuiteScript development and debugging?**
+No. Custom SuiteScript development and debugging are outside ACS scope at every tier from Advise through Architect. ACS covers the standard NetSuite platform layer that Oracle builds and owns. If a script fails, ACS will redirect the request to whoever built and maintains that script.
+
+**Is NetSuite ACS priced as a percentage of my license fee?**
+Yes. ACS is typically priced at 4-8% of your annual NetSuite license or support fees. The specific percentage varies by tier. Oracle does not publish standard ACS pricing publicly; your Oracle account representative provides tier-specific quotes based on your license value.
+
+**Can I cancel NetSuite ACS mid-contract?**
+ACS fees paid upfront are generally non-refundable for the current contract year. You can choose not to renew at the end of the annual term. Contact your Oracle account representative to confirm the specific non-renewal process and required notice period for your agreement.
 
 ---
 
