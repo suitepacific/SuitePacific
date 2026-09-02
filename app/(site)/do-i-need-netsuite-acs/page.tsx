@@ -73,7 +73,7 @@ const FAQ = [
   {
     question: "Is ACS worth it for small NetSuite accounts?",
     answer:
-      "For small accounts (annual license under $40,000), ACS cost represents a meaningful additional percentage of the total NetSuite spend, and ACS scope may not align with the account's actual support needs. Small accounts are typically post-go-live companies with SuiteScript-dependent processes who need technical support, not functional guidance. For these accounts, a boutique managed support retainer at $799–$999/month provides better coverage at a comparable or lower annual cost.",
+      "For small accounts (annual license under $40,000), ACS cost represents a meaningful additional percentage of the total NetSuite spend, and ACS scope may not align with the account's actual support needs. Small accounts are typically post-go-live companies with SuiteScript-dependent processes who need technical support, not functional guidance. For these accounts, a boutique managed support retainer at $799/month provides better coverage at a comparable or lower annual cost.",
   },
   {
     question: "What does ACS actually do day-to-day?",
@@ -83,7 +83,7 @@ const FAQ = [
   {
     question: "How do I know if I am getting value from ACS?",
     answer:
-      "Track the hours used each month (or quarter for Advise/Monitor), the nature of the requests fulfilled, and whether those requests would have required SuiteScript or integration work — which ACS cannot do anyway. If the primary value you receive is a point of contact at Oracle rather than substantive technical output, evaluate whether that contact justifies the annual cost relative to what an independent firm would charge for the same scope.",
+      "Track the hours used each month (or quarter for Advise/Monitor), the nature of the requests fulfilled, and whether those requests would have required SuiteScript or integration work, which ACS cannot do anyway. If the primary value you receive is a point of contact at Oracle rather than substantive technical output, evaluate whether that contact justifies the annual cost relative to what an independent firm would charge for the same scope.",
   },
 ];
 
@@ -136,7 +136,7 @@ export default function DoINeedNetSuiteAcsPage() {
         <div className="mt-8 rounded-xl bg-brand-50/60 border border-brand-100 px-5 py-4">
           <p className="text-xs font-semibold text-accent uppercase tracking-wide mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            ACS (Advanced Customer Support) is Oracle&apos;s paid support add-on for NetSuite. It covers standard functional guidance, Oracle escalation access, upgrade preparation, and — at higher tiers — a designated consultant and Customer Success Manager. ACS does not cover SuiteScript development, third-party integration maintenance, or custom workflow debugging. Whether ACS is worth it depends on your account profile. Accounts using mostly standard NetSuite features benefit from ACS functional guidance. Accounts with significant customizations and integrations often find that ACS does not cover their actual day-to-day support needs, making an independent managed support retainer a more appropriate fit. Plans from boutique firms start at $799 per month on month-to-month terms and cover the full technical layer ACS excludes.
+            ACS (Advanced Customer Support) is Oracle&apos;s paid support add-on for NetSuite. It covers standard functional guidance, Oracle escalation access, upgrade preparation, and at higher tiers a designated consultant and Customer Success Manager. ACS does not cover SuiteScript development, third-party integration maintenance, or custom workflow debugging. Whether ACS is worth it depends on your account profile. Accounts using mostly standard NetSuite features benefit from ACS functional guidance. Accounts with significant customizations and integrations often find that ACS does not cover their actual day-to-day support needs, making an independent managed support retainer a more appropriate fit. Plans from boutique firms start at $799 per month on month-to-month terms and cover the full technical layer ACS excludes.
           </p>
         </div>
 
@@ -224,7 +224,7 @@ export default function DoINeedNetSuiteAcsPage() {
             ACS is priced as a percentage of the annual NetSuite license, typically 5–8% or more. For a $60,000 annual license, that is $3,000–$6,000 per year for entry-level ACS. For accounts with significant customizations, this cost is paid on top of whatever is spent separately on technical support for the customization layer ACS excludes.
           </p>
           <p className="text-sm text-brand-400 mb-4">
-            An independent managed support retainer at $799–$999/month covers SuiteScript, integrations, administration, and workflow support — the full technical layer. At $9,588–$11,988 per year, it costs more in absolute terms, but replaces both ACS and any separate technical engagement.
+            An independent managed support retainer at $799/month covers SuiteScript, integrations, administration, and workflow support: the full technical layer. At $9,588/year for the entry plan, it costs more in absolute terms than entry-level ACS, but replaces both ACS and any separate technical engagement.
           </p>
           <p className="text-sm text-brand-400">
             Accounts that run both ACS and an independent technical resource should evaluate whether Oracle escalation access and functional guidance justify the additional ACS cost given what they are already paying.

@@ -1,5 +1,6 @@
 import { MapPin, Clock, Compass, ArrowRight } from "lucide-react";
 import { getVisitorSessions } from "@/lib/admin-data";
+import { RefreshButton } from "./RefreshButton";
 
 function formatDuration(ms: number) {
   const seconds = Math.round(ms / 1000);
@@ -71,10 +72,15 @@ export default async function VisitorsPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-semibold text-brand-900">Visitors</h1>
-      <p className="mt-1 text-sm text-brand-400">
-        Per-visit location, time on page, sections viewed, and exit point. Most recent 200 sessions.
-      </p>
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-semibold text-brand-900">Visitors</h1>
+          <p className="mt-1 text-sm text-brand-400">
+            Per-visit location, time on page, sections viewed, and exit point. Most recent 200 sessions.
+          </p>
+        </div>
+        <RefreshButton />
+      </div>
 
       <div className="mt-8 bg-white rounded-2xl border border-brand-50 shadow-soft overflow-hidden">
         <div className="overflow-x-auto">
