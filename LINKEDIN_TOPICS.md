@@ -71,6 +71,7 @@ Update this file every time a new post is published. No topic should repeat.
 | 63 | N+1 API calls in SuiteScript: fetching inside a loop hits governance limits fast — the fix is batch fetch first, build a lookup map, then process; one search replaces hundreds of record.load() calls | SuiteScript / Performance |
 | 64 | context.type tells you what happened to the record; runtime.executionContext tells you where the change came from — check executionContext first (UI, CSV import, web services), then event type; same User Event, different entry points, different assumptions | SuiteScript |
 | 65 | Custom GL Lines Plug-in can be correct and still produce wrong accounting — correct code adds the right line but the final GL impact depends on what NetSuite already posts; validate the complete debit/credit picture, not just the custom line | SuiteScript / Accounting |
+| 66 | Custom GL Lines Plug-in runs against the primary accounting book by default — to post entries against a secondary or tax book in Multi-Book Accounting, you must handle the book context explicitly; a single plug-in instance can serve multiple books but the logic must distinguish which book it is operating on | SuiteScript / Accounting |
 
 ---
 

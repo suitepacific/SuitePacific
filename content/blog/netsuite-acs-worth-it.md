@@ -103,7 +103,7 @@ SuitePacific does not provide Oracle-internal escalation access. For accounts th
 
 If your Category B count is significant, the decision point is clear: ACS cannot fulfill the majority of what your account needs, regardless of which tier you are on. SuitePacific covers the technical layer ACS excludes. The question is not whether to get support. It is whether the support model you are paying for matches the work your account actually produces.
 
-[View SuitePacific support plans](/netsuite-care) or [compare ACS alternatives in detail](/netsuite-acs-alternatives-comparison).
+[View SuitePacific support plans](/netsuite-care), [compare ACS alternatives in detail](/netsuite-acs-alternatives-comparison), or [see the full ACS alternative guide](/netsuite-acs-alternative).
 
 ---
 

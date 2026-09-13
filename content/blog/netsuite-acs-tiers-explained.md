@@ -127,4 +127,4 @@ Tier changes mid-contract depend on your Oracle agreement terms. In general, upg
 
 ---
 
-*For a full comparison of ACS against managed support, Solution Providers, and other alternatives, see the [NetSuite ACS alternatives comparison](/netsuite-acs-alternatives-comparison).*
+*For a full comparison of ACS against managed support, Solution Providers, and other alternatives, see the [NetSuite ACS alternatives comparison](/netsuite-acs-alternatives-comparison). For the primary guide on replacing ACS with a third-party firm, see [NetSuite ACS alternative for SMBs](/netsuite-acs-alternative).*

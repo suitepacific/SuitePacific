@@ -323,6 +323,11 @@ export default function AcsAlternativePage() {
         description="Third-party NetSuite support covering the full customization layer ACS does not handle, with certified consultants, direct access, and retained account context."
         url={`${SITE_URL}/netsuite-acs-alternative`}
         serviceType="NetSuite Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: administration, SuiteScript, workflow, saved searches. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: everything in Care plus integration maintenance and advanced development. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full technical coverage including proactive health checks and priority response. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd
@@ -633,6 +638,36 @@ export default function AcsAlternativePage() {
           <p className="text-sm font-semibold text-brand-900 mb-3">Related reading</p>
           <ul className="space-y-2.5">
             <li className="text-sm text-brand-400">
+              <Link href="/do-i-need-netsuite-acs" className="text-accent hover:underline">
+                Do I need NetSuite ACS?
+              </Link>{" "}
+              walks through the decision criteria for whether ACS makes sense for your account size and support volume.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-acs-pricing" className="text-accent hover:underline">
+                NetSuite ACS pricing breakdown
+              </Link>{" "}
+              covers how ACS is priced as a percentage of your license fee and how that compares to flat-rate alternatives.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-acs-worth-it" className="text-accent hover:underline">
+                Is NetSuite ACS worth it?
+              </Link>{" "}
+              examines whether ACS delivers enough value for accounts with a customization layer.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-acs-tiers-explained" className="text-accent hover:underline">
+                NetSuite ACS tiers explained
+              </Link>{" "}
+              breaks down Advise, Monitor, Optimize, and Architect with what each tier actually includes.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-acs-switch-to-managed-support" className="text-accent hover:underline">
+                Switching from NetSuite ACS to managed support
+              </Link>{" "}
+              covers the transition process and timing around ACS renewal dates.
+            </li>
+            <li className="text-sm text-brand-400">
               <Link href="/netsuite-post-go-live-support" className="text-accent hover:underline">
                 NetSuite post-go-live support
               </Link>{" "}
@@ -643,12 +678,6 @@ export default function AcsAlternativePage() {
                 How to evaluate a NetSuite support partner
               </Link>{" "}
               covers the questions to ask when comparing support options.
-            </li>
-            <li className="text-sm text-brand-400">
-              <Link href="/blog/signs-netsuite-support-not-working" className="text-accent hover:underline">
-                8 signs your NetSuite support isn&apos;t working
-              </Link>{" "}
-              identifies the patterns that indicate a support relationship needs to change.
             </li>
             <li className="text-sm text-brand-400">
               <Link href="/netsuite-oracle-support-vs-third-party" className="text-accent hover:underline">
@@ -663,7 +692,7 @@ export default function AcsAlternativePage() {
         <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
           <h2 className="text-base font-semibold text-brand-900 mb-3">
-            For SMBs with post-go-live customisations, SuitePacific covers more of the actual support work at a lower annual cost than ACS.
+            For SMBs with post-go-live customizations, SuitePacific covers more of the actual support work at a lower annual cost than ACS.
           </h2>
           <p className="text-sm text-brand-500 mb-4">
             ACS is a useful service for the functional layer: Oracle consultation, upgrade guidance, and internal escalation. But it explicitly excludes SuiteScript, integrations, and custom workflow support, which is where most ongoing support requests originate. Accounts that pay for ACS and then separately pay for technical support are running two parallel engagements for work that a single boutique managed retainer covers in one.
