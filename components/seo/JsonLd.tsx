@@ -42,10 +42,14 @@ export function OrganizationJsonLd() {
       "NetSuite OneWorld Multi-Subsidiary",
       "NetSuite SuiteBilling",
       "NetSuite Nonprofit Fund Accounting",
+      "Celigo Integration Platform",
+      "Celigo iPaaS",
+      "Celigo Flow Builder",
     ],
     award: [
       "Oracle NetSuite Certified SuiteCloud Developer II",
       "Oracle NetSuite Certified Administrator Professional",
+      "Celigo Mastery Level 4",
     ],
     aggregateRating: {
       "@type": "AggregateRating",

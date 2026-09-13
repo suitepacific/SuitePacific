@@ -48,10 +48,104 @@
 
 - [NetSuite 2026.2 Release Readiness Checklist](https://suitepacific.com/netsuite-2026-2-release-readiness-checklist): Pre-upgrade checklist covering Finance, Integrations, SuiteScript, Reporting, Manufacturing, Inventory, Security, and more for the 2026.2 release
 
+## Resources: Partner evaluation and switching
+
+- [NetSuite Support Partner Evaluation Checklist](https://suitepacific.com/resources/netsuite-partner-evaluation-checklist): Structured checklist for evaluating post-go-live support partners: who does the work, certifications, billing model, response time, release handling, and red flags to walk away from
+- [Questions to Ask Before Switching NetSuite Partners](https://suitepacific.com/resources/netsuite-partner-questions-to-ask): Buyer's evaluation guide: questions that separate ongoing-support firms from project-delivery firms, and what the answers reveal
+- [NetSuite Partner Transition Checklist](https://suitepacific.com/resources/netsuite-partner-transition-checklist): Structured checklist for switching support partners: what to document, what access to verify, what to hand over, and what a new partner needs to review
+- [NetSuite Account Access Handoff Guide](https://suitepacific.com/resources/netsuite-account-access-handoff): What access and credentials transfer when switching partners: administrator roles, integration credentials, third-party tools, and what to verify before removing the previous partner's access
+- [What Stays in Your NetSuite Account When You Switch Partners](https://suitepacific.com/resources/netsuite-what-stays-when-you-switch-partners): Everything built by your previous partner remains in the account; what stays, what does not transfer automatically, and what to verify before the previous partner disengages
+- [What to Document Before Your NetSuite Partner Leaves](https://suitepacific.com/resources/netsuite-what-to-document-before-partner-leaves): Account inventory, active work, known issues, credentials, and what disappears when the engagement ends
+- [NetSuite Support Partner Onboarding Checklist](https://suitepacific.com/resources/netsuite-support-partner-onboarding-checklist): What needs to happen in the first 30 days of a new support engagement: access to provide, what to communicate, and what the partner should deliver
+
+## Resources: ACS evaluation
+
+- [NetSuite ACS Renewal Evaluation Checklist](https://suitepacific.com/resources/netsuite-acs-renewal-evaluation-checklist): Structured checklist for evaluating an ACS engagement before renewal: usage audit, scope gap assessment, cost comparison, and the decision framework for whether to renew, upgrade, supplement, or replace ACS
+
+## Resources: Health check
+
+- [Questions to Ask Before Getting a NetSuite Health Check](https://suitepacific.com/resources/netsuite-health-check-provider-questions): How to evaluate health check providers: what questions to ask, what answers indicate a thorough assessment, and red flags to watch for
+- [NetSuite Health Check Readiness Guide](https://suitepacific.com/resources/netsuite-health-check-readiness-guide): What to prepare before a health check: access requirements, information to gather, questions to have ready, and what to expect from intake
+- [What a NetSuite Health Check Report Should Contain](https://suitepacific.com/resources/netsuite-health-check-report-guide): What a well-structured health check report looks like: sections, how findings are documented, severity classification, and how to use the report to drive remediation
+
+## Resources: Technical debt
+
+- [NetSuite Technical Debt Audit Checklist](https://suitepacific.com/resources/netsuite-technical-debt-audit-checklist): Structured checklist for auditing technical debt across scripts, workflows, saved searches, custom fields, and integrations; classify each finding as Critical, High, or Maintenance
+- [How to Prioritize NetSuite Technical Debt Remediation](https://suitepacific.com/resources/netsuite-technical-debt-prioritization): Three-tier classification system, how to sequence within each tier, when to defer maintenance work, and how to communicate prioritization to business stakeholders
+- [NetSuite Custom Field and Record Cleanup Guide](https://suitepacific.com/resources/netsuite-custom-field-cleanup-guide): How to identify and safely remove unused custom fields and records: what to check before deleting, how to find hidden dependencies, and how to sequence cleanup without breaking automations
+
+## Resources: SuiteScript
+
+- [NetSuite beforeSubmit vs afterSubmit](https://suitepacific.com/resources/netsuite-beforesubmit-vs-aftersubmit): When each User Event trigger fires, why using the wrong one causes silent failures, and how to choose correctly
+- [NetSuite User Event Script vs Client Script](https://suitepacific.com/resources/netsuite-user-event-vs-client-script): User Event runs server-side; Client Script runs in the browser; choosing the wrong one means business logic silently fails on API saves, CSV imports, and workflow saves
+- [record.load() vs search.lookupFields() in SuiteScript](https://suitepacific.com/resources/netsuite-record-load-vs-lookupfields): When to use each; lookupFields() is significantly faster for reading a few fields from a known record
+- [record.submitFields() vs record.load() in SuiteScript](https://suitepacific.com/resources/netsuite-submit-fields-vs-record-load): When to use each update method and the critical User Event caveat before switching
+- [Why You Should Never record.load() Inside a Loop](https://suitepacific.com/resources/netsuite-avoid-record-load-in-loops): Most common SuiteScript performance mistake; how to batch fetch with saved search columns instead
+- [NetSuite Scheduled Script vs Map/Reduce Script](https://suitepacific.com/resources/netsuite-scheduled-script-vs-map-reduce): When to use each; using Scheduled Script for Map/Reduce work is the most common cause of governance limit errors in batch processing
+- [NetSuite Map/Reduce: Why getInputData() Should Do Almost Nothing](https://suitepacific.com/resources/netsuite-map-reduce-getinputdata): getInputData() defines the workload, it does not execute it; loading records inside getInputData() defeats the Map/Reduce framework
+- [NetSuite Map/Reduce: Why Each map() Execution Must Be Independent](https://suitepacific.com/resources/netsuite-map-reduce-map-independence): Parallel execution breaks silently when map() shares state through global variables or order assumptions
+- [Why search.runPaged() Should Replace search.run() for Large Datasets](https://suitepacific.com/resources/netsuite-search-runpaged): search.run().getRange() has a 4,000-record ceiling; runPaged() avoids silently missing records
+- [NetSuite Script Audit Guide](https://suitepacific.com/resources/netsuite-script-audit-guide): How to audit SuiteScript deployments: what to examine, how to read execution logs, how to identify governance problems, and how to find overlap between scripts
+
+## Resources: Workflow
+
+- [Why Your NetSuite Workflow Is Firing Twice](https://suitepacific.com/resources/netsuite-workflow-firing-twice): Two most common trigger configuration causes of duplicate workflow execution and how to fix them
+- [NetSuite Workflow Entry Conditions](https://suitepacific.com/resources/netsuite-workflow-entry-conditions): A workflow without an Entry Condition evaluates on every record save; how Entry Conditions reduce unnecessary evaluations and improve performance on high-volume accounts
+- [NetSuite Workflow Audit Guide](https://suitepacific.com/resources/netsuite-workflow-audit-guide): How to audit SuiteFlow configurations: what to examine in the workflow editor, how to identify over-broad entry conditions, and how to classify findings by severity
+
+## Resources: SuiteQL and reporting
+
+- [NetSuite Saved Search vs SuiteAnalytics Workbook](https://suitepacific.com/resources/netsuite-saved-search-vs-suiteanalytics-workbook): Saved Searches and Workbooks serve different purposes; using the wrong one leads to slow reports; learn the distinction and how to choose
+- [Why Your NetSuite Saved Search Got Slower Over Time](https://suitepacific.com/resources/netsuite-saved-search-performance): Saved searches accumulate formula columns, joined fields, and summary calculations; how to diagnose the cause and when to move to SuiteAnalytics Workbook
+- [How to Use Bound Parameters in NetSuite REST SuiteQL](https://suitepacific.com/resources/netsuite-suiteql-bound-parameters): Pass dynamic values to SuiteQL queries separately from the query string to prevent injection vulnerabilities
+- [How to Fix SuiteQL Queries After the 2026.2 Default Sort Change](https://suitepacific.com/resources/netsuite-suiteql-orderby): NetSuite 2026.2 changed default Transaction sort from tranDisplayName to tranDate; how to find and fix affected queries
+
+## Resources: Finance and accounting
+
+- [NetSuite Undeposited Funds](https://suitepacific.com/resources/netsuite-undeposited-funds): Customer Payment marks the invoice Paid but cash is not in the bank yet; how the two-step flow works and what a growing Undeposited Funds balance means
+- [NetSuite Customer Deposits: Cash Received Is Not Revenue Earned](https://suitepacific.com/resources/netsuite-customer-deposit-liability): Customer Deposits record as a liability, not revenue; how to apply them correctly when the invoice is raised
+- [NetSuite AP Aging vs Vendor Balance](https://suitepacific.com/resources/netsuite-ap-aging-vs-vendor-balance): Why the numbers can legitimately differ and what to check before assuming a transaction is missing
+- [NetSuite Transaction Date vs Posting Period](https://suitepacific.com/resources/netsuite-transaction-date-vs-posting-period): When they differ, why it happens, and what to check when a financial report does not match expectations
+- [How to Use Payment Runs in NetSuite](https://suitepacific.com/resources/netsuite-payment-runs): Groups vendor bills, credits, journal entries, and expense reports into a single reviewed and approved payment workflow introduced in 2026.2
+- [NetSuite Automated Payment Adjustments](https://suitepacific.com/resources/netsuite-payment-adjustments): What gets handled automatically for bank fees, convenience fees, and underpayments from customer payment and deposit records in 2026.2
+- [NetSuite SuiteTax Term Discounts](https://suitepacific.com/resources/netsuite-suitetax-term-discounts): Two settings required to enable tax on term discounts in SuiteTax: one in Accounting Preferences and one at the nexus level
+- [SuiteBilling Invoice Not Being Created](https://suitepacific.com/resources/netsuite-suitebilling-missing-invoice): How to trace the four-stage billing pipeline (Subscription, Rating, Charges, Bill Run) to find where invoice creation stopped
+
+## Resources: Administration and security
+
+- [How to Enable Passkeys in NetSuite](https://suitepacific.com/resources/netsuite-passkeys): Passwordless authentication using Touch ID, Face ID, or Windows Hello; how to set up and why it is worth doing
+- [How to Use a Passkey as Your Second Factor in NetSuite](https://suitepacific.com/resources/netsuite-passkey-second-factor): FIDO2-compliant passkeys can replace the authenticator app for two-factor authentication in 2026.2
+- [How to Migrate NetSuite RESTlet Integrations from NLAuth to TBA](https://suitepacific.com/resources/netsuite-nlauth-to-tba-migration): NLAuth stops working in 2027.1; steps to audit integrations and migrate to Token-Based Authentication before the deadline
+- [How to Use Sequential Batch Processing in NetSuite REST](https://suitepacific.com/resources/netsuite-rest-batch-sequential): Run multiple API requests in a guaranteed order for dependent operations
+
+## Resources: Release notes
+
+- [How to Use the Match Suggestions Tab in NetSuite Bank Reconciliation](https://suitepacific.com/resources/netsuite-bank-reconciliation-match-suggestions): 2026.2 replaced the Review subtab with Match Suggestions; the five suggested actions and what else changed
+- [How to Use Advanced Record Customization (ARC) in NetSuite](https://suitepacific.com/resources/netsuite-advanced-record-customization): New 2026.2 area under Customization for managing AI descriptions for standard and custom record types
+- [How to Review Your Bill Capture Preferences After 2026.2](https://suitepacific.com/resources/netsuite-bill-capture-preferences): Blank Save Tax As now maps to No Tax; blank Save Shipping Cost As to No Shipping Cost; how to check and update settings
+- [How to Set Currency Context on NetSuite Currency Custom Fields](https://suitepacific.com/resources/netsuite-currency-context-custom-fields): 2026.2 adds Currency Context option to currency custom fields; what it controls
+- [The 5 New Project Health Indicators in NetSuite 2026.2](https://suitepacific.com/resources/netsuite-project-health-indicators): Planned vs. Actual Time Overrun, Overdue Tasks, Resource Coverage, Margin Indicator, and Unbilled Approved Charges
+- [How to Start Order Fulfillment from the NetSuite Sales Order List](https://suitepacific.com/resources/netsuite-sales-order-fulfillment-list): Initiate item fulfillment directly from the sales order list in 2026.2 without opening each individual order
+
+## Resources: FSM
+
+- [NetSuite FSM 2026.07.1 Sandbox Testing Checklist](https://suitepacific.com/resources/netsuite-fsm-bundle-update-2026-checklist): Practical checklist to validate the August 11 FSM bundle update in Sandbox before it reaches Production
+- [NetSuite FSM Configuration Change Control Checklist](https://suitepacific.com/resources/netsuite-fsm-configuration-change-control): Sandbox-first workflow, validation areas, and the one-active-configuration rule that prevents hard-to-diagnose mobile behavior
+- [FSM Mobile Custom Tabs and Duplicate Records](https://suitepacific.com/resources/netsuite-fsm-mobile-idempotency): How to use idempotency fields to prevent duplicate records when technicians save custom tabs more than once
+
+## Resources: Performance and post-go-live
+
+- [NetSuite Is Slow: Five Things to Check](https://suitepacific.com/resources/netsuite-is-slow-what-to-check): Most NetSuite performance complaints are caused by scripts, workflows, saved searches, or accumulated metadata, not the platform itself; where to look first
+- [NetSuite Post-Go-Live Support: What to Expect in Year One](https://suitepacific.com/resources/netsuite-post-go-live-support-year-one): Month-by-month guide to what post-go-live support looks like in the first twelve months and how to know if the engagement is working
+- [NetSuite Release Readiness Checklist](https://suitepacific.com/resources/netsuite-release-readiness-checklist): What to do before each bi-annual NetSuite release: review release notes for customizations, what to test in Sandbox, and how to identify risk before Production
+
 ## Blog: ACS alternatives
 
 - [Best NetSuite ACS alternatives for SMBs (2026)](https://suitepacific.com/blog/netsuite-acs-alternatives-smb): The top ACS alternative providers for small and mid-sized businesses, what each covers, how pricing compares, and when to replace ACS. SuitePacific starts at $799/month, month-to-month.
 - [NetSuite support pricing benchmark 2026](https://suitepacific.com/blog/netsuite-support-pricing-benchmark-2026): ACS tier structure, ACS cost estimates at real license values ($30k–$150k/year), managed retainer pricing, break-fix hourly ranges, and a worked example comparing total cost under each model. SuitePacific publishes its rates: $799, $1,499, $2,499/month.
+- [Is NetSuite ACS worth it?](https://suitepacific.com/blog/netsuite-acs-worth-it): How to evaluate ACS cost against actual usage; calculation framework, scope gaps, and when ACS delivers value versus when it does not. ACS costs 4-8% of annual license paid upfront.
+- [NetSuite ACS tiers explained](https://suitepacific.com/blog/netsuite-acs-tiers-explained): Tier-by-tier breakdown of Advise, Monitor, Optimize, and Architect: what each includes in practice, what none cover, and when upgrading a tier solves a problem versus when the issue is ACS scope.
+- [How to switch from NetSuite ACS to a managed support firm](https://suitepacific.com/blog/netsuite-acs-switch-to-managed-support): Transition guide covering ACS contract audit, account documentation, timing the handoff, finding a replacement firm, and what to expect in the first 30 days with a managed support firm.
 
 ## Blog: Partner selection and support models
 
