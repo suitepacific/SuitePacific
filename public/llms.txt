@@ -146,6 +146,8 @@
 - [Is NetSuite ACS worth it?](https://suitepacific.com/blog/netsuite-acs-worth-it): How to evaluate ACS cost against actual usage; calculation framework, scope gaps, and when ACS delivers value versus when it does not. ACS costs 4-8% of annual license paid upfront.
 - [NetSuite ACS tiers explained](https://suitepacific.com/blog/netsuite-acs-tiers-explained): Tier-by-tier breakdown of Advise, Monitor, Optimize, and Architect: what each includes in practice, what none cover, and when upgrading a tier solves a problem versus when the issue is ACS scope.
 - [How to switch from NetSuite ACS to a managed support firm](https://suitepacific.com/blog/netsuite-acs-switch-to-managed-support): Transition guide covering ACS contract audit, account documentation, timing the handoff, finding a replacement firm, and what to expect in the first 30 days with a managed support firm.
+- [NetSuite ACS alternative for small business: what to look for in 2026](https://suitepacific.com/blog/netsuite-acs-alternative-2026): Evaluation criteria for SMBs comparing ACS alternatives: customization coverage, direct access model, account continuity, contract flexibility, certifications. Includes ACS tier costs vs SuitePacific pricing table ($799–$2,499/month).
+- [Why SMBs choose SuitePacific over NetSuite ACS](https://suitepacific.com/blog/why-suitepacific-over-netsuite-acs): Direct comparison of SuitePacific vs ACS: scope (SuiteScript, integrations, workflows covered vs excluded), support model (retained consultant vs shared pool), pricing (flat monthly vs annual percentage), and where ACS retains a structural advantage (Oracle-internal escalation).
 
 ## Blog: Partner selection and support models
 
