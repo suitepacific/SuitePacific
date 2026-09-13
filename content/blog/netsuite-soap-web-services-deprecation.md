@@ -1,8 +1,8 @@
 ---
-title: "NetSuite SOAP Web Services Are Being Retired: What You Need to Know"
-description: "Oracle has announced a phased retirement of NetSuite SOAP Web Services, with full removal in 2028.2. If your business runs integrations built on the SOAP API, here is what the timeline means and what to do before the deadlines hit."
+title: "NetSuite SOAP Web Services Deprecation: Timeline, 2027.1 Deadlines, and Migration Steps"
+description: "NetSuite SOAP Web Services are being deprecated in phases: new TBA integrations end in 2027.1, existing TBA ends in 2028.1, and full SOAP removal lands in 2028.2. Here is the full timeline, what each deadline means for your integrations, and how to migrate to REST before the cutoffs."
 date: "2026-08-24"
-updated: "2026-08-26"
+updated: "2026-09-14"
 tags: ["Integrations", "SuiteTalk", "REST API", "Development"]
 ---
 

@@ -1,8 +1,8 @@
 ---
-title: "NetSuite Saved Search Formula Examples: Date Math, Conditionals, and Text Formatting"
-description: "Common saved search formula patterns for NetSuite: CASE WHEN conditionals with finance examples, age-in-days calculations, NVL null handling, date formatting, and bucketed AR aging columns."
+title: "NetSuite Saved Search Formula Examples: Checkbox Fields, Null Handling, Date Math, and Conditionals"
+description: "NetSuite saved search formula patterns with working examples: CASE WHEN for checkbox fields and null values (NVL, NVL2), age-in-days date math, TO_CHAR date formatting, and bucketed AR aging columns. Copy-paste SQL formulas for the most common saved search use cases."
 date: "2026-08-07"
-updated: "2026-08-21"
+updated: "2026-09-14"
 tags: ["Saved Searches", "Reporting", "Admin", "NetSuite Tips"]
 ---
 

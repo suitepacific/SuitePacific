@@ -136,13 +136,13 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Account Optimization",
+  title: "NetSuite Account Optimization: Fix Slow Pages, Governance Errors, and Technical Debt",
   description:
-    "NetSuite account optimization and performance tuning: cleanup of legacy configurations, unused scripts and fields, slow saved searches, and governance issues without affecting live operations.",
+    "Slow saved searches, governance limit errors, and scripts that fire on every save are fixable. SuitePacific audits and optimizes live NetSuite accounts: script governance, saved search performance, workflow consolidation, and configuration cleanup.",
   alternates: { canonical: "/netsuite-account-optimization" },
   openGraph: {
-    title: "NetSuite Account Optimization",
-    description: "NetSuite account optimization and performance tuning: governance limit fixes, script audits, workflow consolidation, saved search cleanup, and technical debt reduction for live accounts.",
+    title: "NetSuite Account Optimization: Fix Slow Pages, Governance Errors, and Technical Debt",
+    description: "Slow saved searches, governance limit errors, and scripts that fire on every save are fixable. SuitePacific audits and optimizes live NetSuite accounts: script governance, saved search performance, workflow consolidation, and configuration cleanup.",
     url: "https://suitepacific.com/netsuite-account-optimization",
     type: "website",
     images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],

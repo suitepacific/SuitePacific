@@ -1,8 +1,8 @@
 ---
-title: "Post-Implementation NetSuite Support: Implementation Partner vs. Managed Support"
-description: "What post-implementation NetSuite support actually covers, how it differs from an implementation engagement, and how to know which type of provider you need right now."
+title: "Post-Implementation NetSuite Support: What It Covers and Who Provides It"
+description: "Post-implementation NetSuite support covers ongoing SuiteScript development, integration maintenance, workflow changes, administration, and release preparation after go-live. Here is what it includes, what it costs, and how it differs from the implementation engagement."
 date: "2026-08-09"
-updated: "2026-08-21"
+updated: "2026-09-14"
 tags: ["NetSuite", "Admin", "Post-Go-Live"]
 ---
 
