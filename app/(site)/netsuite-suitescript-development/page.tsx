@@ -124,7 +124,7 @@ const FAQ = [
   },
   {
     question: "Do you write scripts for specific SuiteScript versions?",
-    answer: "We write exclusively against SuiteScript 2.1, the current version. SuiteScript 1.0 is still active in many accounts but Oracle has been deprecating its API methods for several releases. If you have SuiteScript 1.0 scripts, we can migrate them to 2.1 as part of a cleanup project.",
+    answer: "We write exclusively against SuiteScript 2.1, the current supported version. NetSuite has announced that SuiteScript 1.0, 2.0, and 2.x will stop working in the 2028.2 release. If your account has scripts on those legacy versions, they need to be migrated before that deadline. SuitePacific audits legacy script inventories and handles both 2.0-to-2.1 updates and full 1.0 rewrites. See our SuiteScript 2.1 migration service for scope and timeline details.",
   },
   {
     question: "What happens after the script is deployed?",
@@ -207,6 +207,21 @@ export default function SuiteScriptDevelopmentPage() {
             Developer II and Administrator Professional), US-based, and works directly with the
             team managing the account. Plans start at $799 per month, month-to-month.
           </p>
+        </div>
+
+        {/* 2028.2 migration alert */}
+        <div className="mt-6 flex items-start gap-3 rounded-2xl border border-amber-200 bg-amber-50 p-4">
+          <AlertTriangle className="h-5 w-5 text-amber-500 mt-0.5 shrink-0" />
+          <div>
+            <p className="text-sm font-semibold text-amber-800">NetSuite 2028.2 deprecation deadline</p>
+            <p className="text-sm text-amber-700 mt-0.5">
+              Scripts using SuiteScript 1.0, 2.0, or 2.x stop working after the 2028.2 release. NetSuite is showing this warning on affected accounts now.{" "}
+              <Link href="/netsuite-suitescript-migration" className="font-medium underline hover:text-amber-900">
+                See the SuiteScript 2.1 migration service
+              </Link>{" "}
+              for audit scope and timeline.
+            </p>
+          </div>
         </div>
 
         <p className="mt-6 text-sm text-brand-400">
@@ -376,6 +391,12 @@ export default function SuiteScriptDevelopmentPage() {
         <div className="mt-6 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
           <p className="text-sm font-semibold text-brand-900 mb-3">From the blog</p>
           <ul className="space-y-2.5">
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-suitescript-2-1-migration" className="text-accent hover:underline">
+                NetSuite SuiteScript 2.1 migration: full audit and upgrade guide
+              </Link>{" "}
+              covers the 2028.2 deadline, what each migration type involves (2.0 update vs. 1.0 rewrite), and how to prioritize scripts by business risk.
+            </li>
             <li className="text-sm text-brand-400">
               <Link href="/blog/suitescript-best-practices" className="text-accent hover:underline">
                 SuiteScript best practices

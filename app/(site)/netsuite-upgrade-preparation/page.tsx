@@ -431,6 +431,12 @@ export default function NetSuiteUpgradePreparationPage() {
               </Link>{" "}
               covers governance unit consumption patterns and how to identify scripts at risk of hitting limits after an upgrade.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-suitescript-migration" className="text-accent hover:underline">
+                SuiteScript 2.1 migration service
+              </Link>{" "}
+              covers the 2028.2 deadline: scripts on SuiteScript 1.0, 2.0, or 2.x stop working after that release. If the upgrade preparation audit surfaces legacy script versions, that is where to start.
+            </li>
           </ul>
         </div>
 

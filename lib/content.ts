@@ -55,6 +55,7 @@ export const NAV_LINKS: NavLink[] = [
       { label: "Health Check", href: "/netsuite-health-check", description: "Independent audit of your live account with a written findings report." },
       { label: "Partner Replacement", href: "/netsuite-partner-replacement", description: "Switch NetSuite partners without losing momentum or account context." },
       { label: "SuiteScript Development", href: "/netsuite-suitescript-development", description: "Custom scripts for logic that standard configuration cannot handle." },
+      { label: "SuiteScript 2.1 Migration", href: "/netsuite-suitescript-migration", description: "Audit and migrate legacy SuiteScript 1.0 and 2.0 scripts before the 2028.2 deadline." },
       { label: "Administrator Support", href: "/netsuite-administrator-support", description: "Role configuration, permission management, and account maintenance." },
       { label: "Workflow Automation", href: "/netsuite-workflow-automation", description: "Approval workflows, notifications, and SuiteFlow automation." },
       { label: "Hire a NetSuite Developer", href: "/hire-netsuite-developer", description: "Dedicated NetSuite developer, no long-term contracts." },
