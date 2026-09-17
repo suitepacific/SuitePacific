@@ -246,17 +246,7 @@ export default function SupportAlternativePage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            An alternative to NetSuite support is a certified third-party consulting firm that
-            handles the support and development needs Oracle&apos;s own support tiers do not cover.
-            NetSuite&apos;s standard support handles platform bugs, standard feature questions, and
-            escalation to Oracle engineering. It does not cover SuiteScript customizations,
-            third-party integrations, workflow logic built during implementation, or configuration
-            specific to how your account was set up. A third-party alternative fills that gap:
-            direct access to a certified consultant who knows your account, same-day response on
-            active production issues, and coverage across the full account rather than only the
-            standard-functionality tier. For most live accounts two or more years past go-live,
-            the customization layer generates more support work than the platform itself, making a
-            third-party firm the practical choice for most live accounts, not an optional add-on.
+            SuitePacific is a certified third-party NetSuite support alternative for post-go-live accounts that need the customization layer Oracle&apos;s own support tiers do not cover. NetSuite standard support, included in every license, handles platform bugs, standard feature questions, and escalation to Oracle engineering for confirmed platform defects. It does not cover SuiteScript customizations, SuiteFlow workflows built by the implementation partner, third-party integrations, Advanced PDF templates, or configuration specific to the account. Oracle ACS adds functional guidance and Oracle escalation at a premium price but also excludes custom development and integration maintenance. A third-party support alternative covers the gap: SuiteScript development and debugging, workflow modification, integration maintenance, administration, saved search builds, and release regression testing at a fixed monthly rate with direct developer access. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Plans start at $799 per month on month-to-month terms after a three-month minimum.
           </p>
         </div>
 

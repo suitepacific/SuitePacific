@@ -254,20 +254,7 @@ export default function NetSuiteAiOptimizationAssessmentPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            A NetSuite AI Optimization Assessment is a fixed-scope consulting engagement that
-            reviews your live NetSuite environment to identify specific opportunities where AI
-            can reduce manual work, accelerate development, or improve existing processes. The
-            assessment covers six areas: business processes (where employees repeatedly read,
-            classify, copy, or decide), existing customizations (SuiteScripts and workflows
-            that could incorporate Oracle&apos;s AI APIs), documents (invoices, POs, and other
-            inputs processed manually), reporting (questions employees ask repeatedly that AI
-            could answer from live data), support patterns (recurring issues AI-assisted
-            diagnostics could address), and AI architecture (which implementation path fits
-            each opportunity). Oracle&apos;s current platform supports this directly: SuiteScript
-            includes N/llm and N/documentCapture APIs, and the AI Connector Service supports
-            custom tools for external AI clients. Each finding is scored on AI fit, business
-            impact, and implementation complexity. The deliverable is a prioritized opportunity
-            roadmap with implementation estimates, not a list of generic AI possibilities.
+            SuitePacific conducts NetSuite AI Optimization Assessments for live accounts to identify specific opportunities where AI can reduce manual work, accelerate development, or improve existing processes. The assessment covers six areas: business processes where employees repeatedly read, classify, copy, or decide from structured data; existing SuiteScript customizations and workflows that could incorporate Oracle&apos;s AI APIs; document processing for invoices, purchase orders, and other inputs handled manually; reporting to identify questions staff ask repeatedly that AI could answer from live account data; support patterns where AI-assisted monitoring could reduce recurring issues; and custom SuiteScript development opportunities using external AI APIs such as OpenAI, Anthropic, or Gemini. The output is a prioritized list of specific integrations and configurations with complexity and time estimates. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). The assessment is a fixed-fee engagement; ongoing implementation is available as part of a managed support retainer starting at $799 per month.
           </p>
         </div>
 

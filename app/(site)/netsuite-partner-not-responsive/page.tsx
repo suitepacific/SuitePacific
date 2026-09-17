@@ -95,20 +95,7 @@ export default function NetSuitePartnerNotResponsivePage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            An unresponsive NetSuite partner is almost always a structural problem rather than a
-            temporary communication issue. Large implementation firms prioritize active project work
-            over post-go-live support accounts. When your consultant is reassigned to a new
-            implementation, your requests enter a shared queue with no dedicated resource or defined
-            response time. The signs that the situation is structural: escalations that improve
-            briefly then revert, different consultants handling the account each time with no
-            retained context, production issues sitting open for more than one business day, and
-            requests that require a new statement of work before any work begins. If two or more of
-            these apply, the relationship has run its course. Switching to a dedicated support firm
-            does not require cooperation from the current partner. A new partner can read all
-            scripts, workflows, and configurations directly from your NetSuite account. Administrator
-            access is the only requirement to begin onboarding, and a transition typically takes two
-            to four weeks. SuitePacific handles this transition for accounts leaving unresponsive
-            NetSuite partners, typically completing onboarding within two weeks.
+            SuitePacific handles partner replacement for live NetSuite accounts where an unresponsive implementation firm has become a structural support problem. An unresponsive NetSuite partner is almost always structural rather than a temporary communication issue. Large implementation firms prioritize active project work over post-go-live support accounts. When a consultant is reassigned to a new implementation, support requests enter a shared queue with no dedicated resource or defined response time. Signs that the situation is structural: escalations that improve briefly then revert, different consultants handling the account each time with no retained context, and simple requests taking weeks to complete. Transitioning covers a structured 30-day onboarding period: account review, documentation of existing customizations, and a handoff review before new work begins. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional) and provides direct developer access on every engagement. Plans start at $799 per month on month-to-month terms after a three-month minimum.
           </p>
         </div>
 

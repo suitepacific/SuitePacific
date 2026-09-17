@@ -217,17 +217,7 @@ export default function NetSuiteSupportPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            NetSuite support for post-go-live accounts covers the full technical layer that
-            Oracle&apos;s standard support and ACS do not: SuiteScript development and debugging,
-            SuiteFlow workflow creation and modification, Celigo and third-party integration
-            maintenance, NetSuite administration (roles, custom fields, forms, permissions),
-            saved search and dashboard builds, Advanced PDF template work, release impact
-            testing, and break-fix response when something fails in production. SuitePacific
-            provides this support as a managed monthly retainer starting at $799 per month,
-            with no annual contract and direct access to the certified consultant managing
-            the account. The retainer covers all routine technical work as it surfaces, without
-            per-task scoping or project proposals for individual requests. Emergency support
-            for one-time production failures is also available without a retainer commitment.
+            SuitePacific provides NetSuite support for post-go-live accounts as a fixed monthly retainer covering the full technical layer Oracle&apos;s standard support and ACS do not. Covered services include SuiteScript development and debugging, SuiteFlow workflow creation and modification, Celigo and third-party integration maintenance, NetSuite administration covering roles, custom fields, forms, and permissions, saved search and dashboard builds for operations and finance, Advanced PDF template work for invoices and business documents, and Sandbox regression testing before each bi-annual NetSuite release. Oracle standard support handles confirmed platform bugs and standard feature questions. ACS adds functional guidance at a premium price. Neither covers the customization layer that most live accounts depend on: the scripts, workflows, integrations, and configuration logic built during implementation. SuitePacific covers exactly that layer. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Plans start at $799 per month on month-to-month terms after a three-month minimum.
           </p>
         </div>
 

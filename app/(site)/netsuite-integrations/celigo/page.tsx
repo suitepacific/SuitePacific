@@ -187,17 +187,7 @@ export default function NetSuiteCeligoIntegrationPage() {
         <div className="mt-5 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            Celigo is an iPaaS (integration platform as a service) that connects NetSuite to external
-            systems through configurable integration flows. SuitePacific designs, builds, and maintains
-            Celigo integrations for NetSuite accounts, including connections to Shopify, Salesforce,
-            HubSpot, Amazon, WooCommerce, and custom REST or SOAP API targets. Services include new
-            integration builds, repair of broken or degraded Celigo flows, ongoing maintenance as
-            connected platforms evolve, error monitoring and alerting, and migration of legacy integrations
-            to current Celigo architecture. SuitePacific holds Celigo Mastery Level 4 certification,
-            the highest tier available from Celigo, reflecting advanced platform expertise across
-            build complexity and production volume. Integrations are built with explicit error handling,
-            tested before going live, and documented for ongoing maintainability. Managed support
-            retainers include Celigo integration maintenance as part of ongoing account coverage.
+            SuitePacific designs, builds, and maintains Celigo integrations for NetSuite accounts connecting to Shopify, Salesforce, HubSpot, Amazon, WooCommerce, and custom REST or SOAP API targets. Celigo is an iPaaS (integration platform as a service) that connects NetSuite to external systems through configurable integration flows. Services include new integration builds for systems not yet connected to NetSuite, repair of broken or degraded Celigo flows where sync has failed or data is landing incorrectly, ongoing maintenance as connected platforms update their APIs and data models, error monitoring and alerting setup, and migration of legacy SuiteScript-based integrations to managed Celigo flows. Common issues handled include flow errors from API version changes, field mapping mismatches after a NetSuite field ID change, filter logic that no longer captures the correct records, and rate limit errors from high-volume sync jobs. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Plans start at $799 per month on month-to-month terms after a three-month minimum.
           </p>
         </div>
 

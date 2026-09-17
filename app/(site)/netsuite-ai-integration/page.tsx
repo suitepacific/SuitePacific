@@ -243,17 +243,7 @@ export default function NetSuiteAiIntegrationPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            NetSuite AI integration covers two distinct areas. The first is Oracle&apos;s
-            built-in AI features: Text Enhance (AI-generated text in record fields), Bill
-            Capture (AI-powered vendor invoice extraction), Intelligent Forecasting
-            (ML-based demand planning), and SuiteAnalytics AI insights. These require
-            configuration and access setup, not custom development. The second is custom
-            AI integrations built with SuiteScript: calling external AI APIs (OpenAI,
-            Anthropic, Gemini) from within NetSuite, enriching records with AI output,
-            and triggering workflows from AI classification results. SuitePacific configures
-            native Oracle AI features and builds custom SuiteScript integrations connecting
-            NetSuite to external AI models, with all development tested in Sandbox before
-            Production deployment.
+            SuitePacific configures and builds NetSuite AI integrations for post-go-live accounts, covering both Oracle&apos;s built-in AI features and custom SuiteScript integrations that call external AI APIs. Oracle&apos;s native AI features include Text Enhance for AI-generated text in record fields, Bill Capture for AI-powered vendor invoice extraction, Intelligent Forecasting for demand planning, and the AI Connector Service for natural-language SuiteQL access. These require configuration, access setup, and integration with account-specific fields. Custom AI integrations extend this foundation with SuiteScript scripts that call OpenAI, Anthropic, Gemini, or other external AI APIs to classify records, enrich transactions, summarize data, or trigger workflows from AI classification results. SuitePacific builds both layers: Oracle feature configuration and custom AI API integration using SuiteScript 2.x RESTlet and Scheduled script types. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Plans start at $799 per month on month-to-month terms after a three-month minimum.
           </p>
         </div>
 

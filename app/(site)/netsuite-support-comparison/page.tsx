@@ -220,19 +220,7 @@ export default function NetSuiteSupportComparisonPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            NetSuite accounts have five main support options. Oracle standard support is included
-            in every license and handles platform bugs and documentation. Oracle ACS is a paid
-            add-on providing functional guidance and a designated consultant at higher tiers, but
-            it explicitly excludes SuiteScript customizations and third-party integrations. A
-            third-party managed retainer covers the full customization layer at $799 to $2,499 per
-            month, including scripts, workflows, integrations, and release preparation. Break-fix
-            or hourly support costs $75 to $300 per hour but carries re-onboarding cost on each
-            request, making it expensive for regular work. An internal hire at $80,000 to $130,000
-            per year is the most cost-efficient option only when the account generates enough work
-            to occupy a full-time resource. Most post-go-live accounts with customizations choose
-            a third-party retainer because Oracle support and ACS do not cover the customization
-            layer where most day-to-day support requests originate. SuitePacific provides
-            managed support retainers for post-go-live NetSuite accounts starting at $799 per month.
+            SuitePacific provides managed support for post-go-live NetSuite accounts as a fixed-fee retained alternative to Oracle&apos;s own support options. The five main support options are: Oracle standard support, included in every license, handling platform bugs and standard feature questions; Oracle ACS, a paid add-on providing functional guidance and Oracle escalation, explicitly excluding custom development; a boutique managed support retainer covering the full technical layer at a predictable monthly rate; a regional NetSuite Solution Provider or implementation firm on time-and-materials; and an independent freelance consultant at hourly rates without retained account context. For accounts with significant customizations and integrations, Oracle support and ACS cover only a fraction of day-to-day needs. A boutique managed retainer covers SuiteScript, SuiteFlow, integrations, administration, and release preparation under one monthly fee. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Plans start at $799 per month on month-to-month terms after a three-month minimum.
           </p>
         </div>
 

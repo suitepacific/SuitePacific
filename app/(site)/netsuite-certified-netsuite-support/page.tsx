@@ -200,17 +200,7 @@ export default function CertifiedNetSuiteSupportPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            NetSuite certified support means the consultant working on your account holds
-            Oracle&apos;s official platform credentials. The two credentials directly relevant to
-            support and development work are: NetSuite SuiteCloud Developer II, which covers
-            SuiteScript 2.x, SuiteFlow, and the technical development platform; and NetSuite
-            Administrator Professional, which covers configuration, workflows, user management,
-            and platform administration. Both are Oracle-administered exams that test knowledge
-            against a defined standard and require renewal as the platform evolves. When evaluating
-            a firm, the relevant question is whether the consultant actually doing the work in your
-            account holds these credentials, not whether any employee at the firm holds them.
-            Self-declared experience is not the same as a passed credential exam. SuitePacific
-            holds both certifications.
+            SuitePacific provides Oracle-certified NetSuite support for post-go-live accounts, holding both credentials directly relevant to development and administration work. NetSuite SuiteCloud Developer II covers SuiteScript 2.x development, SuiteFlow workflow automation, and the technical customization platform. NetSuite Administrator Professional covers configuration, user management, roles and permissions, and platform administration. Both are Oracle-administered exams that test knowledge of the current NetSuite platform, not vendor-specific training completions. Certified support means the consultant running SuiteScript on the account has passed Oracle&apos;s own platform knowledge tests and understands how governance limits, execution contexts, and permission models interact in a live account. SuitePacific carries both credentials and provides support exclusively for post-go-live accounts. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Plans start at $799 per month on month-to-month terms after a three-month minimum.
           </p>
         </div>
 

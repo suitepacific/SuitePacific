@@ -251,19 +251,7 @@ export default function NetSuiteAiInvoiceProcessingPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            NetSuite AI invoice processing is a custom SuiteScript integration that extends
-            NetSuite&apos;s AP workflow with AI-powered invoice data extraction, line-item
-            validation, PO matching, and exception routing. The integration uses Oracle&apos;s
-            N/documentCapture API, available since NetSuite 2025.2, which supports field
-            extraction, table extraction, document classification, and extraction confidence
-            levels for invoice documents. Extracted data passes through validation: header
-            fields are checked against vendor master records, line items are validated
-            against purchase orders and item records, and account-specific business rules
-            are applied via SuiteScript. Invoices that fail configured validation or
-            confidence thresholds are routed for human review rather than automatically
-            creating a bill. The integration complements NetSuite&apos;s native invoice capture
-            by adding custom extraction logic, validation rules, and exception handling for
-            AP workflows that require more than the current setup provides.
+            SuitePacific builds and maintains NetSuite AI invoice processing integrations for post-go-live accounts that need AP automation beyond NetSuite&apos;s standard Bill Capture functionality. The integration uses custom SuiteScript calling the N/documentCapture API, available since NetSuite 2025.2, to extract header fields, line items, and document metadata from uploaded vendor invoices. Extracted data passes through account-specific validation: header fields checked against vendor master records, line items validated against purchase orders and item records, and exception routing triggered for invoices that fall outside defined matching rules. The integration includes custom approval workflows for exceptions, GL coding logic based on vendor type and expense category, and error reporting dashboards for the AP team. All components are tested in Sandbox against a real invoice sample set before production deployment. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Plans start at $799 per month on month-to-month terms after a three-month minimum.
           </p>
         </div>
 

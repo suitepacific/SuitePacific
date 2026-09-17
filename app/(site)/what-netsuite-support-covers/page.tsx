@@ -162,21 +162,7 @@ export default function WhatNetSuiteSupportCoversPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            Oracle NetSuite standard support, included in every license, covers the platform:
-            platform-level bugs in standard functionality, questions about native features,
-            access to Oracle&apos;s knowledge base, and escalation to Oracle engineering for
-            confirmed platform defects. It explicitly excludes everything built specifically
-            for your account. This means SuiteScript customizations of any type are not
-            covered, SuiteFlow workflows built for your account are not covered, third-party
-            integrations including Shopify, Salesforce, Celigo, and EDI connectors are not
-            covered, and custom records, fields, saved searches, and Advanced PDF templates
-            are not covered. Oracle ACS adds functional guidance and a designated consultant
-            at higher tiers but does not cover SuiteScript development, integration debugging,
-            or custom workflow logic. For most post-go-live accounts, the work that generates
-            the most support requests sits in the customization layer that Oracle support and
-            ACS do not cover. SuitePacific provides managed support for this customization
-            layer, covering scripts, workflows, integrations, and saved searches, starting
-            at $799 per month with no long-term contract.
+            SuitePacific provides the technical support layer that Oracle&apos;s standard support and ACS explicitly exclude. Oracle standard support, included in every NetSuite license, covers platform-level bugs in standard functionality, questions about native features, access to Oracle&apos;s knowledge base, and escalation to Oracle engineering for confirmed platform defects. It does not cover SuiteScript customizations of any type, SuiteFlow workflows built for the account, third-party integrations, Advanced PDF templates, saved searches built against custom fields, or any configuration specific to how the account was set up during implementation. Oracle ACS adds functional guidance and a designated consultant at higher tiers but also excludes custom development and integration maintenance. A third-party managed support retainer covers that technical layer: SuiteScript, workflows, integrations, administration, reporting, and release preparation. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Plans start at $799 per month on month-to-month terms after a three-month minimum.
           </p>
         </div>
 

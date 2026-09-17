@@ -225,21 +225,7 @@ export default function NetSuiteUpgradePreparationPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            NetSuite upgrade preparation is the process of testing an account&apos;s custom scripts,
-            workflows, and integrations against a Sandbox environment that mirrors production before
-            Oracle deploys the version upgrade to the production data center. Preparation starts
-            six to eight weeks before the upgrade window with a Sandbox refresh request. Testing
-            then runs in three parallel tracks: SuiteScript regression testing against every
-            active script deployment, workflow validation through each state and transition,
-            and integration testing against each connector with real payloads. The release notes
-            for each affected module are reviewed systematically against the account&apos;s specific
-            customizations. Common failure modes are scripts that pass Sandbox testing but hit
-            governance limits under production data volume, integrations that silently stop
-            passing records after an API behavior change, and workflow entry conditions that
-            match unintended records because a native field value changed. A documented test
-            pass before the upgrade significantly reduces time-to-resolution for any issues
-            that surface after the production upgrade. SuitePacific provides upgrade preparation
-            as a fixed-fee engagement and includes it in ongoing managed support retainers.
+            SuitePacific prepares live NetSuite accounts for bi-annual Oracle version upgrades by testing custom scripts, workflows, and integrations in a Sandbox that mirrors production before the upgrade window opens. Preparation starts six to eight weeks before the upgrade with a Sandbox refresh request, then runs three parallel testing tracks: SuiteScript regression testing against every active script deployment, workflow validation through each state and transition, and integration smoke tests against the connected systems that exchange data with the account. NetSuite releases changes to SuiteScript APIs, record types, field IDs, and workflow conditions in each bi-annual update. Scripts and workflows that passed all tests against the current production release may fail against the new release if they reference deprecated APIs or changed record structures. SuitePacific identifies breakage in Sandbox, fixes it, and confirms the fixes before the production upgrade window. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Plans start at $799 per month on month-to-month terms after a three-month minimum.
           </p>
         </div>
 

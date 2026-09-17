@@ -189,17 +189,7 @@ export default function NetSuiteEmergencySupportPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            NetSuite emergency support covers break-fix situations where a live account is failing
-            and normal support response times are not acceptable. The most common scenarios are a
-            SuiteScript error breaking a critical record type after a NetSuite release update, an
-            integration stopping mid-sync and leaving data in an inconsistent state, a workflow
-            triggering incorrectly and generating erroneous records, or a permission or
-            configuration change that locked out users or corrupted a process. SuitePacific
-            provides same-business-day response for active emergencies, with direct access to the
-            developer diagnosing and fixing the issue. No ticket queue, no Tier 1 triage, no
-            account manager relay. The fix is diagnosed, explained, built in Sandbox where
-            possible, and deployed to Production. Post-fix documentation covers what broke, why
-            it broke, and what was changed so the fix can be understood and maintained.
+            SuitePacific provides NetSuite emergency support for live accounts where a production failure cannot wait for standard response timelines. The most common break-fix scenarios are a SuiteScript error breaking a critical record type after a NetSuite release update, an integration stopping mid-sync and leaving data in an inconsistent state, a workflow triggering incorrectly and generating erroneous records, or a permission change that locked out users or corrupted a process. Emergency support response begins same-day for accounts on an active Care retainer. For accounts not on retainer, SuitePacific accepts emergency engagements on a case-by-case basis. Diagnosis starts with accessing the Execution Log and Script Deployment records to identify the root cause before any fix is applied. All changes are tested in Sandbox before reaching production when time allows. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Ongoing Care retainers include emergency priority escalation starting at $799 per month.
           </p>
         </div>
 

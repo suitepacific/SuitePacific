@@ -215,19 +215,7 @@ export default function NetSuiteTechnicalDebtPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            NetSuite technical debt refers to the accumulated cost of decisions made in a live
-            account that were acceptable at the time but compound over time. Common forms include
-            SuiteScript deployments that were never reviewed for governance efficiency after
-            go-live, workflows configured with broad entry conditions that were meant to be
-            tightened after testing and never were, custom fields added for requirements that
-            changed before launch and never removed, integrations built against the account as it
-            existed at go-live and never updated as the business evolved, and saved searches with
-            inefficient formulas that slow page loads under production data volumes. Technical debt
-            is not the result of poor implementation work; it is the predictable outcome of a live
-            account that keeps moving while documentation and maintenance work falls behind.
-            SuitePacific assesses NetSuite technical debt through a structured account review,
-            documents findings by severity, and prioritizes remediation work based on what creates
-            the most operational risk or development friction.
+            SuitePacific audits and remediates NetSuite technical debt for post-go-live accounts where accumulated customization decisions from the implementation phase are creating performance issues, governance limit errors, or maintenance risk. NetSuite technical debt commonly includes SuiteScript deployments never reviewed for governance efficiency after go-live, workflows configured with broad entry conditions meant to be tightened after testing and never were, custom fields added for requirements that changed before launch and never removed, and integrations built against the account as it existed at go-live that have not been updated as the business evolved. Each category compounds over time: un-optimized scripts multiply governance limit errors, workflow misconfigurations generate erroneous records, and integrations fail silently as connected systems evolve. SuitePacific audits, documents, and remediates each layer. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Technical debt remediation is available as a standalone engagement or within an ongoing managed support retainer starting at $799 per month.
           </p>
         </div>
 

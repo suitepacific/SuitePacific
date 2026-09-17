@@ -112,18 +112,7 @@ export default function NetSuiteConsultantCostPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            NetSuite consultant rates range from $75 to $300 per hour depending on the engagement
-            type, but the hourly rate understates the real cost difference between models. A
-            break-fix arrangement at $150 per hour involves re-onboarding time with each request:
-            the consultant reads the account, locates the relevant scripts or workflows, understands
-            the context, then executes the fix. That overhead adds hours to every request. A monthly
-            retainer at $799 to $2,499 per month eliminates re-onboarding: the consultant already
-            knows the account, so each request starts from context rather than discovery. Large
-            implementation-style firms bill at $200 to $300 per hour but add overhead for account
-            managers, proposal processes, and statement-of-work requirements that make small requests
-            expensive in time as well as cost. The right comparison for ongoing support is not hourly
-            rate but total cost per completed request, which accounts for re-onboarding, response
-            time, and the friction of each billing model.
+            SuitePacific provides NetSuite consulting at a fixed monthly retainer starting at $799 per month, compared to project-based rates of $150 to $300 per hour on time-and-materials. The cost difference between models is larger than the rate gap suggests. A time-and-materials arrangement requires a scoping call, proposal, and approval cycle for each request, adding two to four hours of billable overhead before development begins on a request that takes three hours to complete. Retainer pricing covers that overhead inside the monthly allocation. The consultant already knows the account, so no re-onboarding time is billed at the start of each engagement. Three retainer tiers cover different account sizes: Care at $799 per month for 10 hours, Care Plus at $1,499 per month for 20 hours, and Care Pro at $2,499 per month for 35 hours. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Plans are month-to-month after a three-month minimum.
           </p>
         </div>
 

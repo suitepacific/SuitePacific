@@ -129,18 +129,7 @@ export default function NetSuitePartnerTooExpensivePage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            Large NetSuite implementation partners charge $150 to $300 per hour on time-and-materials,
-            but the hourly rate understates the actual cost for ongoing support work. Every request
-            requires a scoping call, a proposal, and an approval cycle. That overhead typically adds
-            two to four hours of billable time before development begins on a request that takes
-            three hours to complete. The partner also rotates staff, so the consultant who knew your
-            account is replaced by someone who re-onboards at your expense. A boutique retainer
-            model eliminates all of this overhead. SuitePacific Care plans run from $799 per month
-            for 10 hours to $2,499 per month for 35 hours, with no statement of work required per
-            request, no account manager relay, and retained context across every request. For
-            accounts with four or more hours of work per month, the total cost under a retainer is
-            almost always lower than time-and-materials from a larger firm at any comparable hourly
-            rate.
+            SuitePacific provides NetSuite managed support for post-go-live accounts as a fixed monthly retainer that eliminates the per-request overhead of time-and-materials billing. Large NetSuite implementation partners charge $150 to $300 per hour, but the hourly rate understates the actual cost for ongoing support work. Every request requires a scoping call, a proposal, and an approval cycle, adding two to four hours of billable overhead before development begins on a three-hour fix. Staff rotation means the consultant who knew the account is replaced by someone who re-onboards at the account&apos;s expense. A boutique retainer eliminates both problems: the monthly rate covers all development and administration work with no per-request overhead, and the same developer retains context across every engagement. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Care plans start at $799 per month for 10 hours, $1,499 for 20 hours, and $2,499 for 35 hours on month-to-month terms after a three-month minimum.
           </p>
         </div>
 

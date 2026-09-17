@@ -395,20 +395,7 @@ export default function HireNetSuiteDeveloperPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            Hiring a NetSuite developer on a managed retainer means working with a
-            NetSuite-certified developer who maintains deep context on your specific account,
-            its customizations, and its integrations, without the cost and commitment of a
-            full-time internal hire. A full-time NetSuite developer costs $80,000 to $130,000
-            per year in salary plus benefits, and most mid-market accounts do not generate
-            enough development work to keep a full-time resource occupied. Common development
-            work on a retainer includes SuiteScript customizations across all six script types,
-            SuiteFlow workflow design and debugging, integration builds and maintenance for
-            Shopify, Salesforce, and Celigo, Advanced PDF template work, and administration
-            changes that require scripting. SuitePacific provides access to NetSuite-certified
-            developers on a monthly retainer starting at $799 per month for 10 hours of
-            development coverage. All work is done in Sandbox first. There is no long-term
-            contract and no statement of work required for routine requests within an active
-            engagement.
+            SuitePacific provides retained NetSuite development for post-go-live accounts that need an experienced developer with deep account context without the cost and commitment of a full-time internal hire. A full-time NetSuite developer costs $80,000 to $130,000 per year in salary plus benefits, and most mid-market accounts do not generate enough ongoing development work to keep a full-time resource occupied. A managed retainer covers the same technical scope: SuiteScript 2.x development for automation and business logic, SuiteFlow workflow automation, Celigo and REST integration builds, Advanced PDF template development, saved search and dashboard creation, and Sandbox regression testing before each bi-annual NetSuite release. Retained context means the developer already understands the account&apos;s customization layer and executes requests without re-onboarding overhead. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Plans start at $799 per month on month-to-month terms after a three-month minimum.
           </p>
         </div>
 

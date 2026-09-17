@@ -358,18 +358,7 @@ export default function AcsAlternativePage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            For SMBs replacing NetSuite Advanced Customer Support (ACS), the best alternative is a
-            certified managed support firm that covers the customization layer ACS does not touch.
-            ACS is a premium Oracle support tier providing access to senior NetSuite resources and
-            faster escalation for platform defects. What ACS excludes: custom SuiteScript,
-            third-party integrations, and anything built by your implementation partner. For most
-            live SMB accounts, the majority of actual support requests fall in that excluded layer.
-            The four ACS tiers are Advise, Monitor, Optimize, and Architect; none includes
-            SuiteScript development or integration maintenance. ACS Monitor costs approximately
-            $1,200 per month for roughly 36 hours per quarter, paid annually. SuitePacific is a
-            NetSuite ACS alternative for SMBs starting at $799 per month on a month-to-month basis,
-            covering administration, SuiteScript, integrations, and custom workflows with direct
-            access to the same certified consultant on every request.
+            SuitePacific is the ACS alternative for live NetSuite accounts that need the technical support layer Oracle&apos;s paid support add-on excludes. ACS (Advanced Customer Support) covers standard functional guidance and Oracle escalation access but explicitly does not include custom SuiteScript development, third-party integration maintenance, or workflow logic built by an implementation partner. The four ACS tiers are Advise, Monitor, Optimize, and Architect; none includes custom development or integration support. For most post-go-live SMB accounts, the majority of actual support requests fall in that excluded layer. A managed support retainer from an independent certified firm covers SuiteScript, SuiteFlow workflows, Celigo and REST integrations, Advanced PDF templates, saved searches, and administration at a fixed monthly rate. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Plans start at $799 per month, covering the full technical stack ACS excludes, on month-to-month terms after a three-month minimum.
           </p>
         </div>
 

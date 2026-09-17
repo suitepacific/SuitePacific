@@ -293,18 +293,7 @@ export default function NetSuiteAiReportingPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            NetSuite AI reporting gives teams a way to ask questions about NetSuite data
-            in plain language and receive answers drawn from account records. Oracle&apos;s
-            AI Connector Service already provides natural-language access to NetSuite
-            through supported external AI clients, including the ability to run SuiteQL,
-            retrieve records, and execute saved searches. SuitePacific builds on this
-            foundation to deliver account-specific implementations: a controlled interface
-            embedded directly in NetSuite, custom query logic incorporating account-specific
-            fields and records, role-aware access aligned to existing NetSuite permissions,
-            and result formatting specific to your reporting requirements. Depending on what
-            your team needs, SuitePacific can help configure the AI Connector for your
-            account, develop custom SuiteScript tools that extend it, or build a
-            Suitelet-based reporting experience embedded inside NetSuite.
+            SuitePacific builds NetSuite AI reporting integrations for post-go-live accounts that need natural-language access to NetSuite data beyond what standard saved searches and dashboards provide. Oracle&apos;s AI Connector Service supports natural-language queries against NetSuite data through external AI clients, including SuiteQL execution, record retrieval, and saved search invocation. SuitePacific extends this with account-specific implementations: a controlled query interface embedded in NetSuite, custom SuiteQL logic incorporating account-specific custom fields and record types, role-aware access aligned with existing NetSuite permission structures, and prompt templates calibrated to the account&apos;s chart of accounts, subsidiary structure, and reporting requirements. The result is an AI reporting layer that answers questions specific to the account rather than generic NetSuite queries. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Implementation is available as a standalone project or within an ongoing managed support retainer starting at $799 per month.
           </p>
         </div>
 

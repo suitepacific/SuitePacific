@@ -113,19 +113,7 @@ export default function NetSuitePartnerTooSlowPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            Slow NetSuite partner response is structural, not a communication problem that escalation
-            will fix. Large consulting firms run shared resource pools: your consultant handles
-            several clients simultaneously and your request waits behind whichever project is most
-            urgent to the firm that week. A statement of work requirement for each request adds days
-            of back-and-forth before a two-hour fix can begin. When the consultant who knew your
-            account moves to another project, the replacement re-onboards at your expense before
-            making any changes. The combination of shared resources, per-request overhead, and zero
-            retained context produces consistently slow turnaround on accounts with regular ongoing
-            needs. A support-first model removes these bottlenecks: direct access to the developer
-            doing the work with no account manager relay, no statement of work for routine requests
-            within an active engagement, and retained account context that eliminates re-onboarding
-            time. Urgent production issues are escalated same-day rather than entering a shared
-            queue. SuitePacific operates this support-first model for post-go-live NetSuite accounts.
+            SuitePacific provides NetSuite post-go-live support for accounts where slow partner response has become a structural problem that escalation will not fix. Slow response from a large implementation firm is structural: shared resource pools mean the account waits behind whichever project is most urgent to the firm that week. A statement-of-work requirement for each request adds days of back-and-forth before a two-hour fix can begin. When the consultant who knew the account moves to another project, the replacement re-onboards at the account&apos;s expense before any work starts. Transitioning to a retained specialist eliminates the queue and the re-onboarding cost. SuitePacific provides one-business-day response for non-urgent requests and same-day escalation for production issues. Retained account context means no re-explaining history on each request. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Plans start at $799 per month on month-to-month terms after a three-month minimum.
           </p>
         </div>
 

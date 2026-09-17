@@ -252,19 +252,7 @@ export default function NetSuiteAdminSupportSmallBusinessPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            Fractional NetSuite administrator support gives small businesses access to an
-            experienced NetSuite administrator on a dedicated monthly retainer, covering the
-            full range of ongoing configuration work without the cost of a full-time internal
-            hire. A full-time NetSuite administrator at a mid-market company earns $80,000 to
-            $130,000 per year. Most small businesses do not generate enough ongoing NetSuite
-            administration work to justify that cost. Common monthly requests include user
-            provisioning and deactivation, role and permission adjustments, custom field
-            additions and modifications, saved search creation and troubleshooting, form layout
-            changes, and periodic review of inactive records and configurations. SuitePacific
-            provides fractional NetSuite administrator support for small businesses on a monthly
-            retainer starting at $799 per month, covering all standard administration requests
-            with direct access to the same certified administrator on every request and no
-            long-term contract.
+            SuitePacific provides fractional NetSuite administrator support for small businesses that need ongoing account maintenance without the cost of a full-time internal hire. Common monthly administration requests include user provisioning and deactivation, role and permission adjustments, custom field additions and modifications, saved search creation and troubleshooting, form layout changes, and workflow configuration updates that do not require SuiteScript. A full-time NetSuite administrator at a mid-market company earns $80,000 to $130,000 per year. Most small businesses do not generate enough ongoing administration work to justify that cost. A fractional retainer covers the same work at a fraction of the cost, with a certified specialist who retains context on the account across every engagement. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional) and handles both administration and SuiteScript development within the same retainer. Plans start at $799 per month on month-to-month terms after a three-month minimum.
           </p>
         </div>
 

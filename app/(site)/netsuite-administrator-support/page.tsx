@@ -221,21 +221,7 @@ export default function NetSuiteAdministratorSupportPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            NetSuite administrator support covers the ongoing configuration work that keeps a live
-            account aligned with a growing business: adding users and adjusting roles, creating and
-            modifying custom fields, updating saved searches and dashboards, maintaining forms and
-            record layouts, and handling the configuration changes that surface as processes evolve.
-            This work does not require custom scripting but does require someone who understands
-            how NetSuite&apos;s permission model works, how role-based field visibility interacts with
-            workflow conditions, and how form changes can break saved searches that reference the
-            previous layout. Most businesses going live on NetSuite underestimate how much ongoing
-            administration work a live account generates. Common monthly requests include role
-            changes, field additions, saved search updates, form modifications, and periodic
-            clean-up of inactive records and stale configurations. SuitePacific provides this as a
-            fractional NetSuite administrator model: a dedicated Oracle-certified administrator on
-            a monthly retainer, with direct access to the same person on every request, at a
-            fraction of the cost of a full-time hire. Plans from $799 per month, month-to-month,
-            no annual contract.
+            SuitePacific provides NetSuite administrator support for post-go-live accounts that need ongoing configuration work to keep the account aligned with a growing business. Administration covers adding users and adjusting roles and permissions, creating and modifying custom fields, updating saved searches and dashboards, maintaining forms and record layouts, and handling the configuration changes that surface as processes evolve. This work does not require custom scripting but does require deep familiarity with how NetSuite&apos;s permission model works, how role-based field visibility interacts with workflow conditions, and how form changes affect saved searches that reference the prior layout. Most businesses going live on NetSuite underestimate how much ongoing administration their account generates. SuitePacific handles both administration and SuiteScript development within the same monthly retainer. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Plans start at $799 per month on month-to-month terms after a three-month minimum.
           </p>
         </div>
 
