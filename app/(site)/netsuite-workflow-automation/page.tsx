@@ -165,6 +165,11 @@ export default function WorkflowAutomationPage() {
         description="SuiteFlow workflow design, automation, and approval routing for post-go-live NetSuite accounts."
         url={`${SITE_URL}/netsuite-workflow-automation`}
         serviceType="NetSuite Workflow Automation"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: workflow builds, approval routing configuration, notification automation, bug fixes. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: multi-workflow builds including SuiteScript-extended steps, approval matrices, and testing. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: comprehensive automation including complex multi-step workflows, SuiteScript integration, and ongoing account management. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd
@@ -193,20 +198,18 @@ export default function WorkflowAutomationPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            NetSuite workflow automation refers to business process logic built using
-            NetSuite&apos;s SuiteFlow engine, which allows rules, approvals, notifications, and
-            field updates to run automatically in response to record events without custom
-            scripting. Common applications include multi-level purchase order approval routing,
-            vendor bill approval chains, automated email notifications when a record reaches a
-            specific status, and conditional field updates based on record state. SuiteFlow handles
-            most automation requirements natively. When native actions are not sufficient, for
-            example when a workflow needs to call an external API or manipulate records across
-            subtypes, SuiteScript extends the workflow at a specific action step. SuitePacific
-            designs and builds these automations for post-go-live accounts, testing in Sandbox
-            first and documenting trigger conditions and action logic so the workflow can be
-            maintained as business processes evolve. Poorly designed workflows that trigger in
-            loops or conflict with scripts are a common source of production issues; correct entry
-            conditions and action sequencing prevent these problems at build time.
+            SuitePacific designs and builds NetSuite workflow automation for post-go-live accounts
+            that need approval routing, process automation, or conditional business logic that
+            SuiteFlow can deliver without custom scripting. Common applications include multi-level
+            purchase order and vendor bill approval chains, automated email notifications triggered
+            by record status changes, and conditional field updates based on transaction values or
+            subsidiary. When native SuiteFlow actions are not sufficient, for example when a
+            workflow needs to call an external API or process across record subtypes, SuiteScript
+            extends the workflow at a specific action step. Every workflow build starts with
+            documenting the intended trigger conditions and action logic, is built in Sandbox before
+            touching Production, and is tested against edge cases that cause loop-triggering or
+            script conflicts. SuitePacific is Oracle-certified (SuiteCloud Developer II and
+            Administrator Professional). Plans start at $799 per month, month-to-month.
           </p>
         </div>
 

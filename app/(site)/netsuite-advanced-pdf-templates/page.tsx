@@ -164,6 +164,11 @@ export default function AdvancedPdfTemplatesPage() {
         description="Custom Advanced PDF/HTML templates using FreeMarker for NetSuite invoices, purchase orders, and statements."
         url={`${SITE_URL}/netsuite-advanced-pdf-templates`}
         serviceType="NetSuite PDF Templates"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: template layout changes, FreeMarker fixes, upgrade-related rendering failures, new document type builds. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: multiple template builds including conditional logic, multi-currency formatting, and language localization. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full template library builds and ongoing SuiteScript and workflow support alongside PDF template work. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd
@@ -192,19 +197,19 @@ export default function AdvancedPdfTemplatesPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            NetSuite Advanced PDF templates are the print and email documents generated directly
-            from NetSuite records: invoices, sales orders, purchase orders, statements, packing
-            slips, and any other document sent to customers or vendors. NetSuite generates these
-            using its Advanced PDF/HTML template engine, which uses HTML and CSS for layout and
-            FreeMarker for dynamic content. Template development requires knowledge of both
-            FreeMarker syntax and NetSuite&apos;s field access model, since data is pulled through
-            NetSuite-specific template syntax rather than standard HTML. Common requirements
-            include company branding, conditional content based on record values, multi-currency
-            formatting, language localization, multi-column line item tables with configurable
-            columns, and footer calculations. Templates also break after NetSuite version upgrades
-            when field accessor behavior or rendering behavior changes. SuitePacific builds and
-            modifies NetSuite Advanced PDF templates for post-go-live accounts, handling layout
-            changes, conditional logic, FreeMarker errors, and upgrade-related rendering failures.
+            SuitePacific builds and modifies NetSuite Advanced PDF templates for post-go-live
+            accounts that need custom invoices, purchase orders, packing slips, statements, or
+            any other document generated from a NetSuite record. NetSuite generates these documents
+            using its Advanced PDF/HTML engine, which combines HTML and CSS for layout with
+            FreeMarker for dynamic content pulled from the record. Template development requires
+            both FreeMarker syntax knowledge and NetSuite&apos;s field access model, which differs
+            from standard HTML data binding. Common requirements include company branding,
+            conditional line item columns, multi-currency formatting, language localization, and
+            footer totals. Templates also break after bi-annual NetSuite upgrades when field
+            accessor or rendering behavior changes. SuitePacific handles layout builds, FreeMarker
+            logic errors, and upgrade-related rendering failures. Oracle-certified (SuiteCloud
+            Developer II and Administrator Professional). Plans start at $799 per month,
+            month-to-month.
           </p>
         </div>
 

@@ -161,6 +161,11 @@ export default function SuiteScriptDevelopmentPage() {
         description="Custom SuiteScript 2.x development for post-go-live NetSuite accounts, including User Event scripts, Client scripts, Scheduled scripts, Map/Reduce scripts, RESTlets, and Suitelets."
         url={`${SITE_URL}/netsuite-suitescript-development`}
         serviceType="SuiteScript Development"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: script builds, bug fixes, deployment updates, governance reviews. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active SuiteScript development including User Event, Scheduled, and RESTlet builds. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: comprehensive SuiteScript development across all script types plus integration work and account management. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd
@@ -189,19 +194,18 @@ export default function SuiteScriptDevelopmentPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            NetSuite SuiteScript development refers to custom JavaScript scripts built on
-            NetSuite&apos;s SuiteScript 2.1 platform to extend account behavior beyond what standard
-            configuration can reach. The six main script types each serve a different purpose:
-            User Event scripts run automatically before or after a record is saved; Client scripts
-            run in real time as a user edits a form; Scheduled scripts run on a defined timetable
-            for batch processing; Map/Reduce scripts handle high-volume data operations without
-            hitting governance limits; Suitelets build custom pages and tools inside NetSuite;
-            RESTlets create custom API endpoints for integrations. SuitePacific builds and
-            maintains all six types for post-go-live accounts. Every script is scoped against your
-            specific record types, built and tested in your Sandbox account before touching
-            Production, and documented as part of the deliverable. Engagements run month-to-month
-            with direct access to the certified developer managing the account, without
-            statement-of-work requirements for individual requests.
+            SuitePacific builds and maintains custom SuiteScript 2.1 scripts for post-go-live
+            NetSuite accounts that need automation, integrations, or account behavior that standard
+            configuration cannot deliver. The six script types each serve a distinct purpose: User
+            Event scripts run before or after a record saves; Client scripts run as a user edits a
+            form; Scheduled scripts handle batch processing on a timetable; Map/Reduce scripts
+            process high-volume data without hitting governance limits; Suitelets build internal
+            tools; RESTlets create custom API endpoints for integrations. Every SuiteScript
+            engagement starts with scoping against the specific record types involved, is built and
+            tested in a Sandbox environment before any deployment to Production, and includes
+            documentation as part of the deliverable. SuitePacific is Oracle-certified (SuiteCloud
+            Developer II and Administrator Professional), US-based, and works directly with the
+            team managing the account. Plans start at $799 per month, month-to-month.
           </p>
         </div>
 

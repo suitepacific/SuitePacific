@@ -217,6 +217,11 @@ export default function NetSuiteManagedSupportPage() {
         description="Ongoing NetSuite managed support retainer covering development, administration, break-fix, and version upgrade preparation at a fixed monthly cost."
         url={`${SITE_URL}/netsuite-managed-support`}
         serviceType="NetSuite Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: SuiteScript fixes, workflow updates, saved searches, administration, break-fix response. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: ongoing development, administration, integration maintenance, and upgrade preparation. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full account coverage including active SuiteScript development, workflow builds, integration management, and release reviews. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd
@@ -247,18 +252,17 @@ export default function NetSuiteManagedSupportPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            NetSuite managed support is an ongoing monthly retainer where a certified consulting
-            firm handles all support, development, and administration for a live NetSuite account
-            at a predictable fixed cost. The retainer covers development (SuiteScript, workflows,
-            integrations), administration (roles, configuration, custom fields), break-fix (script
-            errors, workflow failures, integration breaks), and version upgrade preparation (Sandbox
-            testing before each twice-yearly upgrade). Unlike per-project billing, where each task
-            requires a separate scope and proposal, a managed retainer means routine work is handled
-            as it surfaces. Unlike Oracle NetSuite support, managed support covers the full
-            customization layer. Engagements run month-to-month, scale with the account, and provide
-            direct access to the consultant who knows your account history across every request.
-            SuitePacific provides NetSuite managed support at $799, $1,499, and $2,499 per month
-            with no long-term contract.
+            SuitePacific provides NetSuite managed support as a fixed monthly retainer that covers
+            all development, administration, and break-fix work a live NetSuite account generates.
+            The retainer covers SuiteScript development, SuiteFlow workflow automation, integration
+            maintenance, role and configuration changes, saved search builds, and Sandbox regression
+            testing before each bi-annual NetSuite release. Oracle&apos;s own support covers only
+            the core platform layer; it does not cover SuiteScript customizations, workflows, or
+            integrations. Unlike per-project billing, a managed retainer means routine requests are
+            handled as they surface without a scope-and-proposal cycle for each item. SuitePacific
+            is Oracle-certified (SuiteCloud Developer II and Administrator Professional), US-based,
+            and provides direct access to the consultant managing the account on every request.
+            Plans start at $799 per month on month-to-month terms after a three-month minimum.
           </p>
         </div>
 

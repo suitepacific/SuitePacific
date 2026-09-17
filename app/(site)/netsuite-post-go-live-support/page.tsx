@@ -348,6 +348,11 @@ export default function PostGoLiveSupportPage() {
         description="Ongoing NetSuite development and managed services for companies already live on NetSuite: SuiteScript 2.x (User Event, Scheduled, Map/Reduce, RESTlet, Suitelet), SuiteFlow workflow automation, RESTlet and API integrations, saved search and dashboard reporting, advanced FreeMarker PDF templates, account performance optimization, and administration. Month-to-month, sandbox-first, by Oracle NetSuite SuiteCloud Developer II and Administrator Professional certified developers."
         url={`${SITE_URL}/netsuite-post-go-live-support`}
         serviceType="NetSuite Managed Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: SuiteScript fixes, workflow updates, saved searches, administration, upgrade preparation. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active development, integration maintenance, and full upgrade preparation. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: comprehensive post-go-live coverage including SuiteScript development, workflow builds, integration management, and account administration. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd
@@ -370,20 +375,20 @@ export default function PostGoLiveSupportPage() {
         <div className="mt-6 rounded-xl border border-brand-100 bg-brand-50 p-5">
           <p className="mb-1 text-[0.65rem] font-bold uppercase tracking-widest text-brand-400">Quick answer</p>
           <p className="text-sm leading-relaxed text-brand-700">
-            NetSuite post-go-live support covers the ongoing development, administration, and
-            maintenance a live NetSuite account requires after the implementation partner&rsquo;s
-            engagement ends. It includes SuiteScript development, SuiteFlow workflow automation,
-            saved search and dashboard updates, third-party integration maintenance, account
-            administration, and Sandbox review before each bi-annual NetSuite release. Most live
-            accounts need this continuously: business processes change, integrations require
-            maintenance, and NetSuite releases twice a year, requiring regression testing before each
-            update reaches Production. The two main models are a managed retainer (fixed monthly
-            engagement with retained account context) and break-fix (on-demand per-incident billing
-            with no retained context). For accounts generating four or more hours of ongoing work per
-            month, a managed retainer produces a lower cost per completed item than break-fix once
-            re-onboarding overhead is factored in. SuitePacific provides post-go-live support as a
-            fixed monthly retainer starting at $799 per month with no Statement of Work required per
-            request.
+            SuitePacific provides post-go-live NetSuite support for companies that are already live
+            on NetSuite and need ongoing SuiteScript development, workflow automation, integration
+            maintenance, administration, and upgrade preparation. The implementation partner&apos;s
+            engagement ends at go-live; post-go-live support covers everything that needs to happen
+            after that point. Business processes change, integrations require maintenance, and
+            NetSuite releases twice a year, each requiring Sandbox regression testing before
+            Production upgrades. Oracle&apos;s own support covers only the core platform layer; it
+            does not cover SuiteScript customizations, workflows built in SuiteFlow, or
+            third-party integrations. SuitePacific handles the full customization and integration
+            layer as a fixed monthly retainer, without a Statement of Work required for individual
+            requests. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator
+            Professional), US-based, and provides direct access to the consultant on every
+            engagement. Plans start at $799 per month on month-to-month terms after a three-month
+            minimum.
           </p>
         </div>
 

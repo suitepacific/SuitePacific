@@ -178,6 +178,9 @@ export default function NetSuiteHealthCheckPage() {
         description="Independent review of a live NetSuite account covering scripts, workflows, custom fields, saved searches, roles, and integrations, with a written findings report. Fixed fee $799. Delivered within 5-7 business days."
         url={`${SITE_URL}/netsuite-health-check`}
         serviceType="NetSuite Audit"
+        offers={[
+          { name: "Health Check", price: 799, description: "Fixed-fee structured review of the full NetSuite customization layer: SuiteScript, workflows, saved searches, roles, integrations, and custom fields. Written report delivered in 5-7 business days." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd
@@ -206,19 +209,18 @@ export default function NetSuiteHealthCheckPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            A NetSuite health check is a structured review of a live NetSuite account by an
-            independent certified consultant who did not configure it. The review covers the full
-            customization layer: SuiteScript deployments, workflow configurations, saved search
-            performance, custom fields and forms, roles and permissions, and active integrations.
-            Each area is evaluated against what was built, whether it is actually being used, and
-            where the account has accumulated technical debt or operational risk. SuitePacific
-            delivers findings as a written report within five to seven business days, with each
-            issue categorized by severity. The report identifies what is safe to leave, what needs
-            attention, and what creates risk as the account evolves. The health check is a
-            fixed-fee engagement at $799. It is designed for accounts that are already live and
-            functioning but carry uncertainty about what was built during implementation, whether
-            current customizations are stable, or whether the account can support planned changes
-            without breaking existing processes.
+            SuitePacific conducts NetSuite health checks for live accounts that need an independent
+            review of what was built, what is still working, and where technical debt or operational
+            risk has accumulated. The review covers the full customization layer: SuiteScript
+            deployments, SuiteFlow workflow configurations, saved search performance, custom fields
+            and forms, roles and permissions, and active integrations. Each area is evaluated
+            against what was built, whether it is still being used, and whether it creates risk as
+            the account evolves. Findings are delivered as a written report within five to seven
+            business days with each issue categorized by severity: what is safe to leave, what needs
+            attention, and what needs remediation before planned changes proceed. SuitePacific is
+            Oracle-certified (SuiteCloud Developer II and Administrator Professional) and conducts
+            every health check independently, with no prior involvement in the account being
+            reviewed. Fixed fee: $799.
           </p>
         </div>
 

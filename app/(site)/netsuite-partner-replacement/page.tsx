@@ -222,6 +222,11 @@ export default function NetSuitePartnerReplacementPage() {
         description="Switching NetSuite partners or transitioning from an implementation engagement that has ended. SuitePacific performs an independent account review covering scripts, workflows, saved searches, integrations, and configuration, then takes over ongoing development, administration, and support on a month-to-month retainer. No SOW required per request. Direct developer access, full account context retained across every engagement."
         url={`${SITE_URL}/netsuite-partner-replacement`}
         serviceType="NetSuite Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: post-transition support covering development, administration, and break-fix. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active development and administration following account review and onboarding. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full account takeover including SuiteScript development, workflow management, integrations, and administration. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
 
@@ -243,19 +248,19 @@ export default function NetSuitePartnerReplacementPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            NetSuite partner replacement is the process of transitioning a live NetSuite account
-            from one consulting firm to another without a gap in support coverage. The outgoing
-            partner typically built or maintained the account&apos;s SuiteScript files, workflows,
-            integrations, and configurations. A transition involves transferring access credentials,
+            SuitePacific handles NetSuite partner replacement for live accounts transitioning
+            from an unresponsive, slow, or project-focused implementation partner to a retained
+            post-go-live specialist. The transition involves transferring access credentials,
             reviewing the existing customization layer, documenting what was built and why, and
-            resolving in-progress work. SuitePacific handles transitions regularly, including cases
-            where the outgoing partner is unresponsive or unwilling to cooperate with a formal
-            handoff. The review process reads the account directly rather than relying on the
-            previous partner&apos;s documentation, which is often incomplete. The most common trigger
-            for a partner switch is slow response time, high per-request cost from
-            statement-of-work requirements, or an implementation partner that closed a project and
-            is not structured for ongoing support. Month-to-month engagements with no annual
-            lock-in begin after a documented onboarding review of the existing account.
+            resolving any in-progress work before the previous firm disengages. SuitePacific reads
+            the account directly rather than relying on the outgoing partner&apos;s documentation,
+            which is often incomplete. Transitions proceed even when the outgoing partner is
+            unresponsive or unwilling to cooperate with a formal handoff. The most common triggers
+            for a switch are slow response time, high per-request cost from statement-of-work
+            billing, and implementation partners not structured for ongoing support. SuitePacific
+            is Oracle-certified (SuiteCloud Developer II and Administrator Professional), US-based,
+            and provides direct access to the consultant on every engagement. Month-to-month after
+            a three-month minimum; plans start at $799 per month.
           </p>
         </div>
 

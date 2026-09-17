@@ -164,6 +164,11 @@ export default function SavedSearchesDashboardsPage() {
         description="Custom saved searches and role-based dashboards that surface the data your team needs directly inside NetSuite."
         url={`${SITE_URL}/netsuite-saved-searches-dashboards`}
         serviceType="NetSuite Analytics"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: saved search builds, dashboard configuration, formula fixes, upgrade-related search breaks. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: reporting library builds, KPI dashboard configuration, and SuiteAnalytics work. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full reporting and analytics build alongside SuiteScript development and account management. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd
@@ -192,19 +197,20 @@ export default function SavedSearchesDashboardsPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            NetSuite saved searches are the primary mechanism for querying and surfacing data
-            inside the platform. A saved search defines criteria and result columns, then makes
-            those results available as a report, a dashboard portlet, or a data source for other
-            saved searches and scripts. Dashboards aggregate portlets driven by saved searches
-            or system-generated summaries. The gap between what a default NetSuite account shows
-            and what a post-go-live business needs to see is typically closed through saved
-            searches: open purchase orders by vendor with aging, fulfillment status by region,
-            revenue by product category versus prior period, or workflow queue counts by approver.
-            Building accurate saved searches requires understanding NetSuite&apos;s data model and
-            its formula engine, which uses SQL-like syntax with NetSuite-specific functions.
-            Common problems include searches that return the wrong records, slow under production
-            data volume, or break after a version upgrade. SuitePacific builds, optimizes, and
-            maintains saved searches and dashboards for post-go-live NetSuite accounts.
+            SuitePacific builds, optimizes, and maintains NetSuite saved searches and dashboards
+            for post-go-live accounts that need accurate operational visibility. Saved searches
+            define query criteria and result columns, then surface those results as reports,
+            dashboard portlets, or data sources for other searches and SuiteScript. Dashboards
+            aggregate portlets driven by saved searches or system-generated KPI summaries. The
+            gap between what a default NetSuite account shows and what operations and finance
+            actually need is typically closed through saved searches: open purchase orders by
+            vendor with aging, fulfillment status by region, revenue by product category versus
+            prior period, workflow queue counts by approver. Building accurate saved searches
+            requires understanding NetSuite&apos;s data model and its formula engine, which uses
+            SQL-like syntax with NetSuite-specific functions. SuitePacific is Oracle-certified
+            (SuiteCloud Developer II and Administrator Professional), US-based, and handles
+            searches that return wrong records, run slow under production volume, or break after
+            version upgrades. Plans start at $799 per month.
           </p>
         </div>
 
