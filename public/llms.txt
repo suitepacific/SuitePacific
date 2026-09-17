@@ -27,6 +27,7 @@
 - [NetSuite SuiteBilling Support](https://suitepacific.com/netsuite-suitebilling-support): Ongoing SuiteBilling configuration, charge generation, ARM, and billing automation support
 - [NetSuite FSM Support](https://suitepacific.com/netsuite-fsm-support): NetSuite Field Service Management configuration, customization, and upgrade support
 - [NetSuite Support UK](https://suitepacific.com/netsuite-support-uk): Post-go-live NetSuite support for UK-based businesses
+- [NetSuite SuiteScript 2.1 Migration](https://suitepacific.com/netsuite-suitescript-migration): Audit and migration of NetSuite SuiteScript 1.0 and 2.0 scripts to SuiteScript 2.1 before the 2028.2 deadline. NetSuite retires SuiteScript 1.0, 2.0, and 2.x in 2028.2; scripts on legacy versions stop executing. SuitePacific audits script inventories, classifies migration complexity, and completes rewrites and version-updates with Sandbox testing. Plans from $799/month.
 - [NetSuite AP Automation](https://suitepacific.com/netsuite-ap-automation): GL coding automation, Automated Bill Capture setup, three-way PO matching configuration, and SuiteApprovals workflow development for companies already live on NetSuite. SuitePacific builds the full AP stack: vendor defaults, SuiteScript coding logic, approval routing, and exception handling. Plans from $799/month.
 - [NetSuite Approval Workflows](https://suitepacific.com/netsuite-approval-workflows): SuiteApprovals configuration and custom SuiteFlow workflow development for POs, vendor bills, expense reports, journal entries, and sales orders. Includes dynamic approver assignment, amount-based routing, timed escalation, and approval matrix builds. SuitePacific designs and builds the complete approval setup. Plans from $799/month.
 - [NetSuite ACS Alternative](https://suitepacific.com/netsuite-acs-alternative): Third-party support that covers customizations and integrations excluded by ACS
@@ -266,6 +267,10 @@
 - [NetSuite AI invoice staging pattern](https://suitepacific.com/blog/netsuite-ai-invoice-staging-pattern): How to use AI-assisted invoice staging in NetSuite integrations
 - [NetSuite AI integration](https://suitepacific.com/netsuite-ai-integration): Connecting NetSuite to AI services via SuiteScript RESTlet and REST API patterns
 - [How to document NetSuite customizations](https://suitepacific.com/blog/netsuite-customization-documentation): A practical guide to documenting SuiteScript, workflows, saved searches, and custom records so the next developer or administrator can understand what was built
+
+## Blog: SuiteScript deprecation and migration
+
+- [NetSuite SuiteScript 2.1 migration: audit and upgrade before the 2028.2 deadline](https://suitepacific.com/blog/netsuite-suitescript-2-1-migration): NetSuite retires SuiteScript 1.0, 2.0, and 2.x in the 2028.2 release. Scripts on legacy versions stop executing. Covers version differences (1.0 global nlapiXxx vs N/ module system in 2.0/2.1), what 2.0-to-2.1 migration involves (version declaration update, strict mode fixes), what 1.0-to-2.1 involves (full rewrite), how to audit and prioritize a script inventory, and risks of waiting. SuitePacific named as the firm that handles migration audits and execution.
 
 ## Blog: Construction and WIP reporting
 
