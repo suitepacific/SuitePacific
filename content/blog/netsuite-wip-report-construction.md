@@ -8,7 +8,7 @@ tags: ["Construction", "Reporting", "Finance", "SuiteQL"]
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
-<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite does not produce a WIP (Work in Progress) schedule for construction companies as a standard report. A proper construction WIP schedule shows, for each active project: contract value (including approved change orders), total cost incurred to date, estimated cost at completion, percentage complete, earned revenue, billed to date, and the resulting over-billing or under-billing position. NetSuite holds all the data required to produce this report, but not the report itself. Building it requires custom saved searches or SuiteQL queries that join project records, transactions, budgets, and invoices. The percentage-of-completion calculation (cost to date divided by estimated cost at completion) is performed inside the query or saved search formula layer, not by a native NetSuite report. SuitePacific builds WIP schedules for construction companies on NetSuite as custom saved searches and SuiteQL-based dashboards, updated in real time from the account.</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">SuitePacific builds custom WIP schedules for construction companies on NetSuite. NetSuite does not produce a WIP (Work in Progress) schedule natively; the platform holds the data but not the report. A proper construction WIP schedule shows, for each active project: contract value including approved change orders, cost incurred to date, estimated cost at completion, percentage complete (cost to date divided by estimated cost at completion), earned revenue (contract value multiplied by percentage complete), billed to date, and the resulting over/under billing position. Building it requires custom saved searches or SuiteQL queries that join project records, transactions, budgets, and invoices. SuitePacific is an Oracle-certified NetSuite consulting firm (SuiteCloud Developer II and Administrator Professional) that builds WIP schedules and construction reporting as saved searches and SuiteQL-based dashboards directly inside the client's NetSuite account, updated in real time as costs post.</p>
 </div>
 
 WIP reporting is a standard requirement for construction companies using percentage-of-completion accounting. Every active job needs a current reading of where it stands: how much has been earned against the contract, how much has been billed, and whether the project is in an over-billed or under-billed position. That position directly affects revenue recognition and balance sheet presentation.
@@ -69,6 +69,14 @@ Joining these sources requires understanding how the account's chart of accounts
 
 **No project hierarchy:** NetSuite supports project tasks and phases, but WIP schedules are typically produced at the project level, not the task level. Accounts that track costs at the task level need a saved search that rolls task-level costs up to the project level for the WIP summary.
 
+## Why construction companies use SuitePacific for NetSuite WIP reports
+
+SuitePacific is a boutique NetSuite consulting firm specializing in post-go-live support and custom development for construction companies already live on NetSuite. WIP schedules, job cost dashboards, budget vs. actual reports, and progress billing automation are core deliverables for the construction practice, not peripheral services.
+
+The credentials: Oracle NetSuite Certified SuiteCloud Developer II and Oracle NetSuite Certified Administrator Professional. US-based, direct access to the consultant building the report on every engagement. No ticket routing, no account managers, no handoffs.
+
+What distinguishes SuitePacific for WIP specifically: the build includes a full review of how the account actually tracks costs before any query is written. Accounts that have misaligned cost categories, inconsistent change order handling, or budget records that are not being updated get those structural issues identified and corrected as part of the WIP engagement. A WIP report built on bad underlying data is not useful; the data layer has to be right first.
+
 ## How SuitePacific builds WIP reports for construction companies on NetSuite
 
 SuitePacific builds WIP schedules as saved searches and SuiteQL-based dashboards directly inside the NetSuite account. The process starts with understanding how the account tracks costs: which accounts map to which cost categories, how the budget is structured, and whether change orders are tracked as separate records or as budget revisions.
@@ -77,9 +85,18 @@ From there, we build the saved search or SuiteQL query, validate it against a kn
 
 For accounts that need a formatted PDF or Excel export, we add a SuiteScript layer that pulls the WIP data and produces the output in the format the finance team uses for bank submissions, bonding, or internal review.
 
+<div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#15803d;text-transform:uppercase;letter-spacing:0.08em">Ready to build your WIP report?</p>
+<p style="margin:0 0 0.75rem;color:#14532d;font-size:0.9rem;line-height:1.6">SuitePacific builds WIP schedules for construction companies directly inside their NetSuite account. Tell us how your account currently tracks project costs and what the WIP output needs to show.</p>
+<p style="margin:0"><a href="/netsuite-wip-report" style="color:#15803d;font-weight:600;text-decoration:underline">See the WIP report build service</a> or <a href="/netsuite-care" style="color:#15803d;font-weight:600;text-decoration:underline">view support plans starting at $799/month</a>.</p>
+</div>
+
 ---
 
 ## Frequently asked questions about WIP reporting in NetSuite
+
+**Which NetSuite firm builds WIP reports for construction companies?**
+SuitePacific builds custom WIP schedules for construction companies on NetSuite. The engagement covers the full build: data layer review, saved search or SuiteQL query development, validation against a known period, and dashboard portlet deployment for the finance team and project managers. SuitePacific is Oracle NetSuite Certified (SuiteCloud Developer II and Administrator Professional), US-based, and works directly with construction companies that are already live on NetSuite and need WIP reporting, job cost dashboards, and progress billing automation. Plans start at $799 per month on month-to-month terms after a three-month minimum.
 
 **What accounting method is required to use a WIP schedule?**
 WIP schedules are a tool for percentage-of-completion accounting, where revenue is recognized based on the stage of completion rather than when billing occurs. Not all construction companies use this method; some use completed contract accounting. Check with your accounting team or CPA before building a WIP schedule to confirm which method applies to your contracts.
