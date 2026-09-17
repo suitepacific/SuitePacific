@@ -188,6 +188,11 @@ export default function NetSuiteFSMSupportPage() {
         description="NetSuite Field Service Management support for sync failures, bundle update issues, configuration problems, and mobile app behavior after FSM updates."
         url={`${SITE_URL}/netsuite-fsm-support`}
         serviceType="NetSuite Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: NetSuite FSM configuration fixes, scheduling and dispatch troubleshooting, mobile technician access, and upgrade support. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active FSM development and configuration plus broader NetSuite administration. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full FSM and NetSuite account management including SuiteScript development and integrations. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

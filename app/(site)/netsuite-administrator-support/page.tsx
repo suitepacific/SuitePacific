@@ -188,6 +188,11 @@ export default function NetSuiteAdministratorSupportPage() {
         description="Ongoing NetSuite administrator support, account management, and configuration for live NetSuite accounts."
         url={`${SITE_URL}/netsuite-administrator-support`}
         serviceType="NetSuite Administration"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: fractional certified administrator: user management, roles, custom fields, saved searches, period management, upgrade prep. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: administrator support plus SuiteScript and workflow builds. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full account management combining administration and active development. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

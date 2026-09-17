@@ -208,6 +208,11 @@ export default function NetSuiteAiIntegrationPage() {
         description="Configuration of Oracle NetSuite's native AI features and custom AI integrations built with SuiteScript, connecting NetSuite to external AI APIs and automating record enrichment."
         url={`${SITE_URL}/netsuite-ai-integration`}
         serviceType="NetSuite Consulting"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: AI integration builds and maintenance, SuiteScript API connectors, and ongoing account development. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active AI integration development plus NetSuite administration and workflow automation. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: comprehensive AI integration and NetSuite development covering SuiteScript, APIs, and account management. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

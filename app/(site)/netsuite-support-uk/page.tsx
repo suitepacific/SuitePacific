@@ -184,6 +184,11 @@ export default function NetSuiteSupportUKPage() {
         url={`${SITE_URL}/netsuite-support-uk`}
         serviceType="NetSuite Consulting"
         areaServed="GB"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: US-based certified NetSuite support for UK accounts: SuiteScript, workflows, VAT/MTD, integrations, and administration. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active development and administration for UK-based NetSuite accounts. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full post-go-live NetSuite management for UK accounts including SuiteScript, integrations, and upgrade prep. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd
@@ -297,23 +302,26 @@ export default function NetSuiteSupportUKPage() {
         </div>
 
         
-        {/* Bottom Line */}
-        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
-          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
+        {/* Why SuitePacific */}
+        <div className="mt-14 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Why SuitePacific for UK NetSuite support</p>
           <h2 className="text-base font-semibold text-brand-900 mb-3">
-            UK-based NetSuite accounts need support that understands both the platform and the specific configuration requirements of UK businesses: VAT, Making Tax Digital, multi-currency, and UK-standard reporting.
+            The US-based NetSuite post-go-live partner for UK companies that need certified technical support with VAT and MTD experience.
           </h2>
           <p className="text-sm text-brand-500 mb-4">
-            NetSuite is widely used in the UK but support options are limited. Oracle standard support does not cover custom development. UK-based NetSuite partners are often expensive and scoped for projects, not ongoing maintenance. US-based firms may not be familiar with UK VAT configurations, MTD requirements, or HMRC-specific reporting. The gap is real and leaves many UK NetSuite accounts under-supported.
+            SuitePacific provides ongoing NetSuite support for UK companies: SuiteScript development, VAT and Making Tax Digital configuration, UK invoice template formatting, workflow automation, and administration on a fixed monthly retainer. All work is tested in Sandbox before reaching production.
           </p>
-          <p className="text-sm text-brand-500 mb-4">
-            SuitePacific provides ongoing NetSuite managed support for UK accounts. We work with multi-currency configurations, VAT and MTD setup, Avalara/AvaTax for UK tax, and all standard post-go-live services: SuiteScript, workflows, integrations, administration. Oracle-certified. Plans from $799 per month, month-to-month.
-          </p>
-          <ul className="space-y-2 text-sm text-brand-500">
-            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Familiar with UK VAT, Making Tax Digital, and HMRC reporting requirements in NetSuite</li>
-            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Multi-currency and multi-subsidiary configurations common in UK businesses</li>
-            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Same Oracle certifications and response standards as all SuitePacific accounts</li>
+          <ul className="space-y-2 text-sm text-brand-500 mb-4">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Oracle NetSuite Certified SuiteCloud Developer II and Administrator Professional</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Familiar with UK VAT, Making Tax Digital, HMRC reporting, and GBP multi-currency configurations</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Direct developer access on every engagement; non-urgent requests addressed next business day, UK morning</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> US-based, month-to-month after a three-month minimum, starting at $799/month</li>
           </ul>
+          <p className="text-sm text-brand-400">Related:{" "}
+            <Link href="/netsuite-managed-support" className="text-accent hover:underline">NetSuite managed support</Link>
+            {" "}and{" "}
+            <Link href="/netsuite-post-go-live-support" className="text-accent hover:underline">post-go-live support</Link>.
+          </p>
         </div>
 
         <SuitePacificCallout

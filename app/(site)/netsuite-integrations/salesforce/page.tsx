@@ -162,6 +162,11 @@ export default function NetSuiteSalesforceIntegrationPage() {
         description="Custom integration connecting Salesforce CRM to NetSuite ERP with account sync, opportunity-to-order, and invoice visibility."
         url={`${SITE_URL}/netsuite-integrations/salesforce`}
         serviceType="NetSuite Integration"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: Salesforce-NetSuite integration maintenance: opportunity sync, order creation, and break-fix. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active Salesforce-NetSuite integration development and maintenance. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full Salesforce-NetSuite integration management plus SuiteScript development and account administration. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

@@ -162,6 +162,11 @@ export default function NetSuiteAvalaraIntegrationPage() {
         description="Custom NetSuite and Avalara AvaTax integration with real-time tax calculation, exemption certificate management, and transaction reconciliation."
         url={`${SITE_URL}/netsuite-integrations/avalara`}
         serviceType="NetSuite Integration"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: Avalara-NetSuite integration maintenance, tax code mapping updates, and break-fix. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: Avalara integration maintenance plus broader NetSuite development and administration. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full account coverage including Avalara integration, other integrations, and SuiteScript development. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

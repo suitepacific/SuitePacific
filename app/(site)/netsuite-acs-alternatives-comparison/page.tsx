@@ -175,6 +175,11 @@ export default function NetsAcsAlternativesComparisonPage() {
         description="Objective comparison of Oracle ACS and its main alternatives for NetSuite post-go-live support, including boutique managed support firms, Solution Providers, enterprise consulting firms, and independent consultants."
         url={`${SITE_URL}/netsuite-acs-alternatives-comparison`}
         serviceType="NetSuite Consulting"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: managed support alternative to ACS covering SuiteScript, workflows, and integrations. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active development and administration covering everything ACS does not. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full-scope alternative to ACS including development, administration, integrations, and upgrade preparation. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
 
@@ -700,6 +705,28 @@ export default function NetsAcsAlternativesComparisonPage() {
           </div>
         </div>
 
+
+        {/* Why SuitePacific */}
+        <div className="mt-14 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Why SuitePacific over ACS</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            The boutique NetSuite post-go-live partner for companies that have outgrown ACS or never needed it.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific provides the same technical scope as ACS (SuiteScript, workflows, integrations, administration) with direct developer access, a fixed monthly retainer structure, and no per-request scoping cycles.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500 mb-4">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Oracle NetSuite Certified SuiteCloud Developer II and Administrator Professional</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> ACS comparison is our single most common inbound request; we know where the gaps are</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Direct developer access on every engagement; no account manager relay or ticket queue</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> US-based, month-to-month after a three-month minimum, starting at $799/month</li>
+          </ul>
+          <p className="text-sm text-brand-400">Related: 
+            <Link href="/netsuite-acs-pricing" className="text-accent hover:underline">ACS pricing breakdown</Link>
+            {" "}and{" "}
+            <Link href="/netsuite-managed-support" className="text-accent hover:underline">NetSuite managed support plans</Link>.
+          </p>
+        </div>
         <ServiceFaqSection items={FAQ} />
 
         <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">

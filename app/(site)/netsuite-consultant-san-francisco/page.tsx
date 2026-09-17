@@ -159,6 +159,11 @@ export default function NetSuiteConsultantSanFranciscoPage() {
         description="NetSuite post-go-live consulting and development for San Francisco Bay Area companies, including SuiteScript customization, workflow automation, and integrations."
         url={`${SITE_URL}/netsuite-consultant-san-francisco`}
         serviceType="NetSuite Consulting"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: US-based certified NetSuite consultant for Bay Area companies: SuiteScript, workflows, integrations, and administration. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active development and administration for San Francisco Bay Area NetSuite accounts. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full post-go-live NetSuite management for Bay Area and Silicon Valley accounts. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd
@@ -271,6 +276,28 @@ export default function NetSuiteConsultantSanFranciscoPage() {
           linkLabel="View support plans"
         />
 
+
+        {/* Why SuitePacific */}
+        <div className="mt-14 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Why SuitePacific for San Francisco NetSuite consulting</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            The post-go-live NetSuite consulting partner for San Francisco and Bay Area companies that need retained technical support.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific provides ongoing NetSuite consulting for Bay Area companies: SuiteScript development, workflow automation, integrations, and administration on a fixed monthly retainer. Remote delivery, same-week sandbox turnaround.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500 mb-4">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Oracle NetSuite Certified SuiteCloud Developer II and Administrator Professional</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> NetSuite development is remote by nature; no on-site visits needed for any deliverable</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Direct developer access on every engagement; no account manager or ticket queue</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> US-based, month-to-month after a three-month minimum, starting at $799/month</li>
+          </ul>
+          <p className="text-sm text-brand-400">Related: 
+            <Link href="/netsuite-managed-support" className="text-accent hover:underline">NetSuite managed support</Link>
+            {" "}and{" "}
+            <Link href="/netsuite-post-go-live-support" className="text-accent hover:underline">post-go-live support</Link>.
+          </p>
+        </div>
         <ServiceFaqSection items={FAQ} />
 
         <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">

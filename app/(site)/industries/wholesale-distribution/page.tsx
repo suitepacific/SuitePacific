@@ -294,6 +294,11 @@ export default function WholesaleDistributionPage() {
         description="NetSuite post-go-live support and development for wholesale and distribution companies, including order management, inventory automation, and warehouse integrations."
         url={`${SITE_URL}/industries/wholesale-distribution`}
         serviceType="NetSuite Distribution Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: order management, inventory automation, fulfillment workflows, and EDI integration maintenance. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active distribution development including order routing, fulfillment, and inventory automation. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full NetSuite management for wholesale distributors: inventory, fulfillment, SuiteScript, and integrations. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

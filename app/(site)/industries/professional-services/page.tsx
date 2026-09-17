@@ -293,6 +293,11 @@ export default function ProfessionalServicesPage() {
         description="NetSuite post-go-live support and development for professional services firms, including project accounting, billing automation, and profitability reporting."
         url={`${SITE_URL}/industries/professional-services`}
         serviceType="NetSuite Professional Services Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: project tracking, resource management, time and billing, and PSA saved searches. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active development for professional services accounts including project billing and resource automation. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full NetSuite management for professional services firms: project accounting, SuiteScript, and integrations. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

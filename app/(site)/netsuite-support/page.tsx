@@ -183,6 +183,11 @@ export default function NetSuiteSupportPage() {
         description="NetSuite support for post-go-live accounts covering managed support retainers, SuiteScript development, integrations, administration, partner replacement, and emergency break-fix."
         url={`${SITE_URL}/netsuite-support`}
         serviceType="NetSuite Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: managed NetSuite support retainer covering SuiteScript, workflows, integrations, administration, and break-fix. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active development and full account management. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: comprehensive NetSuite support covering all post-go-live needs. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

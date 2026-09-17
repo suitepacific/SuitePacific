@@ -219,6 +219,11 @@ export default function NetSuiteAiOptimizationAssessmentPage() {
         description="Fixed-scope consulting engagement that reviews a live NetSuite environment across six areas to identify specific AI implementation opportunities, score them, and deliver a prioritized roadmap."
         url={`${SITE_URL}/netsuite-ai-optimization-assessment`}
         serviceType="NetSuite Consulting"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: AI readiness assessment plus priority optimizations for saved searches, workflows, and SuiteScript. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: AI optimization assessment and remediation program with ongoing development. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: comprehensive AI-ready account optimization plus ongoing development and administration. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

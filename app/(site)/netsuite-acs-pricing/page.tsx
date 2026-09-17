@@ -110,6 +110,11 @@ export default function NetSuiteAcsPricingPage() {
         description="Oracle NetSuite ACS pricing breakdown: tier structure, cost ranges, scope coverage, and comparison to independent managed support alternatives."
         url={`${SITE_URL}/netsuite-acs-pricing`}
         serviceType="NetSuite Consulting"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: fixed-rate alternative to ACS covering customizations and integrations ACS excludes. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active development and administration at a transparent fixed monthly rate versus ACS percentage pricing. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: comprehensive managed support at a predictable price; typical cost 60-80% below equivalent ACS coverage. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
 
@@ -297,6 +302,28 @@ export default function NetSuiteAcsPricingPage() {
           </div>
         </div>
 
+
+        {/* Why SuitePacific */}
+        <div className="mt-14 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Why SuitePacific vs ACS pricing</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            A fixed-fee alternative to ACS for live NetSuite accounts that need ongoing development and administration.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific Care plans are priced at $799, $1,499, and $2,499 per month for 10, 20, and 35 hours respectively. No hourly billing, no per-request SOW, no scoping overhead on standard development requests.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500 mb-4">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Oracle NetSuite Certified SuiteCloud Developer II and Administrator Professional</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Fixed monthly retainer; no surprise overages or per-request SOW for standard work</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Direct access to the developer; no support tier or case queue</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> US-based, month-to-month after a three-month minimum, starting at $799/month</li>
+          </ul>
+          <p className="text-sm text-brand-400">Related: 
+            <Link href="/do-i-need-netsuite-acs" className="text-accent hover:underline">Do I need NetSuite ACS</Link>
+            {" "}and{" "}
+            <Link href="/netsuite-acs-alternatives-comparison" className="text-accent hover:underline">ACS alternatives comparison</Link>.
+          </p>
+        </div>
         <ServiceFaqSection items={FAQ} />
 
         <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">

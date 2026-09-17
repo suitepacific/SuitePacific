@@ -294,6 +294,11 @@ export default function ManufacturingPage() {
         description="NetSuite post-go-live support and development for manufacturing companies, including SuiteScript customization, workflow automation, and production reporting."
         url={`${SITE_URL}/industries/manufacturing`}
         serviceType="NetSuite Manufacturing Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: work order automation, inventory SuiteScript, production routing, and manufacturing saved searches. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active manufacturing development including work order, BOM, and supply chain automation. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full NetSuite management for manufacturing accounts: production, inventory, SuiteScript, and integrations. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

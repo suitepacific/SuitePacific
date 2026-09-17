@@ -660,6 +660,30 @@ export default function NetSuiteCarePage() {
         </div>
       </section>
 
+
+      {/* Why SuitePacific */}
+      <section className="mx-auto max-w-3xl px-6 lg:px-8 mt-20">
+        <div className="rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Why SuitePacific for NetSuite Care</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            The boutique NetSuite post-go-live partner for companies that need predictable monthly support.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific Care is a fixed monthly retainer covering all development, administration, and break-fix work a live NetSuite account generates. Three tiers starting at $799/month. No per-request SOW, no scoping overhead.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500 mb-4">
+          <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Oracle NetSuite Certified SuiteCloud Developer II and Administrator Professional</li>
+          <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Retained account context means no re-explaining history or re-onboarding on each request</li>
+          <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Direct developer access on every engagement; no tier-one support queue or account manager</li>
+          <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Month-to-month after a three-month minimum, starting at $799/month</li>
+          </ul>
+          <p className="text-sm text-brand-400">Related: 
+            <Link href="/netsuite-managed-support" className="text-accent hover:underline">NetSuite managed support</Link>
+            {" "}and{" "}
+            <Link href="/netsuite-post-go-live-support" className="text-accent hover:underline">post-go-live support</Link>.
+          </p>
+        </div>
+      </section>
       {/* Final CTA */}
       <section className="mx-auto max-w-3xl px-6 lg:px-8 mt-24">
         <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 text-balance text-center mb-2">

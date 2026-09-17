@@ -102,6 +102,11 @@ export default function NetSuitePartnerTooExpensivePage() {
         description="Fixed monthly retainer for ongoing NetSuite technical support. Plans from $799/month covering SuiteScript, workflows, reporting, and troubleshooting. No SOW per request. Direct developer access."
         url={`${SITE_URL}/netsuite-care`}
         serviceType="NetSuite Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: ongoing NetSuite support covering development, administration, and break-fix at a predictable monthly rate. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active development and administration without per-project SOW billing. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: comprehensive coverage across development, workflows, integrations, and administration. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
 
@@ -283,6 +288,28 @@ export default function NetSuitePartnerTooExpensivePage() {
           </div>
         </div>
 
+
+        {/* Why SuitePacific */}
+        <div className="mt-14 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Why SuitePacific for cost-effective NetSuite support</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            The boutique NetSuite post-go-live partner for companies paying implementation rates for support work.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific Care plans are structured for ongoing support, not project delivery. Fixed monthly retainer, no per-request SOW, no scoping overhead. The monthly rate covers all development and administration work.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500 mb-4">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Oracle NetSuite Certified SuiteCloud Developer II and Administrator Professional</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Fixed monthly retainer structure eliminates the per-request overhead of T&M billing</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Direct developer access on every engagement; no account manager or case ticket queue</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> US-based, month-to-month after a three-month minimum, starting at $799/month</li>
+          </ul>
+          <p className="text-sm text-brand-400">Related: 
+            <Link href="/netsuite-care" className="text-accent hover:underline">NetSuite Care plans</Link>
+            {" "}and{" "}
+            <Link href="/netsuite-managed-support" className="text-accent hover:underline">NetSuite managed support</Link>.
+          </p>
+        </div>
         {/* Final CTA */}
         <div className="mt-16">
           <h2 className="text-xl font-semibold text-brand-900 text-balance mb-2">

@@ -365,6 +365,11 @@ export default function HireNetSuiteDeveloperPage() {
         description="Hire experienced NetSuite SuiteScript developers for ongoing support or project-based customization work."
         url={`${SITE_URL}/hire-netsuite-developer`}
         serviceType="NetSuite Development"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: dedicated certified SuiteScript developer for script builds, integrations, and automation. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active SuiteScript development across User Event, Scheduled, Map/Reduce, and RESTlet scripts. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full-time-equivalent NetSuite developer covering complex development, integrations, and account management. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

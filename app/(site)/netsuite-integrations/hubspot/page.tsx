@@ -162,6 +162,11 @@ export default function NetSuiteHubSpotIntegrationPage() {
         description="Custom integration connecting HubSpot CRM to NetSuite ERP with contact sync, deal-to-order, and invoice visibility."
         url={`${SITE_URL}/netsuite-integrations/hubspot`}
         serviceType="NetSuite Integration"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: HubSpot-NetSuite integration maintenance: contact sync, deal-to-quote flow, and break-fix. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: HubSpot integration development and maintenance plus NetSuite administration. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full CRM-ERP integration management including HubSpot plus broader account development. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

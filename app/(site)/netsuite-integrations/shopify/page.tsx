@@ -167,6 +167,11 @@ export default function NetSuiteShopifyIntegrationPage() {
         description="Custom NetSuite and Shopify integration with order import, inventory sync, fulfillment confirmation, and customer matching."
         url={`${SITE_URL}/netsuite-integrations/shopify`}
         serviceType="NetSuite Integration"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: Shopify-NetSuite integration maintenance: order sync, inventory updates, fulfillment, and break-fix. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: Shopify integration development and maintenance plus NetSuite administration. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full e-commerce integration management including Shopify plus broader account development. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

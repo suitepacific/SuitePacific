@@ -100,6 +100,11 @@ export default function OracleSupportVsThirdPartyPage() {
         description="Third-party NetSuite consulting and support covering the full customization layer: SuiteScript, workflows, integrations, and administration."
         url={`${SITE_URL}/netsuite-oracle-support-vs-third-party`}
         serviceType="NetSuite Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: certified third-party support covering the customization and integration layer Oracle support excludes. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active development and administration covering SuiteScript, workflows, and integrations. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full-scope third-party managed support replacing Oracle-level pricing. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

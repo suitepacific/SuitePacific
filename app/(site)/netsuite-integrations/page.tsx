@@ -188,6 +188,11 @@ export default function NetSuiteIntegrationsPage() {
         description="Custom NetSuite integrations with third-party platforms including e-commerce, 3PL, CRM, and payment systems."
         url={`${SITE_URL}/netsuite-integrations`}
         serviceType="NetSuite Integration"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: integration maintenance, break-fix response, and configuration updates for Shopify, Salesforce, Celigo, and custom integrations. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active integration development and maintenance across multiple connectors. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full integration management plus SuiteScript development and account administration. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

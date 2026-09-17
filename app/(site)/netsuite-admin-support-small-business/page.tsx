@@ -219,6 +219,11 @@ export default function NetSuiteAdminSupportSmallBusinessPage() {
         description="Enterprise-grade NetSuite administration through dedicated monthly support for small and mid-sized businesses."
         url={`${SITE_URL}/netsuite-admin-support-small-business`}
         serviceType="NetSuite Administration"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: fractional NetSuite admin for small business: user management, roles, saved searches, and configuration. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: admin support plus SuiteScript and workflow development as the business grows. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full post-go-live support covering administration, development, and ongoing account management. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

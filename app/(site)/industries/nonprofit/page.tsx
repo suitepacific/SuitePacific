@@ -296,6 +296,11 @@ export default function NonprofitPage() {
         description="NetSuite post-go-live support and development for nonprofit organizations, including fund accounting enforcement, grant tracking, board reporting, and 990 preparation."
         url={`${SITE_URL}/industries/nonprofit`}
         serviceType="NetSuite Nonprofit Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: grant tracking, fund accounting, donation processing, and nonprofit reporting. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active nonprofit development including fund accounting workflows and grant management. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full NetSuite management for nonprofits: fund accounting, grant tracking, SuiteScript, and integrations. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

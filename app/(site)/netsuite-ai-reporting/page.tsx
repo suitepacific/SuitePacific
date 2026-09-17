@@ -258,6 +258,11 @@ export default function NetSuiteAiReportingPage() {
         description="Account-specific AI reporting for NetSuite. SuitePacific builds AI Connector setups and Suitelet-based assistants that let teams query NetSuite data in plain language with role-aware access and account-specific business logic."
         url={`${SITE_URL}/netsuite-ai-reporting`}
         serviceType="NetSuite Consulting"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: AI-powered reporting configuration, SuiteAnalytics Connect setup, and saved search builds. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: reporting and analytics development including AI-assisted dashboards and data access. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full reporting, analytics, and AI integration management alongside SuiteScript development. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

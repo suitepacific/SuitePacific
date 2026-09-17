@@ -156,6 +156,11 @@ export default function NetSuiteEmergencySupportPage() {
         description="Same-day NetSuite emergency support for broken scripts, failed integrations, and urgent data issues."
         url={`${SITE_URL}/netsuite-emergency-support`}
         serviceType="NetSuite Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: includes same-business-day emergency response for production-affecting script, workflow, and integration failures. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: emergency response plus ongoing development and administration. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full account coverage with priority emergency response as part of the retainer. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

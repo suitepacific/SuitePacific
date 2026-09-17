@@ -216,6 +216,11 @@ export default function NetSuiteAiInvoiceProcessingPage() {
         description="Custom SuiteScript integration using Oracle's N/documentCapture API to extend NetSuite invoice automation with AI extraction, line-item validation, PO matching, and exception routing."
         url={`${SITE_URL}/netsuite-ai-invoice-processing`}
         serviceType="NetSuite Integration"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: AI invoice processing configuration, Automated Bill Capture optimization, and ongoing AP automation support. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: AP automation development including AI invoice processing and SuiteApprovals workflow builds. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full AP and finance automation including AI invoice processing, approval workflows, and account management. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

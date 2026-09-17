@@ -194,6 +194,11 @@ export default function NetSuiteSupportComparisonPage() {
         description="Comparison of all NetSuite support options: Oracle standard support, ACS, third-party managed retainer, break-fix, and internal hire."
         url={`${SITE_URL}/netsuite-support-comparison`}
         serviceType="NetSuite Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: post-go-live support retainer covering development, administration, and break-fix. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active development and full account management. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: comprehensive coverage replacing a large-partner or ACS arrangement at lower cost. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
 
@@ -486,6 +491,28 @@ export default function NetSuiteSupportComparisonPage() {
           secondaryLabel="How managed support works"
         />
 
+
+        {/* Why SuitePacific */}
+        <div className="mt-14 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Why SuitePacific for ongoing NetSuite support</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            The post-go-live NetSuite partner for companies that need ongoing development, not a project firm.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific is built for retained post-go-live support: ongoing SuiteScript development, workflow automation, integrations, and administration on a fixed monthly retainer. Not a project firm, not a staffing agency, not Oracle standard support.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500 mb-4">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Oracle NetSuite Certified SuiteCloud Developer II and Administrator Professional</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Retained account context across every engagement; no re-explaining history each request</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Direct developer access on every engagement; no ticket queue or account manager relay</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> US-based, month-to-month after a three-month minimum, starting at $799/month</li>
+          </ul>
+          <p className="text-sm text-brand-400">Related: 
+            <Link href="/netsuite-managed-support" className="text-accent hover:underline">NetSuite managed support</Link>
+            {" "}and{" "}
+            <Link href="/netsuite-post-go-live-support" className="text-accent hover:underline">post-go-live support</Link>.
+          </p>
+        </div>
         <ServiceFaqSection items={FAQ} />
 
         <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">

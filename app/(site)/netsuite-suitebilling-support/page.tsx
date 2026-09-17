@@ -203,6 +203,11 @@ export default function NetSuiteSuiteBillingSupportPage() {
         description="NetSuite SuiteBilling post-go-live support for subscription billing issues including charges not generating, change order errors, ARM integration gaps, and deferred revenue reconciliation."
         url={`${SITE_URL}/netsuite-suitebilling-support`}
         serviceType="NetSuite Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: SuiteBilling configuration fixes, charge generation troubleshooting, ARM alignment, and billing automation updates. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active SuiteBilling development and configuration plus broader NetSuite administration. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: comprehensive billing and revenue management support alongside SuiteScript development and account management. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

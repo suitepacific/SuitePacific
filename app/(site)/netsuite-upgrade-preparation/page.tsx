@@ -199,6 +199,11 @@ export default function NetSuiteUpgradePreparationPage() {
         description="Pre-upgrade testing and regression support for live NetSuite accounts: SuiteScript, workflow, and integration validation before Oracle upgrade windows."
         url={`${SITE_URL}/netsuite-upgrade-preparation`}
         serviceType="NetSuite Upgrade Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: includes Sandbox-first upgrade prep before each bi-annual NetSuite release: customization review, regression testing, and Production sign-off. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: upgrade preparation plus ongoing development and administration between release cycles. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: comprehensive account management including upgrade preparation, active development, and administration. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
 

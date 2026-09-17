@@ -295,6 +295,11 @@ export default function RetailEcommercePage() {
         description="NetSuite post-go-live support and development for retail and e-commerce companies, including channel order management, inventory automation, and Shopify integration."
         url={`${SITE_URL}/industries/retail-ecommerce`}
         serviceType="NetSuite Retail Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: Shopify and channel integration maintenance, inventory sync, order fulfillment automation, and e-commerce saved searches. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active e-commerce development including channel integrations, order routing, and inventory management. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full NetSuite management for retail and e-commerce: integrations, SuiteScript, and account management. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

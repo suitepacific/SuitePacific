@@ -254,6 +254,11 @@ export default function NetSuiteConsultingServicesPage() {
         description="NetSuite consulting for post-go-live companies: SuiteScript 2.x development (User Event, Scheduled, Map/Reduce, RESTlet, Suitelet), SuiteFlow workflow automation, RESTlet and API integrations, saved search and SuiteAnalytics reporting, advanced FreeMarker PDF templates, account performance optimization, and administration. Month-to-month engagements, sandbox-first, by Oracle NetSuite SuiteCloud Developer II and Administrator Professional certified developers."
         url={`${SITE_URL}/netsuite-consulting-services`}
         serviceType="NetSuite Consulting"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: ongoing consulting retainer for post-go-live challenges: development, configuration, administration, and troubleshooting. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active consulting engagement covering development and administration. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: comprehensive consulting covering the full post-go-live NetSuite stack. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

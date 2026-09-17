@@ -141,6 +141,11 @@ export default function WipReportPage() {
         description="Custom WIP schedule builds for construction companies on NetSuite: saved searches and SuiteQL queries producing contract value, cost to date, percentage complete, earned revenue, and over/under billing in real time."
         url={`${SITE_URL}/netsuite-wip-report`}
         serviceType="NetSuite Construction Reporting"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: WIP report build, job cost saved search configuration, revenue recognition alignment, and ongoing reporting updates. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: WIP and construction reporting builds plus broader NetSuite administration and workflow support. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full construction accounting support including WIP, job cost, billing, and SuiteScript development. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
 

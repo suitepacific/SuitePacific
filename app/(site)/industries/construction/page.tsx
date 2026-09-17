@@ -293,6 +293,11 @@ export default function ConstructionPage() {
         description="NetSuite post-go-live support and development for construction companies, including job costing, change order automation, progress billing, and project reporting."
         url={`${SITE_URL}/industries/construction`}
         serviceType="NetSuite Construction Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: WIP reports, job cost saved searches, billing schedules, and SuiteScript for construction project accounting. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active development for construction accounts including job cost, WIP, and project billing automation. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full NetSuite management for construction companies: accounting, reporting, SuiteScript, and integrations. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

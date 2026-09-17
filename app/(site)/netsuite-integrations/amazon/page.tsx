@@ -167,6 +167,11 @@ export default function NetSuiteAmazonIntegrationPage() {
         description="Custom NetSuite and Amazon Seller Central integration with order import, inventory sync, fulfillment confirmation, and settlement reconciliation."
         url={`${SITE_URL}/netsuite-integrations/amazon`}
         serviceType="NetSuite Integration"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: Amazon-NetSuite integration maintenance: order sync, inventory updates, fulfillment confirmation, and break-fix. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active Amazon integration development plus NetSuite administration. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full e-commerce and integration management including Amazon, other channels, and account development. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

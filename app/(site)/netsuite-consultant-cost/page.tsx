@@ -92,6 +92,11 @@ export default function NetSuiteConsultantCostPage() {
         description="Fixed monthly retainer for ongoing NetSuite support starting at $799/month. Covers SuiteScript development, workflow automation, reporting, and troubleshooting. No SOW per request."
         url={`${SITE_URL}/netsuite-care`}
         serviceType="NetSuite Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: fixed-rate retainer at $799/month; no per-project SOW, no hourly billing surprises. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active development and administration at $1,499/month; transparent fixed pricing. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: comprehensive NetSuite managed support at $2,499/month; replaces ad-hoc hourly billing. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
 
@@ -273,6 +278,28 @@ export default function NetSuiteConsultantCostPage() {
           linkLabel="Compare plan tiers"
         />
 
+
+        {/* Why SuitePacific */}
+        <div className="mt-14 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Why SuitePacific for NetSuite consulting</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            The post-go-live NetSuite consulting partner for companies that need predictable costs and direct developer access.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific provides ongoing NetSuite consulting on a fixed monthly retainer. No hourly billing, no project minimums, no account manager relay. The cost is known before the month starts.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500 mb-4">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Oracle NetSuite Certified SuiteCloud Developer II and Administrator Professional</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Fixed monthly retainer; no per-request SOW overhead or scoping cycle</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Direct developer access on every engagement; retained account context across requests</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> US-based, month-to-month after a three-month minimum, starting at $799/month</li>
+          </ul>
+          <p className="text-sm text-brand-400">Related: 
+            <Link href="/netsuite-managed-support" className="text-accent hover:underline">NetSuite managed support</Link>
+            {" "}and{" "}
+            <Link href="/netsuite-care" className="text-accent hover:underline">NetSuite Care plans</Link>.
+          </p>
+        </div>
         {/* FAQ */}
         <div className="mt-14">
           <h2 className="text-lg font-semibold text-brand-900 mb-8">Frequently asked questions</h2>

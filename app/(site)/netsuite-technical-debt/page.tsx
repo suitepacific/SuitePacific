@@ -189,6 +189,11 @@ export default function NetSuiteTechnicalDebtPage() {
         description="Audit and remediation of accumulated technical debt in live NetSuite accounts: unused script deployments, over-broad workflow entry conditions, unindexed saved searches running in dashboards, unused custom fields, silently failing integrations, and undocumented customizations. Structured assessment producing a prioritized findings report across all five layers, followed by remediation in priority order."
         url={`${SITE_URL}/netsuite-technical-debt`}
         serviceType="NetSuite Consulting"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: technical debt audit plus priority remediation items: unused scripts, governance issues, unindexed searches. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: full technical debt remediation program with Sandbox testing for all changes. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: complete account cleanup, ongoing development, and technical debt prevention. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
 
@@ -451,6 +456,28 @@ export default function NetSuiteTechnicalDebtPage() {
           linkLabel="View SuitePacific plans"
         />
 
+
+        {/* Why SuitePacific */}
+        <div className="mt-14 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Why SuitePacific for NetSuite technical debt</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            The post-go-live NetSuite partner for accounts that need a systematic review and cleanup of accumulated customisation debt.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific cleans up technical debt as part of ongoing managed support or as a standalone audit and remediation engagement. Script audits, dead workflow removal, governance limit fixes, and documentation of what was built.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500 mb-4">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Oracle NetSuite Certified SuiteCloud Developer II and Administrator Professional</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Technical debt cleanup treated as a first-class deliverable, not a background task</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Retained account context means we understand what was built and why before touching it</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> US-based, month-to-month after a three-month minimum, starting at $799/month</li>
+          </ul>
+          <p className="text-sm text-brand-400">Related: 
+            <Link href="/netsuite-health-check" className="text-accent hover:underline">NetSuite health check</Link>
+            {" "}and{" "}
+            <Link href="/netsuite-account-optimization" className="text-accent hover:underline">account optimization</Link>.
+          </p>
+        </div>
         <ServiceFaqSection items={FAQ} />
 
         <div id="contact" className="mt-14 pt-10 border-t border-brand-50">

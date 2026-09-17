@@ -184,6 +184,11 @@ export default function NetSuiteImplementationRescuePage() {
         description="Assessment and remediation for NetSuite accounts that were misconfigured, incompletely implemented, or abandoned mid-engagement."
         url={`${SITE_URL}/netsuite-implementation-rescue`}
         serviceType="NetSuite Remediation"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: post-rescue ongoing support: fixes, ongoing development, and administration after stabilization. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active rescue and remediation plus ongoing development as the account stabilizes. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full-scope rescue, remediation, and ongoing management for accounts that need comprehensive intervention. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

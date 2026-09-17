@@ -293,6 +293,11 @@ export default function RealEstatePage() {
         description="NetSuite post-go-live support and development for real estate companies, including property-level reporting, lease tracking, and multi-entity consolidation."
         url={`${SITE_URL}/industries/real-estate`}
         serviceType="NetSuite Real Estate Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: property management workflows, lease tracking, vendor payments, and real estate reporting. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active development for real estate accounts including lease management and AP automation. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full NetSuite management for real estate companies: property accounting, SuiteScript, and integrations. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

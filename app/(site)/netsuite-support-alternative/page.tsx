@@ -211,6 +211,11 @@ export default function SupportAlternativePage() {
         description="Third-party NetSuite support covering the full account: SuiteScript, workflows, integrations, administration, and configuration, with direct access and same-day response."
         url={`${SITE_URL}/netsuite-support-alternative`}
         serviceType="NetSuite Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: certified NetSuite support alternative covering customizations and integrations that Oracle support does not. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active development and administration as a complete Oracle support alternative. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: comprehensive managed support covering everything a post-go-live account needs beyond Oracle support. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

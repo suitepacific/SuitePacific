@@ -165,6 +165,11 @@ export default function CertifiedNetSuiteSupportPage() {
         description="NetSuite support and development from consultants holding SuiteCloud Developer II and Administrator Professional certifications."
         url={`${SITE_URL}/netsuite-certified-netsuite-support`}
         serviceType="NetSuite Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: Oracle-certified NetSuite support (SuiteCloud Developer II and Administrator Professional) for development and administration. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: certified development and administration covering the full customization layer. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full-scope certified NetSuite managed support. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd

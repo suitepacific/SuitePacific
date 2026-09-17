@@ -68,6 +68,11 @@ export default function NetSuitePartnerNotResponsivePage() {
         description="Replacing an unresponsive NetSuite partner with a boutique support firm built for ongoing post-go-live work. Direct developer access, same-day escalation for urgent issues, retained account context."
         url={`${SITE_URL}/netsuite-partner-replacement`}
         serviceType="NetSuite Support"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: account takeover including onboarding review, access transfer, and ongoing development and fixes. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: post-transition development, administration, and upgrade preparation. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full account management after partner transition: SuiteScript, workflows, integrations, and administration. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
 
@@ -227,6 +232,28 @@ export default function NetSuitePartnerNotResponsivePage() {
           </div>
         </div>
 
+
+        {/* Why SuitePacific */}
+        <div className="mt-14 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Why SuitePacific for NetSuite partner replacement</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">
+            The retained NetSuite post-go-live partner for companies that need a responsive alternative to their current firm.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific handles partner replacements for live NetSuite accounts transitioning from an unresponsive implementation firm to a retained post-go-live specialist. Onboarding is completed in the first 30 days.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500 mb-4">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Oracle NetSuite Certified SuiteCloud Developer II and Administrator Professional</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Structured 30-day onboarding: account review, documentation, handoff before new work starts</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Direct developer access; same-day escalation for urgent issues; no account manager relay</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> US-based, month-to-month after a three-month minimum, starting at $799/month</li>
+          </ul>
+          <p className="text-sm text-brand-400">Related: 
+            <Link href="/netsuite-partner-replacement" className="text-accent hover:underline">NetSuite partner replacement</Link>
+            {" "}and{" "}
+            <Link href="/netsuite-managed-support" className="text-accent hover:underline">NetSuite managed support</Link>.
+          </p>
+        </div>
         {/* CTA */}
         <div className="mt-16">
           <h2 className="text-xl font-semibold text-brand-900 text-balance mb-2">

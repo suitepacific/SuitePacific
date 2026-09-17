@@ -142,6 +142,11 @@ export default function NetSuiteCeligoIntegrationPage() {
         description="NetSuite Celigo integration services: new builds, broken flow repair, ongoing maintenance, and error monitoring. Celigo Mastery Level 4 certified."
         url={`${SITE_URL}/netsuite-integrations/celigo`}
         serviceType="NetSuite Integration"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: Celigo integration maintenance, flow monitoring, error resolution, and configuration updates. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: active Celigo flow development and maintenance plus NetSuite administration. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: comprehensive Celigo integration management alongside SuiteScript development and account management. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd
