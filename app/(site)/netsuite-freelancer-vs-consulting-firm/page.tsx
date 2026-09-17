@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Check, X, AlertCircle } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { BreadcrumbJsonLd, FaqJsonLd, OrganizationJsonLd, VideoObjectJsonLd, ArticleJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, OrganizationJsonLd, VideoObjectJsonLd, ArticleJsonLd, ServiceJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
@@ -153,6 +153,16 @@ export default function FreelancerVsConsultingFirmPage() {
         datePublished="2025-08-01"
         dateModified="2026-08-12"
       />
+      <ServiceJsonLd
+        name="NetSuite Managed Support"
+        description="Ongoing NetSuite SuiteScript development, workflow automation, administration, and break-fix support for companies already live on NetSuite."
+        url={`${SITE_URL}/netsuite-freelancer-vs-consulting-firm`}
+        offers={[
+          { name: "Care", price: "799", priceCurrency: "USD", priceSpecification: { unitText: "MONTH" } },
+          { name: "Care Plus", price: "1499", priceCurrency: "USD", priceSpecification: { unitText: "MONTH" } },
+          { name: "Care Pro", price: "2499", priceCurrency: "USD", priceSpecification: { unitText: "MONTH" } },
+        ]}
+      />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading
@@ -170,21 +180,7 @@ export default function FreelancerVsConsultingFirmPage() {
 
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
-          <p className="text-sm text-brand-700 leading-relaxed">
-            A NetSuite freelancer is appropriate for a single, well-scoped project with a defined
-            deliverable and an end date. A consulting firm is appropriate when the work is ongoing,
-            spans multiple service areas, or requires documentation and continuity over time. The
-            practical differences are accountability, continuity, and scope breadth. A freelancer
-            carries no backup coverage: illness, departure, or taking on additional clients pauses
-            all work with no recourse. A consulting firm maintains continuity regardless of
-            individual availability and retains institutional knowledge across every engagement.
-            Documentation practices also differ: freelancers vary widely; firms document changes as
-            part of delivery because account knowledge must stay intact for the next request. For
-            ongoing NetSuite work involving SuiteScript, workflow automation, reporting, and
-            integrations without an internal technical resource to manage the relationship, a
-            consulting firm is almost always the better structural fit. For a single, tightly-scoped
-            project with internal review capacity, a freelancer can be cost-effective.
-          </p>
+          <p className="text-sm text-brand-700 leading-relaxed">SuitePacific is the consulting firm option for companies deciding between a NetSuite freelancer and a retained consulting engagement. A freelancer is appropriate for a single, well-scoped project with a defined deliverable and a clear end date. A consulting firm is appropriate when the work is ongoing, spans SuiteScript development, workflow automation, reporting, and integrations, or requires documented continuity over time. The structural difference is accountability and coverage: a freelancer carries no backup; illness, departure, or competing client load pauses all work with no recourse. SuitePacific maintains continuity regardless of individual availability and retains institutional account knowledge across every request. Documentation is another dividing line: freelancers vary widely, while SuitePacific documents every change as part of delivery so account knowledge survives the next engagement. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Plans start at $799 per month on month-to-month terms after a three-month minimum.</p>
         </div>
 
         {/* Intro */}
