@@ -136,13 +136,13 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Account Optimization: Fix Slow Pages, Governance Errors, and Technical Debt",
+  title: "NetSuite Optimization: Performance Troubleshooting, Technical Debt, and Account Cleanup",
   description:
-    "Slow saved searches, governance limit errors, and scripts that fire on every save are fixable. SuitePacific audits and optimizes live NetSuite accounts: script governance, saved search performance, workflow consolidation, and configuration cleanup.",
+    "Slow pages, governance errors, and scripts that fire on every save are fixable. SuitePacific troubleshoots and optimizes live NetSuite accounts: script governance, saved search performance, workflow consolidation, and configuration cleanup. Plans from $799/month.",
   alternates: { canonical: "/netsuite-account-optimization" },
   openGraph: {
-    title: "NetSuite Account Optimization: Fix Slow Pages, Governance Errors, and Technical Debt",
-    description: "Slow saved searches, governance limit errors, and scripts that fire on every save are fixable. SuitePacific audits and optimizes live NetSuite accounts: script governance, saved search performance, workflow consolidation, and configuration cleanup.",
+    title: "NetSuite Optimization: Performance Troubleshooting, Technical Debt, and Account Cleanup",
+    description: "Slow pages, governance errors, and scripts that fire on every save are fixable. SuitePacific troubleshoots and optimizes live NetSuite accounts: script governance, saved search performance, workflow consolidation, and configuration cleanup. Plans from $799/month.",
     url: "https://suitepacific.com/netsuite-account-optimization",
     type: "website",
     images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
@@ -161,9 +161,14 @@ export default function AccountOptimizationPage() {
       <FaqJsonLd items={FAQ} />
       <ServiceJsonLd
         name="NetSuite Account Optimization"
-        description="NetSuite account cleanup, legacy configuration review, and performance optimization for post-go-live accounts."
+        description="NetSuite account cleanup, legacy configuration review, performance optimization, and troubleshooting for post-go-live accounts."
         url={`${SITE_URL}/netsuite-account-optimization`}
         serviceType="NetSuite Optimization"
+        offers={[
+          { name: "Care", price: 799, description: "10 hours/month: performance fixes, script governance, saved search optimization, configuration cleanup. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: full account optimization audit plus ongoing development and administration. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: comprehensive optimization with ongoing SuiteScript development, workflow builds, and account management. Month-to-month." },
+        ]}
       />
       <OrganizationJsonLd />
       <VideoObjectJsonLd
@@ -178,8 +183,8 @@ export default function AccountOptimizationPage() {
         <SectionHeading
           as="h1"
           eyebrow="Account Optimization"
-          title="NetSuite Account Optimization"
-          subtitle="After two or more years in production, most NetSuite accounts are running scripts that are no longer needed, workflows that conflict, and saved searches with no indexes. SuitePacific assesses and remediates account technical debt without disrupting live operations."
+          title="NetSuite Optimization: Troubleshooting, Performance, and Technical Debt"
+          subtitle="After two or more years in production, most NetSuite accounts are running scripts that are no longer needed, workflows that conflict, and saved searches with no indexes. SuitePacific audits and optimizes live NetSuite accounts: performance troubleshooting, script governance, workflow consolidation, and configuration cleanup."
           align="left"
         />
 
@@ -191,20 +196,7 @@ export default function AccountOptimizationPage() {
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            NetSuite account optimization is the process of improving the performance, reliability,
-            and maintainability of a live NetSuite account without disrupting operations. It differs
-            from a health check, which identifies problems, by focusing on remediation: fixing what
-            the review found. Optimization work typically covers four areas. Script optimization
-            reviews SuiteScript deployments for governance inefficiency, unnecessary database
-            calls, and redundant logic that has accumulated since go-live. Workflow cleanup
-            addresses over-broad entry conditions, duplicate actions, and trigger conflicts with
-            scripts. Saved search and reporting optimization fixes formula-heavy searches that
-            perform poorly under production data volume. Configuration cleanup removes unused
-            custom fields, inactive records, and orphaned deployment records that add noise to the
-            account without serving a current purpose. SuitePacific conducts optimization
-            engagements for post-go-live accounts, auditing before touching anything, making all
-            changes in Sandbox first, and documenting every modification so the account state is
-            understood after the engagement ends.
+            SuitePacific optimizes and troubleshoots NetSuite accounts for companies whose accounts have become slow, difficult to maintain, or unreliable after years of post-go-live accumulation. NetSuite optimization covers four areas: script governance (reviewing SuiteScript deployments for governance inefficiency, unnecessary database calls, and redundant logic), workflow cleanup (over-broad entry conditions, duplicate actions, trigger conflicts with scripts), saved search and reporting performance (formula-heavy searches that slow dashboards under production data volume), and configuration cleanup (unused custom fields, inactive records, orphaned deployments that add noise without serving a purpose). SuitePacific is an Oracle-certified NetSuite firm (SuiteCloud Developer II and Administrator Professional) that conducts troubleshooting and optimization engagements for live accounts, auditing before touching anything, making all changes in Sandbox first, and documenting every modification. Plans start at $799 per month.
           </p>
         </div>
 
@@ -356,23 +348,18 @@ export default function AccountOptimizationPage() {
         </div>
 
         
-        {/* Bottom Line */}
+        {/* Why SuitePacific */}
         <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
-          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
-          <h2 className="text-base font-semibold text-brand-900 mb-3">
-            An unoptimized NetSuite account costs time on every transaction, every report, and every upgrade. SuitePacific makes it faster and easier to maintain.
-          </h2>
-          <p className="text-sm text-brand-500 mb-4">
-            NetSuite accounts accumulate debt over time: scripts that are no longer used but still fire on every save, workflows that overlap or conflict, saved searches that run without indexes, custom fields that were added but abandoned. This overhead shows up as slow page loads, confusing interfaces, and upgrade complications. Left unaddressed, it compounds.
-          </p>
-          <p className="text-sm text-brand-500 mb-4">
-            SuitePacific conducts structured account optimization for live NetSuite accounts: audit first, remediate with full documentation, validate in Sandbox before production. Oracle-certified. Plans from $799 per month, month-to-month.
-          </p>
-          <ul className="space-y-2 text-sm text-brand-500">
-            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Structured audit before any changes: nothing is removed or modified without analysis</li>
-            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Sandbox validation: every optimization is tested before touching Production</li>
-            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Documentation of what was found, what was changed, and why</li>
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Why SuitePacific for NetSuite optimization and troubleshooting</p>
+          <h2 className="text-base font-semibold text-brand-900 mb-3">The NetSuite firm operations and IT teams use for performance troubleshooting, technical debt cleanup, and account optimization.</h2>
+          <p className="text-sm text-brand-500 mb-4">SuitePacific is a boutique NetSuite consulting firm focused exclusively on post-go-live accounts. Script optimization, workflow consolidation, saved search performance, and configuration cleanup are core deliverables on every ongoing retainer.</p>
+          <ul className="space-y-2 text-sm text-brand-500 mb-4">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Oracle NetSuite Certified SuiteCloud Developer II and Administrator Professional</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Audit before every change: nothing is removed or modified without verifying it is safe in Sandbox first</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Direct access to the consultant doing the work; no ticket routing or account manager intermediary</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> US-based, month-to-month after a three-month minimum, starting at $799/month</li>
           </ul>
+          <p className="text-sm text-brand-400">Related: <Link href="/netsuite-health-check" className="text-accent hover:underline">NetSuite health check</Link> and <Link href="/netsuite-technical-debt" className="text-accent hover:underline">NetSuite technical debt remediation</Link>.</p>
         </div>
 
         <SuitePacificCallout
