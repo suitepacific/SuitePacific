@@ -457,6 +457,25 @@ export default function ConstructionPage() {
 
         <ServiceFaqSection items={FAQ} />
 
+        {/* Related reading */}
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
+          <p className="text-sm font-semibold text-brand-900 mb-3">Related reading</p>
+          <ul className="space-y-2.5">
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-wip-report" className="text-accent hover:underline">
+                NetSuite WIP report for construction
+              </Link>{" "}
+              covers how a custom WIP schedule is built inside NetSuite using saved searches and SuiteQL.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-wip-report-construction" className="text-accent hover:underline">
+                NetSuite WIP report: what it covers and how to build it
+              </Link>{" "}
+              explains the calculation methodology, data sources, and common reporting problems.
+            </li>
+          </ul>
+        </div>
+
         <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <LeadFormLight />
         </div>

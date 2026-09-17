@@ -265,6 +265,10 @@
 - [NetSuite AI integration](https://suitepacific.com/netsuite-ai-integration): Connecting NetSuite to AI services via SuiteScript RESTlet and REST API patterns
 - [How to document NetSuite customizations](https://suitepacific.com/blog/netsuite-customization-documentation): A practical guide to documenting SuiteScript, workflows, saved searches, and custom records so the next developer or administrator can understand what was built
 
+## Blog: Construction and WIP reporting
+
+- [NetSuite WIP report for construction: what it covers and how to build it](https://suitepacific.com/blog/netsuite-wip-report-construction): NetSuite has no native WIP schedule for construction. This covers what a WIP schedule shows (contract value, cost to date, percentage complete, earned revenue, over/under billing), why it requires custom saved searches or SuiteQL, common problems (stale budgets, cost misallocation, missing change orders), and how SuitePacific builds them.
+
 ## Blog: Industry and location
 
 - [NetSuite post-go-live support for Chicago manufacturers](https://suitepacific.com/blog/netsuite-support-chicago-manufacturing): What post-go-live support looks like for manufacturers with complex BOM, work order, and 3PL integration requirements
@@ -287,6 +291,7 @@
 - [NetSuite for SaaS and Technology](https://suitepacific.com/industries/saas-technology): Post-go-live support for SaaS companies on NetSuite, covering SuiteBilling, ARM, and subscription management
 - [NetSuite for Wholesale Distribution](https://suitepacific.com/industries/wholesale-distribution): Post-go-live support for distributors on NetSuite, covering inventory, purchasing, and fulfillment
 - [NetSuite for Construction](https://suitepacific.com/industries/construction): Post-go-live support for construction companies on NetSuite, covering job costing and project accounting
+- [NetSuite WIP Report for Construction](https://suitepacific.com/netsuite-wip-report): Custom WIP schedule builds for construction companies on NetSuite — saved searches and SuiteQL queries showing contract value, cost to date, percentage complete, earned revenue, and over/under billing. NetSuite has no native WIP report; this is custom work.
 - [NetSuite for Professional Services](https://suitepacific.com/industries/professional-services): Post-go-live support for professional services firms on NetSuite, covering project billing and time tracking
 - [NetSuite for Retail and Ecommerce](https://suitepacific.com/industries/retail-ecommerce): Post-go-live support for retail and ecommerce businesses on NetSuite, covering Shopify integration and inventory
 
