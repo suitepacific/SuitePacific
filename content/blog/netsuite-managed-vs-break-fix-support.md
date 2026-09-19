@@ -5,6 +5,8 @@ date: "2026-08-18"
 tags: ["Post-Go-Live", "Consulting"]
 ---
 
+NetSuite managed support is a monthly retainer with a defined hour allocation; break-fix support is billed per request without a retainer, making cost less predictable and response slower for accounts with ongoing development needs.
+
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite managed support (retainer) and break-fix (time-and-materials) differ in two ways that matter: context and cost structure. Managed support retains ongoing context on your account, so each request costs less time than the same request under break-fix, where the consultant re-learns your account on every engagement. Break-fix appears cheaper per hour but is typically more expensive per completed item once re-onboarding time is factored in. For a request that takes three hours of actual development work, break-fix typically adds one to three additional hours of re-onboarding, making the effective cost four to six hours of billed time for three hours of productive work. Choose managed support when your account generates at least four to six hours of ongoing work per month, your customization layer is complex, or you need proactive pre-release Sandbox reviews. Choose break-fix when your account needs support only once or twice a year for isolated, self-contained items with simple scope.</p>

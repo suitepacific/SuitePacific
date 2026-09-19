@@ -109,7 +109,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Approval Workflows: SuiteApprovals Configuration and SuiteFlow Development",
   description:
-    "NetSuite SuiteApprovals handles fixed approval chains. Amount-based routing, supervisor-hierarchy assignment, timed escalation, and compliance holds require SuiteFlow development. SuitePacific builds the complete approval workflow setup for companies already live on NetSuite.",
+    "SuiteApprovals and SuiteFlow workflows for POs, vendor bills, expense reports, and journal entries. Amount routing, escalation, and approval matrix builds.",
   alternates: { canonical: "/netsuite-approval-workflows" },
   openGraph: {
     title: "NetSuite Approval Workflows: SuiteApprovals Configuration and SuiteFlow Development",

@@ -59,7 +59,7 @@ const FAQ = [
 
 export const metadata: Metadata = {
   title: "NetSuite Lease Accounting: ASC 842 Configuration and ROU Asset Setup",
-  description: "NetSuite lease accounting for ASC 842 and IFRS 16 requires setup that does not happen automatically. SuitePacific configures lease records, ROU asset and liability schedules, modification workflows, and disclosure saved searches for real estate and corporate finance teams.",
+  description: "ASC 842 right-of-use asset and liability setup, lease modifications, and disclosure saved searches for accounts already live on NetSuite. Plans from $799/month.",
   alternates: { canonical: "/netsuite-lease-accounting" },
   openGraph: {
     title: "NetSuite Lease Accounting: ASC 842 Configuration and ROU Asset Setup",

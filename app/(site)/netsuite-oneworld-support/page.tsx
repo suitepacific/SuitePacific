@@ -44,7 +44,7 @@ const FAQ = [
 
 export const metadata: Metadata = {
   title: "NetSuite OneWorld Support: Intercompany, Eliminations, and Multi-Subsidiary Configuration",
-  description: "Most OneWorld accounts have incomplete intercompany configuration, eliminations that do not balance, and users who can see all subsidiaries. SuitePacific fixes these problems and configures OneWorld correctly for consolidated reporting.",
+  description: "Intercompany setup, elimination configuration, consolidated reporting, and subsidiary restrictions for NetSuite OneWorld accounts. Plans from $799/month.",
   alternates: { canonical: "/netsuite-oneworld-support" },
   openGraph: {
     title: "NetSuite OneWorld Support: Intercompany, Eliminations, and Multi-Subsidiary Configuration",

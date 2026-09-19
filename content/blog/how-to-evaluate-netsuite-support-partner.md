@@ -6,6 +6,8 @@ updated: "2026-08-21"
 tags: ["Partner Replacement", "Post-Go-Live", "Consulting"]
 ---
 
+Evaluating a NetSuite post-go-live support partner means assessing who performs the work, what scope they cover beyond Oracle standard support, and whether the billing model matches how ongoing accounts actually operate.
+
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The criteria that mattered for choosing an implementation partner (firm size, certifications, project methodology, sales track record) are largely irrelevant for post-go-live support. What matters for ongoing support is individual developer expertise rather than firm headcount, retainer-based availability rather than SOW-driven billing, and direct access to the person doing the work rather than an account manager intermediary. The evaluation process for a support partner should test these things directly, not rely on credentials and case studies designed for implementation selection. A structured evaluation takes one to two weeks and includes a technical test conversation, billing model review, and reference check with companies in ongoing retainer relationships. The most revealing question to ask any prospective support provider: walk me through what happens when we submit an urgent request. A provider who can describe a specific process is more credible than one who responds with a general service-level commitment. Ask to speak with the individual consultant who would actually work in your account, not just the sales contact.</p>
@@ -17,7 +19,7 @@ They are weak signals for post-go-live support, where the account's needs are di
 
 This guide walks through how to structure a support partner evaluation, what questions to ask, what red flags to watch for, and how to verify claims before committing to a relationship.
 
-## What to test in the evaluation
+## What should you test when evaluating a NetSuite support partner?
 
 **Test response time, not just availability claims.** Ask a specific technical question in the initial conversation and observe how fast and how accurate the answer is. "We have a SuiteScript user event that started failing after the 2026.2 release; what would you check first?" is a better evaluation tool than references and case studies. A provider who knows NetSuite well will answer this immediately and specifically, likely mentioning that they would check the Script Execution Log in NetSuite, look for API version deprecations in the release notes, and verify whether the affected record types changed in the release. A generalist firm will schedule a follow-up call.
 

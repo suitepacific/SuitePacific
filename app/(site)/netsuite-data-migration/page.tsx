@@ -50,7 +50,7 @@ const FAQ = [
 
 export const metadata: Metadata = {
   title: "NetSuite Data Migration: CSV Import, Migration Order, and SuiteScript Migration Service",
-  description: "Most NetSuite data migrations fail not because of the import tool but because of wrong import order, bad source data, or incorrect field mapping. SuitePacific handles migrations for customers, vendors, items, transactions, and custom records.",
+  description: "CSV import planning, field mapping, SuiteScript migration, and Import Doctor validation for customers, vendors, items, and transactions. Plans from $799/month.",
   alternates: { canonical: "/netsuite-data-migration" },
   openGraph: {
     title: "NetSuite Data Migration: CSV Import, Migration Order, and SuiteScript Migration Service",

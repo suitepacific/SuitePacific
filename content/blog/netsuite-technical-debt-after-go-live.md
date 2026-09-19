@@ -5,6 +5,8 @@ date: "2026-08-19"
 tags: ["Post-Go-Live", "SuiteScript", "Admin"]
 ---
 
+NetSuite technical debt after go-live is the accumulation of suboptimal scripts, overly broad workflows, undocumented custom fields, and unreviewed integrations that build up when an account grows faster than its technical stewardship.
+
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite technical debt is the accumulation of shortcuts, deferred maintenance, and undocumented customizations that build up over time after a go-live. It comes from four main sources: scripts written under implementation deadline pressure with no ongoing review, workflows that were never optimized and fire on every transaction regardless of conditions, custom fields added to solve a one-time problem that are now unused but still load on every record, and integrations built on deprecated authentication methods or API patterns that will eventually stop working. The visible symptoms are account slowness, recurring unexplained errors, NetSuite release cycles that require emergency fixes, and a growing list of things the team knows are wrong but has never had time to fix. Left unaddressed, technical debt compounds: the undocumented script from 2022 is harder to maintain in 2026 than it was in 2023. A structured review, done once, produces a clear picture of what is safe to remove, what needs updating, and what is high-risk if left alone.</p>

@@ -118,7 +118,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Multi-Location Inventory Management",
   description:
-    "NetSuite multi-location inventory configuration for wholesale distributors: bin management, inter-location transfers, location-level reorder points, and inventory reporting across warehouses.",
+    "Bin management, inter-location transfers, and reorder-by-location automation for distributors on NetSuite. SuiteCloud Developer II certified. Plans from $799.",
   alternates: { canonical: "/netsuite-multi-location-inventory" },
   openGraph: {
     title: "NetSuite Multi-Location Inventory Management",

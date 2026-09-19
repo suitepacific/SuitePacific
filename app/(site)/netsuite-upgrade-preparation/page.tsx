@@ -172,7 +172,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Upgrade Preparation",
   description:
-    "How to prepare a live NetSuite account for an Oracle upgrade: Sandbox testing, SuiteScript regression, workflow validation, integration testing, and release notes review. Version-agnostic checklist.",
+    "Prepare a live NetSuite account for Oracle upgrades: Sandbox testing, SuiteScript regression, workflow validation, and integration testing. Version-agnostic.",
   alternates: { canonical: "/netsuite-upgrade-preparation" },
   openGraph: {
     title: "NetSuite Upgrade Preparation",

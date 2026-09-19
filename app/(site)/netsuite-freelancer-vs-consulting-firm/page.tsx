@@ -112,7 +112,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Freelancer vs. Consulting Firm: How to Choose",
   description:
-    "The practical trade-offs between hiring a freelance NetSuite developer and working with a consulting firm: accountability, continuity, cost structure, and when each model fits.",
+    "Accountability, continuity, and cost trade-offs between independent NetSuite freelancers and consulting firms for post-go-live support engagements. Free guide.",
   alternates: { canonical: "/netsuite-freelancer-vs-consulting-firm" },
   openGraph: {
     title: "NetSuite Freelancer vs. Consulting Firm: How to Choose",

@@ -6,6 +6,8 @@ updated: "2026-09-03"
 tags: ["Post-Go-Live", "Admin", "Consulting"]
 ---
 
+NetSuite ACS (Advanced Customer Support) is an Oracle service tier that adds hands-on functional guidance and a designated consultant; it excludes SuiteScript development, integration maintenance, and custom workflow logic in every tier.
+
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite ACS (Advanced Customer Support) is Oracle's premium support tier, offered across four levels: Advise (shared resource pool), Monitor (approximately 36 hours per quarter with a named contact), Optimize (approximately 20 hours per month), and Architect (approximately 40 hours per month with a senior architect). All four tiers cover the same scope: standard NetSuite platform guidance, proactive account reviews, and Oracle escalation access for platform defects. ACS is worth it when your primary support needs sit in that standard platform layer. It is not worth it when the majority of your day-to-day requests involve SuiteScript development, third-party integration maintenance, custom workflow logic, or anything built on top of standard NetSuite. ACS explicitly excludes all of those areas at every tier. For accounts where most actual support work falls outside ACS scope, the cost covers a support layer that cannot fulfill most requests. The evaluation starts with one question: what did your account actually call support for over the past year?</p>

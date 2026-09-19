@@ -176,7 +176,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite SuiteBilling Support",
   description:
-    "NetSuite SuiteBilling post-go-live support for subscription billing issues: charges not generating, change order errors, ARM integration gaps, renewal problems, and deferred revenue reconciliation.",
+    "Ongoing SuiteBilling configuration, charge generation, ARM, and billing automation support for SaaS companies on NetSuite. Plans from $799, month-to-month.",
   alternates: { canonical: "/netsuite-suitebilling-support" },
   openGraph: {
     title: "NetSuite SuiteBilling Support",

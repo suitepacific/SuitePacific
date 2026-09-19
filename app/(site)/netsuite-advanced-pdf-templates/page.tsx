@@ -138,7 +138,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Advanced PDF Templates",
   description:
-    "Custom NetSuite Advanced PDF/HTML templates: branded invoices, statements, purchase orders, and packing slips with conditional sections, dynamic layouts, and barcode support.",
+    "FreeMarker-based invoice, purchase order, statement, and custom document templates for NetSuite. SuiteCloud Developer II certified. Plans from $799/month.",
   alternates: { canonical: "/netsuite-advanced-pdf-templates" },
   openGraph: {
     title: "NetSuite Advanced PDF Templates",

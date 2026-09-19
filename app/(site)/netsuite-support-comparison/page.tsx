@@ -161,7 +161,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Support Options Compared",
   description:
-    "All five NetSuite support models compared: Oracle standard support, ACS, third-party managed retainer, break-fix, and internal hire. What each covers, what each costs, and which fits which account.",
+    "Five NetSuite support models compared: Oracle standard, ACS, managed retainer, break-fix, and internal hire. Scope, cost, and which fits which account.",
   alternates: { canonical: "/netsuite-support-comparison" },
   openGraph: {
     title: "NetSuite Support Options Compared",

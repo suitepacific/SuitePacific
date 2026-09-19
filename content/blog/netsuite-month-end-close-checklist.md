@@ -71,6 +71,8 @@ Generic month-end close advice is easy to find. What's harder to find is what's 
 <figcaption style="text-align:center;font-size:0.78rem;color:#8aa2d6;margin-top:0.4rem">The sequence matters. Running process jobs after reconciliation: or locking before them: produces unreliable financials.</figcaption>
 </figure>
 
+## What does a reliable NetSuite month-end close process require?
+
 ## 1. Check for transactions with mismatched dates and posting periods
 
 NetSuite lets a transaction have a date in one period but post to a completely different period. A vendor bill dated March 31 can post to April if someone changed the posting period manually. Before closing, run a saved search on Transactions where Transaction Date is in the current period but Posting Period is not, and vice versa. Entries that shouldn't exist will surface immediately.

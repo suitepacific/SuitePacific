@@ -75,7 +75,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Partner Too Expensive? Here Is What It Costs and Why",
   description:
-    "Why large NetSuite partners cost more than they should for ongoing support, and what a boutique retainer model costs instead. SuitePacific Care plans start at $799/month.",
+    "Why large NetSuite implementation partners cost more for ongoing support and what a fixed-fee retainer model costs instead. Comparison across firm types.",
   alternates: { canonical: "/netsuite-partner-too-expensive" },
   openGraph: {
     title: "NetSuite Partner Too Expensive? Here Is What It Costs and Why",

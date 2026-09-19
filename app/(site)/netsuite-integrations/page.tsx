@@ -162,7 +162,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Integration Development and Maintenance",
   description:
-    "Custom NetSuite integration development: RESTlets, SuiteTalk APIs, scheduled data sync, and file-based integrations connecting NetSuite to e-commerce platforms, 3PLs, CRMs, and other business systems.",
+    "Shopify, Salesforce, HubSpot, Amazon, Avalara, and Celigo integration builds and maintenance for NetSuite. Oracle-certified. Plans from $799, month-to-month.",
   alternates: { canonical: "/netsuite-integrations" },
   openGraph: {
     title: "NetSuite Integration Development and Maintenance",

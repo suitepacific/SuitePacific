@@ -5,6 +5,8 @@ date: "2026-08-18"
 tags: ["Post-Go-Live", "Consulting", "Account Optimization"]
 ---
 
+NetSuite post-go-live support is the ongoing technical and administrative support an account requires after the implementation partner disengages: SuiteScript development, workflow automation, integration maintenance, and account administration.
+
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite post-go-live support is the ongoing technical engagement that keeps a live NetSuite account running and evolving after the implementation project closes. It covers SuiteScript development, SuiteFlow workflow automation, saved searches and dashboards, integrations maintenance, account optimization, and administration: everything a live account needs as business requirements change and the account grows. It is distinct from NetSuite's own platform support (which covers product bugs and standard functionality) and from implementation work (which is scoped to go-live). Most businesses on NetSuite need post-go-live support within six to twelve months of going live, because the account needs to change faster than internal resources can manage on their own. Post-go-live support is most commonly structured as a monthly retainer: a fixed block of hours applied to whatever comes up without a new statement of work for each item. NetSuite's own platform support and Advanced Customer Support (ACS) do not cover custom SuiteScript or third-party integrations, which is where most post-go-live requests originate.</p>
@@ -14,7 +16,7 @@ When a NetSuite implementation closes, the account is live and configured for ho
 
 Post-go-live support is the technical engagement that handles all of this after the implementation partner disengages.
 
-## What post-go-live support covers
+## What does NetSuite post-go-live support cover?
 
 **SuiteScript development.** New scripts when a business process requires automation that SuiteFlow cannot handle. Fixes to existing scripts when they fail after a release or produce unexpected behavior. Governance limit issues on high-volume transaction types. Migration from SuiteScript 1.0 to 2.x.
 

@@ -90,7 +90,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "Do I Need NetSuite ACS? A Decision Guide",
   description:
-    "A practical guide to deciding whether Oracle ACS (Advanced Customer Support) is right for your NetSuite account. Covers ACS scope, when it adds value, when it does not, and what alternatives exist.",
+    "Decision guide: when ACS adds value, when it does not, five account scenarios, and what to consider before purchasing or canceling ACS. Covers all ACS tiers.",
   alternates: { canonical: "/do-i-need-netsuite-acs" },
   openGraph: {
     title: "Do I Need NetSuite ACS? A Decision Guide",

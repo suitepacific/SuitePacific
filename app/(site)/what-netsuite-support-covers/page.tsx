@@ -109,7 +109,7 @@ const SUPPORT_MODELS = [
 export const metadata: Metadata = {
   title: "What Does NetSuite Support Cover?",
   description:
-    "Exactly what Oracle NetSuite standard support covers and what it excludes: SuiteScript, integrations, workflows, custom fields. What ACS adds, and what still requires a third-party resource.",
+    "Oracle support excludes SuiteScript, integrations, and custom workflows. What ACS adds on top of that and what still requires a certified third-party resource.",
   alternates: { canonical: "/what-netsuite-support-covers" },
   openGraph: {
     title: "What Does NetSuite Support Cover?",

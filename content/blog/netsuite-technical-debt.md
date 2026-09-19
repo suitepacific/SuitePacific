@@ -5,6 +5,8 @@ date: "2026-08-18"
 tags: ["Technical Debt", "Post-Go-Live", "Account Optimization"]
 ---
 
+NetSuite technical debt is the accumulation of implementation decisions in a live account that were acceptable at go-live but whose maintenance cost compounds over time as the account evolves and staff turns over.
+
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite technical debt is the accumulation of decisions made in a live account that were acceptable at the time but whose cost compounds over time. It includes scripts deployed during implementation that were never reviewed for production efficiency, workflows with broader entry conditions than intended, custom fields added for requirements that changed before go-live, saved searches running without indexed criteria, and integrations that were built for the account as it was at go-live and never updated as the account evolved. Technical debt is not the result of bad implementation work. It is the predictable outcome of any account that has grown and evolved without active technical stewardship. The debt surfaces in observable ways: User Event scripts consuming governance units for processes that no longer exist, workflows evaluating on every record save because entry conditions were never tightened after testing, and SuiteScript 1.0 scripts that have not been migrated to 2.x. Each of NetSuite's two annual releases can interact with untouched debt and cause production failures.</p>
@@ -14,7 +16,7 @@ The phrase "technical debt" comes from software development, where it refers to 
 
 In a live NetSuite account, the same principle applies, but the debt accumulates differently. NetSuite customizations live in the account itself, not in a codebase a developer can review and refactor at will. Scripts, workflows, saved searches, custom fields, and integrations interact with each other in ways that are not always visible from any single vantage point. The debt is not just in the code; it is in the configuration, the documentation, the operational practices, and the accumulated history of decisions made by different developers and partners over time.
 
-## What NetSuite technical debt looks like in practice
+## What does NetSuite technical debt look like in a live account?
 
 Technical debt in a NetSuite account is not abstract. It has specific, observable manifestations across each layer of the account.
 

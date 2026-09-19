@@ -5,6 +5,8 @@ date: "2026-08-18"
 tags: ["Health Check", "Account Optimization", "Technical Debt"]
 ---
 
+A NetSuite health check is a diagnostic review that identifies what is wrong in a live account; account optimization is the remediation work that follows, addressing the issues the health check uncovered.
+
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A NetSuite health check is a diagnostic engagement: it reviews the account, identifies what is wrong, classifies findings by severity, and delivers a written report. Nothing in the account changes. A NetSuite account optimization is a remediation engagement: it takes a prioritized list of findings and addresses them. The health check comes first; the optimization follows. You cannot have a well-scoped optimization without the findings from an assessment, and an assessment is not useful unless someone acts on what it finds. A health check typically takes five to seven business days. The review covers scripts, workflows, saved searches, custom fields, roles and permissions, and integrations, with each finding classified by severity. The optimization that follows is scoped directly from those findings: an account with two critical findings requires a different remediation effort than one with twelve. Making changes without a prior assessment risks addressing visible symptoms while missing the root causes generating them.</p>

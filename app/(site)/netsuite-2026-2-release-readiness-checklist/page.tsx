@@ -12,7 +12,7 @@ import { CHECKLIST_ITEMS, SECTIONS, type Priority } from "./checklist-data";
 export const metadata: Metadata = {
   title: "NetSuite 2026.2 Release Readiness Checklist | SuitePacific",
   description:
-    "Prepare for NetSuite 2026.2 with a practical release readiness checklist covering Finance, Integrations, SuiteScript, Reporting, Manufacturing, Inventory, Security, and more.",
+    "Pre-upgrade checklist for NetSuite 2026.2 covering Finance, Integrations, SuiteScript, Reporting, Manufacturing, Inventory, and Security changes before go-live.",
   alternates: { canonical: `${SITE_URL}/netsuite-2026-2-release-readiness-checklist` },
   openGraph: {
     title: "NetSuite 2026.2 Release Readiness Checklist",

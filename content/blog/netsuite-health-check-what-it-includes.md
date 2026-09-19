@@ -5,6 +5,8 @@ date: "2026-08-18"
 tags: ["Health Check", "Post-Go-Live", "Account Optimization"]
 ---
 
+A NetSuite health check is a structured review of a live account covering scripts, workflows, saved searches, integrations, role configuration, and custom fields to identify performance issues, technical debt, and configuration gaps.
+
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A thorough NetSuite health check covers six areas: script deployments (active vs. needed, governance consumption, execution errors, overlap with workflows), workflow configurations (entry conditions, retired processes, branch logic, script overlap), saved searches (indexed criteria, usage in automations, duplicates), custom fields and forms (unused fields, duplicate data storage), roles and permissions (overly permissive roles, inactive users, least-privilege compliance), and integration health (error rates, coverage gaps, authentication status). Each finding is classified as Critical, High, or Advisory. The deliverable is a structured written report, not a conversation or a slide deck, covering every finding with its specific location in the account, why it matters, and what should be done about it. A health check requires Administrator-level access to the Production account and typically runs for five to seven business days. No changes are made during the assessment. Each finding includes its specific location: script name and internal ID, workflow name, saved search ID, or custom field internal ID.</p>
@@ -13,6 +15,8 @@ tags: ["Health Check", "Post-Go-Live", "Account Optimization"]
 A NetSuite health check can mean different things depending on who is conducting it and what they are looking at. At minimum, it is an independent review of a live account's technical layer. At its most useful, it is a structured assessment covering every layer where technical debt accumulates, producing a findings report that the account owner can act on directly.
 
 This article covers what a thorough health check includes, layer by layer.
+
+## What does a NetSuite health check include?
 
 ## Area 1: Script deployments
 

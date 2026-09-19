@@ -161,7 +161,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite FSM Support and Troubleshooting",
   description:
-    "NetSuite Field Service Management support for sync failures, bundle update issues, configuration problems, and mobile app behavior after FSM updates. Oracle-certified, direct developer access.",
+    "NetSuite Field Service Management configuration, customization, and upgrade support. Bundle update validation, mobile configuration, and FSM development.",
   alternates: { canonical: "/netsuite-fsm-support" },
   openGraph: {
     title: "NetSuite FSM Support and Troubleshooting",

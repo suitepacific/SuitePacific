@@ -158,7 +158,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Implementation Rescue and Reimplementation",
   description:
-    "NetSuite rescue and remediation for failed or incomplete implementations: current state assessment, remediation roadmap, configuration correction, data cleanup, and SuiteScript rewrite.",
+    "Stabilizing a NetSuite account after a failed or incomplete implementation. Assessment of open issues, broken customizations, and data quality. From $799.",
   alternates: { canonical: "/netsuite-implementation-rescue" },
   openGraph: {
     title: "NetSuite Implementation Rescue and Reimplementation",

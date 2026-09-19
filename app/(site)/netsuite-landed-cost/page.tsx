@@ -118,7 +118,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Landed Cost: Freight, Duty, and Customs Allocation to Inventory",
   description:
-    "NetSuite landed cost allocates freight, duty, and customs fees to inventory item costs before goods are available for sale. SuitePacific configures landed cost templates, allocation methods, and late-arrival workflows for importers and distributors.",
+    "Duty and freight allocation, late-arrival landed cost handling, and landed margin reporting for distributors on NetSuite. SuiteCloud Developer II certified.",
   alternates: { canonical: "/netsuite-landed-cost" },
   openGraph: {
     title: "NetSuite Landed Cost: Freight, Duty, and Customs Allocation to Inventory",

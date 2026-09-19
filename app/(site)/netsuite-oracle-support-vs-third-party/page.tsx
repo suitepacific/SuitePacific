@@ -73,7 +73,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Oracle Support vs. Third-Party Consulting Firm",
   description:
-    "A side-by-side comparison of Oracle NetSuite support and third-party consulting firms: what each covers, response time, cost structure, and when each is the right choice.",
+    "Oracle NetSuite standard support vs a certified third-party firm: SuiteScript, integrations, workflows, and custom configuration that Oracle does not cover.",
   alternates: { canonical: "/netsuite-oracle-support-vs-third-party" },
   openGraph: {
     title: "NetSuite Oracle Support vs. Third-Party Consulting Firm",

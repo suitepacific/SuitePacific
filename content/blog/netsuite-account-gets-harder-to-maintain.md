@@ -5,6 +5,8 @@ date: "2026-08-18"
 tags: ["Technical Debt", "Post-Go-Live", "Account Optimization"]
 ---
 
+NetSuite accounts become harder to maintain over time as accumulated customizations, undocumented scripts, and shifting team knowledge compound into a growing maintenance burden.
+
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A NetSuite account gets harder to maintain over time because each change adds to its complexity without removing what was already there. Scripts accumulate without cleanup. Workflows are added alongside existing ones without verifying they do not conflict. Documentation falls further behind. After two or three years of organic growth, the account reflects a history of decisions made in isolation rather than a coherent architecture, and every new change requires understanding that history before anything can safely be modified. The complexity concentrates on the records where the business runs: Sales Orders, Purchase Orders, and Invoices accumulate the most layered scripts, workflows, and custom fields from multiple developers over time. NetSuite releases two major updates per year, and each can interact with existing customizations in ways that only become visible after the release reaches Production, particularly when the account has not been tested in Sandbox beforehand. Each undiscovered conflict adds to the remediation backlog the next developer inherits.</p>
@@ -13,6 +15,8 @@ tags: ["Technical Debt", "Post-Go-Live", "Account Optimization"]
 There is a version of this complaint on almost every NetSuite account that has been live for more than two years: things that used to be straightforward now take longer. A workflow change that should take a few hours takes two days because of something unexpected that the change uncovered. A script fix requires investigating three other scripts before it is safe to modify the original. A new field needs to be added, but nobody is certain whether there is already a field somewhere else in the account that stores the same data under a different name.
 
 The account is not broken. It works. But the work required to maintain it has grown steadily, and the rate of growth is not explained by the complexity of the new requests. Something else is happening.
+
+## Why does a NetSuite account get harder to maintain over time?
 
 ## The compounding problem
 

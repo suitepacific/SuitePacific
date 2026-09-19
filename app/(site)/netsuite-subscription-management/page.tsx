@@ -147,7 +147,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Subscription Management for SaaS Companies",
   description:
-    "SuitePacific configures subscription lifecycle management in NetSuite: renewal automation, proration logic for upgrades and downgrades, cancellation workflows, and subscription health dashboards for SaaS companies.",
+    "Subscription lifecycle, renewal automation, and churn workflow configuration using NetSuite SuiteBilling for SaaS companies. Plans from $799, month-to-month.",
   alternates: { canonical: "/netsuite-subscription-management" },
   openGraph: {
     title: "NetSuite Subscription Management for SaaS Companies",

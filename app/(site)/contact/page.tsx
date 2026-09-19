@@ -21,7 +21,7 @@ const TRUST_BADGES = [
 export const metadata: Metadata = {
   title: { absolute: "Contact SuitePacific | Book a Free NetSuite Consultation" },
   description:
-    "Get in touch with SuitePacific for NetSuite post-go-live support, SuiteScript development, workflow automation, and integrations. Book a free consultation, no long-term contracts.",
+    "Contact SuitePacific for post-go-live NetSuite support: SuiteScript, workflow automation, integration maintenance, and administration. Plans from $799/month.",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact SuitePacific | Book a Free NetSuite Consultation",

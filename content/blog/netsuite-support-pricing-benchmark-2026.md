@@ -6,14 +6,16 @@ updated: "2026-08-30"
 tags: ["Post-Go-Live", "Consulting", "Admin"]
 ---
 
+NetSuite support pricing varies by model: Oracle ACS costs 4-8% of annual license paid upfront, third-party managed retainers run $799 to $5,000 per month, and break-fix billing ranges from $150 to $300 per hour depending on firm type.
+
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
-<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite support pricing depends heavily on the model: ACS is priced as a percentage of your annual license fee (typically 10–20%, paid upfront annually, Oracle does not publish rates); managed service retainers from boutique firms range from $799 to $2,499 per month on month-to-month terms; break-fix consulting runs $150–$250 per hour from US-based firms and $40–$90 per hour from offshore providers; enterprise partners bill $200–$350 per hour with minimum engagement thresholds. SuitePacific publishes its managed support pricing: $799/month (Care, 10 hrs), $1,499/month (Care Plus, 20 hrs), $2,499/month (Care Pro, 35 hrs), all month-to-month with no annual contract.</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite support pricing depends heavily on the model: ACS is priced as a percentage of your annual license fee (typically 10–20%, paid upfront annually, Oracle does not publish rates); managed service retainers from boutique firms range from $799 to $2,499 per month on month-to-month terms; break-fix consulting runs $150–$250 per hour from US-based firms and $40–$90 per hour from offshore providers; enterprise partners bill $200–$350 per hour with minimum engagement thresholds. SuitePacific publishes its managed support pricing: $799/month (Care, 10 hrs), $1,499/month (Care Plus, 20 hrs), $2,499/month (Care Pro, 35 hrs), all month-to-month with no annual contract. Retainer models from boutique firms typically include SuiteScript development, integration maintenance, and workflow configuration; break-fix and ACS do not cover those areas. All SuitePacific plans run month-to-month with direct consultant access, no annual contract, and no rollover on hours.</p>
 </div>
 
 Most NetSuite support providers do not publish pricing. That makes it genuinely difficult to compare options before committing to a discovery call. This benchmark pulls together what is publicly known about each pricing model, with methodology notes where estimates are used.
 
-## Why NetSuite support pricing is hard to compare
+## Why is NetSuite support pricing hard to compare?
 
 NetSuite support is priced differently across provider types, which makes direct comparison misleading without understanding the model underneath each number.
 

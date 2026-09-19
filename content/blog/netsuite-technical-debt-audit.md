@@ -5,6 +5,8 @@ date: "2026-08-18"
 tags: ["Technical Debt", "Account Optimization", "SuiteScript"]
 ---
 
+A NetSuite technical debt audit is a structured review of a live account's scripts, workflows, saved searches, custom fields, and integrations that classifies each element by risk level and identifies what requires immediate remediation.
+
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Auditing NetSuite technical debt means systematically reviewing five layers of the account: script deployments (active vs. needed, governance consumption, execution errors), workflow configurations (entry conditions, active vs. retired processes, script overlap), saved searches (indexed first criterion, usage in automations, duplicates), custom fields and records (unused fields on active forms, duplicate data storage), and integrations (recent error logs, coverage of record types added since go-live). Each finding is classified as Critical (actively causing incorrect behavior), High (meaningful risk not yet visible), or Maintenance (inefficient or undocumented). A thorough audit of all five layers typically takes five to seven business days and produces a written findings report as the deliverable. Script deployments are reviewed at Customization > Scripting > Script Deployments, workflows at Customization > Workflow > Workflows, and saved searches at Reports > Saved Searches. The most common high-priority finding across accounts: a workflow with no entry conditions evaluating on every save of a high-volume record type.</p>
@@ -13,6 +15,8 @@ tags: ["Technical Debt", "Account Optimization", "SuiteScript"]
 A technical debt audit is a structured review of a live NetSuite account across each layer where debt accumulates. The goal is to produce a complete, prioritized list of what needs attention: what is actively causing problems, what carries risk, and what is inefficient or undocumented. The audit is the foundation for everything that follows.
 
 This guide covers how to conduct the audit layer by layer, what to look for in each, and how to classify and prioritize what you find.
+
+## How do you audit NetSuite technical debt?
 
 ## Before you start: what you need
 

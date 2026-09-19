@@ -109,7 +109,7 @@ const HOW_IT_WORKS = [
 export const metadata: Metadata = {
   title: "Partner with SuitePacific | NetSuite Post-Go-Live Partner Program",
   description:
-    "Partner with SuitePacific to refer NetSuite post-go-live support, SuiteScript development, and workflow automation to your clients. For implementation partners, resellers, accounting firms, and software vendors.",
+    "Celigo Mastery Level 4, Oracle SuiteCloud Developer II, and Administrator Professional certified. Direct developer access on every NetSuite engagement.",
   alternates: { canonical: "/partners" },
   openGraph: {
     title: "Partner with SuitePacific | NetSuite Post-Go-Live Partner Program",

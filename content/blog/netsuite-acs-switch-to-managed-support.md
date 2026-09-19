@@ -6,6 +6,8 @@ updated: "2026-09-03"
 tags: ["Post-Go-Live", "Partner Replacement", "Admin"]
 ---
 
+Switching from NetSuite ACS to a managed support firm is a transition from Oracle's internal support tiers to a third-party retainer that covers SuiteScript, integrations, and custom workflows excluded by ACS.
+
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Switching from NetSuite ACS to a managed support firm requires confirming your ACS contract end date and reviewing cancellation terms before any other step. ACS is typically sold on an annual contract paid upfront, which is generally non-refundable for the current period; mid-contract switches mean running both arrangements in parallel for a time. The practical sequence: audit your contract and current ACS utilization, start evaluating managed support firms two to three months before your ACS renewal date, document your active SuiteScript files, integrations, workflows, and custom records, begin the new engagement before ACS ends, and use the overlap period for structured account onboarding. Most managed support firms complete onboarding in two to four weeks when documentation is available. The key risk is a coverage gap: never cancel ACS before a replacement support arrangement is active and the incoming firm has completed its account review.</p>
@@ -14,6 +16,8 @@ tags: ["Post-Go-Live", "Partner Replacement", "Admin"]
 If you have already decided that ACS does not cover what your account needs, the next question is practical: how do you actually make the transition?
 
 This guide covers the mechanics of switching from ACS to a managed support firm, from auditing your current contract to getting through the first month with a new provider.
+
+## Why switch from NetSuite ACS to a managed support firm?
 
 ## Step 1: Understand your ACS contract before you act
 

@@ -84,7 +84,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite ACS Pricing: 2026 Cost Breakdown by Tier",
   description:
-    "NetSuite ACS pricing explained: how Oracle charges for Advanced Customer Support, what each tier costs, what is and is not included, and how ACS pricing compares to managed support alternatives.",
+    "Oracle ACS pricing across four tiers: Advise, Monitor, Optimize, and Architect. Cost estimates at different license values and managed support comparison.",
   alternates: { canonical: "/netsuite-acs-pricing" },
   openGraph: {
     title: "NetSuite ACS Pricing: 2026 Cost Breakdown by Tier",
@@ -227,7 +227,7 @@ export default function NetSuiteAcsPricingPage() {
         <div className="mt-14">
           <h2 className="text-lg font-semibold text-brand-900 mb-4">ACS Pricing vs. Managed Support: The Trade-off</h2>
           <p className="text-sm text-brand-400 mb-5">
-            ACS and managed support serve different scope areas. The comparison is not simply price per hour — it is what the engagement actually covers.
+            ACS and managed support serve different scope areas. The comparison is not simply price per hour; it is what the engagement actually covers.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="rounded-xl border border-brand-100 bg-white p-5">
@@ -274,7 +274,7 @@ export default function NetSuiteAcsPricingPage() {
         {/* SuitePacific CTA */}
         <div className="mt-10 rounded-xl border border-accent/20 bg-accent/5 p-5">
           <p className="text-xs font-semibold text-accent uppercase tracking-wide mb-2">ACS alternative with published pricing</p>
-          <p className="text-sm font-semibold text-brand-900 mb-2">SuitePacific — managed NetSuite support from $799/month</p>
+          <p className="text-sm font-semibold text-brand-900 mb-2">SuitePacific: managed NetSuite support from $799/month</p>
           <p className="text-sm text-brand-500 mb-4">
             SuitePacific is a US-based boutique NetSuite firm covering what ACS does not: SuiteScript development, Celigo and Shopify integration maintenance, SuiteFlow workflow support, saved searches, and ongoing administration. Oracle NetSuite SuiteCloud Developer II and Administrator Professional certified. Plans are month-to-month with no annual contract and no rollover. $799/month (Care), $1,499/month (Care Plus), $2,499/month (Care Pro).
           </p>

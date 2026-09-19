@@ -114,7 +114,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite WIP Report for Construction: Custom WIP Schedule Build",
   description:
-    "NetSuite has no native WIP schedule for construction. SuitePacific builds custom WIP reports showing contract value, cost to date, percentage complete, earned revenue, and over/under billing as saved searches and SuiteQL dashboards inside your NetSuite account.",
+    "Custom WIP schedule for construction on NetSuite. Contract value, cost to date, percentage complete, earned revenue, and over/under billing. Plans from $799.",
   alternates: { canonical: "/netsuite-wip-report" },
   openGraph: {
     title: "NetSuite WIP Report for Construction: Custom WIP Schedule Build",

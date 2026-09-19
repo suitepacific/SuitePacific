@@ -156,7 +156,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Support UK",
   description:
-    "NetSuite post-go-live support and development for UK companies. SuiteScript customisation, VAT and MTD configuration, workflow automation, and ongoing technical support for businesses already live on NetSuite.",
+    "NetSuite post-go-live support for UK businesses: SuiteScript development, workflow automation, integration maintenance, and administration. From $799/month.",
   alternates: { canonical: "/netsuite-support-uk" },
   openGraph: {
     title: "NetSuite Support UK",

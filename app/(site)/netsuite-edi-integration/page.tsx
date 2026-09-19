@@ -144,7 +144,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite EDI Integration for Food and Beverage Companies",
   description:
-    "NetSuite does not send or receive EDI natively. SuitePacific builds the EDI 850 import, EDI 856 ASN generation, and EDI 810 invoice scripts for FMCG companies selling through Walmart, Target, Kroger, and other retail EDI trading partners.",
+    "EDI 850, 856, and 810 integration with Walmart, Target, Kroger, and other retail trading partners via NetSuite. SuiteCloud Developer II certified. From $799.",
   alternates: { canonical: "/netsuite-edi-integration" },
   openGraph: {
     title: "NetSuite EDI Integration for Food and Beverage Companies",

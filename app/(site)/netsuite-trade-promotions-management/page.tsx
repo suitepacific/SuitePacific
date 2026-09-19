@@ -135,7 +135,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Trade Promotions Management | SuitePacific",
   description:
-    "NetSuite trade promotions management for food and beverage companies. Custom trade deal records, accrual scripts, deduction claim workflows, and trade spend dashboards.",
+    "Trade deal records, accrual scripts, and deduction claim workflows for FMCG companies selling through retail channels. Plans from $799, month-to-month.",
   alternates: { canonical: "/netsuite-trade-promotions-management" },
   openGraph: {
     title: "NetSuite Trade Promotions Management | SuitePacific",

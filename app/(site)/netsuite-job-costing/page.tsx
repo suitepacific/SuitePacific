@@ -110,7 +110,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Job Costing for Construction Companies",
   description:
-    "SuitePacific configures NetSuite job costing for construction companies: cost codes, SuiteScript allocation from vendor bills and POs, budget-versus-actual saved searches, and WIP reports.",
+    "Cost code setup, budget vs actual saved searches, and WIP reports for construction companies on NetSuite. SuiteCloud Developer II certified. Plans from $799.",
   alternates: { canonical: "/netsuite-job-costing" },
   openGraph: {
     title: "NetSuite Job Costing for Construction Companies",

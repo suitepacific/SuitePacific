@@ -5,6 +5,8 @@ date: "2026-08-19"
 tags: ["Post-Go-Live", "Consulting"]
 ---
 
+NetSuite partner response time is the elapsed time between submitting a support request and receiving a substantive response; industry standard for post-go-live managed support is one business day for non-emergency requests.
+
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A NetSuite support partner should acknowledge urgent production issues the same business day, ideally within two to four hours. Standard requests should receive an acknowledgment within one business day and an estimate of when work will begin within two to three business days. Anything longer than same-day acknowledgment on a production issue, or more than two business days on a standard request, is a sign the relationship is not functioning as an active support engagement. The most common cause of slow response is structural: the consultant who knew your account moved to another project, your account has been deprioritized during a large implementation, or the firm does not have a dedicated support team separate from its project delivery team. These patterns rarely self-correct without a firm escalation or a change in partner. If your partner has been slow for more than two billing cycles and escalation has not produced a lasting improvement, evaluating a replacement is worth starting now.</p>

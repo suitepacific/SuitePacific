@@ -133,7 +133,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Consultant Texas",
   description:
-    "NetSuite consulting for Texas companies in Dallas, Houston, and Austin. Post-go-live support, SuiteScript development, manufacturing automation, and energy services integrations for companies already live on NetSuite.",
+    "NetSuite consulting for Texas companies in Dallas, Houston, and Austin. Post-go-live support, SuiteScript development, and manufacturing automation. From $799.",
   alternates: { canonical: "/netsuite-consultant-texas" },
   openGraph: {
     title: "NetSuite Consultant Texas",

@@ -61,7 +61,7 @@ const FAQ = [
 
 export const metadata: Metadata = {
   title: "NetSuite Real Estate Accounting: Multi-Entity Setup, Investor Tracking, and Equity Waterfall",
-  description: "NetSuite real estate accounting for property owners, developers, and investment managers. SuitePacific configures OneWorld multi-entity structure, investor capital accounts, equity waterfall scripts, and property-level financial statements.",
+  description: "OneWorld entity structure, equity waterfall, investor reporting, and intercompany eliminations for real estate operators on NetSuite. Plans from $799/month.",
   alternates: { canonical: "/netsuite-real-estate-accounting" },
   openGraph: {
     title: "NetSuite Real Estate Accounting: Multi-Entity Setup, Investor Tracking, and Equity Waterfall",

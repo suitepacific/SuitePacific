@@ -12,7 +12,7 @@ import { CASE_STUDIES_DETAIL } from "@/lib/case-studies";
 export const metadata: Metadata = {
   title: "NetSuite Case Studies",
   description:
-    "Real NetSuite customization projects: dashboards, approval workflows, invoice automation, PDF templates, integrations, and operational reporting, built for post-go-live accounts.",
+    "SuitePacific case studies: partner replacement, managed retainer, account optimization, and Celigo integration recovery. Real post-go-live NetSuite accounts.",
   alternates: { canonical: "/case-studies" },
   openGraph: {
     title: "NetSuite Case Studies",

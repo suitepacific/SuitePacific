@@ -120,7 +120,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite ARR and MRR Reporting for SaaS Companies",
   description:
-    "NetSuite has no native ARR or MRR report. SuitePacific builds SuiteQL queries, saved searches, and dashboard KPI portlets that calculate subscription revenue metrics directly from SuiteBilling and invoice data.",
+    "ARR and MRR saved searches, churn and expansion reporting, and subscription cohort visibility for SaaS companies on NetSuite. Plans from $799, month-to-month.",
   alternates: { canonical: "/netsuite-arr-mrr-reporting" },
   openGraph: {
     title: "NetSuite ARR and MRR Reporting for SaaS Companies",

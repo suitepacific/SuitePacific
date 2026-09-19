@@ -111,7 +111,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Support After Migrating from QuickBooks | SuitePacific",
   description:
-    "Migrating from QuickBooks to NetSuite is step one. Step two is making the account match how your business works. SuitePacific provides post-migration NetSuite support: saved searches, workflows, SuiteScript, and ongoing administration.",
+    "Post-migration support for QuickBooks-to-NetSuite moves: saved search rebuilds, workflow automation, SuiteScript development, and administration. From $799.",
   alternates: { canonical: "/netsuite-migration-from-quickbooks" },
   openGraph: {
     title: "NetSuite Support After Migrating from QuickBooks | SuitePacific",

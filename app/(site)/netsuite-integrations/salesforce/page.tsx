@@ -135,7 +135,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Salesforce Integration",
   description:
-    "Custom NetSuite Salesforce integration: account and contact sync, opportunity-to-sales-order, invoice visibility in Salesforce, and product catalog alignment. Oracle-certified, direct developer access.",
+    "NetSuite Salesforce integration: contact sync, opportunity-to-sales-order, invoice visibility in Salesforce, and product catalog alignment. Oracle-certified.",
   alternates: { canonical: "/netsuite-integrations/salesforce" },
   openGraph: {
     title: "NetSuite Salesforce Integration",

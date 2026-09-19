@@ -110,7 +110,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Construction Accounting Configuration",
   description:
-    "SuitePacific configures NetSuite for construction accounting: chart of accounts restructuring, subcontractor compliance tracking, lien waiver records, and multi-project P&L reporting.",
+    "Chart of accounts restructuring, subcontractor compliance, and multi-project P&L for construction companies on NetSuite. SuiteCloud Developer II certified.",
   alternates: { canonical: "/netsuite-construction-accounting" },
   openGraph: {
     title: "NetSuite Construction Accounting Configuration",

@@ -142,7 +142,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite SuiteScript 2.1 Migration: Audit and Upgrade Before the 2028.2 Deadline",
   description:
-    "NetSuite retires SuiteScript 1.0, 2.0, and 2.x in 2028.2. Scripts on legacy versions stop working after that release. SuitePacific audits legacy script inventories, classifies migration complexity, and completes the migration to SuiteScript 2.1 for companies already live on NetSuite.",
+    "Audit and migrate SuiteScript 1.0, 2.0, and 2.x scripts to SuiteScript 2.1 before Oracle retires legacy versions in 2028.2. SuiteCloud Developer II certified.",
   alternates: { canonical: "/netsuite-suitescript-migration" },
   openGraph: {
     title: "NetSuite SuiteScript 2.1 Migration: Audit and Upgrade Before the 2028.2 Deadline",

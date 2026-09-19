@@ -63,7 +63,7 @@ const FAQ = [
 
 export const metadata: Metadata = {
   title: "NetSuite Property Management Accounting: Tenant Billing, CAM Reconciliation, and Rent Automation",
-  description: "NetSuite property management accounting for companies that collect rent, manage tenant accounts, and need CAM reconciliations and property-level reporting. SuitePacific automates rent invoicing, CAM reconciliation, security deposit tracking, and late fee calculation.",
+  description: "Tenant billing, CAM reconciliation, security deposit tracking, and property-level P&L reporting for real estate companies on NetSuite. Plans from $799/month.",
   alternates: { canonical: "/netsuite-property-management-accounting" },
   openGraph: {
     title: "NetSuite Property Management Accounting: Tenant Billing, CAM Reconciliation, and Rent Automation",

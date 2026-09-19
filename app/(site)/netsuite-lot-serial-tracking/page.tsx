@@ -118,7 +118,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Lot and Serial Number Tracking",
   description:
-    "NetSuite lot and serial number tracking configuration for manufacturers and distributors: expiration date alerts, traceability saved searches, recall response reports, and FIFO lot cost verification.",
+    "Expiry date fields, forward and backward lot traceability, and FIFO cost verification for manufacturers and distributors on NetSuite. Plans from $799/month.",
   alternates: { canonical: "/netsuite-lot-serial-tracking" },
   openGraph: {
     title: "NetSuite Lot and Serial Number Tracking",

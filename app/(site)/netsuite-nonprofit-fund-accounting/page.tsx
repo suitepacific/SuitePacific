@@ -122,7 +122,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Nonprofit Fund Accounting Configuration | SuitePacific",
   description:
-    "NetSuite fund accounting configuration for nonprofits: class and segment setup for fund tracking, restricted vs. unrestricted fund segregation, and fund-level financial statement saved searches. SuitePacific, plans from $799/month.",
+    "Class and segment fund setup, restricted vs unrestricted net asset tracking, and grant budget reporting for nonprofits on NetSuite. Plans from $799/month.",
   alternates: { canonical: "/netsuite-nonprofit-fund-accounting" },
   openGraph: {
     title: "NetSuite Nonprofit Fund Accounting Configuration | SuitePacific",

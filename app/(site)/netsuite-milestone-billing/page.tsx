@@ -111,7 +111,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Milestone Billing: Completion Triggers, Invoice Workflows, and ARM Alignment",
   description:
-    "NetSuite has no native milestone billing workflow. Completion triggers, invoice automation, and ASC 606 revenue element alignment require custom configuration. SuitePacific builds milestone billing for professional services firms already live on NetSuite.",
+    "Milestone completion triggers, invoice workflows, and ASC 606 ARM alignment for project-based firms on NetSuite. SuiteCloud Developer II certified. From $799.",
   alternates: { canonical: "/netsuite-milestone-billing" },
   openGraph: {
     title: "NetSuite Milestone Billing: Completion Triggers, Invoice Workflows, and ARM Alignment",

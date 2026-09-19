@@ -12,7 +12,7 @@ When AI is pulling data from vendor invoices before it ever touches NetSuite, th
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">For most AI invoice processing builds, staging inside a native Vendor Bill set to unapproved status is the right default. NetSuite's header-line hierarchy is already there, standard approval workflows already support holding a bill without GL posting, and no custom record architecture is required. A custom staging record makes sense in one narrower case: when you need to hold and audit AI extraction attempts that might fail NetSuite's own validation before they could ever become a transaction, for example logging a raw JSON payload from the AI model even when the extracted data is incomplete or malformed. The custom-record approach adds real complexity (a parent record plus child records to replicate the header-line structure NetSuite gives native transactions for free) that is only justified when you need an audit trail of failures, not just successes. Most accounts do not need it.</p>
 </div>
 
-## What actually needs to happen before an AI-extracted invoice becomes a bill
+## What actually needs to happen before an AI-extracted invoice becomes a bill?
 
 AI extraction gets you a structured representation of what is on the vendor invoice: header fields (vendor, invoice number, invoice date, total), line fields (description, quantity, unit price, item). Before any of that becomes a NetSuite Vendor Bill, it needs to be validated against actual NetSuite records.
 

@@ -152,7 +152,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Health Check and System Audit",
   description:
-    "NetSuite health check and system audit for live accounts: independent review of custom fields, scripts, workflows, saved searches, roles, and integrations, with a written findings report.",
+    "NetSuite account review identifying performance, customization, and integration issues. Six audit areas, findings report, and remediation plan. Plans from $799.",
   alternates: { canonical: "/netsuite-health-check" },
   openGraph: {
     title: "NetSuite Health Check and System Audit",

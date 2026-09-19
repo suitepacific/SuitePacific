@@ -118,7 +118,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Bill of Materials Configuration",
   description:
-    "NetSuite BOM setup and SuiteScript automation for manufacturers: multi-level assembly configuration, component substitution tracking, BOM revision control, and standard vs. actual cost variance reporting.",
+    "Multi-level BOM setup, component substitution, and cost variance analysis for manufacturers on NetSuite. SuiteCloud Developer II certified. Plans from $799.",
   alternates: { canonical: "/netsuite-bill-of-materials" },
   openGraph: {
     title: "NetSuite Bill of Materials Configuration",

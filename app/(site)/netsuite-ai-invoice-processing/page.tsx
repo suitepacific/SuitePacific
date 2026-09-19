@@ -189,7 +189,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite AI Invoice Processing",
   description:
-    "Extend NetSuite invoice automation with AI-powered extraction, line-item validation, PO matching, and exception routing. Custom SuiteScript integration built on Oracle's N/documentCapture. SuiteCloud Developer II certified.",
+    "Extend NetSuite invoice automation with AI-powered extraction, line-item validation, PO matching, and exception routing. Built on Oracle's N/documentCapture.",
   alternates: { canonical: "/netsuite-ai-invoice-processing" },
   openGraph: {
     title: "NetSuite AI Invoice Processing",

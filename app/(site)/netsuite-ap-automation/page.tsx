@@ -112,7 +112,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite AP Automation: GL Coding, Bill Capture, and Approval Workflows",
   description:
-    "NetSuite Automated Bill Capture creates draft vendor bills but does not code them, match them to POs, or route them for approval without configuration. SuitePacific builds the complete AP setup: GL coding logic, three-way matching, and approval workflows for companies already live on NetSuite.",
+    "Configure Automated Bill Capture, GL coding, SuiteApprovals routing, and three-way PO matching for accounts already live on NetSuite. Plans from $799/month.",
   alternates: { canonical: "/netsuite-ap-automation" },
   openGraph: {
     title: "NetSuite AP Automation: GL Coding, Bill Capture, and Approval Workflows",

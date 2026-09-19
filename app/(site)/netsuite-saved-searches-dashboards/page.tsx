@@ -138,7 +138,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Saved Searches & Dashboards",
   description:
-    "Custom NetSuite saved searches, dashboards, and reports: role-based dashboards, formula fields, KPI portlets, and exception searches that surface what your team needs without exporting to spreadsheets.",
+    "Saved searches, KPI tiles, and dashboards for NetSuite across finance, operations, inventory, and executive views. SuiteCloud Developer II certified. From $799.",
   alternates: { canonical: "/netsuite-saved-searches-dashboards" },
   openGraph: {
     title: "NetSuite Saved Searches & Dashboards",

@@ -162,7 +162,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Administrator Support | Fractional NetSuite Admin",
   description:
-    "Fractional NetSuite administrator support for post-go-live accounts: user management, roles and permissions, custom fields, saved searches, period management, and data imports. Plans from $799/month, month-to-month.",
+    "Fractional NetSuite administrator support: user management, roles, saved searches, and upgrade prep. Oracle Administrator Professional certified. $799/month.",
   alternates: { canonical: "/netsuite-administrator-support" },
   openGraph: {
     title: "NetSuite Administrator Support | Fractional NetSuite Admin",

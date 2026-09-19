@@ -59,7 +59,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Partner Too Slow? Why It Happens and What to Do",
   description:
-    "Slow NetSuite partner response is a structural problem with the project-delivery model, not a fixable individual issue. Here is what causes it and what a support-first model looks like instead.",
+    "Slow NetSuite partner response is structural, not temporary. What a support-first model looks like and how retainer pricing changes the incentive structure.",
   alternates: { canonical: "/netsuite-partner-too-slow" },
   openGraph: {
     title: "NetSuite Partner Too Slow? Why It Happens and What to Do",

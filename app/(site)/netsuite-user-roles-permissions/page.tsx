@@ -42,7 +42,7 @@ const FAQ = [
 
 export const metadata: Metadata = {
   title: "NetSuite User Roles and Permissions: Role Audit, Cleanup, and Architecture",
-  description: "Most live NetSuite accounts have over-permissioned users, stale role assignments, and undocumented custom roles. SuitePacific audits role architecture, cleans up incorrect permissions, and rebuilds roles so every user has exactly the access their job requires.",
+  description: "Role audit and architecture rebuild for NetSuite accounts. Administrator overuse, stale roles, missing subsidiary restrictions. Plans from $799/month.",
   alternates: { canonical: "/netsuite-user-roles-permissions" },
   openGraph: {
     title: "NetSuite User Roles and Permissions: Role Audit, Cleanup, and Architecture",

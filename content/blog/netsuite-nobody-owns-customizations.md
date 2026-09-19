@@ -5,6 +5,8 @@ date: "2026-08-18"
 tags: ["Technical Debt", "Post-Go-Live", "Partner Replacement"]
 ---
 
+When nobody owns NetSuite customizations, the scripts, workflows, and integrations built during implementation exist without documentation, institutional knowledge, or a responsible party, creating compounding risk as staff and partners turn over.
+
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">When nobody owns a NetSuite account's customizations, each new developer works with an incomplete picture of what is there. Scripts are added without knowing what already exists. Workflows are built alongside ones that were never deactivated. Documentation that existed in one developer's head leaves when they disengage. The result is an account where the cost of every new development task includes the reconnaissance required before any change can safely be made, and that cost grows with each developer transition. The investigation requires reading active script deployments under Customization &gt; Scripting &gt; Scripts, tracing workflow entry conditions, and identifying which saved searches feed automations versus which are standalone reporting. For a well-documented account this takes an hour. For an account through three developer transitions with no documentation, it can take three days before any code is written. The fix is not a one-time cleanup; it is sustained ownership that prevents the gap from reopening after the next transition.</p>
@@ -16,7 +18,7 @@ Each of these people made decisions that affected the account. Some of those dec
 
 This is the ownership problem: not that the account is poorly built, but that the technical knowledge of what is in the account is distributed across people who are no longer available, documented in places that are no longer accessible, or not documented at all.
 
-## What "no owner" looks like in practice
+## What happens when nobody owns the NetSuite customizations?
 
 When no single person or team owns the technical layer of a NetSuite account, specific patterns emerge.
 

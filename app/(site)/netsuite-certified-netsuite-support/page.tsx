@@ -138,7 +138,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "Certified NetSuite Support: SuiteCloud Developer II",
   description:
-    "NetSuite support from consultants holding SuiteCloud Developer II and Administrator Professional certifications. Verified platform credentials for both development and administration.",
+    "NetSuite support from SuiteCloud Developer II and Administrator Professional certified consultants. Verified credentials for development and administration.",
   alternates: { canonical: "/netsuite-certified-netsuite-support" },
   openGraph: {
     title: "Certified NetSuite Support: SuiteCloud Developer II",

@@ -128,7 +128,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Nonprofit Reporting Configuration | SuitePacific",
   description:
-    "NetSuite nonprofit reporting configuration: Statement of Activities, Statement of Financial Position, functional expense allocation, nonprofit KPI dashboards, and Form 990 expense schedule saved searches. SuitePacific, plans from $799/month.",
+    "Statement of Activities, functional expense allocation, and board reporting saved searches for nonprofit organizations on NetSuite. Plans from $799/month.",
   alternates: { canonical: "/netsuite-nonprofit-reporting" },
   openGraph: {
     title: "NetSuite Nonprofit Reporting Configuration | SuitePacific",

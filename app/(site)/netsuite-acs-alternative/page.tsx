@@ -296,7 +296,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite ACS Alternative for SMBs: Managed Support Without the Annual Contract",
   description:
-    "The best NetSuite ACS alternative for SMBs: SuitePacific covers SuiteScript, integrations, and custom workflows starting at $799/month, month-to-month, with direct access to a certified consultant.",
+    "Third-party NetSuite support covering SuiteScript, integration maintenance, and custom workflows that Oracle ACS excludes in all tiers. Plans from $799/month.",
   alternates: { canonical: "/netsuite-acs-alternative" },
   openGraph: {
     title: "NetSuite ACS Alternative for SMBs: Managed Support Without the Annual Contract",

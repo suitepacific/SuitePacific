@@ -65,6 +65,8 @@ Most of these accumulate gradually. None of them cause obvious failures at first
 </div>
 </div>
 
+## What are the most common NetSuite workflow automation mistakes?
+
 ## 1. Triggering on every record save instead of relevant changes
 
 A workflow set to run on **every** record save, rather than only when a specific field changes, will fire constantly, including for unrelated edits. This wastes governance, can cause unexpected side effects (re-sending an approval email because someone fixed a typo in a memo field), and makes the workflow's logs nearly impossible to read. Use a **field-changed condition**, or check the field's old vs. new value in a workflow action script, so the workflow only runs when it actually needs to.

@@ -140,7 +140,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Amazon Integration",
   description:
-    "Custom NetSuite Amazon integration: order import from Seller Central, inventory sync, fulfillment confirmation, and Amazon settlement reconciliation. Oracle-certified developers.",
+    "NetSuite Amazon integration: order import from Seller Central, inventory sync, fulfillment confirmation, and Amazon settlement reconciliation. Oracle-certified.",
   alternates: { canonical: "/netsuite-integrations/amazon" },
   openGraph: {
     title: "NetSuite Amazon Integration",

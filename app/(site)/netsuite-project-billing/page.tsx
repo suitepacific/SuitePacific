@@ -105,7 +105,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Project Billing: T&M, Fixed-Fee, and Consolidated Client Invoicing",
   description:
-    "NetSuite project billing requires billing rule configuration, approval workflows, and scripting for consolidated invoices. SuitePacific configures project billing for professional services firms already live on NetSuite.",
+    "Time and materials and fixed-fee billing, write-up and write-down workflows, and project profitability reporting for professional services firms on NetSuite.",
   alternates: { canonical: "/netsuite-project-billing" },
   openGraph: {
     title: "NetSuite Project Billing: T&M, Fixed-Fee, and Consolidated Client Invoicing",

@@ -135,7 +135,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Avalara Integration",
   description:
-    "Custom NetSuite Avalara AvaTax integration: real-time tax calculation, exemption certificate management, transaction commit, and address validation. Oracle-certified developers.",
+    "NetSuite Avalara AvaTax integration: real-time tax calculation, exemption certificate management, transaction commit, and address validation. Oracle-certified.",
   alternates: { canonical: "/netsuite-integrations/avalara" },
   openGraph: {
     title: "NetSuite Avalara Integration",

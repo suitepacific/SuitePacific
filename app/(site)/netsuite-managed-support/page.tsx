@@ -190,7 +190,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Managed Support: Monthly Retainer",
   description:
-    "Ongoing NetSuite managed support at a fixed monthly retainer: development, administration, break-fix, and upgrade preparation from certified consultants with direct access.",
+    "Monthly retainer covering SuiteScript development, administration, break-fix, workflow automation, integration maintenance, and upgrade prep. From $799/month.",
   alternates: { canonical: "/netsuite-managed-support" },
   openGraph: {
     title: "NetSuite Managed Support: Monthly Retainer",

@@ -130,7 +130,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Emergency Support",
   description:
-    "NetSuite emergency support for broken scripts, failed integrations, and data issues. Same-day diagnosis and fixes from Oracle-certified developers. No ticket queue, direct developer access.",
+    "Urgent break-fix for scripts, workflows, and integrations failing in production. Direct access to a SuiteCloud Developer II certified consultant. From $799.",
   alternates: { canonical: "/netsuite-emergency-support" },
   openGraph: {
     title: "NetSuite Emergency Support",

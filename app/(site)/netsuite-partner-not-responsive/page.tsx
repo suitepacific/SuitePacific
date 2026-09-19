@@ -41,7 +41,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Partner Not Responsive: When to Switch and How",
   description:
-    "An unresponsive NetSuite partner is a sign the relationship has run its course. Here is what causes it, how to decide when to switch, and what the transition looks like.",
+    "Structural causes of unresponsive NetSuite partners and how to transition to a new firm without cooperation from the current partner. No lock-in required.",
   alternates: { canonical: "/netsuite-partner-not-responsive" },
   openGraph: {
     title: "NetSuite Partner Not Responsive: When to Switch and How",

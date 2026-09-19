@@ -5,6 +5,8 @@ date: "2026-08-18"
 tags: ["Post-Go-Live", "Partner Replacement"]
 ---
 
+When a new NetSuite partner reviews a live account, they typically find orphaned scripts, over-broad workflows, stale custom fields, undocumented integrations, and role assignments that accumulated during and after the original implementation.
+
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A thorough new partner onboarding reviews scripts and their deployment configurations, workflow entry conditions and branch logic, saved search performance and usage in other automations, integration health and error patterns, role and permission structures, and documentation gaps. In most inherited accounts, the review surfaces a predictable set of findings: inactive scripts still deployed, workflows evaluating on every record save with broader entry conditions than intended, saved searches with unindexed criteria in dashboards, and custom fields that exist on no active form. These are not signs of bad implementation work; they are the normal state of an account that has been live for more than a year without active maintenance. The initial review typically takes three to five business days before any development work begins. It reads what is active in Production directly, not what handoff documentation describes. A new partner who starts making changes without completing this review is working with an incomplete picture of what might be affected.</p>
@@ -13,6 +15,8 @@ tags: ["Post-Go-Live", "Partner Replacement"]
 When a new partner onboards your NetSuite account, the process is not a formality. A thorough review of what is actually running in the account before any changes are made is the difference between a partner who understands your environment and one who is flying blind on every request.
 
 What that review covers, what it typically finds, and what it means for how your account is managed afterward.
+
+## What does a new NetSuite partner find when reviewing an inherited account?
 
 ## What the review covers
 

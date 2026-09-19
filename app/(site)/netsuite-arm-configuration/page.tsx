@@ -49,7 +49,7 @@ const FAQ = [
 
 export const metadata: Metadata = {
   title: "NetSuite ARM Configuration: Advanced Revenue Management Setup for ASC 606",
-  description: "NetSuite Advanced Revenue Management requires significant configuration before it works correctly. SuitePacific configures ARM from scratch and fixes existing setups producing incorrect recognition schedules for SaaS, services, and product companies.",
+  description: "Advanced Revenue Management setup for ASC 606 and IFRS 15. Revenue rules, standalone selling prices, revenue elements, and allocation methods. Plans from $799.",
   alternates: { canonical: "/netsuite-arm-configuration" },
   openGraph: {
     title: "NetSuite ARM Configuration: Advanced Revenue Management Setup for ASC 606",

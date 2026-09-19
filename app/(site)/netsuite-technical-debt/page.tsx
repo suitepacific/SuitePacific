@@ -163,7 +163,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Technical Debt",
   description:
-    "NetSuite accounts accumulate technical debt after go-live: unused scripts, over-broad workflows, unindexed saved searches, undocumented customizations. SuitePacific audits and remediates technical debt in live NetSuite accounts.",
+    "Assessment and remediation of accumulated NetSuite technical debt: scripts, workflows, saved searches, and custom fields. Plans from $799, month-to-month.",
   alternates: { canonical: "/netsuite-technical-debt" },
   openGraph: {
     title: "NetSuite Technical Debt",

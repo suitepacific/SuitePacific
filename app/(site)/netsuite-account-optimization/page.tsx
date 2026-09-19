@@ -138,7 +138,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Optimization: Performance Troubleshooting, Technical Debt, and Account Cleanup",
   description:
-    "Slow pages, governance errors, and scripts that fire on every save are fixable. SuitePacific troubleshoots and optimizes live NetSuite accounts: script governance, saved search performance, workflow consolidation, and configuration cleanup. Plans from $799/month.",
+    "Systematic improvement of a live NetSuite account: scripts, workflows, integrations, and saved searches. Baseline assessment first. Plans from $799/month.",
   alternates: { canonical: "/netsuite-account-optimization" },
   openGraph: {
     title: "NetSuite Optimization: Performance Troubleshooting, Technical Debt, and Account Cleanup",

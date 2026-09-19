@@ -135,7 +135,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite HubSpot Integration",
   description:
-    "Custom NetSuite HubSpot integration: contact and company sync, deal-to-sales-order, invoice visibility in HubSpot, and revenue reporting alignment. Oracle-certified, direct developer access.",
+    "NetSuite HubSpot integration: contact and company sync, deal-to-sales-order, invoice visibility in HubSpot, and revenue reporting alignment. Oracle-certified.",
   alternates: { canonical: "/netsuite-integrations/hubspot" },
   openGraph: {
     title: "NetSuite HubSpot Integration",

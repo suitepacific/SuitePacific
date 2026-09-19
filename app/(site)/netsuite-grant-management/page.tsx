@@ -128,7 +128,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Grant Management Configuration for Nonprofits | SuitePacific",
   description:
-    "NetSuite grant management configuration for nonprofits: grant record setup, budget vs. actual tracking, expense attribution workflows, and funder reporting saved searches. SuitePacific, plans from $799/month.",
+    "Grant records, budget vs actual reporting, and deadline alert workflows for nonprofits on NetSuite. SuiteCloud Developer II certified. Plans from $799/month.",
   alternates: { canonical: "/netsuite-grant-management" },
   openGraph: {
     title: "NetSuite Grant Management Configuration for Nonprofits | SuitePacific",

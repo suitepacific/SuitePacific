@@ -5,14 +5,18 @@ date: "2026-08-29"
 tags: ["Post-Go-Live", "Consulting", "Admin"]
 ---
 
+A NetSuite support retainer is a monthly agreement that allocates a defined number of hours for SuiteScript development, workflow automation, administration, saved searches, break-fix, and upgrade preparation.
+
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
-<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A NetSuite managed support retainer covers the ongoing technical work that keeps a live NetSuite account current with the business using it. Month-to-month, this includes user provisioning and deactivation, role and permission adjustments, custom field and form changes, saved search creation and fixes, workflow modifications, and SuiteScript development and bug fixes. Release preparation is included: each of NetSuite's two annual releases triggers a review of existing customizations in Sandbox before Production upgrades. The retainer model replaces per-request billing with a fixed monthly block of hours applied to whatever comes in without a new statement of work for each item. SuitePacific provides NetSuite managed support retainers for post-go-live accounts starting at $799 per month, covering administration and development work with direct access to the same certified consultant on every request.</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">A NetSuite managed support retainer covers the ongoing technical work that keeps a live NetSuite account current with the business using it. Month-to-month, this includes user provisioning and deactivation, role and permission adjustments, custom field and form changes, saved search creation and fixes, workflow modifications, and SuiteScript development and bug fixes. Release preparation is included: each of NetSuite's two annual releases triggers a review of existing customizations in Sandbox before Production upgrades. The retainer model replaces per-request billing with a fixed monthly block of hours applied to whatever comes in without a new statement of work for each item. SuitePacific provides NetSuite managed support retainers for post-go-live accounts starting at $799 per month, covering administration and development work with direct access to the same certified consultant on every request. No ticket queue and no SOW required for requests within the retainer scope.</p>
 </div>
 
 When companies ask what a NetSuite support retainer actually covers, they are usually comparing it to what they have now: either a break-fix arrangement where every request generates a new invoice, or no formal support at all and an internal team handling NetSuite on top of their primary job.
 
 The answer is not a fixed scope. A retainer covers what comes up. But after supporting live NetSuite accounts for post-go-live companies, the request types are consistent enough to describe in practical terms.
+
+## What does a NetSuite support retainer cover month to month?
 
 ## What comes through every month
 

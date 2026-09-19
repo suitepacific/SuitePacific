@@ -133,7 +133,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Consultant Los Angeles",
   description:
-    "NetSuite consulting for Los Angeles companies. Post-go-live support, SuiteScript development, and integrations for apparel, e-commerce, entertainment, and professional services firms on NetSuite.",
+    "NetSuite consulting for Los Angeles. Post-go-live support, SuiteScript development, and integrations for apparel, e-commerce, and professional services firms.",
   alternates: { canonical: "/netsuite-consultant-los-angeles" },
   openGraph: {
     title: "NetSuite Consultant Los Angeles",

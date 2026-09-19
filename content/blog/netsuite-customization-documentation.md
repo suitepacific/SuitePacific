@@ -5,9 +5,11 @@ date: "2026-08-29"
 tags: ["Admin", "SuiteScript", "Post-Go-Live"]
 ---
 
+NetSuite customization documentation is the structured record of every SuiteScript, workflow, custom field, and integration in a live account, including what it does, why it exists, and what breaks if it is changed.
+
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
-<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite customization documentation is a record of the SuiteScript files, SuiteFlow workflows, saved searches, custom record types, and configuration settings that have been added to a NetSuite account beyond the standard platform. Useful documentation identifies each customization by name and internal ID, describes what it does and which records or transactions it touches, records its trigger conditions, and notes any dependencies between customizations. The goal is to allow a developer or administrator who did not build the account to understand what exists, how it works, and what will break if it is modified. SuitePacific produces customization documentation as part of every account onboarding and account optimization engagement, and maintains it as a running record throughout ongoing support retainers.</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">NetSuite customization documentation is a record of the SuiteScript files, SuiteFlow workflows, saved searches, custom record types, and configuration settings that have been added to a NetSuite account beyond the standard platform. Useful documentation identifies each customization by name and internal ID, describes what it does and which records or transactions it touches, records its trigger conditions, and notes any dependencies between customizations. The goal is to allow a developer or administrator who did not build the account to understand what exists, how it works, and what will break if it is modified. SuitePacific produces customization documentation as part of every account onboarding and account optimization engagement, and maintains it as a running record throughout ongoing support retainers. Documentation is delivered as a living reference file, updated each time new work completes on the account, so it remains current as the account evolves.</p>
 </div>
 
 Most NetSuite accounts that have been live for more than a year have a customization layer that nobody fully understands. The original implementation partner built it, documented little or nothing, and is no longer involved. The internal team knows what the customizations do in broad terms, but not how they work or what would break if something changed.
@@ -16,7 +18,7 @@ This creates a specific and recurring problem: every change request becomes risk
 
 Documentation does not solve all of this, but it is the starting point for managing a live NetSuite account safely.
 
-## What to document
+## What should you document in a live NetSuite account?
 
 A complete customization record covers six categories.
 

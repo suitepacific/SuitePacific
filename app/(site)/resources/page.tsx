@@ -11,7 +11,7 @@ import { getAllResources, RESOURCE_CATEGORIES } from "@/lib/resources";
 export const metadata: Metadata = {
   title: "NetSuite Resources",
   description:
-    "Practical NetSuite reference articles: SuiteScript best practices, performance optimization, workflow automation, saved searches, and administration guides for post-go-live accounts.",
+    "NetSuite reference guides and checklists for administrators, developers, and finance teams: SuiteScript, workflows, health checks, and partner transitions.",
   alternates: { canonical: "/resources" },
   openGraph: {
     title: "NetSuite Resources",

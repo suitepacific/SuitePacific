@@ -114,7 +114,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Celigo Integration",
   description:
-    "Celigo Mastery Level 4 certified NetSuite Celigo integration: new builds, broken flow repair, ongoing maintenance, and error monitoring. Shopify, Salesforce, HubSpot, Amazon, and custom API integrations.",
+    "Celigo Mastery Level 4 certified. Builds, repairs, monitors, and optimizes Celigo integrations between NetSuite and Shopify, Salesforce, HubSpot, and Amazon.",
   alternates: { canonical: "/netsuite-integrations/celigo" },
   openGraph: {
     title: "NetSuite Celigo Integration",

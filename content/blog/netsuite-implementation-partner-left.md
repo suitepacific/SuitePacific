@@ -5,6 +5,8 @@ date: "2026-08-18"
 tags: ["Post-Go-Live", "Partner Replacement"]
 ---
 
+When a NetSuite implementation partner disengages, the account transitions from a project-delivery model to a post-go-live phase that requires a different type of support: retained technical resources rather than a project team.
+
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">When your NetSuite implementation partner ends the engagement, the immediate risks are undocumented customizations, no coverage for release-related script failures, and no resource for the development work that accumulates after go-live. The practical steps in the first 30 days: document what is running in your account under Customization &gt; Scripting &gt; Script Deployments and Customization &gt; Workflow &gt; Workflows; identify who on your internal team holds full Administrator access; prioritize any open issues from the implementation and classify them as critical, high, or standard; and begin evaluating a replacement partner who is built for ongoing support rather than project delivery. The key quality to look for in a replacement partner is retained account context: the ability to accumulate knowledge of your specific account and apply it across requests without starting from zero. The transition to a new partner typically takes two to four weeks from first contact to active work.</p>

@@ -139,7 +139,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Workflow Automation",
   description:
-    "Custom NetSuite SuiteFlow workflow automation: approval routing, email notifications, status transitions, and process automation built and tested in sandbox before production deployment.",
+    "Multi-step approval routing, notification automation, and SuiteFlow process management for accounts already live on NetSuite. SuiteCloud Developer II certified.",
   alternates: { canonical: "/netsuite-workflow-automation" },
   openGraph: {
     title: "NetSuite Workflow Automation",

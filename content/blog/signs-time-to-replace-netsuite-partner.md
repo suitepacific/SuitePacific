@@ -5,6 +5,8 @@ date: "2026-08-18"
 tags: ["Post-Go-Live", "Partner Replacement"]
 ---
 
+Replacing a NetSuite partner is warranted when response times, scope coverage, or account knowledge consistently fall below what a post-go-live account requires to remain stable and continue improving.
+
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The clearest signs it is time to replace your NetSuite partner: your team tells you when things break before your partner does; every small request requires a new scope document; the person who knows your account has left the firm; you have stopped asking for improvements because you expect them to be slow or expensive; and the account is accumulating technical debt faster than it is being addressed. Response time is one of the most reliable signals. A partner actively managing your account should know about release-related failures before you do, because they review Sandbox before each bi-annual NetSuite update and monitor script governance alerts. When users consistently report broken scripts before the partner does, the engagement is reactive rather than managed. The staffing model matters too: if the developer who originally onboarded your account has moved on and nobody retained that context, you are effectively starting over inside the same contract.</p>
@@ -15,6 +17,8 @@ Most businesses do not wake up one day and decide to replace their NetSuite part
 By the time the frustration becomes explicit, the support relationship has usually been underperforming for months.
 
 These are the signs worth recognizing before they compound.
+
+## How do you know when it is time to replace your NetSuite partner?
 
 ## 1. Your team tells you when something breaks, not your partner
 

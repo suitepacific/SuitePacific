@@ -118,7 +118,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Drop Shipping Automation",
   description:
-    "NetSuite drop shipping automation for wholesale distributors: automated PO creation from sales orders, vendor notification, fulfillment status updates, customer shipping notifications, and three-way match exception reporting.",
+    "Automated drop ship PO creation, vendor notification, and three-way match for companies using drop shipping in NetSuite. SuiteCloud Developer II certified.",
   alternates: { canonical: "/netsuite-drop-shipping" },
   openGraph: {
     title: "NetSuite Drop Shipping Automation",

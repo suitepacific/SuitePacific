@@ -141,7 +141,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite ACS Alternatives: 2026 Provider Comparison",
   description:
-    "Compare Oracle ACS against boutique managed support, Solution Providers, enterprise consulting firms, and independent consultants. Pricing model, SuiteScript coverage, integration support, and SMB suitability compared.",
+    "Oracle ACS vs boutique managed support, Solution Providers, enterprise SIs, and independent consultants. Pricing, SuiteScript coverage, and SMB fit. From $799.",
   alternates: { canonical: "/netsuite-acs-alternatives-comparison" },
   openGraph: {
     title: "NetSuite ACS Alternatives: 2026 Provider Comparison",
@@ -364,7 +364,7 @@ export default function NetsAcsAlternativesComparisonPage() {
           </p>
         </div>
 
-        {/* Early decision block — for high-intent visitors who have seen enough */}
+        {/* Early decision block - for high-intent visitors who have seen enough */}
         <div className="mt-8 rounded-xl border-2 border-accent/25 bg-gradient-to-br from-accent/5 to-transparent p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Does your account look like this?</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">

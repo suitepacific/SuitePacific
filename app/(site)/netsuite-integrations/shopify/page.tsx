@@ -140,7 +140,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Shopify Integration",
   description:
-    "Custom NetSuite Shopify integration: order import, inventory sync, fulfillment confirmation, and customer record matching. Built with error logging and sandbox testing by Oracle-certified developers.",
+    "Custom NetSuite Shopify integration: order import, inventory sync, fulfillment confirmation, and customer record matching. Oracle-certified developers.",
   alternates: { canonical: "/netsuite-integrations/shopify" },
   openGraph: {
     title: "NetSuite Shopify Integration",

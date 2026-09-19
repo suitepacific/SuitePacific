@@ -118,7 +118,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Work Order Management",
   description:
-    "NetSuite work order automation for manufacturers: automated work order generation from sales demand, component issue workflows, production completion scripts, variance reporting, and shop floor dashboards.",
+    "Automated work order generation, component issue, and production completion workflows for manufacturers on NetSuite. SuiteCloud Developer II certified.",
   alternates: { canonical: "/netsuite-work-orders" },
   openGraph: {
     title: "NetSuite Work Order Management",

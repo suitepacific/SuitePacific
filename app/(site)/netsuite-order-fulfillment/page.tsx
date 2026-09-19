@@ -49,7 +49,7 @@ const FAQ = [
 
 export const metadata: Metadata = {
   title: "NetSuite Order Fulfillment: Automation, Pick Lists, Carrier Integration, and Dashboards",
-  description: "SuitePacific configures and automates NetSuite order fulfillment: fulfillment workflows, custom pick lists and packing slips, carrier API integrations, 3PL connections, and real-time fulfillment dashboards. Plans from $799/month.",
+  description: "Order fulfillment automation, custom pick lists, carrier API integrations, 3PL connections, and real-time fulfillment dashboards. Plans from $799/month.",
   alternates: { canonical: "/netsuite-order-fulfillment" },
   openGraph: {
     title: "NetSuite Order Fulfillment: Automation, Pick Lists, Carrier Integration, and Dashboards",

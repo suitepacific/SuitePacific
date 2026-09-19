@@ -139,7 +139,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Deductions Management for Food and Beverage Companies",
   description:
-    "Standard NetSuite has no native deduction claim record. SuitePacific builds the custom records, cash application workflows, trade deal matching scripts, and dispute workflows FMCG companies need to manage retailer short payments in NetSuite.",
+    "Retailer chargeback reconciliation, short-pay processing, and dispute workflows for food and beverage companies in retail channels. Plans from $799/month.",
   alternates: { canonical: "/netsuite-deductions-management" },
   openGraph: {
     title: "NetSuite Deductions Management for Food and Beverage Companies",

@@ -5,6 +5,8 @@ date: "2026-08-19"
 tags: ["Post-Go-Live", "Consulting"]
 ---
 
+A NetSuite partner relationship has run its course when response times consistently exceed commitments, requests are routed to unfamiliar consultants, and the partner's knowledge of the account is no longer reflected in the work delivered.
+
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">The clearest signs a NetSuite partner relationship has run its course are: you are following up on requests more often than the partner is proactively updating you; the consultant who built your account is no longer your contact and the replacement does not know your account; you have escalated responsiveness or quality concerns more than once without lasting improvement; you are avoiding submitting requests because the process costs more time than the issue is worth; and your account is visibly stagnant, the same issues keep surfacing with no proactive work to address root causes. None of these signs require a catastrophic failure. They are the slow-motion pattern of a relationship that was built for implementation work being stretched to cover ongoing support, which is a different job with different requirements. When three or more apply, beginning to evaluate a replacement is worth the time even if you are not yet in crisis.</p>

@@ -42,7 +42,7 @@ const FAQ = [
 
 export const metadata: Metadata = {
   title: "QuickBooks to NetSuite Migration: Fixing Opening Balances, Duplicates, and Missing Reports",
-  description: "Migrated from QuickBooks to NetSuite and experiencing problems? SuitePacific stabilizes post-migration NetSuite accounts: opening balance reconciliation, entity cleanup, item correction, and missing reports.",
+  description: "Post-migration stabilization for QuickBooks-to-NetSuite moves: opening balance reconciliation, entity deduplication, chart of accounts cleanup, and reports.",
   alternates: { canonical: "/netsuite-quickbooks-migration" },
   openGraph: {
     title: "QuickBooks to NetSuite Migration: Fixing Opening Balances, Duplicates, and Missing Reports",

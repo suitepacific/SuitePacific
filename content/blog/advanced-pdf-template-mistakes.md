@@ -60,6 +60,8 @@ Templates pass testing because test data is clean. Production data has missing f
 <p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">Advanced PDF templates in NetSuite most commonly fail in production for five reasons: maintaining multiple near-identical templates instead of one with FreeMarker conditional logic; pulling sublist data through deeply nested joins that fail when any join link is empty; confusing header-level and line-level field scopes (a header field referenced inside a list loop silently returns blank or errors); testing only with clean records rather than edge cases like zero-line transactions or missing address fields; and editing live templates without a backup when NetSuite provides no built-in version history. The consistent fix pattern: consolidate templates using FreeMarker &lt;#if&gt; blocks, flatten complex joins to fields on the record, always reference header fields outside list loops and line fields inside them, test against the messiest real record in the account before deploying, and copy the working template markup before every edit.</p>
 </div>
 
+## What causes the most common NetSuite advanced PDF template mistakes?
+
 ## 1. Maintaining near-identical templates instead of one template with conditions
 
 The most common pattern we find is three or four templates that are 90% identical, one for each customer type or region, copied and tweaked instead of built once. Every future change then has to be made three or four times, and it's only a matter of time before one copy gets missed. FreeMarker's `<#if>` and `<#else>` blocks can handle almost all of this branching inside a single template, keyed off a field on the record. One template to maintain beats four that drift apart.

@@ -118,7 +118,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite 3PL Integration: Order Transmission, Inventory Sync, and Shipment Confirmation",
   description:
-    "NetSuite does not connect to third-party logistics providers natively. SuitePacific builds the order transmission, inventory sync, shipment confirmation, and returns receipt integration between NetSuite and your 3PL.",
+    "Order transmission, inventory sync, and shipment confirmation between NetSuite and 3PL providers. SuiteCloud Developer II certified. Plans from $799/month.",
   alternates: { canonical: "/netsuite-3pl-integration" },
   openGraph: {
     title: "NetSuite 3PL Integration: Order Transmission, Inventory Sync, and Shipment Confirmation",

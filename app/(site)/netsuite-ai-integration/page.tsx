@@ -181,7 +181,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite AI Integration: Native Features and Custom Development",
   description:
-    "Configure Oracle NetSuite's built-in AI features and build custom AI integrations via SuiteScript. Certified NetSuite consultants for Text Enhance setup, Bill Capture, and external AI API integration.",
+    "NetSuite AI integration: configure built-in AI features and build custom SuiteScript integrations. Covers Text Enhance, Bill Capture, and external AI APIs.",
   alternates: { canonical: "/netsuite-ai-integration" },
   openGraph: {
     title: "NetSuite AI Integration: Native Features and Custom Development",

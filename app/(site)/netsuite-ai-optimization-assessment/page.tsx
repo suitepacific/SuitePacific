@@ -191,7 +191,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite AI Optimization Assessment",
   description:
-    "Identifies where AI can improve your live NetSuite account across processes, customizations, documents, and reporting. Fixed-scope engagement with scored findings and implementation roadmap.",
+    "Identifies AI improvement opportunities in a NetSuite account across processes, customizations, and reporting. Fixed-scope engagement with scored findings.",
   alternates: { canonical: "/netsuite-ai-optimization-assessment" },
   openGraph: {
     title: "NetSuite AI Optimization Assessment",

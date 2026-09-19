@@ -196,7 +196,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Partner Replacement",
   description:
-    "Switching NetSuite partners or taking over from an implementation that ended. SuitePacific reviews your existing account independently and takes over ongoing development, administration, and support.",
+    "Transition from a NetSuite implementation partner to a retained specialist. Account review and active management begin within two weeks. From $799/month.",
   alternates: { canonical: "/netsuite-partner-replacement" },
   openGraph: {
     title: "NetSuite Partner Replacement",

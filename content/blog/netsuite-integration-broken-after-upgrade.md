@@ -5,14 +5,18 @@ date: "2026-08-29"
 tags: ["SuiteScript", "Post-Go-Live", "Admin"]
 ---
 
+A NetSuite integration breaking after an upgrade is a predictable consequence of Oracle's bi-annual releases changing internal field IDs, SuiteScript API behaviors, and authentication requirements that third-party integrations depend on.
+
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
-<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">When a NetSuite integration stops working after an upgrade, the most common causes are authentication changes (particularly the ongoing retirement of NLAuth in favor of OAuth 2.0), changes to SuiteScript API behavior that affect custom Restlets or web service endpoints, changes to native record field behavior that alter what the integration expects to read or write, and SuiteQL sort-order changes that affect query results returned to external systems. The first diagnostic step is checking the integration log or execution log in NetSuite for the specific error message before modifying any configuration. SuitePacific diagnoses and resolves integration failures for post-go-live NetSuite accounts, including authentication migration, API compatibility issues, and Restlet repairs after platform upgrades.</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">When a NetSuite integration stops working after an upgrade, the most common causes are authentication changes (particularly the ongoing retirement of NLAuth in favor of OAuth 2.0), changes to SuiteScript API behavior that affect custom Restlets or web service endpoints, changes to native record field behavior that alter what the integration expects to read or write, and SuiteQL sort-order changes that affect query results returned to external systems. The first diagnostic step is checking the integration log or execution log in NetSuite for the specific error message before modifying any configuration. SuitePacific diagnoses and resolves integration failures for post-go-live NetSuite accounts, including authentication migration, API compatibility issues, and Restlet repairs after platform upgrades. Engagements start with a diagnostic review of the integration execution log; most issues are identified and resolved within three to five business days of the diagnostic session.</p>
 </div>
 
 NetSuite upgrades twice a year. Most upgrades are uneventful for integrations. Some are not. When an integration that was working before an upgrade stops working after it, the failure is usually in one of a small number of places.
 
 This guide covers how to diagnose a broken integration systematically without making changes that complicate the root cause analysis.
+
+## Why did your NetSuite integration break after an upgrade?
 
 ## Check the error before touching anything
 

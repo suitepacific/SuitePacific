@@ -118,7 +118,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Demand Planning and Replenishment Configuration",
   description:
-    "NetSuite demand planning configuration for wholesale distributors: parameter setup by SKU, lead time cleanup, safety stock calculations, and suggested PO logic with MOQ and price-break handling.",
+    "Planning parameters, safety stock, and minimum order quantity logic for distributors on NetSuite. SuiteCloud Developer II certified. Plans from $799/month.",
   alternates: { canonical: "/netsuite-demand-planning" },
   openGraph: {
     title: "NetSuite Demand Planning and Replenishment Configuration",

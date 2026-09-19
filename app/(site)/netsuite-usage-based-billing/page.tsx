@@ -147,7 +147,7 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Usage-Based Billing for SaaS Companies",
   description:
-    "SuitePacific builds usage-based billing in NetSuite: import scripts for consumption data, aggregation logic, invoice generation from usage records, overage billing, and reconciliation reports.",
+    "Usage data ingestion and consumption billing scripts for SaaS companies on NetSuite using SuiteBilling. SuiteCloud Developer II certified. Plans from $799.",
   alternates: { canonical: "/netsuite-usage-based-billing" },
   openGraph: {
     title: "NetSuite Usage-Based Billing for SaaS Companies",
