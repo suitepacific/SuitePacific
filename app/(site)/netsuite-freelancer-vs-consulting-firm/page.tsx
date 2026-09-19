@@ -157,10 +157,11 @@ export default function FreelancerVsConsultingFirmPage() {
         name="NetSuite Managed Support"
         description="Ongoing NetSuite SuiteScript development, workflow automation, administration, and break-fix support for companies already live on NetSuite."
         url={`${SITE_URL}/netsuite-freelancer-vs-consulting-firm`}
+        serviceType="NetSuite Managed Support"
         offers={[
-          { name: "Care", price: "799", priceCurrency: "USD", priceSpecification: { unitText: "MONTH" } },
-          { name: "Care Plus", price: "1499", priceCurrency: "USD", priceSpecification: { unitText: "MONTH" } },
-          { name: "Care Pro", price: "2499", priceCurrency: "USD", priceSpecification: { unitText: "MONTH" } },
+          { name: "Care", price: 799, description: "10 hours/month: SuiteScript development, workflow automation, administration. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: expanded development, integrations, break-fix. Month-to-month." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: full-coverage managed support. Month-to-month." },
         ]}
       />
 
