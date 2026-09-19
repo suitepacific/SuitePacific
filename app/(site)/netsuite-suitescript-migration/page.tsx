@@ -495,6 +495,25 @@ export default function SuiteScriptMigrationPage() {
           </ol>
         </div>
 
+        {/* Checklist CTA */}
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 flex items-start gap-4">
+          <div className="shrink-0 w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+            <CheckCircle2 className="h-5 w-5 text-accent" />
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-brand-900 mb-1">Not sure where your account stands?</p>
+            <p className="text-sm text-brand-400 mb-3">
+              Use the ten-question readiness checklist to identify gaps in your script inventory, process mapping, and sandbox readiness before the 2028.2 deadline.
+            </p>
+            <Link
+              href="/netsuite-suitescript-readiness-checklist"
+              className="text-sm font-semibold text-accent hover:underline"
+            >
+              Review the SuiteScript 2028.2 readiness checklist
+            </Link>
+          </div>
+        </div>
+
         {/* Mid-page form */}
         <div id="audit-form" className="mt-14 rounded-2xl border border-brand-100 bg-white p-6 shadow-soft">
           <p className="text-base font-bold text-brand-900 mb-1">Request your SuiteScript 2.1 audit</p>
