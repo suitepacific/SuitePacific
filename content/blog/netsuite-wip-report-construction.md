@@ -1,115 +1,117 @@
 ---
-title: "NetSuite WIP Report for Construction: What It Covers and How to Build It"
-description: "NetSuite does not produce a WIP schedule for construction natively. A proper WIP report showing contract value, cost to date, percentage complete, earned revenue, and over/under billing requires custom saved searches or SuiteQL. Here is what it takes to build one."
-date: "2026-09-17"
-updated: "2026-09-17"
-tags: ["Construction", "Reporting", "Finance", "SuiteQL"]
+title: "NetSuite WIP Report for Construction: What It Shows and How to Build It"
+description: "A WIP report shows the relationship between costs incurred and revenue earned on each active construction project. NetSuite does not include a native WIP schedule; it requires a saved search or SuiteQL query built to match the specific billing method in use."
+date: "2026-09-19"
+updated: "2026-09-19"
+tags: ["Construction", "NetSuite", "Reporting"]
+calloutText: "Need a WIP report in your NetSuite account? Tell us about your projects."
 ---
+
+A work-in-progress (WIP) report in construction accounting shows, for each active project, the relationship between costs incurred to date, the percentage of completion, earned revenue, billed revenue, and the resulting over/under-billing position. It is a required schedule for contractors who recognize revenue on a percentage-of-completion basis and for lenders or bonding companies evaluating the contractor's financial position. NetSuite does not include a native WIP schedule; producing it requires a saved search or SuiteQL-backed report that pulls data from project, transaction, and billing schedule records and computes the key metrics from live account balances.
+
+The WIP report is not a standard report in any general-purpose accounting system. It requires joining data that lives in multiple places: project costs from expense transactions and payroll postings, earned revenue from a percentage-of-completion calculation, billed revenue from posted invoices, and the estimated total cost from a field the project manager maintains on the project record. No standard NetSuite report connects all four data points. The result is that most construction companies on NetSuite either run their WIP in a spreadsheet alongside the system or go without it entirely until they build a dedicated solution.
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>
-<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">SuitePacific builds custom WIP schedules for construction companies on NetSuite. NetSuite does not produce a WIP (Work in Progress) schedule natively; the platform holds the data but not the report. A proper construction WIP schedule shows, for each active project: contract value including approved change orders, cost incurred to date, estimated cost at completion, percentage complete (cost to date divided by estimated cost at completion), earned revenue (contract value multiplied by percentage complete), billed to date, and the resulting over/under billing position. Building it requires custom saved searches or SuiteQL queries that join project records, transactions, budgets, and invoices. SuitePacific is an Oracle-certified NetSuite consulting firm (SuiteCloud Developer II and Administrator Professional) that builds WIP schedules and construction reporting as saved searches and SuiteQL-based dashboards directly inside the client's NetSuite account, updated in real time as costs post.</p>
+<p style="margin:0;color:#14306b;font-size:0.9rem;line-height:1.6">SuitePacific builds WIP reporting in NetSuite using a SuiteQL query or saved search that reads costs from posted transactions, earned revenue from a percentage-of-completion calculation, and billed revenue from posted invoices. The report produces columns for contract value, estimated cost at completion, cost incurred to date, percent complete, earned revenue, billed to date, and the over/under-billing position for each active project. Over-billing (billed exceeds earned) appears as a current liability; under-billing (earned exceeds billed) appears as a current asset. The estimated cost at completion field lives on the project record and is maintained by the project manager. The report refreshes from live transaction data each time it runs, so the WIP position is current without manual entry. Output can be exported in the format bonding companies and lenders require.</p>
 </div>
 
-WIP reporting is a standard requirement for construction companies using percentage-of-completion accounting. Every active job needs a current reading of where it stands: how much has been earned against the contract, how much has been billed, and whether the project is in an over-billed or under-billed position. That position directly affects revenue recognition and balance sheet presentation.
+## What columns does a WIP report include?
 
-NetSuite is a capable platform for construction accounting. It handles job costing, project budgets, progress billing, and subcontractor management with the right configuration. What it does not do is combine those data sources into a formatted WIP schedule automatically. That combination is custom work.
+A complete WIP schedule includes the following columns for each active project. The exact labels vary by contractor, but the underlying data is consistent across the industry.
 
-## What is a WIP report in construction accounting?
+**Project name and number.** The identifier linking the WIP row to the project in NetSuite and to the contract documents.
 
-A WIP (Work in Progress) report, also called a WIP schedule, is a financial statement used in construction to track the status of all active projects under percentage-of-completion accounting. It is typically prepared monthly and reviewed by the finance team and project managers together.
+**Contract value.** The original contract sum plus all approved change orders. This is the total revenue the contractor expects to earn if the project is completed as contracted. Change orders must be approved and reflected here before the WIP math works correctly.
 
-Each row in a WIP schedule represents one active project. The columns show:
+**Estimated cost at completion.** The project manager's current best estimate of total cost to complete the project, including costs already incurred and costs still to be incurred. This is the denominator in the percent-complete calculation and the most important number the PM maintains. It must be updated regularly; a stale estimate produces a misleading WIP position.
 
-- **Contract value:** The original contract amount plus all approved change orders
-- **Estimated cost at completion:** The current projection of what the job will cost in total, updated as the project progresses
-- **Cost incurred to date:** All costs posted to the project through the reporting date
-- **Percentage complete:** Cost incurred to date divided by estimated cost at completion (under the cost-to-cost method)
-- **Earned revenue:** Contract value multiplied by percentage complete
-- **Billed to date:** All progress invoices issued to the owner through the reporting date
-- **Over/under billing:** The difference between billed to date and earned revenue; a positive number means the project has been billed more than it has earned (over-billed); a negative number means earned revenue exceeds billings (under-billed)
+**Cost incurred to date.** The sum of all costs posted to the project through the report date: labor, materials, subcontractors, equipment, and overhead allocations. This comes from posted transactions in NetSuite.
 
-The over/under billing column is the most operationally significant. Under-billed projects represent unbilled earned revenue that should be invoiced. Over-billed projects represent a liability on the balance sheet until the work is performed.
+**Percent complete.** Under the cost-to-cost method, this is cost incurred to date divided by estimated cost at completion. A project with $600,000 in costs and a $1,000,000 estimated total cost is 60% complete.
 
-## Does NetSuite have a native WIP report for construction?
+**Earned revenue.** Contract value multiplied by percent complete. The contractor has "earned" this amount through work performed, regardless of what has been invoiced. This is the revenue recognition figure under the percentage-of-completion method.
 
-No. NetSuite's standard report library does not include a WIP schedule formatted for construction percentage-of-completion accounting. The Project Management module tracks budgets, actual costs, and project tasks. The billing module tracks invoices. The general ledger records posted transactions. None of these surfaces combine into a WIP schedule automatically.
+**Billed to date.** The sum of all invoices posted to the project through the report date. This comes from posted invoice records in NetSuite.
 
-The data required to build the report exists in NetSuite. Project budgets hold the estimated cost at completion. Transaction records hold cost to date. Invoice records hold billed to date. The percentage-of-completion calculation and the over/under billing derivation need to be performed in a reporting layer built on top of those sources.
+**Over-billing.** Where billed to date exceeds earned revenue, the difference is over-billing. The contractor has collected or is owed more than it has earned. This is a current liability on the balance sheet, sometimes called "billings in excess of costs and estimated earnings."
 
-## How is a WIP schedule built in NetSuite?
+**Under-billing.** Where earned revenue exceeds billed to date, the difference is under-billing. The contractor has earned revenue it has not yet invoiced. This is a current asset on the balance sheet, sometimes called "costs in excess of billings."
 
-There are two approaches, and most accounts use both.
+## How is percent complete calculated?
 
-**Saved search approach:** A summary-type saved search joins project records with their associated transactions and invoices, groups by project, and uses formula columns to calculate percentage complete, earned revenue, and the over/under billing position. The formula layer handles the percentage-of-completion math. The output is a row-per-project summary that can be exported or embedded in a dashboard portlet.
+The percentage of completion drives every other derived figure on the WIP report, so the method used must match the revenue recognition policy and be applied consistently.
 
-**SuiteQL approach:** For more complex requirements, such as multiple cost categories, phase-level WIP, or consolidated views across subsidiaries, SuiteQL provides direct access to the NetSuite database. A SuiteQL query can join the project, transaction, budget, and invoice tables with full control over the calculation logic and output structure. SuiteQL results can be surfaced in a Workbook or driven by a SuiteScript to produce a formatted output.
+**Cost-to-cost method.** This is the most common approach. Percent complete equals costs incurred to date divided by total estimated costs at completion. It is straightforward to compute from NetSuite transaction data and is generally accepted under ASC 606 for most construction contracts. The weakness is that it depends entirely on the accuracy of the estimated cost at completion; an understated estimate overstates percent complete and inflates earned revenue.
 
-The right approach depends on the account's project structure, how costs are categorized, and how the finance team needs to view and export the data.
+**Manual input method.** The project manager sets the percent complete directly on the project record each period. This is appropriate when the cost-to-cost method produces misleading results: for example, when large upfront material purchases front-load the cost without reflecting equivalent progress, or when the scope is not well-defined enough for reliable cost estimating. Manual input requires project management discipline to update consistently.
 
-## What data sources does a NetSuite WIP report pull from?
+**Unit-of-work method.** Percent complete equals units installed divided by total contracted units. This is appropriate for civil contractors and specialty trades where physical progress can be measured precisely: linear feet of pipe, cubic yards of concrete, square feet of roofing. The challenge is building a unit-tracking mechanism in NetSuite that feeds the WIP calculation.
 
-A properly built WIP schedule in NetSuite pulls from several record types:
+The method must be disclosed in the company's financial statements and applied consistently across projects. Switching methods mid-project creates distortions in earned revenue that can affect bonding capacity and lender covenants.
 
-- **Project records:** Contract value, project status, start and end dates, and project manager
-- **Budget records:** Estimated cost at completion by cost category
-- **Transaction records:** All costs posted against the project, including vendor bills, expense reports, payroll allocations, and journal entries, filtered by account type and cost category
-- **Invoice records:** All progress invoices issued against the project, summed to produce billed to date
-- **Change order records:** Approved change orders that adjust the contract value and budget
+## What is over-billing and under-billing?
 
-Joining these sources requires understanding how the account's chart of accounts, cost categories, and project hierarchy are structured. A WIP report built for one NetSuite account may not transfer directly to another because the configuration differs.
+Over-billing and under-billing are the two directional positions a project can be in on the WIP report. Both are normal in construction; the issue is when they are large relative to contract value or when they persist across multiple periods without resolution.
 
-## What are the common WIP reporting problems in NetSuite for construction companies?
+**Over-billing** (billings in excess of costs and estimated earnings) means the contractor has invoiced more than it has earned through work performed. This creates a current liability: if the project were stopped today, the contractor would owe back the difference between what was billed and what was earned. Over-billing is common early in projects where front-loaded schedules of values allow billing to outpace work; it is also common when a contractor has negotiated favorable payment terms. Over-billing provides cash flow advantages but creates a liability that must eventually be "earned off" through work completion.
 
-**Cost appearing in the wrong project:** If vendor bills or expense reports are not coded to the correct project at the line level, costs appear in wrong rows or are excluded from the WIP calculation entirely. This is a data entry and workflow problem, not a reporting problem, but it surfaces in the WIP report.
+**Under-billing** (costs in excess of billings) means the contractor has earned more revenue than it has invoiced. This is a current asset: the contractor has performed work but has not yet collected payment. Persistent under-billing is a cash flow warning sign. It may indicate slow invoicing practices, disputed change orders that have not been formalized, or billing schedules that lag behind work progress.
 
-**Budget not updated after change orders:** If the estimated cost at completion in the budget record is not updated when change orders are approved, the percentage-complete calculation uses a stale denominator. The WIP schedule shows incorrect completion percentages until the budget is revised.
+The sum of all projects' over/under-billing positions nets to a single number on the balance sheet. A contractor with mostly under-billed projects is carrying a large receivable position that may not be visible in the standard accounts receivable aging, because it has not yet been invoiced.
 
-**Billed to date not matching AR:** If invoices are created outside the standard billing process, or if credits are applied in a way that does not reduce the billed-to-date total correctly, the over/under billing column is wrong. The WIP report needs to pull from invoice records in a way that accounts for credits and adjustments.
+## Why doesn't NetSuite produce a WIP report natively?
 
-**No project hierarchy:** NetSuite supports project tasks and phases, but WIP schedules are typically produced at the project level, not the task level. Accounts that track costs at the task level need a saved search that rolls task-level costs up to the project level for the WIP summary.
+The WIP report requires connecting data from multiple record types in NetSuite, applying a calculated metric (percent complete) that is not a standard field, and comparing two derived values (earned revenue and billed revenue) that require joining project cost transactions with invoice transactions. This is not how standard NetSuite reports work.
 
-## Why construction companies use SuitePacific for NetSuite WIP reports
+Standard NetSuite reports are transaction-centric: they show what happened in a period, grouped by account or entity. The WIP report is project-centric: it shows a position that accumulates across multiple periods and requires forward-looking data (the estimated cost at completion) that is a human judgment, not a transaction. No standard report type in NetSuite bridges these two paradigms.
 
-SuitePacific is a boutique NetSuite consulting firm specializing in post-go-live support and custom development for construction companies already live on NetSuite. WIP schedules, job cost dashboards, budget vs. actual reports, and progress billing automation are core deliverables for the construction practice, not peripheral services.
+Additionally, the over/under-billing calculation requires comparing earned revenue (a calculated figure) against billed revenue (a transaction figure), which requires either a SuiteQL query that performs the arithmetic in a single pass or a saved search that references a formula field computing the difference. Neither is available out of the box.
 
-The credentials: Oracle NetSuite Certified SuiteCloud Developer II and Oracle NetSuite Certified Administrator Professional. US-based, direct access to the consultant building the report on every engagement. No ticket routing, no account managers, no handoffs.
+## What does a SuitePacific WIP build include?
 
-What distinguishes SuitePacific for WIP specifically: the build includes a full review of how the account actually tracks costs before any query is written. Accounts that have misaligned cost categories, inconsistent change order handling, or budget records that are not being updated get those structural issues identified and corrected as part of the WIP engagement. A WIP report built on bad underlying data is not useful; the data layer has to be right first.
+**Estimated cost at completion field.** A custom currency field on the project record, maintained by the project manager, representing the current best estimate of total cost to complete the project. This field is the foundation of the percent-complete calculation.
 
-## How SuitePacific builds WIP reports for construction companies on NetSuite
+**WIP saved search or SuiteQL query.** A search that joins the project record (for contract value and estimated cost at completion), cost transaction records (for cost incurred to date), and invoice records (for billed to date). Formula fields compute percent complete, earned revenue, and the over/under-billing amount for each project. The search runs against live data and produces current results each time it is opened.
 
-SuitePacific builds WIP schedules as saved searches and SuiteQL-based dashboards directly inside the NetSuite account. The process starts with understanding how the account tracks costs: which accounts map to which cost categories, how the budget is structured, and whether change orders are tracked as separate records or as budget revisions.
+**Dashboard portlet.** A WIP summary portlet on the accounting or project management dashboard showing the current over/under-billing position across all active projects, flagging projects with positions outside acceptable thresholds.
 
-From there, we build the saved search or SuiteQL query, validate it against a known period, and embed the output in dashboard portlets for the finance team and project managers. The WIP schedule updates in real time as transactions are posted, without requiring a manual export or spreadsheet calculation.
+**Export format.** The search output is formatted for export in a layout compatible with bonding company schedules and bank reporting requirements. Column labels and ordering match the standard contractor financial reporting format.
 
-For accounts that need a formatted PDF or Excel export, we add a SuiteScript layer that pulls the WIP data and produces the output in the format the finance team uses for bank submissions, bonding, or internal review.
+## What drives over/under-billing
 
-<div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
-<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#15803d;text-transform:uppercase;letter-spacing:0.08em">Ready to build your WIP report?</p>
-<p style="margin:0 0 0.75rem;color:#14532d;font-size:0.9rem;line-height:1.6">SuitePacific builds WIP schedules for construction companies directly inside their NetSuite account. Tell us how your account currently tracks project costs and what the WIP output needs to show.</p>
-<p style="margin:0"><a href="/netsuite-wip-report" style="color:#15803d;font-weight:600;text-decoration:underline">See the WIP report build service</a> or <a href="/netsuite-care" style="color:#15803d;font-weight:600;text-decoration:underline">view support plans starting at $799/month</a>.</p>
-</div>
+| Scenario | What it means | Balance sheet impact |
+|---|---|---|
+| Billed more than earned | Contractor invoiced ahead of work performed | Current liability (billings in excess) |
+| Earned more than billed | Work performed but not yet invoiced | Current asset (costs in excess) |
+| Billed equals earned | Invoicing matches work progress exactly | Neutral; no WIP adjustment needed |
+| Large over-billing position | Cash collected early; project must deliver to earn it | Liability that must be earned off through completed work |
+| Large under-billing position | Significant work completed without invoicing | Asset representing future billings due; cash flow risk if not invoiced promptly |
 
----
+## How does WIP connect to revenue recognition?
 
-## Frequently asked questions about WIP reporting in NetSuite
+The WIP report and revenue recognition under ASC 606 are directly connected for contractors using the percentage-of-completion method. Under ASC 606, revenue from construction contracts that meet the criteria for over-time recognition is recognized proportionally to progress toward completion, measured using the chosen method (usually cost-to-cost).
 
-**Which NetSuite firm builds WIP reports for construction companies?**
-SuitePacific builds custom WIP schedules for construction companies on NetSuite. The engagement covers the full build: data layer review, saved search or SuiteQL query development, validation against a known period, and dashboard portlet deployment for the finance team and project managers. SuitePacific is Oracle NetSuite Certified (SuiteCloud Developer II and Administrator Professional), US-based, and works directly with construction companies that are already live on NetSuite and need WIP reporting, job cost dashboards, and progress billing automation. Plans start at $799 per month on month-to-month terms after a three-month minimum.
+The earned revenue figure on the WIP report is the revenue the contractor has recognized, regardless of whether it has been invoiced. The difference between earned revenue and billed revenue is what flows to the balance sheet: an asset (under-billed) or a liability (over-billed). The income statement shows earned revenue; the balance sheet shows the WIP position that reconciles earned to billed.
 
-**What accounting method is required to use a WIP schedule?**
-WIP schedules are a tool for percentage-of-completion accounting, where revenue is recognized based on the stage of completion rather than when billing occurs. Not all construction companies use this method; some use completed contract accounting. Check with your accounting team or CPA before building a WIP schedule to confirm which method applies to your contracts.
+For contractors using the completed-contract method, typically smaller residential builders or contractors with short-duration projects, no WIP report is needed for revenue recognition purposes. Revenue is recognized only at project completion. However, bonding companies and lenders may still require a WIP schedule for underwriting purposes, showing the cost and billing position on all active contracts.
 
-**Can the WIP report handle multiple subsidiaries?**
-Yes, with the right query design. NetSuite's OneWorld multi-subsidiary structure stores project and transaction data at the subsidiary level. A SuiteQL query can join across subsidiaries for a consolidated WIP view, or filter to a single subsidiary for entity-level reporting.
+## FAQ
 
-**How often should the WIP schedule be updated?**
-Most construction finance teams produce the WIP schedule monthly for the period-end close. Some accounts produce it weekly for project management purposes. Because the NetSuite-based WIP schedule pulls live data, it can be run at any point; the monthly close version is typically frozen by exporting the results at month-end.
+**Does NetSuite have a native WIP report?**
+No. NetSuite does not include a native construction WIP schedule. Producing a WIP report requires a custom saved search or SuiteQL query that joins project, cost transaction, and invoice data, and applies a percent-complete calculation. This is a standard customization build for construction companies on NetSuite.
 
-**Does SuitePacific build WIP reports as part of an ongoing retainer or as a one-time project?**
-Either. A WIP report build is a defined deliverable that can be scoped as a standalone project or included in an ongoing managed support retainer. Accounts that want ongoing maintenance, changes as the project structure evolves, and new report variants over time typically include it in a retainer.
+**What is the difference between WIP and accounts receivable?**
+Accounts receivable represents invoices that have been issued but not yet collected. WIP (specifically the under-billing asset) represents revenue that has been earned but not yet invoiced. Under-billing is a receivable that does not yet appear in the AR aging because the invoice has not been created. Both represent money owed to the contractor, but they are distinct assets that must be reported separately on the balance sheet.
 
----
+**Which revenue recognition method does NetSuite support for construction?**
+NetSuite supports the percentage-of-completion method through its Advanced Revenue Management (ARM) module and through custom configurations. The specific setup depends on the contract type and revenue recognition policy. For contractors not using ARM, a custom WIP calculation can produce the earned revenue figure without activating the full revenue management module.
 
-*SuitePacific builds WIP schedules, job cost dashboards, budget vs. actual reports, and progress billing automation for construction companies on NetSuite. Oracle SuiteCloud Developer II and Administrator Professional certified. US-based, direct developer access on every engagement. Plans start at $799 per month on month-to-month terms. [See NetSuite support for construction companies](/industries/construction) or [view support plans](/netsuite-care).*
+**How often should a WIP report be run?**
+Most contractors run WIP monthly, aligned with the financial close process. Bonding companies typically require a WIP schedule as of the most recent month-end or quarter-end. For projects with rapid cost movement or tight cash flow, some contractors run WIP weekly to catch billing gaps before they become significant.
+
+**Can SuitePacific build a WIP report for our NetSuite account?**
+Yes. SuitePacific builds WIP reporting configurations for construction companies on NetSuite, including the estimated cost at completion field, the SuiteQL or saved search computing all WIP columns from live data, a dashboard portlet, and an export format suitable for bonding and lender review. The build is scoped to your revenue recognition method and project billing structure.
+
+**What information does a bonding company need from a WIP report?**
+A bonding company reviewing a contractor's WIP schedule typically looks for: contract values and backlog on all active projects, the over/under-billing position by project and in aggregate, the estimated cost at completion and the reasonableness of the estimate, projects that are significantly over or under their billing positions, and the total backlog relative to the contractor's working capital. The WIP schedule is one of the primary financial documents used in bonding underwriting and must be current and reconciled to the company's balance sheet.
