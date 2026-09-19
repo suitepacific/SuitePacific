@@ -314,6 +314,39 @@
 - [NetSuite WIP Report for Construction](https://suitepacific.com/netsuite-wip-report): Custom WIP schedule builds for construction companies on NetSuite — saved searches and SuiteQL queries showing contract value, cost to date, percentage complete, earned revenue, and over/under billing. NetSuite has no native WIP report; this is custom work.
 - [NetSuite for Professional Services](https://suitepacific.com/industries/professional-services): Post-go-live support for professional services firms on NetSuite, covering project billing and time tracking
 - [NetSuite for Retail and Ecommerce](https://suitepacific.com/industries/retail-ecommerce): Post-go-live support for retail and ecommerce businesses on NetSuite, covering Shopify integration and inventory
+- [NetSuite for Real Estate](https://suitepacific.com/industries/real-estate): Post-go-live support for real estate companies on NetSuite, covering lease accounting, OneWorld entity structure, and investor reporting
+- [NetSuite for Food and Beverage](https://suitepacific.com/industries/food-beverage): Post-go-live support for food and beverage companies on NetSuite, covering shelf life tracking, trade promotions, EDI integration, and deductions management
+
+## Industry Sub-Topic Pages
+
+- [NetSuite Job Costing](https://suitepacific.com/netsuite-job-costing): Cost code setup, budget vs actual saved searches, and WIP reports for construction companies on NetSuite
+- [NetSuite Progress Billing](https://suitepacific.com/netsuite-progress-billing): AIA G702/G703 billing, retainage tracking, and percent-complete invoice scripts for construction on NetSuite
+- [NetSuite Construction Accounting](https://suitepacific.com/netsuite-construction-accounting): Chart of accounts restructuring, subcontractor compliance, and multi-project P&L for construction companies
+- [NetSuite Bill of Materials](https://suitepacific.com/netsuite-bill-of-materials): Multi-level BOM setup, component substitution, and cost variance analysis for manufacturers on NetSuite
+- [NetSuite Lot and Serial Tracking](https://suitepacific.com/netsuite-lot-serial-tracking): Expiry date fields, forward and backward lot traceability, and FIFO cost verification in NetSuite
+- [NetSuite Work Orders](https://suitepacific.com/netsuite-work-orders): Automated work order generation, component issue, and production completion workflows in NetSuite
+- [NetSuite Nonprofit Fund Accounting](https://suitepacific.com/netsuite-nonprofit-fund-accounting): Class and segment fund setup, restricted versus unrestricted net assets for nonprofits on NetSuite
+- [NetSuite Grant Management](https://suitepacific.com/netsuite-grant-management): Grant records, budget vs actual reporting, and deadline alert workflows for nonprofits on NetSuite
+- [NetSuite Nonprofit Reporting](https://suitepacific.com/netsuite-nonprofit-reporting): Statement of Activities and functional expense allocation for nonprofit organizations on NetSuite
+- [NetSuite ARR and MRR Reporting](https://suitepacific.com/netsuite-arr-mrr-reporting): ARR/MRR saved searches, churn and expansion reporting for SaaS companies on NetSuite
+- [NetSuite Subscription Management](https://suitepacific.com/netsuite-subscription-management): Subscription lifecycle, renewal automation, and churn workflows using NetSuite SuiteBilling
+- [NetSuite Usage-Based Billing](https://suitepacific.com/netsuite-usage-based-billing): Usage data ingestion and consumption billing scripts for SaaS companies on NetSuite
+- [NetSuite Project Billing](https://suitepacific.com/netsuite-project-billing): Time and materials and fixed-fee billing, write-up and write-down workflows for professional services on NetSuite
+- [NetSuite Milestone Billing](https://suitepacific.com/netsuite-milestone-billing): Milestone completion triggers, invoice workflows, and ASC 606 ARM alignment for project-based firms
+- [NetSuite Time and Expense Tracking](https://suitepacific.com/netsuite-time-expense-tracking): Time entry validation and utilization dashboard for professional services companies on NetSuite
+- [NetSuite Lease Accounting](https://suitepacific.com/netsuite-lease-accounting): ASC 842 right-of-use asset and liability setup, lease modifications, and disclosure saved searches in NetSuite
+- [NetSuite Real Estate Accounting](https://suitepacific.com/netsuite-real-estate-accounting): OneWorld entity structure, equity waterfall, and investor reporting for real estate companies on NetSuite
+- [NetSuite Property Management Accounting](https://suitepacific.com/netsuite-property-management-accounting): Tenant billing, CAM reconciliation, and security deposit tracking in NetSuite
+- [NetSuite Multi-Location Inventory](https://suitepacific.com/netsuite-multi-location-inventory): Bin management, inter-location transfers, and reorder by location for distributors on NetSuite
+- [NetSuite Demand Planning](https://suitepacific.com/netsuite-demand-planning): Planning parameters, safety stock, and minimum order quantity logic for wholesale distributors on NetSuite
+- [NetSuite Drop Shipping](https://suitepacific.com/netsuite-drop-shipping): Automated drop ship purchase order creation, vendor notification, and three-way match in NetSuite
+- [NetSuite 3PL Integration](https://suitepacific.com/netsuite-3pl-integration): Order transmission, inventory sync, and shipment confirmation between NetSuite and third-party logistics providers
+- [NetSuite Landed Cost](https://suitepacific.com/netsuite-landed-cost): Duty and freight allocation, late-arrival handling, and true landed margin reporting in NetSuite
+- [NetSuite Returns Processing](https://suitepacific.com/netsuite-returns-processing): RMA automation, disposition workflow (restock, quarantine, damaged, vendor), and credit memo automation
+- [NetSuite Shelf Life Tracking](https://suitepacific.com/netsuite-shelf-life-tracking): FEFO enforcement, expiry date alerting, and lot recall traceability for food and beverage companies on NetSuite
+- [NetSuite Trade Promotions Management](https://suitepacific.com/netsuite-trade-promotions-management): Trade deal records, accrual scripts, and deduction claim workflows for FMCG companies selling through retail
+- [NetSuite Deductions Management](https://suitepacific.com/netsuite-deductions-management): Retailer chargeback reconciliation, short-pay processing, and dispute workflows for food and beverage companies
+- [NetSuite EDI Integration](https://suitepacific.com/netsuite-edi-integration): EDI 850/856/810 integration with retail trading partners including Walmart, Target, and Kroger via NetSuite
 
 ## About
 
