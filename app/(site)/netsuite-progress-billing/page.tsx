@@ -160,6 +160,36 @@ export default function NetSuiteProgressBillingPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Construction specialists · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
 
+        <p className="mt-8 text-sm text-brand-400">
+          <strong>Progress billing in NetSuite</strong> refers to the process of invoicing a client for a percentage of the contract value based on work completed to date, rather than billing a fixed amount on a set schedule. Standard NetSuite does not include AIA G702/G703 form generation or native percent-complete invoice calculation.
+        </p>
+
+        <div className="mt-6 overflow-x-auto rounded-xl border border-brand-100">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-brand-100 bg-brand-50/50">
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">Capability</th>
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">Standard NetSuite</th>
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">With SuitePacific</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-brand-100">
+              {[
+                ["Invoice format", "Standard NetSuite invoice template", "AIA G702/G703 percent-complete format via advanced PDF template"],
+                ["Retainage", "Manual line-item deduction", "Automatic retainage hold calculated from contract value and release at project close"],
+                ["Percent complete", "No native calculation", "Percent-complete field on project record, updated by script from cost-to-date vs budget"],
+                ["Schedule of values", "No native schedule", "Custom schedule of values record linked to project with line-by-line billing tracking"],
+              ].map(([cap, std, sp]) => (
+                <tr key={cap} className="hover:bg-brand-50/30">
+                  <td className="px-4 py-3 font-medium text-brand-900">{cap}</td>
+                  <td className="px-4 py-3 text-brand-400">{std}</td>
+                  <td className="px-4 py-3 text-brand-500">{sp}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
         {/* Quick answer */}
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>

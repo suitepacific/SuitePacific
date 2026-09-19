@@ -178,6 +178,10 @@ export default function NetSuiteNonprofitReportingPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Nonprofit specialists · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
 
+        <p className="mt-8 text-sm text-brand-400">
+          <strong>Nonprofit financial reporting in NetSuite</strong> refers to producing the Statement of Activities, Statement of Financial Position, and functional expense allocation required under US GAAP for nonprofit organizations. Standard NetSuite income statements follow a for-profit structure and do not produce FASB-compliant nonprofit formats without custom saved searches or SuiteScript-generated reports.
+        </p>
+
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">

@@ -168,6 +168,10 @@ export default function Netsuite3plIntegrationPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Retail specialists · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
 
+        <p className="mt-8 text-sm text-brand-400">
+          <strong>3PL integration with NetSuite</strong> refers to the scripts and API connections that synchronize orders, inventory, and shipment data between a NetSuite account and a third-party logistics provider. Standard NetSuite does not include a native integration to any 3PL platform; order transmission, inventory sync, and shipment confirmation all require custom RESTlets or middleware.
+        </p>
+
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">

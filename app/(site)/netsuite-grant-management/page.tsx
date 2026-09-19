@@ -178,6 +178,10 @@ export default function NetSuiteGrantManagementPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Nonprofit specialists · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
 
+        <p className="mt-8 text-sm text-brand-400">
+          <strong>Grant management in NetSuite</strong> refers to the configuration that tracks each grant award as a distinct record with its own budget, expenditure activity, reporting periods, and compliance requirements. Standard NetSuite has no native grant record type; grant tracking requires a custom record or subsidiary structure linked to the organization&apos;s fund accounting setup.
+        </p>
+
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">

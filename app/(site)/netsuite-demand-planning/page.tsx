@@ -168,6 +168,36 @@ export default function DemandPlanningPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Distribution specialists · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
 
+        <p className="mt-8 text-sm text-brand-400">
+          <strong>Demand planning in NetSuite</strong> refers to the configuration of planning parameters, reorder rules, and safety stock levels that determine when and how much inventory to purchase or produce based on sales history and forward demand signals. Standard NetSuite includes basic reorder point and preferred vendor fields but does not include statistical demand forecasting, seasonality adjustments, or minimum order quantity enforcement without custom scripts.
+        </p>
+
+        <div className="mt-6 overflow-x-auto rounded-xl border border-brand-100">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-brand-100 bg-brand-50/50">
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">Capability</th>
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">Standard NetSuite</th>
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">With SuitePacific</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-brand-100">
+              {[
+                ["Reorder calculation", "Fixed reorder point set manually per item", "Calculated reorder point based on average daily demand and lead time with safety stock buffer"],
+                ["Safety stock", "No native safety stock calculation", "Safety stock field set by script from demand variability and desired service level"],
+                ["MOQ enforcement", "No MOQ validation on purchase orders", "User event script validates PO quantity against supplier MOQ before submission"],
+                ["Seasonal adjustment", "No native seasonality in reorder rules", "Seasonal demand multiplier on planning parameters: reorder points adjust by period"],
+              ].map(([cap, std, sp]) => (
+                <tr key={cap} className="hover:bg-brand-50/30">
+                  <td className="px-4 py-3 font-medium text-brand-900">{cap}</td>
+                  <td className="px-4 py-3 text-brand-400">{std}</td>
+                  <td className="px-4 py-3 text-brand-500">{sp}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">

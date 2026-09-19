@@ -100,6 +100,11 @@ export default function RealEstateAccountingPage() {
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft"><LeadFormLight /></div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Real estate accounting specialists · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
+
+        <p className="mt-8 text-sm text-brand-400">
+          <strong>Real estate accounting in NetSuite</strong> refers to the use of NetSuite OneWorld subsidiaries, custom segments, and intercompany eliminations to track the financial performance of multiple properties or entities in a single NetSuite account. Standard NetSuite OneWorld supports multi-entity consolidation but does not include equity waterfall calculations, investor distribution reporting, or property-level P&amp;L formats without custom configuration.
+        </p>
+
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">SuitePacific configures NetSuite real estate accounting for property owners, developers, and investment managers who need property-level financial statements, investor capital tracking, and equity waterfall calculations. Real estate portfolios typically require a separate entity for each property for tax and reporting purposes; NetSuite OneWorld supports this structure but requires careful intercompany elimination setup to produce clean consolidated financials. Investor capital account tracking, preferred return accruals, and carried interest calculations require a custom record model and SuiteScript logic that NetSuite does not provide natively. SuitePacific designs and configures the entity structure, builds the investor record model, writes the waterfall calculation scripts, and creates the property-level financial statement saved searches. Plans start at $799 per month.</p>

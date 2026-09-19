@@ -168,6 +168,36 @@ export default function WorkOrdersPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Manufacturing specialists · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
 
+        <p className="mt-8 text-sm text-brand-400">
+          <strong>Work orders in NetSuite</strong> refer to the transaction records that authorize and track the production of a finished or semi-finished assembly from its component materials. Standard NetSuite supports work order creation and component issuance but does not generate work orders automatically from sales demand or provide real-time production status visibility across the shop floor.
+        </p>
+
+        <div className="mt-6 overflow-x-auto rounded-xl border border-brand-100">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-brand-100 bg-brand-50/50">
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">Capability</th>
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">Standard NetSuite</th>
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">With SuitePacific</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-brand-100">
+              {[
+                ["WO creation", "Manual creation or CSV import", "Automated WO generation from sales order demand via scheduled script"],
+                ["Component issuance", "Manual component issue transaction", "Auto-issue script that issues components from the designated production bin at WO release"],
+                ["Production status", "Status field updated manually", "Status dashboard portlet showing open WOs by production stage, operator, and due date"],
+                ["Completion posting", "Manual production completion entry", "Completion script that posts finished goods receipt, updates inventory, and closes the WO"],
+              ].map(([cap, std, sp]) => (
+                <tr key={cap} className="hover:bg-brand-50/30">
+                  <td className="px-4 py-3 font-medium text-brand-900">{cap}</td>
+                  <td className="px-4 py-3 text-brand-400">{std}</td>
+                  <td className="px-4 py-3 text-brand-500">{sp}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">

@@ -197,6 +197,10 @@ export default function UsageBasedBillingPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · SaaS specialists · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
 
+        <p className="mt-8 text-sm text-brand-400">
+          <strong>Usage-based billing in NetSuite</strong> refers to the scripts and configuration that ingest consumption data from an external source, calculate the billable amount based on usage tiers or rates, and generate invoices automatically without requiring manual entry of each customer&apos;s usage. Standard NetSuite SuiteBilling supports usage-based pricing tiers but does not natively import usage data from external systems or calculate overage charges across billing periods.
+        </p>
+
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">SuitePacific builds usage-based billing in NetSuite for SaaS companies where invoice amounts are determined by consumption data from an external system. NetSuite has no native mechanism for ingesting usage records; the consumption data lives in a product database or data warehouse and must be aggregated by customer and billing period before invoices can be generated. SuitePacific writes the import scripts that pull consumption data from external APIs or CSV exports, builds the aggregation logic that calculates billable usage per customer per period, and generates NetSuite invoices with line items derived from usage records. Reconciliation reports between the source usage system and billed amounts are included to catch discrepancies before they reach the customer. Overage billing logic that distinguishes included usage from billable usage is handled as part of the same build. Oracle-certified (SuiteCloud Developer II and Administrator Professional). Plans start at $799 per month on month-to-month terms after a three-month minimum.</p>

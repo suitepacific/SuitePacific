@@ -168,6 +168,10 @@ export default function NetsuiteLandedCostPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Retail specialists · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
 
+        <p className="mt-8 text-sm text-brand-400">
+          <strong>Landed cost in NetSuite</strong> refers to the configuration that allocates freight, duty, insurance, and other import charges to the individual inventory items in a receipt so that the inventory cost on the balance sheet reflects the true cost to land goods at the warehouse. Standard NetSuite supports landed cost allocation but does not automate late-arriving charges, allocate across multiple receipts in a shipment, or generate margin reports that compare landed cost to selling price.
+        </p>
+
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">

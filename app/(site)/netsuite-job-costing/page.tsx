@@ -160,6 +160,36 @@ export default function NetSuiteJobCostingPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Construction specialists · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
 
+        <p className="mt-8 text-sm text-brand-400">
+          <strong>Job costing in NetSuite</strong> refers to the configuration that tracks costs, revenue, and profitability at the individual project or contract level rather than at the company level. Standard NetSuite does not ship with construction-specific cost codes, budget-versus-actual project reporting, or WIP schedule generation.
+        </p>
+
+        <div className="mt-6 overflow-x-auto rounded-xl border border-brand-100">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-brand-100 bg-brand-50/50">
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">Capability</th>
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">Standard NetSuite</th>
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">With SuitePacific</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-brand-100">
+              {[
+                ["Cost tracking", "Line-level GL posting only", "Cost codes mapped to custom fields per project with segment reporting"],
+                ["Budget vs actual", "No native project budget comparison", "Saved search comparing estimated vs actual cost by cost code and project"],
+                ["WIP schedule", "No native WIP report", "SuiteQL-backed WIP schedule: contract value, cost to date, percent complete, earned revenue, over/under billing"],
+                ["Subcontractor compliance", "Manual tracking", "Lien waiver and insurance certificate fields with expiry alert workflow"],
+              ].map(([cap, std, sp]) => (
+                <tr key={cap} className="hover:bg-brand-50/30">
+                  <td className="px-4 py-3 font-medium text-brand-900">{cap}</td>
+                  <td className="px-4 py-3 text-brand-400">{std}</td>
+                  <td className="px-4 py-3 text-brand-500">{sp}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
         {/* Quick answer */}
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>

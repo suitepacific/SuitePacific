@@ -161,6 +161,36 @@ export default function TimeExpenseTrackingPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Professional services specialists · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
 
+        <p className="mt-8 text-sm text-brand-400">
+          <strong>Time and expense tracking in NetSuite</strong> refers to the configuration of time entry approvals, expense report workflows, and utilization reporting that allows professional services firms to capture billable and non-billable hours accurately and report on consultant productivity. Standard NetSuite supports time entry and expense reports but does not enforce billable rate validation, utilization targets, or real-time utilization dashboards without custom configuration.
+        </p>
+
+        <div className="mt-6 overflow-x-auto rounded-xl border border-brand-100">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-brand-100 bg-brand-50/50">
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">Capability</th>
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">Standard NetSuite</th>
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">With SuitePacific</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-brand-100">
+              {[
+                ["Billable rate validation", "Rate entered manually per time entry", "User event script validates that billable rate matches the approved rate for the employee and project"],
+                ["Approval routing", "Single-level approval or no approval", "Multi-level approval: project manager approves time content, finance approves before billing"],
+                ["Utilization reporting", "No native utilization calculation", "Utilization saved search: billable hours / available hours per consultant, by week and month"],
+                ["Non-billable categorization", "Free-text memo field", "Standardized non-billable reason codes (internal, admin, unbillable, investment) with reporting by category"],
+              ].map(([cap, std, sp]) => (
+                <tr key={cap} className="hover:bg-brand-50/30">
+                  <td className="px-4 py-3 font-medium text-brand-900">{cap}</td>
+                  <td className="px-4 py-3 text-brand-400">{std}</td>
+                  <td className="px-4 py-3 text-brand-500">{sp}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">

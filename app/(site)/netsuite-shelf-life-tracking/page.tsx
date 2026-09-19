@@ -186,6 +186,36 @@ export default function ShelfLifeTrackingPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Food &amp; beverage specialists · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Published September 2026</p>
 
+        <p className="mt-8 text-sm text-brand-400">
+          <strong>Shelf life tracking in NetSuite</strong> refers to the configuration that assigns expiry dates to lot records, enforces First Expired First Out picking at fulfillment, and alerts warehouse and purchasing teams before lots reach their sell-by or use-by date. Standard NetSuite supports custom fields on lot records but does not natively enforce FEFO picking order, validate minimum remaining shelf life at order creation, or generate expiry-based warehouse alerts.
+        </p>
+
+        <div className="mt-6 overflow-x-auto rounded-xl border border-brand-100">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-brand-100 bg-brand-50/50">
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">Capability</th>
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">Standard NetSuite</th>
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">With SuitePacific</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-brand-100">
+              {[
+                ["Lot picking order", "Manual lot selection or FIFO by default", "FEFO enforcement script selects the lot with the soonest expiry date for each fulfillment"],
+                ["Minimum shelf life check", "No validation at order creation", "User event script on sales order checks that available lot expiry exceeds customer minimum remaining shelf life"],
+                ["Expiry alerts", "No native lot expiry alerting", "Scheduled script runs nightly and posts items expiring within a configurable window to warehouse dashboard"],
+                ["Recall traceability", "Manual lot search across multiple records", "Single saved search from lot number through all purchase receipts, assembly builds, and shipments"],
+              ].map(([cap, std, sp]) => (
+                <tr key={cap} className="hover:bg-brand-50/30">
+                  <td className="px-4 py-3 font-medium text-brand-900">{cap}</td>
+                  <td className="px-4 py-3 text-brand-400">{std}</td>
+                  <td className="px-4 py-3 text-brand-500">{sp}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">

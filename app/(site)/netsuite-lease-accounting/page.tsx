@@ -98,6 +98,11 @@ export default function LeaseAccountingPage() {
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft"><LeadFormLight /></div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · ASC 842 lease accounting · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
+
+        <p className="mt-8 text-sm text-brand-400">
+          <strong>Lease accounting in NetSuite</strong> refers to the configuration required to comply with ASC 842, which mandates that operating and finance leases with terms longer than 12 months be recognized as right-of-use assets and lease liabilities on the balance sheet. Standard NetSuite does not include a native ASC 842 lease schedule generator; ROU asset and liability amortization schedules must be built as custom records with SuiteScript-driven journal entries.
+        </p>
+
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">SuitePacific configures NetSuite lease accounting for companies that must capitalize operating and finance leases on the balance sheet under ASC 842 or IFRS 16. ASC 842 requires each lease to be recorded with a right-of-use asset and a corresponding lease liability equal to the present value of future payments, discounted at the rate implicit in the lease or the incremental borrowing rate. NetSuite&apos;s lease module creates recognition schedules from lease records, but the records must be set up correctly; the system does not automatically classify leases, calculate discount rates, or handle modifications. SuitePacific sets up each lease record, validates the amortization schedule, builds a modification workflow for extensions and terminations, automates monthly recognition entries, and creates the ASC 842 disclosure saved searches required for audit. Plans start at $799 per month.</p>

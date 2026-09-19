@@ -155,6 +155,10 @@ export default function ProjectBillingPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Professional services specialists · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
 
+        <p className="mt-8 text-sm text-brand-400">
+          <strong>Project billing in NetSuite</strong> refers to the configuration that generates client invoices from project transactions: time entries, expense reports, and milestones. Standard NetSuite supports project billing but does not automate consolidated multi-project invoices, write-up/write-down workflows, or billing status dashboards that show billable backlog across all active engagements.
+        </p>
+
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">

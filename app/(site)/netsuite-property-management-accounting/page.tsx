@@ -102,6 +102,11 @@ export default function PropertyManagementAccountingPage() {
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft"><LeadFormLight /></div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Property management specialists · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
+
+        <p className="mt-8 text-sm text-brand-400">
+          <strong>Property management accounting in NetSuite</strong> refers to the configuration that tracks tenant leases, recurring rent billing, common area maintenance reconciliation, and security deposit liability for commercial and residential property portfolios. Standard NetSuite supports recurring invoicing and customer deposits but does not include a tenant ledger view, CAM reconciliation workflow, or lease expiry alerting without custom builds.
+        </p>
+
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">SuitePacific configures NetSuite property management accounting for companies that collect rent, manage tenant accounts, perform year-end CAM reconciliations, and need property-level financial reporting. NetSuite holds the transaction data but does not automatically generate recurring rent invoices, calculate CAM true-ups by tenant, track security deposits per tenant as a separate liability, or calculate late fees from lease terms. SuitePacific builds a tenant record model with the fields needed for billing automation, writes a scheduled script for recurring rent invoicing, creates the CAM reconciliation calculation, configures security deposit liability tracking per tenant, builds the late fee workflow, and delivers a delinquency aging report and property-level income statement. Plans start at $799 per month.</p>

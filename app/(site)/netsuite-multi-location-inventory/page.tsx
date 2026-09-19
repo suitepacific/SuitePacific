@@ -168,6 +168,36 @@ export default function MultiLocationInventoryPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Distribution specialists · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
 
+        <p className="mt-8 text-sm text-brand-400">
+          <strong>Multi-location inventory in NetSuite</strong> refers to the configuration that tracks stock levels, bin assignments, and replenishment rules independently across multiple warehouse or storage locations within a single NetSuite account. Standard NetSuite supports multi-location inventory but does not enforce bin-level picking sequences, automate inter-location transfer orders, or set reorder points by location without custom configuration.
+        </p>
+
+        <div className="mt-6 overflow-x-auto rounded-xl border border-brand-100">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-brand-100 bg-brand-50/50">
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">Capability</th>
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">Standard NetSuite</th>
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">With SuitePacific</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-brand-100">
+              {[
+                ["Bin management", "Bin locations can be configured but picking sequence is manual", "Bin sequence script enforces pick path order by bin number within each warehouse zone"],
+                ["Inter-location transfers", "Manual transfer order creation", "Automated transfer order generation when stock at a receiving location falls below reorder point"],
+                ["Reorder by location", "Single company-wide reorder point per item", "Location-specific reorder points and preferred vendors per item and location combination"],
+                ["Location inventory dashboard", "Inventory summary at item level across all locations", "Location-specific dashboard showing on-hand, committed, available, and on-order per bin"],
+              ].map(([cap, std, sp]) => (
+                <tr key={cap} className="hover:bg-brand-50/30">
+                  <td className="px-4 py-3 font-medium text-brand-900">{cap}</td>
+                  <td className="px-4 py-3 text-brand-400">{std}</td>
+                  <td className="px-4 py-3 text-brand-500">{sp}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">

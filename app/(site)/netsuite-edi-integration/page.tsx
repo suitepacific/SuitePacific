@@ -194,6 +194,10 @@ export default function NetsuiteEdiIntegrationPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · FMCG specialists · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
 
+        <p className="mt-8 text-sm text-brand-400">
+          <strong>EDI integration with NetSuite</strong> refers to the scripts and middleware configuration that enable electronic exchange of purchase orders (EDI 850), advance ship notices (EDI 856), and invoices (EDI 810) between a NetSuite account and retail trading partners such as Walmart, Target, or Kroger. Standard NetSuite does not support EDI natively; all EDI transactions require either a third-party middleware platform or a direct RESTlet integration.
+        </p>
+
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">

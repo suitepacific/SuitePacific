@@ -161,6 +161,36 @@ export default function MilestoneBillingPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Professional services specialists · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
 
+        <p className="mt-8 text-sm text-brand-400">
+          <strong>Milestone billing in NetSuite</strong> refers to invoicing a client when a defined project event is completed rather than when time is consumed or on a fixed schedule. Standard NetSuite supports project milestone tracking but does not include a workflow that automatically creates an invoice draft when a milestone is marked complete.
+        </p>
+
+        <div className="mt-6 overflow-x-auto rounded-xl border border-brand-100">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-brand-100 bg-brand-50/50">
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">Capability</th>
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">Standard NetSuite</th>
+                <th className="px-4 py-3 text-left font-semibold text-brand-900 w-1/3">With SuitePacific</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-brand-100">
+              {[
+                ["Invoice trigger", "Manual invoice creation after milestone completion", "Completion workflow creates invoice draft automatically when milestone status changes to complete"],
+                ["Payment schedule", "Manual billing schedule per project", "Custom payment schedule record: milestone name, billing amount or percentage, due date, invoice status"],
+                ["ASC 606 alignment", "Revenue recognized on invoice date by default", "ARM revenue elements aligned to milestone completion date for performance obligation timing"],
+                ["Client milestone report", "Internal project record only", "Exportable milestone status report showing completion, billing, and expected dates in client-readable format"],
+              ].map(([cap, std, sp]) => (
+                <tr key={cap} className="hover:bg-brand-50/30">
+                  <td className="px-4 py-3 font-medium text-brand-900">{cap}</td>
+                  <td className="px-4 py-3 text-brand-400">{std}</td>
+                  <td className="px-4 py-3 text-brand-500">{sp}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">

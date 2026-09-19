@@ -172,6 +172,10 @@ export default function ReturnsProcessingPage() {
         </p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
 
+        <p className="mt-8 text-sm text-brand-400">
+          <strong>Returns processing in NetSuite</strong> refers to the configuration of return merchandise authorization records, disposition workflows, and credit memo automation that handles customer returns from initial RMA creation through inventory disposition and financial resolution. Standard NetSuite supports RMA creation and credit memos but does not automate disposition routing (restock, quarantine, damaged, vendor return), return rate reporting, or refund-versus-credit decisions without custom workflows.
+        </p>
+
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">

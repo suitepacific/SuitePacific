@@ -189,6 +189,10 @@ export default function NetsuiteDeductionsManagementPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · FMCG specialists · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
 
+        <p className="mt-8 text-sm text-brand-400">
+          <strong>Deductions management in NetSuite</strong> refers to the configuration that captures short payments from retail customers as deduction claim records, routes them through a matching and approval workflow, and resolves the AR balance accurately without leaving open invoice balances. Standard NetSuite applies partial payments to open invoices but has no native deduction claim record, reason code classification, or trade deal matching workflow.
+        </p>
+
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">

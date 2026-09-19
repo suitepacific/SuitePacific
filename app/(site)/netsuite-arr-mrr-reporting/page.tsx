@@ -170,6 +170,10 @@ export default function ArrMrrReportingPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · SaaS specialists · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
 
+        <p className="mt-8 text-sm text-brand-400">
+          <strong>ARR and MRR reporting in NetSuite</strong> refers to the saved searches, KPI tiles, and scripts that calculate Annual Recurring Revenue and Monthly Recurring Revenue from active subscription records rather than from cash receipts or billed invoices. Standard NetSuite does not include native ARR/MRR calculations; revenue metrics must be derived from SuiteBilling subscription data or custom transaction fields.
+        </p>
+
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">SuitePacific builds ARR and MRR reporting for SaaS companies running NetSuite. NetSuite stores subscription revenue at the invoice and revenue plan level, not the subscription level, which means there is no native ARR or MRR report. Finance teams typically export data monthly to spreadsheets to calculate bookings, churn, expansion, and contraction, because the aggregation logic requires joining billing, subscription, and customer records across multiple NetSuite record types. SuitePacific builds the saved searches, SuiteQL queries, and dashboard KPI portlets that calculate ARR and MRR directly from SuiteBilling and invoice data, so subscription revenue metrics are available in real time rather than at the end of the month. Cohort reports, churn analysis, and expansion revenue tracking are built on the same foundation. Oracle-certified (SuiteCloud Developer II and Administrator Professional). Plans start at $799 per month on month-to-month terms after a three-month minimum.</p>
