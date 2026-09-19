@@ -344,6 +344,13 @@ export default function NetSuiteProgressBillingPage() {
               covers how workflow-driven approval is configured for invoices, purchase orders, and other
               transactions that require review before processing.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-aia-billing" className="text-accent hover:underline">
+                NetSuite AIA billing guide
+              </Link>{" "}
+              explains the four components of a G702/G703 build: schedule of values record, percent-complete
+              field, retainage calculation, and FreeMarker PDF template.
+            </li>
           </ul>
         </div>
 

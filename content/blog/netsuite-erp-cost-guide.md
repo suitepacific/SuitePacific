@@ -133,3 +133,10 @@ Three costs consistently surprise buyers. First, data migration: cleaning and ma
 ### Who provides the cheapest NetSuite support after go-live?
 
 Cost alone is a poor filter for post-go-live support. A cheaper provider that responds in three days and cannot perform SuiteScript development will cost more in the long run than a moderately priced retainer with a one-business-day SLA and full development capability. That said, boutique managed services firms like SuitePacific consistently offer better value than large implementation partners for steady-state support because their cost structure is built for ongoing work, not project delivery. SuitePacific's retainer starts at $799 per month.
+
+## Related reading
+
+- [In-house NetSuite administrator vs managed services](/blog/netsuite-in-house-vs-managed-services): Cost comparison and decision guide for how to staff ongoing NetSuite support
+- [NetSuite Care plans](/netsuite-care): SuitePacific's monthly retainer options starting at $799/month
+- [NetSuite managed support](/netsuite-managed-support): What a fixed monthly retainer covers month to month
+- [NetSuite health check](/netsuite-health-check): A structured account review before committing to a long-term support engagement

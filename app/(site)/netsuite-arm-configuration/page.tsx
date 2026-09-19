@@ -144,6 +144,7 @@ export default function ArmConfigurationPage() {
             <li className="text-sm text-brand-400"><Link href="/blog/netsuite-arm-revenue-recognition" className="text-accent hover:underline">NetSuite ARM configuration: Advanced Revenue Management setup for ASC 606</Link> covers what ARM is, what configuration it requires, and the most common mistakes.</li>
             <li className="text-sm text-brand-400"><Link href="/netsuite-administrator-support" className="text-accent hover:underline">NetSuite administrator support</Link> covers ongoing finance configuration as part of a monthly retainer.</li>
             <li className="text-sm text-brand-400"><Link href="/netsuite-account-optimization" className="text-accent hover:underline">NetSuite account optimization</Link> covers broader finance and workflow configuration for live accounts.</li>
+            <li className="text-sm text-brand-400"><Link href="/blog/netsuite-arm-vs-manual-revenue-recognition" className="text-accent hover:underline">NetSuite ARM vs manual revenue recognition</Link> explains when ARM is warranted vs when a manual recognition schedule is sufficient, including an 8-factor comparison table.</li>
           </ul>
         </div>
 

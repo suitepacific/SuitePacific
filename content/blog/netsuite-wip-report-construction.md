@@ -115,3 +115,10 @@ Yes. SuitePacific builds WIP reporting configurations for construction companies
 
 **What information does a bonding company need from a WIP report?**
 A bonding company reviewing a contractor's WIP schedule typically looks for: contract values and backlog on all active projects, the over/under-billing position by project and in aggregate, the estimated cost at completion and the reasonableness of the estimate, projects that are significantly over or under their billing positions, and the total backlog relative to the contractor's working capital. The WIP schedule is one of the primary financial documents used in bonding underwriting and must be current and reconciled to the company's balance sheet.
+
+## Related reading
+
+- [NetSuite WIP report service page](/netsuite-wip-report): SuitePacific's WIP schedule build for construction companies on NetSuite
+- [NetSuite job costing](/netsuite-job-costing): Cost code setup and budget vs actual saved searches that feed WIP reporting
+- [NetSuite AIA billing](/blog/netsuite-aia-billing): How G702/G703 pay applications and retainage connect to the WIP schedule
+- [NetSuite for construction companies](/industries/construction): Post-go-live support hub for construction contractors on NetSuite

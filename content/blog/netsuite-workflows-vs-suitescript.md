@@ -140,3 +140,9 @@ Yes, and this is common. A Sales Order record, for example, might have a workflo
 ### How do you decide which to use when you are building a new automation?
 
 Start with two questions. First: does this logic need to be maintained by a non-developer administrator? If yes, lean toward a workflow. Second: does this automation require reading data from multiple record types, calling an external API, or processing more than a handful of records at a time? If yes, use SuiteScript. If both are true, use both in the division-of-labor pattern described earlier in this guide.
+
+## Related reading
+
+- [NetSuite SuiteScript development](/netsuite-suitescript-development): Custom SuiteScript 2.1 builds: user event, scheduled, map/reduce, client, and RESTlet scripts
+- [NetSuite workflow automation](/netsuite-workflow-automation): SuiteFlow approval routing, notification automation, and process management
+- [NetSuite Care plans](/netsuite-care): Monthly retainer covering both SuiteScript development and workflow configuration

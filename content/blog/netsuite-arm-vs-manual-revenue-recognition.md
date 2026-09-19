@@ -129,3 +129,10 @@ Yes. SuitePacific configures ARM for companies with multi-element revenue models
 
 **What is the difference between ARM and the older Revenue Recognition Schedules feature?**
 Revenue Recognition Schedules (non-ARM) create a straight-line or custom amortization for a single line item. ARM handles multi-element arrangements, SSP-based allocation, variable consideration, and contract modifications. The two features can coexist in a NetSuite account; ARM processes arrangements for items with revenue elements defined, while items without revenue elements fall through to the older schedule-based approach.
+
+## Related reading
+
+- [NetSuite ARM configuration](/netsuite-arm-configuration): Advanced Revenue Management setup: revenue elements, SSP ranges, and allocation rules
+- [NetSuite SuiteBilling support](/netsuite-suitebilling-support): SuiteBilling configuration and ARM integration for subscription-based companies
+- [NetSuite ARR and MRR reporting](/netsuite-arr-mrr-reporting): How to build ARR/MRR reporting alongside ARM for SaaS companies
+- [NetSuite for SaaS and technology companies](/industries/saas-technology): Post-go-live support hub for SaaS companies on NetSuite

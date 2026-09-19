@@ -107,3 +107,10 @@ A standard AIA billing build for a single entity with a defined contract structu
 
 **What certifications does SuitePacific hold for construction NetSuite work?**
 SuitePacific is a NetSuite Solution Provider specializing in post-go-live support and customization for mid-market companies, including construction contractors. Our work spans custom PDF templates, project billing configuration, WIP reporting, and retainage management across commercial, residential, and specialty trade contractors. We focus on accounts that are already live on NetSuite and need the billing and reporting infrastructure built out properly.
+
+## Related reading
+
+- [NetSuite progress billing](/netsuite-progress-billing): AIA G702/G703 billing, retainage tracking, and percent-complete invoice scripts
+- [NetSuite milestone billing](/netsuite-milestone-billing): Milestone completion triggers and invoice workflows for project-based firms
+- [NetSuite WIP report for construction](/blog/netsuite-wip-report-construction): How to build a WIP schedule showing earned revenue and over/under billing in NetSuite
+- [NetSuite for construction companies](/industries/construction): Post-go-live support hub for construction contractors on NetSuite

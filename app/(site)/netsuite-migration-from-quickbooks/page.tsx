@@ -316,6 +316,18 @@ export default function MigrationFromQuickBooksPage() {
               </Link>{" "}
               starting at $799/month cover ongoing post-migration support, administration, and development.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/quickbooks-to-netsuite-migration" className="text-accent hover:underline">
+                QuickBooks to NetSuite migration guide
+              </Link>{" "}
+              covers the six signals that QuickBooks has reached its ceiling, the five migration phases, and what to budget for year one.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-erp-cost-guide" className="text-accent hover:underline">
+                NetSuite ERP cost guide
+              </Link>{" "}
+              breaks down licensing, implementation, and post-go-live support costs with comparison tables.
+            </li>
           </ul>
         </div>
 

@@ -113,3 +113,10 @@ This varies by provider. SuitePacific operates on a no-rollover model; unused ho
 ### Is it possible to start with managed services and switch to in-house later?
 
 Yes, and it is a common growth pattern. Many companies start with a managed services retainer immediately after go-live, when the account is new and support needs are unpredictable, then evaluate in-house hiring once they have 12 to 18 months of data on their actual support volume. The retainer period also gives the company time to understand what skills an in-house hire actually needs, rather than guessing from a job description template.
+
+## Related reading
+
+- [NetSuite ERP cost guide](/blog/netsuite-erp-cost-guide): Full breakdown of licensing, implementation, and post-go-live support costs
+- [NetSuite managed support](/netsuite-managed-support): What a fixed retainer covers month to month on a live account
+- [NetSuite Care plans](/netsuite-care): SuitePacific's monthly retainer tiers from $799 to $2,499/month
+- [NetSuite health check](/netsuite-health-check): A structured review before committing to any long-term support model
