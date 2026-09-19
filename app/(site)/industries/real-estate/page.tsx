@@ -464,6 +464,19 @@ export default function RealEstatePage() {
 
         <ServiceFaqSection items={FAQ} />
 
+        {/* Related reading */}
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
+          <p className="text-sm font-semibold text-brand-900 mb-3">Related reading</p>
+          <ul className="space-y-2.5">
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-cam-reconciliation" className="text-accent hover:underline">
+                NetSuite CAM reconciliation for commercial real estate
+              </Link>{" "}
+              covers how to build CAM expense pool allocation, proportionate share calculation, and annual true-up invoice generation for tenants.
+            </li>
+          </ul>
+        </div>
+
         <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <LeadFormLight />
         </div>

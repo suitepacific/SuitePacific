@@ -466,6 +466,19 @@ export default function ProfessionalServicesPage() {
 
         <ServiceFaqSection items={FAQ} />
 
+        {/* Related reading */}
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
+          <p className="text-sm font-semibold text-brand-900 mb-3">Related reading</p>
+          <ul className="space-y-2.5">
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-project-profitability-reporting" className="text-accent hover:underline">
+                NetSuite project profitability for professional services
+              </Link>{" "}
+              explains how SuiteQL joins revenue and cost at the project level and how to build real-time WIP reporting for services firms.
+            </li>
+          </ul>
+        </div>
+
         <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <LeadFormLight />
         </div>

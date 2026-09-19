@@ -489,6 +489,12 @@ export default function HealthcarePage() {
               </Link>
               : how the monthly retainer model works, hour tiers, and what is covered
             </li>
+            <li>
+              <Link href="/blog/netsuite-lot-tracking-medical-device" className="text-accent hover:underline">
+                NetSuite lot tracking with expiry for medical devices
+              </Link>
+              : how to add expiration date tracking, FEFO picking enforcement, expiry alerts, and FDA recall traceability to lot-numbered inventory
+            </li>
           </ul>
         </div>
 

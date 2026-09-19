@@ -479,6 +479,12 @@ export default function ConstructionPage() {
               </Link>{" "}
               explains the calculation methodology, data sources, and common reporting problems.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-construction-job-costing" className="text-accent hover:underline">
+                NetSuite job cost reports for construction contractors
+              </Link>{" "}
+              covers committed and incurred cost tracking by cost code and how the job cost report connects to the WIP schedule.
+            </li>
           </ul>
         </div>
 
