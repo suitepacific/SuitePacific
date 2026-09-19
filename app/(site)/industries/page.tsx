@@ -147,7 +147,10 @@ export default function IndustriesPage() {
           title="NetSuite support by industry"
           subtitle="Industry-specific NetSuite support means the team already knows the workflows, modules, and reporting requirements of your vertical before the engagement starts."
         />
-        <LeadFormLight />
+        <div className="mt-8 rounded-xl bg-brand-50/60 border border-brand-100 px-5 py-4">
+          <p className="text-sm text-brand-600 mb-3">Which industry is your NetSuite account on? Tell us and we&apos;ll scope the engagement.</p>
+          <LeadFormLight />
+        </div>
       </div>
 
       {/* QA block */}
@@ -247,7 +250,10 @@ export default function IndustriesPage() {
       </div>
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8 mt-20">
-        <LeadFormLight />
+        <div className="rounded-xl bg-brand-50/60 border border-brand-100 px-5 py-4">
+          <p className="text-sm text-brand-600 mb-3">Need post-go-live NetSuite support for your industry? Tell us about your account.</p>
+          <LeadFormLight />
+        </div>
       </div>
     </main>
   );
