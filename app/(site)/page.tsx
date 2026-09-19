@@ -44,7 +44,9 @@ export default async function Home() {
         <div className="mx-auto max-w-xl px-4 sm:px-6">
           <p className="text-sm font-semibold text-brand-900 mb-1">Ready to fix it?</p>
           <p className="text-sm text-brand-400 mb-5">Tell us what you are working on. We will respond within one business day.</p>
-          <LeadFormLight />
+          <div className="rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+            <LeadFormLight />
+          </div>
         </div>
       </section>
       <Timeline />

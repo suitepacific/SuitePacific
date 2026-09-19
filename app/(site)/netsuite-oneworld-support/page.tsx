@@ -70,7 +70,10 @@ export default function OneWorldSupportPage() {
       <OrganizationJsonLd />
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading as="h1" eyebrow="Multi-Subsidiary" title="NetSuite OneWorld Support: Intercompany, Eliminations, and Consolidated Reporting" subtitle="Most OneWorld accounts have persistent problems with intercompany eliminations that do not balance, users who can see all subsidiaries, and consolidated reports that include transactions that should be eliminated. SuitePacific fixes these problems and configures OneWorld correctly." align="left" />
-        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft"><LeadFormLight /></div>
+        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>
+          <LeadFormLight />
+        </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite Administrator Professional certified · OneWorld specialist · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">

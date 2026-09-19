@@ -298,6 +298,7 @@ export default function NetSuiteCarePage() {
       {/* Lead form - top */}
       <section id="lead-form" className="mx-auto max-w-3xl px-6 lg:px-8 mt-10">
         <div className="rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>
           <LeadFormLight />
         </div>
         <p className="mt-3 text-xs text-brand-400 text-center">

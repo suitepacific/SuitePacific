@@ -182,6 +182,7 @@ export default function NetSuiteEmergencySupportPage() {
         />
 
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>
           <LeadFormLight />
         </div>
         <p className="mt-3 text-xs text-brand-400">Same-day response · NetSuite-certified · Direct developer access · No ticket queue</p>

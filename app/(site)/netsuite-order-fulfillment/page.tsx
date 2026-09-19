@@ -75,7 +75,10 @@ export default function OrderFulfillmentPage() {
       <OrganizationJsonLd />
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading as="h1" eyebrow="Order Fulfillment" title="NetSuite Order Fulfillment: Automation, Pick Lists, and Carrier Integration" subtitle="Most NetSuite accounts go live with basic fulfillment configuration that does not match warehouse operations. SuitePacific builds the fulfillment stack that does: workflow automation, custom printed output, carrier and 3PL integrations, and real-time visibility dashboards." align="left" />
-        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft"><LeadFormLight /></div>
+        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>
+          <LeadFormLight />
+        </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite SuiteCloud Developer II certified · Carrier integrations · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">

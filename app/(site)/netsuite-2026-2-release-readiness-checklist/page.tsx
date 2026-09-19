@@ -460,6 +460,7 @@ export default function ReleaseChecklistPage() {
                   you prioritize what needs to be tested.
                 </p>
                 <div className="rounded-2xl border border-brand-700 bg-brand-800 p-5">
+                  <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>
                   <LeadFormLight />
                 </div>
                 <p className="mt-3 text-xs text-brand-400 text-center">

@@ -68,7 +68,10 @@ export default function UserRolesPage() {
       <OrganizationJsonLd />
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading as="h1" eyebrow="Administration" title="NetSuite User Roles and Permissions: Audit and Cleanup" subtitle="Most live NetSuite accounts have accumulated over-permissioned users, stale role assignments, and undocumented custom roles. SuitePacific audits what is in the account and rebuilds role architecture so every user has exactly the access their job requires." align="left" />
-        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft"><LeadFormLight /></div>
+        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>
+          <LeadFormLight />
+        </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite Administrator Professional certified · Direct access · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">

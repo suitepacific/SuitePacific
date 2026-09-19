@@ -97,7 +97,10 @@ export default function RealEstateAccountingPage() {
           subtitle="Real estate property owners, developers, and investment managers need property-level accounting, investor capital tracking, and equity waterfall calculations that NetSuite does not produce without configuration. SuitePacific builds the entity structure, custom investor model, waterfall scripts, and financial reporting for real estate portfolios on NetSuite."
           align="left"
         />
-        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft"><LeadFormLight /></div>
+        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>
+          <LeadFormLight />
+        </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Real estate accounting specialists · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
 

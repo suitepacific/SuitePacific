@@ -76,7 +76,10 @@ export default function DataMigrationPage() {
       <OrganizationJsonLd />
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading as="h1" eyebrow="Data Migration" title="NetSuite Data Migration: CSV Import, Import Order, and SuiteScript Migration" subtitle="Most NetSuite data migrations fail not because of the import tool but because the source data is not clean, the field mapping is wrong, or the import order violates reference dependencies. SuitePacific handles migrations for customers, vendors, items, transactions, and custom records, and builds Import Doctor to validate CSV files before they run." align="left" />
-        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft"><LeadFormLight /></div>
+        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>
+          <LeadFormLight />
+        </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite SuiteCloud Developer II certified · Import Doctor · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">

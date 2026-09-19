@@ -106,7 +106,8 @@ export default function ComparisonPage() {
           align="left"
         />
 
-        <div className="mt-8">
+        <div className="mt-8 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>
           <LeadFormLight />
         </div>
 
@@ -248,7 +249,8 @@ export default function ComparisonPage() {
 
         <ServiceFaqSection items={FAQ} />
 
-        <div className="mt-14">
+        <div className="mt-14 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>
           <LeadFormLight />
         </div>
       </div>

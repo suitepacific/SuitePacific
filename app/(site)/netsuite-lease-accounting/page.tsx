@@ -95,7 +95,10 @@ export default function LeaseAccountingPage() {
           subtitle="ASC 842 requires most operating leases to appear on the balance sheet as a right-of-use asset and lease liability. SuitePacific configures NetSuite lease records, amortization schedules, modification workflows, and audit disclosure saved searches for real estate companies and corporate lessees."
           align="left"
         />
-        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft"><LeadFormLight /></div>
+        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>
+          <LeadFormLight />
+        </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · ASC 842 lease accounting · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
 

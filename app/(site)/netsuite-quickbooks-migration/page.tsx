@@ -68,7 +68,10 @@ export default function QuickBooksMigrationPage() {
       <OrganizationJsonLd />
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading as="h1" eyebrow="Migration" title="Migrated from QuickBooks to NetSuite? What Breaks and How to Fix It" subtitle="Moving from QuickBooks to NetSuite is not a data export and import. The systems model accounting differently, and the gap between how QuickBooks stores data and what NetSuite expects causes problems that surface weeks or months after go-live. SuitePacific stabilizes post-migration NetSuite accounts." align="left" />
-        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft"><LeadFormLight /></div>
+        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+          <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>
+          <LeadFormLight />
+        </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite Administrator Professional certified · Post-migration specialist · Month-to-month</p>
         <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">

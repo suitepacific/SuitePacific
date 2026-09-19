@@ -149,7 +149,8 @@ export default async function BlogPostPage({
           <p className="mt-2 text-sm text-brand-400">
             We work with post-go-live NetSuite accounts every day. Tell us what you&apos;re working on.
           </p>
-          <div className="mt-5">
+          <div className="mt-5 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
+            <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>
             <LeadFormLight />
           </div>
         </div>
