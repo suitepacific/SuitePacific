@@ -19,6 +19,14 @@ export function ScriptReadinessForm() {
     formData.set("sourcePage", window.location.href);
     formData.set("_subject", "SuiteScript 2028.2 Readiness Checklist Request");
 
+    const scriptCount = formData.get("scriptCount") ?? "Not specified";
+    const warningVisible = formData.get("warningVisible") ?? "Not specified";
+    const helpNeeded = formData.get("helpNeeded") ?? "Not specified";
+    formData.set(
+      "message",
+      `Scripts: ${scriptCount} | 2028.2 warning visible: ${warningVisible} | Help needed: ${helpNeeded}`
+    );
+
     try {
       const response = await fetch("/api/lead", {
         method: "POST",
