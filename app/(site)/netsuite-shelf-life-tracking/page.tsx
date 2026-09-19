@@ -385,6 +385,27 @@ export default function ShelfLifeTrackingPage() {
               covers the scripting approaches used to build FEFO enforcement, minimum shelf life
               validation, and scheduled expiry alert scripts.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-trade-promotions-management" className="text-accent hover:underline">
+                NetSuite trade promotions management
+              </Link>{" "}
+              covers how trade deals, accruals, and deduction claims connect to the item and lot
+              data used in shelf life tracking.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-deductions-management" className="text-accent hover:underline">
+                NetSuite deductions management
+              </Link>{" "}
+              covers how retailer chargebacks for out-of-date or non-conforming product are
+              processed and reconciled in NetSuite.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-edi-integration" className="text-accent hover:underline">
+                NetSuite EDI integration
+              </Link>{" "}
+              covers how EDI 850 purchase orders and 856 advance ship notices connect to the
+              lot-tracked fulfillment process.
+            </li>
           </ul>
         </div>
 

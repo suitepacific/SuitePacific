@@ -350,6 +350,20 @@ export default function NetsuiteEdiIntegrationPage() {
               </Link>{" "}
               starting at $799/month cover ongoing EDI transaction monitoring and development.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-trade-promotions-management" className="text-accent hover:underline">
+                NetSuite trade promotions management
+              </Link>{" "}
+              covers how EDI 820 remittance data connects to trade deal records and deduction
+              claim workflows for FMCG companies.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-shelf-life-tracking" className="text-accent hover:underline">
+                NetSuite shelf life tracking
+              </Link>{" "}
+              covers how FEFO lot selection ties into the EDI 856 ASN data sent to retail
+              trading partners.
+            </li>
           </ul>
         </div>
 

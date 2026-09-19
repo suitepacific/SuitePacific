@@ -377,6 +377,27 @@ export default function TradePromotionsManagementPage() {
               covers the scripting approaches used to build trade accrual Map/Reduce scripts and
               promotional pricing enforcement User Event scripts.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-deductions-management" className="text-accent hover:underline">
+                NetSuite deductions management
+              </Link>{" "}
+              covers how short payments and retailer chargebacks are reconciled against trade
+              deal records and accrual balances.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-edi-integration" className="text-accent hover:underline">
+                NetSuite EDI integration
+              </Link>{" "}
+              covers how EDI 820 remittance data surfaces the deductions and short-pay claims
+              that flow from trade promotion activity.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-shelf-life-tracking" className="text-accent hover:underline">
+                NetSuite shelf life tracking
+              </Link>{" "}
+              covers FEFO enforcement and expiry alerting that works alongside trade promotion
+              compliance for food and beverage retailers.
+            </li>
           </ul>
         </div>
 

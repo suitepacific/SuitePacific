@@ -323,10 +323,16 @@ export default function WorkflowAutomationPage() {
               </Link>{" "}
               walks through states, transitions, role-restricted approval buttons, and email notifications.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-workflows-vs-suitescript" className="text-accent hover:underline">
+                NetSuite workflows vs SuiteScript
+              </Link>{" "}
+              explains when SuiteFlow is the right tool vs when SuiteScript is required, and the combined pattern for complex automations.
+            </li>
           </ul>
         </div>
 
-        
+
         {/* Bottom Line */}
         <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>

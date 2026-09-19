@@ -367,6 +367,30 @@ export default function NetSuiteSuiteBillingSupportPage() {
 
         <ServiceFaqSection items={FAQ} />
 
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
+          <p className="text-sm font-semibold text-brand-900 mb-3">Related reading</p>
+          <ul className="space-y-2.5">
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-arm-vs-manual-revenue-recognition" className="text-accent hover:underline">
+                NetSuite ARM vs manual revenue recognition
+              </Link>{" "}
+              explains when ARM is warranted vs when a manually maintained recognition schedule is sufficient, including an 8-factor comparison table.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-arm-configuration" className="text-accent hover:underline">
+                NetSuite ARM configuration
+              </Link>{" "}
+              covers the full ARM setup: revenue elements, SSP ranges, allocation rules, and testing in sandbox before go-live.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-arr-mrr-reporting" className="text-accent hover:underline">
+                NetSuite ARR and MRR reporting
+              </Link>{" "}
+              covers the saved searches and dashboards SaaS companies build alongside SuiteBilling to track subscription revenue metrics.
+            </li>
+          </ul>
+        </div>
+
         <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <LeadFormLight />
         </div>

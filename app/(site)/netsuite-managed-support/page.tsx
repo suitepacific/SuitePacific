@@ -510,6 +510,18 @@ export default function NetSuiteManagedSupportPage() {
               </Link>{" "}
               covers the full checklist for comparing firms before committing to a retainer.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-in-house-vs-managed-services" className="text-accent hover:underline">
+                In-house NetSuite administrator vs managed services
+              </Link>{" "}
+              compares total cost, SuiteScript coverage, and institutional knowledge risk across both staffing models.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/blog/netsuite-erp-cost-guide" className="text-accent hover:underline">
+                NetSuite ERP cost guide
+              </Link>{" "}
+              breaks down what companies pay for licensing, implementation, and post-go-live support with comparison tables.
+            </li>
           </ul>
         </div>
 
