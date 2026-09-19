@@ -174,8 +174,8 @@ export default function ReleaseChecklistPage() {
         headline="NetSuite 2026.2 Release Readiness Checklist"
         description="A practical release-readiness checklist for NetSuite 2026.2 covering Finance, Integrations, SuiteScript, Reporting, Manufacturing, Inventory, Security, and more."
         url={`${SITE_URL}/netsuite-2026-2-release-readiness-checklist`}
-        datePublished="2026-08-19"
-        dateModified="2026-08-19"
+        datePublished="2026-08-19T00:00:00+00:00"
+        dateModified="2026-08-19T00:00:00+00:00"
         keywords="NetSuite 2026.2 release readiness checklist, NetSuite 2026.2 checklist, NetSuite release readiness"
       />
       <OrganizationJsonLd />

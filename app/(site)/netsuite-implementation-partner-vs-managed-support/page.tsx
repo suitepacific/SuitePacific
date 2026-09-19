@@ -86,15 +86,15 @@ export default function ComparisonPage() {
         description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
         videoId="IQvWN_yZ24A"
         duration="PT18S"
-        uploadDate="2026-08-12"
+        uploadDate="2026-08-12T00:00:00+00:00"
         isShort
       />
       <ArticleJsonLd
         url={`${SITE_URL}/netsuite-implementation-partner-vs-managed-support`}
         headline="NetSuite Implementation Partner vs. Managed Support"
         description="The difference between a NetSuite implementation partner and an ongoing managed support team, and how to know which one your business needs right now."
-        datePublished="2025-08-01"
-        dateModified="2026-08-12"
+        datePublished="2025-08-01T00:00:00+00:00"
+        dateModified="2026-08-12T00:00:00+00:00"
       />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">

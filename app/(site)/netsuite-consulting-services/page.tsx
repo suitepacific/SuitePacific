@@ -266,7 +266,7 @@ export default function NetSuiteConsultingServicesPage() {
         description="An introduction to SuitePacific, a boutique NetSuite consulting firm providing post-go-live support, SuiteScript development, workflow automation, integrations, and ongoing technical services for companies already live on NetSuite."
         videoId="IQvWN_yZ24A"
         duration="PT18S"
-        uploadDate="2026-08-12"
+        uploadDate="2026-08-12T00:00:00+00:00"
         isShort
       />
 

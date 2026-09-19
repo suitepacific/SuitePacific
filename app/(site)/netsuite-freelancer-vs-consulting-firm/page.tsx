@@ -143,15 +143,15 @@ export default function FreelancerVsConsultingFirmPage() {
         description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
         videoId="IQvWN_yZ24A"
         duration="PT18S"
-        uploadDate="2026-08-12"
+        uploadDate="2026-08-12T00:00:00+00:00"
         isShort
       />
       <ArticleJsonLd
         url={`${SITE_URL}/netsuite-freelancer-vs-consulting-firm`}
         headline="NetSuite Freelancer vs. Consulting Firm: How to Choose"
         description="The practical trade-offs between hiring a freelance NetSuite developer and working with a consulting firm: accountability, continuity, cost structure, and when each model fits."
-        datePublished="2025-08-01"
-        dateModified="2026-08-12"
+        datePublished="2025-08-01T00:00:00+00:00"
+        dateModified="2026-08-12T00:00:00+00:00"
       />
       <ServiceJsonLd
         name="NetSuite Managed Support"

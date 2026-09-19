@@ -196,7 +196,7 @@ export default function NetSuiteImplementationRescuePage() {
         description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
         videoId="IQvWN_yZ24A"
         duration="PT18S"
-        uploadDate="2026-08-12"
+        uploadDate="2026-08-12T00:00:00+00:00"
         isShort
       />
 

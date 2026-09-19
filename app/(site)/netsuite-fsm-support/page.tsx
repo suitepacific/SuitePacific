@@ -200,7 +200,7 @@ export default function NetSuiteFSMSupportPage() {
         description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
         videoId="IQvWN_yZ24A"
         duration="PT18S"
-        uploadDate="2026-08-13"
+        uploadDate="2026-08-13T00:00:00+00:00"
         isShort
       />
 

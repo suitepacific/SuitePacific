@@ -360,7 +360,7 @@ export default function PostGoLiveSupportPage() {
         description="Four common reasons businesses continue relying on Excel after a NetSuite implementation: unfinished customization, missing reporting, temporary workarounds that became permanent, and no owner for post-go-live improvement. Includes a framework for identifying where your NetSuite environment needs attention."
         videoId="x4-m-KHG7jo"
         duration="PT4M16S"
-        uploadDate="2026-08-16"
+        uploadDate="2026-08-16T00:00:00+00:00"
       />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
