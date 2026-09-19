@@ -10,6 +10,7 @@ import {
   ShoppingCart,
   Briefcase,
   Building2,
+  Activity,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { IconBadge } from "@/components/ui/IconBadge";
@@ -80,6 +81,13 @@ const INDUSTRIES = [
     slug: "real-estate",
     description:
       "Property-level reporting, lease tracking, capital expenditure approvals, multi-entity consolidation, and intercompany eliminations for real estate operators and investors.",
+  },
+  {
+    icon: Activity,
+    name: "Healthcare & Life Sciences",
+    slug: "healthcare",
+    description:
+      "FDA compliance automation, lot and serial tracking with expiration logic, CAPA workflow management, SOD enforcement, grant reporting, and regulatory saved searches for medical device, pharma, and health tech companies.",
   },
 ];
 

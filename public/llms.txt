@@ -345,6 +345,7 @@
 - [NetSuite for Retail and Ecommerce](https://suitepacific.com/industries/retail-ecommerce): Post-go-live support for retail and ecommerce businesses on NetSuite, covering Shopify integration and inventory
 - [NetSuite for Real Estate](https://suitepacific.com/industries/real-estate): Post-go-live support for real estate companies on NetSuite, covering lease accounting, OneWorld entity structure, and investor reporting
 - [NetSuite for Food and Beverage](https://suitepacific.com/industries/food-beverage): Post-go-live support for food and beverage companies on NetSuite, covering shelf life tracking, trade promotions, EDI integration, and deductions management
+- [NetSuite for Healthcare & Life Sciences](https://suitepacific.com/industries/healthcare): Post-go-live support for healthcare and life sciences companies on NetSuite, covering FDA compliance, lot tracking, CAPA workflows, and regulatory reporting
 
 ## Industry Sub-Topic Pages
 
