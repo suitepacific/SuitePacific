@@ -267,7 +267,7 @@ const COMPARISON = [
 export const metadata: Metadata = {
   title: "NetSuite Support for Retail & E-commerce Companies",
   description:
-    "NetSuite post-go-live support and development for retail and e-commerce companies. Channel order management, Shopify integration, inventory automation, and returns processing.",
+    "NetSuite post-go-live support for retail and e-commerce companies. Channel order management, Shopify integration, inventory automation, and returns processing.",
   alternates: { canonical: "/industries/retail-ecommerce" },
   openGraph: {
     title: "NetSuite Support for Retail & E-commerce Companies",

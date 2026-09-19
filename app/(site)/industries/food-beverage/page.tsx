@@ -267,12 +267,12 @@ const COMPARISON = [
 export const metadata: Metadata = {
   title: "NetSuite Support for Food & Beverage and FMCG Companies | SuitePacific",
   description:
-    "NetSuite post-go-live support and development for food and beverage companies. Shelf life tracking, trade promotions, EDI integration, lot traceability, and chargeback management.",
+    "NetSuite post-go-live support for food and beverage companies. Shelf life, trade promotions, EDI integration, lot traceability, and chargeback management.",
   alternates: { canonical: "/industries/food-beverage" },
   openGraph: {
     title: "NetSuite Support for Food & Beverage and FMCG Companies | SuitePacific",
     description:
-      "NetSuite post-go-live support and development for food and beverage companies. Shelf life tracking, trade promotions, EDI integration, lot traceability, and chargeback management.",
+      "NetSuite post-go-live support for food and beverage companies. Shelf life, trade promotions, EDI integration, lot traceability, and chargeback management.",
     url: "https://suitepacific.com/industries/food-beverage",
     type: "website",
     images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],

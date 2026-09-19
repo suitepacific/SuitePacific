@@ -268,7 +268,7 @@ const COMPARISON = [
 export const metadata: Metadata = {
   title: "NetSuite Support for Nonprofit Organizations",
   description:
-    "NetSuite post-go-live support and development for nonprofit organizations. Fund accounting enforcement, grant tracking, board reporting, 990 preparation, and ongoing technical support.",
+    "NetSuite post-go-live support for nonprofit organizations. Fund accounting, grant tracking, board reporting, 990 preparation, and ongoing technical support.",
   alternates: { canonical: "/industries/nonprofit" },
   openGraph: {
     title: "NetSuite Support for Nonprofit Organizations",

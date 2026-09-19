@@ -265,7 +265,7 @@ const COMPARISON = [
 export const metadata: Metadata = {
   title: "NetSuite Support for Construction Companies",
   description:
-    "NetSuite post-go-live support and development for construction companies. Job costing, change order automation, progress billing, project reporting, and subcontractor management.",
+    "NetSuite post-go-live support for construction companies. Job costing, AIA billing, WIP reporting, change order automation, and subcontractor management.",
   alternates: { canonical: "/industries/construction" },
   openGraph: {
     title: "NetSuite Support for Construction Companies",

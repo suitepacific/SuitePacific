@@ -265,7 +265,7 @@ const COMPARISON = [
 export const metadata: Metadata = {
   title: "NetSuite Support for SaaS & Technology Companies",
   description:
-    "NetSuite post-go-live support and development for SaaS and technology companies. Subscription billing, renewal automation, ARR/MRR reporting, and CRM integrations.",
+    "NetSuite post-go-live support for SaaS and technology companies. Subscription billing, renewal automation, ARR/MRR reporting, and CRM integrations.",
   alternates: { canonical: "/industries/saas-technology" },
   openGraph: {
     title: "NetSuite Support for SaaS & Technology Companies",

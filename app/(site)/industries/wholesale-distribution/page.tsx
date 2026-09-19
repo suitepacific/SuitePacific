@@ -266,7 +266,7 @@ const COMPARISON = [
 export const metadata: Metadata = {
   title: "NetSuite Support for Wholesale & Distribution Companies",
   description:
-    "NetSuite post-go-live support and development for wholesale and distribution companies. Inventory management, order automation, pricing scripts, and warehouse integrations.",
+    "NetSuite post-go-live support for wholesale distributors. Inventory management, order automation, pricing scripts, and warehouse integrations.",
   alternates: { canonical: "/industries/wholesale-distribution" },
   openGraph: {
     title: "NetSuite Support for Wholesale & Distribution Companies",

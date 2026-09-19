@@ -265,7 +265,7 @@ const COMPARISON = [
 export const metadata: Metadata = {
   title: "NetSuite Support for Real Estate Companies",
   description:
-    "NetSuite post-go-live support and development for real estate companies. Property-level reporting, lease tracking, capital expenditure approvals, and multi-entity consolidation.",
+    "NetSuite post-go-live support for real estate companies. Property-level reporting, lease tracking, capex approvals, and multi-entity consolidation.",
   alternates: { canonical: "/industries/real-estate" },
   openGraph: {
     title: "NetSuite Support for Real Estate Companies",

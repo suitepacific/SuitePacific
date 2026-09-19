@@ -265,7 +265,7 @@ const COMPARISON = [
 export const metadata: Metadata = {
   title: "NetSuite Support for Professional Services Firms",
   description:
-    "NetSuite post-go-live support and development for professional services firms. Project accounting, timesheet automation, billing workflows, and project profitability reporting.",
+    "NetSuite post-go-live support for professional services firms. Project accounting, timesheet automation, billing workflows, and profitability reporting.",
   alternates: { canonical: "/industries/professional-services" },
   openGraph: {
     title: "NetSuite Support for Professional Services Firms",

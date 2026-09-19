@@ -266,7 +266,7 @@ const COMPARISON = [
 export const metadata: Metadata = {
   title: "NetSuite Support for Manufacturing Companies",
   description:
-    "NetSuite post-go-live support and development for manufacturing companies. SuiteScript customization, work order automation, BOM logic, production reporting, and ongoing technical support.",
+    "NetSuite post-go-live support for manufacturing companies. Work order automation, BOM logic, production reporting, and SuiteScript customization.",
   alternates: { canonical: "/industries/manufacturing" },
   openGraph: {
     title: "NetSuite Support for Manufacturing Companies",
