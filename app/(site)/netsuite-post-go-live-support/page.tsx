@@ -715,6 +715,12 @@ export default function PostGoLiveSupportPage() {
               </Link>{" "}
               covers seven signs of a responsiveness problem and what switching looks like when your current partner is difficult to reach.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-suitescript-migration" className="text-accent hover:underline">
+                NetSuite SuiteScript 2.1 migration services
+              </Link>{" "}
+              covers the audit and conversion of SuiteScript 1.0, 2.0, and 2.x scripts before the 2028.2 deadline. Often discovered during post-go-live support engagements when legacy scripts are still running from the original implementation.
+            </li>
           </ul>
           <p className="text-sm font-semibold text-brand-900 mb-3 mt-6">NetSuite FSM resources</p>
           <ul className="space-y-2.5">

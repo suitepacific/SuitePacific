@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Zap, ShieldCheck, RefreshCcw, Users, Award, Clock,
-  BarChart2, Wrench, ArrowRight, BookOpen, Activity,
+  BarChart2, Wrench, ArrowRight, BookOpen, Activity, GitMerge,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
@@ -84,6 +84,12 @@ const SERVICES = [
     title: "Technical Debt",
     description: "Assessment and resolution of accumulated technical debt: orphaned scripts, deprecated APIs, stale roles, and configurations that no longer reflect how the business operates.",
     href: "/netsuite-technical-debt",
+  },
+  {
+    icon: GitMerge,
+    title: "SuiteScript 2.1 Migration",
+    description: "Script inventory, risk classification, conversion, sandbox testing, and production deployment for accounts with SuiteScript 1.0, 2.0, or 2.x before the 2028.2 deadline.",
+    href: "/netsuite-suitescript-migration",
   },
 ];
 
@@ -354,6 +360,10 @@ export default function NetSuiteSupportPage() {
             <li className="text-sm text-brand-400">
               <Link href="/netsuite-consultant-cost" className="text-accent hover:underline">NetSuite consultant cost guide</Link>{" "}
               covers how NetSuite consulting and support services are priced across different models.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-suitescript-migration" className="text-accent hover:underline">NetSuite SuiteScript 2.1 migration services</Link>{" "}
+              covers the full audit and conversion process for accounts with legacy SuiteScript before the 2028.2 deadline.
             </li>
           </ul>
         </div>

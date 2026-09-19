@@ -403,6 +403,12 @@ export default function NetSuiteHealthCheckPage() {
               </Link>{" "}
               is the remediation engagement that follows a health check: addressing the gaps the review identified.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-suitescript-migration" className="text-accent hover:underline">
+                NetSuite SuiteScript 2.1 migration services
+              </Link>{" "}
+              covers the full six-stage migration for accounts with SuiteScript 1.0, 2.0, or 2.x scripts that will stop working in the 2028.2 release.
+            </li>
           </ul>
         </div>
       </div>
