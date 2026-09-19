@@ -393,6 +393,12 @@ export default function SuiteScriptDevelopmentPage() {
           <p className="text-sm font-semibold text-brand-900 mb-3">From the blog</p>
           <ul className="space-y-2.5">
             <li className="text-sm text-brand-400">
+              <Link href="/netsuite-suitescript-migration" className="text-accent hover:underline">
+                NetSuite SuiteScript 2.1 migration services
+              </Link>{" "}
+              covers the full six-stage migration service for accounts with SuiteScript 1.0, 2.0, or 2.x scripts before the NetSuite 2028.2 deadline.
+            </li>
+            <li className="text-sm text-brand-400">
               <Link href="/blog/netsuite-suitescript-2-1-migration" className="text-accent hover:underline">
                 NetSuite SuiteScript 2.1 migration: full audit and upgrade guide
               </Link>{" "}

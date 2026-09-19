@@ -1,21 +1,43 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AlertTriangle, CheckCircle2, XCircle, Code2, FileText, Search, Workflow } from "lucide-react";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Card } from "@/components/ui/Card";
-import { IconBadge } from "@/components/ui/IconBadge";
-import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
+import {
+  AlertTriangle,
+  CheckCircle2,
+  XCircle,
+  Search,
+  ShieldAlert,
+  GitMerge,
+  Code2,
+  FlaskConical,
+  Rocket,
+} from "lucide-react";
+import { BreadcrumbJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+
+export const metadata: Metadata = {
+  title: "NetSuite SuiteScript 2.1 Migration Services | SuitePacific",
+  description:
+    "SuiteScript 1.0, 2.0 and 2.x scripts will stop working in NetSuite 2028.2. Get a complete script audit, 2.1 conversion, sandbox testing and safe deployment.",
+  alternates: { canonical: "/netsuite-suitescript-migration" },
+  openGraph: {
+    title: "NetSuite SuiteScript 2.1 Migration Services | SuitePacific",
+    description:
+      "Oracle NetSuite has confirmed SuiteScript 1.0, 2.0, and 2.x scripts will stop working in the 2028.2 release. SuitePacific audits, converts, tests, and deploys legacy scripts before the deadline.",
+    url: `${SITE_URL}/netsuite-suitescript-migration`,
+    type: "website",
+    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+  },
+};
 
 const VERSION_COMPARISON = [
   {
     version: "SuiteScript 1.0",
     api: "Global nlapiXxx functions",
-    syntax: "ES3/ES5, no modules",
+    syntax: "ES3 / ES5, no module system",
     deadline: "Stops working 2028.2",
-    migration: "Full rewrite required",
+    effort: "Full rewrite required",
     risk: "critical" as const,
   },
   {
@@ -23,7 +45,7 @@ const VERSION_COMPARISON = [
     api: "N/ module system (AMD)",
     syntax: "ES5, define() pattern",
     deadline: "Stops working 2028.2",
-    migration: "Version declaration + strict mode fixes",
+    effort: "Version update plus strict mode fixes",
     risk: "high" as const,
   },
   {
@@ -31,128 +53,201 @@ const VERSION_COMPARISON = [
     api: "N/ module system (AMD)",
     syntax: "ES5, define() pattern",
     deadline: "Stops working 2028.2",
-    migration: "Version declaration + strict mode fixes",
+    effort: "Version update plus compatibility review",
     risk: "high" as const,
   },
   {
     version: "SuiteScript 2.1",
     api: "N/ module system (AMD)",
-    syntax: "ES6+, strict mode, modern JS",
+    syntax: "ES6+, strict mode enforced",
     deadline: "Supported indefinitely",
-    migration: "Migration target",
+    effort: "Migration target",
     risk: "safe" as const,
   },
 ];
 
-const WHAT_WE_DO = [
+const AFFECTED_PROCESSES = [
+  "Sales order processing and approval routing",
+  "Purchase order approvals and vendor workflows",
+  "Item fulfillment and warehouse operations",
+  "Invoice generation and billing automation",
+  "Revenue recognition and deferred revenue schedules",
+  "Inventory management and stock level monitoring",
+  "Customer and vendor integration via RESTlets",
+  "Nightly and weekly scheduled batch processes",
+  "Email notifications and alert systems",
+  "Custom forms, Suitelets, and portals",
+  "Financial reporting and GL posting logic",
+  "Map/Reduce processing for high-volume data",
+];
+
+const MIGRATION_STAGES = [
   {
+    number: "01",
     icon: Search,
-    title: "Script inventory audit",
+    title: "Script inventory",
     description:
-      "Complete inventory of every script in the account: API version, script type, deployment status, record types affected, and estimated migration complexity. Produces a prioritized migration scope with risk classification.",
+      "We identify every script configured with SuiteScript 1.0, 2.0, or 2.x in the account. The inventory includes script name, script ID, type, API version, file location, deployment status, active deployments, related records, shared library dependencies, bundle or SuiteApp association, and execution frequency. We also identify inactive or duplicate scripts that may not require conversion.",
   },
   {
-    icon: FileText,
-    title: "Business logic documentation",
+    number: "02",
+    icon: ShieldAlert,
+    title: "Risk classification",
     description:
-      "Before rewriting any script, we document what it does: the business rule it enforces, the fields it reads and writes, the edge cases it handles, and any undocumented behavior accumulated over years. Especially critical for 1.0 scripts.",
+      "Each script is classified by business impact and migration complexity: Critical, High, Medium, Low, Inactive, Third-party managed, or Requires further investigation. Critical scripts include those supporting order processing, billing, fulfillment, financial posting, integrations, or high-volume scheduled jobs. The classification determines conversion priority and helps allocate time to the highest-risk work first.",
   },
   {
+    number: "03",
+    icon: GitMerge,
+    title: "Dependency and compatibility review",
+    description:
+      "We review each affected script for features and behavior that may not work correctly under SuiteScript 2.1. This includes SuiteScript 1.0 APIs, 2.0 module patterns, shared library files, global variables, JavaScript syntax differences, date and time handling, error handling, search behavior, record handling, sublist processing, governance usage, promise behavior, and integration calls. Changing the version declaration alone is not a complete migration.",
+  },
+  {
+    number: "04",
     icon: Code2,
-    title: "Migration execution",
+    title: "SuiteScript 2.1 conversion",
     description:
-      "2.0 to 2.1: API version update, strict mode remediation, and re-testing. 1.0 to 2.1: full rewrite using N/ module system with current governance best practices, error handling, and idempotency patterns.",
+      "We convert affected scripts to SuiteScript 2.1. For SuiteScript 1.0 scripts, this means a full rewrite replacing every nlapiXxx call with N/ module equivalents while preserving the existing business logic. For 2.0 and 2.x scripts, this means updating the version declaration and remediating strict mode incompatibilities. Material changes are documented. If we find serious technical debt, we report it separately so you can decide whether to address it during or after the migration.",
   },
   {
-    icon: Workflow,
-    title: "Sandbox testing and Production deployment",
+    number: "05",
+    icon: FlaskConical,
+    title: "Sandbox testing",
     description:
-      "Every migrated script is tested in a Sandbox environment across the full range of record states and scenarios before Production deployment. Post-deployment monitoring confirms correct behavior on real data.",
+      "Every converted script is tested in a NetSuite sandbox before production deployment. Testing covers script execution, entry points, record creation and editing, approvals, scheduled processes, Map/Reduce stages, Suitelet pages, RESTlet requests, client-side behavior, email notifications, saved search dependencies, workflow interactions, permissions, error logs, and high-volume processing. Where possible, business users confirm the processes they own before production go-live.",
+  },
+  {
+    number: "06",
+    icon: Rocket,
+    title: "Production deployment and monitoring",
+    description:
+      "Converted scripts are deployed to production through a controlled release process with a defined deployment order, a production backup, a rollback approach, a deployment timing plan, smoke testing, and business-owner confirmation. Error logs are monitored after deployment. You receive a final migration report showing what was reviewed, converted, tested, deployed, excluded, or assigned to a third-party provider.",
   },
 ];
 
-const PRIORITY_TIERS = [
+const DELIVERABLES = [
+  "Complete script inventory with version, type, and deployment data",
+  "Version and deployment report for all legacy scripts",
+  "Business-risk classification (Critical, High, Medium, Low, Inactive, Third-party)",
+  "Dependency map showing shared libraries and script interdependencies",
+  "Migration estimate with effort and timeline by script tier",
+  "Recommended priority order for conversion",
+  "Converted SuiteScript 2.1 files with documented changes",
+  "Sandbox test results across all entry points and business scenarios",
+  "Production deployment plan with rollback approach",
+  "Final migration report showing all outcomes and any excluded scripts",
+];
+
+const COMPAT_RISKS = [
   {
-    tier: "Migrate first",
-    color: "text-red-600",
-    bg: "bg-red-50 border-red-100",
-    types: [
-      "User Event scripts on high-volume records (orders, bills, invoices)",
-      "Scripts that enforce financial calculations or GL coding",
-      "Map/Reduce and Scheduled scripts running nightly batch processes",
-      "RESTlets called by active integrations",
-    ],
+    issue: "SuiteScript 1.0 nlapiXxx calls",
+    detail: "Every nlapiXxx function (nlapiLoadRecord, nlapiSearchRecord, nlapiSubmitField) must be replaced. These functions do not exist in 2.1.",
   },
   {
-    tier: "Migrate second",
-    color: "text-amber-600",
-    bg: "bg-amber-50 border-amber-100",
-    types: [
-      "Suitelets used by specific teams or workflows",
-      "Workflow Action scripts tied to active workflows",
-      "Client Scripts on frequently used forms",
-      "Scheduled scripts running weekly or monthly",
-    ],
+    issue: "Undeclared variables",
+    detail: "SuiteScript 2.1 enforces strict mode. Variables used without var, let, or const throw a ReferenceError. Common in legacy 2.0 scripts.",
   },
   {
-    tier: "Migrate or retire",
-    color: "text-brand-500",
-    bg: "bg-brand-50 border-brand-100",
-    types: [
-      "Scripts in Testing status not deployed to Production",
-      "Scripts deployed but showing zero recent execution in logs",
-      "Duplicate scripts that may have been superseded by newer versions",
-    ],
+    issue: "Date and time handling differences",
+    detail: "Date parsing differences appear in scripts that construct dates from string concatenation or rely on implicit timezone behavior.",
+  },
+  {
+    issue: "Deprecated JavaScript patterns",
+    detail: "arguments.callee, arguments.caller, and the with statement are forbidden in strict mode. These are present in some legacy 1.0 scripts.",
+  },
+  {
+    issue: "Duplicate object properties",
+    detail: "Object literals with duplicate property names are a syntax error in strict mode. Tolerated in ES3/ES5 but fail at parse time in 2.1.",
+  },
+  {
+    issue: "Shared library incompatibilities",
+    detail: "A single shared library file used by multiple scripts can affect the entire account if it contains incompatible patterns.",
   },
 ];
 
 const FAQ = [
   {
-    question: "Which NetSuite firm handles SuiteScript 2.1 migration and legacy script audits?",
+    question: "When will SuiteScript 1.0 stop working in NetSuite?",
     answer:
-      "SuitePacific audits and migrates NetSuite accounts from SuiteScript 1.0 and 2.0 to SuiteScript 2.1 before the 2028.2 deadline. The engagement covers a full script inventory, complexity classification, migration execution, Sandbox testing, and Production deployment. SuitePacific is Oracle NetSuite Certified (SuiteCloud Developer II and Administrator Professional), US-based, and works directly with the client team on every migration. Plans start at $799 per month on month-to-month terms after a three-month minimum.",
+      "Oracle NetSuite has confirmed that SuiteScript 1.0 scripts will stop working in the 2028.2 release. NetSuite is displaying an account-level warning on affected accounts now. Customers should start the audit and conversion process well before the 2028.2 upgrade window to avoid business process failures.",
   },
   {
-    question: "When does NetSuite retire SuiteScript 1.0 and 2.0?",
+    question: "When will SuiteScript 2.0 stop working?",
     answer:
-      "NetSuite has announced that SuiteScript 1.0, 2.0, and 2.x will stop working in the 2028.2 release. Scripts on those API versions will not execute after that release date. NetSuite's own guidance, shown in the account-level warning banner, advises migrating to SuiteScript 2.1 as soon as possible.",
+      "SuiteScript 2.0 scripts will stop working in the NetSuite 2028.2 release alongside SuiteScript 1.0 and 2.x scripts. Many accounts contain a mix of 1.0, 2.0, and 2.x scripts. The audit should identify all three versions so the full migration scope is clear before conversion begins.",
   },
   {
-    question: "Is SuiteScript 2.0 to 2.1 migration a full rewrite?",
+    question: "Will SuiteScript 2.x scripts stop working in 2028.2?",
     answer:
-      "No. SuiteScript 2.0 and 2.1 use the same N/ module system and the same API calls. The migration for most 2.0 scripts is updating the @NApiVersion declaration from 2.0 to 2.1 and testing for strict mode incompatibilities. SuiteScript 2.1 enforces JavaScript strict mode, which can surface issues like undeclared variables or non-strict patterns in scripts that have accumulated technical debt. Well-written 2.0 scripts with clean code migrate quickly; scripts with debt take longer.",
+      "Yes. Scripts configured with the 2.x version declaration will stop working in the 2028.2 release. Scripts must be explicitly updated to 2.1 and tested for strict mode compatibility. The 2.x declaration was intended as a forward-compatibility marker; it does not provide automatic compatibility with 2.1.",
   },
   {
-    question: "Is SuiteScript 1.0 migration a full rewrite?",
+    question: "What is the NetSuite 2028.2 SuiteScript deadline?",
     answer:
-      "Yes. SuiteScript 1.0 uses global nlapiXxx functions that do not exist in SuiteScript 2.1. Every 1.0 script must be completely rewritten using the N/ module system. The business logic can be preserved; the code structure, function calls, and API patterns cannot. Undocumented 1.0 scripts with accumulated edge cases are the most time-consuming to migrate because the business logic must be reverse-engineered before the rewrite can begin.",
+      "NetSuite 2028.2 is the release in which Oracle plans to retire SuiteScript 1.0, 2.0, and 2.x. Scripts running on those versions will stop executing after the upgrade. Customers need to complete a script inventory, convert affected scripts to SuiteScript 2.1, test in sandbox, and deploy to production before the 2028.2 upgrade window.",
   },
   {
-    question: "How long does the SuiteScript migration take?",
+    question: "How do I find SuiteScript 1.0, 2.0, and 2.x scripts in NetSuite?",
     answer:
-      "A single 2.0 script with no strict mode issues migrates in hours. A full account audit plus migration of a mixed inventory (some 2.0, some 1.0, varying complexity) can take weeks to months. Accounts with large script inventories built up over many years, especially those with undocumented 1.0 scripts, need the most time. Starting in 2026 or 2027 allows the work to be spread across retainer hours rather than treated as a deadline sprint in 2028.",
+      "Legacy scripts can be identified through the Script list at Customization > Scripting > Scripts. The API Version column shows which version each script uses. However, this list does not show library files, inactive scripts, or scripts installed through bundles and SuiteApps. A thorough audit requires checking script files, library files, and deployment records to build a complete picture.",
   },
   {
-    question: "What happens to scripts that are not migrated before 2028.2?",
+    question: "Can SuiteScript 1.0 be automatically converted to 2.1?",
     answer:
-      "Scripts on SuiteScript 1.0, 2.0, or 2.x stop executing after the 2028.2 release. For User Event scripts, this may mean records save without required field values or validations. For Scheduled and Map/Reduce scripts, batch processes stop running. For RESTlets, integrations start failing. The failures are not necessarily graceful; depending on the script type and where it fails, the impact can range from missing data to blocked transaction saves.",
+      "No. SuiteScript 1.0 uses a completely different API structure (global nlapiXxx functions) that has no direct equivalent in 2.1. Every 1.0 script requires a full rewrite using the N/ module system. Automated tools cannot reliably translate business logic between the two APIs. The conversion must be performed by a developer who understands both what the original script does and how to replicate that behavior in 2.1.",
+  },
+  {
+    question: "Is changing the @NApiVersion header to 2.1 enough?",
+    answer:
+      "No. Changing the version declaration to 2.1 tells NetSuite to run the script under the 2.1 runtime, but it does not fix incompatible code. SuiteScript 2.1 enforces strict mode, which means undeclared variables, deprecated patterns, and certain object literal forms that worked under 2.0 will throw errors under 2.1. Every script must be reviewed and tested after the version declaration is updated.",
+  },
+  {
+    question: "What is the difference between SuiteScript 2.0 and 2.1?",
+    answer:
+      "SuiteScript 2.0 and 2.1 use the same N/ module system and the same API calls. The primary difference is that 2.1 enforces JavaScript strict mode, supports ES6+ syntax (arrow functions, template literals, destructuring, let and const), and disables features forbidden in strict mode. Well-written 2.0 scripts with clean code migrate quickly. Scripts with accumulated technical debt may require additional remediation.",
+  },
+  {
+    question: "How long does a SuiteScript migration take?",
+    answer:
+      "A single 2.0 script with no strict mode issues can be updated in hours. A full account migration covering a mixed inventory of 1.0, 2.0, and 2.x scripts across all script types typically takes weeks to months depending on script count, complexity, and the presence of undocumented 1.0 logic. The audit phase produces an accurate timeline before conversion begins.",
+  },
+  {
+    question: "How much does SuiteScript 2.1 migration cost?",
+    answer:
+      "Migration is available as part of a monthly retainer starting at $799 per month with a three-month minimum followed by month-to-month terms. The audit phase clarifies the conversion scope and produces an estimate before work begins. Larger or more complex inventories require more hours; the monthly plan determines how quickly the work is completed.",
+  },
+  {
+    question: "Can you migrate scripts created by another developer?",
+    answer:
+      "Yes. We work with scripts created by any developer, former employee, implementation partner, or independent contractor. Undocumented scripts require additional review to understand the business logic before the rewrite begins. We document the original logic as part of the migration process so the converted script can be maintained going forward.",
+  },
+  {
+    question: "Can you review scripts installed through bundles or SuiteApps?",
+    answer:
+      "We can identify bundle and SuiteApp scripts during the audit and flag their version status. However, scripts distributed through managed SuiteApp bundles must be updated by the SuiteApp provider. We identify which scripts fall into this category and provide guidance on what to request from the provider.",
+  },
+  {
+    question: "Will migration change our current business processes?",
+    answer:
+      "The objective of the migration is to preserve existing business processes while making scripts compatible with SuiteScript 2.1. We do not redesign functionality unless there is a specific technical reason or the customer requests an improvement. Material changes are documented. If we find unsafe or outdated logic that could cause problems, we report it separately and let you decide whether to address it during or after the migration.",
+  },
+  {
+    question: "Do you test converted scripts in sandbox before production?",
+    answer:
+      "Yes. Every converted script is tested in a NetSuite sandbox environment before production deployment. Sandbox testing covers all entry points, record types, approval workflows, scheduled processes, and business-critical scenarios. We also work with business users on user acceptance testing for the processes they own before the production deployment.",
+  },
+  {
+    question: "Can SuitePacific migrate only our critical scripts first?",
+    answer:
+      "Yes. The risk classification phase assigns each script a business-impact tier. We can prioritize Critical and High scripts and complete those before addressing lower-priority scripts. This approach reduces immediate risk while spreading the migration across retainer months at a manageable pace.",
+  },
+  {
+    question: "What happens if we do not migrate before NetSuite 2028.2?",
+    answer:
+      "Scripts that have not been converted to SuiteScript 2.1 will stop executing after the 2028.2 upgrade. Depending on what each script controls, the impact could include failed order saves, blocked approvals, stopped batch processes, failed integrations, missing field values, broken Suitelets, or failed scheduled jobs. Discovering these failures after the upgrade is significantly more disruptive than completing the migration beforehand.",
   },
 ];
-
-export const metadata: Metadata = {
-  title: "NetSuite SuiteScript 2.1 Migration: Audit and Upgrade Before the 2028.2 Deadline",
-  description:
-    "Audit and migrate SuiteScript 1.0, 2.0, and 2.x scripts to SuiteScript 2.1 before Oracle retires legacy versions in 2028.2. SuiteCloud Developer II certified.",
-  alternates: { canonical: "/netsuite-suitescript-migration" },
-  openGraph: {
-    title: "NetSuite SuiteScript 2.1 Migration: Audit and Upgrade Before the 2028.2 Deadline",
-    description:
-      "NetSuite retires SuiteScript 1.0, 2.0, and 2.x in 2028.2. Scripts on legacy versions stop working after that release. SuitePacific audits legacy script inventories, classifies migration complexity, and completes the migration to SuiteScript 2.1 for companies already live on NetSuite.",
-    url: `${SITE_URL}/netsuite-suitescript-migration`,
-    type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
-  },
-};
 
 export default function SuiteScriptMigrationPage() {
   return (
@@ -163,73 +258,110 @@ export default function SuiteScriptMigrationPage() {
           { name: "NetSuite SuiteScript Migration", url: `${SITE_URL}/netsuite-suitescript-migration` },
         ]}
       />
-      <FaqJsonLd items={FAQ} />
       <ServiceJsonLd
-        name="NetSuite SuiteScript 2.1 Migration"
-        description="Audit and migration of NetSuite SuiteScript 1.0 and 2.0 scripts to SuiteScript 2.1 before the 2028.2 deadline. Includes script inventory, complexity classification, rewrite or version-update execution, Sandbox testing, and Production deployment."
+        name="NetSuite SuiteScript 2.1 Migration and Conversion Services"
+        description="Script inventory, risk classification, compatibility review, SuiteScript 2.1 conversion, sandbox testing, and production deployment for NetSuite accounts with legacy SuiteScript 1.0, 2.0, and 2.x scripts."
         url={`${SITE_URL}/netsuite-suitescript-migration`}
-        serviceType="NetSuite SuiteScript Development"
+        serviceType="NetSuite SuiteScript Migration"
         offers={[
-          { name: "Care", price: 799, description: "10 hours/month: script audit, 2.0-to-2.1 migrations, testing. Month-to-month after 3-month minimum." },
-          { name: "Care Plus", price: 1499, description: "20 hours/month: full migration coverage including 1.0 rewrites, complex scripts, and integration-dependent RESTlets. Month-to-month." },
-          { name: "Care Pro", price: 2499, description: "35 hours/month: complete legacy script migration with documentation, priority scheduling, and post-migration monitoring. Month-to-month." },
+          { name: "Care", price: 799, description: "10 hours/month: script audit, 2.0-to-2.1 migrations, sandbox testing. Month-to-month after 3-month minimum." },
+          { name: "Care Plus", price: 1499, description: "20 hours/month: full migration including 1.0 rewrites, complex scripts, and integration-dependent RESTlets." },
+          { name: "Care Pro", price: 2499, description: "35 hours/month: complete legacy migration with documentation, priority scheduling, and post-deployment monitoring." },
         ]}
       />
       <OrganizationJsonLd />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
-        <SectionHeading
-          as="h1"
-          eyebrow="SuiteScript Migration"
-          title="NetSuite SuiteScript 2.1 Migration Before the 2028.2 Deadline"
-          subtitle="SuiteScript 1.0, 2.0, and 2.x stop working in the NetSuite 2028.2 release. SuitePacific audits your script inventory and migrates every legacy script to SuiteScript 2.1 before that date."
-          align="left"
-        />
 
         {/* Deadline alert */}
-        <div className="mt-6 flex items-start gap-3 rounded-2xl border border-amber-200 bg-amber-50 p-4">
-          <AlertTriangle className="h-5 w-5 text-amber-500 mt-0.5 shrink-0" />
+        <div className="flex items-start gap-3 rounded-2xl border border-red-200 bg-red-50 p-4">
+          <AlertTriangle className="h-5 w-5 text-red-500 mt-0.5 shrink-0" />
           <div>
-            <p className="text-sm font-semibold text-amber-800">NetSuite 2028.2 deadline</p>
-            <p className="text-sm text-amber-700 mt-0.5">
-              Scripts using SuiteScript 1.0, 2.0, or 2.x will stop working after the 2028.2 release. NetSuite is showing this warning on affected accounts now. The migration needs to be planned and executed before that release.
+            <p className="text-sm font-bold text-red-800">NetSuite 2028.2 confirmed deadline</p>
+            <p className="text-sm text-red-700 mt-0.5">
+              Oracle NetSuite has confirmed that scripts using SuiteScript 1.0, 2.0, or 2.x will stop working in the 2028.2 release. NetSuite is displaying this warning at the account level now.
             </p>
           </div>
         </div>
 
-        <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
-          <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>
-          <LeadFormLight />
-        </div>
-        <p className="mt-3 text-xs text-brand-400">NetSuite-certified · SuiteScript specialists · Direct access · Month-to-month</p>
-        <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
+        {/* Hero */}
+        <div className="mt-8">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3">SuiteScript Migration and Conversion Services</p>
+          <h1 className="text-3xl sm:text-4xl font-bold text-brand-900 leading-tight mb-4">
+            Your Legacy SuiteScripts Will Stop Working in NetSuite 2028.2
+          </h1>
+          <p className="text-base text-brand-500 leading-relaxed mb-6">
+            NetSuite has confirmed that scripts using SuiteScript 1.0, 2.0, or 2.x will stop working in the 2028.2 release. SuitePacific identifies affected scripts, converts them to SuiteScript 2.1, tests critical business processes in sandbox, and safely deploys the updated scripts before the deadline.
+          </p>
 
-        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <div className="flex flex-col sm:flex-row gap-3 mb-8">
+            <a
+              href="#audit-form"
+              className="inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-white hover:bg-accent/90 transition-colors"
+            >
+              Request a SuiteScript 2.1 Audit
+            </a>
+            <a
+              href="#audit-form"
+              className="inline-flex items-center justify-center rounded-xl border border-brand-200 px-5 py-3 text-sm font-semibold text-brand-700 hover:bg-brand-50 transition-colors"
+            >
+              Get a Migration Estimate
+            </a>
+          </div>
+        </div>
+
+        {/* QA block */}
+        <div className="rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
-            SuitePacific audits and migrates NetSuite accounts from legacy SuiteScript versions to SuiteScript 2.1
-            before the 2028.2 deadline. NetSuite will retire SuiteScript 1.0, 2.0, and 2.x in the 2028.2 release;
-            scripts on those versions stop executing after that date. The migration path depends on the starting version:
-            SuiteScript 2.0 scripts typically require updating the API version declaration and resolving strict-mode
-            incompatibilities; SuiteScript 1.0 scripts require a full rewrite because the 1.0 global nlapiXxx API is
-            entirely different from the N/ module system used in 2.1. SuitePacific is an Oracle-certified NetSuite firm
-            (SuiteCloud Developer II and Administrator Professional) that audits script inventories, classifies scripts
-            by migration complexity, and completes the migration before the deadline. Plans start at $799 per month.
+            SuiteScript 1.0, 2.0, and 2.x scripts will stop working in NetSuite 2028.2. Oracle NetSuite has confirmed this deadline and is displaying an account-level warning on affected accounts. SuitePacific performs the complete migration: a script inventory that identifies every legacy script and deployment; a risk classification that assigns each script a business-impact tier; a compatibility review covering APIs, modules, shared libraries, and JavaScript differences; conversion to SuiteScript 2.1; sandbox testing across all entry points and business-critical scenarios; and production deployment with a rollback plan. SuiteScript 1.0 scripts require a full rewrite because the nlapiXxx API does not exist in 2.1. SuiteScript 2.0 and 2.x scripts require updating the version declaration and remediating strict mode issues. Third-party and bundled scripts require coordination with the script owner before any changes are made. Plans start at $799 per month on month-to-month terms after a three-month minimum.
           </p>
         </div>
 
-        {/* Version comparison table */}
+        {/* Who is affected */}
         <div className="mt-14">
-          <h2 className="text-lg font-semibold text-brand-900 mb-2">SuiteScript version comparison: what changes and what is deprecated</h2>
-          <p className="text-sm text-brand-400 mb-5">
-            All three legacy versions stop working in 2028.2. The migration approach differs significantly between 1.0 and 2.0/2.x.
+          <h2 className="text-xl font-bold text-brand-900 mb-3">Which NetSuite accounts are affected by the 2028.2 deadline?</h2>
+          <p className="text-sm text-brand-500 leading-relaxed mb-4">
+            Any NetSuite account with active scripts using SuiteScript 1.0, 2.0, or 2.x is affected. This includes accounts that have been live for several years and may contain scripts created by previous implementation partners, former employees, independent developers, or SuiteApp providers.
+          </p>
+          <p className="text-sm text-brand-500 leading-relaxed mb-4">
+            Many NetSuite administrators may not know how many legacy scripts exist in their account, which scripts are still being used, which business processes depend on them, or whether shared library files are being referenced by multiple scripts. The first step is a complete inventory.
+          </p>
+          <div className="rounded-2xl border border-amber-200 bg-amber-50 p-4">
+            <p className="text-sm text-amber-800 font-semibold mb-1">You may have inherited scripts you did not build</p>
+            <p className="text-sm text-amber-700">
+              Scripts from past go-live projects, third-party integrations, or previous support partners may still be active in your account and may not appear obvious in the script list. An audit will surface the full picture before the 2028.2 deadline creates an emergency.
+            </p>
+          </div>
+        </div>
+
+        {/* What could stop working */}
+        <div className="mt-14">
+          <h2 className="text-xl font-bold text-brand-900 mb-3">What business processes could stop working after 2028.2?</h2>
+          <p className="text-sm text-brand-500 leading-relaxed mb-5">
+            The operational risk depends on which scripts are present and what they control. Legacy scripts often support core transaction workflows that teams depend on every day. If those scripts stop executing, the affected processes stop working with them.
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {AFFECTED_PROCESSES.map((process) => (
+              <li key={process} className="flex items-start gap-2 text-sm text-brand-500">
+                <XCircle className="h-4 w-4 text-red-400 mt-0.5 shrink-0" />
+                {process}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Version comparison */}
+        <div className="mt-14">
+          <h2 className="text-xl font-bold text-brand-900 mb-3">SuiteScript version comparison: what is the migration effort for each version?</h2>
+          <p className="text-sm text-brand-500 mb-5">
+            The work required differs significantly between SuiteScript 1.0 and 2.0/2.x. All three legacy versions are affected by the 2028.2 deadline.
           </p>
           <div className="overflow-x-auto rounded-2xl border border-brand-100">
-            <table className="w-full text-sm min-w-[560px]">
+            <table className="w-full text-sm min-w-[520px]">
               <thead>
                 <tr className="border-b border-brand-100 bg-brand-50/50">
                   <th className="text-left p-4 font-semibold text-brand-900">Version</th>
-                  <th className="text-left p-4 font-semibold text-brand-900">API style</th>
                   <th className="text-left p-4 font-semibold text-brand-900">2028.2 status</th>
                   <th className="text-left p-4 font-semibold text-brand-900">Migration effort</th>
                 </tr>
@@ -238,98 +370,139 @@ export default function SuiteScriptMigrationPage() {
                 {VERSION_COMPARISON.map((row, i) => (
                   <tr key={row.version} className={i < VERSION_COMPARISON.length - 1 ? "border-b border-brand-100" : ""}>
                     <td className="p-4 font-medium text-brand-700 align-top whitespace-nowrap">{row.version}</td>
-                    <td className="p-4 text-brand-400 align-top text-[13px]">{row.api}</td>
                     <td className="p-4 align-top whitespace-nowrap">
                       {row.risk === "safe" ? (
                         <span className="flex items-center gap-1 text-green-600 font-medium text-[13px]">
-                          <CheckCircle2 className="h-4 w-4" /> Supported
+                          <CheckCircle2 className="h-4 w-4" /> {row.deadline}
                         </span>
                       ) : (
-                        <span className="flex items-center gap-1 text-red-500 font-medium text-[13px]">
-                          <XCircle className="h-4 w-4" /> Stops working
+                        <span className="flex items-center gap-1 text-red-600 font-medium text-[13px]">
+                          <XCircle className="h-4 w-4" /> {row.deadline}
                         </span>
                       )}
                     </td>
-                    <td className="p-4 text-brand-400 align-top text-[13px]">{row.migration}</td>
+                    <td className="p-4 text-brand-400 align-top text-[13px]">{row.effort}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-        </div>
-
-        {/* What SuitePacific does */}
-        <div className="mt-14">
-          <h2 className="text-lg font-semibold text-brand-900 mb-2">What does SuitePacific do for the SuiteScript 2.1 migration?</h2>
-          <p className="text-sm text-brand-400 mb-6">
-            The migration starts with a full audit. Running a migration without knowing the scope of the problem and the business logic inside each script produces migrated code that passes initial testing but fails on edge cases in production.
+          <p className="mt-3 text-xs text-brand-300">
+            Third-party scripts distributed through managed SuiteApp bundles must be updated by the SuiteApp provider. We identify these during the audit and advise on what to request from the provider.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {WHAT_WE_DO.map((item) => (
-              <Card key={item.title} className="p-5 flex items-start gap-4">
-                <IconBadge icon={item.icon} />
-                <div>
-                  <h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3>
-                  <p className="mt-1.5 text-sm text-brand-400">{item.description}</p>
-                </div>
-              </Card>
-            ))}
-          </div>
         </div>
 
-        {/* Migration priority tiers */}
+        {/* Six-stage service */}
         <div className="mt-14">
-          <h2 className="text-lg font-semibold text-brand-900 mb-2">How to prioritize the SuiteScript migration</h2>
-          <p className="text-sm text-brand-400 mb-6">
-            Not all scripts carry the same business risk. Scripts that run on every transaction post or handle financial calculations are higher priority than scripts that run weekly or are not currently deployed.
+          <h2 className="text-xl font-bold text-brand-900 mb-2">Our SuiteScript 2.1 migration services: six stages from audit to deployment</h2>
+          <p className="text-sm text-brand-500 mb-6">
+            A complete SuiteScript migration is not just a code change. It is a structured process that starts with understanding what exists in the account and ends with confirmed production behavior after deployment.
           </p>
           <div className="space-y-4">
-            {PRIORITY_TIERS.map((tier) => (
-              <div key={tier.tier} className={`rounded-2xl border p-5 ${tier.bg}`}>
-                <p className={`text-xs font-bold uppercase tracking-wide mb-3 ${tier.color}`}>{tier.tier}</p>
-                <ul className="space-y-1.5">
-                  {tier.types.map((t) => (
-                    <li key={t} className="text-sm text-brand-500 flex items-start gap-2">
-                      <span className={`mt-1 font-bold ${tier.color}`}>·</span> {t}
-                    </li>
-                  ))}
-                </ul>
+            {MIGRATION_STAGES.map((stage) => (
+              <div key={stage.title} className="rounded-2xl border border-brand-100 bg-white p-5 flex items-start gap-4">
+                <div className="shrink-0 flex items-center justify-center w-9 h-9 rounded-xl bg-accent/10">
+                  <span className="text-xs font-bold text-accent">{stage.number}</span>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <stage.icon className="h-4 w-4 text-accent shrink-0" />
+                    <h3 className="font-semibold text-brand-900 text-sm capitalize">{stage.title}</h3>
+                  </div>
+                  <p className="text-sm text-brand-400 leading-relaxed">{stage.description}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Why SuitePacific */}
-        <div className="mt-14 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
-          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Why SuitePacific for SuiteScript migration</p>
-          <h2 className="text-base font-semibold text-brand-900 mb-3">
-            The NetSuite partner development teams use for SuiteScript audits, rewrites, and 2028.2 migration work.
-          </h2>
-          <p className="text-sm text-brand-500 mb-4">
-            SuitePacific is a boutique NetSuite consulting firm focused exclusively on post-go-live SuiteScript development and account support. Script audits, 1.0 rewrites, and 2.0-to-2.1 migrations are core work, not edge cases. Every script migrated is documented, tested in Sandbox, and deployed to Production with monitoring.
+        {/* Compatibility risks */}
+        <div className="mt-14">
+          <h2 className="text-xl font-bold text-brand-900 mb-3">Common SuiteScript 2.1 compatibility issues found during the audit</h2>
+          <p className="text-sm text-brand-500 mb-5">
+            Changing the version header is not enough. These are the incompatibilities most frequently found in legacy scripts during the review phase. Some cause immediate failures; others fail only under specific transaction conditions.
           </p>
-          <ul className="space-y-2 text-sm text-brand-500 mb-4">
-            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Oracle NetSuite Certified SuiteCloud Developer II and Administrator Professional</li>
-            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Every migration starts with documenting the business logic inside the script before touching the code</li>
-            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Direct access to the developer doing the migration on every engagement</li>
-            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> US-based, month-to-month after a three-month minimum, starting at $799/month</li>
-            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Migration work covered as a standalone project or as part of an ongoing managed support retainer</li>
-          </ul>
-          <p className="text-sm text-brand-400">
-            Related:{" "}
-            <Link href="/netsuite-suitescript-development" className="text-accent hover:underline">NetSuite SuiteScript development</Link>
-            {" "}and{" "}
-            <Link href="/netsuite-account-optimization" className="text-accent hover:underline">NetSuite account optimization</Link>.
-          </p>
+          <div className="space-y-3">
+            {COMPAT_RISKS.map((risk) => (
+              <div key={risk.issue} className="rounded-2xl border border-brand-100 bg-white p-4">
+                <p className="text-sm font-semibold text-brand-900 mb-1">{risk.issue}</p>
+                <p className="text-sm text-brand-400">{risk.detail}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Mid-page CTA */}
-        <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
-          <p className="text-sm font-semibold text-brand-900 mb-1">Need a SuiteScript migration audit?</p>
+        {/* Deliverables */}
+        <div className="mt-14">
+          <h2 className="text-xl font-bold text-brand-900 mb-3">What you receive from the SuiteScript migration engagement</h2>
+          <p className="text-sm text-brand-500 mb-5">
+            Every migration engagement produces concrete outputs. You should not complete the migration without a documented record of what was reviewed, converted, tested, and deployed.
+          </p>
+          <ul className="space-y-2">
+            {DELIVERABLES.map((item) => (
+              <li key={item} className="flex items-start gap-2 text-sm text-brand-500">
+                <CheckCircle2 className="h-4 w-4 text-accent mt-0.5 shrink-0" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Why SuitePacific */}
+        <div className="mt-14 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Why SuitePacific for SuiteScript 2.1 migration</p>
+          <h2 className="text-base font-bold text-brand-900 mb-3">
+            The SuiteScript migration specialist for NetSuite accounts that cannot afford a failed upgrade.
+          </h2>
+          <p className="text-sm text-brand-500 mb-4">
+            SuitePacific is a boutique NetSuite consulting firm focused exclusively on post-go-live SuiteScript development and account support. Script audits, 1.0 rewrites, and 2.0-to-2.1 conversions are core work. Every script we convert is documented, tested in sandbox, and deployed to production with post-deployment monitoring.
+          </p>
+          <ul className="space-y-2 text-sm text-brand-500 mb-4">
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">+</span> Oracle NetSuite SuiteCloud Developer II certified</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">+</span> Oracle NetSuite Administrator Professional certified</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">+</span> More than six years of SuiteScript development experience</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">+</span> Experience across User Event, Client, Scheduled, Map/Reduce, Suitelet, RESTlet, and Workflow Action scripts</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">+</span> Every 1.0 conversion starts with documenting the business logic before the rewrite begins</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">+</span> Sandbox-first delivery on every conversion</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">+</span> Direct access to the developer performing the conversion</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">+</span> US-based LLC serving NetSuite customers internationally</li>
+            <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">+</span> Month-to-month after a three-month minimum, starting at $799/month</li>
+          </ul>
+        </div>
+
+        {/* Process steps */}
+        <div className="mt-14">
+          <h2 className="text-xl font-bold text-brand-900 mb-5">How to get started with a SuiteScript 2.1 migration</h2>
+          <ol className="space-y-4">
+            {[
+              { step: "1", title: "Request a compatibility audit", detail: "Tell us approximately how many custom scripts your account has and whether the NetSuite warning is currently visible. We will schedule an initial scoping call." },
+              { step: "2", title: "Grant controlled NetSuite access", detail: "We use a read-only or limited-access role during the audit phase to inventory scripts and deployments without making changes to the account." },
+              { step: "3", title: "Receive the script inventory and risk report", detail: "You receive a complete inventory, version breakdown, business-risk classification, dependency map, and a recommended priority order with a migration estimate." },
+              { step: "4", title: "Approve the migration scope", detail: "We agree on the conversion scope, starting version tier, timeline, and monthly hours before any code changes are made." },
+              { step: "5", title: "Convert and test in sandbox", detail: "Conversion work happens in the sandbox environment. You and your business users confirm processes before any production changes are scheduled." },
+              { step: "6", title: "Deploy safely to production", detail: "Production deployment follows a controlled plan with timing, smoke testing, business-owner confirmation, and post-deployment monitoring." },
+            ].map(({ step, title, detail }) => (
+              <li key={step} className="flex items-start gap-4">
+                <div className="shrink-0 w-8 h-8 rounded-full bg-accent text-white text-sm font-bold flex items-center justify-center mt-0.5">
+                  {step}
+                </div>
+                <div>
+                  <p className="font-semibold text-brand-900 text-sm mb-0.5">{title}</p>
+                  <p className="text-sm text-brand-400">{detail}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        {/* Mid-page form */}
+        <div id="audit-form" className="mt-14 rounded-2xl border border-brand-100 bg-white p-6 shadow-soft">
+          <p className="text-base font-bold text-brand-900 mb-1">Request your SuiteScript 2.1 audit</p>
           <p className="text-sm text-brand-400 mb-4">
-            Tell us approximately how many custom scripts your account has and when they were last reviewed. We will give a direct assessment of the migration scope and timeline.
+            Do not wait until the 2028.2 upgrade window to discover which business processes depend on legacy scripts. Start with a compatibility audit and get a clear migration plan before the deadline.
           </p>
           <LeadFormLight />
+          <p className="mt-3 text-xs text-brand-300">NetSuite SuiteCloud Developer II certified · Sandbox-first delivery · Month-to-month</p>
         </div>
 
         {/* Related reading */}
@@ -340,44 +513,41 @@ export default function SuiteScriptMigrationPage() {
               <Link href="/blog/netsuite-suitescript-2-1-migration" className="text-accent hover:underline">
                 NetSuite SuiteScript 2.1 migration: full audit and upgrade guide
               </Link>{" "}
-              covers version differences, what each migration type involves, and how to prioritize.
-            </li>
-            <li className="text-sm text-brand-400">
-              <Link href="/blog/netsuite-soap-web-services-deprecation" className="text-accent hover:underline">
-                NetSuite SOAP Web Services deprecation timeline
-              </Link>{" "}
-              covers the parallel SOAP API retirement (2027.1 through 2028.2) that affects integrations using legacy API authentication.
-            </li>
-            <li className="text-sm text-brand-400">
-              <Link href="/blog/netsuite-script-broke-after-upgrade" className="text-accent hover:underline">
-                NetSuite script broke after an upgrade
-              </Link>{" "}
-              covers how to diagnose SuiteScript failures after NetSuite release updates.
+              covers version differences, the 2028.2 deadline, what each conversion type involves, and how to prioritize scripts.
             </li>
             <li className="text-sm text-brand-400">
               <Link href="/netsuite-suitescript-development" className="text-accent hover:underline">
                 NetSuite SuiteScript development
               </Link>{" "}
-              covers ongoing SuiteScript development and the full script types SuitePacific builds.
+              covers ongoing SuiteScript development and the full range of script types SuitePacific builds and maintains.
             </li>
             <li className="text-sm text-brand-400">
-              <Link href="/netsuite-account-optimization" className="text-accent hover:underline">
-                NetSuite account optimization
+              <Link href="/netsuite-technical-debt" className="text-accent hover:underline">
+                NetSuite technical debt
               </Link>{" "}
-              covers the broader account review that often accompanies a migration: script governance, workflow cleanup, and performance.
+              covers the broader account review that often accompanies a migration: script governance, workflow cleanup, and performance issues.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-managed-support" className="text-accent hover:underline">
+                NetSuite post-go-live support
+              </Link>{" "}
+              covers ongoing support retainers for NetSuite accounts that need continued SuiteScript maintenance and release readiness after migration.
             </li>
           </ul>
         </div>
 
         <ServiceFaqSection items={FAQ} />
 
-        <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
-          <p className="text-sm font-semibold text-brand-900 mb-1">Ready to start the SuiteScript 2.1 migration?</p>
+        {/* Final CTA */}
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-6 shadow-soft">
+          <p className="text-base font-bold text-brand-900 mb-2">Ready to start the SuiteScript 2.1 migration?</p>
           <p className="text-sm text-brand-400 mb-4">
-            Tell us about your script inventory and when the account was last reviewed. We will scope the audit and migration timeline.
+            Do not wait until the 2028.2 upgrade window to discover which business processes depend on legacy scripts. Start with a SuiteScript compatibility audit and get a clear migration plan.
           </p>
           <LeadFormLight />
+          <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
         </div>
+
       </div>
     </main>
   );

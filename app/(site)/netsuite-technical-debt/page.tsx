@@ -461,10 +461,12 @@ export default function NetSuiteTechnicalDebtPage() {
             <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Retained account context means we understand what was built and why before touching it</li>
             <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> US-based, month-to-month after a three-month minimum, starting at $799/month</li>
           </ul>
-          <p className="text-sm text-brand-400">Related: 
+          <p className="text-sm text-brand-400">Related:{" "}
             <Link href="/netsuite-health-check" className="text-accent hover:underline">NetSuite health check</Link>
-            {" "}and{" "}
-            <Link href="/netsuite-account-optimization" className="text-accent hover:underline">account optimization</Link>.
+            {", "}
+            <Link href="/netsuite-account-optimization" className="text-accent hover:underline">account optimization</Link>
+            {", and "}
+            <Link href="/netsuite-suitescript-migration" className="text-accent hover:underline">SuiteScript 2.1 migration before the 2028.2 deadline</Link>.
           </p>
         </div>
         <ServiceFaqSection items={FAQ} />

@@ -523,6 +523,12 @@ export default function NetSuiteManagedSupportPage() {
               </Link>{" "}
               breaks down what companies pay for licensing, implementation, and post-go-live support with comparison tables.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-suitescript-migration" className="text-accent hover:underline">
+                NetSuite SuiteScript 2.1 migration services
+              </Link>{" "}
+              covers the full six-stage migration process for accounts with SuiteScript 1.0, 2.0, or 2.x scripts before the 2028.2 deadline.
+            </li>
           </ul>
         </div>
 
