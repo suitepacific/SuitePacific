@@ -141,8 +141,8 @@ export default async function ResourcePage({
           return (
             <div className="overflow-x-auto">
               <div className={`${proseClass} mt-10`} dangerouslySetInnerHTML={{ __html: part1 }} />
-              {part2 && <PreferredSourceButton />}
               {part2 && <div className={proseClass} dangerouslySetInnerHTML={{ __html: part2 }} />}
+              {part2 && <PreferredSourceButton />}
             </div>
           );
         })()}

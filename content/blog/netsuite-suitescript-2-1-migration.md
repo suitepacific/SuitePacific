@@ -17,6 +17,11 @@ NetSuite's SuiteScript deprecation warning is now appearing on accounts with scr
 
 For most accounts, the immediate step is understanding the scope of the problem: how many scripts are on legacy versions, what each one does, and how complex the migration is. Some scripts are a targeted update; others require full rewrites. Starting that audit now rather than in 2027 or 2028 is the difference between a planned migration and an emergency.
 
+<div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Is your account ready for the deadline?</p>
+<p style="margin:0 0 0.75rem;color:#14306b;font-size:0.9rem;line-height:1.6">Complete the free 10-question <a href="/netsuite-suitescript-readiness-checklist" style="color:#4f7fff;font-weight:600;text-decoration:underline">NetSuite 2028.2 SuiteScript Readiness Checklist</a> to identify gaps in your script inventory, testing environment, ownership, and migration plan.</p>
+</div>
+
 ## What is the NetSuite SuiteScript 2028.2 deprecation deadline?
 
 NetSuite has announced that SuiteScript 1.0, 2.0, and 2.x will stop working in the 2028.2 release. Any script with an API version declaration of `@NApiVersion 1.0`, `@NApiVersion 2.0`, or `@NApiVersion 2.x` will no longer execute after that release.
@@ -57,7 +62,7 @@ The process for each 1.0 script:
 
 ## How do you audit a NetSuite account for legacy SuiteScript versions?
 
-The starting point for any migration is an inventory of all scripts in the account and their API versions. In NetSuite, the Scripts list under Customization > Scripting > Scripts shows all deployed scripts with their type, status, and API version. Filtering or exporting this list gives a complete picture of what needs to be migrated.
+The starting point for any migration is an inventory of all scripts in the account and their API versions. In NetSuite, the Scripts list under Customization > Scripting > Scripts shows all deployed scripts with their type, status, and API version. Exporting this list provides the starting inventory. The audit must then review script files, shared libraries, deployments, bundles, and dependencies to determine the complete migration scope.
 
 For each script in the inventory, the audit should capture:
 
