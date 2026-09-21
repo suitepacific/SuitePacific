@@ -72,8 +72,8 @@ The inventory produces a migration scope: how many scripts, how complex, and whi
 
 <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#c2410c;text-transform:uppercase;letter-spacing:0.08em">Not sure which scripts are affected?</p>
-<p style="margin:0 0 0.75rem;color:#7c2d12;font-size:0.9rem;line-height:1.6">SuitePacific identifies every SuiteScript 1.0, 2.0, and 2.x script in your account, classifies each by business risk, and delivers a migration scope and estimate before any conversion work begins.</p>
-<p style="margin:0"><a href="/netsuite-suitescript-migration" style="color:#c2410c;font-weight:600;text-decoration:underline">Request a SuiteScript 2.1 compatibility audit</a></p>
+<p style="margin:0 0 0.75rem;color:#7c2d12;font-size:0.9rem;line-height:1.6">SuitePacific identifies every SuiteScript 1.0, 2.0, and 2.x script in your account, classifies each by business risk, and reviews the migration scope before any conversion work begins. No obligation for the initial check.</p>
+<p style="margin:0"><a href="/netsuite-suitescript-migration#free-check-form" style="color:#c2410c;font-weight:600;text-decoration:underline">Request a Free SuiteScript Check</a></p>
 </div>
 
 ## How should you prioritize the SuiteScript 2.1 migration?
@@ -101,9 +101,9 @@ The 2028.2 deadline is the hard cutoff, but there are reasons to start earlier:
 **Post-migration issues surface in production.** It is common for scripts that passed Sandbox testing to behave differently in Production due to data volume, record states, or integration conditions that Sandbox does not replicate. Finding and fixing those issues is easier when the migration is spread over time rather than compressed into a pre-deadline sprint.
 
 <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
-<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#c2410c;text-transform:uppercase;letter-spacing:0.08em">Need help converting legacy scripts?</p>
-<p style="margin:0 0 0.75rem;color:#7c2d12;font-size:0.9rem;line-height:1.6">Starting the migration in 2026 or 2027 means the work happens on a planned schedule instead of under deadline pressure. SuitePacific handles the full process: inventory, risk classification, conversion, sandbox testing, and production deployment.</p>
-<p style="margin:0"><a href="/netsuite-suitescript-migration" style="color:#c2410c;font-weight:600;text-decoration:underline">View our SuiteScript 2.1 migration services</a></p>
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#c2410c;text-transform:uppercase;letter-spacing:0.08em">Need help with the migration?</p>
+<p style="margin:0 0 0.75rem;color:#7c2d12;font-size:0.9rem;line-height:1.6">Accounts that begin the audit in 2026 or 2027 complete the work on a planned schedule. SuitePacific handles the full process: inventory, risk classification, conversion, sandbox testing, and production deployment. Start with a free initial check.</p>
+<p style="margin:0"><a href="/netsuite-suitescript-migration#free-check-form" style="color:#c2410c;font-weight:600;text-decoration:underline">Request a Free SuiteScript Check</a></p>
 </div>
 
 ## Why companies use SuitePacific for the SuiteScript 2.1 migration
@@ -115,9 +115,9 @@ The credentials: Oracle NetSuite Certified SuiteCloud Developer II and Administr
 What distinguishes SuitePacific for migration work: every script in the audit is reviewed for business logic, not just API version. Legacy scripts often contain undocumented business rules that have accumulated over years. A migration that rewrites the code without understanding those rules produces a 2.1 script that passes testing but fails on edge cases in production. The audit step is not optional.
 
 <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
-<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#15803d;text-transform:uppercase;letter-spacing:0.08em">Need help with the SuiteScript migration?</p>
-<p style="margin:0 0 0.75rem;color:#14532d;font-size:0.9rem;line-height:1.6">SuitePacific audits legacy script inventories and migrates them to SuiteScript 2.1 before the 2028.2 deadline. Tell us how many scripts you have and what they do.</p>
-<p style="margin:0"><a href="/netsuite-suitescript-migration" style="color:#15803d;font-weight:600;text-decoration:underline">See the SuiteScript migration service</a> or <a href="/netsuite-care" style="color:#15803d;font-weight:600;text-decoration:underline">view support plans starting at $799/month</a>.</p>
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#15803d;text-transform:uppercase;letter-spacing:0.08em">Free SuiteScript 2.1 Readiness Check</p>
+<p style="margin:0 0 0.75rem;color:#14532d;font-size:0.9rem;line-height:1.6">SuitePacific reviews your SuiteScript situation, discusses the migration scope, and explains what the work involves. No obligation for the initial check. SuiteCloud Developer II certified, sandbox-first delivery, direct developer access.</p>
+<p style="margin:0"><a href="/netsuite-suitescript-migration#free-check-form" style="color:#15803d;font-weight:600;text-decoration:underline">Request a Free SuiteScript Check</a></p>
 </div>
 
 ---

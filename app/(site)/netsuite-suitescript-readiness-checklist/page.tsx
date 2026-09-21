@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle2, XCircle, AlertTriangle, Clock } from "lucide-react";
 import { BreadcrumbJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
-import { ScriptReadinessForm } from "@/components/sections/ScriptReadinessForm";
+import { FreeScriptCheckForm } from "@/components/sections/FreeScriptCheckForm";
 import { SITE_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -182,14 +182,14 @@ export default function ScriptReadinessChecklistPage() {
 
         {/* Lead form */}
         <div className="mt-10 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
-          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Request a migration estimate</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Free SuiteScript 2.1 Readiness Check</p>
           <h2 className="text-base font-bold text-brand-900 mb-1">
-            Tell us about your scripts. We&apos;ll scope the audit.
+            Want Help Reviewing Your Readiness?
           </h2>
           <p className="text-sm text-brand-400 mb-5">
-            Answer four questions and we will review your account details and send a migration scope estimate within one business day. SuiteCloud Developer II certified.
+            Tell us about your account and we will review your situation, discuss what needs to change before 2028.2, and explain what the migration involves. We will contact you within one business day.
           </p>
-          <ScriptReadinessForm />
+          <FreeScriptCheckForm source="suitescript_readiness_checklist" />
         </div>
 
         {/* Checklist */}
