@@ -81,7 +81,7 @@ export default function ScriptReadinessChecklistPage() {
             Want Help Reviewing Your Readiness?
           </h2>
           <p className="text-sm text-brand-400 mb-5">
-            Answer three quick questions and we will send you an initial estimate for the SuiteScript compatibility audit within one business day. SuiteCloud Developer II certified.
+            Not sure which scripts are affected? Request a free initial SuiteScript check. We will understand your current situation and help you determine the right next step.
           </p>
           <FreeScriptCheckForm source="suitescript_readiness_checklist" />
         </div>

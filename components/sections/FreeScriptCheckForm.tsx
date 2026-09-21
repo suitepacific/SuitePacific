@@ -57,11 +57,8 @@ export function FreeScriptCheckForm({ source = "" }: Props) {
     return (
       <div role="status" aria-live="polite" className="text-center py-8">
         <CheckCircle2 className="h-10 w-10 text-emerald-500 mx-auto" />
-        <h3 className="mt-4 font-semibold text-brand-900 text-base">
-          Thank you. We will be in touch within one business day.
-        </h3>
-        <p className="mt-2 text-sm text-brand-400 max-w-sm mx-auto">
-          We will review your information and contact you to discuss your SuiteScript situation and the next step.
+        <p className="mt-4 text-sm text-brand-700 max-w-sm mx-auto leading-relaxed">
+          Thank you. We will review your information and contact you within one business day to discuss your SuiteScript situation and the next step.
         </p>
       </div>
     );

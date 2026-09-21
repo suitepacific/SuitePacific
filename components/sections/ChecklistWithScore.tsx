@@ -112,9 +112,11 @@ function computeBand(answers: Record<string, Answer>): "ready" | "action" | "sta
   if (answered < 5) return null;
   const yesCount = Object.values(answers).filter((v) => v === "yes").length;
   const criticalGaps = CRITICAL_IDS.filter((id) => answers[id] === "no").length;
-  if (yesCount >= 8 && criticalGaps === 0) return "ready";
-  if (yesCount >= 5 && criticalGaps <= 1) return "action";
-  return "start";
+  if (criticalGaps >= 2) return "start";
+  if (yesCount < 5) return "start";
+  if (criticalGaps === 1) return "action";
+  if (yesCount <= 7) return "action";
+  return "ready";
 }
 
 export function ChecklistWithScore() {
