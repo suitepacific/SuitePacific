@@ -23,6 +23,7 @@ import {
   GitCompare,
 } from "lucide-react";
 import { logoutAction } from "@/app/admin/actions";
+import { AdminNotifications } from "@/components/admin/AdminNotifications";
 
 const LINKS = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard, exact: true },
@@ -146,6 +147,9 @@ export function AdminSidebar() {
       </nav>
 
       <div className="p-3 border-t border-brand-50 space-y-1">
+        <div className="px-3 py-1">
+          <AdminNotifications />
+        </div>
         <Link
           href="/"
           target="_blank"

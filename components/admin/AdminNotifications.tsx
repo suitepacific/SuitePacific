@@ -117,7 +117,7 @@ export function AdminNotifications() {
   return (
     <button
       type="button"
-      title={enabled ? "Notifications on — click to mute" : "Enable sound notifications"}
+      title={enabled ? "Notifications on (click to mute)" : "Enable sound notifications"}
       onClick={toggle}
       className={`flex items-center gap-1.5 rounded-full px-2 py-1 text-xs transition-colors ${
         enabled
