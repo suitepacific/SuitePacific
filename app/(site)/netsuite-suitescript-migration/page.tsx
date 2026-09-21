@@ -284,18 +284,24 @@ export default function SuiteScriptMigrationPage() {
           </div>
         </div>
 
-        {/* Warning screenshot */}
-        <figure className="mt-4">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/netsuite-2028-warning.png"
-            alt="NetSuite account-level warning confirming SuiteScript 1.0, 2.0, and 2.x will stop working in the 2028.2 release"
-            className="w-full rounded-xl border border-brand-100"
-          />
-          <figcaption className="mt-2 text-xs text-brand-300 text-center">
-            The account-level warning NetSuite displays on affected accounts.
-          </figcaption>
-        </figure>
+        {/* NetSuite warning UI preview */}
+        <div className="mt-4 rounded-xl border border-brand-100 overflow-hidden">
+          <div className="bg-brand-50 px-3 py-2 flex items-center gap-1.5 border-b border-brand-100">
+            <span className="w-2.5 h-2.5 rounded-full bg-red-300" />
+            <span className="w-2.5 h-2.5 rounded-full bg-amber-300" />
+            <span className="w-2.5 h-2.5 rounded-full bg-green-300" />
+            <span className="ml-2 text-xs text-brand-300">NetSuite</span>
+          </div>
+          <div className="bg-white p-4">
+            <div className="flex items-start gap-3 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3">
+              <AlertTriangle className="h-4 w-4 text-amber-600 mt-0.5 shrink-0" />
+              <p className="text-sm text-amber-900 leading-relaxed">
+                <span className="font-semibold">SuiteScript Deprecation Warning:</span> Your account contains scripts using SuiteScript 1.0, 2.0, or 2.x. These script versions will stop working in NetSuite 2028.2. Action is required before the upgrade.
+              </p>
+            </div>
+          </div>
+        </div>
+        <p className="mt-2 text-xs text-brand-300 text-center">The account-level warning NetSuite displays on affected accounts.</p>
 
         {/* Hero */}
         <div className="mt-8">

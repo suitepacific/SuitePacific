@@ -30,10 +30,21 @@ SuiteScript 2.1 is the current supported version and the migration target. Scrip
 
 The 2028.2 release is far enough out that most accounts have time to plan and execute the migration without emergency conditions, provided the work starts in 2026 or 2027. Accounts with large script inventories, complex 1.0 scripts, or limited internal development resources should start the audit immediately.
 
-<figure style="margin:2rem 0">
-<img src="/netsuite-2028-warning.png" alt="NetSuite account-level warning confirming SuiteScript 1.0, 2.0, and 2.x will stop working in the 2028.2 release" style="width:100%;border-radius:10px;border:1px solid #dde3ef" />
-<figcaption style="margin-top:0.5rem;font-size:0.8rem;color:#6b7c9a;text-align:center">The account-level warning NetSuite displays on affected accounts.</figcaption>
-</figure>
+<div style="margin:2rem 0;border-radius:12px;border:1px solid #dde3ef;overflow:hidden;font-family:system-ui,-apple-system,sans-serif">
+<div style="background:#f4f6fb;padding:0.5rem 0.75rem;border-bottom:1px solid #dde3ef;display:flex;align-items:center;gap:0.375rem">
+<span style="width:10px;height:10px;border-radius:50%;background:#fca5a5;display:inline-block"></span>
+<span style="width:10px;height:10px;border-radius:50%;background:#fcd34d;display:inline-block"></span>
+<span style="width:10px;height:10px;border-radius:50%;background:#86efac;display:inline-block"></span>
+<span style="margin-left:0.5rem;font-size:0.75rem;color:#94a3b8">NetSuite</span>
+</div>
+<div style="background:#fff;padding:1rem">
+<div style="display:flex;align-items:flex-start;gap:0.75rem;background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:0.75rem 1rem">
+<svg style="width:16px;height:16px;color:#d97706;margin-top:2px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg>
+<p style="margin:0;font-size:0.875rem;color:#78350f;line-height:1.6"><strong>SuiteScript Deprecation Warning:</strong> Your account contains scripts using SuiteScript 1.0, 2.0, or 2.x. These script versions will stop working in NetSuite 2028.2. Action is required before the upgrade.</p>
+</div>
+</div>
+</div>
+<p style="margin:-1rem 0 2rem;font-size:0.8rem;color:#94a3b8;text-align:center">The account-level warning NetSuite displays on affected accounts.</p>
 
 ## What are the differences between SuiteScript 1.0, 2.0, and 2.1?
 
