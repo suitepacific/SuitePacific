@@ -30,6 +30,11 @@ SuiteScript 2.1 is the current supported version and the migration target. Scrip
 
 The 2028.2 release is far enough out that most accounts have time to plan and execute the migration without emergency conditions, provided the work starts in 2026 or 2027. Accounts with large script inventories, complex 1.0 scripts, or limited internal development resources should start the audit immediately.
 
+<figure style="margin:2rem 0">
+<img src="/netsuite-2028-warning.png" alt="NetSuite account-level warning confirming SuiteScript 1.0, 2.0, and 2.x will stop working in the 2028.2 release" style="width:100%;border-radius:10px;border:1px solid #dde3ef" />
+<figcaption style="margin-top:0.5rem;font-size:0.8rem;color:#6b7c9a;text-align:center">The account-level warning NetSuite displays on affected accounts.</figcaption>
+</figure>
+
 ## What are the differences between SuiteScript 1.0, 2.0, and 2.1?
 
 **SuiteScript 1.0** uses a global function-based API: `nlapiLoadRecord()`, `nlapiSearchRecord()`, `nlapiSubmitRecord()`, and similar `nlapiXxx` functions. These are global functions injected into the script context, not modules. There is no `require()` or `define()` pattern. SuiteScript 1.0 scripts were written before the N/ module system existed and predate modern JavaScript patterns.

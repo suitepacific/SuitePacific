@@ -284,6 +284,19 @@ export default function SuiteScriptMigrationPage() {
           </div>
         </div>
 
+        {/* Warning screenshot */}
+        <figure className="mt-4">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/netsuite-2028-warning.png"
+            alt="NetSuite account-level warning confirming SuiteScript 1.0, 2.0, and 2.x will stop working in the 2028.2 release"
+            className="w-full rounded-xl border border-brand-100"
+          />
+          <figcaption className="mt-2 text-xs text-brand-300 text-center">
+            The account-level warning NetSuite displays on affected accounts.
+          </figcaption>
+        </figure>
+
         {/* Hero */}
         <div className="mt-8">
           <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3">SuiteScript Migration and Conversion Services</p>
@@ -476,7 +489,7 @@ export default function SuiteScriptMigrationPage() {
           <h2 className="text-xl font-bold text-brand-900 mb-5">How to get started with a SuiteScript 2.1 migration</h2>
           <ol className="space-y-4">
             {[
-              { step: "1", title: "Request a compatibility audit", detail: "Tell us approximately how many custom scripts your account has and whether the NetSuite warning is currently visible. We will schedule an initial scoping call." },
+              { step: "1", title: "Request a free readiness check", detail: "Tell us what you know about your scripts and whether the NetSuite warning is visible. We will discuss your situation and recommend the appropriate next step." },
               { step: "2", title: "Grant controlled NetSuite access", detail: "We use a read-only or limited-access role during the audit phase to inventory scripts and deployments without making changes to the account." },
               { step: "3", title: "Receive the script inventory and risk report", detail: "You receive a complete inventory, version breakdown, business-risk classification, dependency map, and a recommended priority order with a migration estimate." },
               { step: "4", title: "Approve the migration scope", detail: "We agree on the conversion scope, starting version tier, timeline, and monthly hours before any code changes are made." },
