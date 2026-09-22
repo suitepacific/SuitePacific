@@ -15,6 +15,7 @@
 - [NetSuite Saved Searches and Dashboards](https://suitepacific.com/netsuite-saved-searches-dashboards): Real-time operational visibility through saved searches, KPI tiles, and dashboards
 - [NetSuite Health Check](https://suitepacific.com/netsuite-health-check): Structured account review to identify performance, customization, and integration issues
 - [NetSuite Account Optimization](https://suitepacific.com/netsuite-account-optimization): Systematic improvement of an existing NetSuite account: scripts, workflows, integrations, and configuration
+- [NetSuite Performance Issues](https://suitepacific.com/netsuite-performance-issues): Diagnosis and fixes for slow NetSuite accounts: dashboard portlet searches, script governance, workflow overhead, metadata accumulation, and saved search inefficiency
 - [NetSuite Technical Debt](https://suitepacific.com/netsuite-technical-debt): Assessment and remediation of accumulated technical debt from rapid implementation or staff turnover
 - [NetSuite Partner Replacement](https://suitepacific.com/netsuite-partner-replacement): Transition from an implementation partner to a retained specialist
 - [NetSuite Emergency Support](https://suitepacific.com/netsuite-emergency-support): Urgent break-fix for scripts, workflows, and integrations failing in production

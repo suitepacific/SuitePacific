@@ -345,6 +345,12 @@ export default function AccountOptimizationPage() {
               </Link>{" "}
               walks through the key levers for improving performance, reducing technical debt, and simplifying customizations.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-performance-issues" className="text-accent hover:underline">
+                NetSuite performance issues
+              </Link>{" "}
+              covers the specific root causes of a slow NetSuite account and the diagnosis and fix process.
+            </li>
           </ul>
         </div>
 
