@@ -15,6 +15,16 @@ import {
   Truck,
   UserCheck,
   Wrench,
+  Compass,
+  FlameKindling,
+  Shield,
+  TrendingUp,
+  Store,
+  Leaf,
+  Sprout,
+  GraduationCap,
+  Newspaper,
+  Server,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { IconBadge } from "@/components/ui/IconBadge";
@@ -121,13 +131,83 @@ const INDUSTRIES = [
     description:
       "Work order billing automation, service contract recurring billing, field service management integration, customer equipment tracking, and technician utilization reporting for field service and maintenance companies.",
   },
+  {
+    icon: Compass,
+    name: "Architecture & Engineering",
+    slug: "architecture-engineering",
+    description:
+      "AIA G702/G703 billing automation, subconsultant cost pass-through scripts, percentage-complete revenue recognition, discipline utilization reporting, and Deltek or BQE Core integration for A&E firms.",
+  },
+  {
+    icon: FlameKindling,
+    name: "Oil & Gas",
+    slug: "oil-gas",
+    description:
+      "AFE approval workflows, Joint Interest Billing (JIB) statement generation, royalty calculations, division order management, lease operating expense reporting, and production data integration for E&P companies.",
+  },
+  {
+    icon: Shield,
+    name: "Government Contractors",
+    slug: "government-contractors",
+    description:
+      "DCAA-compliant indirect rate pools, incurred cost submission support, unallowable cost segregation, CLIN and task order billing, provisional-to-final rate adjustments for federal contractors.",
+  },
+  {
+    icon: TrendingUp,
+    name: "Private Equity & Family Office",
+    slug: "private-equity",
+    description:
+      "Portfolio company consolidation, waterfall distribution scripts, LP capital account tracking, management fee billing, IRR and MOIC reporting, and intercompany elimination workflows for PE firms.",
+  },
+  {
+    icon: Store,
+    name: "Franchise Operations",
+    slug: "franchise",
+    description:
+      "Royalty billing automation from POS sales data, marketing fund contribution billing, franchisee performance dashboards, POS system integrations, and franchise agreement tracking for franchise systems.",
+  },
+  {
+    icon: Leaf,
+    name: "Cannabis & Dispensary",
+    slug: "cannabis",
+    description:
+      "IRC 280E cost segregation structures, Metrc seed-to-sale integration, batch and strain inventory tracking, excise tax calculations, and multi-state license accounting for cannabis operators.",
+  },
+  {
+    icon: Sprout,
+    name: "Agriculture & AgTech",
+    slug: "agriculture",
+    description:
+      "Crop and field cost tracking, seasonal revenue recognition, co-op settlement reconciliation, farm equipment Section 179 depreciation, and per-acre profitability reporting for agricultural businesses.",
+  },
+  {
+    icon: GraduationCap,
+    name: "EdTech & Education",
+    slug: "edtech",
+    description:
+      "ASC 606 enrollment revenue recognition, grant fund tracking, LMS integrations with Canvas and Blackboard, deferred tuition liability management, and course profitability reporting for EdTech companies.",
+  },
+  {
+    icon: Newspaper,
+    name: "Publishing & Media",
+    slug: "publishing-media",
+    description:
+      "Royalty calculations by title and format, advertising revenue recognition over flight dates, subscription renewal billing, author advance recoupment tracking, and distributor settlement reconciliation.",
+  },
+  {
+    icon: Server,
+    name: "Managed Service Providers",
+    slug: "managed-service-providers",
+    description:
+      "PSA integrations with ConnectWise and Autotask, managed services recurring billing, T&M and flat-fee combined invoicing, technician utilization reporting, and client profitability analysis for MSPs.",
+  },
 ];
 
 const FAQ = [
   {
-    question: "Does SuitePacific work with companies outside these nine industries?",
+    question: "Does SuitePacific work with companies outside these industries?",
     answer:
-      "Occasionally, but these are the verticals where the team has built repeatable configurations and recognizes the specific workflow patterns. Companies in adjacent industries often share enough overlap with one of these thirteen verticals that the engagement is straightforward.",
+      "Occasionally, but these are the verticals where the team has built repeatable configurations and recognizes the specific workflow patterns. Companies in adjacent industries often share enough overlap with one of these twenty-four verticals that the engagement is straightforward.",
   },
   {
     question: "Is the support model the same across all industries?",
@@ -149,12 +229,12 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Support by Industry",
   description:
-    "NetSuite post-go-live support across thirteen industries: construction, manufacturing, SaaS, fintech, recruitment, food and beverage, nonprofit, retail, distribution, and more.",
+    "NetSuite post-go-live support across 24 industries: construction, manufacturing, SaaS, oil and gas, government contractors, private equity, franchise, cannabis, agriculture, EdTech, publishing, MSPs.",
   alternates: { canonical: "/industries" },
   openGraph: {
     title: "NetSuite Support by Industry",
     description:
-      "Post-go-live NetSuite support scoped to your industry: construction, manufacturing, SaaS, fintech, recruitment, courier, service industries, food and beverage, nonprofit, retail, distribution, real estate, and professional services.",
+      "Post-go-live NetSuite support across 24 industries: construction, manufacturing, SaaS, oil and gas, government contractors, private equity, franchise, cannabis, agriculture, EdTech, publishing, MSPs, and more.",
     url: "https://suitepacific.com/industries",
     type: "website",
     images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
@@ -198,7 +278,7 @@ export default function IndustriesPage() {
         <div style={{ background: "#eef2fb", border: "1px solid #b2c2e6", borderRadius: "10px", padding: "1.25rem 1.5rem", margin: "2rem 0", fontFamily: "system-ui,-apple-system,sans-serif" }}>
           <p style={{ margin: "0 0 0.5rem", fontSize: "0.7rem", fontWeight: 700, color: "#4f7fff", textTransform: "uppercase", letterSpacing: "0.08em" }}>Quick answer</p>
           <p style={{ margin: 0, color: "#14306b", fontSize: "0.9rem", lineHeight: 1.6 }}>
-            SuitePacific provides post-go-live NetSuite support across thirteen industries: construction, manufacturing, SaaS and technology, fintech, recruitment and staffing, courier and travel, service industries, food and beverage, nonprofit, retail and e-commerce, wholesale distribution, real estate, and professional services. Each engagement is scoped to the workflows and modules specific to that vertical. Construction companies receive job costing and AIA billing. Manufacturing companies receive work order and BOM automation. SaaS and fintech companies receive subscription billing, revenue recognition, and investor reporting. Staffing firms receive timesheet-to-invoice scripts and commission automation. Service industry companies receive work order billing and FSM integrations. The delivery structure is consistent across all verticals: SuiteScript development, workflow automation, saved search builds, release management, and ongoing account optimization on a monthly retainer. All engagements begin with a baseline assessment of the NetSuite account to identify the highest-priority issues before development work begins. Pricing starts at $799 per month.
+            SuitePacific provides post-go-live NetSuite support across twenty-four industries: construction, manufacturing, SaaS and technology, fintech, recruitment and staffing, courier and travel, service industries, food and beverage, nonprofit, retail and e-commerce, wholesale distribution, real estate, professional services, architecture and engineering, oil and gas, government contractors, private equity and family office, franchise operations, cannabis and dispensary, agriculture and AgTech, EdTech and education, publishing and media, and managed service providers. Each engagement is scoped to the workflows and modules specific to that vertical. Government contractors receive DCAA indirect rate pools and incurred cost support. Oil and gas companies receive AFE workflows and JIB billing. Private equity firms receive waterfall distribution scripts and LP capital tracking. MSPs receive PSA integrations and managed services recurring billing. The delivery structure is consistent: SuiteScript development, workflow automation, saved search builds, and ongoing account optimization on a monthly retainer. Pricing starts at $799 per month.
           </p>
         </div>
       </div>
