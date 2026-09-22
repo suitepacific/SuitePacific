@@ -11,6 +11,10 @@ import {
   Briefcase,
   Building2,
   Activity,
+  Landmark,
+  Truck,
+  UserCheck,
+  Wrench,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { IconBadge } from "@/components/ui/IconBadge";
@@ -89,13 +93,41 @@ const INDUSTRIES = [
     description:
       "FDA compliance automation, lot and serial tracking with expiration logic, CAPA workflow management, SOD enforcement, grant reporting, and regulatory saved searches for medical device, pharma, and health tech companies.",
   },
+  {
+    icon: Landmark,
+    name: "Fintech",
+    slug: "fintech",
+    description:
+      "ASC 606 multi-element revenue recognition, payment processor reconciliation, investor reporting metrics, SOD compliance workflows, and multi-entity consolidation for financial technology companies.",
+  },
+  {
+    icon: Truck,
+    name: "Courier & Travel",
+    slug: "courier-travel",
+    description:
+      "Job-based billing automation, agent and driver commission scripts, dispatch and booking system integration, fleet expense tracking, and branch P&L reporting for courier, logistics, and travel businesses.",
+  },
+  {
+    icon: UserCheck,
+    name: "Recruitment & Staffing",
+    slug: "recruitment",
+    description:
+      "Timesheet-to-invoice automation, recruiter commission calculations, ATS integration with Bullhorn and Salesforce, gross margin reporting, and multi-branch P&L for staffing and recruitment firms.",
+  },
+  {
+    icon: Wrench,
+    name: "Service Industries",
+    slug: "service-industries",
+    description:
+      "Work order billing automation, service contract recurring billing, field service management integration, customer equipment tracking, and technician utilization reporting for field service and maintenance companies.",
+  },
 ];
 
 const FAQ = [
   {
     question: "Does SuitePacific work with companies outside these nine industries?",
     answer:
-      "Occasionally, but these are the verticals where the team has built repeatable configurations and recognizes the specific workflow patterns. Companies in adjacent industries often share enough overlap with one of these verticals that the engagement is straightforward.",
+      "Occasionally, but these are the verticals where the team has built repeatable configurations and recognizes the specific workflow patterns. Companies in adjacent industries often share enough overlap with one of these thirteen verticals that the engagement is straightforward.",
   },
   {
     question: "Is the support model the same across all industries?",
@@ -117,12 +149,12 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Support by Industry",
   description:
-    "NetSuite post-go-live support for nine industries: construction, manufacturing, SaaS, food and beverage, nonprofit, retail, distribution, and real estate.",
+    "NetSuite post-go-live support across thirteen industries: construction, manufacturing, SaaS, fintech, recruitment, food and beverage, nonprofit, retail, distribution, and more.",
   alternates: { canonical: "/industries" },
   openGraph: {
     title: "NetSuite Support by Industry",
     description:
-      "Post-go-live NetSuite support scoped to your industry: construction, manufacturing, SaaS, food and beverage, nonprofit, retail, distribution, real estate, and professional services.",
+      "Post-go-live NetSuite support scoped to your industry: construction, manufacturing, SaaS, fintech, recruitment, courier, service industries, food and beverage, nonprofit, retail, distribution, real estate, and professional services.",
     url: "https://suitepacific.com/industries",
     type: "website",
     images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
@@ -166,7 +198,7 @@ export default function IndustriesPage() {
         <div style={{ background: "#eef2fb", border: "1px solid #b2c2e6", borderRadius: "10px", padding: "1.25rem 1.5rem", margin: "2rem 0", fontFamily: "system-ui,-apple-system,sans-serif" }}>
           <p style={{ margin: "0 0 0.5rem", fontSize: "0.7rem", fontWeight: 700, color: "#4f7fff", textTransform: "uppercase", letterSpacing: "0.08em" }}>Quick answer</p>
           <p style={{ margin: 0, color: "#14306b", fontSize: "0.9rem", lineHeight: 1.6 }}>
-            SuitePacific provides post-go-live NetSuite support across nine industries: construction, manufacturing, SaaS and technology, food and beverage, nonprofit, retail and e-commerce, wholesale distribution, real estate, and professional services. Each engagement is scoped to the workflows and modules specific to that vertical rather than a generic support model applied across all accounts. Construction companies receive job costing and AIA billing configurations. Manufacturing companies receive work order and BOM automation. SaaS companies receive subscription billing and ARR/MRR reporting. Food and beverage companies receive lot traceability and trade promotion management. Nonprofit organizations receive fund accounting and grant reporting. The delivery structure is consistent across all verticals: SuiteScript development, workflow automation, saved search builds, release management, and ongoing account optimization on a monthly retainer. All engagements begin with a baseline assessment of the NetSuite account to identify the highest-priority issues before development work begins. Pricing starts at $799 per month.
+            SuitePacific provides post-go-live NetSuite support across thirteen industries: construction, manufacturing, SaaS and technology, fintech, recruitment and staffing, courier and travel, service industries, food and beverage, nonprofit, retail and e-commerce, wholesale distribution, real estate, and professional services. Each engagement is scoped to the workflows and modules specific to that vertical. Construction companies receive job costing and AIA billing. Manufacturing companies receive work order and BOM automation. SaaS and fintech companies receive subscription billing, revenue recognition, and investor reporting. Staffing firms receive timesheet-to-invoice scripts and commission automation. Service industry companies receive work order billing and FSM integrations. The delivery structure is consistent across all verticals: SuiteScript development, workflow automation, saved search builds, release management, and ongoing account optimization on a monthly retainer. All engagements begin with a baseline assessment of the NetSuite account to identify the highest-priority issues before development work begins. Pricing starts at $799 per month.
           </p>
         </div>
       </div>

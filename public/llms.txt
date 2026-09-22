@@ -361,6 +361,10 @@
 - [NetSuite for Real Estate](https://suitepacific.com/industries/real-estate): Post-go-live support for real estate companies on NetSuite, covering lease accounting, OneWorld entity structure, and investor reporting
 - [NetSuite for Food and Beverage](https://suitepacific.com/industries/food-beverage): Post-go-live support for food and beverage companies on NetSuite, covering shelf life tracking, trade promotions, EDI integration, and deductions management
 - [NetSuite for Healthcare & Life Sciences](https://suitepacific.com/industries/healthcare): Post-go-live support for healthcare and life sciences companies on NetSuite, covering FDA compliance, lot tracking, CAPA workflows, and regulatory reporting
+- [NetSuite for Fintech](https://suitepacific.com/industries/fintech): Post-go-live support for fintech companies on NetSuite, covering ASC 606 automation, payment processor reconciliation, investor reporting metrics, SOD compliance, and multi-entity consolidation
+- [NetSuite for Courier & Travel](https://suitepacific.com/industries/courier-travel): Post-go-live support for courier, logistics, and travel companies on NetSuite, covering job billing automation, commission scripts, dispatch and booking system integration, and branch P&L reporting
+- [NetSuite for Recruitment & Staffing](https://suitepacific.com/industries/recruitment): Post-go-live support for staffing and recruitment firms on NetSuite, covering timesheet-to-invoice automation, recruiter commission calculations, ATS integration, and multi-branch P&L reporting
+- [NetSuite for Service Industries](https://suitepacific.com/industries/service-industries): Post-go-live support for field service, maintenance, and repair companies on NetSuite, covering work order billing automation, service contract billing, FSM integration, and technician utilization reporting
 
 ## Industry Sub-Topic Pages
 
