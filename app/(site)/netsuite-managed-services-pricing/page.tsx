@@ -9,7 +9,7 @@ import { SITE_URL } from "@/lib/content";
 export const metadata: Metadata = {
   title: "NetSuite Managed Services Pricing | SuitePacific",
   description:
-    "NetSuite managed services cost $799 to $12,000+ per month. SuitePacific publishes three plans from $799 with no hidden rates or setup fees.",
+    "NetSuite managed services pricing: $799 to $12,000+ per month. SuitePacific publishes three plans with no hidden rates, no setup fee, and no annual contract.",
   alternates: { canonical: "/netsuite-managed-services-pricing" },
   openGraph: {
     title: "NetSuite Managed Services Pricing | SuitePacific",
@@ -177,6 +177,8 @@ export default function NetSuiteManagedServicesPricingPage() {
         description="Monthly NetSuite managed support covering SuiteScript development, administration, integration maintenance, break-fix, and release upgrade preparation."
         url={`${SITE_URL}/netsuite-managed-services-pricing`}
         serviceType="NetSuite Managed Services"
+        datePublished="2026-09-23T00:00:00+00:00"
+        dateModified="2026-09-23T00:00:00+00:00"
         offers={[
           { name: "Care", price: 799, description: "10 hours/month: SuiteScript, admin, workflow, saved searches, break-fix. Month-to-month after 3-month minimum." },
           { name: "Care Plus", price: 1499, description: "20 hours/month: all Care work plus integration maintenance and upgrade preparation. Month-to-month." },
@@ -193,6 +195,7 @@ export default function NetSuiteManagedServicesPricingPage() {
           <h1 className="text-3xl sm:text-4xl font-bold text-brand-900 leading-tight mb-4">
             NetSuite Managed Services Pricing
           </h1>
+          <h2 className="text-base font-semibold text-brand-700 mb-3">What is NetSuite managed services?</h2>
           <p className="text-base text-brand-500 leading-relaxed">
             NetSuite managed services refer to a monthly retainer arrangement in which a certified NetSuite firm handles ongoing SuiteScript development, administration, integration maintenance, and break-fix support for a live NetSuite account. Pricing ranges from $799 to $12,000 or more per month depending on the provider, included hours, and whether technical work such as SuiteScript and integrations is covered. SuitePacific plans start at $799 per month with published rates and no hidden fees.
           </p>
@@ -314,7 +317,13 @@ export default function NetSuiteManagedServicesPricingPage() {
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-brand-300 mb-8">Enterprise partner and ACS pricing estimated from third-party benchmarks. Oracle ACS pricing is not publicly published. Last reviewed September 2026.</p>
+          <p className="text-xs text-brand-300 mb-8">
+            Enterprise partner and ACS pricing estimated from third-party benchmarks. Oracle ACS pricing is not publicly published. Last reviewed September 2026. See{" "}
+            <Link href="/blog/netsuite-support-pricing-benchmark-2026" className="underline hover:text-brand-400">
+              NetSuite support pricing benchmark 2026
+            </Link>{" "}
+            for detailed source data.
+          </p>
 
           {/* Managed vs hiring */}
           <h3 className="text-base font-bold text-brand-900 mb-3">Managed support versus hiring an in-house NetSuite administrator</h3>
@@ -347,6 +356,41 @@ export default function NetSuiteManagedServicesPricingPage() {
             </table>
           </div>
           <p className="text-xs text-brand-300 mb-8">In-house administrator salary range is an estimate based on US market data for NetSuite administrator roles. Total compensation includes salary, benefits, and employer taxes.</p>
+
+          {/* Cost comparison SVG diagram */}
+          <figure className="mt-6 mb-2">
+            <svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", maxWidth: 680, display: "block", fontFamily: "system-ui,-apple-system,sans-serif" }}>
+              <defs>
+                <linearGradient id="barManaged" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#4f7fff" stopOpacity="0.9" />
+                  <stop offset="100%" stopColor="#4f7fff" stopOpacity="0.6" />
+                </linearGradient>
+                <linearGradient id="barInhouse" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#dc2626" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#dc2626" stopOpacity="0.5" />
+                </linearGradient>
+              </defs>
+              {/* Title */}
+              <text x="340" y="22" textAnchor="middle" fontSize="11" fontWeight="700" fill="#14306b">Annual cost: managed support vs. in-house NetSuite administrator</text>
+              {/* Y axis label */}
+              <text x="8" y="90" fontSize="9" fill="#8aa2d6" textAnchor="middle" transform="rotate(-90,8,90)">Annual cost (USD)</text>
+              {/* Managed support bar - up to ~$30K out of max $140K scale */}
+              <rect x="100" y="55" width="180" height="120" rx="6" fill="url(#barManaged)" />
+              <text x="190" y="50" textAnchor="middle" fontSize="10" fontWeight="700" fill="#4f7fff">$9,588 to $29,988/yr</text>
+              <text x="190" y="190" textAnchor="middle" fontSize="10" fontWeight="600" fill="#14306b">Managed support</text>
+              <text x="190" y="203" textAnchor="middle" fontSize="9" fill="#8aa2d6">SuitePacific plans</text>
+              {/* In-house bar - $85K to $130K+ out of max $140K scale */}
+              <rect x="380" y="22" width="220" height="153" rx="6" fill="url(#barInhouse)" />
+              <text x="490" y="17" textAnchor="middle" fontSize="10" fontWeight="700" fill="#dc2626">$85,000 to $130,000+/yr</text>
+              <text x="490" y="190" textAnchor="middle" fontSize="10" fontWeight="600" fill="#14306b">In-house administrator</text>
+              <text x="490" y="203" textAnchor="middle" fontSize="9" fill="#8aa2d6">Salary, benefits, and employer taxes</text>
+              {/* Baseline */}
+              <line x1="70" y1="175" x2="640" y2="175" stroke="#e2e8f0" strokeWidth="1" />
+            </svg>
+            <figcaption style={{ textAlign: "center", fontSize: "0.75rem", color: "#8aa2d6", marginTop: "0.25rem" }}>
+              Managed support at $9,588 to $29,988 per year versus a full-time in-house administrator at $85,000 to $130,000+. In-house cost includes salary, benefits, and employer taxes; does not include SuiteScript capability gap risk.
+            </figcaption>
+          </figure>
         </div>
 
         {/* What is included */}

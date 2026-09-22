@@ -154,6 +154,8 @@ export function ServiceJsonLd({
   serviceType,
   areaServed = ["US", "GB", "AU"],
   offers,
+  datePublished,
+  dateModified,
 }: {
   name: string;
   description: string;
@@ -161,6 +163,8 @@ export function ServiceJsonLd({
   serviceType: string;
   areaServed?: string | string[];
   offers?: { name: string; price: number; priceCurrency?: string; description?: string }[];
+  datePublished?: string;
+  dateModified?: string;
 }) {
   const data = {
     "@context": "https://schema.org",
@@ -170,6 +174,8 @@ export function ServiceJsonLd({
     description,
     url,
     serviceType,
+    ...(datePublished && { datePublished }),
+    ...(dateModified && { dateModified }),
     provider: { "@type": "ProfessionalService", "@id": `${SITE_URL}/#organization`, name: LEGAL_NAME, url: SITE_URL },
     areaServed,
     ...(offers && {
