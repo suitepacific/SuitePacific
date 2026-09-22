@@ -65,7 +65,7 @@ const FAQ = [
 
 export const metadata: Metadata = {
   title: "NetSuite Support for Cannabis & Dispensary Companies | SuitePacific",
-  description: "NetSuite post-go-live support for cannabis companies. 280E cost segregation, Metrc integration, batch inventory tracking, excise tax calculations, and multi-state license accounting.",
+  description: "NetSuite post-go-live support for cannabis companies. 280E cost segregation, Metrc integration, batch inventory tracking, and multi-state license accounting.",
   alternates: { canonical: "/industries/cannabis" },
   openGraph: {
     title: "NetSuite Support for Cannabis & Dispensary Companies | SuitePacific",

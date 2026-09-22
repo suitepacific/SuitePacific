@@ -65,7 +65,7 @@ const FAQ = [
 
 export const metadata: Metadata = {
   title: "NetSuite Support for Managed Service Providers | SuitePacific",
-  description: "NetSuite post-go-live support for MSPs. PSA integrations, recurring billing automation, technician utilization, client profitability, and combined managed services invoicing.",
+  description: "NetSuite post-go-live support for MSPs. PSA integrations with ConnectWise and Autotask, recurring billing, technician utilization, and client profitability.",
   alternates: { canonical: "/industries/managed-service-providers" },
   openGraph: {
     title: "NetSuite Support for Managed Service Providers | SuitePacific",

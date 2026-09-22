@@ -65,7 +65,7 @@ const FAQ = [
 
 export const metadata: Metadata = {
   title: "NetSuite Support for Franchise Operations | SuitePacific",
-  description: "NetSuite post-go-live support for franchise businesses. Royalty billing automation, POS integrations, marketing fund billing, franchisee performance reporting, and agreement tracking.",
+  description: "NetSuite post-go-live support for franchise systems. Royalty billing from POS data, marketing fund billing, performance reporting, and agreement tracking.",
   alternates: { canonical: "/industries/franchise" },
   openGraph: {
     title: "NetSuite Support for Franchise Operations | SuitePacific",
