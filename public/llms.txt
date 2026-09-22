@@ -251,7 +251,7 @@
 
 ## Blog: Release notes and upgrades
 
-- [NetSuite 2026.2 finance updates](https://suitepacific.com/blog/netsuite-2026-2-finance-updates): Payment Runs for batch AP processing and the redesigned Match Bank Data interface
+- [NetSuite 2026.2 finance updates](https://suitepacific.com/blog/netsuite-2026-2-finance-updates): Payment Runs for batch AP processing; required action before upgrade to submit Review subtab matches before they are cleared; redesigned Match Bank Data interface with Match Suggestions subtab
 - [NetSuite bank reconciliation changes in 2026.2](https://suitepacific.com/blog/netsuite-bank-reconciliation-changes-2026-2): New Match Suggestions subtab, renamed tabs, filter chips, and audit columns
 - [NetSuite Advanced Record Customization in 2026.2](https://suitepacific.com/blog/netsuite-advanced-record-customization-2026-2): New centralized area for managing AI descriptions for standard and custom record types
 - [NetSuite Bill Capture Preferences changed in 2026.2](https://suitepacific.com/blog/netsuite-bill-capture-preferences-2026-2): How blank Save Tax As and Save Shipping Cost As fields now behave after the update

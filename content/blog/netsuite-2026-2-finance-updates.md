@@ -2,7 +2,7 @@
 title: "NetSuite 2026.2 Finance Updates: Payment Runs and the Redesigned Match Bank Data Page"
 description: "Two significant finance workflow updates in 2026.2: Payment Runs for batch AP processing and a redesigned Match Bank Data page with a new Match Suggestions interface. Here is what changed and what it means for your finance team."
 date: "2026-08-02"
-updated: "2026-08-14"
+updated: "2026-09-22"
 tags: ["Finance", "Release Notes", "2026.2", "Accounts Payable"]
 ---
 
@@ -14,7 +14,12 @@ NetSuite 2026.2 includes two updates that directly change how finance teams proc
 </div>
 
 
-This post covers what changed, what the new workflows look like, and what to communicate to your team before they encounter the changes on their own.
+This post covers what changed, what the new workflows look like, and what to do before your account upgrades.
+
+<div style="background:#fef2f2;border:1px solid #fca5a5;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
+<p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#dc2626;text-transform:uppercase;letter-spacing:0.08em">Action required before your 2026.2 upgrade</p>
+<p style="margin:0;color:#7f1d1d;font-size:0.9rem;line-height:1.6">If your account reconciles bank transactions in NetSuite, you must submit any transactions currently on the Review subtab of the Match Bank Data page before the upgrade. Unsubmitted matches will be removed after 2026.2 installs. See the required steps in the <a href="#match-bank-data-required-action" style="color:#dc2626;font-weight:600;text-decoration:underline">Match Bank Data section</a> below.</p>
+</div>
 
 **Managing a NetSuite finance function and want to make sure your team is prepared for 2026.2?** SuitePacific works with NetSuite customers through release updates, including walkthroughs of new finance features in Sandbox before they go live in Production. [Contact us](/contact).
 
@@ -84,19 +89,47 @@ Finance team members who process AP payments will see Payment Runs as a new opti
 
 ### What changed
 
-The Match Bank Data page received a redesigned interface in 2026.2. The Review subtab that was previously used to work through unmatched bank transactions has been replaced by a Match Suggestions interface.
+The Match Bank Data page received a redesigned interface in 2026.2. The Review subtab that was previously used to work through automatically generated matches has been replaced by a new Match Suggestions subtab. The Transactions to Match subtab (previously called To Be Matched) is also updated: you can now match or clear transactions and submit them in a single action, without a separate submission step.
 
-The new interface presents each bank transaction alongside matching suggestions, with five actions available per transaction. This replaces the previous Review subtab workflow where transactions were reviewed and matched from a tab-based layout.
+The Match Suggestions subtab presents automatically generated matches as suggestions. When multiple possible matches exist for an imported transaction, up to five suggestions can be presented in a single view.
 
 ### What this means for bank reconciliation
 
-The core task has not changed: finance teams are still matching imported bank transactions to existing NetSuite records or creating new records for unmatched transactions. What changed is the interface for doing that work.
+The core task has not changed: finance teams are still matching imported bank transactions to existing NetSuite records or creating new records for unmatched transactions. What changed is the interface and the tab structure used to do that work.
 
-The Match Suggestions approach surfaces potential matches alongside the transaction being reviewed, rather than requiring the user to navigate to a separate tab to find matches. The five available actions per transaction give users more options in a single view without switching between screens.
+The Match Suggestions approach surfaces potential matches alongside the transaction being reviewed, rather than sending them to the Review subtab. The Transactions to Match subtab consolidates matching and submission into one step, removing the separate submission action that was required before.
+
+### Required action before the upgrade {#match-bank-data-required-action}
+
+NetSuite has confirmed that any transactions sitting on the Review subtab that have not been submitted will have their matches removed when 2026.2 installs. Those transactions will be moved to the Transactions to Match subtab and may need to be rematched manually. Unsubmitted in-transit payment matches may need to be matched manually again.
+
+**Before your account upgrades to 2026.2, complete the following for each bank and credit card account:**
+
+1. Go to Transactions > Bank > Bank Matching and Reconciliation > Match Bank Data
+2. From the Account list, select the bank or credit card account
+3. Open the Review subtab
+4. Review and submit any transactions you want processed before the transition
+5. Repeat for each account that has active bank reconciliation
+
+If your account has multiple bank or credit card accounts configured for reconciliation, this step must be completed for each account separately.
+
+**After the upgrade, to regenerate match suggestions:**
+
+1. Go to Transactions > Bank > Bank Matching and Reconciliation > Match Bank Data
+2. Select the account from the Account list
+3. Click Run Reconciliation Rules to regenerate eligible match suggestions
+4. Review the Match Suggestions subtab and submit, reject, or select alternate matches as needed
 
 ### What to communicate to your team
 
-Team members responsible for bank reconciliation will notice the change when they open the Match Bank Data page. The new layout is different enough that a brief walkthrough before the team encounters it in Production is worth doing. Your Sandbox account already has the 2026.2 update; the Match Suggestions interface is available there now.
+Team members responsible for bank reconciliation need to know two things: first, that they must complete the pre-upgrade submission step before 2026.2 installs on their account; second, that the interface will look different after the upgrade. The new layout is different enough that a brief walkthrough before the team encounters it in Production is worth doing. Your Sandbox account already has the 2026.2 update; the Match Suggestions interface is available there now.
+
+| | Before 2026.2 | After 2026.2 |
+|---|---|---|
+| Automatic match destination | Review subtab | Match Suggestions subtab |
+| Submission | Separate step required | Combined with match or clear action |
+| Tab name | To Be Matched | Transactions to Match |
+| Match options per transaction | Single match shown | Up to five suggestions shown |
 
 ## How Should You Test These Features in Sandbox?
 
