@@ -5,6 +5,7 @@
 ## Services
 
 - [NetSuite Post-Go-Live Support](https://suitepacific.com/netsuite-post-go-live-support): What ongoing support covers after the implementation ends
+- [NetSuite Managed Services Pricing](https://suitepacific.com/netsuite-managed-services-pricing): Published plan pricing ($799/$1,499/$2,499), effective hourly rates, comparison to hiring an admin, comparison to independent consultants, included/excluded scope, contract terms
 - [NetSuite Managed Support](https://suitepacific.com/netsuite-managed-support): Fixed monthly retainer covering development, administration, break-fix, and upgrade preparation
 - [NetSuite Care Plans](https://suitepacific.com/netsuite-care): Monthly retainer plans from $799 to $2,499/month for ongoing SuiteScript, workflow, reporting, and troubleshooting support; 3-month minimum then month-to-month
 - [Hire a NetSuite Developer](https://suitepacific.com/hire-netsuite-developer): Dedicated SuiteScript developer for custom scripts, integrations, and automation; no long-term lock-in

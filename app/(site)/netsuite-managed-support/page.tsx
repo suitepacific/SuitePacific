@@ -482,6 +482,12 @@ export default function NetSuiteManagedSupportPage() {
           <p className="text-sm font-semibold text-brand-900 mb-3">Related reading</p>
           <ul className="space-y-2.5">
             <li className="text-sm text-brand-400">
+              <Link href="/netsuite-managed-services-pricing" className="text-accent hover:underline">
+                NetSuite managed services pricing
+              </Link>{" "}
+              breaks down SuitePacific plan costs, effective hourly rates, and how managed support compares to hiring an in-house administrator.
+            </li>
+            <li className="text-sm text-brand-400">
               <Link href="/netsuite-support" className="text-accent hover:underline">
                 NetSuite support overview
               </Link>{" "}
