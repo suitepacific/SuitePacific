@@ -11,7 +11,7 @@ import {
   FlaskConical,
   Rocket,
 } from "lucide-react";
-import { BreadcrumbJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { FreeScriptCheckForm } from "@/components/sections/FreeScriptCheckForm";
 import { SITE_URL } from "@/lib/content";
@@ -270,6 +270,13 @@ export default function SuiteScriptMigrationPage() {
         ]}
       />
       <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="Is Your NetSuite Running Legacy SuiteScript? | SuiteScript 2.1 Migration"
+        description="How to identify whether your NetSuite account is running legacy SuiteScript versions, what the migration to SuiteScript 2.1 involves, and why upgrading before the 2028.2 deprecation deadline matters."
+        videoId="4NZQgbBZN54"
+        duration="PT60S"
+        uploadDate="2026-09-23T00:00:00+00:00"
+      />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
 

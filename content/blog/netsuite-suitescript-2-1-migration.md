@@ -4,6 +4,11 @@ description: "NetSuite will retire SuiteScript 1.0, 2.0, and 2.x in the 2028.2 r
 date: "2026-09-17"
 updated: "2026-09-17"
 tags: ["SuiteScript", "Migration", "Deprecation", "Development"]
+video:
+  id: "4NZQgbBZN54"
+  title: "Is Your NetSuite Running Legacy SuiteScript? | SuiteScript 2.1 Migration"
+  description: "How to identify whether your NetSuite account is running legacy SuiteScript versions, what the migration to SuiteScript 2.1 involves, and why upgrading before the 2028.2 deprecation deadline matters."
+  uploadDate: "2026-09-23"
 ---
 
 NetSuite SuiteScript 2.1 migration is the audit and upgrade of legacy SuiteScript 1.0, 2.0, and 2.x scripts to SuiteScript 2.1 before Oracle retires the legacy versions in the 2028.2 release.
