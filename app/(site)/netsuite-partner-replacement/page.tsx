@@ -332,7 +332,7 @@ export default function NetSuitePartnerReplacementPage() {
         </div>
 
         {/* Transition phases */}
-        <div className="mt-14" data-section="transition-phases">
+        <div id="transition-phases" className="mt-14" data-section="transition-phases">
           <h2 className="text-lg font-semibold text-brand-900 mb-2">What does a NetSuite partner transition look like?</h2>
           <p className="text-sm text-brand-400 mb-6">
             Every new account goes through three phases before settling into regular ongoing support.
