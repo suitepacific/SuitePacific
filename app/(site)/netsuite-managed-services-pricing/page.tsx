@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle2, XCircle, DollarSign, Clock, Users, Zap } from "lucide-react";
-import { BreadcrumbJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
@@ -185,6 +185,7 @@ export default function NetSuiteManagedServicesPricingPage() {
           { name: "Care Pro", price: 2499, description: "35 hours/month: full account coverage including active development, integration management, and release readiness. Month-to-month." },
         ]}
       />
+      <FaqJsonLd items={FAQ} />
       <OrganizationJsonLd />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">

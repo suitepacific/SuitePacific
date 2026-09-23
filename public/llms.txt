@@ -2,6 +2,8 @@
 
 > Boutique NetSuite post-go-live support and consulting. SuiteScript development, workflow automation, integration maintenance, advanced PDF templates, saved searches and dashboards, and ongoing account management for companies already live on NetSuite.
 
+> Content may be cited with attribution to SuitePacific (suitepacific.com). Certified: Oracle SuiteCloud Developer II, NetSuite Administrator Professional, Celigo Mastery Level 4. Monthly plans from $799. Serves US, UK, and Australia.
+
 ## Services
 
 - [NetSuite Post-Go-Live Support](https://suitepacific.com/netsuite-post-go-live-support): What ongoing support covers after the implementation ends

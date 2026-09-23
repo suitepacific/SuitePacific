@@ -121,6 +121,43 @@ const WHY_SP = [
   },
 ];
 
+const BEFORE_AFTER = [
+  {
+    area: "Script deployments",
+    before: "Unknown which scripts run, fail, or consume excessive governance units",
+    after: "Each deployment's execution status, error rate, and governance cost documented with risk classification",
+  },
+  {
+    area: "Saved searches",
+    before: "Unsure which searches slow the account or cause dashboard load issues",
+    after: "Searches missing indexed criteria identified; unbounded portlets flagged with specific fix recommendations",
+  },
+  {
+    area: "Workflow configuration",
+    before: "Workflows present but entry conditions and script overlap unclear",
+    after: "Entry conditions, exit paths, and conflicts with User Event scripts mapped for every active workflow",
+  },
+  {
+    area: "Roles and permissions",
+    before: "Unknown who has administrator access or which former employees still have active accounts",
+    after: "Least-privilege gaps, over-permissioned roles, and inactive accounts listed with remediation steps",
+  },
+  {
+    area: "Custom fields",
+    before: "Unknown which fields carry data versus were built but never used",
+    after: "Active versus empty fields enumerated; fields inflating record load with no active use identified",
+  },
+];
+
+const SAMPLE_FINDINGS = [
+  { category: "Script Deployments", finding: "3 active User Event scripts deployed to All Records instead of specific record types; creates governance unit risk on high-volume saves." },
+  { category: "Saved Searches", finding: "2 dashboard portlets with unbounded result sets loading on every page; no indexed criteria on the main revenue report used in monthly close." },
+  { category: "Workflow Configuration", finding: "4 workflows targeting the same Sales Order record with overlapping entry conditions; 1 approval workflow has no exit branch on rejection path." },
+  { category: "Roles and Permissions", finding: "2 inactive employee accounts with active Administrator role; 3 active roles granting Full Edit access to financial records without documented business need." },
+  { category: "Custom Fields", finding: "47 custom fields present; 18 carry no data in any transaction record; 12 appear on no active form and inflate record load on every page." },
+  { category: "Integration Health", finding: "Active integration auth token expires within 30 days; 3 scheduled scripts processing external files have no error logging in production." },
+];
+
 const FAQ = [
   {
     question: "How long does the health check take?",
@@ -178,6 +215,8 @@ export default function NetSuiteHealthCheckPage() {
         description="Independent review of a live NetSuite account covering scripts, workflows, custom fields, saved searches, roles, and integrations, with a written findings report. Fixed fee $799. Delivered within 5-7 business days."
         url={`${SITE_URL}/netsuite-health-check`}
         serviceType="NetSuite Audit"
+        datePublished="2026-08-13T00:00:00+00:00"
+        dateModified="2026-09-23T00:00:00+00:00"
         offers={[
           { name: "Health Check", price: 799, description: "Fixed-fee structured review of the full NetSuite customization layer: SuiteScript, workflows, saved searches, roles, integrations, and custom fields. Written report delivered in 5-7 business days." },
         ]}
@@ -205,7 +244,11 @@ export default function NetSuiteHealthCheckPage() {
           <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>
           <LeadFormLight />
         </div>
-        <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Written report within 5-7 days · Fixed fee $799 · No upsell obligation</p>
+        <p className="mt-3 text-xs text-brand-400">
+          <span className="text-yellow-500">&#9733;&#9733;&#9733;&#9733;&#9733;</span>{" "}
+          <span className="font-medium text-brand-700">5.0</span>{" "}
+          <span>· 5 client reviews · NetSuite-certified · Fixed fee $799 · No upsell obligation</span>
+        </p>
 
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
@@ -264,6 +307,49 @@ export default function NetSuiteHealthCheckPage() {
               </Card>
             ))}
           </div>
+        </div>
+
+        {/* Before vs After comparison */}
+        <div className="mt-14" data-section="before-after">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">What changes after a NetSuite health check?</h2>
+          <p className="text-sm text-brand-400 mb-5">Most accounts start the health check with low visibility into what was actually built. The review converts unknown risk into documented, prioritized findings.</p>
+          <div className="overflow-x-auto rounded-xl border border-brand-100">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-brand-50/60 border-b border-brand-100">
+                  <th className="py-2.5 px-4 text-left text-xs font-semibold text-brand-900 w-1/4">Area</th>
+                  <th className="py-2.5 px-4 text-left text-xs font-semibold text-brand-900 w-[37.5%]">Before review</th>
+                  <th className="py-2.5 px-4 text-left text-xs font-semibold text-brand-900 w-[37.5%]">After health check</th>
+                </tr>
+              </thead>
+              <tbody>
+                {BEFORE_AFTER.map((row, i) => (
+                  <tr key={row.area} className={i < BEFORE_AFTER.length - 1 ? "border-b border-brand-50" : ""}>
+                    <td className="py-3 px-4 font-medium text-brand-900 text-xs align-top">{row.area}</td>
+                    <td className="py-3 px-4 text-brand-400 text-xs align-top">{row.before}</td>
+                    <td className="py-3 px-4 text-brand-700 text-xs align-top">{row.after}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Sample deliverable */}
+        <div className="mt-14" data-section="sample-report">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">What the report includes</h2>
+          <p className="text-sm text-brand-400 mb-5">
+            The written report covers all six audit areas with specific findings, severity classifications, and recommendations. Below are illustrative examples of the type of findings the report surfaces; actual findings depend on what is in your account.
+          </p>
+          <div className="space-y-3">
+            {SAMPLE_FINDINGS.map((item) => (
+              <div key={item.category} className="rounded-xl border border-brand-100 bg-white p-4 shadow-soft">
+                <p className="text-xs font-semibold text-brand-600 mb-1">{item.category}</p>
+                <p className="text-sm text-brand-400">{item.finding}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-xs text-brand-300">These are illustrative findings representing patterns common in live NetSuite accounts. Actual report findings are specific to your account configuration.</p>
         </div>
 
         {/* How it works */}

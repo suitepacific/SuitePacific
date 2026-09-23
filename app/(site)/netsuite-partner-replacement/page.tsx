@@ -222,6 +222,8 @@ export default function NetSuitePartnerReplacementPage() {
         description="Switching NetSuite partners or transitioning from an implementation engagement that has ended. SuitePacific performs an independent account review covering scripts, workflows, saved searches, integrations, and configuration, then takes over ongoing development, administration, and support on a month-to-month retainer. No SOW required per request. Direct developer access, full account context retained across every engagement."
         url={`${SITE_URL}/netsuite-partner-replacement`}
         serviceType="NetSuite Support"
+        datePublished="2026-08-17T00:00:00+00:00"
+        dateModified="2026-09-23T00:00:00+00:00"
         offers={[
           { name: "Care", price: 799, description: "10 hours/month: post-transition support covering development, administration, and break-fix. Month-to-month after 3-month minimum." },
           { name: "Care Plus", price: 1499, description: "20 hours/month: active development and administration following account review and onboarding. Month-to-month." },
@@ -243,7 +245,17 @@ export default function NetSuitePartnerReplacementPage() {
           <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>
           <LeadFormLight />
         </div>
-        <p className="mt-3 text-xs text-brand-400">NetSuite-certified · No SOW per request · Direct developer access · Month-to-month</p>
+        <p className="mt-3 text-xs text-brand-400">
+          <span className="text-yellow-500">&#9733;&#9733;&#9733;&#9733;&#9733;</span>{" "}
+          <span className="font-medium text-brand-700">5.0</span>{" "}
+          <span>· 5 client reviews · NetSuite-certified · No SOW per request · Month-to-month</span>
+        </p>
+        <p className="mt-2 text-xs text-brand-300">
+          Not ready to start?{" "}
+          <Link href="#transition-phases" className="text-accent hover:underline">
+            Read how a NetSuite partner transition works in practice.
+          </Link>
+        </p>
         <p className="mt-2 text-xs text-brand-300"><time dateTime="2026-08">Published August 2026</time></p>
 
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
@@ -319,9 +331,43 @@ export default function NetSuitePartnerReplacementPage() {
           </div>
         </div>
 
+        {/* Transition phases */}
+        <div className="mt-14" data-section="transition-phases">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">What does a NetSuite partner transition look like?</h2>
+          <p className="text-sm text-brand-400 mb-6">
+            Every new account goes through three phases before settling into regular ongoing support.
+            The first phase is always a review of what was built, regardless of how much documentation the previous partner provided.
+          </p>
+          <div className="space-y-4">
+            {TRANSITION_PHASES.map((phase) => (
+              <div key={phase.phase} className="rounded-xl border border-brand-100 bg-white p-5 shadow-soft">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-3">
+                  <span className="text-xs font-semibold text-accent bg-accent/10 rounded-full h-7 w-7 flex items-center justify-center shrink-0">
+                    {phase.phase}
+                  </span>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+                    <p className="font-semibold text-brand-900 text-sm">{phase.name}</p>
+                    <span className="hidden sm:block text-brand-200">·</span>
+                    <p className="text-xs text-accent font-medium">{phase.timeline}</p>
+                  </div>
+                </div>
+                <p className="text-xs font-medium text-brand-600 mb-2">{phase.focus}</p>
+                <ul className="space-y-1.5">
+                  {phase.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-brand-400">
+                      <CheckCircle2 className="h-3.5 w-3.5 text-accent shrink-0 mt-0.5" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Structural mismatch comparison */}
         <div className="mt-14" data-section="comparison">
-          <h2 className="text-lg font-semibold text-brand-900 mb-2">Why large consulting firms struggle with ongoing NetSuite support</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">Why do large consulting firms struggle with ongoing NetSuite support?</h2>
           <p className="text-sm text-brand-400 mb-5">
             The issue is not that large firms are bad at their jobs. The issue is that their operating
             model is optimized for implementations, not for the ongoing, small-batch work that a live
@@ -386,43 +432,9 @@ export default function NetSuitePartnerReplacementPage() {
           </p>
         </div>
 
-        {/* Transition phases */}
-        <div className="mt-14" data-section="transition-phases">
-          <h2 className="text-lg font-semibold text-brand-900 mb-2">What does a NetSuite partner transition look like?</h2>
-          <p className="text-sm text-brand-400 mb-6">
-            Every new account goes through three phases before settling into regular ongoing support.
-            The first phase is always a review of what was built, regardless of how much documentation the previous partner provided.
-          </p>
-          <div className="space-y-4">
-            {TRANSITION_PHASES.map((phase) => (
-              <div key={phase.phase} className="rounded-xl border border-brand-100 bg-white p-5 shadow-soft">
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-3">
-                  <span className="text-xs font-semibold text-accent bg-accent/10 rounded-full h-7 w-7 flex items-center justify-center shrink-0">
-                    {phase.phase}
-                  </span>
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
-                    <p className="font-semibold text-brand-900 text-sm">{phase.name}</p>
-                    <span className="hidden sm:block text-brand-200">·</span>
-                    <p className="text-xs text-accent font-medium">{phase.timeline}</p>
-                  </div>
-                </div>
-                <p className="text-xs font-medium text-brand-600 mb-2">{phase.focus}</p>
-                <ul className="space-y-1.5">
-                  {phase.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-brand-400">
-                      <CheckCircle2 className="h-3.5 w-3.5 text-accent shrink-0 mt-0.5" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why companies choose SuitePacific for the transition</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why do companies choose SuitePacific for the transition?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">

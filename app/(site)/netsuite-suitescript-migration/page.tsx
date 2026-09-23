@@ -11,7 +11,7 @@ import {
   FlaskConical,
   Rocket,
 } from "lucide-react";
-import { BreadcrumbJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { FreeScriptCheckForm } from "@/components/sections/FreeScriptCheckForm";
 import { SITE_URL } from "@/lib/content";
@@ -263,12 +263,15 @@ export default function SuiteScriptMigrationPage() {
         description="Script inventory, risk classification, compatibility review, SuiteScript 2.1 conversion, sandbox testing, and production deployment for NetSuite accounts with legacy SuiteScript 1.0, 2.0, and 2.x scripts."
         url={`${SITE_URL}/netsuite-suitescript-migration`}
         serviceType="NetSuite SuiteScript Migration"
+        datePublished="2026-09-23T00:00:00+00:00"
+        dateModified="2026-09-23T00:00:00+00:00"
         offers={[
           { name: "Care", price: 799, description: "10 hours/month: script audit, 2.0-to-2.1 migrations, sandbox testing. Month-to-month after 3-month minimum." },
           { name: "Care Plus", price: 1499, description: "20 hours/month: full migration including 1.0 rewrites, complex scripts, and integration-dependent RESTlets." },
           { name: "Care Pro", price: 2499, description: "35 hours/month: complete legacy migration with documentation, priority scheduling, and post-deployment monitoring." },
         ]}
       />
+      <FaqJsonLd items={FAQ} />
       <OrganizationJsonLd />
       <VideoObjectJsonLd
         name="Is Your NetSuite Running Legacy SuiteScript? | SuiteScript 2.1 Migration"
