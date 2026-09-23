@@ -111,8 +111,8 @@ export function BlogPostingJsonLd({ post }: { post: BlogPostMeta }) {
     isAccessibleForFree: true,
     speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", "h2"] },
     image: { "@type": "ImageObject", url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 },
-    datePublished: post.date,
-    dateModified: post.updated ?? post.date,
+    datePublished: /T\d{2}:\d{2}/.test(post.date) ? post.date : `${post.date}T00:00:00+00:00`,
+    dateModified: (() => { const d = post.updated ?? post.date; return /T\d{2}:\d{2}/.test(d) ? d : `${d}T00:00:00+00:00`; })(),
     author: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: LEGAL_NAME },
     publisher: {
       "@type": "Organization",

@@ -229,12 +229,12 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Support by Industry",
   description:
-    "NetSuite post-go-live support across 24 industries: construction, manufacturing, SaaS, oil and gas, government contractors, private equity, franchise, cannabis, agriculture, EdTech, publishing, MSPs.",
+    "Post-go-live NetSuite support across 24 industries: construction, manufacturing, SaaS, nonprofit, private equity, oil and gas, franchise, and cannabis.",
   alternates: { canonical: "/industries" },
   openGraph: {
     title: "NetSuite Support by Industry",
     description:
-      "Post-go-live NetSuite support across 24 industries: construction, manufacturing, SaaS, oil and gas, government contractors, private equity, franchise, cannabis, agriculture, EdTech, publishing, MSPs, and more.",
+      "Post-go-live NetSuite support across 24 industries: construction, manufacturing, SaaS, nonprofit, private equity, oil and gas, franchise, and cannabis.",
     url: "https://suitepacific.com/industries",
     type: "website",
     images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],

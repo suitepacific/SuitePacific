@@ -20,6 +20,7 @@ const REDIRECTED_RESOURCE_SLUGS = new Set([
 ]);
 
 const INDUSTRY_PAGES: { path: string; lastModified: Date }[] = [
+  { path: "/industries", lastModified: new Date("2026-09-23") },
   { path: "/industries/manufacturing", lastModified: SEO_REFRESH_DATE },
   { path: "/industries/wholesale-distribution", lastModified: SEO_REFRESH_DATE },
   { path: "/industries/construction", lastModified: SEO_REFRESH_DATE },
@@ -28,6 +29,22 @@ const INDUSTRY_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/industries/retail-ecommerce", lastModified: SEO_REFRESH_DATE },
   { path: "/industries/professional-services", lastModified: SEO_REFRESH_DATE },
   { path: "/industries/nonprofit", lastModified: new Date("2026-08-15") },
+  { path: "/industries/food-beverage", lastModified: SEO_REFRESH_DATE },
+  { path: "/industries/healthcare", lastModified: SEO_REFRESH_DATE },
+  { path: "/industries/fintech", lastModified: new Date("2026-09-23") },
+  { path: "/industries/recruitment", lastModified: new Date("2026-09-23") },
+  { path: "/industries/courier-travel", lastModified: new Date("2026-09-23") },
+  { path: "/industries/service-industries", lastModified: new Date("2026-09-23") },
+  { path: "/industries/architecture-engineering", lastModified: new Date("2026-09-23") },
+  { path: "/industries/oil-gas", lastModified: new Date("2026-09-23") },
+  { path: "/industries/government-contractors", lastModified: new Date("2026-09-23") },
+  { path: "/industries/private-equity", lastModified: new Date("2026-09-23") },
+  { path: "/industries/franchise", lastModified: new Date("2026-09-23") },
+  { path: "/industries/cannabis", lastModified: new Date("2026-09-23") },
+  { path: "/industries/agriculture", lastModified: new Date("2026-09-23") },
+  { path: "/industries/edtech", lastModified: new Date("2026-09-23") },
+  { path: "/industries/publishing-media", lastModified: new Date("2026-09-23") },
+  { path: "/industries/managed-service-providers", lastModified: new Date("2026-09-23") },
   { path: "/netsuite-support-uk", lastModified: new Date("2026-08-15") },
   { path: "/netsuite-suitebilling-support", lastModified: new Date("2026-08-15") },
 ];
@@ -79,6 +96,8 @@ const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/netsuite-partner-too-slow", lastModified: new Date("2026-08-19") },
   { path: "/netsuite-partner-not-responsive", lastModified: new Date("2026-08-19") },
   { path: "/netsuite-2026-2-release-readiness-checklist", lastModified: new Date("2026-08-19") },
+  { path: "/netsuite-performance-issues", lastModified: new Date("2026-09-23") },
+  { path: "/netsuite-suitescript-migration", lastModified: new Date("2026-09-23") },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
