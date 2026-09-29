@@ -410,6 +410,11 @@
 - [NetSuite Deductions Management](https://suitepacific.com/netsuite-deductions-management): Retailer chargeback reconciliation, short-pay processing, and dispute workflows for food and beverage companies
 - [NetSuite EDI Integration](https://suitepacific.com/netsuite-edi-integration): EDI 850/856/810 integration with retail trading partners including Walmart, Target, and Kroger via NetSuite
 
+## Press
+
+- [Press Releases](https://suitepacific.com/press): SuitePacific newsroom and press release archive
+- [SuitePacific Introduces Dedicated Post-Go-Live NetSuite Support for Growing Businesses](https://www.abnewswire.com/pressreleases/suitepacific-introduces-dedicated-postgolive-netsuite-support-for-growing-businesses_838766.html): Press release published September 29, 2026 on ABNewswire. SuitePacific introduces post-go-live NetSuite support for growing businesses through a flexible, cost-conscious consulting model covering SuiteScript development, integrations, workflow automation, reporting, saved searches, and administration.
+
 ## About
 
 SuitePacific is a boutique consulting firm focused exclusively on post-go-live NetSuite accounts. Credentials: SuiteCloud Developer II, Administrator Professional. Engagements are month-to-month; no annual lock-in. Direct access to the consultant managing the account on every request. Serving clients in the US, UK, and Australia.

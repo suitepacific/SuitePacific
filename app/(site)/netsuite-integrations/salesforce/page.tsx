@@ -194,15 +194,17 @@ export default function NetSuiteSalesforceIntegrationPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Explicit conflict handling · Sandbox-tested · Direct developer access</p>
 
         <p className="mt-6 text-sm text-brand-400">
-          The handoff between Salesforce and NetSuite is where sales velocity and operational accuracy
-          collide. A well-built integration eliminates manual re-entry at deal close, keeps customer
-          records consistent across both systems, and gives sales reps the AR visibility they need
-          without leaving Salesforce.
+          A NetSuite Salesforce integration refers to the automated connection between Oracle NetSuite
+          and Salesforce CRM that synchronizes accounts, contacts, opportunities, sales orders,
+          invoices, and payment status between both systems. The handoff between Salesforce and
+          NetSuite is where sales velocity and operational accuracy collide. A well-built integration
+          eliminates manual re-entry at deal close, keeps customer records consistent across both
+          systems, and gives sales reps the AR visibility they need without leaving Salesforce.
         </p>
 
         {/* Pain Points */}
         <div className="mt-14" data-section="pain-points">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Common situations that bring people here</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why do companies need a NetSuite Salesforce integration?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {PAIN_POINTS.map((item) => (
               <Card key={item.title} className="p-5 flex flex-col gap-3">
@@ -216,7 +218,7 @@ export default function NetSuiteSalesforceIntegrationPage() {
 
         {/* Data flows */}
         <div className="mt-14" data-section="data-flows">
-          <h2 className="text-lg font-semibold text-brand-900 mb-1">What the integration handles</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-1">What does the NetSuite Salesforce integration handle?</h2>
           <p className="text-sm text-brand-400 mb-6">
             Scope is determined by your quote-to-cash process. Most Salesforce-NetSuite integrations cover account sync and opportunity-to-order at minimum.
           </p>
@@ -235,7 +237,7 @@ export default function NetSuiteSalesforceIntegrationPage() {
 
         {/* How it works */}
         <div className="mt-14" data-section="how-it-works">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">How we build it</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">How does SuitePacific build the Salesforce integration?</h2>
           <div className="space-y-4">
             {HOW_IT_WORKS.map((item) => (
               <div key={item.step} className="flex items-start gap-5">
@@ -253,7 +255,7 @@ export default function NetSuiteSalesforceIntegrationPage() {
 
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why SuitePacific</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why do companies choose SuitePacific for NetSuite Salesforce integration?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">

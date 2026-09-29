@@ -194,15 +194,16 @@ export default function NetSuiteAvalaraIntegrationPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Configuration review included · Sandbox-tested · Direct developer access</p>
 
         <p className="mt-6 text-sm text-brand-400">
-          Accurate sales tax across multiple states requires more than a rate table. Avalara AvaTax
-          calculates tax by rooftop jurisdiction in real time as transactions are created in NetSuite,
-          handling nexus, exemptions, and product taxability rules that are impractical to maintain
-          manually at scale.
+          A NetSuite Avalara integration refers to the automated connection between Oracle NetSuite
+          and Avalara AvaTax that calculates sales tax in real time as transactions are created,
+          without manual rate maintenance. Accurate sales tax across multiple states requires more
+          than a rate table. AvaTax calculates tax by rooftop jurisdiction, handling nexus,
+          exemptions, and product taxability rules that are impractical to maintain manually at scale.
         </p>
 
         {/* Pain Points */}
         <div className="mt-14" data-section="pain-points">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Common situations that bring people here</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why do companies need a NetSuite Avalara integration?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {PAIN_POINTS.map((item) => (
               <Card key={item.title} className="p-5 flex flex-col gap-3">
@@ -216,7 +217,7 @@ export default function NetSuiteAvalaraIntegrationPage() {
 
         {/* Integration areas */}
         <div className="mt-14" data-section="integration-areas">
-          <h2 className="text-lg font-semibold text-brand-900 mb-1">What the integration covers</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-1">What does the NetSuite Avalara integration cover?</h2>
           <p className="text-sm text-brand-400 mb-6">
             Real-time calculation and exemption handling are the foundation. Commit and reconciliation close the loop with Avalara&apos;s returns filing.
           </p>
@@ -235,7 +236,7 @@ export default function NetSuiteAvalaraIntegrationPage() {
 
         {/* How it works */}
         <div className="mt-14" data-section="how-it-works">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">How we build it</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">How does SuitePacific build the Avalara integration?</h2>
           <div className="space-y-4">
             {HOW_IT_WORKS.map((item) => (
               <div key={item.step} className="flex items-start gap-5">
@@ -253,7 +254,7 @@ export default function NetSuiteAvalaraIntegrationPage() {
 
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why SuitePacific</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why do companies choose SuitePacific for NetSuite Avalara integration?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">

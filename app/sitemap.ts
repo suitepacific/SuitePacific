@@ -110,6 +110,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/blog`, lastModified: posts.length > 0 ? new Date(posts[0].date) : SITE_LAUNCH_DATE },
     { url: `${SITE_URL}/resources`, lastModified: new Date("2026-07-14") },
     { url: `${SITE_URL}/case-studies`, lastModified: SITE_LAUNCH_DATE },
+    { url: `${SITE_URL}/press`, lastModified: new Date("2026-09-29") },
     ...INDUSTRY_PAGES.map(({ path, lastModified }) => ({
       url: `${SITE_URL}${path}`,
       lastModified,

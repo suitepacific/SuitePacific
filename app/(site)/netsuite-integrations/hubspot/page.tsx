@@ -194,14 +194,17 @@ export default function NetSuiteHubSpotIntegrationPage() {
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Native or custom build · Sandbox-tested · Direct developer access</p>
 
         <p className="mt-6 text-sm text-brand-400">
-          HubSpot handles the deal; NetSuite handles the order, invoice, and payment. The integration
-          between them connects the close to the cash cycle, eliminates manual re-entry at deal close,
-          and gives sales teams the financial visibility they need to manage renewals and expansions.
+          A NetSuite HubSpot integration refers to the automated connection between Oracle NetSuite
+          and HubSpot CRM that synchronizes contacts, companies, deals, and financial records between
+          the two systems. HubSpot handles the deal; NetSuite handles the order, invoice, and
+          payment. The integration connects the close to the cash cycle, eliminates manual re-entry
+          at deal close, and gives sales teams the financial visibility they need to manage renewals
+          and expansions.
         </p>
 
         {/* Pain Points */}
         <div className="mt-14" data-section="pain-points">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Common situations that bring people here</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why do companies need a NetSuite HubSpot integration?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {PAIN_POINTS.map((item) => (
               <Card key={item.title} className="p-5 flex flex-col gap-3">
@@ -215,7 +218,7 @@ export default function NetSuiteHubSpotIntegrationPage() {
 
         {/* Data flows */}
         <div className="mt-14" data-section="data-flows">
-          <h2 className="text-lg font-semibold text-brand-900 mb-1">What the integration handles</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-1">What does the NetSuite HubSpot integration handle?</h2>
           <p className="text-sm text-brand-400 mb-6">
             Scope depends on your sales and billing process. Contact sync and deal-to-order are the most common starting points.
           </p>
@@ -234,7 +237,7 @@ export default function NetSuiteHubSpotIntegrationPage() {
 
         {/* How it works */}
         <div className="mt-14" data-section="how-it-works">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">How we build it</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">How does SuitePacific build the HubSpot integration?</h2>
           <div className="space-y-4">
             {HOW_IT_WORKS.map((item) => (
               <div key={item.step} className="flex items-start gap-5">
@@ -252,7 +255,7 @@ export default function NetSuiteHubSpotIntegrationPage() {
 
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why SuitePacific</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why do companies choose SuitePacific for NetSuite HubSpot integration?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">
