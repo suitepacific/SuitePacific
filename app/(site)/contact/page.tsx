@@ -95,6 +95,13 @@ export default function ContactPage() {
                   {CONTACT_EMAIL}
                 </a>
               </p>
+              <p className="mt-3 text-sm text-brand-400">
+                For media inquiries, visit our{" "}
+                <Link href="/press" className="text-accent hover:underline">
+                  newsroom
+                </Link>
+                .
+              </p>
             </div>
           </div>
 

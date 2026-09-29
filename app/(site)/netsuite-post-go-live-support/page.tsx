@@ -398,6 +398,9 @@ export default function PostGoLiveSupportPage() {
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Sandbox-first · Direct access, no ticket system · Month-to-month</p>
         <p className="mt-2 text-xs text-brand-300"><time dateTime="2026-08">Published August 2026</time></p>
+        <p className="mt-2 text-xs text-brand-300">
+          <Link href="/press" className="hover:text-accent hover:underline">Read our press release</Link>
+        </p>
 
         <p className="mt-6 text-sm text-brand-400">
           Implementation partners close their engagement at go-live. The scripts, workflows,
