@@ -354,3 +354,9 @@ A: Not directly by name. However, you can repeat the expression in a second form
 
 **Q: What is the difference between DECODE and CASE WHEN?**
 A: Both handle conditional logic. `DECODE` is an Oracle-specific function: `DECODE(field, value1, result1, value2, result2, default)`. `CASE WHEN` is standard SQL and more readable for complex conditions. Either works in NetSuite formula fields. For new formulas, `CASE WHEN` is generally preferred because it is easier to read and supports range comparisons (`WHEN amount > 1000`) that DECODE cannot express cleanly.
+
+## Related reading
+
+- [NetSuite saved searches and dashboards](/netsuite-saved-searches-dashboards): custom saved searches, KPI reporting, and dashboard builds for live accounts.
+- [NetSuite saved search examples](/blog/netsuite-saved-search-examples): practical search configurations for common operational and financial reporting needs.
+- [NetSuite saved search examples](/blog/netsuite-saved-search-examples): practical search configurations for common operational and financial reporting needs.

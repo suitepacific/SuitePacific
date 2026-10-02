@@ -133,3 +133,9 @@ Oracle NetSuite Certified SuiteCloud Developer II and Oracle NetSuite Certified 
 ---
 
 *SuitePacific is a certified NetSuite managed support practice for post-go-live SMBs. SuiteScript development, integration maintenance, workflow automation, and NetSuite administration covered in one month-to-month retainer. Plans start at $799 per month. [See the full ACS alternative guide](/netsuite-acs-alternative) or [view support plans](/netsuite-care).*
+
+## Related reading
+
+- [NetSuite ACS alternative](/netsuite-acs-alternative): how SuitePacific compares to Oracle ACS on scope, response time, and cost.
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans from $799 covering SuiteScript, workflows, reporting, and ongoing support.
+- [NetSuite managed services pricing](/netsuite-managed-services-pricing): published plan pricing, effective hourly rates, and a comparison to ACS and independent consultants.

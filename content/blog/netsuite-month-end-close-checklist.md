@@ -144,3 +144,9 @@ Lock the subledger periods (A/R, A/P, Payroll) before locking the main All Trans
 ---
 
 Month-end in NetSuite is faster when the underlying account is clean and automated correctly. If any of these items consistently require manual intervention or workarounds, that is a signal that a saved search, a workflow, or a script could remove it from the checklist entirely. That is the kind of ongoing work covered under our [NetSuite post-go-live support](/netsuite-post-go-live-support). For the tooling side, [saved searches and dashboards](/netsuite-saved-searches-dashboards) and [workflow automation](/netsuite-workflow-automation) are the two services most relevant to tightening a close process. For the broader post-go-live context, see [NetSuite Post-Go-Live Checklist: What to Prioritize in Your First 90 Days](/blog/netsuite-post-go-live-checklist). If your close is still taking longer than it should, [book a consultation](/contact) and we can look at where the time is actually going.
+
+## Related reading
+
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): what ongoing support covers after the implementation ends.
+- [NetSuite health check](/netsuite-health-check): a structured account review that identifies issues causing operational friction.
+- [NetSuite account optimization](/netsuite-account-optimization): what optimization covers: performance, saved searches, workflows, and reporting improvements.

@@ -4,7 +4,7 @@ import { Shield, FileText, BarChart2, Workflow, Code2, ShieldCheck, RefreshCcw, 
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
@@ -83,6 +83,14 @@ export default function GovernmentContractorsPage() {
       <FaqJsonLd items={FAQ} />
       <ServiceJsonLd name="NetSuite Support for Government Contractors" description="NetSuite post-go-live support for federal contractors including DCAA compliance structures, indirect rate pools, incurred cost submissions, and CLIN billing." url={`${SITE_URL}/industries/government-contractors`} serviceType="NetSuite Government Contractor Support" datePublished="2026-09-23T00:00:00+00:00" dateModified="2026-09-23T00:00:00+00:00" offers={[{ name: "Care", price: 799, description: "10 hours/month: DCAA structure maintenance, saved searches, and administration for government contractor accounts. Month-to-month after 3-month minimum." }, { name: "Care Plus", price: 1499, description: "20 hours/month: active development including ICE schedule scripts, CLIN billing, and indirect rate management. Month-to-month." }, { name: "Care Pro", price: 2499, description: "35 hours/month: full government contractor account coverage including DCAA compliance, billing automation, and audit support. Month-to-month." }]} />
       <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
+        description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
+        videoId="IQvWN_yZ24A"
+        duration="PT18S"
+        uploadDate="2026-08-12T00:00:00+00:00"
+        isShort
+      />
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading as="h1" eyebrow="Government Contractors" title="NetSuite Support & Development for Government Contractors" subtitle="DCAA compliance structures, indirect rate pools, incurred cost schedule extraction, and CLIN billing for federal contractors already live on NetSuite." align="left" />
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">

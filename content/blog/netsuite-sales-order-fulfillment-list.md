@@ -114,3 +114,9 @@ If you are looking to go further and automate order fulfillment entirely, [NetSu
 <p style="margin:0 0 0.75rem;color:#14306b;font-size:0.875rem;line-height:1.6">The 2026.2 list action reduces manual steps. Fully automated fulfillment, triggered by warehouse confirmation, carrier API, or a scheduled workflow, eliminates them. If your operations team still manually touches every order to initiate fulfillment, that is solvable with SuiteScript or SuiteFlow depending on the trigger logic your account needs.</p>
 <a href="/contact" style="display:inline-block;background:#4f7fff;color:#fff;font-size:0.8rem;font-weight:600;padding:0.5rem 1.25rem;border-radius:6px;text-decoration:none">Talk through the automation</a>
 </div>
+
+## Related reading
+
+- [NetSuite order fulfillment](/netsuite-order-fulfillment): fulfillment workflow configuration, pick/pack/ship automation, and backorder handling.
+- [NetSuite workflow automation](/netsuite-workflow-automation): order approval routing, fulfillment triggers, and notification automation.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): ongoing support covering fulfillment workflows and order management configuration.

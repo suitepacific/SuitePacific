@@ -98,3 +98,9 @@ A: Open each currency-type custom field under Customization &gt; Lists, Records,
 For step-by-step instructions on configuring the Currency Context setting on a custom field, see [How to Set Currency Context on NetSuite Currency Custom Fields](/resources/netsuite-currency-context-custom-fields).
 
 For help auditing or configuring custom fields in your NetSuite account, see SuitePacific's [NetSuite administrator support service](/netsuite-administrator-support).
+
+## Related reading
+
+- [NetSuite SuiteScript development](/netsuite-suitescript-development): custom SuiteScript 2.1 scripts including custom GL plugins and field-level automation.
+- [Hire a NetSuite developer](/hire-netsuite-developer): dedicated developer for complex customizations including custom GL plugins and financial automation.
+- [NetSuite workflow automation](/netsuite-workflow-automation): multi-step workflows and field automation that complement custom SuiteScript development.

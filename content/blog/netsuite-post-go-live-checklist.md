@@ -2,7 +2,7 @@
 title: "NetSuite Post-Go-Live Checklist: What to Prioritize in Your First 90 Days"
 description: "A practical checklist of what to set up, review, and clean up in the first 90 days after your NetSuite implementation partner hands off the account."
 date: "2026-06-30"
-updated: "2026-08-07"
+updated: "2026-10-03"
 tags: ["Post-Go-Live", "NetSuite"]
 ---
 
@@ -87,3 +87,9 @@ The first month-end close in NetSuite will involve manual steps that could be au
 ---
 
 The first 90 days are really about preventing two years of debt rather than adding features. Most of what gets painful in a mature NetSuite account was optional to address at go-live and wasn't. If you need help working through this list or don't have an internal resource to own it, [post-go-live support](/netsuite-post-go-live-support) is what SuitePacific does. For the specific tooling: [saved searches](/netsuite-saved-searches-dashboards), [SuiteScript](/netsuite-suitescript-development), and [workflow automation](/netsuite-workflow-automation) are the main levers you'll reach for across most of these items. For what tends to go wrong once an account has been live a while, see [Why Your NetSuite Account Feels Slow and What Actually Fixes It](/blog/netsuite-account-performance).
+
+## Related reading
+
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): what ongoing support covers after the implementation ends.
+- [NetSuite health check](/netsuite-health-check): a structured account review that identifies issues causing operational friction.
+- [NetSuite account optimization](/netsuite-account-optimization): what optimization covers: performance, saved searches, workflows, and reporting improvements.

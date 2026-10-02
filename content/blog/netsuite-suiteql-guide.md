@@ -256,3 +256,9 @@ The complexity compounds quickly in a few specific situations:
 If your SuiteQL use case is more than a one-off query, if you are building an extraction pipeline, wiring it into an integration, or designing a reporting system that needs to work reliably across NetSuite upgrades, talking through the design before you build is worth an hour. Most production SuiteQL failures are predictable once you know the failure modes. See our [SuiteScript development page](/netsuite-suitescript-development) for how we approach these builds, and reach out if you want to discuss your specific situation first.
 
 For related reading: [NetSuite SuiteQL sort change in 2026.2](/blog/netsuite-suiteql-sort-change-2026-2), [NetSuite SuiteQL bound parameters](/blog/netsuite-suiteql-bound-parameters), and [NetSuite saved search vs SuiteAnalytics Workbook](/resources/netsuite-saved-search-vs-suiteanalytics-workbook).
+
+## Related reading
+
+- [NetSuite saved searches and dashboards](/netsuite-saved-searches-dashboards): saved searches, KPI metrics, and dashboard builds alongside SuiteQL for live accounts.
+- [NetSuite saved search examples](/blog/netsuite-saved-search-examples): when saved searches are sufficient and when SuiteQL is needed instead.
+- [SuiteQL bound parameters](/blog/netsuite-suiteql-bound-parameters): how to use parameterized queries to avoid injection risks and improve query reliability.

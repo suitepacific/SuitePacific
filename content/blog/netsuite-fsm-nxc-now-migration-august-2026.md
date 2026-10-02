@@ -159,3 +159,9 @@ Reviewing FSM configuration expressions, identifying checkbox conditions that ma
 If your team is not certain how to locate or evaluate the migrated configuration record, [contact SuitePacific](/contact). We work with NetSuite customers through FSM bundle updates and can help you validate this specific migration before it affects your Production environment.
 
 For dedicated FSM support and post-upgrade troubleshooting, see [NetSuite FSM Support and Troubleshooting](/netsuite-fsm-support). For more on how SuitePacific supports FSM configuration and post-upgrade validation, see the [NetSuite administrator support service](/netsuite-administrator-support).
+
+## Related reading
+
+- [NetSuite data migration](/netsuite-data-migration): migrating historical data, open transactions, and master records into a live NetSuite account.
+- [NetSuite migration from QuickBooks](/netsuite-migration-from-quickbooks): what the migration covers, common data mapping challenges, and what to validate after cutover.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): what ongoing support covers once the migration is complete and the account is live.

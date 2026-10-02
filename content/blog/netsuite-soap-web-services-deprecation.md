@@ -92,3 +92,9 @@ For businesses with legacy integrations that have worked reliably for years, the
 ---
 
 **Running SOAP-based integrations with NetSuite and not sure where to start?** SuitePacific works with businesses on NetSuite integration reviews and REST migrations. We can help you identify what is running, what needs to change, and how to sequence the work. [Get in touch](/contact).
+
+## Related reading
+
+- [NetSuite integrations](/netsuite-integrations): custom and middleware-based integrations for Shopify, Salesforce, HubSpot, Amazon, and other platforms.
+- [Hire a NetSuite developer](/hire-netsuite-developer): dedicated developer for API integrations, RESTlet builds, and SuiteScript work.
+- [NetSuite RESTlet vs REST web services](/blog/netsuite-restlet-vs-rest-web-services): when to use each approach for custom integrations and third-party connectivity.

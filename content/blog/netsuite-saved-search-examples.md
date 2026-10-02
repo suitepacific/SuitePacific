@@ -2,7 +2,7 @@
 title: "10 NetSuite Saved Search Examples (Finance, Operations, Admin)"
 description: "10 ready-to-build NetSuite saved searches for finance, operations, and admin teams, with exact criteria, columns, formula fields, and the configuration mistakes that break each one."
 date: "2026-06-30"
-updated: "2026-08-13"
+updated: "2026-10-03"
 tags: ["Saved Searches", "Reporting"]
 ---
 
@@ -239,3 +239,9 @@ Building the search is half the work. A saved search sitting in the library that
 ---
 
 These are starting points, not finished searches. The right criteria, columns, and available filters depend on how your specific account is set up: your custom fields, your approval chain, your item types. For the techniques that make these searches fast and accurate, see [10 NetSuite Saved Search Tips](/blog/netsuite-saved-search-tips). Several of these searches are also directly useful for month-end close, see [NetSuite Month-End Close Checklist: What Most Teams Miss](/blog/netsuite-month-end-close-checklist) for the full close process context. If you need these built inside your own account, [saved searches and dashboards](/netsuite-saved-searches-dashboards) is one of our core services. [Book a consultation](/contact) if you want to start there.
+
+## Related reading
+
+- [NetSuite saved searches and dashboards](/netsuite-saved-searches-dashboards): custom saved searches, KPI reporting, and dashboard builds for live accounts.
+- [NetSuite saved search formula examples](/blog/netsuite-saved-search-formula-examples): formula fields, case statements, and calculated columns for advanced saved searches.
+- [NetSuite saved search formula examples](/blog/netsuite-saved-search-formula-examples): formula fields, case statements, and calculated columns for advanced saved searches.

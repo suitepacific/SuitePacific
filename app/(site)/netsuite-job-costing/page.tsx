@@ -6,7 +6,7 @@ import {
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
@@ -144,6 +144,14 @@ export default function NetSuiteJobCostingPage() {
         ]}
       />
       <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
+        description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
+        videoId="IQvWN_yZ24A"
+        duration="PT18S"
+        uploadDate="2026-08-12T00:00:00+00:00"
+        isShort
+      />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading

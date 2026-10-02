@@ -133,3 +133,9 @@ After go-live, you need someone who can build reports and saved searches as new 
 
 **How much does it cost to switch from QuickBooks to NetSuite?**
 Year 1 total cost for a mid-market single-entity company typically falls in the $60,000 to $300,000 range, including implementation, license, and the first year of post-go-live support. Multi-entity and complex implementations exceed this. The license is an ongoing annual cost; implementation is a one-time cost; post-go-live support is a recurring cost. All three should be in the budget before the decision is made.
+
+## Related reading
+
+- [NetSuite data migration](/netsuite-data-migration): migrating historical data, open transactions, and master records into a live NetSuite account.
+- [NetSuite migration from QuickBooks](/netsuite-migration-from-quickbooks): what the migration covers, common data mapping challenges, and what to validate after cutover.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): what ongoing support covers once the migration is complete and the account is live.

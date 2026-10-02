@@ -104,3 +104,9 @@ The safest approach is to document exactly what the user does day-to-day before 
 ---
 
 *SuitePacific audits and rebuilds NetSuite user role architecture for companies that have accumulated stale roles, over-permissioned users, and undocumented custom roles since go-live. Oracle SuiteCloud Developer II and Administrator Professional certified. US-based, direct access on every engagement. Plans start at $799 per month. [See the roles and permissions service](/netsuite-user-roles-permissions) or [view support plans](/netsuite-care).*
+
+## Related reading
+
+- [NetSuite user roles and permissions](/netsuite-user-roles-permissions): role design, least-privilege configuration, and permission audits for live accounts.
+- [NetSuite administrator support](/netsuite-administrator-support): ongoing admin work: user management, roles, imports, and account configuration.
+- [NetSuite health check](/netsuite-health-check): a structured review that includes roles, permissions, and access control gaps.

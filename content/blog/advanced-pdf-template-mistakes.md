@@ -2,7 +2,7 @@
 title: "Advanced PDF Templates in NetSuite: 5 Mistakes That Break in Production"
 description: "The most common Advanced PDF/HTML template mistakes in NetSuite, from conditional logic to edge-case data, and how to avoid documents that fail silently on real transactions."
 date: "2026-06-29"
-updated: "2026-08-07"
+updated: "2026-10-03"
 tags: ["Advanced PDF", "Templates"]
 ---
 
@@ -99,3 +99,9 @@ A: The most common cause is a null field without the FreeMarker null-safety oper
 A: Eliminate deep nested joins to related records at print time. Pull values onto the transaction via a saved search or User Event script at save time instead, and reference those flattened fields in the template. This reduces the work the template engine has to do at render time.
 
 Advanced PDF templates are one of the easiest things to get visually right and functionally fragile at the same time. Building and hardening them against real-world data is part of our [advanced PDF template service](/netsuite-advanced-pdf-templates). If your invoices, statements, or forms break on certain customers or transaction types, [book a free consultation](/#contact) and we'll help you track down why. For related reading, see [SuiteScript Best Practices](/blog/suitescript-best-practices) and [NetSuite Post-Go-Live Checklist: What to Prioritize in Your First 90 Days](/blog/netsuite-post-go-live-checklist).
+
+## Related reading
+
+- [NetSuite Advanced PDF templates](/netsuite-advanced-pdf-templates): custom invoice, sales order, packing slip, and statement templates built with FreeMarker.
+- [NetSuite FreeMarker PDF guide](/blog/netsuite-freemarker-pdf-guide): FreeMarker syntax, layout techniques, and data model access for Advanced PDF templates.
+- [NetSuite FreeMarker PDF guide](/blog/netsuite-freemarker-pdf-guide): FreeMarker syntax, data model access, and layout techniques for Advanced PDF templates.

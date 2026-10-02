@@ -127,3 +127,9 @@ A health check's value is entirely in its report. The findings report should con
 **No remediation included:** The health check is an assessment only. The report describes what was found; it does not prescribe a remediation project or bundle one into the assessment engagement.
 
 For the full scope of what a health check covers and how to engage for one, see the [NetSuite health check](/netsuite-health-check) page. For context on what technical debt looks like in each of these layers before the assessment, see [NetSuite technical debt](/netsuite-technical-debt).
+
+## Related reading
+
+- [NetSuite health check](/netsuite-health-check): a structured account review that identifies the issues causing the most operational friction.
+- [NetSuite account optimization](/netsuite-account-optimization): what account optimization covers beyond the health check: ongoing improvement rather than a one-time audit.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): what ongoing support covers after the implementation ends.

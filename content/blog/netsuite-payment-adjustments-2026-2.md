@@ -99,3 +99,9 @@ A: The feature applies to discrepancies handled through customer payment and cus
 A: Review your account's payment adjustment settings after upgrading to 2026.2 to confirm thresholds and GL account mappings are correct for your reconciliation process before relying on the automation.
 
 If you need help evaluating whether this feature applies to your reconciliation workflow, [SuitePacific's post-go-live support](/netsuite-post-go-live-support) covers release review and ongoing account maintenance.
+
+## Related reading
+
+- [NetSuite AP automation](/netsuite-ap-automation): automated vendor bill creation, approval routing, and payment run management.
+- [NetSuite approval workflows](/netsuite-approval-workflows): SuiteApprovals and SuiteFlow configuration for vendor bills and purchase orders.
+- [NetSuite workflow automation](/netsuite-workflow-automation): multi-step approval routing and notification automation for financial documents.

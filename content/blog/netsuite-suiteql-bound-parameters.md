@@ -123,3 +123,9 @@ A: For queries with dynamic values, especially those where any value comes from 
 For step-by-step guidance on converting existing SuiteQL queries to use bound parameters, see [How to Use Bound Parameters in NetSuite REST SuiteQL](/resources/netsuite-suiteql-bound-parameters).
 
 For help reviewing or rewriting SuiteQL queries in your account, see SuitePacific's [NetSuite SuiteScript development service](/netsuite-suitescript-development).
+
+## Related reading
+
+- [NetSuite saved searches and dashboards](/netsuite-saved-searches-dashboards): saved searches, KPI metrics, and dashboard builds alongside SuiteQL for live accounts.
+- [NetSuite SuiteQL guide](/blog/netsuite-suiteql-guide): syntax, joins, aggregations, and common query patterns for SuiteQL.
+- [NetSuite SuiteQL sort change in 2026.2](/blog/netsuite-suiteql-sort-change-2026-2): ORDER BY behavior changes in 2026.2 that affect existing SuiteQL queries.

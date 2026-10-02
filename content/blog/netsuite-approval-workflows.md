@@ -122,3 +122,9 @@ A basic SuiteApprovals configuration for one document type with a fixed approval
 ---
 
 *SuitePacific builds NetSuite approval workflows, SuiteApprovals configuration, and SuiteFlow development for companies already live on NetSuite. Oracle SuiteCloud Developer II and Administrator Professional certified. US-based, direct developer access on every engagement. Plans start at $799 per month on month-to-month terms. [See NetSuite approval workflows](/netsuite-approval-workflows) or [view support plans](/netsuite-care).*
+
+## Related reading
+
+- [NetSuite workflow automation](/netsuite-workflow-automation): multi-step approval routing, notification automation, and SuiteFlow process management.
+- [NetSuite approval workflows](/netsuite-approval-workflows): SuiteApprovals and SuiteFlow configuration for purchase orders, vendor bills, and expense reports.
+- [NetSuite workflow vs SuiteScript](/blog/netsuite-workflow-vs-suitescript): when to use SuiteFlow and when a SuiteScript-backed solution is needed.

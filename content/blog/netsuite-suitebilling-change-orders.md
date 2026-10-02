@@ -149,3 +149,9 @@ Before applying a significant change order (particularly a mid-period upgrade wi
 For ongoing SuiteBilling support, see [NetSuite SuiteBilling Support](/netsuite-suitebilling-support).
 
 **SuitePacific works with SaaS, professional services, and subscription businesses on NetSuite SuiteBilling post-go-live.** If change orders are producing unexpected charges, or if your billing pipeline needs a systematic review, [contact us](/contact).
+
+## Related reading
+
+- [NetSuite SuiteBilling support](/netsuite-suitebilling-support): SuiteBilling configuration, charge generation, change orders, and billing rule maintenance.
+- [NetSuite ARM configuration](/netsuite-arm-configuration): Advanced Revenue Management setup for ASC 606 compliance and multi-element arrangement accounting.
+- [NetSuite subscription management](/netsuite-subscription-management): subscription billing, renewal automation, and recurring revenue reporting in NetSuite.

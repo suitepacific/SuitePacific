@@ -105,3 +105,9 @@ A: The administrator control for this feature is at the account level, not the i
 A: Administrator accounts are still subject to 2FA requirements. A FIDO2-compliant passkey can satisfy the 2FA requirement for an administrator account when the feature is enabled at the account level.
 
 NetSuite authentication configuration for your user base is covered under [SuitePacific's NetSuite administrator support](/netsuite-administrator-support).
+
+## Related reading
+
+- [NetSuite upgrade preparation](/netsuite-upgrade-preparation): what to review and test before each NetSuite release to avoid post-upgrade breaks.
+- [NetSuite 2026.2 release readiness checklist](/netsuite-2026-2-release-readiness-checklist): the specific changes in 2026.2 that require action before the release window.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): ongoing support that includes upgrade preparation and post-release validation.

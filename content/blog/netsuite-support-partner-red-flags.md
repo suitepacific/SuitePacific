@@ -97,3 +97,9 @@ Technical references from companies similar in size and industry are the highest
 ---
 
 SuitePacific provides [post-go-live NetSuite support](/netsuite-post-go-live-support) on a month-to-month basis. No long-term contracts, direct developer access, and Sandbox testing on all script work. If you are evaluating support partners and want to understand what working with us looks like, [start with a conversation](/contact).
+
+## Related reading
+
+- [NetSuite partner replacement](/netsuite-partner-replacement): how the transition works when moving from an existing partner to SuitePacific.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): what ongoing support covers after the implementation ends.
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans with no long-term contracts after the 3-month minimum.

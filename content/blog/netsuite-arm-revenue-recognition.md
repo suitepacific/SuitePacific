@@ -102,3 +102,9 @@ A revenue element default is a set of ARM configuration values stored on an item
 ---
 
 *SuitePacific configures NetSuite Advanced Revenue Management for ASC 606 and IFRS 15 compliance. Oracle SuiteCloud Developer II and Administrator Professional certified. US-based, direct developer access on every engagement. Plans start at $799 per month on month-to-month terms. [See the ARM configuration service](/netsuite-arm-configuration) or [view support plans](/netsuite-care).*
+
+## Related reading
+
+- [NetSuite SuiteBilling support](/netsuite-suitebilling-support): SuiteBilling configuration, charge generation, change orders, and billing rule maintenance.
+- [NetSuite ARM configuration](/netsuite-arm-configuration): Advanced Revenue Management setup for ASC 606 compliance and multi-element arrangement accounting.
+- [NetSuite subscription management](/netsuite-subscription-management): subscription billing, renewal automation, and recurring revenue reporting in NetSuite.

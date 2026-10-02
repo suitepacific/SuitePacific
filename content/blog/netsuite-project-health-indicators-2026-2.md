@@ -98,3 +98,9 @@ A: Project health indicator values can be referenced in saved searches on the pr
 A: Visibility follows NetSuite's standard role and permission model for project records. Users with access to view project records can see the health indicators on those records.
 
 If you need help keeping your NetSuite account current after releases, [SuitePacific's post-go-live support](/netsuite-post-go-live-support) covers release review and ongoing account maintenance.
+
+## Related reading
+
+- [NetSuite upgrade preparation](/netsuite-upgrade-preparation): what to review and test before each NetSuite release to avoid post-upgrade breaks.
+- [NetSuite 2026.2 release readiness checklist](/netsuite-2026-2-release-readiness-checklist): the specific changes in 2026.2 that require action before the release window.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): ongoing support that includes upgrade preparation and post-release validation.

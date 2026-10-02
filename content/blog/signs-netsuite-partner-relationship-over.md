@@ -59,3 +59,9 @@ Proactive improvement is not part of every support model. But if your expectatio
 ---
 
 If three or more of these signs apply, the question is not whether to start evaluating a replacement. It is how to do it without creating a gap in coverage. See [how to switch NetSuite partners without losing momentum](/blog/how-to-switch-netsuite-partners) and [the partner replacement guide](/netsuite-partner-replacement) for the transition timeline. If your partner is already unresponsive, [this page covers what switching looks like when cooperation is limited](/netsuite-partner-not-responsive). If the issue is primarily cost, [this covers why large partner billing inflates ongoing support cost](/netsuite-partner-too-expensive).
+
+## Related reading
+
+- [NetSuite partner replacement](/netsuite-partner-replacement): how the transition works when moving from an existing partner to SuitePacific.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): what ongoing support covers after the implementation ends.
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans with no long-term contracts after the 3-month minimum.

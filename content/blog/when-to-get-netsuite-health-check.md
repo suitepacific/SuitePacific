@@ -79,3 +79,9 @@ Technical debt in a NetSuite account compounds. Each release, each new developme
 The account is not going to review itself, and the team is not going to develop a complete understanding of the account from normal development work. The understanding stays partial, the debt continues to accumulate, and each new change becomes slightly harder than the one before.
 
 For accounts where any of the six situations above apply, the [NetSuite health check](/netsuite-health-check) is a fixed-scope engagement that delivers a written findings report in five to seven business days. The assessment covers scripts, workflows, saved searches, custom fields and forms, roles, and integrations, with each finding classified by severity.
+
+## Related reading
+
+- [NetSuite health check](/netsuite-health-check): a structured account review that identifies the issues causing the most operational friction.
+- [NetSuite account optimization](/netsuite-account-optimization): what account optimization covers beyond the health check: ongoing improvement rather than a one-time audit.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): what ongoing support covers after the implementation ends.

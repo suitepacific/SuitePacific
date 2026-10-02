@@ -150,3 +150,9 @@ No. Many accounts run ACS and a managed support engagement in parallel during th
 ---
 
 *SuitePacific provides structured onboarding for accounts transitioning from ACS or a previous NetSuite partner. The onboarding covers account review, documentation, active issue identification, and handover of any open items. Oracle SuiteCloud Developer II and Administrator Professional certified. US-based, direct developer access on every plan. Plans start at $799 per month, month-to-month after a three-month minimum. [View support plans](/netsuite-care), [see what the transition looks like](/netsuite-partner-replacement), or [read the full ACS alternative guide](/netsuite-acs-alternative).*
+
+## Related reading
+
+- [NetSuite ACS alternative](/netsuite-acs-alternative): how SuitePacific compares to Oracle ACS on scope, response time, and cost.
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans from $799 covering SuiteScript, workflows, reporting, and ongoing support.
+- [NetSuite managed services pricing](/netsuite-managed-services-pricing): published plan pricing, effective hourly rates, and a comparison to ACS and independent consultants.

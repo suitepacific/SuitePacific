@@ -169,3 +169,9 @@ If that description sounds like a higher standard than what you're currently exp
 If several of these signs match your current engagement, the practical next step is a conversation, not a commitment. We work with post-go-live NetSuite accounts exclusively. We do not require long-term contracts. And the first thing we do with any new account is actually read it, before suggesting anything.
 
 [Tell us what's going on in your account](/contact). We'll let you know honestly what we see and what we'd do about it.
+
+## Related reading
+
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans from $799 covering SuiteScript, workflows, reporting, and ongoing support.
+- [NetSuite managed support](/netsuite-managed-support): fixed monthly retainer covering development, administration, break-fix, and upgrade preparation.
+- [NetSuite managed services pricing](/netsuite-managed-services-pricing): published plan pricing, effective hourly rates, and comparison to independent consultants.

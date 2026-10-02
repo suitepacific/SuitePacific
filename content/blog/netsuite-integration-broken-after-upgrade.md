@@ -99,3 +99,9 @@ Changing multiple things simultaneously in response to an integration failure ma
 ---
 
 *SuitePacific diagnoses and resolves integration failures for post-go-live NetSuite accounts. If your integration stopped working after an upgrade and the error is not clear, [contact us](/contact).*
+
+## Related reading
+
+- [NetSuite integrations](/netsuite-integrations): custom and middleware-based integrations for Shopify, Salesforce, HubSpot, Amazon, and other platforms.
+- [Hire a NetSuite developer](/hire-netsuite-developer): dedicated developer for API integrations, RESTlet builds, and SuiteScript work.
+- [NetSuite RESTlet vs REST web services](/blog/netsuite-restlet-vs-rest-web-services): when to use each approach for custom integrations and third-party connectivity.

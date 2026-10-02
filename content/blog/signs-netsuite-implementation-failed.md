@@ -72,3 +72,9 @@ The appropriate response depends on how many of the patterns above apply and how
 **If the account needs fundamental rebuilding in key areas:** This is rescue-level remediation. The work involves assessing what was built, creating a sequenced remediation roadmap, and making corrections methodically while keeping live operations running. It is not fast, but it is less expensive than staying on a broken account indefinitely.
 
 If you are working through these questions, [book a consultation](/contact) or see our [NetSuite implementation rescue service](/netsuite-implementation-rescue) for what this work looks like in practice. The [NetSuite health check](/netsuite-health-check) is the right first step if you are not yet sure what you are dealing with.
+
+## Related reading
+
+- [NetSuite implementation rescue](/netsuite-implementation-rescue): stabilizing a failed or stalled NetSuite implementation and taking over from a previous partner.
+- [NetSuite partner replacement](/netsuite-partner-replacement): how the transition works when moving from an existing partner to SuitePacific.
+- [NetSuite health check](/netsuite-health-check): a structured audit that identifies what was misconfigured or left incomplete by a previous partner.

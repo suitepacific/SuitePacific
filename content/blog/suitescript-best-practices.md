@@ -2,7 +2,7 @@
 title: "SuiteScript Best Practices: Customizations That Survive the Next Upgrade"
 description: "How to write SuiteScript 2.x customizations that keep working after NetSuite's twice-yearly releases, instead of breaking quietly in production."
 date: "2026-06-18"
-updated: "2026-08-07"
+updated: "2026-10-03"
 tags: ["SuiteScript", "Development"]
 ---
 
@@ -107,3 +107,9 @@ A: beforeSubmit fires after the user clicks Save but before the record is writte
 
 **Q: How do SuiteScript governance limits work?**
 A: NetSuite gives each script execution a budget of governance units. Scheduled Scripts get 10,000 units, Suitelet and User Event scripts get 1,000 units per execution. Each API call, record load, and search consumes a portion of that budget. When the budget is exhausted, the script throws a governance exception and stops. Scripts that run fine on small data sets in sandbox can exhaust governance on large data sets in production, which is why testing at realistic volume matters before deploying to a live account.
+
+## Related reading
+
+- [NetSuite SuiteScript development](/netsuite-suitescript-development): custom SuiteScript 2.1 user event, scheduled, map/reduce, client, and RESTlet scripts.
+- [Hire a NetSuite developer](/hire-netsuite-developer): dedicated SuiteScript developer for custom scripts, integrations, and automation.
+- [NetSuite SuiteScript migration](/netsuite-suitescript-migration): upgrading older SuiteScript 1.0 scripts to SuiteScript 2.1 and resolving deprecation warnings.

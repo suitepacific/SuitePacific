@@ -123,3 +123,9 @@ ACS fees paid upfront are generally non-refundable for the current contract year
 ---
 
 *SuitePacific is a US-based NetSuite managed support firm covering SuiteScript, integrations, workflows, and administration for post-go-live accounts. Plans start at $799 per month, month-to-month.*
+
+## Related reading
+
+- [NetSuite ACS alternative](/netsuite-acs-alternative): how SuitePacific compares to Oracle ACS on scope, response time, and cost.
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans from $799 covering SuiteScript, workflows, reporting, and ongoing support.
+- [NetSuite managed services pricing](/netsuite-managed-services-pricing): published plan pricing, effective hourly rates, and a comparison to ACS and independent consultants.

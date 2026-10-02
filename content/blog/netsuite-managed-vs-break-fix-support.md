@@ -120,3 +120,9 @@ When evaluating a break-fix arrangement:
 - If the item involves existing customizations, is the investigation time separate from the fix time?
 
 For how the decision fits into a broader evaluation of post-go-live support options, see [how to evaluate a NetSuite post-go-live support partner](/blog/how-to-evaluate-netsuite-support-partner). For fixed-price monthly support options, the [NetSuite Care plans](/netsuite-care) provide managed support at 10, 20, or 35 hours per month.
+
+## Related reading
+
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans from $799 covering SuiteScript, workflows, reporting, and ongoing support.
+- [NetSuite managed support](/netsuite-managed-support): fixed monthly retainer covering development, administration, break-fix, and upgrade preparation.
+- [NetSuite managed services pricing](/netsuite-managed-services-pricing): published plan pricing, effective hourly rates, and comparison to independent consultants.

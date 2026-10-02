@@ -124,3 +124,9 @@ Yes. This is a common starting point. The onboarding review covers existing scri
 ---
 
 *SuitePacific is a certified NetSuite managed support practice covering the technical layer ACS excludes. Plans start at $799 per month on month-to-month terms after a three-month minimum. US-based, direct developer access, Oracle SuiteCloud Developer II and Administrator Professional certified. [See the full comparison](/netsuite-acs-alternative) or [view support plans](/netsuite-care).*
+
+## Related reading
+
+- [NetSuite ACS alternative](/netsuite-acs-alternative): how SuitePacific compares to Oracle ACS on scope, response time, and cost.
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans from $799 covering SuiteScript, workflows, reporting, and ongoing support.
+- [NetSuite managed services pricing](/netsuite-managed-services-pricing): published plan pricing, effective hourly rates, and a comparison to ACS and independent consultants.

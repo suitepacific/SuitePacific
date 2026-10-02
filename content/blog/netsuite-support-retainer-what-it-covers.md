@@ -81,3 +81,9 @@ Most clients are handling requests from their primary contact within the first w
 ---
 
 *SuitePacific provides NetSuite managed support retainers for post-go-live accounts starting at $799 per month with no long-term contract. [Contact us](/contact) to discuss what a retainer would look like for your account.*
+
+## Related reading
+
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans from $799 covering SuiteScript, workflows, reporting, and ongoing support.
+- [NetSuite managed support](/netsuite-managed-support): fixed monthly retainer covering development, administration, break-fix, and upgrade preparation.
+- [NetSuite managed services pricing](/netsuite-managed-services-pricing): published plan pricing, effective hourly rates, and comparison to independent consultants.

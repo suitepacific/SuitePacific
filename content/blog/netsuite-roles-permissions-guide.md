@@ -131,3 +131,9 @@ In any of these situations, role cleanup and redesign is an administration proje
 If your account's role structure has drifted from what it should be, if an audit has flagged access controls that need remediation, or if you are designing roles for a new subsidiary and want it done right from the start, that is exactly the kind of work we take on. We review the current state, map what exists against what is needed, and deliver a clean role structure with documentation. See our [NetSuite administrator support](/netsuite-administrator-support) page for how the engagement works, and reach out if you want to discuss your specific situation first.
 
 For related reading: [NetSuite post-go-live checklist](/blog/netsuite-post-go-live-checklist), [NetSuite saved search examples](/blog/netsuite-saved-search-examples), and [SuiteScript best practices](/blog/suitescript-best-practices).
+
+## Related reading
+
+- [NetSuite user roles and permissions](/netsuite-user-roles-permissions): role design, least-privilege configuration, and permission audits for live accounts.
+- [NetSuite administrator support](/netsuite-administrator-support): ongoing admin work: user management, roles, imports, and account configuration.
+- [NetSuite health check](/netsuite-health-check): a structured review that includes roles, permissions, and access control gaps.

@@ -153,3 +153,9 @@ Starting after ACS expires without overlap means a gap in coverage and a provide
 ---
 
 *SuitePacific provides NetSuite managed support as an ACS alternative for SMBs, starting at $799 per month on a month-to-month basis. [Contact us](/contact) to compare your current ACS cost against what a retainer would cover.*
+
+## Related reading
+
+- [NetSuite ACS alternative](/netsuite-acs-alternative): how SuitePacific compares to Oracle ACS on scope, response time, and cost.
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans from $799 covering SuiteScript, workflows, reporting, and ongoing support.
+- [NetSuite managed services pricing](/netsuite-managed-services-pricing): published plan pricing, effective hourly rates, and a comparison to ACS and independent consultants.

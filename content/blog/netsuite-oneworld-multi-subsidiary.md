@@ -103,3 +103,9 @@ The SuiteScript API is the same, but subsidiary context matters. Scripts that cr
 ---
 
 *SuitePacific supports and configures NetSuite OneWorld accounts: intercompany transactions, elimination configuration, consolidated reporting, subsidiary restrictions, and multi-subsidiary SuiteScript development. Oracle SuiteCloud Developer II and Administrator Professional certified. US-based, direct access on every engagement. Plans start at $799 per month. [See OneWorld support](/netsuite-oneworld-support) or [view support plans](/netsuite-care).*
+
+## Related reading
+
+- [NetSuite OneWorld support](/netsuite-oneworld-support): multi-subsidiary configuration, intercompany transactions, and consolidated reporting support.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): ongoing support for live NetSuite accounts including OneWorld-specific administration.
+- [NetSuite health check](/netsuite-health-check): an account review that includes intercompany setup, elimination entries, and subsidiary configuration.

@@ -95,3 +95,9 @@ A support relationship that is working looks like this: your partner knows your 
 That is not a high standard. It is the baseline expectation for a support relationship that is structured for ongoing work rather than project delivery.
 
 For context on what switching partners involves and what to expect from the transition, the [NetSuite partner replacement](/netsuite-partner-replacement) page covers the full process. For a sense of what ongoing support costs from a boutique partner built for this type of work, the [NetSuite Care pricing page](/netsuite-care) has the detail.
+
+## Related reading
+
+- [NetSuite partner replacement](/netsuite-partner-replacement): how the transition works when moving from an existing partner to SuitePacific.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): what ongoing support covers after the implementation ends.
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans with no long-term contracts after the 3-month minimum.

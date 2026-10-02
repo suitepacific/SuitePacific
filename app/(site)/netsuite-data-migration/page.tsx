@@ -4,7 +4,7 @@ import { Database, XCircle, Search, Settings, FileText, CheckCircle } from "luci
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
@@ -74,6 +74,14 @@ export default function DataMigrationPage() {
         ]}
       />
       <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
+        description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
+        videoId="IQvWN_yZ24A"
+        duration="PT18S"
+        uploadDate="2026-08-12T00:00:00+00:00"
+        isShort
+      />
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading as="h1" eyebrow="Data Migration" title="NetSuite Data Migration: CSV Import, Import Order, and SuiteScript Migration" subtitle="Most NetSuite data migrations fail not because of the import tool but because the source data is not clean, the field mapping is wrong, or the import order violates reference dependencies. SuitePacific handles migrations for customers, vendors, items, transactions, and custom records, and builds Import Doctor to validate CSV files before they run." align="left" />
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">

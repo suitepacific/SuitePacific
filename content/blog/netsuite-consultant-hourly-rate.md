@@ -108,3 +108,9 @@ Four factors drive cost beyond the stated hourly rate:
 ---
 
 See also: [NetSuite consultant cost](/netsuite-consultant-cost) for the full pricing comparison, [NetSuite Care plans](/netsuite-care) for fixed retainer pricing, and [why large partner billing inflates ongoing support cost](/netsuite-partner-too-expensive).
+
+## Related reading
+
+- [NetSuite managed services pricing](/netsuite-managed-services-pricing): published plan pricing, effective hourly rates, and comparison to hiring an admin or independent consultant.
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans from $799 to $2,499 for ongoing SuiteScript, workflow, and reporting support.
+- [NetSuite consultant cost](/netsuite-consultant-cost): how NetSuite consulting is priced, what drives hourly rates, and what a monthly retainer typically covers.

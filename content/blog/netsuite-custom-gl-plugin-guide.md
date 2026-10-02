@@ -112,3 +112,9 @@ If the answer to all four is yes, the plug-in is the right tool.
 GL customization errors are among the harder ones to clean up after the fact, because correcting posted entries means additional journal entries, which creates audit trail complexity. Getting the design right before the build prevents that. If you have a GL customization requirement and want a developer who understands both the technical constraints and the accounting implications, reach out before you start. That conversation is where most of these builds either succeed or get set up to fail. See our [SuiteScript development page](/netsuite-suitescript-development) for how we work.
 
 For related reading: [SuiteScript best practices](/blog/suitescript-best-practices), [NetSuite Map/Reduce script guide](/blog/netsuite-map-reduce-script-guide), and [NetSuite workflow vs SuiteScript](/blog/netsuite-workflow-vs-suitescript).
+
+## Related reading
+
+- [NetSuite SuiteScript development](/netsuite-suitescript-development): custom SuiteScript 2.1 scripts including custom GL plugins and field-level automation.
+- [Hire a NetSuite developer](/hire-netsuite-developer): dedicated developer for complex customizations including custom GL plugins and financial automation.
+- [NetSuite workflow automation](/netsuite-workflow-automation): multi-step workflows and field automation that complement custom SuiteScript development.

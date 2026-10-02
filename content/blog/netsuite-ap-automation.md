@@ -102,3 +102,9 @@ The core components are the same, but construction companies need additional con
 ---
 
 *SuitePacific configures NetSuite AP automation, GL coding logic, approval workflows, and bill capture cleanup for companies already live on NetSuite. Oracle SuiteCloud Developer II and Administrator Professional certified. US-based, direct developer access on every engagement. Plans start at $799 per month on month-to-month terms. [See NetSuite AP automation](/netsuite-ap-automation) or [view support plans](/netsuite-care).*
+
+## Related reading
+
+- [NetSuite AP automation](/netsuite-ap-automation): automated vendor bill creation, approval routing, and payment run management.
+- [NetSuite approval workflows](/netsuite-approval-workflows): SuiteApprovals and SuiteFlow configuration for vendor bills and purchase orders.
+- [NetSuite workflow automation](/netsuite-workflow-automation): multi-step approval routing and notification automation for financial documents.

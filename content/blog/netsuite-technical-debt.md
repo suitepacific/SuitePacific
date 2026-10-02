@@ -95,3 +95,9 @@ For a structured assessment of technical debt in a live account, see the [NetSui
 ---
 
 *Content based on patterns observed in live NetSuite accounts across implementation vintages. Specific behaviors may vary by NetSuite version and account configuration.*
+
+## Related reading
+
+- [NetSuite technical debt](/netsuite-technical-debt): what technical debt looks like in a live NetSuite account and how SuitePacific addresses it.
+- [NetSuite health check](/netsuite-health-check): a structured audit that surfaces technical debt, unused customizations, and performance issues.
+- [NetSuite SuiteScript development](/netsuite-suitescript-development): rewriting and replacing legacy scripts as part of a technical debt reduction effort.

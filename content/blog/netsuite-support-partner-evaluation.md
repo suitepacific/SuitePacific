@@ -103,3 +103,9 @@ A: Level 1 support handles basic questions, password resets, navigation help, an
 
 **Q: When does it make sense to open a case directly with Oracle NetSuite Support?**
 A: Oracle's support team handles confirmed bugs in the NetSuite platform, questions about specific release behavior, and cases where a feature is not working as documented. Your support partner should escalate to Oracle when a problem is clearly a platform bug rather than a configuration or customization issue. If your partner escalates frequently for issues that a qualified consultant should be able to resolve, that is a sign of limited depth.
+
+## Related reading
+
+- [NetSuite partner replacement](/netsuite-partner-replacement): how the transition works when moving from an existing partner to SuitePacific.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): what ongoing support covers after the implementation ends.
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans with no long-term contracts after the 3-month minimum.

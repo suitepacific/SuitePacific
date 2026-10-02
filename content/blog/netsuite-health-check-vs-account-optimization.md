@@ -64,3 +64,9 @@ The value of the health check is not in the findings it produces for the obvious
 - [NetSuite account optimization](/netsuite-account-optimization): the remediation engagement
 - [NetSuite technical debt](/netsuite-technical-debt): what the assessment typically finds
 - [What does a NetSuite health check include?](/blog/netsuite-health-check-what-it-includes): layer-by-layer breakdown of what the assessment covers
+
+## Related reading
+
+- [NetSuite health check](/netsuite-health-check): a structured account review that identifies the issues causing the most operational friction.
+- [NetSuite account optimization](/netsuite-account-optimization): what account optimization covers beyond the health check: ongoing improvement rather than a one-time audit.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): what ongoing support covers after the implementation ends.

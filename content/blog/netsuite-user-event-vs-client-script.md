@@ -180,3 +180,9 @@ A: Client Scripts run in the browser. A CSV import and an API save do not involv
 
 **Q: Can a User Event script and Client Script work on the same record type?**
 A: Yes, and this is the recommended pattern for comprehensive customizations. The Client Script handles real-time UX for users working in the form: instant field validation, dynamic visibility, guided data entry. The User Event script enforces the underlying business rule on every save as a server-side backstop. The two work together: the Client Script improves the experience, and the User Event script guarantees correctness regardless of the save path.
+
+## Related reading
+
+- [NetSuite SuiteScript development](/netsuite-suitescript-development): custom SuiteScript 2.1 user event, scheduled, map/reduce, client, and RESTlet scripts.
+- [Hire a NetSuite developer](/hire-netsuite-developer): dedicated SuiteScript developer for custom scripts, integrations, and automation.
+- [NetSuite SuiteScript migration](/netsuite-suitescript-migration): upgrading older SuiteScript 1.0 scripts to SuiteScript 2.1 and resolving deprecation warnings.

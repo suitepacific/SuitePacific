@@ -115,3 +115,9 @@ A: Yes. Sequential processing takes longer than parallel because each operation 
 A: The sequential vs. parallel mode applies to the batch as a whole. If you have a mix of dependent and independent operations, group the dependent ones in a sequential batch and the independent ones in separate parallel batches.
 
 If you are working with REST Web Services using Token-Based Authentication, see our guide on the [NLAuth deprecation and TBA migration timeline](/blog/netsuite-nlauth-tba-end-of-support) for what changes ahead. For help designing or maintaining NetSuite integrations, [SuitePacific's integration services](/netsuite-integrations) cover REST, RESTlet, and scheduled sync approaches.
+
+## Related reading
+
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): what ongoing support covers after the implementation ends.
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans from $799 for ongoing SuiteScript, workflow, reporting, and troubleshooting support.
+- [NetSuite health check](/netsuite-health-check): a structured account review that identifies issues causing the most operational friction.

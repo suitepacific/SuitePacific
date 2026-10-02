@@ -4,7 +4,7 @@ import { Newspaper, FileText, BarChart2, Workflow, Code2, ShieldCheck, RefreshCc
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
@@ -83,6 +83,14 @@ export default function PublishingMediaPage() {
       <FaqJsonLd items={FAQ} />
       <ServiceJsonLd name="NetSuite Support for Publishing & Media Companies" description="NetSuite post-go-live support for publishing and media companies including royalty calculations, ad revenue recognition, subscription billing, and distributor reconciliation." url={`${SITE_URL}/industries/publishing-media`} serviceType="NetSuite Publishing Media Support" datePublished="2026-09-23T00:00:00+00:00" dateModified="2026-09-23T00:00:00+00:00" offers={[{ name: "Care", price: 799, description: "10 hours/month: royalty calculation maintenance, saved searches, and administration for publishing and media accounts. Month-to-month after 3-month minimum." }, { name: "Care Plus", price: 1499, description: "20 hours/month: active development including ad recognition, subscription billing, and rights tracking. Month-to-month." }, { name: "Care Pro", price: 2499, description: "35 hours/month: full publishing account coverage including royalty automation, integrations, and ongoing support. Month-to-month." }]} />
       <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
+        description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
+        videoId="IQvWN_yZ24A"
+        duration="PT18S"
+        uploadDate="2026-08-12T00:00:00+00:00"
+        isShort
+      />
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading as="h1" eyebrow="Publishing & Media" title="NetSuite Support & Development for Publishing & Media Companies" subtitle="Royalty calculations, advertising revenue recognition, subscription billing automation, and author advance tracking for publishers already live on NetSuite." align="left" />
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">

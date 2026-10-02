@@ -2,7 +2,7 @@
 title: "5 Common NetSuite Workflow Automation Mistakes (and How to Fix Them)"
 description: "The recurring workflow design mistakes that cause NetSuite SuiteFlow automations to misfire, double-trigger, or quietly stop working, and how to fix each one."
 date: "2026-06-25"
-updated: "2026-08-14"
+updated: "2026-10-03"
 tags: ["Workflow Automation", "SuiteFlow"]
 ---
 
@@ -107,3 +107,9 @@ A: The workflow editor itself is not documentation. Once a workflow has more tha
 
 **Q: Are workflow email actions reliable for time-sensitive notifications?**
 A: Not always. Workflow email actions run in the workflow engine's processing queue, which can back up under load. For notifications where timing matters, such as alerting accounts payable within minutes of a large bill being approved, a scheduled or Map/Reduce SuiteScript with explicit, monitored execution is more reliable than a workflow action that depends on queue availability.
+
+## Related reading
+
+- [NetSuite workflow automation](/netsuite-workflow-automation): multi-step approval routing, notification automation, and SuiteFlow process management.
+- [NetSuite approval workflows](/netsuite-approval-workflows): SuiteApprovals and SuiteFlow configuration for purchase orders, vendor bills, and expense reports.
+- [NetSuite workflow vs SuiteScript](/blog/netsuite-workflow-vs-suitescript): when to use SuiteFlow and when a SuiteScript-backed solution is needed.

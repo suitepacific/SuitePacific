@@ -141,3 +141,9 @@ The review should cover:
 For ongoing SuiteBilling and ARM support, see [NetSuite SuiteBilling Support](/netsuite-suitebilling-support).
 
 **SuitePacific works with subscription businesses that have SuiteBilling and ARM active post-go-live.** If your Revenue Arrangements are not matching your billing, your Deferred Revenue balance is unexplained, or change orders are producing recognition issues, [contact us](/contact) and we can review your setup.
+
+## Related reading
+
+- [NetSuite integrations](/netsuite-integrations): custom and middleware-based integrations for Shopify, Salesforce, HubSpot, Amazon, and other platforms.
+- [Hire a NetSuite developer](/hire-netsuite-developer): dedicated developer for API integrations, RESTlet builds, and SuiteScript work.
+- [NetSuite RESTlet vs REST web services](/blog/netsuite-restlet-vs-rest-web-services): when to use each approach for custom integrations and third-party connectivity.

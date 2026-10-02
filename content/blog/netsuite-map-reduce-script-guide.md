@@ -426,3 +426,9 @@ One practical note: Map/Reduce jobs run concurrently with other scripted process
 Map/Reduce is the right choice for any job that a Scheduled Script is struggling with at scale. The framework handles the parallelism, retry logic, and governance allocation; your job is to design the five stages to be stateless at the individual invocation level.
 
 If you're working with a NetSuite account that has aging Scheduled Scripts hitting governance limits under load, [the SuiteScript development work we do](/netsuite-suitescript-development) includes exactly this kind of migration, identifying which scripts are good Map/Reduce candidates and restructuring them to take advantage of the parallel processing model.
+
+## Related reading
+
+- [NetSuite SuiteScript development](/netsuite-suitescript-development): custom SuiteScript 2.1 user event, scheduled, map/reduce, client, and RESTlet scripts.
+- [Hire a NetSuite developer](/hire-netsuite-developer): dedicated SuiteScript developer for custom scripts, integrations, and automation.
+- [NetSuite SuiteScript migration](/netsuite-suitescript-migration): upgrading older SuiteScript 1.0 scripts to SuiteScript 2.1 and resolving deprecation warnings.

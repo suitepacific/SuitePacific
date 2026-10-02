@@ -109,3 +109,9 @@ For NetSuite administrators: Payment Runs supports custom roles and permissions,
 Payment Runs is new in 2026.2. If you do not see it in your account, confirm that your account has been upgraded to the 2026.2 release.
 
 If you need help configuring Payment Runs or reviewing your account after the 2026.2 release, [SuitePacific's post-go-live support](/netsuite-post-go-live-support) covers release review and ongoing account maintenance.
+
+## Related reading
+
+- [NetSuite AP automation](/netsuite-ap-automation): automated vendor bill creation, approval routing, and payment run management.
+- [NetSuite approval workflows](/netsuite-approval-workflows): SuiteApprovals and SuiteFlow configuration for vendor bills and purchase orders.
+- [NetSuite workflow automation](/netsuite-workflow-automation): multi-step approval routing and notification automation for financial documents.

@@ -246,3 +246,9 @@ A: A Suitelet is a server-side SuiteScript that generates a UI page or responds 
 
 **Q: Are RESTlets subject to SuiteScript governance limits?**
 A: Yes. RESTlets run as SuiteScript executions and consume governance units. A RESTlet that loads records in a loop or runs complex searches on high-volume requests can exhaust its governance budget the same way any other SuiteScript type can. REST Web Services operations are handled by NetSuite's platform layer and have separate concurrency controls.
+
+## Related reading
+
+- [NetSuite integrations](/netsuite-integrations): custom and middleware-based integrations for Shopify, Salesforce, HubSpot, Amazon, and other platforms.
+- [Hire a NetSuite developer](/hire-netsuite-developer): dedicated developer for API integrations, RESTlet builds, and SuiteScript work.
+- [NetSuite SOAP web services deprecation](/blog/netsuite-soap-web-services-deprecation): what the SOAP deprecation means for existing integrations and how to prepare.

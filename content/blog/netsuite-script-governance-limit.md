@@ -241,3 +241,9 @@ The most durable fix for a governance-limit problem is almost always moving from
 ---
 
 Governance limit errors in production scripts are one of the most common issues we resolve when taking over a customized NetSuite account. If you have scripts that are hitting governance limits, or scripts that behave differently under high load than they did in development, [book a consultation](/contact) and we'll identify the root cause and fix it. For related reading, see [SuiteScript Best Practices: Customizations That Survive the Next Upgrade](/blog/suitescript-best-practices), [NetSuite User Event Scripts vs Client Scripts: Which One to Use and When](/blog/netsuite-user-event-vs-client-script), and our [SuiteScript development service](/netsuite-suitescript-development).
+
+## Related reading
+
+- [NetSuite SuiteScript development](/netsuite-suitescript-development): custom SuiteScript 2.1 user event, scheduled, map/reduce, client, and RESTlet scripts.
+- [Hire a NetSuite developer](/hire-netsuite-developer): dedicated SuiteScript developer for custom scripts, integrations, and automation.
+- [NetSuite SuiteScript migration](/netsuite-suitescript-migration): upgrading older SuiteScript 1.0 scripts to SuiteScript 2.1 and resolving deprecation warnings.

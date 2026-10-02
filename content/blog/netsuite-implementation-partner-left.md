@@ -95,3 +95,9 @@ Ongoing support from a boutique partner that is built for retainer work runs mat
 A live NetSuite account is not a finished product. It is a system that evolves with the business: new processes, new team members, new integrations, new reporting requirements, and two releases a year that require someone to verify your customizations still work. The implementation partner delivered the foundation. Everything that comes after is ongoing support.
 
 Finding a replacement partner is not about replicating the implementation team. It is about finding a different kind of partner: one built for the ongoing, context-retained, responsive work that keeps a live account running and improving over time. The implementation ended. The account's needs did not.
+
+## Related reading
+
+- [NetSuite partner replacement](/netsuite-partner-replacement): how the transition works when moving from an existing partner to SuitePacific.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): what ongoing support covers after the implementation ends.
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans with no long-term contracts after the 3-month minimum.

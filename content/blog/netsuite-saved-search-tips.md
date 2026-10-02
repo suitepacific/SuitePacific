@@ -2,7 +2,7 @@
 title: "10 NetSuite Saved Search Tips Every Finance Team Should Know"
 description: "What a NetSuite saved search is, how to create one, and the practical techniques that help finance and operations teams get faster, more accurate reporting without waiting on IT."
 date: "2026-06-10"
-updated: "2026-08-21"
+updated: "2026-10-03"
 tags: ["Saved Searches", "Reporting"]
 ---
 
@@ -185,3 +185,9 @@ Each of these searches can be placed on a dashboard portlet, scheduled to send v
 ---
 
 Saved searches are also where we usually start when we take over an account post-go-live: they're cheap to build, easy to fix, and almost always reveal what's actually slowing a finance team down. This is part of our [saved searches and dashboards service](/netsuite-saved-searches-dashboards). For practical examples you can build today, see [NetSuite Saved Search Examples for Finance and Operations Teams](/blog/netsuite-saved-search-examples). If your team is stuck exporting to Excel to get answers NetSuite should already give you, [get in touch](/contact) and we'll take a look.
+
+## Related reading
+
+- [NetSuite saved searches and dashboards](/netsuite-saved-searches-dashboards): custom saved searches, KPI reporting, and dashboard builds for live accounts.
+- [NetSuite saved search examples](/blog/netsuite-saved-search-examples): practical search configurations for common operational and financial reporting needs.
+- [NetSuite saved search formula examples](/blog/netsuite-saved-search-formula-examples): formula fields, case statements, and calculated columns for advanced saved searches.

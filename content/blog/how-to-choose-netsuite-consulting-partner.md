@@ -83,3 +83,9 @@ Large NetSuite partners optimize for implementation volume. Their delivery model
 A boutique firm that specializes in post-go-live support for already-live accounts has a different structure: deeper knowledge of the platform's customization layer, faster context on specific account types, and a support model where the person doing the work is the person you talk to. The trade-off is scale. A boutique cannot run a large greenfield implementation. It can manage an existing account with more precision and lower overhead than a firm optimized for projects.
 
 The correct choice depends on what you are actually buying. An implementation is a project. Post-go-live support is a relationship.
+
+## Related reading
+
+- [NetSuite partner replacement](/netsuite-partner-replacement): how the transition works when moving from an existing partner to SuitePacific.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): what ongoing support covers after the implementation ends.
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans with no long-term contracts after the 3-month minimum.

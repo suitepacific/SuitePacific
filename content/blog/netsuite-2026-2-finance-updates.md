@@ -144,3 +144,9 @@ The underlying accounting does not change with either feature. The changes are i
 ## How Can SuitePacific Help With 2026.2 Finance Updates?
 
 Preparing finance teams for interface changes requires more than communicating that something looks different. If your team needs a Sandbox walkthrough of Payment Runs or the Match Bank Data redesign before 2026.2 reaches your Production environment, [contact SuitePacific](/contact). We work with NetSuite finance teams through release updates and can help your team build familiarity with new workflows before they go live.
+
+## Related reading
+
+- [NetSuite upgrade preparation](/netsuite-upgrade-preparation): what to review and test before each NetSuite release to avoid post-upgrade breaks.
+- [NetSuite 2026.2 release readiness checklist](/netsuite-2026-2-release-readiness-checklist): the specific changes in 2026.2 that require action before the release window.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): ongoing support that includes upgrade preparation and post-release validation.

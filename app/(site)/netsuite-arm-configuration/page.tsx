@@ -4,7 +4,7 @@ import { BarChart2, XCircle, Settings, FileText, TrendingUp, AlertTriangle } fro
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
@@ -73,6 +73,14 @@ export default function ArmConfigurationPage() {
         ]}
       />
       <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
+        description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
+        videoId="IQvWN_yZ24A"
+        duration="PT18S"
+        uploadDate="2026-08-12T00:00:00+00:00"
+        isShort
+      />
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading as="h1" eyebrow="Revenue Recognition" title="NetSuite ARM Configuration: Advanced Revenue Management for ASC 606" subtitle="NetSuite Advanced Revenue Management (ARM) does not work out of the box. SuitePacific configures ARM from scratch and fixes existing setups for SaaS companies, professional services firms, and product companies that need audit-defensible revenue recognition under ASC 606 or IFRS 15." align="left" />
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">

@@ -4,7 +4,7 @@ import { Leaf, FileText, BarChart2, Workflow, Code2, ShieldCheck, RefreshCcw, Aw
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
@@ -83,6 +83,14 @@ export default function CannabisPage() {
       <FaqJsonLd items={FAQ} />
       <ServiceJsonLd name="NetSuite Support for Cannabis & Dispensary Companies" description="NetSuite post-go-live support for cannabis companies including 280E compliance, Metrc integration, batch inventory tracking, and multi-license accounting." url={`${SITE_URL}/industries/cannabis`} serviceType="NetSuite Cannabis Support" datePublished="2026-09-23T00:00:00+00:00" dateModified="2026-09-23T00:00:00+00:00" offers={[{ name: "Care", price: 799, description: "10 hours/month: compliance structure maintenance, saved searches, and administration for cannabis accounts. Month-to-month after 3-month minimum." }, { name: "Care Plus", price: 1499, description: "20 hours/month: active development including Metrc integration, 280E builds, and batch tracking. Month-to-month." }, { name: "Care Pro", price: 2499, description: "35 hours/month: full cannabis operator account coverage including multi-license accounting, integrations, and ongoing support. Month-to-month." }]} />
       <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
+        description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
+        videoId="IQvWN_yZ24A"
+        duration="PT18S"
+        uploadDate="2026-08-12T00:00:00+00:00"
+        isShort
+      />
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading as="h1" eyebrow="Cannabis & Dispensary" title="NetSuite Support & Development for Cannabis Companies" subtitle="280E cost segregation, Metrc integration, batch inventory tracking, and multi-license accounting for cannabis operators already live on NetSuite." align="left" />
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">

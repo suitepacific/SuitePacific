@@ -238,3 +238,9 @@ This update includes configuration changes that require administrator action bef
 SuitePacific works with NetSuite customers through the post-go-live phase: reviewing configurations, validating bundle updates, resolving issues that emerge after upgrades, and making sure nothing falls through the gap between Sandbox and Production. If you are not certain your team has the time or expertise to work through the 2026.07.1 changes before August 11, reach out to us and we will take it from there.
 
 For dedicated FSM troubleshooting and post-bundle-update support, see [NetSuite FSM Support and Troubleshooting](/netsuite-fsm-support). For more on how SuitePacific approaches bundle updates and ongoing configuration reviews, see the [NetSuite administrator support service](/netsuite-administrator-support).
+
+## Related reading
+
+- [NetSuite upgrade preparation](/netsuite-upgrade-preparation): what to review and test before each NetSuite release to avoid post-upgrade breaks.
+- [NetSuite 2026.2 release readiness checklist](/netsuite-2026-2-release-readiness-checklist): the specific changes in 2026.2 that require action before the release window.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): ongoing support that includes upgrade preparation and post-release validation.

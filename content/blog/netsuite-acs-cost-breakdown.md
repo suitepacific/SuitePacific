@@ -141,3 +141,9 @@ The cleanest approach is to start an engagement with a third-party partner while
 At renewal, let the ACS contract lapse. There is no partial-year refund structure, so timing the transition to the renewal date avoids paying for both simultaneously.
 
 For a direct comparison of how a third-party engagement covers the same needs as ACS, see our [NetSuite ACS alternative](/netsuite-acs-alternative) page.
+
+## Related reading
+
+- [NetSuite ACS alternative](/netsuite-acs-alternative): how SuitePacific compares to Oracle ACS on scope, response time, and cost.
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans from $799 covering SuiteScript, workflows, reporting, and ongoing support.
+- [NetSuite managed services pricing](/netsuite-managed-services-pricing): published plan pricing, effective hourly rates, and a comparison to ACS and independent consultants.

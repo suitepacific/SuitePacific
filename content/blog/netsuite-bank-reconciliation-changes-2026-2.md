@@ -125,3 +125,9 @@ If you need help reviewing your account after the 2026.2 release, [SuitePacific'
 <p style="margin:0 0 0.75rem;color:#14306b;font-size:0.875rem;line-height:1.6">Release changes to bank reconciliation surface during month-end close, not before. If the 2026.2 changes are affecting how your team reconciles, or if you want a pre-close review of what changed in your account, that is a straightforward engagement: a few hours to walk through the new Match Bank Data UI against your actual bank feeds and reconciliation workflow.</p>
 <a href="/contact" style="display:inline-block;background:#4f7fff;color:#fff;font-size:0.8rem;font-weight:600;padding:0.5rem 1.25rem;border-radius:6px;text-decoration:none">Schedule a close review</a>
 </div>
+
+## Related reading
+
+- [NetSuite upgrade preparation](/netsuite-upgrade-preparation): what to review and test before each NetSuite release to avoid post-upgrade breaks.
+- [NetSuite 2026.2 release readiness checklist](/netsuite-2026-2-release-readiness-checklist): the specific changes in 2026.2 that require action before the release window.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): ongoing support that includes upgrade preparation and post-release validation.

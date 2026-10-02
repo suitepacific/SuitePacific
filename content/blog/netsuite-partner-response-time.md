@@ -62,3 +62,9 @@ If more than two of these apply, the relationship is not functioning as ongoing 
 ---
 
 See also: [when your NetSuite partner is not responsive](/netsuite-partner-not-responsive), [how to switch NetSuite partners without losing momentum](/blog/how-to-switch-netsuite-partners), and [NetSuite Care plans](/netsuite-care) for a support model with defined same-day escalation for urgent issues.
+
+## Related reading
+
+- [NetSuite partner replacement](/netsuite-partner-replacement): how the transition works when moving from an existing partner to SuitePacific.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): what ongoing support covers after the implementation ends.
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans with no long-term contracts after the 3-month minimum.

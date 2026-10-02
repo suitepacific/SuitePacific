@@ -123,3 +123,9 @@ SuitePacific conducts customization audits as part of account onboarding and as 
 ---
 
 *If your NetSuite account has a customization layer without documentation, [contact SuitePacific](/contact). Account documentation is included in every onboarding and ongoing retainer engagement.*
+
+## Related reading
+
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): what ongoing support covers after the implementation ends.
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans from $799 for ongoing SuiteScript, workflow, reporting, and troubleshooting support.
+- [NetSuite health check](/netsuite-health-check): a structured account review that identifies issues causing the most operational friction.

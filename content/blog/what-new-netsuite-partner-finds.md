@@ -115,3 +115,9 @@ The review a new partner performs directly in the account is the only way to get
 For businesses who want a formal assessment of their account's current state before committing to an ongoing engagement, a [NetSuite health check](/netsuite-health-check) provides exactly this: a structured independent review covering scripts, workflows, saved searches, integrations, roles, and documentation, with findings prioritized by severity. It is the natural starting point for a partner transition when the previous partner's work is unknown or the account has accumulated significant technical debt.
 
 For an overview of how the transition process works and what to expect in the first 90 days with a new partner, the [NetSuite partner replacement](/netsuite-partner-replacement) page covers the full picture.
+
+## Related reading
+
+- [NetSuite partner replacement](/netsuite-partner-replacement): how the transition works when moving from an existing partner to SuitePacific.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): what ongoing support covers after the implementation ends.
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans with no long-term contracts after the 3-month minimum.

@@ -437,3 +437,9 @@ First, write the value to a custom field on the transaction at save time using a
 Second, use a custom XML data source, which requires a SuiteScript script that builds and returns the XML the template receives. This gives full control over the data model at the cost of scripting overhead.
 
 Both approaches are common in production templates that need data beyond what's naturally available on the transaction record. If you're running into the limits of what the default data model provides, that's work our [Advanced PDF template service](/netsuite-advanced-pdf-templates) covers regularly.
+
+## Related reading
+
+- [NetSuite Advanced PDF templates](/netsuite-advanced-pdf-templates): custom invoice, sales order, packing slip, and statement templates built with FreeMarker.
+- [Advanced PDF template mistakes](/blog/advanced-pdf-template-mistakes): the most common errors in NetSuite PDF templates and how to fix them.
+- [NetSuite Advanced PDF data model](/blog/netsuite-advanced-pdf-data-model): how to access transaction fields, line items, and related records in the PDF data model.

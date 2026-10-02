@@ -74,3 +74,9 @@ Most live NetSuite accounts reach a point where post-go-live support becomes nec
 At that point, the question is not whether to get support but what form that support should take. For the decision framework between managed support and break-fix, see [NetSuite managed support vs. break-fix](/blog/netsuite-managed-vs-break-fix-support). For what to look for in a post-go-live support partner, see [how to evaluate a NetSuite post-go-live support partner](/blog/how-to-evaluate-netsuite-support-partner).
 
 For a fixed-price monthly support engagement covering all of the above, the [NetSuite Care plans](/netsuite-care) cover 10, 20, or 35 hours per month with month-to-month continuation after an initial three-month commitment. For more detail on what ongoing post-go-live support looks like, see the [NetSuite post-go-live support](/netsuite-post-go-live-support) page.
+
+## Related reading
+
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans from $799 covering SuiteScript, workflows, reporting, and ongoing support.
+- [NetSuite managed support](/netsuite-managed-support): fixed monthly retainer covering development, administration, break-fix, and upgrade preparation.
+- [NetSuite managed services pricing](/netsuite-managed-services-pricing): published plan pricing, effective hourly rates, and comparison to independent consultants.

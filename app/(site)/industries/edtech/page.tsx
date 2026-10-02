@@ -4,7 +4,7 @@ import { GraduationCap, FileText, BarChart2, Workflow, Code2, ShieldCheck, Refre
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
@@ -83,6 +83,14 @@ export default function EdtechPage() {
       <FaqJsonLd items={FAQ} />
       <ServiceJsonLd name="NetSuite Support for EdTech & Education Companies" description="NetSuite post-go-live support for EdTech and education companies including enrollment revenue recognition, grant management, LMS integrations, and course profitability reporting." url={`${SITE_URL}/industries/edtech`} serviceType="NetSuite EdTech Support" datePublished="2026-09-23T00:00:00+00:00" dateModified="2026-09-23T00:00:00+00:00" offers={[{ name: "Care", price: 799, description: "10 hours/month: recognition schedule maintenance, saved searches, and administration for EdTech accounts. Month-to-month after 3-month minimum." }, { name: "Care Plus", price: 1499, description: "20 hours/month: active development including LMS integrations, grant tracking, and deferred revenue management. Month-to-month." }, { name: "Care Pro", price: 2499, description: "35 hours/month: full EdTech account coverage including billing automation, integrations, and ongoing support. Month-to-month." }]} />
       <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
+        description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
+        videoId="IQvWN_yZ24A"
+        duration="PT18S"
+        uploadDate="2026-08-12T00:00:00+00:00"
+        isShort
+      />
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading as="h1" eyebrow="EdTech & Education" title="NetSuite Support & Development for EdTech & Education Companies" subtitle="Enrollment revenue recognition, grant management, LMS integrations, and course profitability reporting for EdTech companies already live on NetSuite." align="left" />
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">

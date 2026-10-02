@@ -97,3 +97,9 @@ From that baseline, remediation in priority order: address what is actively caus
 And then, prevention: ongoing technical stewardship that keeps the account from returning to the same state. A partner who maintains context over time, documents what is built, reviews releases before they hit Production, and addresses complexity before it compounds.
 
 For a structured assessment of an account's current state, see the [NetSuite health check](/netsuite-health-check). For the full picture of how technical debt is identified and addressed in a live account, see [NetSuite technical debt](/netsuite-technical-debt).
+
+## Related reading
+
+- [NetSuite health check](/netsuite-health-check): a structured review that surfaces performance bottlenecks, unused customizations, and configuration debt.
+- [NetSuite account optimization](/netsuite-account-optimization): what optimization covers: performance, saved searches, workflows, and reporting improvements.
+- [NetSuite technical debt](/netsuite-technical-debt): what technical debt looks like in a live NetSuite account and how to address it.

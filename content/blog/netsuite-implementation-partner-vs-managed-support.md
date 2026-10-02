@@ -161,3 +161,9 @@ The fix is straightforward: before implementation ends, decide who handles the a
 If your implementation just closed and you are figuring out what comes next, or if your current support arrangement has stopped keeping pace with what the account needs, the fastest path forward is a short call to review your account. See the [NetSuite post-go-live support](/netsuite-post-go-live-support) page for how the engagement is structured and what it covers. For pricing, the [NetSuite Care plans](/netsuite-care) page shows the monthly retainer options. Most clients start within a week.
 
 Related reading: [NetSuite post-go-live checklist](/blog/netsuite-post-go-live-checklist), [8 signs your NetSuite support isn't working](/blog/signs-netsuite-support-not-working), and [how to evaluate a NetSuite support partner](/blog/how-to-evaluate-netsuite-support-partner).
+
+## Related reading
+
+- [NetSuite partner replacement](/netsuite-partner-replacement): how the transition works when moving from an existing partner to SuitePacific.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): what ongoing support covers after the implementation ends.
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans with no long-term contracts after the 3-month minimum.

@@ -219,3 +219,9 @@ A: Standard NetSuite templates use a drag-and-drop form builder with limited lay
 
 **Q: How do you debug a FreeMarker error in a NetSuite template?**
 A: NetSuite shows the FreeMarker error message in the print preview when a template fails to render. The error identifies the line in the template where the failure occurred. Common errors are "null pointer" (a field reference without `!` encountered a null value) and "undefined variable" (a field name that does not exist in the data model). Start by checking the field name in the data model viewer and adding `!` to any field reference that might be null.
+
+## Related reading
+
+- [NetSuite Advanced PDF templates](/netsuite-advanced-pdf-templates): custom invoice, sales order, packing slip, and statement templates built with FreeMarker.
+- [Advanced PDF template mistakes](/blog/advanced-pdf-template-mistakes): the most common errors in NetSuite PDF templates and how to fix them.
+- [NetSuite FreeMarker PDF guide](/blog/netsuite-freemarker-pdf-guide): FreeMarker syntax, data model access, and layout techniques for Advanced PDF templates.

@@ -157,3 +157,9 @@ The audit output is a written findings report: a structured list of items classi
 For accounts where an independent outside review is more reliable than a self-review, or where the scale of the account makes a thorough self-review impractical, a [NetSuite health check](/netsuite-health-check) delivers the same structured findings report in five to seven business days. The findings are classified by severity and prioritized for remediation, with the most critical items identified first.
 
 For the broader context of why technical debt accumulates and how it is addressed over time, see [NetSuite technical debt](/netsuite-technical-debt).
+
+## Related reading
+
+- [NetSuite technical debt](/netsuite-technical-debt): what technical debt looks like in a live NetSuite account and how SuitePacific addresses it.
+- [NetSuite health check](/netsuite-health-check): a structured audit that surfaces technical debt, unused customizations, and performance issues.
+- [NetSuite SuiteScript development](/netsuite-suitescript-development): rewriting and replacing legacy scripts as part of a technical debt reduction effort.

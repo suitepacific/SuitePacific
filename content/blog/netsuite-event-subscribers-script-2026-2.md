@@ -130,3 +130,9 @@ A: No. Because the script runs asynchronously after the user's request is comple
 
 **Q: Can Event Subscriptions replace all afterSubmit callout patterns?**
 A: For the straightforward case of pushing record data to an external endpoint on a create, update, or delete event, yes. For cases where the payload needs to be enriched with additional SuiteScript logic before it is sent, an Event Subscriber Script that handles the callout gives you more control.
+
+## Related reading
+
+- [NetSuite upgrade preparation](/netsuite-upgrade-preparation): what to review and test before each NetSuite release to avoid post-upgrade breaks.
+- [NetSuite 2026.2 release readiness checklist](/netsuite-2026-2-release-readiness-checklist): the specific changes in 2026.2 that require action before the release window.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): ongoing support that includes upgrade preparation and post-release validation.

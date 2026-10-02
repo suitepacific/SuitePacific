@@ -108,3 +108,9 @@ A: It depends on how your vendors quote amounts on their invoices. If line amoun
 A: The matching logic in Bill Capture is separate from how tax and shipping amounts are saved. Tax and shipping preference changes affect how those amounts flow to the bill record, not whether the bill matches a purchase order.
 
 If you need help reviewing your Bill Capture configuration or other account settings after 2026.2, [SuitePacific's post-go-live support](/netsuite-post-go-live-support) covers release review and ongoing account maintenance.
+
+## Related reading
+
+- [NetSuite AP automation](/netsuite-ap-automation): automated vendor bill creation, approval routing, and payment run management.
+- [NetSuite approval workflows](/netsuite-approval-workflows): SuiteApprovals and SuiteFlow configuration for vendor bills and purchase orders.
+- [NetSuite workflow automation](/netsuite-workflow-automation): multi-step approval routing and notification automation for financial documents.

@@ -2,7 +2,7 @@
 title: "Why Your NetSuite Account Feels Slow (and What Actually Fixes It)"
 description: "Why is NetSuite so slow? The most common causes are dashboard saved searches loading on every page, scripts hitting governance limits, and record volume accumulation. A diagnostic checklist to find and fix each one."
 date: "2026-06-29"
-updated: "2026-08-21"
+updated: "2026-10-03"
 tags: ["Performance", "Account Optimization"]
 ---
 
@@ -170,3 +170,9 @@ A: Go to Customization &gt; Lists, Records, and Fields and review each field typ
 A: Deactivate workflows rather than delete them initially. An inactive workflow does not run but can be reactivated if needed. Before deactivating, confirm the workflow has not been used recently by checking its execution history.
 
 Account performance issues are almost always fixable without an upgrade or a re-implementation, just a focused look at what's actually running and how often. This kind of cleanup is part of our [account optimization service](/netsuite-account-optimization). If your account has gotten noticeably slower over time, [book a free consultation](/#contact) and we'll help you find out why. For related reading, see [10 NetSuite Saved Search Tips Every Finance Team Should Know](/blog/netsuite-saved-search-tips) and [NetSuite Account Optimization: What to Audit and Fix on a Live Account](/blog/netsuite-optimization).
+
+## Related reading
+
+- [NetSuite health check](/netsuite-health-check): a structured review that surfaces performance bottlenecks, unused customizations, and configuration debt.
+- [NetSuite account optimization](/netsuite-account-optimization): what optimization covers: performance, saved searches, workflows, and reporting improvements.
+- [NetSuite technical debt](/netsuite-technical-debt): what technical debt looks like in a live NetSuite account and how to address it.

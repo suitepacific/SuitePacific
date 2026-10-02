@@ -112,3 +112,9 @@ A: Yes. AI descriptions set in ARC apply at the account level, affecting any AI 
 A: No. AI descriptions are metadata read by AI integrations. They do not change the record type's fields, forms, layout, or behavior in the standard NetSuite interface.
 
 Keeping your NetSuite account configuration current as features expand is part of what [SuitePacific's post-go-live support](/netsuite-post-go-live-support) covers.
+
+## Related reading
+
+- [NetSuite upgrade preparation](/netsuite-upgrade-preparation): what to review and test before each NetSuite release to avoid post-upgrade breaks.
+- [NetSuite 2026.2 release readiness checklist](/netsuite-2026-2-release-readiness-checklist): the specific changes in 2026.2 that require action before the release window.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): ongoing support that includes upgrade preparation and post-release validation.

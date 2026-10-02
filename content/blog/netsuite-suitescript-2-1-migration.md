@@ -171,3 +171,9 @@ Simple 2.0 scripts can be migrated in-house if you have a NetSuite developer on 
 ---
 
 *SuitePacific audits and migrates NetSuite SuiteScript 1.0 and 2.0 scripts to SuiteScript 2.1 before the 2028.2 deadline. Oracle SuiteCloud Developer II and Administrator Professional certified. US-based, direct developer access on every engagement. Plans start at $799 per month on month-to-month terms. [See the migration service](/netsuite-suitescript-migration) or [view support plans](/netsuite-care).*
+
+## Related reading
+
+- [NetSuite SuiteScript development](/netsuite-suitescript-development): custom SuiteScript 2.1 user event, scheduled, map/reduce, client, and RESTlet scripts.
+- [Hire a NetSuite developer](/hire-netsuite-developer): dedicated SuiteScript developer for custom scripts, integrations, and automation.
+- [NetSuite SuiteScript migration](/netsuite-suitescript-migration): upgrading older SuiteScript 1.0 scripts to SuiteScript 2.1 and resolving deprecation warnings.

@@ -252,3 +252,9 @@ There is no universal winner. The right answer depends on what the logic actuall
 If your NetSuite account has accumulated years of workflows and scripts that now interact in ways nobody fully understands, that's one of the more common things we help teams untangle. Our [workflow automation service](/netsuite-workflow-automation) and [SuiteScript development work](/netsuite-suitescript-development) both include this kind of review, mapping what runs on a given record type, identifying where tools are fighting each other, and consolidating logic to make the account predictable again.
 
 For related reading: [5 Common Workflow Automation Mistakes](/blog/workflow-automation-mistakes), [NetSuite User Event Scripts vs Client Scripts](/blog/netsuite-user-event-vs-client-script), and [SuiteScript Best Practices](/blog/suitescript-best-practices).
+
+## Related reading
+
+- [NetSuite SuiteScript development](/netsuite-suitescript-development): custom SuiteScript 2.1 user event, scheduled, map/reduce, client, and RESTlet scripts.
+- [Hire a NetSuite developer](/hire-netsuite-developer): dedicated SuiteScript developer for custom scripts, integrations, and automation.
+- [NetSuite SuiteScript migration](/netsuite-suitescript-migration): upgrading older SuiteScript 1.0 scripts to SuiteScript 2.1 and resolving deprecation warnings.

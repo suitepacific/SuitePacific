@@ -182,3 +182,9 @@ Auditing SuiteScript implementations for implicit sort dependencies, particularl
 If your NetSuite account recently upgraded to 2026.2 and you want to verify that your SuiteQL queries are not affected by this change, [contact SuitePacific](/contact). We can review your scripts and identify any queries that need an explicit sort order added.
 
 For help identifying and updating affected SuiteQL queries in your scripts, see SuitePacific's [NetSuite SuiteScript development service](/netsuite-suitescript-development).
+
+## Related reading
+
+- [NetSuite saved searches and dashboards](/netsuite-saved-searches-dashboards): saved searches, KPI metrics, and dashboard builds alongside SuiteQL for live accounts.
+- [NetSuite SuiteQL guide](/blog/netsuite-suiteql-guide): syntax, joins, aggregations, and common query patterns for SuiteQL.
+- [SuiteQL bound parameters](/blog/netsuite-suiteql-bound-parameters): how to use parameterized queries to avoid injection risks and improve query reliability.

@@ -63,3 +63,9 @@ The output of a structured review is not a list of problems: it is a prioritized
 ---
 
 See also: [NetSuite technical debt remediation](/netsuite-technical-debt) for how SuitePacific approaches account cleanup, and [NetSuite health check](/netsuite-health-check) for a structured account review that produces a written findings report with a prioritized remediation plan.
+
+## Related reading
+
+- [NetSuite technical debt](/netsuite-technical-debt): what technical debt looks like in a live NetSuite account and how SuitePacific addresses it.
+- [NetSuite health check](/netsuite-health-check): a structured audit that surfaces technical debt, unused customizations, and performance issues.
+- [NetSuite SuiteScript development](/netsuite-suitescript-development): rewriting and replacing legacy scripts as part of a technical debt reduction effort.

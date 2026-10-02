@@ -125,3 +125,9 @@ Import Doctor is a NetSuite CSV import validation tool built by SuitePacific. It
 ---
 
 *SuitePacific handles NetSuite data migrations and CSV imports for customers, vendors, items, transactions, and custom records. Also builds Import Doctor, a pre-import CSV validation tool for NetSuite. Oracle SuiteCloud Developer II and Administrator Professional certified. US-based, direct access on every engagement. Plans start at $799 per month. [See the migration service](/netsuite-data-migration) or [try Import Doctor](/importDetector).*
+
+## Related reading
+
+- [NetSuite data migration](/netsuite-data-migration): migrating historical data, open transactions, and master records into a live NetSuite account.
+- [NetSuite migration from QuickBooks](/netsuite-migration-from-quickbooks): what the migration covers, common data mapping challenges, and what to validate after cutover.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): what ongoing support covers once the migration is complete and the account is live.

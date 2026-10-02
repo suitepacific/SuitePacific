@@ -95,3 +95,9 @@ Old custom forms still show up in the form selector when someone opens a record,
 None of this is complicated. It is time-consuming because accounts accumulate years of changes and there is no dashboard that shows you what is unused. But working through it systematically results in an account that is noticeably faster, easier to manage, and less likely to produce unexpected behavior from something nobody remembers setting up.
 
 Our [NetSuite account optimization service](/netsuite-account-optimization) is built around exactly this kind of audit. If the account has not had a structured cleanup pass since go-live, [book a consultation](/contact) and we can tell you what we find. For related reading, see [Why Your NetSuite Account Feels Slow and What Actually Fixes It](/blog/netsuite-account-performance) and [10 NetSuite Saved Search Tips Every Finance Team Should Know](/blog/netsuite-saved-search-tips).
+
+## Related reading
+
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): what ongoing support covers after the implementation ends.
+- [NetSuite health check](/netsuite-health-check): a structured account review that identifies issues causing operational friction.
+- [NetSuite account optimization](/netsuite-account-optimization): what optimization covers: performance, saved searches, workflows, and reporting improvements.

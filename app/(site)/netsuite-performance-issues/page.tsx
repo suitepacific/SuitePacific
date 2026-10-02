@@ -4,7 +4,7 @@ import { Gauge, Code2, Workflow, BarChart2, Settings, ShieldCheck, Users, Refres
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
@@ -82,6 +82,14 @@ export default function NetSuitePerformanceIssuesPage() {
       <FaqJsonLd items={FAQ} />
       <ServiceJsonLd name="NetSuite Performance Optimization" description="Diagnosis and fixes for slow NetSuite accounts, covering dashboard portlet searches, script governance, workflow overhead, metadata accumulation, and saved search efficiency." url={`${SITE_URL}/netsuite-performance-issues`} serviceType="NetSuite Performance Optimization" datePublished="2026-09-23T00:00:00+00:00" dateModified="2026-09-23T00:00:00+00:00" offers={[{ name: "Care", price: 799, description: "10 hours/month: performance audit, script execution log review, portlet search fixes, and account maintenance. Month-to-month after 3-month minimum." }, { name: "Care Plus", price: 1499, description: "20 hours/month: active optimization work including script rewrites, workflow entry conditions, saved search rebuilds, and ongoing monitoring. Month-to-month." }, { name: "Care Pro", price: 2499, description: "35 hours/month: full performance optimization coverage with proactive monitoring, script governance maintenance, and ongoing cleanup. Month-to-month." }]} />
       <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
+        description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
+        videoId="IQvWN_yZ24A"
+        duration="PT18S"
+        uploadDate="2026-08-12T00:00:00+00:00"
+        isShort
+      />
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading as="h1" eyebrow="Performance Optimization" title="NetSuite Performance Issues: Diagnosis and Fixes for a Slow Account" subtitle="Dashboard slowdowns, script queue backups, workflow overhead, and saved search inefficiency, all fixable without a platform upgrade or re-implementation." align="left" />
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">

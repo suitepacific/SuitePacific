@@ -101,3 +101,9 @@ Before evaluating a proposal:
 3. **Know your critical path.** If a broken script affecting AP needs to be fixed today, not next week, that response time expectation should be part of the retainer agreement explicitly, not assumed.
 
 For reference pricing on SuitePacific's own support model, [get in touch here](/contact). We scope retainers based on your account's actual needs rather than quoting from a standard tier structure.
+
+## Related reading
+
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans from $799 covering SuiteScript, workflows, reporting, and ongoing support.
+- [NetSuite managed support](/netsuite-managed-support): fixed monthly retainer covering development, administration, break-fix, and upgrade preparation.
+- [NetSuite managed services pricing](/netsuite-managed-services-pricing): published plan pricing, effective hourly rates, and comparison to independent consultants.

@@ -130,3 +130,9 @@ Tier changes mid-contract depend on your Oracle agreement terms. In general, upg
 ---
 
 *For a full comparison of ACS against managed support, Solution Providers, and other alternatives, see the [NetSuite ACS alternatives comparison](/netsuite-acs-alternatives-comparison). For the primary guide on replacing ACS with a third-party firm, see [NetSuite ACS alternative for SMBs](/netsuite-acs-alternative).*
+
+## Related reading
+
+- [NetSuite ACS alternative](/netsuite-acs-alternative): how SuitePacific compares to Oracle ACS on scope, response time, and cost.
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans from $799 covering SuiteScript, workflows, reporting, and ongoing support.
+- [NetSuite managed services pricing](/netsuite-managed-services-pricing): published plan pricing, effective hourly rates, and a comparison to ACS and independent consultants.

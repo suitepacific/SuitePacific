@@ -127,3 +127,9 @@ The managed retainer costs more in this example. Whether it represents better va
 ---
 
 *SuitePacific publishes its support pricing and makes it available without a discovery call first. If you want to compare your current ACS cost or hourly consulting spend against what a retainer would cover, [contact us](/contact).*
+
+## Related reading
+
+- [NetSuite Care plans](/netsuite-care): monthly retainer plans from $799 covering SuiteScript, workflows, reporting, and ongoing support.
+- [NetSuite managed support](/netsuite-managed-support): fixed monthly retainer covering development, administration, break-fix, and upgrade preparation.
+- [NetSuite managed services pricing](/netsuite-managed-services-pricing): published plan pricing, effective hourly rates, and comparison to independent consultants.

@@ -91,3 +91,9 @@ After the initial remediation, ongoing stewardship prevents the ownership gap fr
 For a structured starting point, a [NetSuite health check](/netsuite-health-check) produces the current-state inventory and findings classification that active ownership needs as its foundation. For the broader context of what technical debt accumulates in live accounts and how it is addressed, see [NetSuite technical debt](/netsuite-technical-debt).
 
 For businesses who are transitioning from a previous partner and inheriting an account with an ownership gap, the [NetSuite partner replacement](/netsuite-partner-replacement) page covers what the transition looks like and how a new partner builds the context the previous partner held.
+
+## Related reading
+
+- [NetSuite health check](/netsuite-health-check): a structured review that surfaces performance bottlenecks, unused customizations, and configuration debt.
+- [NetSuite account optimization](/netsuite-account-optimization): what optimization covers: performance, saved searches, workflows, and reporting improvements.
+- [NetSuite technical debt](/netsuite-technical-debt): what technical debt looks like in a live NetSuite account and how to address it.

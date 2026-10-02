@@ -153,3 +153,9 @@ A: Yes. Workflow email actions can use formula-based recipient fields that refer
 
 **Q: What happens to a pending record if the workflow is deactivated?**
 A: Deactivating a workflow stops it from processing new transitions, but records already in a workflow state retain that state. They remain stuck in Pending Approval until the workflow is re-activated or manually updated. Before deactivating an active approval workflow, resolve all open records or document the manual steps needed to process them without the workflow.
+
+## Related reading
+
+- [NetSuite workflow automation](/netsuite-workflow-automation): multi-step approval routing, notification automation, and SuiteFlow process management.
+- [NetSuite approval workflows](/netsuite-approval-workflows): SuiteApprovals and SuiteFlow configuration for purchase orders, vendor bills, and expense reports.
+- [NetSuite workflow vs SuiteScript](/blog/netsuite-workflow-vs-suitescript): when to use SuiteFlow and when a SuiteScript-backed solution is needed.

@@ -143,3 +143,9 @@ Reviewing FSM Configuration for retired properties, translating business require
 If your team does not have an FSM-experienced administrator available before August 11, [reach out to us](/contact). We will work through your configuration, identify what needs to change, and make sure your technicians have the right access when Production updates.
 
 For dedicated FSM support and configuration troubleshooting, see [NetSuite FSM Support and Troubleshooting](/netsuite-fsm-support). For more on how SuitePacific handles post-go-live configuration and administrator support, see the [NetSuite administrator support service](/netsuite-administrator-support).
+
+## Related reading
+
+- [NetSuite data migration](/netsuite-data-migration): migrating historical data, open transactions, and master records into a live NetSuite account.
+- [NetSuite migration from QuickBooks](/netsuite-migration-from-quickbooks): what the migration covers, common data mapping challenges, and what to validate after cutover.
+- [NetSuite post-go-live support](/netsuite-post-go-live-support): what ongoing support covers once the migration is complete and the account is live.

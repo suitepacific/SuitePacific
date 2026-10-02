@@ -4,7 +4,7 @@ import { TrendingUp, FileText, BarChart2, Workflow, Code2, ShieldCheck, RefreshC
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
@@ -83,6 +83,14 @@ export default function PrivateEquityPage() {
       <FaqJsonLd items={FAQ} />
       <ServiceJsonLd name="NetSuite Support for Private Equity & Family Offices" description="NetSuite post-go-live support for PE firms and family offices including portfolio consolidation, waterfall distributions, LP capital tracking, and management fee billing." url={`${SITE_URL}/industries/private-equity`} serviceType="NetSuite Private Equity Support" datePublished="2026-09-23T00:00:00+00:00" dateModified="2026-09-23T00:00:00+00:00" offers={[{ name: "Care", price: 799, description: "10 hours/month: consolidation maintenance, saved searches, and administration for PE and family office accounts. Month-to-month after 3-month minimum." }, { name: "Care Plus", price: 1499, description: "20 hours/month: active development including waterfall scripts, LP tracking, and management fee billing. Month-to-month." }, { name: "Care Pro", price: 2499, description: "35 hours/month: full PE account coverage including portfolio consolidation, IRR reporting, and ongoing support. Month-to-month." }]} />
       <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
+        description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
+        videoId="IQvWN_yZ24A"
+        duration="PT18S"
+        uploadDate="2026-08-12T00:00:00+00:00"
+        isShort
+      />
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading as="h1" eyebrow="Private Equity & Family Office" title="NetSuite Support & Development for Private Equity Firms & Family Offices" subtitle="Portfolio consolidation, waterfall distribution scripts, LP capital account tracking, and management fee billing for PE firms already live on NetSuite." align="left" />
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">

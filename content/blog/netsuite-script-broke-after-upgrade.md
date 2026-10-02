@@ -121,3 +121,9 @@ For accounts with many custom scripts, a systematic pre-release test pass is wor
 If you are dealing with a script failure right now and need same-day help diagnosing or fixing it, [SuitePacific offers NetSuite emergency support](/netsuite-emergency-support) for exactly this scenario.
 
 For ongoing coverage before each release, [post-go-live support](/netsuite-post-go-live-support) includes release testing as a standard part of the engagement.
+
+## Related reading
+
+- [NetSuite SuiteScript development](/netsuite-suitescript-development): custom SuiteScript 2.1 user event, scheduled, map/reduce, client, and RESTlet scripts.
+- [Hire a NetSuite developer](/hire-netsuite-developer): dedicated SuiteScript developer for custom scripts, integrations, and automation.
+- [NetSuite SuiteScript migration](/netsuite-suitescript-migration): upgrading older SuiteScript 1.0 scripts to SuiteScript 2.1 and resolving deprecation warnings.
