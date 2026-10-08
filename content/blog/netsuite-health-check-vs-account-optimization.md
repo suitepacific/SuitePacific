@@ -32,6 +32,18 @@ Account optimization work is scoped from findings. It requires knowing what to f
 
 The scope of an account optimization is variable; it depends on what the assessment found. An account with two Critical findings and fifteen Advisory findings requires a different optimization than one with twelve Critical findings and two Advisory ones. The effort is proportional to what was found.
 
+## Health check vs. account optimization: key differences
+
+| Aspect | Health Check | Account Optimization |
+|--------|-------------|---------------------|
+| Purpose | Diagnostic review | Remediation work |
+| Outcome | Written findings report with severity classifications | Changes applied to the account |
+| Scope | Fixed: six areas reviewed | Variable: scoped from the findings report |
+| Timeline | 5 to 7 business days | Proportional to findings volume and severity |
+| Changes made to the account | None | Yes |
+| Requires a prior engagement | No | Yes (findings from an assessment) |
+| Can be taken to another provider | Yes (the report is portable) | N/A |
+
 ## Which comes first
 
 Always the health check.

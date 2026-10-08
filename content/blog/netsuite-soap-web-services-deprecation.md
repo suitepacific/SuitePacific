@@ -55,6 +55,17 @@ For most integration use cases, REST Web Services supports the same operations t
 
 The main area where REST coverage is still catching up is certain search and reporting operations that have been available via SOAP for years. For complex saved search-based integrations, SuiteQL through the REST API is typically the right approach, though it requires more query design than the equivalent SOAP search operation.
 
+## SOAP vs. REST Web Services: key differences
+
+| Aspect | SOAP Web Services | REST Web Services |
+|--------|:----------------:|:-----------------:|
+| Protocol | XML over WSDL | JSON over HTTP |
+| Authentication | Token-Based Auth (TBA) | OAuth 2.0 |
+| Available since | Mid-2000s | 2020.1 |
+| Query approach | Saved search operations | SuiteQL |
+| Development status | Deprecated; no new features | Actively developed each release |
+| End of life | 2028.2 | No announced end date |
+
 ## How to Assess Your Exposure
 
 Before planning a migration, you need to understand what you are dealing with. The key questions are:

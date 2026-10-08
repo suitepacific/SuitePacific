@@ -56,6 +56,16 @@ This is a nexus-level setting that tells NetSuite to account for tax when calcul
 
 Both settings need to be enabled for the full behavior to work. Enabling only one produces incomplete results.
 
+## SuiteTax term discount tax: before and after enabling the settings
+
+| Behavior | Before Enabling Settings | After Enabling Settings |
+|----------|--------------------------|------------------------|
+| Tax calculated on | Gross invoice amount | Discounted amount actually paid |
+| Adjustment transaction | Not created | Created automatically when discount is applied |
+| Tax liability when discount is taken | Overstated | Accurate to the amount paid |
+| Manual correction needed | Yes | No |
+| Applies to | N/A | SuiteTax accounts only |
+
 ## Where Do You Enable SuiteTax Term Discount Tax Settings?
 
 **Setting 1** is in your accounting preferences. Go to **Setup > Accounting > Accounting Preferences** and look for "Create Adjustment Transactions for Term Discounts."

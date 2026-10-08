@@ -47,6 +47,20 @@ A typical pattern for accounts with complex approval requirements: SuiteApproval
 
 For accounts with truly complex approval logic, such as an approval matrix where the routing depends on a combination of department, amount, project type, and subsidiary, a SuiteScript-backed workflow may replace SuiteApprovals entirely, using custom approval fields and a script to enforce the matrix logic directly.
 
+## SuiteApprovals vs. SuiteFlow vs. custom SuiteScript: what each handles
+
+| Capability | SuiteApprovals | SuiteFlow | Custom SuiteScript |
+|-----------|:--------------:|:---------:|:-----------------:|
+| Sequential approval chains | Yes | Yes | Yes |
+| Parallel approval | Yes | Yes | Yes |
+| Delegate approvers | Yes | Yes | Yes |
+| Spend limits on approvers | Yes | Yes | Yes |
+| Conditional routing by amount, department, or subsidiary | No | Yes | Yes |
+| Dynamic approver from supervisor hierarchy | No | Yes | Yes |
+| Time-based escalation on pending approvals | No | Yes (with scheduled script) | Yes |
+| Compliance pre-condition checks | No | Yes | Yes |
+| Complex multi-level approval matrices | No | Partially | Yes |
+
 ## What approval routing patterns require custom SuiteFlow development?
 
 **Amount-based routing with multiple tiers:** A common requirement where approvals route to different levels based on dollar amount. Bills under $5,000 need department head approval; bills between $5,000 and $25,000 need VP approval; bills above $25,000 need CFO approval. SuiteApprovals alone cannot handle this without SuiteFlow conditions setting the approval chain dynamically.

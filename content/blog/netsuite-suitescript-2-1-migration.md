@@ -59,6 +59,18 @@ The 2028.2 release is far enough out that most accounts have time to plan and ex
 
 **SuiteScript 2.1** uses the same N/ module system as 2.0, but runs on a modern JavaScript engine that supports ES6+ syntax: `let`, `const`, arrow functions, template literals, destructuring, spread operators, `async`/`await`, and other modern language features. The API version declaration changes from `@NApiVersion 2.0` to `@NApiVersion 2.1`. Because the N/ module system is shared between 2.0 and 2.1, most 2.0 scripts migrate with minimal changes.
 
+## SuiteScript 1.0 vs. 2.0 vs. 2.1: comparison
+
+| Feature | SuiteScript 1.0 | SuiteScript 2.0 | SuiteScript 2.1 |
+|---------|:--------------:|:--------------:|:--------------:|
+| API style | Global nlapiXxx functions | N/ module system (AMD) | N/ module system (AMD) |
+| JavaScript engine | Pre-ES6 | Pre-ES6 | ES6+ (modern) |
+| Strict mode enforced | No | No | Yes |
+| ES6 syntax (let, const, arrow functions) | No | No | Yes |
+| async/await support | No | No | Yes |
+| Status after 2028.2 | Stops working | Stops working | Supported |
+| Migration path | Full rewrite required | Version declaration update + testing | Target version |
+
 ## What does migrating from SuiteScript 2.0 to 2.1 involve?
 
 For most SuiteScript 2.0 scripts, the migration to 2.1 is straightforward:
