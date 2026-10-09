@@ -3,6 +3,7 @@ import type { NextRequest } from "next/server";
 import { ADMIN_SESSION_COOKIE, verifySessionToken } from "@/lib/auth";
 import { PARTNER_SESSION_COOKIE, verifyPartnerSessionToken } from "@/lib/partner-auth";
 import { CUSTOMER_SESSION_COOKIE, verifyCustomerSessionToken } from "@/lib/customer-auth";
+import { EMPLOYEE_SESSION_COOKIE, verifyEmployeeSessionToken } from "@/lib/employee-auth";
 import { SC_SESSION_COOKIE, verifyScSessionToken } from "@/lib/sc-auth";
 
 // In-memory rate limiting for login endpoints.
@@ -28,6 +29,7 @@ const LOGIN_PATHS = new Set([
   "/admin/login",
   "/partner-portal/login",
   "/customer-portal/login",
+  "/employee-portal/login",
   "/suitecompare/login",
   "/suitecompare/signup",
   "/suitecompare/verify",
@@ -165,6 +167,17 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Employee portal routes
+  if (pathname.startsWith("/employee-portal")) {
+    if (pathname === "/employee-portal/login") return NextResponse.next();
+    const token = request.cookies.get(EMPLOYEE_SESSION_COOKIE)?.value;
+    const result = await verifyEmployeeSessionToken(token);
+    if (!result) {
+      return NextResponse.redirect(new URL("/employee-portal/login", request.url));
+    }
+    return NextResponse.next();
+  }
+
   // Import Doctor routes — shares SuiteCompare's login/session (same ScUser/ScOrg model)
   if (pathname.startsWith("/importDetector")) {
     const token = request.cookies.get(SC_SESSION_COOKIE)?.value;
@@ -208,6 +221,7 @@ export const config = {
     "/admin/:path*",
     "/partner-portal/:path*",
     "/customer-portal/:path*",
+    "/employee-portal/:path*",
     "/suitecompare/:path*",
     "/importDetector/:path*",
     "/api/sc/:path*",

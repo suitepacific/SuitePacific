@@ -21,6 +21,7 @@ import {
   Clock,
   Receipt,
   GitCompare,
+  UserCog,
 } from "lucide-react";
 import { logoutAction } from "@/app/admin/actions";
 import { AdminNotifications } from "@/components/admin/AdminNotifications";
@@ -33,6 +34,7 @@ const LINKS = [
   { href: "/admin/customers", label: "Customers", icon: Building2, exact: false },
   { href: "/admin/tickets", label: "Tickets", icon: Ticket, exact: false },
   { href: "/admin/time-entries", label: "Time", icon: Clock, exact: false },
+  { href: "/admin/employees", label: "Employees", icon: UserCog, exact: false },
   { href: "/admin/invoices", label: "Invoices", icon: Receipt, exact: false },
   { href: "/admin/partners", label: "Partners", icon: Handshake, exact: false },
   { href: "/admin/referrals", label: "Referrals", icon: Send, exact: false },

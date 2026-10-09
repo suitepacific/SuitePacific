@@ -20,6 +20,7 @@ export default async function AdminTimeEntriesPage({
     include: {
       customer: { select: { name: true, company: true } },
       ticket: { select: { title: true } },
+      employee: { select: { name: true } },
       invoiceItem: { select: { invoiceId: true, invoice: { select: { invoiceNumber: true } } } },
     },
     orderBy: { date: "desc" },
@@ -81,6 +82,7 @@ export default async function AdminTimeEntriesPage({
                 <th className="px-5 py-3 font-medium">Customer</th>
                 <th className="px-5 py-3 font-medium">Description</th>
                 <th className="px-5 py-3 font-medium">Ticket</th>
+                <th className="px-5 py-3 font-medium">Logged by</th>
                 <th className="px-5 py-3 font-medium">Hours</th>
                 <th className="px-5 py-3 font-medium">Rate</th>
                 <th className="px-5 py-3 font-medium">Invoice</th>
@@ -105,6 +107,9 @@ export default async function AdminTimeEntriesPage({
                         {e.ticket.title}
                       </Link>
                     ) : <span className="text-brand-200">-</span>}
+                  </td>
+                  <td className="px-5 py-3 text-brand-400 text-xs whitespace-nowrap">
+                    {e.employee ? e.employee.name : <span className="text-brand-200">Admin</span>}
                   </td>
                   <td className="px-5 py-3">
                     <span className={`font-medium ${e.isBillable ? "text-brand-900" : "text-brand-300"}`}>

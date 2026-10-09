@@ -209,6 +209,7 @@ model Customer {
   tickets             Ticket[]
   timeEntries         TimeEntry[]
   invoices            Invoice[]
+  employees           Employee[]
 
   @@index([status])
   @@index([archivedAt])
@@ -276,22 +277,41 @@ enum TicketStatus {
 
 // ─── Time Tracking & Invoicing ───────────────────────────────────────────────
 
+model Employee {
+  id             String      @id @default(cuid())
+  name           String
+  email          String      @unique
+  passwordHash   String
+  sessionVersion Int         @default(1)
+  isActive       Boolean     @default(true)
+  customer       Customer    @relation(fields: [customerId], references: [id])
+  customerId     String
+  createdAt      DateTime    @default(now())
+  timeEntries    TimeEntry[]
+
+  @@index([customerId])
+  @@index([email])
+}
+
 model TimeEntry {
   id          String    @id @default(cuid())
   customer    Customer  @relation(fields: [customerId], references: [id])
   customerId  String
   ticket      Ticket?   @relation(fields: [ticketId], references: [id])
   ticketId    String?
+  employee    Employee? @relation(fields: [employeeId], references: [id])
+  employeeId  String?
   date        DateTime  @db.Date
   hours       Float
   description String
   isBillable  Boolean   @default(true)
-  hourlyRate  Float?    // override customer default; null = use customer.hourlyRate
+  hourlyRate  Float?
   invoiceItem InvoiceItem?
   createdAt   DateTime  @default(now())
 
   @@index([customerId])
   @@index([ticketId])
+  @@index([employeeId])
   @@index([date])
   @@index([isBillable])
 }
