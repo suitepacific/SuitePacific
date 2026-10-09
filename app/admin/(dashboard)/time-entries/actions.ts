@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/auth";
-import { nextInvoiceNumber, periodDateFilter } from "@/lib/invoice-utils";
+import { nextInvoiceNumber, periodDateFilter, dueDateFromTerms } from "@/lib/invoice-utils";
 
 export async function logTimeEntryAction(_prev: unknown, formData: FormData) {
   await requireAdmin();
@@ -89,7 +89,7 @@ export async function generateInvoicesAction(formData: FormData) {
       ...(dateFilter ? { date: dateFilter } : {}),
     },
     include: {
-      customer: { select: { id: true, company: true, hourlyRate: true, billingCurrency: true } },
+      customer: { select: { id: true, company: true, hourlyRate: true, billingCurrency: true, paymentTerms: true } },
     },
   });
 
@@ -105,13 +105,12 @@ export async function generateInvoicesAction(formData: FormData) {
   }
 
   const issueDate = new Date();
-  const dueDate = new Date(issueDate);
-  dueDate.setDate(dueDate.getDate() + 30);
 
   for (const [custId, custEntries] of byCustomer) {
     const customer = custEntries[0].customer;
     const defaultRate = customer.hourlyRate ?? 0;
     const currency = customer.billingCurrency ?? "USD";
+    const dueDate = dueDateFromTerms(issueDate, customer.paymentTerms ?? "NET30");
 
     const items = custEntries.map((e) => {
       const rate = e.hourlyRate ?? defaultRate;

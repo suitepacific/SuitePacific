@@ -88,6 +88,7 @@ export default async function AdminCustomerDetailPage({ params }: { params: Prom
             hourlyRate: customer.hourlyRate,
             monthlyRate: customer.monthlyRate,
             billingCurrency: customer.billingCurrency,
+            paymentTerms: customer.paymentTerms ?? "NET30",
           }}
         />
 

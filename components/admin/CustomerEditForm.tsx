@@ -16,6 +16,7 @@ interface Props {
     hourlyRate: number | null;
     monthlyRate: number | null;
     billingCurrency: string;
+    paymentTerms: string;
   };
 }
 
@@ -83,6 +84,18 @@ export function CustomerEditForm({ id, defaults }: Props) {
               <input name="monthlyRate" type="number" min="0" step="0.01"
                 defaultValue={defaults.monthlyRate ?? ""} placeholder="e.g. 3000.00" className={inp} />
             </div>
+          </div>
+          <div className="mt-3">
+            <label className="block text-xs text-brand-500 mb-1">Payment Terms</label>
+            <select name="paymentTerms" defaultValue={defaults.paymentTerms} className={inp}>
+              <option value="DUE_ON_RECEIPT">Due on Receipt</option>
+              <option value="NET7">Net 7</option>
+              <option value="NET15">Net 15</option>
+              <option value="NET30">Net 30</option>
+              <option value="NET45">Net 45</option>
+              <option value="NET60">Net 60</option>
+            </select>
+            <p className="mt-1 text-xs text-brand-400">Due date is calculated from the date the invoice is marked Sent.</p>
           </div>
         </div>
 

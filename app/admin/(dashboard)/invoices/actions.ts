@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/auth";
+import { dueDateFromTerms } from "@/lib/invoice-utils";
 
 const VALID_STATUSES = new Set(["DRAFT", "SENT", "PAID", "VOID"]);
 const VALID_CURRENCIES = new Set(["USD", "AUD", "GBP", "EUR", "CAD", "NZD", "SGD", "INR"]);
@@ -173,11 +174,18 @@ export async function updateInvoiceStatusAction(_prev: unknown, formData: FormDa
   if (!id || id.length > 100) return { error: "Invalid invoice ID." };
   if (!VALID_STATUSES.has(status)) return { error: "Invalid status." };
 
-  const inv = await prisma.invoice.findUnique({ where: { id }, select: { id: true } });
+  const inv = await prisma.invoice.findUnique({
+    where: { id },
+    include: { customer: { select: { paymentTerms: true } } },
+  });
   if (!inv) return { error: "Invoice not found." };
 
   const data: Record<string, unknown> = { status };
   if (status === "PAID") data.paidAt = new Date();
+  if (status === "SENT") {
+    const sentDate = new Date();
+    data.dueDate = dueDateFromTerms(sentDate, inv.customer.paymentTerms ?? "NET30");
+  }
 
   await prisma.invoice.update({ where: { id }, data });
   revalidatePath(`/admin/invoices/${id}`);

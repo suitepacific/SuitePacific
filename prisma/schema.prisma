@@ -206,6 +206,7 @@ model Customer {
   hourlyRate          Float?
   monthlyRate         Float?
   billingCurrency     String      @default("USD")
+  paymentTerms        String      @default("NET30") // DUE_ON_RECEIPT | NET7 | NET15 | NET30 | NET45 | NET60
   tickets             Ticket[]
   timeEntries         TimeEntry[]
   invoices            Invoice[]

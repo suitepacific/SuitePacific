@@ -77,15 +77,18 @@ export async function updateCustomerAction(_prev: unknown, formData: FormData) {
   const billingCurrency = (formData.get("billingCurrency") as string)?.trim().slice(0, 10).toUpperCase() || "USD";
   const hourlyRateRaw = parseFloat(formData.get("hourlyRate") as string);
   const monthlyRateRaw = parseFloat(formData.get("monthlyRate") as string);
+  const paymentTerms = (formData.get("paymentTerms") as string)?.trim() || "NET30";
+  const validTerms = ["DUE_ON_RECEIPT", "NET7", "NET15", "NET30", "NET45", "NET60"];
 
   if (!company) return { error: "Company name is required." };
   if (!validBillingTypes.includes(billingType)) return { error: "Invalid billing type." };
+  if (!validTerms.includes(paymentTerms)) return { error: "Invalid payment terms." };
   const hourlyRate = !isNaN(hourlyRateRaw) && hourlyRateRaw >= 0 ? hourlyRateRaw : null;
   const monthlyRate = !isNaN(monthlyRateRaw) && monthlyRateRaw >= 0 ? monthlyRateRaw : null;
 
   await prisma.customer.update({
     where: { id },
-    data: { company, website, country, timezone, billingType: billingType as "HOURLY" | "MONTHLY" | "HYBRID", hourlyRate, monthlyRate, billingCurrency },
+    data: { company, website, country, timezone, billingType: billingType as "HOURLY" | "MONTHLY" | "HYBRID", hourlyRate, monthlyRate, billingCurrency, paymentTerms },
   });
   revalidatePath(`/admin/customers/${id}`);
   return { success: true };
