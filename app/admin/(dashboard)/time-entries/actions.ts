@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/auth";
+import { nextInvoiceNumber, periodDateFilter } from "@/lib/invoice-utils";
 
 export async function logTimeEntryAction(_prev: unknown, formData: FormData) {
   await requireAdmin();
@@ -39,19 +40,109 @@ export async function logTimeEntryAction(_prev: unknown, formData: FormData) {
     if (!ticket || ticket.customerId !== customerId) return { error: "Invalid ticket." };
   }
 
+  // Admin-logged entries are auto-approved
   await prisma.timeEntry.create({
-    data: { customerId, ticketId, date, hours, description, isBillable, hourlyRate },
+    data: { customerId, ticketId, date, hours, description, isBillable, hourlyRate, status: "approved" },
   });
 
   redirect(`/admin/customers/${customerId}`);
+}
+
+export async function approveTimeEntryAction(id: string) {
+  await requireAdmin();
+  if (!id || id.length > 100) return;
+  await prisma.timeEntry.update({ where: { id }, data: { status: "approved" } });
+  revalidatePath("/admin/time-entries");
+}
+
+export async function rejectTimeEntryAction(id: string) {
+  await requireAdmin();
+  if (!id || id.length > 100) return;
+  await prisma.timeEntry.update({ where: { id }, data: { status: "rejected" } });
+  revalidatePath("/admin/time-entries");
 }
 
 export async function deleteTimeEntryAction(id: string) {
   await requireAdmin();
   if (!id || id.length > 100) return;
   const entry = await prisma.timeEntry.findUnique({ where: { id }, include: { invoiceItem: true } });
-  if (!entry || entry.invoiceItem) return; // can't delete if invoiced
+  if (!entry || entry.invoiceItem) return;
   await prisma.timeEntry.delete({ where: { id } });
   revalidatePath(`/admin/customers/${entry.customerId}`);
   revalidatePath("/admin/time-entries");
+}
+
+export async function generateInvoicesAction(formData: FormData) {
+  await requireAdmin();
+
+  const period = (formData.get("period") as string) || "all";
+  const customerId = (formData.get("customerId") as string)?.trim() || null;
+
+  const dateFilter = periodDateFilter(period);
+
+  const entries = await prisma.timeEntry.findMany({
+    where: {
+      status: "approved",
+      isBillable: true,
+      invoiceItem: null,
+      ...(customerId ? { customerId } : {}),
+      ...(dateFilter ? { date: dateFilter } : {}),
+    },
+    include: {
+      customer: { select: { id: true, company: true, hourlyRate: true, billingCurrency: true } },
+    },
+  });
+
+  // Nothing to bill - redirect back
+  if (entries.length === 0) redirect("/admin/time-entries");
+
+  // Group by customer
+  const byCustomer = new Map<string, typeof entries>();
+  for (const e of entries) {
+    const group = byCustomer.get(e.customerId) ?? [];
+    group.push(e);
+    byCustomer.set(e.customerId, group);
+  }
+
+  const issueDate = new Date();
+  const dueDate = new Date(issueDate);
+  dueDate.setDate(dueDate.getDate() + 30);
+
+  for (const [custId, custEntries] of byCustomer) {
+    const customer = custEntries[0].customer;
+    const defaultRate = customer.hourlyRate ?? 0;
+    const currency = customer.billingCurrency ?? "USD";
+
+    const items = custEntries.map((e) => {
+      const rate = e.hourlyRate ?? defaultRate;
+      return {
+        description: e.description,
+        quantity: e.hours,
+        unitPrice: rate,
+        amount: Math.round(e.hours * rate * 100) / 100,
+        timeEntryId: e.id,
+      };
+    });
+
+    const subtotal = Math.round(items.reduce((s, i) => s + i.amount, 0) * 100) / 100;
+    const invoiceNumber = await nextInvoiceNumber(customer.company);
+
+    await prisma.invoice.create({
+      data: {
+        customerId: custId,
+        invoiceNumber,
+        status: "DRAFT",
+        issueDate,
+        dueDate,
+        currency,
+        subtotal,
+        taxAmount: 0,
+        taxPercent: 0,
+        total: subtotal,
+        items: { create: items },
+      },
+    });
+  }
+
+  redirect("/admin/invoices");
 }

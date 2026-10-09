@@ -304,6 +304,7 @@ model TimeEntry {
   description String
   isBillable  Boolean   @default(true)
   hourlyRate  Float?
+  status      String    @default("pending") // pending | approved | rejected
   invoiceItem InvoiceItem?
   createdAt   DateTime  @default(now())
 

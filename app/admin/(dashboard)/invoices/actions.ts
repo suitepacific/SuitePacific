@@ -185,6 +185,60 @@ export async function updateInvoiceStatusAction(_prev: unknown, formData: FormDa
   return { success: true };
 }
 
+export async function updateInvoiceItemsAction(_prev: unknown, formData: FormData) {
+  await requireAdmin();
+
+  const invoiceId = (formData.get("invoiceId") as string)?.trim();
+  if (!invoiceId || invoiceId.length > 100) return { error: "Invalid invoice." };
+
+  const invoice = await prisma.invoice.findUnique({
+    where: { id: invoiceId },
+    include: { items: true, customer: { select: { billingCurrency: true } } },
+  });
+  if (!invoice) return { error: "Invoice not found." };
+
+  // Parse each item's updated fields
+  const updates: { id: string; description: string; quantity: number; unitPrice: number; amount: number }[] = [];
+  for (const item of invoice.items) {
+    const desc = (formData.get(`desc_${item.id}`) as string)?.trim();
+    const qtyRaw = (formData.get(`qty_${item.id}`) as string)?.trim();
+    const rateRaw = (formData.get(`rate_${item.id}`) as string)?.trim();
+    if (!desc || !qtyRaw || !rateRaw) return { error: "All fields are required for each line item." };
+    const quantity = parseFloat(qtyRaw);
+    const unitPrice = parseFloat(rateRaw);
+    if (isNaN(quantity) || quantity <= 0) return { error: "Invalid quantity." };
+    if (isNaN(unitPrice) || unitPrice < 0) return { error: "Invalid rate." };
+    updates.push({
+      id: item.id,
+      description: desc.slice(0, 500),
+      quantity,
+      unitPrice,
+      amount: Math.round(quantity * unitPrice * 100) / 100,
+    });
+  }
+
+  const subtotal = Math.round(updates.reduce((s, i) => s + i.amount, 0) * 100) / 100;
+  const taxAmount = Math.round(subtotal * invoice.taxPercent) / 100;
+  const total = Math.round((subtotal + taxAmount) * 100) / 100;
+
+  await prisma.$transaction([
+    ...updates.map((u) =>
+      prisma.invoiceItem.update({
+        where: { id: u.id },
+        data: { description: u.description, quantity: u.quantity, unitPrice: u.unitPrice, amount: u.amount },
+      })
+    ),
+    prisma.invoice.update({
+      where: { id: invoiceId },
+      data: { subtotal, taxAmount, total },
+    }),
+  ]);
+
+  revalidatePath(`/admin/invoices/${invoiceId}`);
+  revalidatePath(`/admin/invoices/${invoiceId}/edit`);
+  return { success: true };
+}
+
 export async function updateInvoiceNotesAction(_prev: unknown, formData: FormData) {
   await requireAdmin();
   const id = (formData.get("id") as string)?.trim();

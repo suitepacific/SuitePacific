@@ -13,19 +13,42 @@ interface Employee {
   customers: Customer[];
   createdAt: Date;
 }
-interface TimeEntryRow { id: string; date: Date; hours: number; description: string }
+interface TimeEntryRow {
+  id: string;
+  date: Date;
+  hours: number;
+  description: string;
+  customerCompany: string;
+  status: string;
+}
+interface CustomerHours { customerId: string; company: string; hours: number }
+
+const STATUS_BADGE: Record<string, string> = {
+  pending: "bg-amber-50 text-amber-700",
+  approved: "bg-emerald-50 text-emerald-700",
+  rejected: "bg-red-50 text-red-500",
+};
 
 export function EmployeeEditForm({
   employee,
   customers,
   recentEntries,
+  weekTotal,
+  monthTotal,
+  weekByCustomer,
+  monthByCustomer,
 }: {
   employee: Employee;
   customers: Customer[];
   recentEntries: TimeEntryRow[];
+  weekTotal: number;
+  monthTotal: number;
+  weekByCustomer: CustomerHours[];
+  monthByCustomer: CustomerHours[];
 }) {
   const [state, action, pending] = useActionState(updateEmployeeAction, null);
   const assignedIds = new Set(employee.customers.map((c) => c.id));
+  const multiCustomer = weekByCustomer.length > 1 || monthByCustomer.length > 1;
 
   return (
     <div className="max-w-lg">
@@ -35,6 +58,28 @@ export function EmployeeEditForm({
         </Link>
         <h1 className="mt-3 text-2xl font-semibold text-brand-900">{employee.name}</h1>
         <p className="mt-1 text-sm text-brand-400 font-mono">{employee.username}</p>
+      </div>
+
+      {/* Time summary */}
+      <div className="grid grid-cols-2 gap-4 mb-6">
+        <div className="bg-white rounded-2xl border border-brand-50 shadow-soft p-4">
+          <p className="text-xs text-brand-400 uppercase tracking-wide font-medium mb-1">This week</p>
+          <p className="text-2xl font-semibold text-brand-900">{weekTotal.toFixed(1)}h</p>
+          {multiCustomer && weekByCustomer.map((c) => (
+            <p key={c.customerId} className="text-xs text-brand-400 mt-0.5">
+              {c.company}: {c.hours.toFixed(1)}h
+            </p>
+          ))}
+        </div>
+        <div className="bg-white rounded-2xl border border-brand-50 shadow-soft p-4">
+          <p className="text-xs text-brand-400 uppercase tracking-wide font-medium mb-1">This month</p>
+          <p className="text-2xl font-semibold text-brand-900">{monthTotal.toFixed(1)}h</p>
+          {multiCustomer && monthByCustomer.map((c) => (
+            <p key={c.customerId} className="text-xs text-brand-400 mt-0.5">
+              {c.company}: {c.hours.toFixed(1)}h
+            </p>
+          ))}
+        </div>
       </div>
 
       <form action={action} className="bg-white rounded-2xl border border-brand-50 shadow-soft p-6 space-y-5 mb-6">
@@ -123,19 +168,31 @@ export function EmployeeEditForm({
 
       {recentEntries.length > 0 && (
         <div className="bg-white rounded-2xl border border-brand-50 shadow-soft overflow-hidden mb-6">
-          <div className="px-5 py-4 border-b border-brand-50">
+          <div className="px-5 py-4 border-b border-brand-50 flex items-center justify-between">
             <p className="text-sm font-medium text-brand-900">Recent time entries</p>
+            <Link
+              href={`/admin/time-entries?customerId=&period=all`}
+              className="text-xs text-accent hover:underline"
+            >
+              View all in Time Entries
+            </Link>
           </div>
           <div className="divide-y divide-brand-50">
             {recentEntries.map((e) => (
-              <div key={e.id} className="px-5 py-3 flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-brand-700 truncate max-w-xs">{e.description}</p>
+              <div key={e.id} className="px-5 py-3 flex items-center justify-between gap-4">
+                <div className="min-w-0">
+                  <p className="text-sm text-brand-700 truncate">{e.description}</p>
                   <p className="text-xs text-brand-400 mt-0.5">
                     {new Date(e.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+                    {multiCustomer && <span className="ml-2">{e.customerCompany}</span>}
                   </p>
                 </div>
-                <span className="text-sm font-medium text-brand-900 tabular-nums">{e.hours.toFixed(1)}h</span>
+                <div className="flex items-center gap-3 shrink-0">
+                  <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${STATUS_BADGE[e.status] ?? "bg-brand-50 text-brand-400"}`}>
+                    {e.status.charAt(0).toUpperCase() + e.status.slice(1)}
+                  </span>
+                  <span className="text-sm font-medium text-brand-900 tabular-nums">{e.hours.toFixed(1)}h</span>
+                </div>
               </div>
             ))}
           </div>

@@ -80,8 +80,11 @@ export default async function AdminInvoiceDetailPage({ params }: { params: Promi
 
       {/* Line items */}
       <div className="bg-white rounded-2xl border border-brand-50 shadow-soft mb-6 overflow-hidden">
-        <div className="px-6 py-4 border-b border-brand-50">
+        <div className="px-6 py-4 border-b border-brand-50 flex items-center justify-between">
           <h2 className="font-semibold text-brand-900 text-sm">Line Items</h2>
+          <Link href={`/admin/invoices/${id}/edit`} className="text-xs text-accent hover:underline">
+            Edit Items
+          </Link>
         </div>
         <table className="w-full text-sm">
           <thead>
