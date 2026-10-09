@@ -16,22 +16,22 @@ export default function EmployeeLoginPage() {
             Employee Portal
           </p>
           <h1 className="text-2xl font-semibold text-brand-900">Sign in</h1>
-          <p className="mt-1 text-sm text-brand-400">Log your time for your assigned client.</p>
+          <p className="mt-1 text-sm text-brand-400">Log your time for your assigned clients.</p>
         </div>
 
         <div className="bg-white rounded-2xl border border-brand-100 p-6 shadow-soft">
           <form action={formAction} className="space-y-4">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-brand-700 mb-1.5">
-                Email
+              <label htmlFor="username" className="block text-sm font-medium text-brand-700 mb-1.5">
+                Username
               </label>
               <input
-                id="email"
-                name="email"
-                type="email"
+                id="username"
+                name="username"
+                type="text"
                 required
-                autoComplete="email"
-                placeholder="you@example.com"
+                autoComplete="username"
+                placeholder="your.username"
                 className="w-full rounded-xl border border-brand-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent"
               />
             </div>

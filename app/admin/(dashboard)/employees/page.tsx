@@ -4,7 +4,7 @@ import { PlusCircle } from "lucide-react";
 
 export default async function AdminEmployeesPage() {
   const employees = await prisma.employee.findMany({
-    include: { customer: { select: { company: true } } },
+    include: { customers: { select: { company: true } } },
     orderBy: { createdAt: "desc" },
   });
 
@@ -28,8 +28,8 @@ export default async function AdminEmployeesPage() {
             <thead>
               <tr className="border-b border-brand-50 text-left text-brand-400">
                 <th className="px-5 py-3 font-medium">Name</th>
-                <th className="px-5 py-3 font-medium">Email</th>
-                <th className="px-5 py-3 font-medium">Assigned Customer</th>
+                <th className="px-5 py-3 font-medium">Username</th>
+                <th className="px-5 py-3 font-medium">Assigned Customers</th>
                 <th className="px-5 py-3 font-medium">Status</th>
                 <th className="px-5 py-3 font-medium">Added</th>
                 <th className="px-5 py-3 font-medium"></th>
@@ -39,8 +39,20 @@ export default async function AdminEmployeesPage() {
               {employees.map((emp) => (
                 <tr key={emp.id} className="border-b border-brand-50 last:border-0 hover:bg-brand-50/40 transition-colors">
                   <td className="px-5 py-3 font-medium text-brand-900">{emp.name}</td>
-                  <td className="px-5 py-3 text-brand-500">{emp.email}</td>
-                  <td className="px-5 py-3 text-brand-700">{emp.customer.company}</td>
+                  <td className="px-5 py-3 text-brand-500 font-mono text-xs">{emp.username}</td>
+                  <td className="px-5 py-3 text-brand-700">
+                    {emp.customers.length === 0 ? (
+                      <span className="text-brand-300 text-xs">None assigned</span>
+                    ) : (
+                      <div className="flex flex-wrap gap-1">
+                        {emp.customers.map((c) => (
+                          <span key={c.company} className="text-xs bg-brand-50 text-brand-600 px-2 py-0.5 rounded-full">
+                            {c.company}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </td>
                   <td className="px-5 py-3">
                     {emp.isActive ? (
                       <span className="text-xs text-green-700 bg-green-50 px-2 py-0.5 rounded-full">Active</span>

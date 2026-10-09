@@ -11,11 +11,17 @@ export async function logTimeAction(_prev: unknown, formData: FormData) {
   const dateRaw = (formData.get("date") as string)?.trim();
   const hoursRaw = (formData.get("hours") as string)?.trim();
   const description = (formData.get("description") as string)?.trim();
+  const customerId = (formData.get("customerId") as string)?.trim();
 
   if (!dateRaw) return { error: "Date is required." };
   if (!hoursRaw) return { error: "Hours is required." };
   if (!description) return { error: "Description is required." };
   if (description.length > 1000) return { error: "Description is too long." };
+  if (!customerId) return { error: "Customer is required." };
+
+  // Verify the selected customer is actually assigned to this employee
+  const isAssigned = employee.customers.some((c) => c.id === customerId);
+  if (!isAssigned) return { error: "Invalid customer selection." };
 
   const hours = parseFloat(hoursRaw);
   if (isNaN(hours) || hours <= 0 || hours > 24) return { error: "Hours must be between 0 and 24." };
@@ -25,7 +31,7 @@ export async function logTimeAction(_prev: unknown, formData: FormData) {
 
   await prisma.timeEntry.create({
     data: {
-      customerId: employee.customerId,
+      customerId,
       employeeId: employee.id,
       date,
       hours,

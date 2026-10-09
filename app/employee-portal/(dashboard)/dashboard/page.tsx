@@ -10,37 +10,39 @@ export default async function EmployeeDashboardPage() {
 
   const recentEntries = await prisma.timeEntry.findMany({
     where: { employeeId: employee.id },
+    include: { customer: { select: { company: true } } },
     orderBy: { date: "desc" },
     take: 7,
-    select: { id: true, date: true, hours: true, description: true, isBillable: true },
   });
 
   const thisWeekStart = new Date();
   thisWeekStart.setDate(thisWeekStart.getDate() - thisWeekStart.getDay());
   thisWeekStart.setHours(0, 0, 0, 0);
 
-  const weekEntries = await prisma.timeEntry.findMany({
+  const weekHours = await prisma.timeEntry.aggregate({
     where: { employeeId: employee.id, date: { gte: thisWeekStart } },
-    select: { hours: true },
+    _sum: { hours: true },
   });
-  const weekHours = weekEntries.reduce((s, e) => s + e.hours, 0);
 
   const thisMonthStart = new Date();
   thisMonthStart.setDate(1);
   thisMonthStart.setHours(0, 0, 0, 0);
 
-  const monthEntries = await prisma.timeEntry.findMany({
+  const monthHours = await prisma.timeEntry.aggregate({
     where: { employeeId: employee.id, date: { gte: thisMonthStart } },
-    select: { hours: true },
+    _sum: { hours: true },
   });
-  const monthHours = monthEntries.reduce((s, e) => s + e.hours, 0);
 
   return (
     <div>
       <div className="flex items-start justify-between mb-6">
         <div>
           <h1 className="text-2xl font-semibold text-brand-900">Welcome back, {employee.name.split(" ")[0]}</h1>
-          <p className="mt-1 text-sm text-brand-400">Logging time for: {employee.customer.company}</p>
+          <p className="mt-1 text-sm text-brand-400">
+            {employee.customers.length === 0
+              ? "No clients assigned yet."
+              : employee.customers.map((c) => c.company).join(", ")}
+          </p>
         </div>
         <Link href="/employee-portal/time-entries/new"
           className="inline-flex items-center gap-1.5 rounded-full bg-brand text-white text-sm font-medium px-4 py-2 hover:bg-brand-700 transition-colors">
@@ -49,19 +51,17 @@ export default async function EmployeeDashboardPage() {
         </Link>
       </div>
 
-      {/* Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
         <div className="bg-white rounded-2xl border border-brand-50 shadow-soft p-5">
           <p className="text-xs text-brand-400 font-medium uppercase tracking-wide mb-1">This week</p>
-          <p className="text-3xl font-semibold text-brand-900">{weekHours.toFixed(1)}h</p>
+          <p className="text-3xl font-semibold text-brand-900">{(weekHours._sum.hours ?? 0).toFixed(1)}h</p>
         </div>
         <div className="bg-white rounded-2xl border border-brand-50 shadow-soft p-5">
           <p className="text-xs text-brand-400 font-medium uppercase tracking-wide mb-1">This month</p>
-          <p className="text-3xl font-semibold text-brand-900">{monthHours.toFixed(1)}h</p>
+          <p className="text-3xl font-semibold text-brand-900">{(monthHours._sum.hours ?? 0).toFixed(1)}h</p>
         </div>
       </div>
 
-      {/* Recent entries */}
       <div className="bg-white rounded-2xl border border-brand-50 shadow-soft overflow-hidden">
         <div className="px-5 py-4 border-b border-brand-50 flex items-center justify-between">
           <p className="text-sm font-medium text-brand-900">Recent entries</p>
@@ -84,6 +84,9 @@ export default async function EmployeeDashboardPage() {
                   <p className="text-sm text-brand-700 truncate">{e.description}</p>
                   <p className="text-xs text-brand-400 mt-0.5">
                     {new Date(e.date).toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" })}
+                    {employee.customers.length > 1 && (
+                      <span className="ml-2 text-brand-300">{e.customer.company}</span>
+                    )}
                   </p>
                 </div>
                 <span className="ml-4 text-sm font-medium text-brand-900 tabular-nums shrink-0">

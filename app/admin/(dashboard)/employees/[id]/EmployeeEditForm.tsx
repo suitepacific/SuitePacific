@@ -8,10 +8,9 @@ interface Customer { id: string; company: string; name: string }
 interface Employee {
   id: string;
   name: string;
-  email: string;
+  username: string;
   isActive: boolean;
-  customerId: string;
-  customer: Customer;
+  customers: Customer[];
   createdAt: Date;
 }
 interface TimeEntryRow { id: string; date: Date; hours: number; description: string }
@@ -26,6 +25,7 @@ export function EmployeeEditForm({
   recentEntries: TimeEntryRow[];
 }) {
   const [state, action, pending] = useActionState(updateEmployeeAction, null);
+  const assignedIds = new Set(employee.customers.map((c) => c.id));
 
   return (
     <div className="max-w-lg">
@@ -34,7 +34,7 @@ export function EmployeeEditForm({
           &larr; Back to Employees
         </Link>
         <h1 className="mt-3 text-2xl font-semibold text-brand-900">{employee.name}</h1>
-        <p className="mt-1 text-sm text-brand-400">{employee.email}</p>
+        <p className="mt-1 text-sm text-brand-400 font-mono">{employee.username}</p>
       </div>
 
       <form action={action} className="bg-white rounded-2xl border border-brand-50 shadow-soft p-6 space-y-5 mb-6">
@@ -60,23 +60,28 @@ export function EmployeeEditForm({
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-brand-700 mb-1.5">Email</label>
-          <p className="text-sm text-brand-400 bg-brand-50 rounded-xl px-3 py-2">{employee.email}</p>
-          <p className="mt-1 text-xs text-brand-300">Email cannot be changed after creation.</p>
+          <label className="block text-sm font-medium text-brand-700 mb-1.5">Username</label>
+          <p className="text-sm text-brand-400 bg-brand-50 rounded-xl px-3 py-2 font-mono">{employee.username}</p>
+          <p className="mt-1 text-xs text-brand-300">Username cannot be changed after creation.</p>
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-brand-700 mb-1.5">Assigned Customer</label>
-          <select
-            name="customerId"
-            required
-            defaultValue={employee.customerId}
-            className="w-full rounded-xl border border-brand-100 px-3 py-2 text-sm text-brand-900 focus:outline-none focus:ring-2 focus:ring-brand/30"
-          >
+          <label className="block text-sm font-medium text-brand-700 mb-2">Assigned Customers</label>
+          <div className="space-y-2 max-h-56 overflow-y-auto rounded-xl border border-brand-100 p-3">
             {customers.map((c) => (
-              <option key={c.id} value={c.id}>{c.company} ({c.name})</option>
+              <label key={c.id} className="flex items-center gap-2.5 cursor-pointer hover:bg-brand-50 rounded-lg px-2 py-1.5 transition-colors">
+                <input
+                  type="checkbox"
+                  name="customerIds[]"
+                  value={c.id}
+                  defaultChecked={assignedIds.has(c.id)}
+                  className="rounded border-brand-300 text-brand focus:ring-brand/30"
+                />
+                <span className="text-sm text-brand-700">{c.company}</span>
+                <span className="text-xs text-brand-400">({c.name})</span>
+              </label>
             ))}
-          </select>
+          </div>
         </div>
 
         <div>
@@ -105,7 +110,7 @@ export function EmployeeEditForm({
           <p className="mt-1 text-xs text-brand-400">Inactive employees cannot log in.</p>
         </div>
 
-        <div className="pt-2 flex gap-3">
+        <div className="pt-2">
           <button
             type="submit"
             disabled={pending}
@@ -116,7 +121,6 @@ export function EmployeeEditForm({
         </div>
       </form>
 
-      {/* Recent time entries by this employee */}
       {recentEntries.length > 0 && (
         <div className="bg-white rounded-2xl border border-brand-50 shadow-soft overflow-hidden mb-6">
           <div className="px-5 py-4 border-b border-brand-50">
@@ -138,11 +142,10 @@ export function EmployeeEditForm({
         </div>
       )}
 
-      {/* Danger zone */}
       <div className="bg-white rounded-2xl border border-red-100 shadow-soft p-6">
         <p className="text-sm font-medium text-red-700 mb-1">Delete employee</p>
         <p className="text-xs text-brand-400 mb-4">
-          This permanently deletes the employee account. Their time entries remain attached to the customer.
+          Permanently deletes the account. Their time entries remain in the system.
         </p>
         <form action={deleteEmployeeAction.bind(null, employee.id)}>
           <button

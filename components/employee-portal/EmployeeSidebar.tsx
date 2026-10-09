@@ -11,7 +11,7 @@ const LINKS = [
   { href: "/employee-portal/time-entries", label: "My Time", icon: Clock },
 ];
 
-export function EmployeeSidebar({ employeeName, customerName }: { employeeName: string; customerName: string }) {
+export function EmployeeSidebar({ employeeName, customerLabel }: { employeeName: string; customerLabel: string }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -21,7 +21,7 @@ export function EmployeeSidebar({ employeeName, customerName }: { employeeName: 
         <div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/SuitePacificLogo-cropped.PNG" alt="SuitePacific" className="h-8 w-auto object-contain mb-1" />
-          <span className="block text-xs text-brand-300 truncate max-w-[160px]">{customerName}</span>
+          <span className="block text-xs text-brand-300 truncate max-w-[160px]">{customerLabel}</span>
         </div>
         <button
           onClick={() => setOpen(false)}
@@ -73,7 +73,6 @@ export function EmployeeSidebar({ employeeName, customerName }: { employeeName: 
 
   return (
     <>
-      {/* Mobile top bar */}
       <div className="md:hidden fixed top-0 inset-x-0 z-30 h-14 bg-white border-b border-brand-50 flex items-center justify-between px-4">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/SuitePacificLogo-cropped.PNG" alt="SuitePacific" className="h-9 w-auto object-contain" />

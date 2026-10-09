@@ -4,7 +4,9 @@ import { useActionState } from "react";
 import Link from "next/link";
 import { logTimeAction } from "../actions";
 
-export function LogTimeForm() {
+interface Customer { id: string; name: string; company: string }
+
+export function LogTimeForm({ customers }: { customers: Customer[] }) {
   const [state, action, pending] = useActionState(logTimeAction, null);
   const today = new Date().toISOString().split("T")[0];
 
@@ -21,6 +23,26 @@ export function LogTimeForm() {
       <form action={action} className="bg-white rounded-2xl border border-brand-50 shadow-soft p-6 space-y-5">
         {state?.error && (
           <p className="text-sm text-red-600 bg-red-50 rounded-xl px-4 py-3">{state.error}</p>
+        )}
+
+        {customers.length > 1 && (
+          <div>
+            <label className="block text-sm font-medium text-brand-700 mb-1.5">Client</label>
+            <select
+              name="customerId"
+              required
+              className="w-full rounded-xl border border-brand-100 px-3 py-2 text-sm text-brand-900 focus:outline-none focus:ring-2 focus:ring-brand/30 bg-white"
+            >
+              <option value="">Select a client...</option>
+              {customers.map((c) => (
+                <option key={c.id} value={c.id}>{c.company}</option>
+              ))}
+            </select>
+          </div>
+        )}
+
+        {customers.length === 1 && (
+          <input type="hidden" name="customerId" value={customers[0].id} />
         )}
 
         <div>

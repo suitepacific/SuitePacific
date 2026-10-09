@@ -84,14 +84,18 @@ export async function verifyEmployeeSessionToken(
   return { employeeId, sessionVersion };
 }
 
-export async function getEmployeeFromRequest(): Promise<(Employee & { customer: { id: string; name: string; company: string } }) | null> {
+export type EmployeeWithCustomers = Employee & {
+  customers: { id: string; name: string; company: string }[];
+};
+
+export async function getEmployeeFromRequest(): Promise<EmployeeWithCustomers | null> {
   const cookieStore = await cookies();
   const token = cookieStore.get(EMPLOYEE_SESSION_COOKIE)?.value;
   const result = await verifyEmployeeSessionToken(token);
   if (!result) return null;
   const employee = await prisma.employee.findUnique({
     where: { id: result.employeeId },
-    include: { customer: { select: { id: true, name: true, company: true } } },
+    include: { customers: { select: { id: true, name: true, company: true } } },
   });
   if (!employee || !employee.isActive) return null;
   if (employee.sessionVersion !== result.sessionVersion) return null;

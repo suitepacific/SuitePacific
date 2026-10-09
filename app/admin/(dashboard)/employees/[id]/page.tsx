@@ -8,7 +8,7 @@ export default async function EmployeeDetailPage({ params }: { params: Promise<{
   const [employee, customers] = await Promise.all([
     prisma.employee.findUnique({
       where: { id },
-      include: { customer: { select: { id: true, company: true, name: true } } },
+      include: { customers: { select: { id: true, company: true, name: true } } },
     }),
     prisma.customer.findMany({
       where: { archivedAt: null },

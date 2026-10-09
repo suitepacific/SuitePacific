@@ -209,7 +209,7 @@ model Customer {
   tickets             Ticket[]
   timeEntries         TimeEntry[]
   invoices            Invoice[]
-  employees           Employee[]
+  employees           Employee[]  @relation("EmployeeCustomers")
 
   @@index([status])
   @@index([archivedAt])
@@ -280,17 +280,15 @@ enum TicketStatus {
 model Employee {
   id             String      @id @default(cuid())
   name           String
-  email          String      @unique
+  username       String      @unique
   passwordHash   String
   sessionVersion Int         @default(1)
   isActive       Boolean     @default(true)
-  customer       Customer    @relation(fields: [customerId], references: [id])
-  customerId     String
+  customers      Customer[]  @relation("EmployeeCustomers")
   createdAt      DateTime    @default(now())
   timeEntries    TimeEntry[]
 
-  @@index([customerId])
-  @@index([email])
+  @@index([username])
 }
 
 model TimeEntry {

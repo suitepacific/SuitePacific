@@ -6,27 +6,36 @@ import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/auth";
 import { hashPassword } from "@/lib/employee-auth";
 
+function parseCustomerIds(formData: FormData): string[] {
+  return formData.getAll("customerIds[]").map((v) => String(v).trim()).filter(Boolean);
+}
+
 export async function createEmployeeAction(_prev: unknown, formData: FormData) {
   await requireAdmin();
 
   const name = (formData.get("name") as string)?.trim();
-  const email = (formData.get("email") as string)?.trim().toLowerCase();
+  const username = (formData.get("username") as string)?.trim().toLowerCase();
   const password = (formData.get("password") as string) ?? "";
-  const customerId = (formData.get("customerId") as string)?.trim();
+  const customerIds = parseCustomerIds(formData);
 
   if (!name || name.length > 100) return { error: "Name is required." };
-  if (!email || email.length > 200 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return { error: "Valid email is required." };
+  if (!username || username.length > 50 || !/^[a-z0-9._-]+$/.test(username))
+    return { error: "Username must be lowercase letters, numbers, dots, underscores, or hyphens." };
   if (!password || password.length < 8) return { error: "Password must be at least 8 characters." };
-  if (!customerId) return { error: "Assign a customer." };
+  if (customerIds.length === 0) return { error: "Assign at least one customer." };
 
-  const existing = await prisma.employee.findUnique({ where: { email } });
-  if (existing) return { error: "An employee with this email already exists." };
-
-  const customer = await prisma.customer.findUnique({ where: { id: customerId } });
-  if (!customer) return { error: "Customer not found." };
+  const existing = await prisma.employee.findUnique({ where: { username } });
+  if (existing) return { error: "Username is already taken." };
 
   const passwordHash = await hashPassword(password);
-  await prisma.employee.create({ data: { name, email, passwordHash, customerId } });
+  await prisma.employee.create({
+    data: {
+      name,
+      username,
+      passwordHash,
+      customers: { connect: customerIds.map((id) => ({ id })) },
+    },
+  });
 
   revalidatePath("/admin/employees");
   redirect("/admin/employees");
@@ -37,25 +46,33 @@ export async function updateEmployeeAction(_prev: unknown, formData: FormData) {
 
   const id = (formData.get("id") as string)?.trim();
   const name = (formData.get("name") as string)?.trim();
-  const customerId = (formData.get("customerId") as string)?.trim();
+  const customerIds = parseCustomerIds(formData);
   const newPassword = (formData.get("newPassword") as string) ?? "";
   const isActive = formData.get("isActive") !== "false";
 
   if (!id) return { error: "Invalid request." };
   if (!name || name.length > 100) return { error: "Name is required." };
-  if (!customerId) return { error: "Assign a customer." };
+  if (customerIds.length === 0) return { error: "Assign at least one customer." };
 
-  const employee = await prisma.employee.findUnique({ where: { id } });
+  const employee = await prisma.employee.findUnique({
+    where: { id },
+    include: { customers: { select: { id: true } } },
+  });
   if (!employee) return { error: "Employee not found." };
 
-  const customer = await prisma.customer.findUnique({ where: { id: customerId } });
-  if (!customer) return { error: "Customer not found." };
+  const data: Parameters<typeof prisma.employee.update>[0]["data"] = {
+    name,
+    isActive,
+    customers: {
+      disconnect: employee.customers.map((c) => ({ id: c.id })),
+      connect: customerIds.map((cid) => ({ id: cid })),
+    },
+  };
 
-  const data: Record<string, unknown> = { name, customerId, isActive };
   if (newPassword) {
     if (newPassword.length < 8) return { error: "New password must be at least 8 characters." };
     data.passwordHash = await hashPassword(newPassword);
-    data.sessionVersion = employee.sessionVersion + 1; // invalidate existing sessions
+    data.sessionVersion = { increment: 1 };
   }
 
   await prisma.employee.update({ where: { id }, data });
