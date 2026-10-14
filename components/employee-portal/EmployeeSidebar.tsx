@@ -3,12 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Clock, LayoutDashboard, LogOut, Menu, X } from "lucide-react";
+import { Clock, KeyRound, LayoutDashboard, LogOut, Menu, X } from "lucide-react";
 import { logoutAction } from "@/app/employee-portal/actions";
 
 const LINKS = [
   { href: "/employee-portal/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/employee-portal/time-entries", label: "My Time", icon: Clock },
+  { href: "/employee-portal/account", label: "Account", icon: KeyRound },
 ];
 
 export function EmployeeSidebar({ employeeName, customerLabel }: { employeeName: string; customerLabel: string }) {
