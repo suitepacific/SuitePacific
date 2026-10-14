@@ -425,7 +425,10 @@ export default function NetSuiteConsultingServicesPage() {
             ))}
           </div>
           <p className="mt-5 text-sm text-brand-400">
-            Most clients mix models: dedicated monthly support for ongoing work, project-based for defined builds, and on-demand for occasional requests. All are month-to-month with no minimum commitment.
+            Most clients mix models: dedicated monthly support for ongoing work, project-based for defined builds, and on-demand for occasional requests. All are month-to-month with no minimum commitment.{" "}
+            <Link href="/netsuite-project-consulting" className="text-accent hover:underline">
+              See how project engagements work.
+            </Link>
           </p>
         </div>
 
