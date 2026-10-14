@@ -174,8 +174,9 @@ export function ServiceJsonLd({
     description,
     url,
     serviceType,
-    datePublished: datePublished ?? "2026-06-01T00:00:00+00:00",
-    dateModified: dateModified ?? datePublished ?? "2026-06-01T00:00:00+00:00",
+    datePublished: datePublished ?? "2026-10-14T00:00:00+00:00",
+    dateModified: dateModified ?? datePublished ?? "2026-10-14T00:00:00+00:00",
+    speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1"] },
     provider: { "@type": "ProfessionalService", "@id": `${SITE_URL}/#organization`, name: LEGAL_NAME, url: SITE_URL },
     areaServed,
     ...(offers && {
