@@ -365,6 +365,10 @@ export default function NetSuiteSupportPage() {
               <Link href="/netsuite-suitescript-migration" className="text-accent hover:underline">NetSuite SuiteScript 2.1 migration services</Link>{" "}
               covers the full audit and conversion process for accounts with legacy SuiteScript before the 2028.2 deadline.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-project-consulting" className="text-accent hover:underline">NetSuite project consulting</Link>{" "}
+              covers fixed-scope engagements: integrations, SuiteScript builds, and workflow projects priced and delivered per deliverable, without a retainer.
+            </li>
           </ul>
         </div>
       </div>

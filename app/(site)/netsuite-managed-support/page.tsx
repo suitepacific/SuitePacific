@@ -535,6 +535,12 @@ export default function NetSuiteManagedSupportPage() {
               </Link>{" "}
               covers the full six-stage migration process for accounts with SuiteScript 1.0, 2.0, or 2.x scripts before the 2028.2 deadline.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-project-consulting" className="text-accent hover:underline">
+                NetSuite project consulting
+              </Link>{" "}
+              explains fixed-scope engagements for accounts that need a defined deliverable without an ongoing retainer.
+            </li>
           </ul>
         </div>
 

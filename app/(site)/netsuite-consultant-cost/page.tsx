@@ -291,9 +291,10 @@ export default function NetSuiteConsultantCostPage() {
             <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Direct developer access on every engagement; retained account context across requests</li>
             <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> US-based, month-to-month after a three-month minimum, starting at $799/month</li>
           </ul>
-          <p className="text-sm text-brand-400">Related: 
-            <Link href="/netsuite-managed-support" className="text-accent hover:underline">NetSuite managed support</Link>
-            {" "}and{" "}
+          <p className="text-sm text-brand-400">Related:{" "}
+            <Link href="/netsuite-project-consulting" className="text-accent hover:underline">NetSuite project consulting</Link>,{" "}
+            <Link href="/netsuite-managed-support" className="text-accent hover:underline">NetSuite managed support</Link>,{" "}
+            and{" "}
             <Link href="/netsuite-care" className="text-accent hover:underline">NetSuite Care plans</Link>.
           </p>
         </div>

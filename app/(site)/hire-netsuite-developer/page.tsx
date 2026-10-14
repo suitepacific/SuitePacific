@@ -776,6 +776,25 @@ export default function HireNetSuiteDeveloperPage() {
 
         <ServiceFaqSection items={FAQ} />
 
+        {/* Related reading */}
+        <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
+          <p className="text-sm font-semibold text-brand-900 mb-3">Related reading</p>
+          <ul className="space-y-2.5">
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-project-consulting" className="text-accent hover:underline">NetSuite project consulting</Link>{" "}
+              covers fixed-scope engagements: integrations, SuiteScript builds, and workflow projects delivered per deliverable, no retainer required.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-care" className="text-accent hover:underline">NetSuite Care plans</Link>{" "}
+              details the ongoing retainer model with pricing, what is included, and how onboarding works.
+            </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-consultant-cost" className="text-accent hover:underline">NetSuite consultant cost guide</Link>{" "}
+              compares project-based and retainer billing models on total cost per completed item.
+            </li>
+          </ul>
+        </div>
+
         {/* Inline contact form */}
         <div id="contact" className="mt-14 pt-10 border-t border-brand-50">
           <p className="text-brand-900 font-semibold text-lg">Ready to hire a NetSuite developer?</p>

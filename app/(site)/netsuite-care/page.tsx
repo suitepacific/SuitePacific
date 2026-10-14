@@ -686,10 +686,11 @@ export default function NetSuiteCarePage() {
           <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Direct developer access on every engagement; no tier-one support queue or account manager</li>
           <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">&rarr;</span> Month-to-month after a three-month minimum, starting at $799/month</li>
           </ul>
-          <p className="text-sm text-brand-400">Related: 
-            <Link href="/netsuite-managed-support" className="text-accent hover:underline">NetSuite managed support</Link>
-            {" "}and{" "}
-            <Link href="/netsuite-post-go-live-support" className="text-accent hover:underline">post-go-live support</Link>.
+          <p className="text-sm text-brand-400">Related:
+            <Link href="/netsuite-managed-support" className="text-accent hover:underline">NetSuite managed support</Link>,{" "}
+            <Link href="/netsuite-post-go-live-support" className="text-accent hover:underline">post-go-live support</Link>,{" "}
+            and{" "}
+            <Link href="/netsuite-project-consulting" className="text-accent hover:underline">fixed-scope project consulting</Link>.
           </p>
         </div>
       </section>
