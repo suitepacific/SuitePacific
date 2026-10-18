@@ -13,6 +13,7 @@ import {
   Award,
   Layers,
   Wrench,
+  XCircle,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
@@ -21,6 +22,39 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+
+const POSTGO_PROBLEMS = [
+  {
+    problem: "WIP still maintained in Excel after go-live",
+    detail: "NetSuite holds the data but doesn't produce a WIP schedule. Finance teams export and reconcile manually every period because the report layer was never built.",
+    href: "/netsuite-wip-report",
+    linkText: "Custom WIP report builds",
+  },
+  {
+    problem: "Job costs not matching project actuals",
+    detail: "Labor, materials, and subcontractor costs post through different transaction types and don't aggregate correctly to project cost codes without custom allocation logic.",
+    href: null,
+    linkText: "",
+  },
+  {
+    problem: "Change orders managed outside NetSuite",
+    detail: "Approvals happen by email, budget updates are entered manually, and project contract values fall out of sync with actuals in the system.",
+    href: null,
+    linkText: "",
+  },
+  {
+    problem: "Implementation partner relationship ended",
+    detail: "Ongoing customization, fixes, and Sandbox-tested release preparation have no dedicated support. The account accumulates technical debt without a regular specialist.",
+    href: "/netsuite-partner-replacement",
+    linkText: "Post-go-live support options",
+  },
+  {
+    problem: "AP approvals and subcontractor POs routing manually",
+    detail: "Purchase orders and vendor bills require manual routing and follow-up outside NetSuite. Approval chains aren't enforced in the system.",
+    href: null,
+    linkText: "",
+  },
+];
 
 const CHALLENGES = [
   {
@@ -326,22 +360,32 @@ export default function ConstructionPage() {
           NetSuite-Certified · Post-go-live specialist · Sandbox-first development · Month-to-month
         </p>
         <p className="mt-2 text-xs text-brand-300">
-          <time dateTime="2026-08">Published August 2026</time>
+          <time dateTime="2026-10">Updated October 2026</time>
         </p>
 
-        <p className="mt-8 text-sm text-brand-400">
-          Construction companies that go live on NetSuite typically need custom development within the first year:
-          job costing accuracy, change order approval routing, and progress billing automation are rarely handled
-          correctly by standard NetSuite configuration alone. SuitePacific builds and maintains this layer for
-          construction firms already live on NetSuite, covering job costing logic, change order approval workflows,
-          progress billing automation, subcontractor compliance tracking, and project profitability reporting. Construction accounts in NetSuite
-          typically require significant customization to match actual project billing workflows, cost allocation
-          requirements, and approval chains. Common areas include change order workflows that automatically update
-          project budgets, progress billing scripts that calculate percentage complete from cost records, and project
-          dashboards for finance and project management teams. SuitePacific builds and maintains these
-          customizations on a month-to-month basis, tested in Sandbox before production deployment. Our lead
-          developer holds Oracle NetSuite&apos;s SuiteCloud Developer II certification. Work is done directly, with
-          no offshore handoffs or account manager layer.
+        {/* Post-go-live problem recognition */}
+        <div className="mt-8">
+          <h2 className="text-base font-semibold text-brand-900 mb-3">Common problems after NetSuite go-live for construction companies</h2>
+          <div className="space-y-2.5">
+            {POSTGO_PROBLEMS.map((item) => (
+              <div key={item.problem} className="flex items-start gap-3 rounded-xl border border-brand-100 p-4">
+                <XCircle className="h-4 w-4 text-red-400 shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-sm font-medium text-brand-900">{item.problem}</p>
+                  <p className="text-xs text-brand-400 mt-0.5">{item.detail}</p>
+                  {item.href && (
+                    <Link href={item.href} className="text-xs text-accent hover:underline mt-1 inline-block">
+                      {item.linkText} &rarr;
+                    </Link>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <p className="mt-6 text-sm text-brand-400">
+          SuitePacific works exclusively with construction companies already live on NetSuite. Engagements cover the custom development and ongoing support that implementation partners hand off at go-live: SuiteScript logic for job costing and billing, SuiteFlow approval chains for change orders and POs, and project dashboards for finance teams. All builds are tested in Sandbox before production. Oracle NetSuite Certified (SuiteCloud Developer II and Administrator Professional). Direct access, no offshore handoffs, month-to-month after a three-month minimum.
         </p>
 
         {/* Comparison */}

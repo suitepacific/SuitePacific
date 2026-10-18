@@ -23,7 +23,7 @@ const INDUSTRY_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/industries", lastModified: new Date("2026-09-23") },
   { path: "/industries/manufacturing", lastModified: SEO_REFRESH_DATE },
   { path: "/industries/wholesale-distribution", lastModified: SEO_REFRESH_DATE },
-  { path: "/industries/construction", lastModified: SEO_REFRESH_DATE },
+  { path: "/industries/construction", lastModified: new Date("2026-10-18") },
   { path: "/industries/real-estate", lastModified: SEO_REFRESH_DATE },
   { path: "/industries/saas-technology", lastModified: SEO_REFRESH_DATE },
   { path: "/industries/retail-ecommerce", lastModified: SEO_REFRESH_DATE },
