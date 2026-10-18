@@ -181,7 +181,7 @@ const FAQ = [
   {
     question: "How is consulting work scoped and priced?",
     answer:
-      "SuitePacific offers three engagement models: dedicated monthly support (hours applied to whatever comes up each month), on-demand access for occasional requests without a monthly commitment, and project-based engagements for defined builds with an agreed scope and deliverable. All are month-to-month with no long-term contract.",
+      "SuitePacific offers three engagement models: dedicated monthly support (hours applied to whatever comes up each month), on-demand access for occasional requests without a monthly commitment, and project-based engagements for defined builds with an agreed scope and deliverable. Monthly retainers begin with a three-month minimum, then continue month-to-month. On-demand and project engagements have no minimum. There is no annual contract on any model.",
   },
   {
     question: "Can you take over scripts and automations built by a previous developer?",
@@ -425,7 +425,7 @@ export default function NetSuiteConsultingServicesPage() {
             ))}
           </div>
           <p className="mt-5 text-sm text-brand-400">
-            Most clients mix models: dedicated monthly support for ongoing work, project-based for defined builds, and on-demand for occasional requests. All are month-to-month with no minimum commitment.{" "}
+            Most clients mix models: dedicated monthly support for ongoing work, project-based for defined builds, and on-demand for occasional requests. Monthly retainers begin with a three-month minimum, then continue month-to-month. Project and on-demand engagements have no minimum commitment.{" "}
             <Link href="/netsuite-project-consulting" className="text-accent hover:underline">
               See how project engagements work.
             </Link>
@@ -486,7 +486,7 @@ export default function NetSuiteConsultingServicesPage() {
             Implementation partners are optimised for go-live delivery. Their teams, their processes, and their pricing structures are built around projects with a defined start, scope, and end date. Post-go-live consulting is different: the account is live, changes carry production risk, the scope evolves continuously, and the relationship is ongoing. Treating it as a series of projects is more expensive and less effective than a managed retainer.
           </p>
           <p className="text-sm text-brand-500 mb-4">
-            SuitePacific provides post-go-live NetSuite consulting exclusively: development, automation, integrations, administration, and ongoing support from Oracle-certified specialists. Three engagement models: dedicated monthly retainer starting at $799, on-demand access for occasional work, and fixed-scope project engagements. Month-to-month, no annual contract.
+            SuitePacific provides post-go-live NetSuite consulting exclusively: development, automation, integrations, administration, and ongoing support from Oracle-certified specialists. Three engagement models: dedicated monthly retainer starting at $799, on-demand access for occasional work, and fixed-scope project engagements. Monthly retainers start with a three-month minimum, then continue month-to-month. No annual contract.
           </p>
           <ul className="space-y-2 text-sm text-brand-500">
             <li className="flex items-start gap-2"><span className="text-accent font-bold mt-0.5">→</span> Exclusive post-go-live focus: we only work with accounts that are already live</li>
