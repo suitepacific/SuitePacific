@@ -26,6 +26,25 @@ const ONEWORLD_PROBLEMS = [
   { icon: XCircle, title: "Currency translation differences.", description: "When a subsidiary has a different base currency from the parent, NetSuite translates balances using exchange rates. If the translation method is not configured correctly, or the cumulative translation adjustment account is missing, currency translation differences cause unexplained variance in the consolidated balance sheet." },
 ];
 
+const US_SUBSIDIARY_QA = [
+  {
+    q: "Can the US subsidiary get its own reporting without affecting other subsidiaries?",
+    a: "Yes. Saved searches and dashboards are scoped to a specific role and can be restricted to a single subsidiary. SuiteQL queries filter explicitly to the US entity so other subsidiaries are unaffected. A US finance team can have its own reports, portlets, and dashboards that draw only on US subsidiary records.",
+  },
+  {
+    q: "Can shared forms be adapted for US-specific workflows?",
+    a: "Yes. NetSuite supports subsidiary-specific custom fields that are visible only on transactions for that subsidiary. Forms can show or hide fields conditionally based on the subsidiary in use. For more substantial changes, a US-specific form variant can be created alongside the global form, with the subsidiary selector determining which opens.",
+  },
+  {
+    q: "How are cross-subsidiary changes handled safely?",
+    a: "Changes that touch shared records (roles, global custom fields, global forms) are tested in Sandbox against all affected subsidiaries before production deployment. SuitePacific documents which changes are subsidiary-scoped and which are global, so US requirements are addressed without side effects on other entities.",
+  },
+  {
+    q: "Can SuitePacific work alongside an existing global NetSuite administrator or partner?",
+    a: "Yes. US-subsidiary work often happens alongside a global admin team handling group-level configuration. SuitePacific can deliver US-specific builds — saved searches, workflows, SuiteScript, PDF templates — without touching the global account structure. Coordination with a global admin team is part of the engagement.",
+  },
+];
+
 const WHAT_WE_DO = [
   { icon: Settings, title: "Intercompany setup and elimination configuration", description: "Configure intercompany accounts, elimination subsidiaries, and intercompany transaction preferences so NetSuite creates matching entries automatically and eliminates them correctly in consolidated statements." },
   { icon: BarChart2, title: "Elimination audit and correction", description: "Trace existing intercompany transactions to the accounts they posted to, identify the gap between where they posted and where the elimination configuration expects them, and post corrections to align the consolidated statements." },
@@ -44,7 +63,7 @@ const FAQ = [
 
 export const metadata: Metadata = {
   title: "NetSuite OneWorld Support: Intercompany, Eliminations, and Multi-Subsidiary Configuration",
-  description: "Intercompany setup, elimination configuration, consolidated reporting, and subsidiary restrictions for NetSuite OneWorld accounts. Plans from $799/month.",
+  description: "NetSuite OneWorld support: intercompany configuration, elimination fixes, US subsidiary reporting, and subsidiary-specific workflows for live accounts. Plans from $799/month.",
   alternates: { canonical: "/netsuite-oneworld-support" },
   openGraph: {
     title: "NetSuite OneWorld Support: Intercompany, Eliminations, and Multi-Subsidiary Configuration",
@@ -83,7 +102,7 @@ export default function OneWorldSupportPage() {
           <LeadFormLight />
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite Administrator Professional certified · OneWorld specialist · Month-to-month</p>
-        <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
+        <p className="mt-3 text-xs text-brand-300">Last updated October 2026</p>
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">SuitePacific configures and supports NetSuite OneWorld accounts: intercompany transaction setup, consolidated reporting, subsidiary-level role restrictions, currency translation, and elimination account configuration. NetSuite OneWorld is the multi-subsidiary version of NetSuite, used by companies with multiple legal entities, international subsidiaries, or holding company structures. It supports separate charts of accounts per subsidiary, multi-currency with real-time exchange rate updates, intercompany billing and journal entries with automatic elimination, and consolidated financial statements across all subsidiaries. Most OneWorld accounts have persistent problems with intercompany eliminations that do not balance, users who can see all subsidiaries, or consolidated reports that include transactions that should be eliminated. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional) and fixes these problems for live accounts. Plans start at $799 per month.</p>
@@ -112,6 +131,27 @@ export default function OneWorldSupportPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHAT_WE_DO.map((item) => (<Card key={item.title} className="p-5 flex items-start gap-4"><IconBadge icon={item.icon} /><div><h3 className="font-semibold text-brand-900 text-sm">{item.title}</h3><p className="mt-1.5 text-sm text-brand-400">{item.description}</p></div></Card>))}
           </div>
+        </div>
+
+        {/* US subsidiary angle */}
+        <div className="mt-14">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">
+            Can a US subsidiary get better NetSuite reporting without changing global processes?
+          </h2>
+          <p className="text-sm text-brand-400 mb-6">
+            A common situation for companies with global NetSuite accounts: the group-level configuration is working, but the US subsidiary needs reports, forms, or workflows that the global setup does not provide. The concern is always whether changes for the US entity will affect other subsidiaries or the global admin team&apos;s work.
+          </p>
+          <div className="space-y-4">
+            {US_SUBSIDIARY_QA.map((item) => (
+              <div key={item.q} className="rounded-xl border border-brand-100 bg-brand-50/30 p-5">
+                <p className="text-sm font-semibold text-brand-900 mb-2">{item.q}</p>
+                <p className="text-sm text-brand-400">{item.a}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-sm text-brand-400">
+            Related: <Link href="/netsuite-consulting-services" className="text-accent hover:underline">how SuitePacific engagements work</Link> and <Link href="/netsuite-administrator-support" className="text-accent hover:underline">NetSuite administrator support</Link>.
+          </p>
         </div>
 
         <div className="mt-14 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">

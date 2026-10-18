@@ -114,7 +114,7 @@ const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/netsuite-approval-workflows", lastModified: new Date("2026-09-17") },
   { path: "/netsuite-arm-configuration", lastModified: new Date("2026-09-17") },
   { path: "/netsuite-data-migration", lastModified: new Date("2026-09-17") },
-  { path: "/netsuite-oneworld-support", lastModified: new Date("2026-09-17") },
+  { path: "/netsuite-oneworld-support", lastModified: new Date("2026-10-18") },
   { path: "/netsuite-order-fulfillment", lastModified: new Date("2026-09-17") },
   { path: "/netsuite-quickbooks-migration", lastModified: new Date("2026-09-17") },
   { path: "/netsuite-user-roles-permissions", lastModified: new Date("2026-09-17") },
