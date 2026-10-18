@@ -170,6 +170,17 @@ const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/netsuite-mrp-vs-third-party-planning", lastModified: new Date("2026-10-18") },
   { path: "/netsuite-advanced-manufacturing-module-vs-custom", lastModified: new Date("2026-10-18") },
   { path: "/netsuite-acs-vs-manufacturing-specialist", lastModified: new Date("2026-10-18") },
+  // Oct 2026 — CFO/controller comparison pages
+  { path: "/netsuite-arm-vs-custom-revenue-recognition", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-suitetax-vs-avalara", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-planning-budgeting-vs-adaptive-insights", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-ap-automation-native-vs-tipalti", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-three-way-match-native-vs-custom", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-intercompany-elimination-native-vs-custom", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-fixed-assets-native-vs-third-party", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-financial-close-manual-vs-automated", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-expense-management-native-vs-expensify", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-consolidation-oneworld-vs-prophix", lastModified: new Date("2026-10-18") },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
