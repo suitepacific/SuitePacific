@@ -109,7 +109,7 @@ const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
   // Pages added in Sep 2026 — were missing from sitemap
   { path: "/netsuite-support", lastModified: new Date("2026-09-03") },
   { path: "/netsuite-integrations/celigo", lastModified: new Date("2026-09-03") },
-  { path: "/netsuite-wip-report", lastModified: new Date("2026-09-17") },
+  { path: "/netsuite-wip-report", lastModified: new Date("2026-10-18") },
   { path: "/netsuite-ap-automation", lastModified: new Date("2026-09-17") },
   { path: "/netsuite-approval-workflows", lastModified: new Date("2026-09-17") },
   { path: "/netsuite-arm-configuration", lastModified: new Date("2026-09-17") },

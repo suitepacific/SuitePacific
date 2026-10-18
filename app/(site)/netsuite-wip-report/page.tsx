@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CheckCircle2, XCircle, BarChart2, FileText, Code2, Workflow } from "lucide-react";
+import { CheckCircle2, XCircle, BarChart2, FileText, Code2, Workflow, Monitor, Database } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
@@ -43,6 +43,37 @@ const WHAT_WE_BUILD = [
     title: "Change order and budget update workflows",
     description:
       "Workflows that route change order approvals and automatically update project budgets when approved, keeping the estimated cost at completion current without manual revision.",
+  },
+  {
+    icon: Monitor,
+    title: "Custom Suitelet report",
+    description:
+      "For accounts that need interactive filters by project, date range, or cost category, a custom Suitelet delivers a standalone WIP report page inside NetSuite. The output matches the calculation logic of a saved search with a form-driven interface and can be exported to CSV for the finance team or auditors.",
+  },
+  {
+    icon: Database,
+    title: "Month-end WIP snapshot records",
+    description:
+      "When audit requirements or multi-period analysis demand frozen balances, a snapshot approach writes the WIP position as custom records at period close. Historical values remain stable even if underlying transactions are later adjusted, enabling accurate period-over-period comparison and audit traceability.",
+  },
+];
+
+const APPROACH_TABLE = [
+  {
+    approach: "Saved search",
+    suited: "Straightforward cost structures, single subsidiary, real-time view sufficient. Quick to build; updates automatically as transactions post.",
+  },
+  {
+    approach: "SuiteQL query",
+    suited: "Multiple cost categories, phase-level tracking, multi-subsidiary, or calculations requiring joins beyond standard saved search record relationships.",
+  },
+  {
+    approach: "Custom Suitelet",
+    suited: "Interactive project, date range, and cost-category filters. Complex column logic, conditional formatting, or export requirements that a saved search cannot support.",
+  },
+  {
+    approach: "Month-end snapshot",
+    suited: "Frozen period-end balances for audit. WIP positions that must remain stable even if underlying transactions are later adjusted or reversed.",
   },
 ];
 
@@ -167,12 +198,12 @@ export default function WipReportPage() {
         />
 
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
-          <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>
+          <p className="text-sm text-brand-600 mb-3">Managing WIP in Excel because NetSuite doesn&apos;t produce it natively? Tell us about your construction account.</p>
           <LeadFormLight />
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Construction reporting specialists · Direct access · Month-to-month</p>
 
-        <p className="mt-3 text-xs text-brand-300">Last updated September 2026</p>
+        <p className="mt-3 text-xs text-brand-300">Last updated October 2026</p>
 
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
@@ -250,6 +281,35 @@ export default function WipReportPage() {
               </Card>
             ))}
           </div>
+        </div>
+
+        {/* Which approach is right */}
+        <div className="mt-14">
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">Which WIP reporting approach is right for your construction account?</h2>
+          <p className="text-sm text-brand-400 mb-5">
+            The right architecture depends on cost structure complexity, subsidiary setup, and whether the finance team needs interactive filters or a simpler live dashboard view.
+          </p>
+          <div className="overflow-x-auto rounded-2xl border border-brand-100">
+            <table className="w-full text-sm min-w-[520px]">
+              <thead>
+                <tr className="border-b border-brand-100 bg-brand-50/50">
+                  <th className="text-left p-4 font-semibold text-brand-900">Approach</th>
+                  <th className="text-left p-4 font-semibold text-brand-900">Best suited for</th>
+                </tr>
+              </thead>
+              <tbody>
+                {APPROACH_TABLE.map((row, i) => (
+                  <tr key={row.approach} className={i < APPROACH_TABLE.length - 1 ? "border-b border-brand-100" : ""}>
+                    <td className="p-4 font-medium text-brand-700 align-top whitespace-nowrap">{row.approach}</td>
+                    <td className="p-4 text-brand-400 align-top text-[13px]">{row.suited}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 text-sm text-brand-400">
+            A live as-of report recalculates every time it is opened, reflecting current posted transactions and budget records. A month-end snapshot captures the WIP position at period close and preserves it, even if transactions are later adjusted or reversed. Most construction finance teams need both: a live view for day-to-day project management and a preserved snapshot for period-end reporting and audit.
+          </p>
         </div>
 
         {/* What else comes with it */}
