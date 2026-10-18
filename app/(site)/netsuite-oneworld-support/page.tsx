@@ -179,6 +179,7 @@ export default function OneWorldSupportPage() {
             <li className="text-sm text-brand-400"><Link href="/blog/netsuite-oneworld-multi-subsidiary" className="text-accent hover:underline">NetSuite OneWorld: multi-subsidiary configuration, intercompany transactions, and common problems</Link> covers what OneWorld is, intercompany setup, and the most common configuration failures.</li>
             <li className="text-sm text-brand-400"><Link href="/netsuite-user-roles-permissions" className="text-accent hover:underline">NetSuite user roles and permissions</Link> covers how subsidiary restrictions are applied through role architecture.</li>
             <li className="text-sm text-brand-400"><Link href="/netsuite-administrator-support" className="text-accent hover:underline">NetSuite administrator support</Link> covers ongoing administration including intercompany maintenance as part of a monthly retainer.</li>
+            <li className="text-sm text-brand-400"><Link href="/netsuite-health-check" className="text-accent hover:underline">NetSuite health check</Link> is a useful starting point for global companies whose US subsidiary needs an independent review of the existing configuration before changes are made.</li>
           </ul>
         </div>
 

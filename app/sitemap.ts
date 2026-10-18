@@ -75,7 +75,7 @@ const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/netsuite-ai-optimization-assessment", lastModified: NEW_PAGES_DATE },
   { path: "/netsuite-ai-invoice-processing", lastModified: NEW_PAGES_DATE },
   { path: "/netsuite-ai-reporting", lastModified: NEW_PAGES_DATE },
-  { path: "/netsuite-health-check", lastModified: KW_GAP_DATE },
+  { path: "/netsuite-health-check", lastModified: new Date("2026-10-18") },
   { path: "/netsuite-implementation-rescue", lastModified: KW_GAP_DATE },
   { path: "/netsuite-integrations/shopify", lastModified: KW_GAP_DATE },
   { path: "/netsuite-integrations/salesforce", lastModified: KW_GAP_DATE },

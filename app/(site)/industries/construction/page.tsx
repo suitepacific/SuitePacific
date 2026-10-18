@@ -529,6 +529,12 @@ export default function ConstructionPage() {
               </Link>{" "}
               covers committed and incurred cost tracking by cost code and how the job cost report connects to the WIP schedule.
             </li>
+            <li className="text-sm text-brand-400">
+              <Link href="/netsuite-health-check" className="text-accent hover:underline">
+                NetSuite health check
+              </Link>{" "}
+              is a useful starting point for construction companies that recently went live and want an independent review of what was built before adding reporting or approval workflows.
+            </li>
           </ul>
         </div>
 

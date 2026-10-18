@@ -216,7 +216,7 @@ export default function NetSuiteHealthCheckPage() {
         url={`${SITE_URL}/netsuite-health-check`}
         serviceType="NetSuite Audit"
         datePublished="2026-08-13T00:00:00+00:00"
-        dateModified="2026-09-23T00:00:00+00:00"
+        dateModified="2026-10-18T00:00:00+00:00"
         offers={[
           { name: "Health Check", price: 799, description: "Fixed-fee structured review of the full NetSuite customization layer: SuiteScript, workflows, saved searches, roles, integrations, and custom fields. Written report delivered in 5-7 business days." },
         ]}
@@ -241,7 +241,7 @@ export default function NetSuiteHealthCheckPage() {
         />
 
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
-          <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>
+          <p className="text-sm text-brand-600 mb-3">Not sure what&apos;s holding your NetSuite account back? Tell us what you&apos;re experiencing and we&apos;ll discuss whether a health check is the right starting point.</p>
           <LeadFormLight />
         </div>
         <p className="mt-3 text-xs text-brand-400">
@@ -273,6 +273,9 @@ export default function NetSuiteHealthCheckPage() {
           not configure it. We look at what exists, what is actually in use, and where the account
           has accumulated risk or technical debt. The result is a written findings report you can
           act on, share with your team, or use as the basis for a remediation project.
+        </p>
+        <p className="mt-3 text-sm text-brand-400">
+          Common starting points: construction companies that recently went live and need to understand what their implementation partner built before adding WIP reporting or approval workflows; global companies whose US subsidiary is constrained by the existing OneWorld setup and needs a clear picture before making changes; companies changing NetSuite partners and wanting an independent baseline before the new partner starts.
         </p>
 
         {/* Pain Points */}
