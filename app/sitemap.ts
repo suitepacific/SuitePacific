@@ -150,6 +150,26 @@ const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/netsuite-managed-services-pricing", lastModified: new Date("2026-09-23") },
   // Oct 2026
   { path: "/netsuite-project-consulting", lastModified: new Date("2026-10-14") },
+  // Oct 2026 — comparison pages (construction + manufacturing)
+  { path: "/netsuite-suiteflow-vs-suitescript", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-configuration-vs-customization", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-in-house-admin-vs-outsourced-support", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-sandbox-vs-production-testing", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-suiteanalytics-vs-saved-searches", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-saved-searches-vs-suiteql-vs-reports", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-standard-billing-vs-aia-format", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-job-costing-standard-vs-custom", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-change-order-suiteflow-vs-suitescript", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-retainage-native-vs-custom", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-acs-vs-construction-specialist", lastModified: new Date("2026-10-18") },
+  { path: "/procore-netsuite-integration-vs-netsuite-only", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-costing-methods-comparison", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-lot-tracking-native-vs-enforced", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-production-reports-standard-vs-custom", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-work-order-suiteflow-vs-suitescript", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-mrp-vs-third-party-planning", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-advanced-manufacturing-module-vs-custom", lastModified: new Date("2026-10-18") },
+  { path: "/netsuite-acs-vs-manufacturing-specialist", lastModified: new Date("2026-10-18") },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
