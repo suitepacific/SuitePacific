@@ -175,6 +175,7 @@ export default function PlanningVsAdaptivePage() {
               </tbody>
             </table>
           </div>
+          <p className="mt-2 text-xs text-brand-300">Annual cost figures are estimates. Workday Adaptive Planning pricing varies by module, headcount, and contract. Contact Workday for current pricing.</p>
         </div>
 
         {/* When NSPB is sufficient */}

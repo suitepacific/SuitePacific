@@ -176,6 +176,7 @@ export default function ApAutomationVsTipaltiPage() {
               </tbody>
             </table>
           </div>
+          <p className="mt-2 text-xs text-brand-300">Annual cost figures are estimates based on typical contract ranges and vary by payment volume and features. Contact Tipalti and Bill.com for current pricing.</p>
         </div>
 
         {/* When native AP is sufficient */}

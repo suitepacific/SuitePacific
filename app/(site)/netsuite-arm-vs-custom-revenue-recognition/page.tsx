@@ -176,6 +176,7 @@ export default function ArmVsCustomRevRecPage() {
               </tbody>
             </table>
           </div>
+          <p className="mt-2 text-xs text-brand-300">License cost figures are estimates based on typical contract ranges and vary by account size, negotiation, and bundle. Contact Oracle NetSuite for current pricing.</p>
         </div>
 
         {/* When to choose ARM */}
