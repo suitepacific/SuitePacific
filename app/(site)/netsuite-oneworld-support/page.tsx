@@ -41,7 +41,7 @@ const US_SUBSIDIARY_QA = [
   },
   {
     q: "Can SuitePacific work alongside an existing global NetSuite administrator or partner?",
-    a: "Yes. US-subsidiary work often happens alongside a global admin team handling group-level configuration. SuitePacific can deliver US-specific builds — saved searches, workflows, SuiteScript, PDF templates — without touching the global account structure. Coordination with a global admin team is part of the engagement.",
+    a: "Yes. US-subsidiary work often happens alongside a global admin team handling group-level configuration. SuitePacific can deliver US-specific builds (saved searches, workflows, SuiteScript, PDF templates) without touching the global account structure. Coordination with a global admin team is part of the engagement.",
   },
 ];
 
@@ -63,7 +63,7 @@ const FAQ = [
 
 export const metadata: Metadata = {
   title: "NetSuite OneWorld Support: Intercompany, Eliminations, and Multi-Subsidiary Configuration",
-  description: "NetSuite OneWorld support: intercompany configuration, elimination fixes, US subsidiary reporting, and subsidiary-specific workflows for live accounts. Plans from $799/month.",
+  description: "NetSuite OneWorld support: intercompany configuration, elimination fixes, US subsidiary reporting, and subsidiary-specific workflows. Plans from $799/month.",
   alternates: { canonical: "/netsuite-oneworld-support" },
   openGraph: {
     title: "NetSuite OneWorld Support: Intercompany, Eliminations, and Multi-Subsidiary Configuration",
@@ -105,7 +105,7 @@ export default function OneWorldSupportPage() {
         <p className="mt-3 text-xs text-brand-300">Last updated October 2026</p>
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
-          <p className="text-sm text-brand-700 leading-relaxed">SuitePacific configures and supports NetSuite OneWorld accounts: intercompany transaction setup, consolidated reporting, subsidiary-level role restrictions, currency translation, and elimination account configuration. NetSuite OneWorld is the multi-subsidiary version of NetSuite, used by companies with multiple legal entities, international subsidiaries, or holding company structures. It supports separate charts of accounts per subsidiary, multi-currency with real-time exchange rate updates, intercompany billing and journal entries with automatic elimination, and consolidated financial statements across all subsidiaries. Most OneWorld accounts have persistent problems with intercompany eliminations that do not balance, users who can see all subsidiaries, or consolidated reports that include transactions that should be eliminated. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional) and fixes these problems for live accounts. Plans start at $799 per month.</p>
+          <p className="text-sm text-brand-700 leading-relaxed">SuitePacific configures and supports NetSuite OneWorld accounts: intercompany transaction setup, consolidated reporting, subsidiary-level role restrictions, currency translation, and elimination account configuration. NetSuite OneWorld is the multi-subsidiary version of NetSuite, used by companies with multiple legal entities, international subsidiaries, or holding company structures. It supports separate charts of accounts per subsidiary, multi-currency with real-time exchange rate updates, intercompany billing and journal entries with automatic elimination, and consolidated financial statements across all subsidiaries. Most OneWorld accounts have persistent problems with intercompany eliminations that do not balance, users who can see all subsidiaries, or consolidated reports that include transactions that should be eliminated. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional) and fixes these problems for live accounts. SuitePacific also handles US subsidiary-specific builds within global OneWorld accounts, including subsidiary-scoped reporting, adapted forms for US-specific workflows, and SuiteScript development that does not affect other entities in the account. Plans start at $799 per month.</p>
         </div>
 
         <div className="mt-14">

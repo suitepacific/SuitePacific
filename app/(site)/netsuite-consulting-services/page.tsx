@@ -228,11 +228,11 @@ const FAQ = [
 export const metadata: Metadata = {
   title: "NetSuite Consulting Services",
   description:
-    "NetSuite consulting for post-go-live companies: SuiteScript development, workflow automation, integrations, reporting, and ongoing technical support.",
+    "NetSuite consulting for post-go-live companies: SuiteScript development, workflow automation, integrations, reporting, and ongoing technical support. From $799.",
   alternates: { canonical: "/netsuite-consulting-services" },
   openGraph: {
     title: "NetSuite Consulting Services",
-    description: "NetSuite consulting for post-go-live companies: SuiteScript development, workflow automation, integrations, reporting, and ongoing technical support.",
+    description: "NetSuite consulting for post-go-live companies: SuiteScript development, workflow automation, integrations, reporting, and ongoing technical support. From $799.",
     url: "https://suitepacific.com/netsuite-consulting-services",
     type: "website",
     images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],

@@ -363,6 +363,12 @@ export default function ConstructionPage() {
           <time dateTime="2026-10">Updated October 2026</time>
         </p>
 
+        {/* Quick answer */}
+        <div className="mt-6 rounded-2xl border border-brand-100 bg-brand-50/40 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">SuitePacific provides NetSuite post-go-live support for construction companies, covering the full custom development and ongoing technical layer that standard NetSuite configuration leaves incomplete. NetSuite handles job setup and basic cost tracking out of the box, but does not produce WIP schedules, enforce approval routing for change orders and subcontractor POs, or automate AIA progress billing calculations. SuitePacific builds and maintains these customizations: SuiteScript logic for job costing accuracy and billing calculations, SuiteFlow approval chains for change orders and subcontractor purchase orders, project dashboards and budget versus actual reporting, and advanced PDF templates for AIA-format billing documents. All builds are tested in NetSuite Sandbox before production deployment. SuitePacific is Oracle-certified: SuiteCloud Developer II and Administrator Professional. US-based, direct access, no offshore handoffs. Engagements are month-to-month after an initial three-month minimum, starting at $799 per month.</p>
+        </div>
+
         {/* Post-go-live problem recognition */}
         <div className="mt-8">
           <h2 className="text-base font-semibold text-brand-900 mb-3">Common problems after NetSuite go-live for construction companies</h2>
