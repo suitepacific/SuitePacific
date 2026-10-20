@@ -10,6 +10,7 @@ import { useRef } from "react";
 const CLIENT_LOGOS: { src: string; alt: string; width?: number; darkBg?: boolean }[] = [
   { src: "/logos/clients/FreeLetics.png",                  alt: "Freeletics",          width: 120 },
   { src: "/logos/clients/Patriot_Gold_Group_white_Logo.png", alt: "Patriot Gold Group", width: 140, darkBg: true },
+  { src: "/logos/clients/TritonServices.png",              alt: "Triton Services",     width: 140 },
 ];
 
 // How many times to duplicate - keep even, increase for fewer logos.
@@ -92,8 +93,8 @@ export function SocialProof() {
                     src={logo.src}
                     alt={logo.alt}
                     width={logo.width ?? 120}
-                    height={36}
-                    className="h-7 w-auto object-contain opacity-60 hover:opacity-90 transition-opacity duration-300"
+                    height={44}
+                    className="h-9 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
                   />
                 </div>
               ) : (
@@ -106,8 +107,8 @@ export function SocialProof() {
                     src={logo.src}
                     alt={logo.alt}
                     width={logo.width ?? 120}
-                    height={36}
-                    className="h-7 w-auto object-contain opacity-40 grayscale hover:opacity-75 hover:grayscale-0 transition-all duration-300"
+                    height={44}
+                    className="h-9 w-auto object-contain opacity-65 hover:opacity-100 transition-opacity duration-300"
                   />
                 </div>
               )
