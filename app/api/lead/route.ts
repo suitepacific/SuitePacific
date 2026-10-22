@@ -1,12 +1,11 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { Resend } from "resend";
 
 const EMAIL_RE = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Email delivery happens client-side (see LeadForm.tsx) - FormSubmit sits behind
-// Cloudflare, which challenges server-to-server requests from Vercel's IPs with a
-// JS challenge page that a backend can never solve. This route only persists the lead.
 export async function POST(request: NextRequest) {
   const formData = await request.formData();
   const name = String(formData.get("name") ?? "").trim();
@@ -40,6 +39,19 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("Failed to save lead to database:", error);
   }
+
+  resend.emails.send({
+    from: "SuitePacific <noreply@suitepacific.com>",
+    to: "info@suitepacific.com",
+    subject: `New lead: ${name || email}`,
+    html: `
+      <p><strong>Name:</strong> ${name || "(not provided)"}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Company:</strong> ${company || "(not provided)"}</p>
+      ${message ? `<p><strong>Message:</strong><br>${message.replace(/\n/g, "<br>")}</p>` : ""}
+      ${sourcePage ? `<p><strong>Source:</strong> ${sourcePage}</p>` : ""}
+    `,
+  }).catch((err) => console.error("Failed to send lead notification email:", err));
 
   return NextResponse.json({ success: true });
 }
