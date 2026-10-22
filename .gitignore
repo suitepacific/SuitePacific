@@ -52,3 +52,4 @@ next-env.d.ts
 
 # raw uploaded source assets (processed versions live in /public)
 /suitepacific.jpeg
+db-export/
