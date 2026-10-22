@@ -1,4 +1,5 @@
 import { getAllLeads } from "@/lib/admin-data";
+import { DeleteLeadButton } from "./DeleteLeadButton";
 
 export default async function AdminLeadsPage() {
   const leads = await getAllLeads();
@@ -19,6 +20,7 @@ export default async function AdminLeadsPage() {
               <th className="px-5 py-3 font-medium">Source Page</th>
               <th className="px-5 py-3 font-medium">Message</th>
               <th className="px-5 py-3 font-medium">Date</th>
+              <th className="px-5 py-3 font-medium"></th>
             </tr>
           </thead>
           <tbody>
@@ -33,7 +35,7 @@ export default async function AdminLeadsPage() {
                   {lead.sourcePage ? (
                     <span className="text-xs">{lead.sourcePage.replace("https://suitepacific.com", "")}</span>
                   ) : (
-                    <span className="text-brand-200">—</span>
+                    <span className="text-brand-200">-</span>
                   )}
                 </td>
                 <td className="px-5 py-3 text-brand-400 max-w-sm whitespace-pre-wrap break-words">{lead.message ?? "No message"}</td>
@@ -46,6 +48,9 @@ export default async function AdminLeadsPage() {
                     hour: "numeric",
                     minute: "2-digit",
                   })} IST
+                </td>
+                <td className="px-5 py-3">
+                  <DeleteLeadButton id={lead.id} />
                 </td>
               </tr>
             ))}
