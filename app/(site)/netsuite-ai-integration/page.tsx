@@ -420,6 +420,12 @@ export default function NetSuiteAiIntegrationPage() {
               covers third-party integrations generally, including RESTlets and OAuth 2.0 connections.
             </li>
             <li className="text-sm text-brand-400">
+              <Link href="/netsuite-ai-readiness-assessment" className="text-accent hover:underline">
+                NetSuite AI Readiness Assessment
+              </Link>{" "}
+              covers how to assess whether your current NetSuite environment supports SuiteAgents, SuiteSkills, and external AI integrations before committing to a build.
+            </li>
+            <li className="text-sm text-brand-400">
               <Link href="/blog/netsuite-bill-capture-preferences-2026-2" className="text-accent hover:underline">
                 NetSuite Bill Capture preferences in 2026.2
               </Link>{" "}
