@@ -27,7 +27,7 @@ const POSTGO_PROBLEMS = [
   {
     problem: "WIP still maintained in Excel after go-live",
     detail: "NetSuite holds the data but doesn't produce a WIP schedule. Finance teams export and reconcile manually every period because the report layer was never built.",
-    href: "/netsuite-wip-report",
+    href: "/netsuite-wip-reporting",
     linkText: "Custom WIP report builds",
   },
   {
