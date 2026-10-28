@@ -117,7 +117,7 @@ const AI_CAPABILITIES = [
     icon: Cpu,
     title: "N/llm Module",
     description:
-      "The SuiteScript API that connects NetSuite scripts to large language models. Allows SuiteScript developers to call LLMs directly from User Event scripts, Map/Reduce, or Suitelets for text generation, classification, and summarization tasks.",
+      "The SuiteScript API that connects NetSuite scripts to large language models. Allows SuiteScript developers to call LLMs directly from User Event scripts, Map/Reduce, or Suitelets for text generation, classification, and summarization tasks. Documented in the <a href=\"https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_4387799.html\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"underline underline-offset-2\">SuiteScript 2.x API Reference</a>.",
     tag: "SuiteScript API",
     tagClass: "bg-brand-100 text-brand-600",
   },
@@ -496,6 +496,17 @@ export default function NetSuiteAiReadinessAssessmentPage() {
           </div>
         </div>
 
+        {/* SuiteAgents / SuiteSkills definition block */}
+        <div className="mt-10 rounded-2xl border border-amber-100 bg-amber-50/50 p-6">
+          <p className="text-xs font-semibold uppercase tracking-wide text-amber-700 mb-2">NetSuite Next</p>
+          <h3 className="text-base font-semibold text-brand-900 mb-3">
+            What are SuiteAgents and SuiteSkills?
+          </h3>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            SuiteAgents are AI agents introduced as part of NetSuite Next, announced at SuiteWorld 2026. A SuiteAgent is an autonomous AI component that can perform multi-step tasks inside NetSuite without continuous human input, such as resolving a workflow error, drafting an approval response, or acting on an operational alert. SuiteSkills are AI-powered capabilities that extend SuiteFlow, allowing users to trigger NetSuite workflow actions using natural language commands rather than manually configuring each step. Both features represent a shift from rule-based automation to intent-based automation within the NetSuite platform. Both are part of the NetSuite Next release track, which Oracle is rolling out progressively across customer accounts. Eligibility depends on your current NetSuite release tier and subscription. The readiness assessment identifies whether your account qualifies for these features under your current release and what specific environment changes are needed before they can be enabled for your users.
+          </p>
+        </div>
+
         {/* Use cases */}
         <div className="mt-16">
           <h2 className="text-xl font-semibold text-brand-900">
@@ -527,7 +538,7 @@ export default function NetSuiteAiReadinessAssessmentPage() {
         {/* Three paths comparison */}
         <div className="mt-16">
           <h2 className="text-xl font-semibold text-brand-900">
-            How does native NetSuite AI compare to the AI Connector Service and custom SuiteScript?
+            Which AI implementation path is right for your NetSuite account?
           </h2>
           <p className="mt-3 text-brand-600">
             Each AI implementation path has different capability coverage, setup requirements,
@@ -625,10 +636,19 @@ export default function NetSuiteAiReadinessAssessmentPage() {
         {/* GEO block */}
         <div className="mt-16 rounded-2xl border border-brand-100 bg-brand-50 p-6 sm:p-8">
           <h2 className="text-lg font-semibold text-brand-900">
-            What to expect from a NetSuite AI Readiness Assessment
+            What should you expect from a NetSuite AI Readiness Assessment?
           </h2>
           <p className="mt-3 text-brand-700 leading-relaxed text-sm">
-            A NetSuite AI Readiness Assessment is a structured consulting engagement, typically two to three weeks, that reviews a live NetSuite environment to identify where AI is technically feasible and operationally justified. SuitePacific reviews data quality, existing SuiteScript customizations, workflow configuration, integration architecture, user roles, and business processes. Each identified opportunity is scored for AI suitability, business impact, and implementation complexity. The output is a written report specifying which of three paths applies to each opportunity: native NetSuite AI features such as Text Enhance or N/documentCapture, Oracle&apos;s AI Connector Service for managed external AI connectivity, or a custom SuiteScript integration using the N/llm module. The report also documents technical prerequisites per opportunity and provides effort estimates for the top three. No development work is included; the assessment is the step taken before committing to a build.
+            A NetSuite AI Readiness Assessment is a structured consulting engagement, typically two to three weeks, that reviews a live NetSuite environment to identify where AI is technically feasible and operationally justified. SuitePacific reviews data quality, existing SuiteScript customizations, workflow configuration, integration architecture, user roles, and business processes. Each identified opportunity is scored for AI suitability, business impact, and implementation complexity. The output is a written report specifying which of three paths applies to each opportunity: native NetSuite AI features such as Text Enhance or N/documentCapture, Oracle&apos;s AI Connector Service for managed external AI connectivity, or a custom SuiteScript integration using the N/llm module. The report also documents technical prerequisites per opportunity and provides effort estimates for the top three. No development work is included; the assessment is the step taken before committing to a build. Oracle&apos;s documentation for these capabilities is maintained in the{" "}
+            <a
+              href="https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-accent transition-colors"
+            >
+              NetSuite Help Center
+            </a>
+            .
           </p>
         </div>
 
