@@ -249,6 +249,7 @@ export default function NetSuiteHealthCheckPage() {
           <span className="font-medium text-brand-700">5.0</span>{" "}
           <span>· 5 client reviews · NetSuite-certified · Fixed fee $799 · No upsell obligation</span>
         </p>
+        <p className="mt-1 text-xs text-brand-300">Last updated October 2026</p>
 
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
@@ -275,12 +276,16 @@ export default function NetSuiteHealthCheckPage() {
           act on, share with your team, or use as the basis for a remediation project.
         </p>
         <p className="mt-3 text-sm text-brand-400">
-          Common starting points: construction companies that recently went live and need to understand what their implementation partner built before adding WIP reporting or approval workflows; global companies whose US subsidiary is constrained by the existing OneWorld setup and needs a clear picture before making changes; companies changing NetSuite partners and wanting an independent baseline before the new partner starts.
+          Common starting points: construction companies that recently went live and need to understand what their implementation partner built before adding WIP reporting or approval workflows; global companies whose US subsidiary is constrained by the existing OneWorld setup and needs a clear picture before making changes; companies changing NetSuite partners and wanting an independent baseline before the new partner starts. NetSuite&apos;s{" "}
+          <Link href="https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_N2666167.html" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
+            SuiteCloud platform documentation
+          </Link>{" "}
+          outlines what is configurable at the script, workflow, and integration level, which gives context for what a health check surfaces in each area.
         </p>
 
         {/* Pain Points */}
         <div className="mt-14" data-section="pain-points">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Common situations that bring people here</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">What situations call for a NetSuite health check?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {PAIN_POINTS.map((item) => (
               <Card key={item.title} className="p-5 flex flex-col gap-3">
@@ -294,7 +299,7 @@ export default function NetSuiteHealthCheckPage() {
 
         {/* What we audit */}
         <div className="mt-14" data-section="audit-areas">
-          <h2 className="text-lg font-semibold text-brand-900 mb-1">What the health check covers</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-1">What does the NetSuite health check cover?</h2>
           <p className="text-sm text-brand-400 mb-6">
             We review across six areas systematically, regardless of which one prompted the review.
             Problems in one area frequently originate in another.
@@ -340,7 +345,7 @@ export default function NetSuiteHealthCheckPage() {
 
         {/* Sample deliverable */}
         <div className="mt-14" data-section="sample-report">
-          <h2 className="text-lg font-semibold text-brand-900 mb-2">What the report includes</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">What does the health check report include?</h2>
           <p className="text-sm text-brand-400 mb-5">
             The written report covers all six audit areas with specific findings, severity classifications, and recommendations. Below are illustrative examples of the type of findings the report surfaces; actual findings depend on what is in your account.
           </p>
@@ -357,7 +362,7 @@ export default function NetSuiteHealthCheckPage() {
 
         {/* How it works */}
         <div className="mt-14" data-section="how-it-works">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">How the engagement works</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">How does the health check engagement work?</h2>
           <div className="space-y-4">
             {HOW_IT_WORKS.map((item) => (
               <div key={item.step} className="flex items-start gap-5">
@@ -375,7 +380,7 @@ export default function NetSuiteHealthCheckPage() {
 
         {/* Why SuitePacific */}
         <div className="mt-14" data-section="why-suitepacific">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why SuitePacific</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why choose SuitePacific for a NetSuite health check?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">

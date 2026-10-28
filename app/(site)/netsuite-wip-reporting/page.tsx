@@ -7,7 +7,7 @@ import {
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
-import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
@@ -245,6 +245,14 @@ export default function NetSuiteWipReportingPage() {
         dateModified="2026-10-28T00:00:00+00:00"
       />
       <OrganizationJsonLd />
+      <VideoObjectJsonLd
+        name="SuitePacific Introduction: NetSuite Post-Go-Live Support and Consulting"
+        description="An introduction to SuitePacific, a boutique NetSuite post-go-live support team providing SuiteScript development, workflow automation, and ongoing account optimization for businesses already live on NetSuite."
+        videoId="IQvWN_yZ24A"
+        duration="PT18S"
+        uploadDate="2026-08-12T00:00:00+00:00"
+        isShort
+      />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <SectionHeading
@@ -264,6 +272,7 @@ export default function NetSuiteWipReportingPage() {
           <span className="font-medium text-brand-700">5.0</span>{" "}
           <span>· NetSuite-certified · Real construction reporting experience · SuiteScript and SuiteQL</span>
         </p>
+        <p className="mt-1 text-xs text-brand-300">Last updated October 2026</p>
 
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
@@ -276,12 +285,16 @@ export default function NetSuiteWipReportingPage() {
           Construction finance teams running NetSuite often reach the same point: the system has the data, but extracting a WIP schedule still requires pulling multiple saved searches, pasting them into Excel, and manually computing earned revenue and overbilling. The report does not reconcile to the GL without further work, and the process repeats at every close.
         </p>
         <p className="mt-3 text-sm text-brand-400">
-          The underlying problem is that NetSuite Project Management tracks costs and budgets at the project level, but the WIP calculation requires joining that data with purchasing records, invoice history, and an earned revenue formula that depends on an accounting method the system does not pre-configure. Without a custom build, the schedule lives outside NetSuite.
+          The underlying problem is that{" "}
+          <Link href="https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_N2666167.html" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
+            NetSuite Project Management
+          </Link>{" "}
+          tracks costs and budgets at the project level, but the WIP calculation requires joining that data with purchasing records, invoice history, and an earned revenue formula that depends on an accounting method the system does not pre-configure. Without a custom build, the schedule lives outside NetSuite.
         </p>
 
         {/* Pain points */}
         <div className="mt-14">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Common WIP reporting problems in NetSuite</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">What WIP reporting problems do construction companies face in NetSuite?</h2>
           <div className="space-y-4">
             {PAIN_POINTS.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">
@@ -297,7 +310,7 @@ export default function NetSuiteWipReportingPage() {
 
         {/* WIP components table */}
         <div className="mt-14">
-          <h2 className="text-lg font-semibold text-brand-900 mb-2">What a complete WIP schedule includes</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">What does a complete NetSuite WIP schedule include?</h2>
           <p className="text-sm text-brand-400 mb-5">
             A WIP schedule under percentage-of-completion accounting requires eight data points per project.
             Each one sources from a different record type in NetSuite. The schedule is only reliable when all
@@ -325,7 +338,7 @@ export default function NetSuiteWipReportingPage() {
 
         {/* What we build */}
         <div className="mt-14">
-          <h2 className="text-lg font-semibold text-brand-900 mb-2">What SuitePacific builds</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">What does SuitePacific build for construction WIP reporting?</h2>
           <p className="text-sm text-brand-400 mb-6">
             Everything is built inside your existing NetSuite account using SuiteScript and SuiteQL.
             No third-party subscription, no external database.
@@ -345,7 +358,7 @@ export default function NetSuiteWipReportingPage() {
 
         {/* Before / After */}
         <div className="mt-14">
-          <h2 className="text-lg font-semibold text-brand-900 mb-2">Before and after a custom WIP build</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-2">How does a custom WIP build change the month-end close process?</h2>
           <p className="text-sm text-brand-400 mb-5">
             Most construction companies arrive with a functional Excel-based WIP process. The goal
             of the NetSuite build is to move that logic inside the system so the schedule produces
@@ -375,7 +388,7 @@ export default function NetSuiteWipReportingPage() {
 
         {/* Why SuitePacific */}
         <div className="mt-14">
-          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why SuitePacific</h2>
+          <h2 className="text-lg font-semibold text-brand-900 mb-6">Why do construction companies choose SuitePacific for WIP reporting?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SP.map((item) => (
               <Card key={item.title} className="p-5 flex items-start gap-4">
