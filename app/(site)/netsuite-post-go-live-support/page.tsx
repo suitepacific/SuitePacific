@@ -371,6 +371,7 @@ export default function PostGoLiveSupportPage() {
           subtitle="Ongoing development, automation, and support for companies already live on NetSuite. Your implementation partner got you there; we keep it running and growing."
           align="left"
         />
+        <p className="mt-1 text-xs text-brand-300">Last updated October 2026</p>
 
         <div className="mt-6 rounded-xl border border-brand-100 bg-brand-50 p-5">
           <p className="mb-1 text-[0.65rem] font-bold uppercase tracking-widest text-brand-400">Quick answer</p>

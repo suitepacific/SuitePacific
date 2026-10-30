@@ -218,6 +218,7 @@ export default function NetSuiteSupportComparisonPage() {
           subtitle="Oracle standard support, ACS, third-party managed retainer, break-fix, and internal hire. What each covers, what each costs, and which fits a post-go-live account."
           align="left"
         />
+        <p className="mt-1 text-xs text-brand-300">Last updated October 2026</p>
 
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>

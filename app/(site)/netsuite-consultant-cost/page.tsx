@@ -116,6 +116,7 @@ export default function NetSuiteConsultantCostPage() {
           subtitle="NetSuite consultant rates range from $75 to $300 per hour, but the hourly rate is not the right number to compare. Here is how the three main support models actually differ on total cost."
           align="left"
         />
+        <p className="mt-1 text-xs text-brand-300">Last updated October 2026</p>
 
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>

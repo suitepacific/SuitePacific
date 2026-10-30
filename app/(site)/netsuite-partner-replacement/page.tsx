@@ -248,6 +248,7 @@ export default function NetSuitePartnerReplacementPage() {
           subtitle="Your implementation partner was scoped for a project. Ongoing development, fixes, and support require a different kind of relationship. SuitePacific takes over existing accounts and keeps them running."
           align="left"
         />
+        <p className="mt-1 text-xs text-brand-300">Last updated October 2026</p>
 
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>

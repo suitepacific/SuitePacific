@@ -301,6 +301,7 @@ export default function NetSuiteCarePage() {
             SuitePacific Care is a monthly retainer covering all SuiteScript development, workflow automation, administration, and break-fix work a live NetSuite account generates. Each month subscribers receive a fixed allocation of certified technical hours: 10 hours on Care, 20 hours on Care Plus, and 35 hours on Care Pro. The retainer covers the full technical stack: SuiteScript 2.x development, SuiteFlow workflow automation, saved searches and dashboards, Advanced PDF templates, integration maintenance, user and role administration, and Sandbox regression testing before each bi-annual NetSuite release. Work is prioritized within the monthly allocation; urgent production issues are escalated same-day. Retained account context means no re-explaining history on each request. There is no per-request scoping overhead and no annual contract. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Engagements are month-to-month after a three-month minimum. Plans start at $799 per month.
           </p>
         </div>
+        <p className="mt-2 text-xs text-brand-300">Last updated October 2026</p>
       </section>
 
       {/* Lead form - top */}

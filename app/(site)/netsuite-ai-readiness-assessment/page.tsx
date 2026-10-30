@@ -373,6 +373,13 @@ export default function NetSuiteAiReadinessAssessmentPage() {
         />
         <p className="mt-1 text-xs text-brand-300">Last updated October 2026</p>
 
+        <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
+          <p className="text-sm text-brand-700 leading-relaxed">
+            SuitePacific&apos;s NetSuite AI Readiness Assessment is a fixed-scope engagement that determines which NetSuite AI capabilities your account can actually use, and which of your processes would genuinely benefit from them. The assessment reviews six areas: data quality, existing SuiteScript customizations, workflow configuration, integration architecture, user roles, and business processes. Each opportunity is scored for feasibility, business impact, and implementation complexity, then matched to one of three implementation paths: native NetSuite AI features such as Text Enhance or N/documentCapture, Oracle&apos;s AI Connector Service, or a custom SuiteScript integration using the N/llm module. You receive a written report documenting technical prerequisites per opportunity plus effort estimates for the top three. The assessment requires only read-only SuiteCloud access and no development commitment. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Assessment work is covered by Care plans, which start at $799 per month, month-to-month after a three-month minimum.
+          </p>
+        </div>
+
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>
           <LeadFormLight />

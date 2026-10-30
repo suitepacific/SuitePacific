@@ -278,6 +278,7 @@ export default function NetSuiteConsultingServicesPage() {
           subtitle="Post-go-live NetSuite consulting requires a different firm than the one that did your implementation. SuitePacific works exclusively with companies already live: development, automation, integrations, and ongoing support in a single certified engagement."
           align="left"
         />
+        <p className="mt-1 text-xs text-brand-300">Last updated October 2026</p>
 
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>

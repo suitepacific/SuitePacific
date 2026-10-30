@@ -180,6 +180,7 @@ export default function NetSuiteEmergencySupportPage() {
           subtitle="When a NetSuite script breaks production, every hour matters. Oracle standard support cannot debug your custom code. SuitePacific provides same-day emergency response from Oracle-certified developers who can diagnose and fix the actual issue."
           align="left"
         />
+        <p className="mt-1 text-xs text-brand-300">Last updated October 2026</p>
 
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>

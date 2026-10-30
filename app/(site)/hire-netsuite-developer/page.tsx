@@ -391,6 +391,7 @@ export default function HireNetSuiteDeveloperPage() {
           subtitle="Most NetSuite developer searches end with an expensive re-onboarding cycle or a freelancer who disappears mid-project. SuitePacific provides Oracle-certified NetSuite development as a managed monthly retainer, with direct developer access and full documentation."
           align="left"
         />
+        <p className="mt-1 text-xs text-brand-300">Last updated October 2026</p>
 
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
