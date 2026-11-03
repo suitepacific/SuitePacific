@@ -116,7 +116,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Landed Cost: Freight, Duty, and Customs Allocation to Inventory",
+  title: { absolute: "NetSuite Landed Cost: Freight, Duty and Customs Allocation" },
   description:
     "Duty and freight allocation, late-arrival landed cost handling, and landed margin reporting for distributors on NetSuite. SuiteCloud Developer II certified.",
   alternates: { canonical: "/netsuite-landed-cost" },

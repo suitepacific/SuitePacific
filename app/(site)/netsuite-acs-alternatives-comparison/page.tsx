@@ -139,7 +139,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite ACS Alternatives: 2026 Provider Comparison",
+  title: { absolute: "NetSuite ACS Alternatives: 2026 Provider Comparison" },
   description:
     "Oracle ACS vs boutique managed support, Solution Providers, enterprise SIs, and independent consultants. Pricing, SuiteScript coverage, and SMB fit. From $799.",
   alternates: { canonical: "/netsuite-acs-alternatives-comparison" },

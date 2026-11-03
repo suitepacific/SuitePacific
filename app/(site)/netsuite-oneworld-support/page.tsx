@@ -62,7 +62,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite OneWorld Support: Intercompany, Eliminations, and Multi-Subsidiary Configuration",
+  title: { absolute: "NetSuite OneWorld Support: Intercompany and Eliminations" },
   description: "NetSuite OneWorld support: intercompany configuration, elimination fixes, US subsidiary reporting, and subsidiary-specific workflows. Plans from $799/month.",
   alternates: { canonical: "/netsuite-oneworld-support" },
   openGraph: {

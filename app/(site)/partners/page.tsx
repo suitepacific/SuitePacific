@@ -107,7 +107,7 @@ const HOW_IT_WORKS = [
 ];
 
 export const metadata: Metadata = {
-  title: "Partner with SuitePacific | NetSuite Post-Go-Live Partner Program",
+  title: { absolute: "Partner with SuitePacific | NetSuite Post-Go-Live Partner Program" },
   description:
     "Celigo Mastery Level 4, Oracle SuiteCloud Developer II, and Administrator Professional certified. Direct developer access on every NetSuite engagement.",
   alternates: { canonical: "/partners" },

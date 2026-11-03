@@ -114,7 +114,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Sandbox vs. Production Testing: Why Test First",
+  title: { absolute: "NetSuite Sandbox vs. Production Testing: Why Test First" },
   description:
     "Sandbox testing prevents production outages in NetSuite. This guide covers what to test, when to test, and the release testing window for live accounts.",
   alternates: { canonical: "/netsuite-sandbox-vs-production-testing" },

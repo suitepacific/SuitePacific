@@ -28,6 +28,8 @@ export type ResourceMeta = {
   updatedAt?: string;
   linkedinDay?: number;
   readingTime: string;
+  seoTitle?: string;
+  metaDescription?: string;
 };
 
 export type Resource = ResourceMeta & {
@@ -62,6 +64,8 @@ export function getAllResources(): ResourceMeta[] {
         slug,
         title: data.title as string,
         description: data.description as string,
+        seoTitle: data.seoTitle as string | undefined,
+        metaDescription: data.metaDescription as string | undefined,
         category: data.category as string,
         tags: (data.tags as string[]) ?? [],
         publishedAt: data.publishedAt as string,
@@ -82,6 +86,8 @@ export async function getResourceBySlug(slug: string): Promise<Resource | null> 
     slug,
     title: data.title as string,
     description: data.description as string,
+    seoTitle: data.seoTitle as string | undefined,
+    metaDescription: data.metaDescription as string | undefined,
     category: data.category as string,
     tags: (data.tags as string[]) ?? [],
     publishedAt: data.publishedAt as string,

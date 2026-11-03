@@ -121,7 +121,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Advanced Manufacturing vs. Custom SuiteScript",
+  title: { absolute: "NetSuite Advanced Manufacturing vs. Custom SuiteScript" },
   description:
     "Custom SuiteScript covers most WO automation needs. Advanced Manufacturing adds operation-level costing, work center capacity, and mobile shop floor screens.",
   alternates: { canonical: "/netsuite-advanced-manufacturing-module-vs-custom" },

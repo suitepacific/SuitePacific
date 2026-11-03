@@ -229,7 +229,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite AI Reporting: Ask Questions in Plain Language",
+  title: { absolute: "NetSuite AI Reporting: Ask Questions in Plain Language" },
   description:
     "Account-specific AI reporting for NetSuite: Suitelet-based assistants that query data in plain language with role-aware access and custom business logic.",
   alternates: { canonical: "/netsuite-ai-reporting" },

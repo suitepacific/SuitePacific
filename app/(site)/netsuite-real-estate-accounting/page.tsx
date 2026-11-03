@@ -60,7 +60,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Real Estate Accounting: Multi-Entity Setup, Investor Tracking, and Equity Waterfall",
+  title: { absolute: "NetSuite Real Estate Accounting: Multi-Entity and Investors" },
   description: "OneWorld entity structure, equity waterfall, investor reporting, and intercompany eliminations for real estate operators on NetSuite. Plans from $799/month.",
   alternates: { canonical: "/netsuite-real-estate-accounting" },
   openGraph: {

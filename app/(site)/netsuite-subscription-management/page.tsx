@@ -145,7 +145,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Subscription Management for SaaS Companies",
+  title: { absolute: "NetSuite Subscription Management for SaaS Companies" },
   description:
     "Subscription lifecycle, renewal automation, and churn workflow configuration using NetSuite SuiteBilling for SaaS companies. Plans from $799, month-to-month.",
   alternates: { canonical: "/netsuite-subscription-management" },

@@ -48,7 +48,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Order Fulfillment: Automation, Pick Lists, Carrier Integration, and Dashboards",
+  title: { absolute: "NetSuite Order Fulfillment: Pick Lists and Carrier Integration" },
   description: "Order fulfillment automation, custom pick lists, carrier API integrations, 3PL connections, and real-time fulfillment dashboards. Plans from $799/month.",
   alternates: { canonical: "/netsuite-order-fulfillment" },
   openGraph: {

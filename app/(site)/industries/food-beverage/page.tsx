@@ -265,7 +265,7 @@ const COMPARISON = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Support for Food & Beverage and FMCG Companies",
+  title: { absolute: "NetSuite Support for Food & Beverage and FMCG Companies" },
   description:
     "NetSuite post-go-live support for food and beverage companies. Shelf life, trade promotions, EDI integration, lot traceability, and chargeback management.",
   alternates: { canonical: "/industries/food-beverage" },

@@ -96,7 +96,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite ACS vs. Construction Specialist Support Options",
+  title: { absolute: "NetSuite ACS vs. Construction Specialist Support Options" },
   description:
     "NetSuite ACS offers Oracle platform advisory; a construction specialist provides SuiteScript development, AIA billing, and WIP builds for live accounts.",
   alternates: { canonical: "/netsuite-acs-vs-construction-specialist" },

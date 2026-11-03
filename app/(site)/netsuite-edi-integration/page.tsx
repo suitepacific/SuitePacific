@@ -142,7 +142,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite EDI Integration for Food and Beverage Companies",
+  title: { absolute: "NetSuite EDI Integration for Food and Beverage Companies" },
   description:
     "EDI 850, 856, and 810 integration with Walmart, Target, Kroger, and other retail trading partners via NetSuite. SuiteCloud Developer II certified. From $799.",
   alternates: { canonical: "/netsuite-edi-integration" },

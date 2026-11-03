@@ -87,7 +87,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Month-End Close: Manual vs. Automated Process",
+  title: { absolute: "NetSuite Month-End Close: Manual vs. Automated Process" },
   description:
     "How far the standard NetSuite month-end close goes and where SuiteScript automation reduces close time and manual effort for controllers at live accounts.",
   alternates: { canonical: "/netsuite-financial-close-manual-vs-automated" },

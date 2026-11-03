@@ -1,6 +1,8 @@
 ---
 title: "NetSuite 2026.2 Finance Updates: Payment Runs and the Redesigned Match Bank Data Page"
 description: "Two significant finance workflow updates in 2026.2: Payment Runs for batch AP processing and a redesigned Match Bank Data page with a new Match Suggestions interface. Here is what changed and what it means for your finance team."
+seoTitle: "NetSuite 2026.2 Finance Updates: Payment Runs"
+metaDescription: "NetSuite 2026.2 finance changes: Payment Runs for batch AP processing and a redesigned Match Bank Data page with Match Suggestions. What changed and why."
 date: "2026-08-02"
 updated: "2026-09-22"
 tags: ["Finance", "Release Notes", "2026.2", "Accounts Payable"]

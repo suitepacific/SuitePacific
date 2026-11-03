@@ -10,6 +10,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ConstructionBillingLinks } from "@/components/sections/ConstructionBillingLinks";
 
 const PAIN_POINTS = [
   {
@@ -108,7 +109,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Progress Billing for Construction Companies",
+  title: { absolute: "NetSuite Progress Billing for Construction Companies" },
   description:
     "AIA G702/G703 progress billing, retainage tracking, and percent-complete invoice scripts for construction on NetSuite. SuiteCloud Developer II certified.",
   alternates: { canonical: "/netsuite-progress-billing" },
@@ -314,6 +315,7 @@ export default function NetSuiteProgressBillingPage() {
           <LeadFormLight />
         </div>
 
+        <ConstructionBillingLinks current="/netsuite-progress-billing" />
         {/* Related reading */}
         <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
           <p className="text-sm font-semibold text-brand-900 mb-3">Related reading</p>

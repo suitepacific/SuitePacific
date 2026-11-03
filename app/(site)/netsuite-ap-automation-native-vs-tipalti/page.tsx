@@ -81,7 +81,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Native AP vs. Tipalti: What Controllers Need",
+  title: { absolute: "NetSuite Native AP vs. Tipalti: What Controllers Need" },
   description:
     "NetSuite native AP vs. Tipalti and Bill.com for live accounts. Covers vendor onboarding, global payments, 1099 automation, OFAC, and when to add automation.",
   alternates: { canonical: "/netsuite-ap-automation-native-vs-tipalti" },

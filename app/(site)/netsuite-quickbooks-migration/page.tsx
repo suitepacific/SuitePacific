@@ -41,7 +41,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "QuickBooks to NetSuite Migration: Fixing Opening Balances, Duplicates, and Missing Reports",
+  title: { absolute: "QuickBooks to NetSuite Migration: Fixing What Broke" },
   description: "Post-migration stabilization for QuickBooks-to-NetSuite moves: opening balance reconciliation, entity deduplication, chart of accounts cleanup, and reports.",
   alternates: { canonical: "/netsuite-quickbooks-migration" },
   openGraph: {
@@ -135,6 +135,7 @@ export default function QuickBooksMigrationPage() {
           <p className="text-sm font-semibold text-brand-900 mb-3">Related reading</p>
           <ul className="space-y-2.5">
             <li className="text-sm text-brand-400"><Link href="/blog/netsuite-quickbooks-migration" className="text-accent hover:underline">Migrated from QuickBooks to NetSuite? What breaks and how to fix it</Link> covers what commonly goes wrong and the correct approach to fixing it.</li>
+            <li className="text-sm text-brand-400"><Link href="/netsuite-migration-from-quickbooks" className="text-accent hover:underline">NetSuite support after migrating from QuickBooks</Link> covers ongoing support once the migration itself is settled.</li>
             <li className="text-sm text-brand-400"><Link href="/netsuite-data-migration" className="text-accent hover:underline">NetSuite data migration</Link> covers CSV import order, field mapping, and Import Doctor for companies doing an initial migration.</li>
             <li className="text-sm text-brand-400"><Link href="/netsuite-account-optimization" className="text-accent hover:underline">NetSuite account optimization</Link> covers broader cleanup for accounts that went live with incomplete configuration.</li>
           </ul>

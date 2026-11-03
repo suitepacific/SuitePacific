@@ -97,7 +97,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Saved Searches vs. SuiteQL vs. Standard Reports",
+  title: { absolute: "NetSuite Saved Searches vs. SuiteQL vs. Standard Reports" },
   description:
     "Understand when to use saved searches, SuiteQL, or standard reports in NetSuite. Guide for construction companies building custom reporting and dashboards.",
   alternates: { canonical: "/netsuite-saved-searches-vs-suiteql-vs-reports" },

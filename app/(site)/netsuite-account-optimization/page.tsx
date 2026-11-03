@@ -137,7 +137,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Optimization: Performance Troubleshooting, Technical Debt, and Account Cleanup",
+  title: { absolute: "NetSuite Optimization: Performance and Technical Debt" },
   description:
     "Systematic improvement of a live NetSuite account: scripts, workflows, integrations, and saved searches. Baseline assessment first. Plans from $799/month.",
   alternates: { canonical: "/netsuite-account-optimization" },

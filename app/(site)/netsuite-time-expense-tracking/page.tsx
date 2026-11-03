@@ -109,7 +109,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Time and Expense Tracking: Billable Hours, Approval Workflows, and Utilization",
+  title: "NetSuite Time and Expense Tracking: Billable Hours",
   description:
     "Time entry validation, approval workflows, utilization dashboards, and expense reporting for professional services firms on NetSuite. Plans from $799/month.",
   alternates: { canonical: "/netsuite-time-expense-tracking" },

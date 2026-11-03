@@ -111,7 +111,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Change Order Automation: SuiteFlow vs. SuiteScript",
+  title: { absolute: "NetSuite Change Order Automation: SuiteFlow vs. SuiteScript" },
   description:
     "SuiteFlow handles approval routing for change orders. SuiteScript handles budget and contract updates after approval. Both are needed for full automation.",
   alternates: { canonical: "/netsuite-change-order-suiteflow-vs-suitescript" },

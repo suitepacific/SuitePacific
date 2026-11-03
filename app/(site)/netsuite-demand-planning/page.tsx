@@ -116,7 +116,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Demand Planning and Replenishment Configuration",
+  title: { absolute: "NetSuite Demand Planning and Replenishment Configuration" },
   description:
     "Planning parameters, safety stock, and minimum order quantity logic for distributors on NetSuite. SuiteCloud Developer II certified. Plans from $799/month.",
   alternates: { canonical: "/netsuite-demand-planning" },

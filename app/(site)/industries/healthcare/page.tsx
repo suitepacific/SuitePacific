@@ -255,7 +255,7 @@ const COMPARISON = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Support for Healthcare & Life Sciences Companies",
+  title: { absolute: "NetSuite Support for Healthcare & Life Sciences Companies" },
   description:
     "NetSuite post-go-live support for healthcare and life sciences: FDA compliance, lot tracking, audit trail reporting, and regulatory workflows. From $799.",
   alternates: { canonical: "/industries/healthcare" },

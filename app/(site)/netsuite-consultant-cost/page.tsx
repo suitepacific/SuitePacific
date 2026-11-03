@@ -64,7 +64,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Consultant Cost: What Ongoing Support Actually Costs in 2026",
+  title: { absolute: "NetSuite Consultant Cost: What Ongoing Support Costs in 2026" },
   description:
     "NetSuite consultant rates range from $75 to $300 per hour by firm type. How three support models compare on actual cost per completed request. Free guide.",
   alternates: { canonical: "/netsuite-consultant-cost" },

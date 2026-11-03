@@ -136,7 +136,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite OneWorld Consolidation vs. Prophix and Vena",
+  title: { absolute: "NetSuite OneWorld Consolidation vs. Prophix and Vena" },
   description:
     "When NetSuite OneWorld's native consolidation is enough for a multi-entity account and when a dedicated consolidation and FP&A tool adds value for the CFO.",
   alternates: { canonical: "/netsuite-consolidation-oneworld-vs-prophix" },

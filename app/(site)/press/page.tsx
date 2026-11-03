@@ -18,7 +18,7 @@ const PRESS_RELEASES = [
 ];
 
 export const metadata: Metadata = {
-  title: "SuitePacific Press Releases | Post-Go-Live NetSuite",
+  title: { absolute: "SuitePacific Press Releases | Post-Go-Live NetSuite" },
   description:
     "Press releases from SuitePacific, a NetSuite post-go-live consulting firm. SuiteScript development, integrations, workflow automation, and ongoing support.",
   alternates: { canonical: "/press" },

@@ -131,7 +131,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Project Consulting | Fixed-Scope Engagements",
+  title: { absolute: "NetSuite Project Consulting | Fixed-Scope Engagements" },
   description:
     "NetSuite project consulting from SuitePacific: fixed-scope integrations, workflow builds, SuiteScript migrations, data imports, and technical remediation. Scoped before development starts, sandbox-tested, no retainer required.",
   alternates: { canonical: "/netsuite-project-consulting" },

@@ -53,6 +53,12 @@ const nextConfig: NextConfig = {
         destination: "/:path+",
         statusCode: 301,
       },
+      // Duplicate service page: /netsuite-wip-report already ranks for WIP queries
+      {
+        source: "/netsuite-wip-reporting",
+        destination: "/netsuite-wip-report",
+        statusCode: 301,
+      },
       // Active cannibalization: two posts with identical titles — redirect older to newer
       {
         source: "/blog/netsuite-support-partner-evaluation",

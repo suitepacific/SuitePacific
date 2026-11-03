@@ -109,7 +109,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Milestone Billing: Completion Triggers, Invoice Workflows, and ARM Alignment",
+  title: { absolute: "NetSuite Milestone Billing: Triggers, Invoices, ARM" },
   description:
     "Milestone completion triggers, invoice workflows, and ASC 606 ARM alignment for project-based firms on NetSuite. SuiteCloud Developer II certified. From $799.",
   alternates: { canonical: "/netsuite-milestone-billing" },

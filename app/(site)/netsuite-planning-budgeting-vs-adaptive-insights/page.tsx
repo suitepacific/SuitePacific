@@ -82,7 +82,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Planning and Budgeting vs. Adaptive Planning",
+  title: { absolute: "NetSuite Planning and Budgeting vs. Adaptive Planning" },
   description:
     "CFO guide: NetSuite Planning and Budgeting vs. Workday Adaptive for live accounts. Covers driver-based modeling, rolling forecasts, and when each tool fits.",
   alternates: { canonical: "/netsuite-planning-budgeting-vs-adaptive-insights" },

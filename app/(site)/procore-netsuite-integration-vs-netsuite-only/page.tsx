@@ -99,7 +99,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "Procore + NetSuite Integration vs. NetSuite-Only Approach",
+  title: { absolute: "Procore + NetSuite Integration vs. NetSuite-Only Approach" },
   description:
     "When to connect Procore to NetSuite, when to run NetSuite alone, and where integration complexity creates more problems than it solves for contractors.",
   alternates: { canonical: "/procore-netsuite-integration-vs-netsuite-only" },

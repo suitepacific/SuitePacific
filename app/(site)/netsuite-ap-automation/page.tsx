@@ -110,7 +110,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite AP Automation: GL Coding, Bill Capture, and Approval Workflows",
+  title: { absolute: "NetSuite AP Automation: GL Coding, Bill Capture, Approvals" },
   description:
     "Configure Automated Bill Capture, GL coding, SuiteApprovals routing, and three-way PO matching for accounts already live on NetSuite. Plans from $799/month.",
   alternates: { canonical: "/netsuite-ap-automation" },

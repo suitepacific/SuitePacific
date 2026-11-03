@@ -115,7 +115,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "SuiteFlow vs. SuiteScript: NetSuite Automation Guide",
+  title: { absolute: "SuiteFlow vs. SuiteScript: NetSuite Automation Guide" },
   description:
     "SuiteFlow handles approval routing and notifications. SuiteScript handles logic and external APIs. This guide covers which tool your NetSuite account needs.",
   alternates: { canonical: "/netsuite-suiteflow-vs-suitescript" },

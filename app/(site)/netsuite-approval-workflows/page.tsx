@@ -107,7 +107,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Approval Workflows: SuiteApprovals Configuration and SuiteFlow Development",
+  title: { absolute: "NetSuite Approval Workflows: SuiteApprovals and SuiteFlow" },
   description:
     "SuiteApprovals and SuiteFlow workflows for POs, vendor bills, expense reports, and journal entries. Amount routing, escalation, and approval matrix builds.",
   alternates: { canonical: "/netsuite-approval-workflows" },

@@ -39,7 +39,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Partner Not Responsive: When to Switch and How",
+  title: { absolute: "NetSuite Partner Not Responsive: When to Switch and How" },
   description:
     "Structural causes of unresponsive NetSuite partners and how to transition to a new firm without cooperation from the current partner. No lock-in required.",
   alternates: { canonical: "/netsuite-partner-not-responsive" },

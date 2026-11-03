@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seoTitle, seoDescription } from "@/lib/seo-meta";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
@@ -24,12 +25,12 @@ export async function generateMetadata({
   const resource = await getResourceBySlug(slug);
   if (!resource) return {};
   return {
-    title: `${resource.title}`,
-    description: resource.description,
+    title: seoTitle(resource.title, resource.seoTitle),
+    description: seoDescription(resource.description, resource.metaDescription),
     alternates: { canonical: `/resources/${slug}` },
     openGraph: {
       title: resource.title,
-      description: resource.description,
+      description: seoDescription(resource.description, resource.metaDescription),
       type: "article",
       publishedTime: resource.publishedAt,
       url: `${SITE_URL}/resources/${slug}`,

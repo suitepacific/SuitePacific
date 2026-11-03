@@ -179,7 +179,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite AI Integration: Native Features and Custom Development",
+  title: { absolute: "NetSuite AI Integration: Native Features and Custom Development" },
   description:
     "NetSuite AI integration: configure built-in AI features and build custom SuiteScript integrations. Covers Text Enhance, Bill Capture, and external AI APIs.",
   alternates: { canonical: "/netsuite-ai-integration" },

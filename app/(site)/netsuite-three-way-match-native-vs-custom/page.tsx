@@ -81,7 +81,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Three-Way Match: Native vs. Custom Enforcement",
+  title: { absolute: "NetSuite Three-Way Match: Native vs. Custom Enforcement" },
   description:
     "Why native NetSuite does not block unapproved bills, and what SuiteScript three-way match enforcement looks like for controllers who need hard PO controls.",
   alternates: { canonical: "/netsuite-three-way-match-native-vs-custom" },

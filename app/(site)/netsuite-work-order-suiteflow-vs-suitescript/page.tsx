@@ -109,7 +109,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Work Order Automation: SuiteFlow vs. SuiteScript",
+  title: { absolute: "NetSuite Work Order Automation: SuiteFlow vs. SuiteScript" },
   description:
     "SuiteFlow handles status transitions and notifications for work orders. Component deduction, finished goods posting, and variance require SuiteScript.",
   alternates: { canonical: "/netsuite-work-order-suiteflow-vs-suitescript" },

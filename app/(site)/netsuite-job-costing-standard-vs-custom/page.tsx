@@ -114,7 +114,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Standard Job Costing vs. Custom Cost Codes",
+  title: { absolute: "NetSuite Standard Job Costing vs. Custom Cost Codes" },
   description:
     "What standard NetSuite project accounting gives construction companies vs. what they actually need: cost codes, committed costs, and real-time dashboards.",
   alternates: { canonical: "/netsuite-job-costing-standard-vs-custom" },

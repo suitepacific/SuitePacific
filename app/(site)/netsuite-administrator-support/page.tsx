@@ -161,7 +161,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Administrator Support | Fractional NetSuite Admin",
+  title: { absolute: "NetSuite Administrator Support | Fractional NetSuite Admin" },
   description:
     "Fractional NetSuite administrator support: user management, roles, saved searches, and upgrade prep. Oracle Administrator Professional certified. $799/month.",
   alternates: { canonical: "/netsuite-administrator-support" },

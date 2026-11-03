@@ -119,7 +119,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "SuiteAnalytics Workbook vs. Saved Searches in NetSuite",
+  title: { absolute: "SuiteAnalytics Workbook vs. Saved Searches in NetSuite" },
   description:
     "Saved searches power dashboards and workflow triggers. SuiteAnalytics Workbook suits finance analysis and pivot tables. A guide for live NetSuite accounts.",
   alternates: { canonical: "/netsuite-suiteanalytics-vs-saved-searches" },

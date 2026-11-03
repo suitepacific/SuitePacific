@@ -97,7 +97,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Costing Methods: Standard vs. Average vs. FIFO",
+  title: { absolute: "NetSuite Costing Methods: Standard vs. Average vs. FIFO" },
   description:
     "How standard, average, and FIFO costing methods work in NetSuite: inventory valuation, variance tracking, lot tracking requirements, and how to choose.",
   alternates: { canonical: "/netsuite-costing-methods-comparison" },

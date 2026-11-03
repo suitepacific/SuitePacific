@@ -71,7 +71,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Oracle Support vs. Third-Party Consulting Firm",
+  title: { absolute: "NetSuite Oracle Support vs. Third-Party Consulting Firm" },
   description:
     "Oracle NetSuite standard support vs a certified third-party firm: SuiteScript, integrations, workflows, and custom configuration that Oracle does not cover.",
   alternates: { canonical: "/netsuite-oracle-support-vs-third-party" },

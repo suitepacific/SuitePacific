@@ -296,6 +296,12 @@ export default function MigrationFromQuickBooksPage() {
           <p className="text-sm font-semibold text-brand-900 mb-3">Related reading</p>
           <ul className="space-y-2.5">
             <li className="text-sm text-brand-400">
+              <Link href="/netsuite-quickbooks-migration" className="text-accent hover:underline">
+                Fixing a QuickBooks to NetSuite migration
+              </Link>{" "}
+              covers opening balances that do not tie, duplicate customer and vendor records, and open AR and AP mismatches.
+            </li>
+            <li className="text-sm text-brand-400">
               <Link href="/netsuite-post-go-live-support" className="text-accent hover:underline">
                 NetSuite post-go-live support
               </Link>{" "}

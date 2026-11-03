@@ -116,7 +116,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite 3PL Integration: Order Transmission, Inventory Sync, and Shipment Confirmation",
+  title: { absolute: "NetSuite 3PL Integration: Orders, Inventory Sync, Shipments" },
   description:
     "Order transmission, inventory sync, and shipment confirmation between NetSuite and 3PL providers. SuiteCloud Developer II certified. Plans from $799/month.",
   alternates: { canonical: "/netsuite-3pl-integration" },

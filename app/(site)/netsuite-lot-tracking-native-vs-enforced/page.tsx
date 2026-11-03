@@ -118,7 +118,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Lot Tracking: Native vs. Enforced with SuiteScript",
+  title: { absolute: "NetSuite Lot Tracking: Native vs. Enforced with SuiteScript" },
   description:
     "Standard NetSuite lot tracking is optional by default; a SuiteScript enforcement script makes it mandatory. Which industries need it and what it covers.",
   alternates: { canonical: "/netsuite-lot-tracking-native-vs-enforced" },

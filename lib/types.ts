@@ -66,6 +66,8 @@ export type BlogPostMeta = {
   readingTime: string;
   calloutText?: string;
   video?: BlogPostVideo;
+  seoTitle?: string;
+  metaDescription?: string;
 };
 
 export type BlogPost = BlogPostMeta & {

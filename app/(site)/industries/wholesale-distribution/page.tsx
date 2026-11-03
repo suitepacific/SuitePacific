@@ -264,7 +264,7 @@ const COMPARISON = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Support for Wholesale & Distribution Companies",
+  title: { absolute: "NetSuite Support for Wholesale & Distribution Companies" },
   description:
     "NetSuite post-go-live support for wholesale distributors. Inventory management, order automation, pricing scripts, and warehouse integrations.",
   alternates: { canonical: "/industries/wholesale-distribution" },

@@ -135,7 +135,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Intercompany Elimination: Native vs. Custom",
+  title: { absolute: "NetSuite Intercompany Elimination: Native vs. Custom" },
   description:
     "How NetSuite OneWorld handles intercompany eliminations at consolidation and where custom SuiteScript fills the gaps for complex multi-entity structures.",
   alternates: { canonical: "/netsuite-intercompany-elimination-native-vs-custom" },

@@ -1,6 +1,8 @@
 ---
 title: "NetSuite CAM Reconciliation for Commercial Real Estate"
 description: "NetSuite CAM reconciliation requires custom records and scripts to allocate operating expenses to tenants by area and generate annual true-up invoices."
+seoTitle: "NetSuite CAM Reconciliation and True-Up Billing"
+metaDescription: "How CAM expense reconciliation works in NetSuite for commercial real estate: allocating operating costs to tenants by area and issuing yearly true-up invoices."
 date: "2026-09-20"
 updated: "2026-09-20"
 tags: ["Real Estate", "NetSuite", "CAM", "Tenant Billing"]

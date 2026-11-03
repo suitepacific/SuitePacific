@@ -294,7 +294,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite ACS Alternative for SMBs: Managed Support Without the Annual Contract",
+  title: { absolute: "NetSuite ACS Alternative for SMBs: No Annual Contract" },
   description:
     "Third-party NetSuite support covering SuiteScript, integration maintenance, and custom workflows that Oracle ACS excludes in all tiers. Plans from $799/month.",
   alternates: { canonical: "/netsuite-acs-alternative" },

@@ -41,7 +41,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite User Roles and Permissions: Role Audit, Cleanup, and Architecture",
+  title: { absolute: "NetSuite User Roles and Permissions: Audit and Cleanup" },
   description: "Role audit and architecture rebuild for NetSuite accounts. Administrator overuse, stale roles, missing subsidiary restrictions. Plans from $799/month.",
   alternates: { canonical: "/netsuite-user-roles-permissions" },
   openGraph: {

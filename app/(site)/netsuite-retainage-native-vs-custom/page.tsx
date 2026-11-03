@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ConstructionBillingLinks } from "@/components/sections/ConstructionBillingLinks";
 
 const COMPARISON_ROWS = [
   { capability: "Percentage withholding from invoice", standard: "Yes (uniform rate)", custom: "Yes (variable rates supported)" },
@@ -107,7 +108,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Retainage: Native Feature vs. Custom Scripts",
+  title: { absolute: "NetSuite Retainage: Native Feature vs. Custom Scripts" },
   description:
     "What standard NetSuite handles for construction retainage vs. what custom SuiteScript adds: AR balance, retainage release, AP retainage, variable rates.",
   alternates: { canonical: "/netsuite-retainage-native-vs-custom" },
@@ -248,6 +249,7 @@ export default function RetainageNativeVsCustomPage() {
           </div>
         </div>
 
+        <ConstructionBillingLinks current="/netsuite-retainage-native-vs-custom" />
         {/* Related reading */}
         <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
           <p className="text-sm font-semibold text-brand-900 mb-3">Related reading</p>

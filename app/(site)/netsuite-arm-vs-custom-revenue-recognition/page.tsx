@@ -83,7 +83,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite ARM vs. Custom Revenue Recognition Scripts",
+  title: { absolute: "NetSuite ARM vs. Custom Revenue Recognition Scripts" },
   description:
     "NetSuite ARM vs. custom SuiteScript for ASC 606 rev rec: when the module is required, what custom scripts handle, and the cost difference for live accounts.",
   alternates: { canonical: "/netsuite-arm-vs-custom-revenue-recognition" },

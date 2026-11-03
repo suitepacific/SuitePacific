@@ -49,7 +49,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Data Migration: CSV Import, Migration Order, and SuiteScript Migration Service",
+  title: { absolute: "NetSuite Data Migration: CSV Import and Migration Order" },
   description: "CSV import planning, field mapping, SuiteScript migration, and Import Doctor validation for customers, vendors, items, and transactions. Plans from $799/month.",
   alternates: { canonical: "/netsuite-data-migration" },
   openGraph: {

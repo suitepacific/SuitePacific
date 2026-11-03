@@ -112,7 +112,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Configuration vs. Customization: When to Script",
+  title: { absolute: "NetSuite Configuration vs. Customization: When to Script" },
   description:
     "Configuration covers no-code NetSuite changes. Customization means SuiteScript. This guide helps live NetSuite accounts decide when a developer is needed.",
   alternates: { canonical: "/netsuite-configuration-vs-customization" },

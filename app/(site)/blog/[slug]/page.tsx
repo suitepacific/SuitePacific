@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seoTitle, seoDescription } from "@/lib/seo-meta";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
@@ -25,12 +26,12 @@ export async function generateMetadata({
   if (!post) return {};
 
   return {
-    title: post.title,
-    description: post.description,
+    title: seoTitle(post.title, post.seoTitle),
+    description: seoDescription(post.description, post.metaDescription),
     alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       title: post.title,
-      description: post.description,
+      description: seoDescription(post.description, post.metaDescription),
       type: "article",
       publishedTime: post.date,
       url: `${SITE_URL}/blog/${post.slug}`,
@@ -49,7 +50,13 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   const allPosts = await getAllPosts().catch(() => []);
-  const relatedPosts = allPosts.filter((p) => p.slug !== post.slug).slice(0, 2);
+  const others = allPosts.filter((p) => p.slug !== post.slug);
+  const byTagOverlap = others
+    .map((p) => ({ p, shared: p.tags.filter((t) => post.tags.includes(t)).length }))
+    .filter((x) => x.shared > 0)
+    .sort((a, b) => b.shared - a.shared)
+    .map((x) => x.p);
+  const relatedPosts = [...byTagOverlap, ...others.filter((p) => !byTagOverlap.includes(p))].slice(0, 4);
 
   return (
     <main className="pt-32 pb-24 sm:pt-40 sm:pb-32">
@@ -129,9 +136,9 @@ export default async function BlogPostPage({
         {relatedPosts.length > 0 && (
           <div className="mt-14 pt-10 border-t border-brand-50">
             <h2 className="text-sm font-semibold text-brand-900 uppercase tracking-wide">
-              More From the Blog
+              {post.contentHtml.includes("Related reading") ? "More on this topic" : "Related reading"}
             </h2>
-            <div className="mt-5 grid sm:grid-cols-2 gap-4">
+            <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
               {relatedPosts.map((related) => (
                 <Link key={related.slug} href={`/blog/${related.slug}`}>
                   <Card className="p-5 h-full hover:shadow-soft-lg hover:border-brand-100 transition-shadow">

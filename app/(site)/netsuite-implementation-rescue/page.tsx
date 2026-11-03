@@ -157,7 +157,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Implementation Rescue and Reimplementation",
+  title: { absolute: "NetSuite Implementation Rescue and Reimplementation" },
   description:
     "Stabilizing a NetSuite account after a failed or incomplete implementation. Assessment of open issues, broken customizations, and data quality. From $799.",
   alternates: { canonical: "/netsuite-implementation-rescue" },

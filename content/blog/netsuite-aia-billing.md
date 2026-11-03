@@ -1,6 +1,8 @@
 ---
 title: "NetSuite AIA Billing: How to Produce G702/G703 Pay Applications for Construction"
 description: "NetSuite does not generate AIA G702/G703 pay applications natively. Producing standard AIA format billing for construction clients requires a custom advanced PDF template and a schedule of values structure. Here is how it works."
+seoTitle: "AIA Billing in NetSuite: G702/G703 Invoice Format"
+metaDescription: "What the AIA G702 Application for Payment and G703 Continuation Sheet are, why NetSuite cannot produce the AIA invoice format natively, and how to build it."
 date: "2026-09-19"
 updated: "2026-09-19"
 tags: ["Construction", "NetSuite", "Billing"]
@@ -114,3 +116,7 @@ SuitePacific is a NetSuite Solution Provider specializing in post-go-live suppor
 - [NetSuite milestone billing](/netsuite-milestone-billing): Milestone completion triggers and invoice workflows for project-based firms
 - [NetSuite WIP report for construction](/blog/netsuite-wip-report-construction): How to build a WIP schedule showing earned revenue and over/under billing in NetSuite
 - [NetSuite for construction companies](/industries/construction): Post-go-live support hub for construction contractors on NetSuite
+- [Standard NetSuite billing vs. AIA format](/netsuite-standard-billing-vs-aia-format): What NetSuite produces natively for billing and what custom development adds for G702/G703
+- [Retainage in NetSuite: native vs. custom](/netsuite-retainage-native-vs-custom): How retainage is tracked natively and where custom scripts are needed
+- [NetSuite WIP report for construction](/netsuite-wip-report): Custom WIP schedule builds showing earned revenue and over/under billing
+- [NetSuite construction accounting](/netsuite-construction-accounting): Configuring NetSuite for construction job costing, billing and reporting

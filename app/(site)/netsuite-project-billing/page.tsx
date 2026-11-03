@@ -103,7 +103,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Project Billing: T&M, Fixed-Fee, and Consolidated Client Invoicing",
+  title: { absolute: "NetSuite Project Billing: T&M and Fixed-Fee Invoicing" },
   description:
     "Time and materials and fixed-fee billing, write-up and write-down workflows, and project profitability reporting for professional services firms on NetSuite.",
   alternates: { canonical: "/netsuite-project-billing" },

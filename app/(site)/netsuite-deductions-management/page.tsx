@@ -137,7 +137,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Deductions Management for Food and Beverage Companies",
+  title: { absolute: "NetSuite Deductions Management for Food and Beverage Companies" },
   description:
     "Retailer chargeback reconciliation, short-pay processing, and dispute workflows for food and beverage companies in retail channels. Plans from $799/month.",
   alternates: { canonical: "/netsuite-deductions-management" },

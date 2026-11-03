@@ -189,7 +189,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "Fractional NetSuite Administrator for Small Business",
+  title: { absolute: "Fractional NetSuite Administrator for Small Business" },
   description:
     "Fractional NetSuite admin for small businesses: user management, roles, saved searches, and configuration. Oracle Administrator Professional certified.",
   alternates: { canonical: "/netsuite-admin-support-small-business" },

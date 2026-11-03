@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ConstructionBillingLinks } from "@/components/sections/ConstructionBillingLinks";
 
 const WIP_COLUMNS = [
   { field: "Contract value", source: "Project record + approved change orders", native: false },
@@ -143,7 +144,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite WIP Report for Construction: Custom WIP Schedule Build",
+  title: { absolute: "NetSuite WIP Report for Construction: Custom WIP Schedule Build" },
   description:
     "Custom WIP schedule for construction on NetSuite. Contract value, cost to date, percentage complete, earned revenue, and over/under billing. Plans from $799.",
   alternates: { canonical: "/netsuite-wip-report" },
@@ -371,6 +372,7 @@ export default function WipReportPage() {
           <LeadFormLight />
         </div>
 
+        <ConstructionBillingLinks current="/netsuite-wip-report" />
         {/* Related reading */}
         <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
           <p className="text-sm font-semibold text-brand-900 mb-3">Related reading</p>

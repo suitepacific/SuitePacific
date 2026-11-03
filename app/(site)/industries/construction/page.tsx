@@ -22,12 +22,13 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ConstructionBillingLinks } from "@/components/sections/ConstructionBillingLinks";
 
 const POSTGO_PROBLEMS = [
   {
     problem: "WIP still maintained in Excel after go-live",
     detail: "NetSuite holds the data but doesn't produce a WIP schedule. Finance teams export and reconcile manually every period because the report layer was never built.",
-    href: "/netsuite-wip-reporting",
+    href: "/netsuite-wip-report",
     linkText: "Custom WIP report builds",
   },
   {
@@ -513,6 +514,7 @@ export default function ConstructionPage() {
 
         <ServiceFaqSection items={FAQ} />
 
+        <ConstructionBillingLinks current="/industries/construction" />
         {/* Related reading */}
         <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
           <p className="text-sm font-semibold text-brand-900 mb-3">Related reading</p>

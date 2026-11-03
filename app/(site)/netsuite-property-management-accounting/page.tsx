@@ -62,7 +62,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Property Management Accounting: Tenant Billing, CAM Reconciliation, and Rent Automation",
+  title: { absolute: "NetSuite Property Management: Tenant Billing and CAM" },
   description: "Tenant billing, CAM reconciliation, security deposit tracking, and property-level P&L reporting for real estate companies on NetSuite. Plans from $799/month.",
   alternates: { canonical: "/netsuite-property-management-accounting" },
   openGraph: {

@@ -64,7 +64,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Support for Private Equity & Family Offices",
+  title: { absolute: "NetSuite Support for Private Equity & Family Offices" },
   description: "NetSuite post-go-live support for PE firms and family offices. Portfolio consolidation, waterfall distributions, LP capital tracking, and management fees.",
   alternates: { canonical: "/industries/private-equity" },
   openGraph: {

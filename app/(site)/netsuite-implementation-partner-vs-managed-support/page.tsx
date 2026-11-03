@@ -29,7 +29,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Implementation Partner vs. Managed Support",
+  title: { absolute: "NetSuite Implementation Partner vs. Managed Support" },
   description:
     "The difference between a NetSuite implementation partner and an ongoing managed support team, and how to know which one your business needs right now.",
   alternates: { canonical: "/netsuite-implementation-partner-vs-managed-support" },
