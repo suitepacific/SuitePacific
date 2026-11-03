@@ -4,7 +4,8 @@ import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
+import { InlineCta } from "@/components/sections/InlineCta";
+import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL, LEGAL_NAME } from "@/lib/content";
 import { CASE_STUDIES_DETAIL, getCaseStudy, getAllCaseStudySlugs } from "@/lib/case-studies";
@@ -108,6 +109,11 @@ export default async function CaseStudyPage({
           ))}
         </div>
 
+        <InlineCta
+          heading="Have a similar problem in your account?"
+          body="Leave your work email. We reply within one business day to set up a free consultation and tell you what is realistic."
+        />
+
         {/* Related services */}
         <div className="mt-10 pt-8 border-t border-brand-50">
           <p className="text-sm font-semibold text-brand-900 mb-4">Related services</p>
@@ -156,8 +162,8 @@ export default async function CaseStudyPage({
             Most engagements start with a conversation about what&apos;s not working. Book a free
             call and we&apos;ll tell you what&apos;s realistic.
           </p>
-          <div className="mt-6">
-            <Button href="/contact">Book a Free Consultation</Button>
+          <div className="mx-auto mt-6 max-w-md text-left">
+            <LeadFormLight />
           </div>
         </div>
       </div>

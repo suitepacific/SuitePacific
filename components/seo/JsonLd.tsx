@@ -1,5 +1,6 @@
 import { SITE_URL, LEGAL_NAME, SERVICES } from "@/lib/content";
 import type { BlogPostMeta } from "@/lib/types";
+import { TESTIMONIALS } from "@/lib/testimonials";
 
 export function OrganizationJsonLd() {
   const data = {
@@ -51,13 +52,14 @@ export function OrganizationJsonLd() {
       "Oracle NetSuite Certified Administrator Professional",
       "Celigo Mastery Level 4",
     ],
+    // Must match the testimonials shown on the site; mismatched rating markup violates Google's guidelines
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "5.0",
+      ratingValue: (TESTIMONIALS.reduce((sum, t) => sum + t.rating, 0) / TESTIMONIALS.length).toFixed(1),
       bestRating: "5",
       worstRating: "1",
-      ratingCount: 5,
-      reviewCount: 5,
+      ratingCount: TESTIMONIALS.length,
+      reviewCount: TESTIMONIALS.length,
     },
     contactPoint: [
       { "@type": "ContactPoint", contactType: "technical support", areaServed: "US", availableLanguage: "English" },

@@ -67,7 +67,7 @@ export function FreeScriptCheckForm({ source = "" }: Props) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form data-section="lead-form-script-check" onSubmit={handleSubmit} className="space-y-4">
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
       <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />

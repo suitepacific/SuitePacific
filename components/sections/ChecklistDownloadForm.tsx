@@ -71,7 +71,7 @@ export function ChecklistDownloadForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form data-section="lead-form-checklist" onSubmit={handleSubmit} className="space-y-4">
       <input type="hidden" name="_subject" value="2026.2 Release Readiness Checklist Download" />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
