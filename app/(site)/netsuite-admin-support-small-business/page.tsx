@@ -20,6 +20,7 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { InlineCta } from "@/components/sections/InlineCta";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 
@@ -279,6 +280,7 @@ export default function NetSuiteAdminSupportSmallBusinessPage() {
             ))}
           </div>
         </div>
+        <InlineCta />
 
         {/* What we handle */}
         <div className="mt-14" data-section="admin-areas">

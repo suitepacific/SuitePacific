@@ -46,7 +46,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
 
           {/* Left column, context */}
-          <div className="lg:col-span-2">
+          <div data-section="contact-context" className="lg:col-span-2">
             <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3">Get in Touch</p>
             <h1 className="text-2xl sm:text-3xl font-bold text-brand-900 leading-tight">
               Talk to a NetSuite Expert

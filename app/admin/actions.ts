@@ -8,6 +8,7 @@ import {
   checkPassword,
   createSessionToken,
 } from "@/lib/auth";
+import { INTERNAL_COOKIE, INTERNAL_COOKIE_MAX_AGE } from "@/lib/internal-traffic";
 
 export async function loginAction(formData: FormData): Promise<{ error?: string }> {
   const password = String(formData.get("password") ?? "");
@@ -23,6 +24,12 @@ export async function loginAction(formData: FormData): Promise<{ error?: string 
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
     maxAge: SESSION_MAX_AGE,
+    path: "/",
+  });
+  cookieStore.set(INTERNAL_COOKIE, "1", {
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    maxAge: INTERNAL_COOKIE_MAX_AGE,
     path: "/",
   });
 

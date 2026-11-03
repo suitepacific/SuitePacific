@@ -18,6 +18,7 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { InlineCta } from "@/components/sections/InlineCta";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
 
@@ -339,6 +340,7 @@ export default function NetSuitePartnerReplacementPage() {
             ))}
           </div>
         </div>
+        <InlineCta />
 
         {/* Transition phases */}
         <div id="transition-phases" className="mt-14" data-section="transition-phases">

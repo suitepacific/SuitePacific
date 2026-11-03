@@ -5,6 +5,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { TestimonialStrip } from "@/components/sections/TestimonialStrip";
 
 export const metadata: Metadata = {
   title: "NetSuite Managed Services Pricing | SuitePacific",
@@ -199,7 +200,7 @@ export default function NetSuiteManagedServicesPricingPage() {
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
 
         {/* Hero */}
-        <div className="mb-8">
+        <div data-section="hero" className="mb-8">
           <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3">NetSuite Managed Services Pricing</p>
           <h1 className="text-3xl sm:text-4xl font-bold text-brand-900 leading-tight mb-4">
             NetSuite Managed Services Pricing
@@ -211,7 +212,7 @@ export default function NetSuiteManagedServicesPricingPage() {
         </div>
 
         {/* QA block */}
-        <div className="rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5 mb-10">
+        <div data-section="quick-answer" className="rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5 mb-10">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
             NetSuite managed services typically cost between $799 and $12,000 or more per month, depending on the provider, included hours, and the scope of technical work covered. SuitePacific offers three published plans: Care at $799 per month for 10 hours, Care Plus at $1,499 per month for 20 hours, and Care Pro at $2,499 per month for 35 hours. All plans include SuiteScript development and fixes, workflow automation, administration, break-fix support, saved search work, and NetSuite release upgrade preparation. There is no hidden scoping fee, no setup charge, and no required annual commitment; all plans run month-to-month after a three-month minimum. Large enterprise NetSuite partners and ACS tier pricing typically start significantly higher. Independent consultants bill $150 to $250 per hour without a retainer or dedicated response commitment. Hiring an in-house NetSuite administrator typically costs $85,000 to $130,000 per year in total compensation, which covers one person during standard business hours.
@@ -221,7 +222,7 @@ export default function NetSuiteManagedServicesPricingPage() {
         <LeadFormLight />
 
         {/* Plans */}
-        <div className="mt-14">
+        <div data-section="plans" className="mt-14">
           <h2 className="text-xl font-bold text-brand-900 mb-2">SuitePacific managed services plans and pricing</h2>
           <p className="text-sm text-brand-500 mb-6">
             All plans include the same scope of work. The difference is the number of hours included per month and the effective hourly rate.
@@ -280,9 +281,10 @@ export default function NetSuiteManagedServicesPricingPage() {
           </div>
           <p className="mt-3 text-xs text-brand-300">Three-month minimum, then month-to-month. No rollover. No setup fee.</p>
         </div>
+        <TestimonialStrip picks={[4, 5]} />
 
         {/* How it compares */}
-        <div className="mt-14">
+        <div data-section="comparison" className="mt-14">
           <h2 className="text-xl font-bold text-brand-900 mb-3">How does NetSuite managed services pricing compare to other options?</h2>
           <p className="text-sm text-brand-500 mb-6">
             Most NetSuite accounts consider three alternatives when evaluating managed support: hiring an in-house administrator, engaging an independent consultant on demand, or contracting with a large enterprise partner or Oracle ACS.
@@ -403,7 +405,7 @@ export default function NetSuiteManagedServicesPricingPage() {
         </div>
 
         {/* What is included */}
-        <div className="mt-14">
+        <div data-section="whats-included" className="mt-14">
           <h2 className="text-xl font-bold text-brand-900 mb-3">What is included in a NetSuite managed service plan?</h2>
           <p className="text-sm text-brand-500 mb-5">
             Every SuitePacific plan covers the same categories of work. The scope does not shrink on the entry-level plan.
@@ -419,7 +421,7 @@ export default function NetSuiteManagedServicesPricingPage() {
         </div>
 
         {/* What is not included */}
-        <div className="mt-10">
+        <div data-section="not-included" className="mt-10">
           <h2 className="text-xl font-bold text-brand-900 mb-3">What is not included?</h2>
           <ul className="space-y-2">
             {EXCLUDED.map((item) => (
@@ -435,7 +437,7 @@ export default function NetSuiteManagedServicesPricingPage() {
         </div>
 
         {/* What increases cost */}
-        <div className="mt-14">
+        <div data-section="cost-drivers" className="mt-14">
           <h2 className="text-xl font-bold text-brand-900 mb-3">What increases the monthly cost of NetSuite managed services?</h2>
           <p className="text-sm text-brand-500 mb-5">
             The monthly cost increases when an account needs more hours than the current plan includes. These are the most common factors that drive higher hour consumption.
@@ -451,7 +453,7 @@ export default function NetSuiteManagedServicesPricingPage() {
         </div>
 
         {/* Contract terms */}
-        <div className="mt-14">
+        <div data-section="contract-terms" className="mt-14">
           <h2 className="text-xl font-bold text-brand-900 mb-3">What are the contract and cancellation terms?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
@@ -474,7 +476,7 @@ export default function NetSuiteManagedServicesPricingPage() {
         </div>
 
         {/* Why SuitePacific */}
-        <div className="mt-14 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+        <div data-section="why-suitepacific" className="mt-14 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Why SuitePacific</p>
           <h2 className="text-base font-bold text-brand-900 mb-3">
             Published pricing. Technical depth. Direct access.
@@ -494,7 +496,7 @@ export default function NetSuiteManagedServicesPricingPage() {
         </div>
 
         {/* Related reading */}
-        <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
+        <div data-section="related-reading" className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
           <p className="text-sm font-semibold text-brand-900 mb-3">Related reading</p>
           <ul className="space-y-2.5">
             <li className="text-sm text-brand-400">

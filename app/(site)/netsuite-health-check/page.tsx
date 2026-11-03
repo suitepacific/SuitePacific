@@ -11,6 +11,8 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { TestimonialStrip } from "@/components/sections/TestimonialStrip";
+import { InlineCta } from "@/components/sections/InlineCta";
 import { SITE_URL } from "@/lib/content";
 
 const PAIN_POINTS = [
@@ -296,6 +298,8 @@ export default function NetSuiteHealthCheckPage() {
             ))}
           </div>
         </div>
+        <TestimonialStrip picks={[2, 6]} />
+        <InlineCta />
 
         {/* What we audit */}
         <div className="mt-14" data-section="audit-areas">

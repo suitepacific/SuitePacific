@@ -51,7 +51,7 @@ export function LeadFormLight() {
   }
 
   return (
-    <div>
+    <div data-section="lead-form">
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
         <input type="hidden" name="_subject" value="New SuitePacific Consultation Request" />
         <input type="hidden" name="_template" value="table" />

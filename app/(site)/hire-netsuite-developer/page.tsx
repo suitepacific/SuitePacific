@@ -24,6 +24,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { TestimonialStrip } from "@/components/sections/TestimonialStrip";
 
 const FAQ = [
   {
@@ -401,7 +402,7 @@ export default function HireNetSuiteDeveloperPage() {
         </div>
 
         {/* Intro */}
-        <div className="prose prose-blue mt-8 max-w-none prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
+        <div data-section="intro" className="prose prose-blue mt-8 max-w-none prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
           <p>
             Looking to hire a NetSuite developer who can work on your existing NetSuite account?
             Whether you need a custom SuiteScript, workflow automation, advanced PDF templates,
@@ -421,7 +422,7 @@ export default function HireNetSuiteDeveloperPage() {
         </div>
 
         {/* Social proof, real outcomes */}
-        <div className="mt-12">
+        <div data-section="social-proof" className="mt-12">
           <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-5">Recent Work</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {CASE_STUDY_HIGHLIGHTS.map((cs) => (
@@ -440,7 +441,7 @@ export default function HireNetSuiteDeveloperPage() {
         </div>
 
         {/* Why SuitePacific, moved up */}
-        <div className="mt-14">
+        <div data-section="why-suitepacific" className="mt-14">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">Why Companies Choose SuitePacific</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {WHY_SUITEPACIFIC.map((item) => (
@@ -463,7 +464,7 @@ export default function HireNetSuiteDeveloperPage() {
         </div>
 
         {/* Freelancer vs Partner vs SuitePacific, moved up */}
-        <div className="mt-14">
+        <div data-section="comparison" className="mt-14">
           <h2 className="text-lg font-semibold text-brand-900">Freelancer vs. Consulting Firm vs. SuitePacific</h2>
           <p className="mt-2 text-sm text-brand-400">
             Each engagement model has strengths. SuitePacific combines the flexibility of a freelancer with the reliability of an experienced consultancy.
@@ -491,9 +492,10 @@ export default function HireNetSuiteDeveloperPage() {
             </div>
           </div>
         </div>
+        <TestimonialStrip picks={[3, 4]} />
 
         {/* Why Companies Hire */}
-        <div className="prose prose-blue mt-14 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
+        <div data-section="why-hire" className="prose prose-blue mt-14 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
           <h2>Why Companies Hire a NetSuite Developer</h2>
           <p>
             Most organizations don&apos;t realize they need a NetSuite developer until their business
@@ -519,7 +521,7 @@ export default function HireNetSuiteDeveloperPage() {
         </div>
 
         {/* Signs You Need a Developer */}
-        <div className="mt-12">
+        <div data-section="pain-points" className="mt-12">
           <h2 className="text-lg font-semibold text-brand-900">Signs You Need a NetSuite Developer</h2>
           <p className="mt-2 text-sm text-brand-400">You may benefit from hiring a NetSuite developer if any of the following apply:</p>
           <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -533,7 +535,7 @@ export default function HireNetSuiteDeveloperPage() {
         </div>
 
         {/* What Does a Developer Do */}
-        <div className="prose prose-blue mt-14 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-strong:text-brand-900">
+        <div data-section="what-developer-does" className="prose prose-blue mt-14 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-strong:text-brand-900">
           <h2>What Does a NetSuite Developer Do?</h2>
           <p>
             A NetSuite developer extends NetSuite beyond its standard capabilities by building custom
@@ -567,7 +569,7 @@ export default function HireNetSuiteDeveloperPage() {
         </div>
 
         {/* Admin vs Developer table */}
-        <div className="mt-14">
+        <div data-section="admin-vs-developer" className="mt-14">
           <h2 className="text-lg font-semibold text-brand-900">NetSuite Administrator vs. NetSuite Developer</h2>
           <p className="mt-2 text-sm text-brand-400">
             Many businesses are unsure whether they need an administrator or a developer. Here&apos;s the practical difference:
@@ -598,7 +600,7 @@ export default function HireNetSuiteDeveloperPage() {
         </div>
 
         {/* Skills to Look For */}
-        <div className="mt-14">
+        <div data-section="skills" className="mt-14">
           <h2 className="text-lg font-semibold text-brand-900">Skills Every NetSuite Developer Should Have</h2>
           <p className="mt-2 text-sm text-brand-400">
             When evaluating a NetSuite developer, look for hands-on experience with:
@@ -617,7 +619,7 @@ export default function HireNetSuiteDeveloperPage() {
         </div>
 
         {/* Questions to Ask */}
-        <div className="prose prose-blue mt-14 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-strong:text-brand-900">
+        <div data-section="questions-to-ask" className="prose prose-blue mt-14 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-strong:text-brand-900">
           <h2>Questions to Ask Before Hiring a NetSuite Developer</h2>
           <p>Before choosing a developer, consider asking:</p>
           <ul>
@@ -632,7 +634,7 @@ export default function HireNetSuiteDeveloperPage() {
         </div>
 
         {/* Red Flags */}
-        <div className="mt-12 rounded-2xl border border-amber-100 bg-amber-50/40 p-6">
+        <div data-section="red-flags" className="mt-12 rounded-2xl border border-amber-100 bg-amber-50/40 p-6">
           <div className="flex items-center gap-2 mb-4">
             <AlertTriangle className="h-4 w-4 text-amber-500 shrink-0" />
             <h2 className="font-semibold text-brand-900 text-base">Red Flags to Watch For</h2>
@@ -654,7 +656,7 @@ export default function HireNetSuiteDeveloperPage() {
         </div>
 
         {/* Cost section */}
-        <div className="prose prose-blue mt-14 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-strong:text-brand-900">
+        <div data-section="cost" className="prose prose-blue mt-14 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-strong:text-brand-900">
           <h2>How Much Does It Cost to Hire a NetSuite Developer?</h2>
           <p>The cost depends on project complexity, developer experience, engagement model, and ongoing support requirements. Most businesses choose one of three approaches:</p>
         </div>
@@ -691,7 +693,7 @@ export default function HireNetSuiteDeveloperPage() {
         </p>
 
         {/* Our Development Process */}
-        <div className="mt-14">
+        <div data-section="how-it-works" className="mt-14">
           <h2 className="text-lg font-semibold text-brand-900 mb-6">Our Development Process</h2>
           <div className="space-y-4">
             {PROCESS_STEPS.map((step) => (
@@ -709,7 +711,7 @@ export default function HireNetSuiteDeveloperPage() {
         </div>
 
         {/* Services list */}
-        <div className="prose prose-blue mt-14 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
+        <div data-section="services" className="prose prose-blue mt-14 max-w-none prose-headings:font-semibold prose-headings:text-brand-900 prose-p:text-brand-400 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-brand-900">
           <h2>Services We Provide</h2>
           <p>Our core development services for live NetSuite accounts:</p>
           <ul>
@@ -751,7 +753,7 @@ export default function HireNetSuiteDeveloperPage() {
         {/* FAQ */}
 
         {/* Bottom Line */}
-        <div className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
+        <div data-section="bottom-line" className="mt-12 rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Bottom Line</p>
           <h2 className="text-base font-semibold text-brand-900 mb-3">
             The difference between a good NetSuite developer and a costly mistake is certification, documentation discipline, and whether they test in Sandbox before touching Production.
@@ -778,7 +780,7 @@ export default function HireNetSuiteDeveloperPage() {
         <ServiceFaqSection items={FAQ} />
 
         {/* Related reading */}
-        <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
+        <div data-section="related-reading" className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
           <p className="text-sm font-semibold text-brand-900 mb-3">Related reading</p>
           <ul className="space-y-2.5">
             <li className="text-sm text-brand-400">

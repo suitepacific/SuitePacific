@@ -20,6 +20,8 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { TestimonialStrip } from "@/components/sections/TestimonialStrip";
+import { InlineCta } from "@/components/sections/InlineCta";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
 
@@ -498,6 +500,8 @@ export default function PostGoLiveSupportPage() {
             for that distinction.
           </p>
         </div>
+        <TestimonialStrip picks={[0, 1]} />
+        <InlineCta />
 
         {/* What we cover */}
         <div className="mt-14" data-section="what-we-cover">

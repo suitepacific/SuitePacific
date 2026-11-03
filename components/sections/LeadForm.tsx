@@ -56,7 +56,7 @@ export function LeadForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form data-section="lead-form-full" onSubmit={handleSubmit} className="space-y-4">
       <input type="hidden" name="_subject" value="New SuitePacific Consultation Request" />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />

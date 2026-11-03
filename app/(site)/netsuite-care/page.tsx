@@ -18,8 +18,10 @@ import { FadeIn } from "@/components/motion/FadeIn";
 import { StaggerGroup, StaggerItem } from "@/components/motion/StaggerGroup";
 import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/components/seo/JsonLd";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
+import { InlineCta } from "@/components/sections/InlineCta";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { TestimonialCarousel } from "@/components/sections/TestimonialCarousel";
+import { TESTIMONIALS } from "@/lib/testimonials";
 import { SITE_URL } from "@/lib/content";
 
 const WHAT_INCLUDED = [
@@ -138,50 +140,6 @@ const HOUR_USES = [
   },
 ];
 
-const TESTIMONIALS = [
-  {
-    quote:
-      "We mainly use SuitePacific for ongoing NetSuite support. They've become someone we can reach out to when something breaks or when we need a change made. Having someone who already knows our account has made things much easier for our team.",
-    role: "Operations Manager",
-    rating: 4.9,
-  },
-  {
-    quote:
-      "What we appreciate most is how quickly SuitePacific responds when we have an issue. They don't just tell us what's wrong, they look into it and help us get it resolved without a lot of back and forth.",
-    role: "Finance Director",
-    rating: 4.6,
-  },
-  {
-    quote:
-      "SuitePacific has helped us with a number of NetSuite customizations and improvements to our existing processes. They take the time to understand how we actually use NetSuite rather than just building exactly what was initially requested.",
-    role: "Controller",
-    rating: 5.0,
-  },
-  {
-    quote:
-      "We started working with SuitePacific for a few NetSuite development tasks and eventually began using them for ongoing support. They understand our setup and our business processes now, which makes it much easier to get things done.",
-    role: "IT Manager",
-    rating: 4.7,
-  },
-  {
-    quote:
-      "For a smaller business like ours, having access to experienced NetSuite developers without the cost of a large consulting firm has been a big advantage. SuitePacific has been flexible with our requirements and we've been happy with the value we get from them.",
-    role: "CEO",
-    rating: 4.9,
-  },
-  {
-    quote:
-      "We needed help with both NetSuite administration and development, and SuitePacific has been able to handle both. It's been useful having one team that can take care of the day-to-day issues as well as larger customization work.",
-    role: "VP of Finance",
-    rating: 4.6,
-  },
-  {
-    quote:
-      "We've worked with SuitePacific on NetSuite reporting, workflows and customizations. They're good at finding a straightforward way to solve something instead of making the solution more complicated than it needs to be.",
-    role: "Director of Operations",
-    rating: 4.8,
-  },
-];
 
 const FAQS = [
   {
@@ -264,7 +222,7 @@ export default function NetSuiteCarePage() {
       />
 
       {/* Hero */}
-      <section className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
+      <section data-section="hero" className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
         <FadeIn>
           <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3">
             SuitePacific NetSuite Care
@@ -292,7 +250,7 @@ export default function NetSuiteCarePage() {
       </section>
 
       {/* Quick answer */}
-      <section className="mx-auto max-w-3xl px-6 lg:px-8 mt-10">
+      <section data-section="quick-answer" className="mx-auto max-w-3xl px-6 lg:px-8 mt-10">
         <div style={{ background: "#eef2fb", border: "1px solid #b2c2e6", borderRadius: "10px", padding: "1.25rem 1.5rem" }}>
           <p style={{ margin: "0 0 0.5rem", fontSize: "0.7rem", fontWeight: 700, color: "#4f7fff", textTransform: "uppercase", letterSpacing: "0.08em" }}>
             What is a NetSuite Care plan?
@@ -316,7 +274,7 @@ export default function NetSuiteCarePage() {
       </section>
 
       {/* Social proof */}
-      <section className="mx-auto max-w-3xl px-6 lg:px-8 mt-8">
+      <section data-section="social-proof" className="mx-auto max-w-3xl px-6 lg:px-8 mt-8">
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 rounded-2xl bg-brand-50 border border-brand-100 px-6 py-4">
           <div className="flex items-center gap-1.5">
             {[0,1,2,3,4].map((i) => (
@@ -340,7 +298,7 @@ export default function NetSuiteCarePage() {
       </section>
 
       {/* No-negotiation callout */}
-      <section className="mx-auto max-w-3xl px-6 lg:px-8 mt-20">
+      <section data-section="no-negotiation" className="mx-auto max-w-3xl px-6 lg:px-8 mt-20">
         <div className="rounded-2xl bg-brand-50 border border-brand-100 px-8 py-10 text-center">
           <p className="text-brand-600 text-base leading-relaxed">
             No project-by-project negotiations.&ensp;No scrambling to find a
@@ -353,7 +311,7 @@ export default function NetSuiteCarePage() {
       </section>
 
       {/* What's included */}
-      <section className="mx-auto max-w-5xl px-6 lg:px-8 mt-24">
+      <section data-section="whats-included" className="mx-auto max-w-5xl px-6 lg:px-8 mt-24">
         <div className="text-center">
           <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3">
             What&apos;s Included
@@ -382,7 +340,7 @@ export default function NetSuiteCarePage() {
       </section>
 
       {/* Plans */}
-      <section id="plans" className="mx-auto max-w-6xl px-6 lg:px-8 mt-24">
+      <section data-section="plans" id="plans" className="mx-auto max-w-6xl px-6 lg:px-8 mt-24">
         <div className="text-center mb-12">
           <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3">Plans</p>
           <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 text-balance">
@@ -453,7 +411,7 @@ export default function NetSuiteCarePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="mx-auto max-w-2xl px-6 lg:px-8 mt-16">
+      <section data-section="testimonials" className="mx-auto max-w-2xl px-6 lg:px-8 mt-16">
         <div className="text-center mb-8">
           <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3">Client Feedback</p>
           <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 text-balance">
@@ -470,7 +428,7 @@ export default function NetSuiteCarePage() {
       </section>
 
       {/* Stop negotiating */}
-      <section className="mx-auto max-w-3xl px-6 lg:px-8 mt-24">
+      <section data-section="stop-negotiating" className="mx-auto max-w-3xl px-6 lg:px-8 mt-24">
         <div className="text-center mb-10">
           <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 text-balance">
             Stop negotiating every small NetSuite request.
@@ -506,7 +464,7 @@ export default function NetSuiteCarePage() {
       </section>
 
       {/* Built for post-go-live */}
-      <section className="mx-auto max-w-4xl px-6 lg:px-8 mt-24 text-center">
+      <section data-section="post-go-live-fit" className="mx-auto max-w-4xl px-6 lg:px-8 mt-24 text-center">
         <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 text-balance">
           Built for NetSuite after go-live.
         </h2>
@@ -535,7 +493,7 @@ export default function NetSuiteCarePage() {
       </section>
 
       {/* Work alongside existing partner */}
-      <section className="mx-auto max-w-4xl px-6 lg:px-8 mt-24">
+      <section data-section="alongside-partner" className="mx-auto max-w-4xl px-6 lg:px-8 mt-24">
         <div className="rounded-2xl bg-brand-900 text-white px-8 py-12 text-center">
           <h2 className="text-2xl sm:text-3xl font-semibold text-balance">
             Your existing NetSuite partner doesn&apos;t have to do everything.
@@ -553,7 +511,7 @@ export default function NetSuiteCarePage() {
       </section>
 
       {/* Why not hire / comparison */}
-      <section className="mx-auto max-w-5xl px-6 lg:px-8 mt-24">
+      <section data-section="comparison" className="mx-auto max-w-5xl px-6 lg:px-8 mt-24">
         <div className="text-center mb-10">
           <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 text-balance">
             Predictable support. Experienced people. No full-time hire.
@@ -582,9 +540,10 @@ export default function NetSuiteCarePage() {
           ))}
         </div>
       </section>
+      <InlineCta heading="Weighing this against a hire or a bigger partner?" />
 
       {/* What hours can be used for */}
-      <section className="mx-auto max-w-5xl px-6 lg:px-8 mt-24">
+      <section data-section="hours-usage" className="mx-auto max-w-5xl px-6 lg:px-8 mt-24">
         <div className="text-center mb-10">
           <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3">
             Your Monthly Hours
@@ -611,7 +570,7 @@ export default function NetSuiteCarePage() {
       </section>
 
       {/* Scale callout */}
-      <section className="mx-auto max-w-3xl px-6 lg:px-8 mt-20 text-center">
+      <section data-section="scale-callout" className="mx-auto max-w-3xl px-6 lg:px-8 mt-20 text-center">
         <p className="text-brand-600">
           Start with the support capacity your business needs today. As your
           technical requirements grow, move to a higher Care plan.{" "}
@@ -623,7 +582,7 @@ export default function NetSuiteCarePage() {
       </section>
 
       {/* FAQ */}
-      <section className="mx-auto max-w-3xl px-6 lg:px-8 mt-24">
+      <section data-section="faq" className="mx-auto max-w-3xl px-6 lg:px-8 mt-24">
         <div className="text-center mb-10">
           <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3">FAQ</p>
           <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 text-balance">
@@ -641,7 +600,7 @@ export default function NetSuiteCarePage() {
       </section>
 
       {/* Related services */}
-      <section className="mx-auto max-w-3xl px-6 lg:px-8 mt-24">
+      <section data-section="related-services" className="mx-auto max-w-3xl px-6 lg:px-8 mt-24">
         <div className="rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
           <p className="text-sm font-semibold text-brand-900 mb-3">Related services</p>
           <ul className="space-y-2.5">
@@ -672,7 +631,7 @@ export default function NetSuiteCarePage() {
 
 
       {/* Why SuitePacific */}
-      <section className="mx-auto max-w-3xl px-6 lg:px-8 mt-20">
+      <section data-section="why-suitepacific" className="mx-auto max-w-3xl px-6 lg:px-8 mt-20">
         <div className="rounded-2xl border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent p-6">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-3">Why SuitePacific for NetSuite Care</p>
           <h2 className="text-base font-semibold text-brand-900 mb-3">
@@ -696,7 +655,7 @@ export default function NetSuiteCarePage() {
         </div>
       </section>
       {/* Final CTA */}
-      <section className="mx-auto max-w-3xl px-6 lg:px-8 mt-24">
+      <section data-section="final-cta" className="mx-auto max-w-3xl px-6 lg:px-8 mt-24">
         <h2 className="text-2xl sm:text-3xl font-semibold text-brand-900 text-balance text-center mb-2">
           Your NetSuite environment deserves ongoing technical care.
         </h2>
