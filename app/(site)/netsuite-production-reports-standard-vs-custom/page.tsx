@@ -6,6 +6,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COMPARISON_ROWS = [
   { report: "Inventory valuation", standard: "Yes (standard report)", custom: "Not needed; standard sufficient" },
@@ -89,7 +90,7 @@ export const metadata: Metadata = {
       "Standard NetSuite production reports cover inventory and work order listings but not variance, schedule adherence, or WIP value. Custom saved searches and SuiteQL fill these manufacturing reporting gaps.",
     url: `${SITE_URL}/netsuite-production-reports-standard-vs-custom`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Production Reporting: Standard vs. Custom", "Comparison"),
   },
 };
 

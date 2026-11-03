@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COMPARISON_ROWS = [
   { capability: "Standard depreciation methods", native: "Yes (SL, DDB, SYD, UOP)", thirdParty: "Yes (all methods plus variations)" },
@@ -119,7 +120,7 @@ export const metadata: Metadata = {
       "What NetSuite's fixed assets module covers for depreciation and asset tracking, and when a third-party tool adds capabilities the native module cannot.",
     url: `${SITE_URL}/netsuite-fixed-assets-native-vs-third-party`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Fixed Assets Module vs. Third-Party Tools", "Comparison"),
   },
 };
 

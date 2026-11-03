@@ -12,6 +12,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const INDUSTRIES = [
   {
@@ -140,7 +141,7 @@ export const metadata: Metadata = {
     description: "NetSuite post-go-live consulting for LA companies. SuiteScript development, integrations, and ongoing support for apparel, e-commerce, and entertainment businesses on NetSuite.",
     url: "https://suitepacific.com/netsuite-consultant-los-angeles",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Consultant Los Angeles"),
   },
 };
 

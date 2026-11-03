@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const CHALLENGES = [
   { icon: DollarSign, title: "Seasonal billing cycles", description: "Agricultural businesses with seasonal revenue patterns, prepaid input billing at planting and harvest-based revenue recognition require custom NetSuite scripts that handle the timing mismatch between when customers pay, when inputs are delivered, and when crop revenue is earned." },
@@ -72,7 +73,7 @@ export const metadata: Metadata = {
     description: "NetSuite support for agriculture and AgTech: field-level crop cost tracking, seasonal revenue recognition, co-op settlement reconciliation, and per-acre profitability reporting.",
     url: `${SITE_URL}/industries/agriculture`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support for Agriculture & AgTech | SuitePacific", "Industries"),
   },
 };
 

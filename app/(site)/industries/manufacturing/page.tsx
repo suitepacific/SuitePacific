@@ -23,6 +23,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 import { RelatedComparisons } from "@/components/sections/RelatedComparisons";
+import { ogImages } from "@/lib/og";
 
 const CHALLENGES = [
   {
@@ -275,7 +276,7 @@ export const metadata: Metadata = {
       "NetSuite post-go-live support and development for manufacturing companies. SuiteScript customization, work order automation, BOM logic, and production reporting.",
     url: "https://suitepacific.com/industries/manufacturing",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support for Manufacturing Companies", "Industries"),
   },
 };
 

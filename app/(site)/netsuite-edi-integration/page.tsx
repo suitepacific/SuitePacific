@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -152,7 +153,7 @@ export const metadata: Metadata = {
       "NetSuite does not send or receive EDI natively. SuitePacific builds the EDI 850 import, EDI 856 ASN generation, and EDI 810 invoice scripts for FMCG companies selling through Walmart, Target, Kroger, and other retail EDI trading partners.",
     url: `${SITE_URL}/netsuite-edi-integration`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite EDI Integration for Food and Beverage Companies"),
   },
 };
 

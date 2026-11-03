@@ -6,6 +6,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 import { TestimonialStrip } from "@/components/sections/TestimonialStrip";
+import { ogImages } from "@/lib/og";
 
 export const metadata: Metadata = {
   title: "NetSuite Managed Services Pricing",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
       "NetSuite managed services cost between $799 and $12,000+ per month depending on hours, provider, and scope. SuitePacific plans from $799 with published rates.",
     url: `${SITE_URL}/netsuite-managed-services-pricing`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Managed Services Pricing | SuitePacific"),
   },
 };
 

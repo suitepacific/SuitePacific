@@ -13,6 +13,7 @@ import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { InlineCta } from "@/components/sections/InlineCta";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -166,7 +167,7 @@ export const metadata: Metadata = {
     description: "NetSuite rescue for failed or incomplete implementations. Assessment, roadmap, configuration correction, and SuiteScript rewrite by Oracle-certified developers.",
     url: "https://suitepacific.com/netsuite-implementation-rescue",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Implementation Rescue and Reimplementation"),
   },
 };
 

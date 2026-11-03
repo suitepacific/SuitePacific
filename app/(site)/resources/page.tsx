@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/Badge";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL } from "@/lib/content";
 import { getAllResources, RESOURCE_CATEGORIES } from "@/lib/resources";
+import { ogImages } from "@/lib/og";
 
 export const metadata: Metadata = {
   title: "NetSuite Resources",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description: "Practical NetSuite reference articles: SuiteScript best practices, performance optimization, workflow automation, saved searches, and administration guides for post-go-live accounts.",
     url: "https://suitepacific.com/resources",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Resources"),
   },
 };
 

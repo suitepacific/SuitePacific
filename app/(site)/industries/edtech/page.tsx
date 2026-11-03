@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const CHALLENGES = [
   { icon: DollarSign, title: "Enrollment revenue recognition", description: "Tuition revenue for multi-term courses must be recognized ratably over the enrollment period under ASC 606, not at payment or enrollment date. Standard NetSuite revenue recognition requires custom schedule configuration per course type, with deferred revenue liability tracking throughout the enrollment term." },
@@ -72,7 +73,7 @@ export const metadata: Metadata = {
     description: "NetSuite support for EdTech companies: ASC 606 tuition recognition, grant fund tracking, LMS integrations, and course profitability reporting.",
     url: `${SITE_URL}/industries/edtech`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support for EdTech & Education Companies | SuitePacific", "Industries"),
   },
 };
 

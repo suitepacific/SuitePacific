@@ -7,6 +7,7 @@ import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const MODELS = [
   {
@@ -73,7 +74,7 @@ export const metadata: Metadata = {
     description: "NetSuite consultant rates range from $75 to $300 per hour depending on the type. How the three main models compare on actual cost per completed request.",
     url: "https://suitepacific.com/netsuite-consultant-cost",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Consultant Cost: What Ongoing Support Actually Costs in 2026"),
   },
 };
 

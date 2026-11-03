@@ -20,6 +20,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const SIX_AREAS = [
   {
@@ -199,7 +200,7 @@ export const metadata: Metadata = {
       "Identifies where AI can improve your live NetSuite account across processes, customizations, documents, and reporting. Fixed-scope engagement with scored findings and implementation roadmap.",
     url: `${SITE_URL}/netsuite-ai-optimization-assessment`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite AI Optimization Assessment"),
   },
 };
 

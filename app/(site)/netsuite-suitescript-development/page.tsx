@@ -15,6 +15,7 @@ import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
 import { RelatedComparisons } from "@/components/sections/RelatedComparisons";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -143,7 +144,7 @@ export const metadata: Metadata = {
     description: "SuiteScript 2.x development for NetSuite: User Event, Client, Scheduled, Map/Reduce, and Suitelet scripts built and tested before touching production.",
     url: "https://suitepacific.com/netsuite-suitescript-development",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite SuiteScript Development"),
   },
 };
 

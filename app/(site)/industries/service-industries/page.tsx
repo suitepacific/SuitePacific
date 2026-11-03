@@ -23,6 +23,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const CHALLENGES = [
   {
@@ -255,7 +256,7 @@ export const metadata: Metadata = {
       "NetSuite support for service businesses: work order billing automation, service contract scripts, FSM integration, and technician utilization reporting.",
     url: `${SITE_URL}/industries/service-industries`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support for Service Industry Companies | SuitePacific", "Industries"),
   },
 };
 

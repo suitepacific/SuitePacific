@@ -12,6 +12,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -126,7 +127,7 @@ export const metadata: Metadata = {
       "NetSuite lot and serial number tracking configuration for manufacturers and distributors: expiration date alerts, traceability saved searches, recall response reports, and FIFO lot cost verification.",
     url: `${SITE_URL}/netsuite-lot-serial-tracking`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Lot and Serial Number Tracking"),
   },
 };
 

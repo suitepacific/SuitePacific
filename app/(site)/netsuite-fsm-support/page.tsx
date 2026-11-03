@@ -14,6 +14,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const FAILURE_MODES = [
   {
@@ -169,7 +170,7 @@ export const metadata: Metadata = {
       "FSM support for live NetSuite accounts: sync failures, bundle update issues, broken configurations, and mobile app problems. Oracle-certified, same-day response.",
     url: "https://suitepacific.com/netsuite-fsm-support",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite FSM Support and Troubleshooting"),
   },
 };
 

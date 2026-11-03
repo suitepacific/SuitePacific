@@ -23,6 +23,7 @@ import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const DEBT_LAYERS = [
   {
@@ -170,7 +171,7 @@ export const metadata: Metadata = {
     description: "NetSuite accounts accumulate technical debt after go-live: unused scripts, over-broad workflows, unindexed saved searches, undocumented customizations. SuitePacific audits and remediates technical debt in live NetSuite accounts.",
     url: "https://suitepacific.com/netsuite-technical-debt",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Technical Debt"),
   },
 };
 

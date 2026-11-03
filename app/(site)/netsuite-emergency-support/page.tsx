@@ -12,6 +12,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const SCENARIOS = [
   {
@@ -137,7 +138,7 @@ export const metadata: Metadata = {
     description: "NetSuite emergency support for scripts that broke after a release, failed integrations, and urgent data issues. Same-day response, Oracle-certified, direct developer access.",
     url: "https://suitepacific.com/netsuite-emergency-support",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Emergency Support"),
   },
 };
 

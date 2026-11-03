@@ -9,6 +9,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 import { RelatedComparisons } from "@/components/sections/RelatedComparisons";
+import { ogImages } from "@/lib/og";
 
 const ARM_OBJECTS = [
   { object: "Revenue Arrangement", description: "Created from a sales order or invoice; represents a single customer contract and holds the total contract value" },
@@ -57,7 +58,7 @@ export const metadata: Metadata = {
     description: "NetSuite Advanced Revenue Management requires significant configuration before it works correctly. SuitePacific configures ARM from scratch and fixes existing setups producing incorrect recognition schedules for SaaS, services, and product companies.",
     url: `${SITE_URL}/netsuite-arm-configuration`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite ARM Configuration: Advanced Revenue Management Setup for ASC 606"),
   },
 };
 

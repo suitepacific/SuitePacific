@@ -9,6 +9,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const CHECKLIST_PHASES = [
   {
@@ -180,7 +181,7 @@ export const metadata: Metadata = {
       "How to prepare a live NetSuite account for an Oracle upgrade: Sandbox testing, SuiteScript regression, workflow validation, integration testing, and release notes review.",
     url: `${SITE_URL}/netsuite-upgrade-preparation`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Upgrade Preparation"),
   },
 };
 

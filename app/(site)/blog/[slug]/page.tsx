@@ -10,6 +10,7 @@ import { getAllPosts, getAllSlugs, getPostBySlug } from "@/lib/blog";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { PreferredSourceButton, splitAtQABlock } from "@/components/ui/PreferredSourceButton";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 export async function generateStaticParams() {
   const slugs = await getAllSlugs().catch(() => []);
@@ -35,7 +36,7 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.date,
       url: `${SITE_URL}/blog/${post.slug}`,
-      images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+      images: ogImages(post.title, post.tags[0] ?? "Blog"),
     },
   };
 }

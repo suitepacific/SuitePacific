@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/Badge";
 import { getAllPosts } from "@/lib/blog";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 export const revalidate = 60;
 
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     description: "Practical NetSuite tips, SuiteScript development guides, and workflow automation advice for finance and operations teams managing NetSuite after go-live.",
     url: "https://suitepacific.com/blog",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Tips & Tricks Blog"),
   },
 };
 

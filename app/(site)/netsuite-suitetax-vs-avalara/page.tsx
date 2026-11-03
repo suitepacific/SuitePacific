@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COMPARISON_ROWS = [
   { capability: "Rate accuracy", suitetax: "Manual maintenance required", avalara: "Real-time lookup on every transaction" },
@@ -92,7 +93,7 @@ export const metadata: Metadata = {
       "Live NetSuite account with multi-state sales tax? Compare SuiteTax and Avalara: economic nexus monitoring, product taxability, and when to connect Avalara.",
     url: `${SITE_URL}/netsuite-suitetax-vs-avalara`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite SuiteTax vs. Avalara AvaTax: Which to Use", "Comparison"),
   },
 };
 

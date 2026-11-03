@@ -23,6 +23,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const CHALLENGES = [
   {
@@ -255,7 +256,7 @@ export const metadata: Metadata = {
       "NetSuite post-go-live support for fintech companies: ASC 606 automation, payment reconciliation, investor metrics, and SOD compliance workflows.",
     url: `${SITE_URL}/industries/fintech`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support for Fintech Companies | SuitePacific", "Industries"),
   },
 };
 

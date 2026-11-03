@@ -5,6 +5,7 @@ import { BreadcrumbJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { COMPARISONS, COMPARISON_GROUPS } from "@/lib/comparisons";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const TITLE = "NetSuite Comparison Guides: Native vs. Custom vs. Vendors";
 const DESCRIPTION =
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     url: `${SITE_URL}/netsuite-comparisons`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Comparison Guides", "Comparison"),
   },
 };
 

@@ -6,6 +6,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COST_DRIVERS = [
   {
@@ -82,7 +83,7 @@ export const metadata: Metadata = {
     description: "Why large NetSuite partners cost more than they should for ongoing support, and what a boutique retainer model costs instead. SuitePacific Care plans start at $799/month.",
     url: "https://suitepacific.com/netsuite-partner-too-expensive",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Partner Too Expensive? Here Is What It Costs and Why"),
   },
 };
 

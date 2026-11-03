@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { seoTitle, seoDescription } from "@/lib/seo-meta";
+import { ogImages } from "@/lib/og";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
@@ -23,9 +25,16 @@ export async function generateMetadata({
   const cs = getCaseStudy(slug);
   if (!cs) return {};
   return {
-    title: `${cs.title}`,
-    description: cs.metaDescription,
+    title: seoTitle(cs.title),
+    description: seoDescription(cs.metaDescription),
     alternates: { canonical: `/case-studies/${slug}` },
+    openGraph: {
+      title: cs.title,
+      description: seoDescription(cs.metaDescription),
+      type: "article",
+      url: `${SITE_URL}/case-studies/${slug}`,
+      images: ogImages(cs.title, "Case study"),
+    },
   };
 }
 

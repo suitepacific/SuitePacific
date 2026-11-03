@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const CHALLENGES = [
   { icon: Building, title: "Portfolio company consolidation", description: "Private equity firms and family offices holding multiple operating subsidiaries need consolidated financial statements that eliminate intercompany transactions, apply minority interest adjustments, and present at-the-fund or at-the-holding-company level. Standard NetSuite consolidation requires custom scripts for eliminations on non-standard intercompany flows." },
@@ -72,7 +73,7 @@ export const metadata: Metadata = {
     description: "NetSuite support for PE firms and family offices: portfolio consolidation, waterfall distribution scripts, LP capital tracking, and management fee billing automation.",
     url: `${SITE_URL}/industries/private-equity`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support for Private Equity & Family Offices | SuitePacific", "Industries"),
   },
 };
 

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PRESS_RELEASES = [
   {
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
       "Press releases from SuitePacific, a NetSuite post-go-live consulting firm. SuiteScript development, integrations, workflow automation, and ongoing support.",
     url: "https://suitepacific.com/press",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("SuitePacific Press Releases | Post-Go-Live NetSuite"),
   },
 };
 

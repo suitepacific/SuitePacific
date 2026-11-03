@@ -15,6 +15,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const CERTIFICATIONS = [
   {
@@ -146,7 +147,7 @@ export const metadata: Metadata = {
       "NetSuite support from consultants holding SuiteCloud Developer II and Administrator Professional certifications. Verified platform credentials for both development and administration.",
     url: `${SITE_URL}/netsuite-certified-netsuite-support`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("Certified NetSuite Support: SuiteCloud Developer II"),
   },
 };
 

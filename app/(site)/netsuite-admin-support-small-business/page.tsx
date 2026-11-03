@@ -23,6 +23,7 @@ import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { InlineCta } from "@/components/sections/InlineCta";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -198,7 +199,7 @@ export const metadata: Metadata = {
     description: "Fractional NetSuite administrator for small businesses: user management, roles, custom fields, saved searches, and workflow automation on dedicated monthly support. Enterprise expertise without the full-time hire.",
     url: "https://suitepacific.com/netsuite-admin-support-small-business",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("Fractional NetSuite Administrator for Small Business"),
   },
 };
 

@@ -7,6 +7,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const MODELS = [
   {
@@ -169,7 +170,7 @@ export const metadata: Metadata = {
       "All five NetSuite support models compared: Oracle standard support, ACS, third-party managed retainer, break-fix, and internal hire. What each covers, what each costs, and which fits which account.",
     url: `${SITE_URL}/netsuite-support-comparison`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support Options Compared", "Comparison"),
   },
 };
 

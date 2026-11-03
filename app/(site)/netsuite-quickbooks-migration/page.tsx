@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const QB_VS_NS = [
   { area: "Entity model", quickbooks: "Flat customer/vendor/employee model; company and contact data often in one record", netsuite: "Companies (customer, vendor records) and contacts are separate, linked records" },
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
     description: "Migrated from QuickBooks to NetSuite and experiencing problems? SuitePacific stabilizes post-migration NetSuite accounts: opening balance reconciliation, entity cleanup, item correction, and missing reports.",
     url: `${SITE_URL}/netsuite-quickbooks-migration`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("QuickBooks to NetSuite Migration: Fixing Opening Balances, Duplicates, and Missing Reports"),
   },
 };
 

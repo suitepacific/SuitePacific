@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PM_WORKFLOWS = [
   { workflow: "Tenant setup", what: "Customer record per tenant with lease commencement date, expiration, square footage, and rent escalation schedule stored in custom fields" },
@@ -70,7 +71,7 @@ export const metadata: Metadata = {
     description: "NetSuite property management accounting for companies that collect rent, manage tenant accounts, and need CAM reconciliations and property-level reporting. SuitePacific automates rent invoicing, CAM reconciliation, security deposit tracking, and late fee calculation.",
     url: `${SITE_URL}/netsuite-property-management-accounting`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Property Management Accounting: Tenant Billing, CAM Reconciliation, and Rent Automation"),
   },
 };
 

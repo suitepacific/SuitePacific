@@ -6,6 +6,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COMPARISON_ROWS = [
   { factor: "Monthly cost", acs: "Approximate range: $2,500 to $10,000+ (varies by tier)", sp: "$799 to $2,499 per month" },
@@ -117,7 +118,7 @@ export const metadata: Metadata = {
       "NetSuite ACS provides platform advisory, named support, and upgrade preparation. A manufacturing specialist delivers active SuiteScript development, work order automation, BOM customization, and lot enforcement.",
     url: `${SITE_URL}/netsuite-acs-vs-manufacturing-specialist`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite ACS vs. Manufacturing Specialist Support", "Comparison"),
   },
 };
 

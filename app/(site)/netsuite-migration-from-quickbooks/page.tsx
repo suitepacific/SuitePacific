@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -119,7 +120,7 @@ export const metadata: Metadata = {
       "Migrating from QuickBooks to NetSuite is step one. Step two is making the account match how your business works. SuitePacific provides post-migration NetSuite support: saved searches, workflows, SuiteScript, and ongoing administration.",
     url: `${SITE_URL}/netsuite-migration-from-quickbooks`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support After Migrating from QuickBooks | SuitePacific"),
   },
 };
 

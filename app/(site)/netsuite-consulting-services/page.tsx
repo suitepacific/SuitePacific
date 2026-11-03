@@ -25,6 +25,7 @@ import { InlineCta } from "@/components/sections/InlineCta";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COMPARISON = [
   { capability: "Ongoing SuiteScript development", typical: "Separate engagement required; no dedicated resource after go-live", withSP: "Covered in monthly or project-based scope without a new SOW per request" },
@@ -236,7 +237,7 @@ export const metadata: Metadata = {
     description: "NetSuite consulting for post-go-live companies: SuiteScript development, workflow automation, integrations, reporting, and ongoing technical support. From $799.",
     url: "https://suitepacific.com/netsuite-consulting-services",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Consulting Services"),
   },
 };
 

@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COMPARISON_ROWS = [
   { capability: "Setup method", standard: "Pre-built, no config", savedSearch: "UI-based, no code", suiteql: "Developer-written SQL" },
@@ -107,7 +108,7 @@ export const metadata: Metadata = {
       "NetSuite offers three reporting approaches. Saved searches handle most custom reporting. SuiteQL handles complex multi-table joins. Standard reports cover standard financials only. Know which approach your account needs.",
     url: `${SITE_URL}/netsuite-saved-searches-vs-suiteql-vs-reports`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Saved Searches vs. SuiteQL vs. Standard Reports", "Comparison"),
   },
 };
 

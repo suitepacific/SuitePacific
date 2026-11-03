@@ -11,6 +11,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 import { ConstructionBillingLinks } from "@/components/sections/ConstructionBillingLinks";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -119,7 +120,7 @@ export const metadata: Metadata = {
       "SuitePacific configures NetSuite for construction accounting: chart of accounts restructuring, subcontractor compliance tracking, lien waiver records, and multi-project P&L reporting.",
     url: `${SITE_URL}/netsuite-construction-accounting`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Construction Accounting Configuration"),
   },
 };
 

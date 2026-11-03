@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const CHALLENGES = [
   { icon: FileText, title: "AIA and milestone billing", description: "Architecture and engineering firms billing on AIA G702/G703 forms, lump-sum milestones, or percentage-complete schedules require custom invoice logic that standard NetSuite invoicing does not generate without SuiteScript development." },
@@ -72,7 +73,7 @@ export const metadata: Metadata = {
     description: "NetSuite support for A&E firms: AIA billing automation, subconsultant pass-through, percentage-complete revenue recognition, and discipline utilization reporting.",
     url: `${SITE_URL}/industries/architecture-engineering`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support for Architecture & Engineering Firms | SuitePacific", "Industries"),
   },
 };
 

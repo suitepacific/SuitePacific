@@ -12,6 +12,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 import { RelatedComparisons } from "@/components/sections/RelatedComparisons";
+import { ogImages } from "@/lib/og";
 
 const SERVICES = [
   {
@@ -171,7 +172,7 @@ export const metadata: Metadata = {
       "NetSuite support for post-go-live accounts: managed support retainers, SuiteScript development, integrations, administration, partner replacement, and emergency break-fix. Oracle-certified, direct access, month-to-month.",
     url: `${SITE_URL}/netsuite-support`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support Services"),
   },
 };
 

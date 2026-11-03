@@ -6,6 +6,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COMPARISON_ROWS = [
   { capability: "WO completion automation", scripts: "Yes (User Event scripts)", module: "Yes (included)" },
@@ -131,7 +132,7 @@ export const metadata: Metadata = {
       "Custom SuiteScript handles work order completion, lot assignment, and WO-level variance. The Advanced Manufacturing module adds operation-level costing, work center capacity, and shop floor mobile screens.",
     url: `${SITE_URL}/netsuite-advanced-manufacturing-module-vs-custom`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Advanced Manufacturing vs. Custom SuiteScript", "Comparison"),
   },
 };
 

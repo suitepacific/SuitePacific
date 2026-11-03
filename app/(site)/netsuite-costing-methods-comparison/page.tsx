@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COMPARISON_TABLE = [
   { factor: "Cost basis", standard: "Fixed predefined standard cost per item", average: "Weighted average of all receipts to date", fifo: "Cost of the oldest lot or receipt" },
@@ -107,7 +108,7 @@ export const metadata: Metadata = {
       "How the three main costing methods in NetSuite work, what each does to inventory valuation and production variance, and how to choose for manufacturers.",
     url: `${SITE_URL}/netsuite-costing-methods-comparison`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Costing Methods: Standard vs. Average vs. FIFO", "Comparison"),
   },
 };
 

@@ -5,6 +5,7 @@ import { BreadcrumbJsonLd, OrganizationJsonLd, VideoObjectJsonLd } from "@/compo
 import { FreeScriptCheckForm } from "@/components/sections/FreeScriptCheckForm";
 import { ChecklistWithScore } from "@/components/sections/ChecklistWithScore";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 export const metadata: Metadata = {
   title: {
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
       "Oracle NetSuite has confirmed SuiteScript 1.0, 2.0, and 2.x will stop working in 2028.2. Use this checklist to verify your account is ready before the deadline.",
     url: `${SITE_URL}/netsuite-suitescript-readiness-checklist`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite 2028.2 SuiteScript Readiness Checklist | SuitePacific"),
   },
 };
 

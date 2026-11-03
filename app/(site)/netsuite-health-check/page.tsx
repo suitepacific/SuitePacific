@@ -14,6 +14,7 @@ import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { TestimonialStrip } from "@/components/sections/TestimonialStrip";
 import { InlineCta } from "@/components/sections/InlineCta";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -198,7 +199,7 @@ export const metadata: Metadata = {
     description: "Independent NetSuite account review covering scripts, workflows, custom fields, saved searches, roles, and integrations. Written findings report delivered within one week.",
     url: "https://suitepacific.com/netsuite-health-check",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Health Check and System Audit"),
   },
 };
 

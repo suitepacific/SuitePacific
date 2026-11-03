@@ -8,6 +8,7 @@ import { LeadForm } from "@/components/sections/LeadForm";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PROJECT_TYPES = [
   {
@@ -141,7 +142,7 @@ export const metadata: Metadata = {
       "NetSuite project consulting from SuitePacific: fixed-scope integrations, workflow builds, SuiteScript migrations, data imports, and technical remediation. Scoped before development starts, sandbox-tested, no retainer required.",
     url: `${SITE_URL}/netsuite-project-consulting`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Project Consulting | Fixed-Scope Engagements"),
   },
 };
 

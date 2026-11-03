@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COMPARISON_ROWS = [
   { capability: "Standard IC elimination", native: "Yes", custom: "Not needed" },
@@ -145,7 +146,7 @@ export const metadata: Metadata = {
       "How NetSuite OneWorld handles intercompany eliminations at consolidation and where custom SuiteScript fills the gaps for complex multi-entity structures.",
     url: `${SITE_URL}/netsuite-intercompany-elimination-native-vs-custom`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Intercompany Elimination: Native vs. Custom", "Comparison"),
   },
 };
 

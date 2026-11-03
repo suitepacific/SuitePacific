@@ -17,6 +17,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const WHAT_IS_INCLUDED = [
   {
@@ -198,7 +199,7 @@ export const metadata: Metadata = {
       "Ongoing NetSuite managed support at a fixed monthly retainer: development, administration, break-fix, and upgrade preparation from certified consultants with direct access.",
     url: `${SITE_URL}/netsuite-managed-support`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Managed Support: Monthly Retainer"),
   },
 };
 

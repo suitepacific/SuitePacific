@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const FULFILLMENT_FLOW = [
   { step: 1, stage: "Sales Order approved", what: "Order enters fulfillment queue; location and fulfillment method determined" },
@@ -56,7 +57,7 @@ export const metadata: Metadata = {
     description: "SuitePacific configures and automates NetSuite order fulfillment: fulfillment workflows, custom pick lists and packing slips, carrier API integrations, 3PL connections, and real-time fulfillment dashboards. Plans from $799/month.",
     url: `${SITE_URL}/netsuite-order-fulfillment`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Order Fulfillment: Automation, Pick Lists, Carrier Integration, and Dashboards"),
   },
 };
 

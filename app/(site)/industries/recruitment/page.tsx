@@ -23,6 +23,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const CHALLENGES = [
   {
@@ -255,7 +256,7 @@ export const metadata: Metadata = {
       "NetSuite support for staffing firms: timesheet-to-invoice automation, recruiter commission scripts, Bullhorn integration, and branch P&L reporting.",
     url: `${SITE_URL}/industries/recruitment`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support for Recruitment & Staffing Companies | SuitePacific", "Industries"),
   },
 };
 

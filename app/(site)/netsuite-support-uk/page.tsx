@@ -25,6 +25,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const INDUSTRIES = [
   {
@@ -164,7 +165,7 @@ export const metadata: Metadata = {
       "NetSuite post-go-live consulting for UK companies. SuiteScript development, VAT configuration, and ongoing support for fintech, professional services, and manufacturing businesses on NetSuite.",
     url: "https://suitepacific.com/netsuite-support-uk",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support UK"),
   },
 };
 

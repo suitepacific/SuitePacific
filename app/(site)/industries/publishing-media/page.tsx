@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const CHALLENGES = [
   { icon: DollarSign, title: "Royalty calculations for authors and contributors", description: "Publishing companies paying royalties based on net sales, print run thresholds, format splits (hardcover, ebook, audio), and territory-specific rates require custom SuiteScript that reads sales data, applies the correct royalty schedule per title and format, and generates royalty statements and payment records." },
@@ -72,7 +73,7 @@ export const metadata: Metadata = {
     description: "NetSuite support for publishers and media companies: royalty calculation scripts, advertising revenue recognition, subscription renewal automation, and distributor settlement reconciliation.",
     url: `${SITE_URL}/industries/publishing-media`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support for Publishing & Media Companies | SuitePacific", "Industries"),
   },
 };
 

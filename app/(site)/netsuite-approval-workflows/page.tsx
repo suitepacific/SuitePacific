@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const WORKFLOW_GAPS = [
   {
@@ -117,7 +118,7 @@ export const metadata: Metadata = {
       "NetSuite SuiteApprovals handles fixed approval chains. Amount-based routing, supervisor-hierarchy assignment, timed escalation, and compliance holds require SuiteFlow development. SuitePacific builds the complete approval workflow setup for companies already live on NetSuite.",
     url: `${SITE_URL}/netsuite-approval-workflows`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Approval Workflows: SuiteApprovals Configuration and SuiteFlow Development"),
   },
 };
 

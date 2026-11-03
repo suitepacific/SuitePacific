@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COMPARISON_TABLE = [
   { factor: "Field team tooling", integrated: "Procore for field: RFIs, submittals, daily reports, photos", nsonly: "NetSuite only; field teams need separate logins or workarounds" },
@@ -109,7 +110,7 @@ export const metadata: Metadata = {
       "Understanding when to connect Procore to NetSuite, when to run NetSuite alone, and where integration complexity creates more problems than it solves for construction companies.",
     url: `${SITE_URL}/procore-netsuite-integration-vs-netsuite-only`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("Procore + NetSuite Integration vs. NetSuite-Only", "Comparison"),
   },
 };
 

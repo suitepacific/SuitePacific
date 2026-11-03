@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const CHALLENGES = [
   { icon: FileText, title: "Authorization for Expenditure (AFE)", description: "AFE approval workflows for capital and operating expenditures in upstream oil and gas require custom SuiteFlow workflows that route approvals by well, field, operator, and cost threshold, with NetSuite spending no standard module handling this structure." },
@@ -72,7 +73,7 @@ export const metadata: Metadata = {
     description: "NetSuite support for E&P companies: AFE workflows, JIB statement generation, royalty calculation scripts, and production accounting for upstream oil and gas.",
     url: `${SITE_URL}/industries/oil-gas`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support for Oil & Gas Companies | SuitePacific", "Industries"),
   },
 };
 

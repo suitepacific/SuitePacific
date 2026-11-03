@@ -23,6 +23,7 @@ import { LeadForm } from "@/components/sections/LeadForm";
 import { TestimonialCarousel } from "@/components/sections/TestimonialCarousel";
 import { TESTIMONIALS } from "@/lib/testimonials";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const WHAT_INCLUDED = [
   "SuiteScript development and troubleshooting",
@@ -186,7 +187,7 @@ export const metadata: Metadata = {
     description: "SuitePacific NetSuite Care gives your team ongoing access to experienced NetSuite technical professionals for a predictable monthly fee. Starting at $799/month.",
     url: "https://suitepacific.com/netsuite-care",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Care Plans | Ongoing NetSuite Support | SuitePacific"),
   },
 };
 

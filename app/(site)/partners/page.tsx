@@ -18,6 +18,7 @@ import { IconBadge } from "@/components/ui/IconBadge";
 import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const FEATURED_PARTNERS = [
   {
@@ -116,7 +117,7 @@ export const metadata: Metadata = {
     description: "Partner with SuitePacific to refer NetSuite post-go-live support, SuiteScript development, and workflow automation to your clients. For implementation partners, resellers, accounting firms, and software vendors.",
     url: "https://suitepacific.com/partners",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("Partner with SuitePacific | NetSuite Post-Go-Live Partner Program"),
   },
 };
 

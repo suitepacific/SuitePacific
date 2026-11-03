@@ -14,6 +14,7 @@ import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { InlineCta } from "@/components/sections/InlineCta";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -170,7 +171,7 @@ export const metadata: Metadata = {
     description: "Fractional NetSuite administrator support for post-go-live accounts: user management, roles and permissions, custom fields, saved searches, period management, and data imports. Plans from $799/month.",
     url: "https://suitepacific.com/netsuite-administrator-support",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Administrator Support | Fractional NetSuite Admin"),
   },
 };
 

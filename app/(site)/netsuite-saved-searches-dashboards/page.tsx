@@ -14,6 +14,7 @@ import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 import { RelatedComparisons } from "@/components/sections/RelatedComparisons";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -146,7 +147,7 @@ export const metadata: Metadata = {
     description: "Custom NetSuite saved searches, dashboards, and reports: role-based dashboards, formula fields, KPI portlets, and exception searches that surface what your team needs without exporting to spreadsheets.",
     url: "https://suitepacific.com/netsuite-saved-searches-dashboards",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Saved Searches & Dashboards"),
   },
 };
 

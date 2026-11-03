@@ -9,6 +9,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 import { ConstructionBillingLinks } from "@/components/sections/ConstructionBillingLinks";
+import { ogImages } from "@/lib/og";
 
 const WIP_COLUMNS = [
   { field: "Contract value", source: "Project record + approved change orders", native: false },
@@ -154,7 +155,7 @@ export const metadata: Metadata = {
       "NetSuite has no native WIP schedule for construction. SuitePacific builds custom WIP reports showing contract value, cost to date, percentage complete, earned revenue, and over/under billing as saved searches and SuiteQL dashboards inside your NetSuite account.",
     url: `${SITE_URL}/netsuite-wip-report`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite WIP Report for Construction: Custom WIP Schedule Build"),
   },
 };
 

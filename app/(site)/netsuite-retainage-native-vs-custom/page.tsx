@@ -9,6 +9,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 import { ConstructionBillingLinks } from "@/components/sections/ConstructionBillingLinks";
+import { ogImages } from "@/lib/og";
 
 const COMPARISON_ROWS = [
   { capability: "Percentage withholding from invoice", standard: "Yes (uniform rate)", custom: "Yes (variable rates supported)" },
@@ -118,7 +119,7 @@ export const metadata: Metadata = {
       "NetSuite&apos;s native retainage covers percentage withholding only. Accumulated AR balance, retainage release billing, AP retainage, and aging reports all require custom SuiteScript.",
     url: `${SITE_URL}/netsuite-retainage-native-vs-custom`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Retainage: Native Feature vs. Custom Scripts", "Comparison"),
   },
 };
 

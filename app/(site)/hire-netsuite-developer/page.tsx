@@ -25,6 +25,7 @@ import { LeadForm } from "@/components/sections/LeadForm";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 import { TestimonialStrip } from "@/components/sections/TestimonialStrip";
+import { ogImages } from "@/lib/og";
 
 const FAQ = [
   {
@@ -347,7 +348,7 @@ export const metadata: Metadata = {
     description: "Hire a NetSuite-certified developer for SuiteScript development, workflow automation, integrations, and post-go-live support. No long-term contracts.",
     url: "https://suitepacific.com/hire-netsuite-developer",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("Hire a NetSuite Developer"),
   },
 };
 

@@ -19,6 +19,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const NATIVE_AI = [
   {
@@ -189,7 +190,7 @@ export const metadata: Metadata = {
       "Configure Oracle NetSuite's built-in AI features and build custom AI integrations via SuiteScript. Certified NetSuite consultants for Text Enhance setup, Bill Capture, and external AI API integration.",
     url: `${SITE_URL}/netsuite-ai-integration`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite AI Integration: Native Features and Custom Development"),
   },
 };
 

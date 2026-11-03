@@ -17,6 +17,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -143,7 +144,7 @@ export const metadata: Metadata = {
       "NetSuite trade promotions management for food and beverage companies. Custom trade deal records, accrual scripts, deduction claim workflows, and trade spend dashboards.",
     url: `${SITE_URL}/netsuite-trade-promotions-management`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Trade Promotions Management | SuitePacific"),
   },
 };
 

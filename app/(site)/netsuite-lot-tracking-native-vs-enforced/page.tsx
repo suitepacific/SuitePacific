@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COMPARISON_TABLE = [
   { capability: "Lot field available on transactions", native: "Yes", enforced: "Yes" },
@@ -128,7 +129,7 @@ export const metadata: Metadata = {
       "How standard NetSuite lot tracking works, why regulated manufacturers need SuiteScript enforcement scripts, and what the enforcement script covers for complete traceability.",
     url: `${SITE_URL}/netsuite-lot-tracking-native-vs-enforced`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Lot Tracking: Native vs. Enforced with SuiteScript", "Comparison"),
   },
 };
 

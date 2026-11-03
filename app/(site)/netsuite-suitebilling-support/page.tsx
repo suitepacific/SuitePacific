@@ -26,6 +26,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const FAILURE_MODES = [
   {
@@ -184,7 +185,7 @@ export const metadata: Metadata = {
       "SuiteBilling support for live NetSuite accounts: charges not generating, change order errors, ARM integration gaps, and deferred revenue reconciliation. Oracle-certified, direct developer access.",
     url: "https://suitepacific.com/netsuite-suitebilling-support",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite SuiteBilling Support"),
   },
 };
 

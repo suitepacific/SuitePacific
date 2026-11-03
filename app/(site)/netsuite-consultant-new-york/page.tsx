@@ -12,6 +12,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const INDUSTRIES = [
   {
@@ -140,7 +141,7 @@ export const metadata: Metadata = {
     description: "NetSuite post-go-live consulting for NYC companies. SuiteScript development, multi-entity setup, and ongoing support for financial services, professional services, and real estate firms.",
     url: "https://suitepacific.com/netsuite-consultant-new-york",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Consultant New York"),
   },
 };
 

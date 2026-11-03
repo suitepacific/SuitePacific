@@ -9,6 +9,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 import { RelatedComparisons } from "@/components/sections/RelatedComparisons";
+import { ogImages } from "@/lib/og";
 
 const ONEWORLD_FEATURES = [
   { feature: "Multiple subsidiaries", detail: "Each subsidiary has its own chart of accounts, base currency, tax configuration, and approval workflow settings" },
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
     description: "Most OneWorld accounts have incomplete intercompany configuration, eliminations that do not balance, and users who can see all subsidiaries. SuitePacific fixes these problems and configures OneWorld correctly for consolidated reporting.",
     url: `${SITE_URL}/netsuite-oneworld-support`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite OneWorld Support: Intercompany, Eliminations, and Multi-Subsidiary Configuration"),
   },
 };
 

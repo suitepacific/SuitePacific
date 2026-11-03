@@ -6,6 +6,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PROVIDERS = [
   {
@@ -148,7 +149,7 @@ export const metadata: Metadata = {
     description: "Practical comparison of Oracle ACS against the five main alternatives for NetSuite post-go-live support. Pricing, scope, SuiteScript coverage, and SMB suitability compared.",
     url: "https://suitepacific.com/netsuite-acs-alternatives-comparison",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite ACS Alternatives: 2026 Provider Comparison", "Comparison"),
   },
 };
 

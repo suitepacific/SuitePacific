@@ -21,6 +21,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const CHALLENGES = [
   {
@@ -273,7 +274,7 @@ export const metadata: Metadata = {
       "NetSuite post-go-live support and development for real estate companies. Property reporting, lease tracking, and capital expenditure automation.",
     url: "https://suitepacific.com/industries/real-estate",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support for Real Estate Companies", "Industries"),
   },
 };
 

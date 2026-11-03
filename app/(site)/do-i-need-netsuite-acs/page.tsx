@@ -6,6 +6,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const ACS_YES = [
   "Your NetSuite account uses mostly standard out-of-box functionality with minimal customization",
@@ -97,7 +98,7 @@ export const metadata: Metadata = {
     description: "When Oracle ACS is worth it and when it is not. Covers ACS scope, five account scenarios, and what to do if ACS does not cover your actual support needs.",
     url: "https://suitepacific.com/do-i-need-netsuite-acs",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("Do I Need NetSuite ACS? A Decision Guide"),
   },
 };
 

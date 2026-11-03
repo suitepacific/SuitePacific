@@ -11,6 +11,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 import { ConstructionBillingLinks } from "@/components/sections/ConstructionBillingLinks";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -119,7 +120,7 @@ export const metadata: Metadata = {
       "SuitePacific builds NetSuite progress billing for construction companies: percent-complete billing scripts, retainage tracking, AIA G702/G703 PDF templates, and workflow-driven invoice approval.",
     url: `${SITE_URL}/netsuite-progress-billing`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Progress Billing for Construction Companies"),
   },
 };
 

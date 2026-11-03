@@ -11,6 +11,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const INTEGRATIONS = [
   {
@@ -122,7 +123,7 @@ export const metadata: Metadata = {
       "Celigo Mastery Level 4 certified. NetSuite Celigo integration: new builds, broken flow repair, and ongoing maintenance for Shopify, Salesforce, HubSpot, Amazon, and custom API connections.",
     url: `${SITE_URL}/netsuite-integrations/celigo`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Celigo Integration", "Integrations"),
   },
 };
 

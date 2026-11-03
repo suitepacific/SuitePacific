@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const IMPORT_ORDER = [
   { step: 1, record: "Currencies and exchange rates", note: "Required first for multi-currency accounts" },
@@ -57,7 +58,7 @@ export const metadata: Metadata = {
     description: "Most NetSuite data migrations fail not because of the import tool but because of wrong import order, bad source data, or incorrect field mapping. SuitePacific handles migrations for customers, vendors, items, transactions, and custom records.",
     url: `${SITE_URL}/netsuite-data-migration`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Data Migration: CSV Import, Migration Order, and SuiteScript Migration Service"),
   },
 };
 

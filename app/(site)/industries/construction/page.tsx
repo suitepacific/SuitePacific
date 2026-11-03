@@ -24,6 +24,7 @@ import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 import { ConstructionBillingLinks } from "@/components/sections/ConstructionBillingLinks";
 import { RelatedComparisons } from "@/components/sections/RelatedComparisons";
+import { ogImages } from "@/lib/og";
 
 const POSTGO_PROBLEMS = [
   {
@@ -309,7 +310,7 @@ export const metadata: Metadata = {
       "NetSuite post-go-live support and development for construction companies. Job costing, change order automation, and project reporting.",
     url: "https://suitepacific.com/industries/construction",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support for Construction Companies", "Industries"),
   },
 };
 

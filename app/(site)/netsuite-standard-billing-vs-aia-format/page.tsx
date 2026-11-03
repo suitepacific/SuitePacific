@@ -9,6 +9,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 import { ConstructionBillingLinks } from "@/components/sections/ConstructionBillingLinks";
+import { ogImages } from "@/lib/og";
 
 const COMPARISON_ROWS = [
   { feature: "Invoice format", standard: "Standard line item invoice", aia: "G702 application header + G703 continuation sheet" },
@@ -120,7 +121,7 @@ export const metadata: Metadata = {
       "NetSuite cannot produce AIA G702/G703 billing natively. AIA progress billing requires custom data structures and a custom PDF template. This page explains what needs to be built.",
     url: `${SITE_URL}/netsuite-standard-billing-vs-aia-format`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Standard Billing vs. AIA G702/G703 Format", "Comparison"),
   },
 };
 

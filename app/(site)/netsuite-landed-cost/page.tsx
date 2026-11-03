@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -126,7 +127,7 @@ export const metadata: Metadata = {
       "NetSuite landed cost allocates freight, duty, and customs fees to inventory item costs before goods are available for sale. SuitePacific configures landed cost templates, allocation methods, and late-arrival workflows for importers and distributors.",
     url: `${SITE_URL}/netsuite-landed-cost`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Landed Cost: Freight, Duty, and Customs Allocation to Inventory"),
   },
 };
 

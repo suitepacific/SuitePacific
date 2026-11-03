@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const CHALLENGES = [
   { icon: Gauge, title: "Dashboard portlet searches running on every page load", description: "Every saved search pinned to a home page portlet executes live each time any user with that role opens their dashboard. A portlet search joining three record types with four formula columns runs dozens or hundreds of times per day. A single poorly optimized portlet search is the most common cause of a NetSuite account that feels slow for everyone simultaneously." },
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
     description: "Fix a slow NetSuite account. SuitePacific diagnoses and fixes the configuration issues that cause NetSuite slowness: portlet searches, script governance, workflows, and metadata.",
     url: `${SITE_URL}/netsuite-performance-issues`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Running Slow? Performance Fixes | SuitePacific"),
   },
 };
 

@@ -14,6 +14,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const WHY_SP = [
   {
@@ -81,7 +82,7 @@ export const metadata: Metadata = {
       "A side-by-side comparison of Oracle NetSuite support and third-party consulting firms: what each covers, response time, cost structure, and when each is the right choice.",
     url: `${SITE_URL}/netsuite-oracle-support-vs-third-party`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Oracle Support vs. Third-Party Consulting Firm", "Comparison"),
   },
 };
 

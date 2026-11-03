@@ -23,6 +23,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const CHALLENGES = [
   {
@@ -275,7 +276,7 @@ export const metadata: Metadata = {
       "NetSuite post-go-live support and development for retail and e-commerce companies. Channel order management, inventory automation, and Shopify integration.",
     url: "https://suitepacific.com/industries/retail-ecommerce",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support for Retail & E-commerce Companies", "Industries"),
   },
 };
 

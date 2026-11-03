@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COMPARISON_ROWS = [
   { feature: "Custom fields", configuration: "Yes", customization: "Not needed" },
@@ -122,7 +123,7 @@ export const metadata: Metadata = {
       "Configuration covers no-code NetSuite changes. Customization means SuiteScript. This guide helps live NetSuite accounts decide when a developer is needed.",
     url: `${SITE_URL}/netsuite-configuration-vs-customization`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Configuration vs. Customization: When to Script", "Comparison"),
   },
 };
 

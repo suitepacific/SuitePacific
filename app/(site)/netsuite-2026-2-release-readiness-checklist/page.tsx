@@ -8,6 +8,7 @@ import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { ChecklistDownloadForm } from "@/components/sections/ChecklistDownloadForm";
 import { SITE_URL } from "@/lib/content";
 import { CHECKLIST_ITEMS, SECTIONS, type Priority } from "./checklist-data";
+import { ogImages } from "@/lib/og";
 
 export const metadata: Metadata = {
   title: "NetSuite 2026.2 Release Readiness Checklist",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
       "Prepare for NetSuite 2026.2 with a practical release readiness checklist covering Finance, Integrations, SuiteScript, Reporting, Manufacturing, Inventory, Security, and more.",
     url: `${SITE_URL}/netsuite-2026-2-release-readiness-checklist`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite 2026.2 Release Readiness Checklist"),
   },
 };
 

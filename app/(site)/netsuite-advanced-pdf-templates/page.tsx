@@ -13,6 +13,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -145,7 +146,7 @@ export const metadata: Metadata = {
     description: "Custom NetSuite Advanced PDF/HTML templates: branded invoices, statements, purchase orders, and packing slips with conditional sections, dynamic layouts, and barcode support.",
     url: "https://suitepacific.com/netsuite-advanced-pdf-templates",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Advanced PDF Templates"),
   },
 };
 

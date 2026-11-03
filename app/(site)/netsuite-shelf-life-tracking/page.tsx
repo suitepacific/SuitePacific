@@ -18,6 +18,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -144,7 +145,7 @@ export const metadata: Metadata = {
       "NetSuite shelf life tracking and FEFO picking enforcement for food, beverage, and perishable goods companies. Expiry date alerts, minimum shelf life validation, and recall traceability.",
     url: `${SITE_URL}/netsuite-shelf-life-tracking`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Shelf Life Tracking and FEFO Enforcement | SuitePacific"),
   },
 };
 

@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const CHALLENGES = [
   { icon: Percent, title: "Royalty billing to franchisees", description: "Weekly or monthly royalty invoices to franchisees based on gross sales reported from POS systems require custom SuiteScript that reads franchisee sales data, applies the royalty rate per franchise agreement, and generates invoices automatically without manual calculation." },
@@ -72,7 +73,7 @@ export const metadata: Metadata = {
     description: "NetSuite support for franchisors: automated royalty billing from POS data, marketing fund contribution scripts, franchisee performance dashboards, and agreement tracking.",
     url: `${SITE_URL}/industries/franchise`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support for Franchise Operations | SuitePacific", "Industries"),
   },
 };
 

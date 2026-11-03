@@ -11,6 +11,7 @@ import { SITE_URL, LEGAL_NAME } from "@/lib/content";
 import { getAllResourceSlugs, getAllResources, getResourceBySlug } from "@/lib/resources";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { PreferredSourceButton, splitAtQABlock } from "@/components/ui/PreferredSourceButton";
+import { ogImages } from "@/lib/og";
 
 export function generateStaticParams() {
   return getAllResourceSlugs().map((slug) => ({ slug }));
@@ -34,7 +35,7 @@ export async function generateMetadata({
       type: "article",
       publishedTime: resource.publishedAt,
       url: `${SITE_URL}/resources/${slug}`,
-      images: [{ url: "/og-default.png", width: 1200, height: 630 }],
+      images: ogImages(resource.title, resource.category || "Resource"),
     },
   };
 }

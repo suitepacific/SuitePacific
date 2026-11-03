@@ -29,6 +29,7 @@ import {
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const CHALLENGES = [
   {
@@ -276,7 +277,7 @@ export const metadata: Metadata = {
       "NetSuite post-go-live support and development for nonprofits. Fund restriction enforcement, grant tracking, board reporting dashboards, and 990 preparation.",
     url: "https://suitepacific.com/industries/nonprofit",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support for Nonprofit Organizations", "Industries"),
   },
 };
 

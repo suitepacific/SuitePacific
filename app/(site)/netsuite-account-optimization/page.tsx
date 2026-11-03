@@ -14,6 +14,7 @@ import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { InlineCta } from "@/components/sections/InlineCta";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -146,7 +147,7 @@ export const metadata: Metadata = {
     description: "Slow pages, governance errors, and scripts that fire on every save are fixable. SuitePacific troubleshoots and optimizes live NetSuite accounts: script governance, saved search performance, workflow consolidation, and configuration cleanup. Plans from $799/month.",
     url: "https://suitepacific.com/netsuite-account-optimization",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Optimization: Performance Troubleshooting, Technical Debt, and Account Cleanup"),
   },
 };
 

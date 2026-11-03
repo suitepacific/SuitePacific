@@ -17,6 +17,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -155,7 +156,7 @@ export const metadata: Metadata = {
       "Renewal automation, proration logic, cancellation workflows, and subscription health dashboards for SaaS companies on NetSuite. Oracle-certified, direct developer access.",
     url: `${SITE_URL}/netsuite-subscription-management`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Subscription Management for SaaS Companies"),
   },
 };
 

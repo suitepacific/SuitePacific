@@ -6,6 +6,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COMPARISON_ROWS = [
   { task: "Status transition on WO update", suiteflow: "Yes", suitescript: "Not required" },
@@ -119,7 +120,7 @@ export const metadata: Metadata = {
       "SuiteFlow handles work order routing and notifications. Component deduction, lot assignment, finished goods posting, and variance calculation require SuiteScript. Both tools work together in most production automation builds.",
     url: `${SITE_URL}/netsuite-work-order-suiteflow-vs-suitescript`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Work Orders: SuiteFlow vs. SuiteScript", "Comparison"),
   },
 };
 

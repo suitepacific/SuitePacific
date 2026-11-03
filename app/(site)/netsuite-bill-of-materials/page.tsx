@@ -12,6 +12,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -126,7 +127,7 @@ export const metadata: Metadata = {
       "NetSuite BOM setup and SuiteScript automation for manufacturers: multi-level assembly configuration, component substitution tracking, BOM revision control, and standard vs. actual cost variance reporting.",
     url: `${SITE_URL}/netsuite-bill-of-materials`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Bill of Materials Configuration"),
   },
 };
 

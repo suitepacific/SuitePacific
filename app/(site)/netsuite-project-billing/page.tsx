@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const BILLING_GAPS = [
   {
@@ -113,7 +114,7 @@ export const metadata: Metadata = {
       "NetSuite project billing requires billing rule configuration, approval workflows, and scripting for consolidated invoices. SuitePacific configures project billing for professional services firms already live on NetSuite.",
     url: `${SITE_URL}/netsuite-project-billing`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Project Billing: T&M, Fixed-Fee, and Consolidated Client Invoicing"),
   },
 };
 

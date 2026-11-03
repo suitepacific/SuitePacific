@@ -5,6 +5,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const ACS_TIERS = [
   {
@@ -91,7 +92,7 @@ export const metadata: Metadata = {
     description: "How Oracle prices NetSuite ACS across four tiers: Advise, Monitor, Optimize, Architect. Cost examples, scope breakdown, and comparison to managed support alternatives.",
     url: "https://suitepacific.com/netsuite-acs-pricing",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite ACS Pricing: 2026 Cost Breakdown by Tier"),
   },
 };
 

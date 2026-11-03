@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COMPARISON_ROWS = [
   { capability: "Receipt OCR scanning", native: "No (manual upload)", expensify: "Yes", ramp: "Yes" },
@@ -118,7 +119,7 @@ export const metadata: Metadata = {
       "When native NetSuite expense reports are sufficient and when integrating Expensify, Ramp, or Concur adds real value for a controller at a live NetSuite account.",
     url: `${SITE_URL}/netsuite-expense-management-native-vs-expensify`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Native Expenses vs. Expensify Integration", "Comparison"),
   },
 };
 

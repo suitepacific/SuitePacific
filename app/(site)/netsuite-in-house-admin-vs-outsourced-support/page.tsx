@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COMPARISON_ROWS = [
   { factor: "Annual cost", inhouse: "$90,000–$130,000 (salary + benefits + taxes)", outsourced: "$9,588–$29,988 ($799–$2,499/month)" },
@@ -112,7 +113,7 @@ export const metadata: Metadata = {
       "Compare the real cost and capability of a full-time NetSuite administrator versus outsourced specialist support for live NetSuite accounts. Updated for 2026.",
     url: `${SITE_URL}/netsuite-in-house-admin-vs-outsourced-support`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite: In-House Admin vs. Outsourced Specialist", "Comparison"),
   },
 };
 

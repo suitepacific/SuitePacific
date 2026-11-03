@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const ENTITY_STRUCTURE = [
   { scenario: "Single property LLC", structure: "One subsidiary per property; parent holds management company", what: "Property-level P&L, balance sheet, and cash flow isolated from other assets" },
@@ -68,7 +69,7 @@ export const metadata: Metadata = {
     description: "NetSuite real estate accounting for property owners, developers, and investment managers. SuitePacific configures OneWorld multi-entity structure, investor capital accounts, equity waterfall scripts, and property-level financial statements.",
     url: `${SITE_URL}/netsuite-real-estate-accounting`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Real Estate Accounting: Multi-Entity Setup, Investor Tracking, and Equity Waterfall"),
   },
 };
 

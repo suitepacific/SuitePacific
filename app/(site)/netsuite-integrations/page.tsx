@@ -13,6 +13,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -169,7 +170,7 @@ export const metadata: Metadata = {
     description: "Custom NetSuite integrations: RESTlet-based connections, scheduled sync scripts, and API integrations connecting NetSuite to e-commerce platforms, 3PLs, payment processors, and custom applications.",
     url: "https://suitepacific.com/netsuite-integrations",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Integration Development and Maintenance", "Integrations"),
   },
 };
 

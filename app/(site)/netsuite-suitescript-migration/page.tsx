@@ -15,6 +15,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { FreeScriptCheckForm } from "@/components/sections/FreeScriptCheckForm";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 export const metadata: Metadata = {
   title: "NetSuite SuiteScript 2.1 Migration Services",
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
       "Oracle NetSuite has confirmed SuiteScript 1.0, 2.0, and 2.x scripts will stop working in the 2028.2 release. SuitePacific audits, converts, tests, and deploys legacy scripts before the deadline.",
     url: `${SITE_URL}/netsuite-suitescript-migration`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite SuiteScript 2.1 Migration Services | SuitePacific"),
   },
 };
 

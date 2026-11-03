@@ -6,6 +6,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const WHY_SLOW = [
   {
@@ -66,7 +67,7 @@ export const metadata: Metadata = {
     description: "Slow NetSuite partner response is structural, not fixable. Here is why it happens and what a support-first model looks like instead.",
     url: "https://suitepacific.com/netsuite-partner-too-slow",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Partner Too Slow? Why It Happens and What to Do"),
   },
 };
 

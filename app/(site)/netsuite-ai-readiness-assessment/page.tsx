@@ -29,6 +29,7 @@ import {
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -327,7 +328,7 @@ export const metadata: Metadata = {
       "Assess whether your NetSuite is ready for SuiteAgents, SuiteSkills, and AI integrations. SuitePacific identifies real opportunities and what your setup needs first.",
     url: `${SITE_URL}/netsuite-ai-readiness-assessment`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite AI Readiness Assessment | SuitePacific"),
   },
 };
 

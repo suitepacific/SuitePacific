@@ -12,6 +12,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -126,7 +127,7 @@ export const metadata: Metadata = {
       "NetSuite demand planning configuration for wholesale distributors: parameter setup by SKU, lead time cleanup, safety stock calculations, and suggested PO logic with MOQ and price-break handling.",
     url: `${SITE_URL}/netsuite-demand-planning`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Demand Planning and Replenishment Configuration"),
   },
 };
 

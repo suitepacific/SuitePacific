@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const CHALLENGES = [
   { icon: Shield, title: "DCAA compliance and indirect rate pools", description: "Defense Contract Audit Agency compliance requires segregating costs into DCAA-compliant indirect rate pools: fringe, overhead, and G&A. Standard NetSuite cost allocation does not produce the pool structure or rate calculation format that incurred cost submissions require without custom SuiteScript builds." },
@@ -72,7 +73,7 @@ export const metadata: Metadata = {
     description: "NetSuite support for federal contractors: DCAA indirect rate pools, ICE schedule extraction, unallowable cost tracking, and CLIN billing scripts.",
     url: `${SITE_URL}/industries/government-contractors`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support for Government Contractors | SuitePacific", "Industries"),
   },
 };
 

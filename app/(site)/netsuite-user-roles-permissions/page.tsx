@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COMMON_PROBLEMS = [
   { icon: XCircle, title: "Administrator overuse.", description: "The Administrator role grants unrestricted access to the entire account. It is assigned at implementation because it is easier than scoping a correct role, and it accumulates users who do not need it. Every extra administrator is an audit finding." },
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
     description: "Most live NetSuite accounts have over-permissioned users, stale role assignments, and undocumented custom roles. SuitePacific audits role architecture, cleans up incorrect permissions, and rebuilds roles so every user has exactly the access their job requires.",
     url: `${SITE_URL}/netsuite-user-roles-permissions`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite User Roles and Permissions: Role Audit, Cleanup, and Architecture"),
   },
 };
 

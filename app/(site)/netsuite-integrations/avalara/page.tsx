@@ -12,6 +12,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -142,7 +143,7 @@ export const metadata: Metadata = {
     description: "Connect NetSuite to Avalara AvaTax for real-time tax calculation, exemption management, and transaction reconciliation. Includes Avalara configuration review.",
     url: "https://suitepacific.com/netsuite-integrations/avalara",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Avalara Integration", "Integrations"),
   },
 };
 

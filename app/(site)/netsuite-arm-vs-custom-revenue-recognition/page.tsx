@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COMPARISON_ROWS = [
   { capability: "Multi-element arrangement", arm: "Yes", custom: "No" },
@@ -93,7 +94,7 @@ export const metadata: Metadata = {
       "NetSuite ARM vs. custom SuiteScript for ASC 606 rev rec: when the module is required, what custom scripts handle, and the cost difference for live accounts.",
     url: `${SITE_URL}/netsuite-arm-vs-custom-revenue-recognition`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite ARM vs. Custom Revenue Recognition Scripts", "Comparison"),
   },
 };
 

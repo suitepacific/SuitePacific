@@ -9,6 +9,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 import { RelatedComparisons } from "@/components/sections/RelatedComparisons";
+import { ogImages } from "@/lib/og";
 
 const BILL_CAPTURE_GAPS = [
   {
@@ -121,7 +122,7 @@ export const metadata: Metadata = {
       "NetSuite Automated Bill Capture creates draft vendor bills but does not code them, match them to POs, or route them for approval without configuration. SuitePacific builds the complete AP setup: GL coding logic, three-way matching, and approval workflows for companies already live on NetSuite.",
     url: `${SITE_URL}/netsuite-ap-automation`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite AP Automation: GL Coding, Bill Capture, and Approval Workflows"),
   },
 };
 

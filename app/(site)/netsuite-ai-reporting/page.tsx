@@ -20,6 +20,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const EXAMPLE_QUESTIONS = [
   {
@@ -239,7 +240,7 @@ export const metadata: Metadata = {
       "Account-specific AI reporting for NetSuite. SuitePacific builds AI Connector setups and Suitelet-based assistants that let teams query NetSuite data in plain language, with role-aware access and account-specific business logic.",
     url: `${SITE_URL}/netsuite-ai-reporting`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite AI Reporting: Ask Questions in Plain Language"),
   },
 };
 

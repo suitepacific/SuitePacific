@@ -17,6 +17,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -128,7 +129,7 @@ export const metadata: Metadata = {
       "SuitePacific builds ARR and MRR reporting for SaaS companies on NetSuite: SuiteQL queries, dashboard KPI portlets, churn and expansion analysis, and cohort reports from SuiteBilling data.",
     url: `${SITE_URL}/netsuite-arr-mrr-reporting`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite ARR and MRR Reporting for SaaS Companies"),
   },
 };
 

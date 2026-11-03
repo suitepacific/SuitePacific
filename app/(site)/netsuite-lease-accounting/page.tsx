@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const LEASE_OBJECTS = [
   { object: "Lease Record", description: "Stores the lease contract terms: commencement date, end date, base rent, discount rate, and classification (operating vs. finance)" },
@@ -66,7 +67,7 @@ export const metadata: Metadata = {
     description: "NetSuite lease accounting for ASC 842 and IFRS 16 requires setup that does not happen automatically. SuitePacific configures lease records, ROU asset and liability schedules, modification workflows, and disclosure saved searches for real estate and corporate finance teams.",
     url: `${SITE_URL}/netsuite-lease-accounting`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Lease Accounting: ASC 842 Configuration and ROU Asset Setup"),
   },
 };
 

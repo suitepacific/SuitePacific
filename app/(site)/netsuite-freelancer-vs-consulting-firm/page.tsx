@@ -7,6 +7,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL, LEGAL_NAME } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COMPARISON_ROWS = [
   {
@@ -120,7 +121,7 @@ export const metadata: Metadata = {
       "Practical trade-offs between a freelance NetSuite developer and a consulting firm: accountability, continuity, cost structure, and which model fits your situation.",
     url: "https://suitepacific.com/netsuite-freelancer-vs-consulting-firm",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Freelancer vs. Consulting Firm: How to Choose", "Comparison"),
   },
 };
 

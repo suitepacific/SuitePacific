@@ -4,6 +4,7 @@ import { CheckCircle2, ShieldCheck, Clock, Star } from "lucide-react";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL, CONTACT_EMAIL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const WHAT_TO_EXPECT = [
   "We'll respond within one business day",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     description: "Get in touch with SuitePacific for NetSuite post-go-live support, SuiteScript development, workflow automation, and integrations. Book a free consultation, no long-term contracts.",
     url: "https://suitepacific.com/contact",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("Contact SuitePacific | Book a Free NetSuite Consultation"),
   },
 };
 

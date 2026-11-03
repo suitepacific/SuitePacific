@@ -7,6 +7,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COVERED = [
   "Platform-level bug reports (incorrect behavior in standard functionality)",
@@ -117,7 +118,7 @@ export const metadata: Metadata = {
       "Exactly what Oracle NetSuite standard support covers and what it excludes: SuiteScript, integrations, workflows, custom fields. What ACS adds, and what still requires a third-party resource.",
     url: `${SITE_URL}/what-netsuite-support-covers`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("What Does NetSuite Support Cover?"),
   },
 };
 

@@ -6,6 +6,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const RESPONSIVE_COMPARISON = [
   { aspect: "Response on urgent issues", unresponsive: "No defined SLA; may sit open for days", responsive: "Same-day escalation for production issues" },
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
     description: "An unresponsive NetSuite partner is a sign the relationship has run its course. What causes it and what the transition to a better model looks like.",
     url: "https://suitepacific.com/netsuite-partner-not-responsive",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Partner Not Responsive: When to Switch and How"),
   },
 };
 

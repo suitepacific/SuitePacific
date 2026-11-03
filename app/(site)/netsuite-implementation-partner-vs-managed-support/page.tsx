@@ -8,6 +8,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL, LEGAL_NAME } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const FAQ = [
   {
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     description: "Understanding the difference between NetSuite implementation partners and managed services providers: what each covers, when you need each, and how to choose the right model for your business.",
     url: "https://suitepacific.com/netsuite-implementation-partner-vs-managed-support",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Implementation Partner vs. Managed Support", "Comparison"),
   },
 };
 

@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const CHALLENGES = [
   { icon: Plug, title: "PSA integration with ConnectWise, Autotask, or HaloPSA", description: "MSPs using ConnectWise Manage, Autotask, HaloPSA, or ServiceNow for ticketing and time tracking need bidirectional integrations that sync client contracts, service tickets, and time entries to NetSuite for billing and revenue recognition without duplicate data entry between the PSA and ERP." },
@@ -72,7 +73,7 @@ export const metadata: Metadata = {
     description: "NetSuite support for MSPs: ConnectWise and Autotask integrations, managed services recurring billing automation, technician utilization reporting, and client profitability analysis.",
     url: `${SITE_URL}/industries/managed-service-providers`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support for Managed Service Providers | SuitePacific", "Industries"),
   },
 };
 

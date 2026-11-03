@@ -21,6 +21,7 @@ import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { InlineCta } from "@/components/sections/InlineCta";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const TRIGGER_POINTS = [
   {
@@ -204,7 +205,7 @@ export const metadata: Metadata = {
     description: "Switching NetSuite partners or taking over from an implementation that ended. SuitePacific reviews your existing account independently and takes over ongoing development, administration, and support.",
     url: "https://suitepacific.com/netsuite-partner-replacement",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Partner Replacement"),
   },
 };
 

@@ -21,6 +21,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const CHALLENGES = [
   {
@@ -273,7 +274,7 @@ export const metadata: Metadata = {
       "NetSuite post-go-live support and development for professional services firms. Project accounting, billing automation, and profitability reporting.",
     url: "https://suitepacific.com/industries/professional-services",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Support for Professional Services Firms", "Industries"),
   },
 };
 

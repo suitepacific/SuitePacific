@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COMPARISON_ROWS = [
   { control: "PO required before bill", native: "No (soft warning at most)", custom: "Hard block if no linked PO" },
@@ -91,7 +92,7 @@ export const metadata: Metadata = {
       "Why native NetSuite does not block unapproved bills, and what SuiteScript three-way match enforcement looks like for controllers who need hard PO controls.",
     url: `${SITE_URL}/netsuite-three-way-match-native-vs-custom`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Three-Way Match: Native vs. Custom Enforcement", "Comparison"),
   },
 };
 

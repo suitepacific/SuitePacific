@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd } from "
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const COMPARISON_TABLE = [
   { factor: "Monthly cost", acs: "~$2,500-$5,000+ (approximate; contact Oracle)", sp: "$799-$2,499" },
@@ -106,7 +107,7 @@ export const metadata: Metadata = {
       "NetSuite ACS is Oracle&apos;s internal advisory service. A construction specialist provides active SuiteScript development, AIA billing scripts, and WIP report builds. Comparison for live construction accounts.",
     url: `${SITE_URL}/netsuite-acs-vs-construction-specialist`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite ACS vs. Construction Specialist Support", "Comparison"),
   },
 };
 

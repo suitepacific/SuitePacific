@@ -25,6 +25,7 @@ import { InlineCta } from "@/components/sections/InlineCta";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
 import { RelatedComparisons } from "@/components/sections/RelatedComparisons";
+import { ogImages } from "@/lib/og";
 
 const SUPPORT_PHASES = [
   {
@@ -332,7 +333,7 @@ export const metadata: Metadata = {
     description: "Ongoing NetSuite post-go-live support and managed support: SuiteScript development, workflow automation, integrations, reporting, and administration after your implementation partner's work is done.",
     url: "https://suitepacific.com/netsuite-post-go-live-support",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Post-Go-Live Support"),
   },
 };
 

@@ -18,6 +18,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -192,7 +193,7 @@ export const metadata: Metadata = {
       "Third-party NetSuite consultants who respond faster, know your account, and cover the customizations and integrations that Oracle support does not handle.",
     url: `${SITE_URL}/netsuite-support-alternative`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("Alternative to NetSuite Support"),
   },
 };
 

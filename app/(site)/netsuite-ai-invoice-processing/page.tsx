@@ -19,6 +19,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const WHAT_IT_HANDLES = [
   {
@@ -197,7 +198,7 @@ export const metadata: Metadata = {
       "Extend NetSuite invoice automation with AI-powered extraction, line-item validation, PO matching, and exception routing. Custom SuiteScript integration built on Oracle's N/documentCapture. SuiteCloud Developer II certified.",
     url: `${SITE_URL}/netsuite-ai-invoice-processing`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite AI Invoice Processing"),
   },
 };
 

@@ -10,6 +10,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -136,7 +137,7 @@ export const metadata: Metadata = {
       "NetSuite grant management for nonprofits: grant tracking, budget vs. actual by grant, expense attribution, and funder reporting. Plans from $799/month.",
     url: `${SITE_URL}/netsuite-grant-management`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite Grant Management Configuration for Nonprofits | SuitePacific"),
   },
 };
 

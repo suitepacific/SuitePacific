@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL } from "@/lib/content";
 import { CASE_STUDIES_DETAIL } from "@/lib/case-studies";
+import { ogImages } from "@/lib/og";
 
 export const metadata: Metadata = {
   title: "NetSuite Case Studies",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     description: "Real NetSuite customization projects: dashboards, approval workflows, invoice automation, PDF templates, integrations, and operational reporting, built for post-go-live accounts.",
     url: "https://suitepacific.com/case-studies",
     type: "website",
-    images: [{ url: "https://suitepacific.com/og-default.png", width: 1200, height: 630 }],
+    images: ogImages("NetSuite Case Studies"),
   },
 };
 

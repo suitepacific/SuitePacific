@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { ogImages } from "@/lib/og";
 
 const PAIN_POINTS = [
   {
@@ -126,7 +127,7 @@ export const metadata: Metadata = {
       "NetSuite does not connect to third-party logistics providers natively. SuitePacific builds the order transmission, inventory sync, shipment confirmation, and returns receipt integration between NetSuite and your 3PL.",
     url: `${SITE_URL}/netsuite-3pl-integration`,
     type: "website",
-    images: [{ url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 }],
+    images: ogImages("NetSuite 3PL Integration: Order Transmission, Inventory Sync, and Shipment Confirmation"),
   },
 };
 
