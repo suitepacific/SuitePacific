@@ -664,7 +664,7 @@ export default function AcsAlternativePage() {
               covers how an ongoing third-party engagement is structured after implementation.
             </li>
             <li className="text-sm text-brand-400">
-              <Link href="/blog/netsuite-support-partner-evaluation" className="text-accent hover:underline">
+              <Link href="/blog/how-to-evaluate-netsuite-support-partner" className="text-accent hover:underline">
                 How to evaluate a NetSuite support partner
               </Link>{" "}
               covers the questions to ask when comparing support options.

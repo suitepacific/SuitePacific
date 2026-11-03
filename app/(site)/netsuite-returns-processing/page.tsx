@@ -103,7 +103,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Returns Processing and RMA Configuration | SuitePacific",
+  title: "NetSuite Returns Processing and RMA Configuration",
   description:
     "RMA automation, disposition workflow for restock, quarantine, damaged, and vendor returns, and credit memo automation for NetSuite. Plans from $799/month.",
   alternates: { canonical: "/netsuite-returns-processing" },

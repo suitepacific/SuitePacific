@@ -126,7 +126,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Nonprofit Reporting Configuration | SuitePacific",
+  title: "NetSuite Nonprofit Reporting Configuration",
   description:
     "Statement of Activities, functional expense allocation, and board reporting saved searches for nonprofit organizations on NetSuite. Plans from $799/month.",
   alternates: { canonical: "/netsuite-nonprofit-reporting" },

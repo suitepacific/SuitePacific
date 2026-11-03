@@ -245,7 +245,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Support for Fintech Companies | SuitePacific",
+  title: "NetSuite Support for Fintech Companies",
   description:
     "NetSuite post-go-live support for fintech companies. ASC 606 automation, payment reconciliation, investor reporting, SOD compliance, and multi-entity consolidation.",
   alternates: { canonical: "/industries/fintech" },

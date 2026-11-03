@@ -1,23 +1,15 @@
+import fs from "node:fs";
+import path from "node:path";
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
 import { SITE_URL } from "@/lib/content";
 import { getAllCaseStudySlugs } from "@/lib/case-studies";
-import { getAllResources } from "@/lib/resources";
+import { getAllResources, REDIRECTED_RESOURCE_SLUGS } from "@/lib/resources";
 
 const SITE_LAUNCH_DATE = new Date("2026-06-01");
 const SEO_REFRESH_DATE = new Date("2026-08-05");
 const NEW_PAGES_DATE = new Date("2026-08-11");
 const KW_GAP_DATE = new Date("2026-08-13");
-
-// These resource slugs redirect to /blog/* equivalents - exclude from sitemap to avoid 301s
-const REDIRECTED_RESOURCE_SLUGS = new Set([
-  "netsuite-user-event-vs-client-script",
-  "netsuite-rest-batch-sequential",
-  "netsuite-suiteql-bound-parameters",
-  "netsuite-sales-order-fulfillment-list",
-  "netsuite-currency-context-custom-fields",
-  "netsuite-suitetax-term-discounts",
-]);
 
 const INDUSTRY_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/industries", lastModified: new Date("2026-09-23") },
@@ -48,6 +40,25 @@ const INDUSTRY_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/netsuite-support-uk", lastModified: new Date("2026-08-15") },
   { path: "/netsuite-suitebilling-support", lastModified: new Date("2026-08-15") },
 ];
+
+// Blog slugs redirected in next.config.ts - their markdown still exists, so exclude them explicitly
+const REDIRECTED_BLOG_SLUGS = new Set(["netsuite-support-partner-evaluation"]);
+
+// Pages deliberately left out of the sitemap
+const EXCLUDED_PATHS = new Set(["/privacy"]);
+
+// Safety net: any static page under app/(site) that is missing from the lists below is still emitted
+function discoverStaticPages(dir = path.join(process.cwd(), "app", "(site)"), base = ""): string[] {
+  const found: string[] = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (!entry.isDirectory() || entry.name.startsWith("[") || entry.name.startsWith("(")) continue;
+    const route = `${base}/${entry.name}`;
+    if (fs.existsSync(path.join(dir, entry.name, "page.tsx"))) found.push(route);
+    found.push(...discoverStaticPages(path.join(dir, entry.name), route));
+  }
+  return found;
+}
+const UNLISTED_PAGE_DATE = new Date("2026-11-04");
 
 const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/hire-netsuite-developer", lastModified: SEO_REFRESH_DATE },
@@ -181,12 +192,18 @@ const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/netsuite-financial-close-manual-vs-automated", lastModified: new Date("2026-10-18") },
   { path: "/netsuite-expense-management-native-vs-expensify", lastModified: new Date("2026-10-18") },
   { path: "/netsuite-consolidation-oneworld-vs-prophix", lastModified: new Date("2026-10-18") },
+  // Oct-Nov 2026
+  { path: "/netsuite-wip-reporting", lastModified: new Date("2026-11-04") },
+  { path: "/netsuite-ai-readiness-assessment", lastModified: new Date("2026-11-04") },
+  { path: "/netsuite-migration-from-quickbooks", lastModified: new Date("2026-09-17") },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getAllPosts();
   const caseStudySlugs = getAllCaseStudySlugs();
   const resources = getAllResources();
+  const listed = new Set(["/blog", "/resources", "/case-studies", "/press", ...INDUSTRY_PAGES.map((p) => p.path), ...SERVICE_PAGES.map((p) => p.path)]);
+  const unlisted = discoverStaticPages().filter((p) => !listed.has(p) && !EXCLUDED_PATHS.has(p));
 
   return [
     { url: SITE_URL, lastModified: SEO_REFRESH_DATE },
@@ -202,6 +219,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${SITE_URL}${path}`,
       lastModified,
     })),
+    ...unlisted.map((p) => ({ url: `${SITE_URL}${p}`, lastModified: UNLISTED_PAGE_DATE })),
     ...caseStudySlugs.map((slug) => ({
       url: `${SITE_URL}/case-studies/${slug}`,
       lastModified: SITE_LAUNCH_DATE,
@@ -210,9 +228,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       .filter((resource) => !REDIRECTED_RESOURCE_SLUGS.has(resource.slug))
       .map((resource) => ({
         url: `${SITE_URL}/resources/${resource.slug}`,
-        lastModified: new Date(resource.publishedAt),
+        lastModified: new Date(resource.updatedAt ?? resource.publishedAt),
       })),
-    ...posts.map((post) => ({
+    ...posts.filter((post) => !REDIRECTED_BLOG_SLUGS.has(post.slug)).map((post) => ({
       url: `${SITE_URL}/blog/${post.slug}`,
       lastModified: new Date(post.updated ?? post.date),
     })),

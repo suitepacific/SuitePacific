@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/content";
 import { TestimonialStrip } from "@/components/sections/TestimonialStrip";
 
 export const metadata: Metadata = {
-  title: "NetSuite Managed Services Pricing | SuitePacific",
+  title: "NetSuite Managed Services Pricing",
   description:
     "NetSuite managed services pricing: $799 to $12,000+ per month. SuitePacific publishes three plans with no hidden rates, no setup fee, and no annual contract.",
   alternates: { canonical: "/netsuite-managed-services-pricing" },

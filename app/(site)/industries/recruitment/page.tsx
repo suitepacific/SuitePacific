@@ -245,7 +245,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Support for Recruitment & Staffing Companies | SuitePacific",
+  title: "NetSuite Support for Recruitment & Staffing Companies",
   description:
     "NetSuite post-go-live support for recruitment and staffing firms. Timesheet-to-invoice automation, commission scripts, ATS integration, and branch P&L reporting.",
   alternates: { canonical: "/industries/recruitment" },

@@ -134,7 +134,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Shelf Life Tracking and FEFO Enforcement | SuitePacific",
+  title: "NetSuite Shelf Life Tracking and FEFO Enforcement",
   description:
     "FEFO enforcement, expiry date alerting, and lot recall traceability for food and beverage companies on NetSuite. SuiteCloud Developer II certified. From $799.",
   alternates: { canonical: "/netsuite-shelf-life-tracking" },

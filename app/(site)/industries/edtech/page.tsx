@@ -64,7 +64,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Support for EdTech & Education Companies | SuitePacific",
+  title: "NetSuite Support for EdTech & Education Companies",
   description: "NetSuite post-go-live support for EdTech companies. Enrollment revenue recognition, grant management, LMS integrations, and deferred tuition management.",
   alternates: { canonical: "/industries/edtech" },
   openGraph: {

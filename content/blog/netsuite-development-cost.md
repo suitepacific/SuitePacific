@@ -150,7 +150,7 @@ Hourly billing without a scope cap creates cost uncertainty. For large, complex 
 
 If you have a requirement scoped and want to understand whether the quote you received is fair, or if you are still defining the requirement and want to talk through the approach before committing to a scope, that is exactly where we help. We do not charge for the initial conversation. Tell us what you are trying to build, and we will tell you how we would approach it and what it would cost. Our [SuiteScript development](/netsuite-suitescript-development) and [post-go-live support](/netsuite-post-go-live-support) pages explain how the engagement works.
 
-For related reading: [NetSuite implementation partner vs. post-go-live support](/blog/netsuite-implementation-partner-vs-managed-support), [how to evaluate a NetSuite support partner](/blog/netsuite-support-partner-evaluation), and [8 signs your NetSuite support isn't working](/blog/signs-netsuite-support-not-working).
+For related reading: [NetSuite implementation partner vs. post-go-live support](/blog/netsuite-implementation-partner-vs-managed-support), [how to evaluate a NetSuite support partner](/blog/how-to-evaluate-netsuite-support-partner), and [8 signs your NetSuite support isn't working](/blog/signs-netsuite-support-not-working).
 
 ## Related reading
 

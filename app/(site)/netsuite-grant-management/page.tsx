@@ -126,7 +126,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Grant Management Configuration for Nonprofits | SuitePacific",
+  title: "NetSuite Grant Management Configuration for Nonprofits",
   description:
     "Grant records, budget vs actual reporting, and deadline alert workflows for nonprofits on NetSuite. SuiteCloud Developer II certified. Plans from $799/month.",
   alternates: { canonical: "/netsuite-grant-management" },

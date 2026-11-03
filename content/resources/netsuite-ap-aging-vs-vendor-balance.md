@@ -25,7 +25,7 @@ Because the two reports use different logic, they can produce different totals e
 
 ## The As of Date Effect
 
-The AP Aging report has an As of Date parameter. The report shows AP balances as they existed on that date — it excludes transactions posted after the As of Date.
+The AP Aging report has an As of Date parameter. The report shows AP balances as they existed on that date; it excludes transactions posted after the As of Date.
 
 If the AP Aging report is run with an As of Date of June 30, a vendor bill entered on July 2 will not appear in the report. The Vendor Balance, however, shows the current outstanding balance including that July 2 bill.
 
@@ -57,12 +57,12 @@ A vendor has two open bills:
 **Vendor Balance on June 30:** $30,000 (both bills are open and unpaid)
 
 **AP Aging run on June 30 with Due Date aging:**
-- Bill A: Due July 1, not yet due — Current: $20,000
-- Bill B: Due June 30, due today — Current: $10,000
+- Bill A: Due July 1, not yet due; Current: $20,000
+- Bill B: Due June 30, due today; Current: $10,000
 - Total: $30,000 (matches Vendor Balance in this case)
 
 **AP Aging run on June 30 with Due Date aging, As of Date = June 15:**
-- Bill A: Due July 1, not yet due as of June 15 — Current: $20,000
+- Bill A: Due July 1, not yet due as of June 15; Current: $20,000
 - Bill B: Not yet entered as of June 15 (entered June 15, but As of Date cutoff may exclude it depending on how the report handles same-day transactions)
 - Total: may not match current Vendor Balance
 
@@ -79,5 +79,5 @@ Only after confirming these settings should you look for missing or duplicate tr
 
 ## Related Resources
 
-- [NetSuite Transaction Date vs Posting Period](/resources/netsuite-transaction-date-vs-posting-period): the related concept on the revenue side — a transaction date and the period it posts to can differ, which affects financial report totals the same way As of Date affects AP Aging.
+- [NetSuite Transaction Date vs Posting Period](/resources/netsuite-transaction-date-vs-posting-period): the related concept on the revenue side, a transaction date and the period it posts to can differ, which affects financial report totals the same way As of Date affects AP Aging.
 - [NetSuite post-go-live support](/netsuite-post-go-live-support): accounting and reporting support for live NetSuite accounts.

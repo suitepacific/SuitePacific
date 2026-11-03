@@ -60,4 +60,4 @@ SuitePacific provides ongoing NetSuite support for medical device and pharmaceut
 - [NetSuite healthcare support](/industries/healthcare): full overview of post-go-live support for medical device, pharma, and health tech companies
 - [NetSuite SuiteScript development](/netsuite-suitescript-development): custom script builds for FEFO picking, expiry alerts, and lot traceability
 - [NetSuite lot and serial tracking](/netsuite-lot-serial-tracking): lot and serial number configuration, bin management, and compliance reporting
-- [NetSuite quality management](/netsuite-quality-management): CAPA workflows, non-conformance records, and audit trail configuration
+- [NetSuite lot tracking: native vs. enforced](/netsuite-lot-tracking-native-vs-enforced): why NetSuite lets transactions save with a blank lot number, and how SuiteScript enforces it

@@ -512,7 +512,7 @@ export default function NetSuiteManagedSupportPage() {
               covers why certification matters and what to look for when evaluating a managed support firm.
             </li>
             <li className="text-sm text-brand-400">
-              <Link href="/blog/netsuite-support-partner-evaluation" className="text-accent hover:underline">
+              <Link href="/blog/how-to-evaluate-netsuite-support-partner" className="text-accent hover:underline">
                 How to evaluate a NetSuite support partner
               </Link>{" "}
               covers the full checklist for comparing firms before committing to a retainer.

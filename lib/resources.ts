@@ -42,8 +42,18 @@ export function getAllResourceSlugs(): string[] {
     .map((f) => f.replace(/\.md$/, ""));
 }
 
+// Merged into /blog equivalents and redirected in next.config.ts; never list or link them
+export const REDIRECTED_RESOURCE_SLUGS = new Set([
+  "netsuite-user-event-vs-client-script",
+  "netsuite-rest-batch-sequential",
+  "netsuite-suiteql-bound-parameters",
+  "netsuite-sales-order-fulfillment-list",
+  "netsuite-currency-context-custom-fields",
+  "netsuite-suitetax-term-discounts",
+]);
+
 export function getAllResources(): ResourceMeta[] {
-  const slugs = getAllResourceSlugs();
+  const slugs = getAllResourceSlugs().filter((slug) => !REDIRECTED_RESOURCE_SLUGS.has(slug));
   return slugs
     .map((slug) => {
       const raw = fs.readFileSync(path.join(RESOURCES_DIR, `${slug}.md`), "utf-8");

@@ -63,7 +63,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Running Slow? Performance Fixes | SuitePacific",
+  title: "NetSuite Running Slow? Performance Fixes",
   description: "Fix a slow NetSuite account. SuitePacific diagnoses dashboard portlet issues, script governance problems, workflow overhead, and saved search inefficiency.",
   alternates: { canonical: "/netsuite-performance-issues" },
   openGraph: {

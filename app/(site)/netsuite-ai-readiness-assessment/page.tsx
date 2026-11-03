@@ -317,7 +317,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite AI Readiness Assessment | SuitePacific",
+  title: "NetSuite AI Readiness Assessment",
   description:
     "Assess whether your NetSuite is ready for SuiteAgents, SuiteSkills, and AI integrations. SuitePacific identifies real opportunities and what your setup needs first.",
   alternates: { canonical: "/netsuite-ai-readiness-assessment" },

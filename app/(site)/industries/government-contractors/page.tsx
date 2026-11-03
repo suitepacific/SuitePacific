@@ -64,7 +64,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Support for Government Contractors | SuitePacific",
+  title: "NetSuite Support for Government Contractors",
   description: "NetSuite post-go-live support for government contractors. DCAA compliance, indirect rate pools, incurred cost submissions, CLIN billing, and unallowable costs.",
   alternates: { canonical: "/industries/government-contractors" },
   openGraph: {

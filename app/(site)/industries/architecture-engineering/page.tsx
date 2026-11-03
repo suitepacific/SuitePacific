@@ -64,7 +64,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Support for Architecture & Engineering Firms | SuitePacific",
+  title: "NetSuite Support for Architecture & Engineering Firms",
   description: "NetSuite post-go-live support for A&E firms. AIA billing, subconsultant pass-through, percentage-complete revenue recognition, and utilization reporting.",
   alternates: { canonical: "/industries/architecture-engineering" },
   openGraph: {

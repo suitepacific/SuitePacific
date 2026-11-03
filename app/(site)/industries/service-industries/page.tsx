@@ -245,7 +245,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Support for Service Industry Companies | SuitePacific",
+  title: "NetSuite Support for Service Industry Companies",
   description:
     "NetSuite post-go-live support for field service, maintenance, and repair companies. Work order billing, service contract automation, FSM integration, and technician reporting.",
   alternates: { canonical: "/industries/service-industries" },

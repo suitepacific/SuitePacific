@@ -245,7 +245,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Support for Courier & Travel Companies | SuitePacific",
+  title: "NetSuite Support for Courier & Travel Companies",
   description:
     "NetSuite post-go-live support for courier, logistics, and travel companies. Job billing automation, commission scripts, dispatch integration, and branch P&L reporting.",
   alternates: { canonical: "/industries/courier-travel" },

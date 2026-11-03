@@ -64,7 +64,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Support for Agriculture & AgTech | SuitePacific",
+  title: "NetSuite Support for Agriculture & AgTech",
   description: "NetSuite post-go-live support for agriculture and AgTech. Crop cost tracking, seasonal billing, co-op settlement reconciliation, and per-acre profitability.",
   alternates: { canonical: "/industries/agriculture" },
   openGraph: {

@@ -64,7 +64,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Support for Publishing & Media Companies | SuitePacific",
+  title: "NetSuite Support for Publishing & Media Companies",
   description: "NetSuite post-go-live support for publishing companies. Royalty calculations, ad revenue recognition, subscription billing, and distributor reconciliation.",
   alternates: { canonical: "/industries/publishing-media" },
   openGraph: {

@@ -109,7 +109,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Support After Migrating from QuickBooks | SuitePacific",
+  title: "NetSuite Support After Migrating from QuickBooks",
   description:
     "Post-migration support for QuickBooks-to-NetSuite moves: saved search rebuilds, workflow automation, SuiteScript development, and administration. From $799.",
   alternates: { canonical: "/netsuite-migration-from-quickbooks" },

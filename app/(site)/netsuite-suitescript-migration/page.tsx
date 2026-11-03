@@ -17,7 +17,7 @@ import { FreeScriptCheckForm } from "@/components/sections/FreeScriptCheckForm";
 import { SITE_URL } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "NetSuite SuiteScript 2.1 Migration Services | SuitePacific",
+  title: "NetSuite SuiteScript 2.1 Migration Services",
   description:
     "SuiteScript 1.0, 2.0 and 2.x scripts will stop working in NetSuite 2028.2. Get a complete script audit, 2.1 conversion, sandbox testing and safe deployment.",
   alternates: { canonical: "/netsuite-suitescript-migration" },

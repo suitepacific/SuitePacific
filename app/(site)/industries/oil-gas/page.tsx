@@ -64,7 +64,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Support for Oil & Gas Companies | SuitePacific",
+  title: "NetSuite Support for Oil & Gas Companies",
   description: "NetSuite post-go-live support for oil and gas companies. AFE workflows, JIB billing, royalty calculations, division order management, and production accounting.",
   alternates: { canonical: "/industries/oil-gas" },
   openGraph: {

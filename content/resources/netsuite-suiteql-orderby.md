@@ -129,4 +129,4 @@ After updating your queries, run your scripts in a sandbox environment to confir
 
 Queries against other tables are not affected by this change.
 
-For background on why this change was made, see [NetSuite Changed the Default Sort for SuiteQL Transaction Queries in 2026.2](/blog/netsuite-suiteql-default-sort-change).
+For background on why this change was made, see [NetSuite Changed the Default Sort for SuiteQL Transaction Queries in 2026.2](/blog/netsuite-suiteql-sort-change-2026-2).

@@ -10,7 +10,7 @@ import { SITE_URL } from "@/lib/content";
 import { CHECKLIST_ITEMS, SECTIONS, type Priority } from "./checklist-data";
 
 export const metadata: Metadata = {
-  title: "NetSuite 2026.2 Release Readiness Checklist | SuitePacific",
+  title: "NetSuite 2026.2 Release Readiness Checklist",
   description:
     "Pre-upgrade checklist for NetSuite 2026.2 covering Finance, Integrations, SuiteScript, Reporting, Manufacturing, Inventory, and Security changes before go-live.",
   alternates: { canonical: `${SITE_URL}/netsuite-2026-2-release-readiness-checklist` },

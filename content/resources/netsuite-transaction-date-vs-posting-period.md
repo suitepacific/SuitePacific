@@ -73,5 +73,5 @@ Filter by Transaction Date to the expected period and look at the Posting Period
 
 ## Related Resources
 
-- [NetSuite AP Aging vs Vendor Balance: Why the Numbers Can Legitimately Differ](/resources/netsuite-ap-aging-vs-vendor-balance): the same concept applied to AP — how report parameters explain apparent discrepancies before looking for missing transactions.
+- [NetSuite AP Aging vs Vendor Balance: Why the Numbers Can Legitimately Differ](/resources/netsuite-ap-aging-vs-vendor-balance): the same concept applied to AP, how report parameters explain apparent discrepancies before looking for missing transactions.
 - [NetSuite post-go-live support](/netsuite-post-go-live-support): accounting configuration and reporting support for live NetSuite accounts.

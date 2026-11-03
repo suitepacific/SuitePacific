@@ -298,7 +298,7 @@ export default function OracleSupportVsThirdPartyPage() {
               explains what a third-party engagement covers and how it is structured.
             </li>
             <li className="text-sm text-brand-400">
-              <Link href="/blog/netsuite-support-partner-evaluation" className="text-accent hover:underline">
+              <Link href="/blog/how-to-evaluate-netsuite-support-partner" className="text-accent hover:underline">
                 How to evaluate a NetSuite support partner
               </Link>{" "}
               covers the questions to ask when selecting a third-party firm.
