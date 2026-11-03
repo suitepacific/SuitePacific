@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { FORMSUBMIT_ENDPOINT, CTA_SUPPORT_LINE } from "@/lib/content";
+import { trackLead } from "@/lib/gtag";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -34,6 +35,7 @@ export function LeadForm() {
         headers: { Accept: "application/json" },
       }).catch(() => {});
 
+      trackLead("lead_form");
       setStatus("success");
       form.reset();
     } catch {

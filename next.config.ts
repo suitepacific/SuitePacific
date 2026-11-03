@@ -16,12 +16,12 @@ const securityHeaders = [
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval'", // Next.js requires unsafe-inline/eval
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net", // Next.js requires unsafe-inline/eval; Google tag
       "style-src 'self' 'unsafe-inline'",                // Tailwind inline styles
-      "img-src 'self' data: https:",                     // logo, og images
+      "img-src 'self' data: https:",                     // logo, og images, Google tag pixels
       "font-src 'self'",
-      "connect-src 'self' https://www.youtube-nocookie.com https://www.youtube.com",
-      "frame-src 'none' https://www.youtube-nocookie.com https://www.youtube.com",
+      "connect-src 'self' https://www.youtube-nocookie.com https://www.youtube.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://www.google.com https://googleads.g.doubleclick.net https://www.googleadservices.com",
+      "frame-src 'none' https://www.youtube-nocookie.com https://www.youtube.com https://td.doubleclick.net https://www.googletagmanager.com",
       "frame-ancestors 'none'",                          // stronger than X-Frame-Options
       "base-uri 'self'",
       "form-action 'self'",

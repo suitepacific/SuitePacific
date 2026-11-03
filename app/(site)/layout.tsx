@@ -3,10 +3,12 @@ import { MobileStickyCta } from "@/components/nav/MobileStickyCta";
 import { Footer } from "@/components/sections/Footer";
 import { PageViewTracker } from "@/components/analytics/PageViewTracker";
 import { SectionTracker } from "@/components/analytics/SectionTracker";
+import { GoogleTag } from "@/components/analytics/GoogleTag";
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
+      <GoogleTag />
       <PageViewTracker />
       <SectionTracker />
       <Nav />

@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { FORMSUBMIT_ENDPOINT } from "@/lib/content";
+import { trackLead } from "@/lib/gtag";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -41,6 +42,7 @@ export function ScriptReadinessForm() {
         headers: { Accept: "application/json" },
       }).catch(() => {});
 
+      trackLead("script_readiness");
       setStatus("success");
       form.reset();
     } catch {
