@@ -1,8 +1,8 @@
 ---
 title: "NetSuite SOAP Web Services Deprecation: Timeline, 2027.1 Deadlines, and Migration Steps"
-description: "NetSuite SOAP Web Services are being deprecated in phases: new TBA integrations end in 2027.1, existing TBA ends in 2028.1, and full SOAP removal lands in 2028.2. Here is the full timeline, what each deadline means for your integrations, and how to migrate to REST before the cutoffs."
+description: "NetSuite SOAP Web Services retire in four stages: no new SOAP integrations after 2027.1, only the 2025.2 endpoint at 2027.2, older endpoints off in 2028.1, and full removal in 2028.2. Here is the timeline, what each milestone breaks, and how to migrate to REST."
 seoTitle: "NetSuite SOAP Deprecation: 2027.1-2028.2 Timeline"
-metaDescription: "NetSuite SOAP Web Services end in phases: new TBA integrations in 2027.1, existing TBA in 2028.1, full removal in 2028.2. What each deadline means for you."
+metaDescription: "NetSuite SOAP Web Services retire in stages: no new integrations after 2027.1, pre-2025.2 endpoints stop at 2027.2, full removal in 2028.2. What to do now."
 date: "2026-08-24"
 updated: "2026-09-14"
 tags: ["Integrations", "SuiteTalk", "REST API", "Development"]
