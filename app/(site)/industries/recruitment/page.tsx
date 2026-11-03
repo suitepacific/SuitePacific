@@ -294,6 +294,7 @@ export default function RecruitmentPage() {
       />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
+        <Link href="/industries" className="mb-4 inline-block text-xs text-brand-400 hover:text-accent hover:underline">All industries</Link>
         <SectionHeading
           as="h1"
           eyebrow="Recruitment & Staffing"

@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { RelatedComparisons } from "@/components/sections/RelatedComparisons";
 
 const ARM_OBJECTS = [
   { object: "Revenue Arrangement", description: "Created from a sales order or invoice; represents a single customer contract and holds the total contract value" },
@@ -159,6 +160,7 @@ export default function ArmConfigurationPage() {
           </ul>
         </div>
 
+        <RelatedComparisons group="finance" />
         <ServiceFaqSection items={FAQ} />
         <div className="mt-10 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <p className="text-sm font-semibold text-brand-900 mb-1">Ready to configure ARM correctly?</p>

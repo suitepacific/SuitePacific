@@ -1,0 +1,47 @@
+export type ComparisonGroup = "support" | "platform" | "finance" | "construction" | "manufacturing";
+
+export const COMPARISON_GROUPS: { id: ComparisonGroup; label: string }[] = [
+  { id: "support", label: "Support models and partners" },
+  { id: "platform", label: "Platform and development" },
+  { id: "finance", label: "Finance and accounting" },
+  { id: "construction", label: "Construction" },
+  { id: "manufacturing", label: "Manufacturing and inventory" },
+];
+
+// Titles and summaries are taken from each comparison page's own metadata
+export const COMPARISONS: { href: string; title: string; summary: string; group: ComparisonGroup }[] = [
+  { href: "/netsuite-support-comparison", group: "support", title: "NetSuite Support Options Compared", summary: "Five NetSuite support models compared: Oracle standard, ACS, managed retainer, break-fix, and internal hire." },
+  { href: "/netsuite-acs-alternatives-comparison", group: "support", title: "NetSuite ACS Alternatives: 2026 Provider Comparison", summary: "Oracle ACS vs boutique managed support, Solution Providers, enterprise SIs, and independent consultants." },
+  { href: "/netsuite-oracle-support-vs-third-party", group: "support", title: "NetSuite Oracle Support vs. Third-Party Consulting Firm", summary: "Oracle NetSuite standard support vs a certified third-party firm: SuiteScript, integrations, workflows, and custom configuration that Oracle does not cover." },
+  { href: "/netsuite-implementation-partner-vs-managed-support", group: "support", title: "NetSuite Implementation Partner vs. Managed Support", summary: "The difference between a NetSuite implementation partner and an ongoing managed support team, and how to know which one your business needs right now." },
+  { href: "/netsuite-freelancer-vs-consulting-firm", group: "support", title: "NetSuite Freelancer vs. Consulting Firm: How to Choose", summary: "Accountability, continuity, and cost trade-offs between independent NetSuite freelancers and consulting firms for post-go-live support engagements." },
+  { href: "/netsuite-in-house-admin-vs-outsourced-support", group: "support", title: "NetSuite: In-House Admin vs. Outsourced Specialist", summary: "Compare the real cost and capability of a full-time NetSuite administrator versus outsourced specialist support for live NetSuite accounts." },
+  { href: "/netsuite-acs-vs-construction-specialist", group: "support", title: "NetSuite ACS vs. Construction Specialist Support Options", summary: "NetSuite ACS offers Oracle platform advisory; a construction specialist provides SuiteScript development, AIA billing, and WIP builds for live accounts." },
+  { href: "/netsuite-acs-vs-manufacturing-specialist", group: "support", title: "NetSuite ACS vs. Manufacturing Specialist Services", summary: "NetSuite ACS provides platform advisory and upgrade support." },
+  { href: "/netsuite-configuration-vs-customization", group: "platform", title: "NetSuite Configuration vs. Customization: When to Script", summary: "Configuration covers no-code NetSuite changes." },
+  { href: "/netsuite-suiteflow-vs-suitescript", group: "platform", title: "SuiteFlow vs. SuiteScript: NetSuite Automation Guide", summary: "SuiteFlow handles approval routing and notifications." },
+  { href: "/netsuite-saved-searches-vs-suiteql-vs-reports", group: "platform", title: "NetSuite Saved Searches vs. SuiteQL vs. Standard Reports", summary: "Understand when to use saved searches, SuiteQL, or standard reports in NetSuite." },
+  { href: "/netsuite-suiteanalytics-vs-saved-searches", group: "platform", title: "SuiteAnalytics Workbook vs. Saved Searches in NetSuite", summary: "Saved searches power dashboards and workflow triggers." },
+  { href: "/netsuite-sandbox-vs-production-testing", group: "platform", title: "NetSuite Sandbox vs. Production Testing: Why Test First", summary: "Sandbox testing prevents production outages in NetSuite." },
+  { href: "/netsuite-arm-vs-custom-revenue-recognition", group: "finance", title: "NetSuite ARM vs. Custom Revenue Recognition Scripts", summary: "NetSuite ARM vs." },
+  { href: "/netsuite-suitetax-vs-avalara", group: "finance", title: "NetSuite SuiteTax vs. Avalara AvaTax: Which to Use", summary: "Live NetSuite account with multi-state sales tax? Compare SuiteTax and Avalara: economic nexus monitoring, product taxability, and when to connect Avalara." },
+  { href: "/netsuite-planning-budgeting-vs-adaptive-insights", group: "finance", title: "NetSuite Planning and Budgeting vs. Adaptive Planning", summary: "CFO guide: NetSuite Planning and Budgeting vs." },
+  { href: "/netsuite-ap-automation-native-vs-tipalti", group: "finance", title: "NetSuite Native AP vs. Tipalti: What Controllers Need", summary: "NetSuite native AP vs." },
+  { href: "/netsuite-three-way-match-native-vs-custom", group: "finance", title: "NetSuite Three-Way Match: Native vs. Custom Enforcement", summary: "Why native NetSuite does not block unapproved bills, and what SuiteScript three-way match enforcement looks like for controllers who need hard PO controls." },
+  { href: "/netsuite-intercompany-elimination-native-vs-custom", group: "finance", title: "NetSuite Intercompany Elimination: Native vs. Custom", summary: "How NetSuite OneWorld handles intercompany eliminations at consolidation and where custom SuiteScript fills the gaps for complex multi-entity structures." },
+  { href: "/netsuite-consolidation-oneworld-vs-prophix", group: "finance", title: "NetSuite OneWorld Consolidation vs. Prophix and Vena", summary: "When NetSuite OneWorld's native consolidation is enough for a multi-entity account and when a dedicated consolidation and FP&A tool adds value for the CFO." },
+  { href: "/netsuite-fixed-assets-native-vs-third-party", group: "finance", title: "NetSuite Fixed Assets Module vs. Third-Party Tools", summary: "What NetSuite's fixed assets module covers for depreciation and asset tracking, and when a third-party tool adds capabilities the native module cannot." },
+  { href: "/netsuite-financial-close-manual-vs-automated", group: "finance", title: "NetSuite Month-End Close: Manual vs. Automated Process", summary: "How far the standard NetSuite month-end close goes and where SuiteScript automation reduces close time and manual effort for controllers at live accounts." },
+  { href: "/netsuite-expense-management-native-vs-expensify", group: "finance", title: "NetSuite Native Expenses vs. Expensify Integration", summary: "When native NetSuite expense reports are sufficient and when integrating Expensify, Ramp, or Concur adds real value for a controller at a live NetSuite account." },
+  { href: "/netsuite-standard-billing-vs-aia-format", group: "construction", title: "NetSuite Standard Billing vs. AIA G702/G703 Format", summary: "What NetSuite produces natively for billing vs." },
+  { href: "/netsuite-job-costing-standard-vs-custom", group: "construction", title: "NetSuite Standard Job Costing vs. Custom Cost Codes", summary: "What standard NetSuite project accounting gives construction companies vs." },
+  { href: "/netsuite-change-order-suiteflow-vs-suitescript", group: "construction", title: "NetSuite Change Order Automation: SuiteFlow vs. SuiteScript", summary: "SuiteFlow handles approval routing for change orders." },
+  { href: "/netsuite-retainage-native-vs-custom", group: "construction", title: "NetSuite Retainage: Native Feature vs. Custom Scripts", summary: "What standard NetSuite handles for construction retainage vs." },
+  { href: "/procore-netsuite-integration-vs-netsuite-only", group: "construction", title: "Procore + NetSuite Integration vs. NetSuite-Only Approach", summary: "When to connect Procore to NetSuite, when to run NetSuite alone, and where integration complexity creates more problems than it solves for contractors." },
+  { href: "/netsuite-costing-methods-comparison", group: "manufacturing", title: "NetSuite Costing Methods: Standard vs. Average vs. FIFO", summary: "How standard, average, and FIFO costing methods work in NetSuite: inventory valuation, variance tracking, lot tracking requirements, and how to choose." },
+  { href: "/netsuite-lot-tracking-native-vs-enforced", group: "manufacturing", title: "NetSuite Lot Tracking: Native vs. Enforced with SuiteScript", summary: "Standard NetSuite lot tracking is optional by default; a SuiteScript enforcement script makes it mandatory." },
+  { href: "/netsuite-production-reports-standard-vs-custom", group: "manufacturing", title: "NetSuite Production Reporting: Standard vs. Custom", summary: "NetSuite work order and inventory reports leave production variance, schedule adherence, and WIP value as gaps." },
+  { href: "/netsuite-work-order-suiteflow-vs-suitescript", group: "manufacturing", title: "NetSuite Work Order Automation: SuiteFlow vs. SuiteScript", summary: "SuiteFlow handles status transitions and notifications for work orders." },
+  { href: "/netsuite-mrp-vs-third-party-planning", group: "manufacturing", title: "NetSuite MRP vs. Third-Party Planning Integrations", summary: "NetSuite MRP suits single-site manufacturers with stable demand." },
+  { href: "/netsuite-advanced-manufacturing-module-vs-custom", group: "manufacturing", title: "NetSuite Advanced Manufacturing vs. Custom SuiteScript", summary: "Custom SuiteScript covers most WO automation needs." },
+];

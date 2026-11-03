@@ -14,6 +14,7 @@ import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
+import { RelatedComparisons } from "@/components/sections/RelatedComparisons";
 
 const PAIN_POINTS = [
   {
@@ -302,6 +303,7 @@ export default function WorkflowAutomationPage() {
           </div>
         </div>
 
+        <RelatedComparisons group="platform" />
         {/* Related reading */}
         <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
           <p className="text-sm font-semibold text-brand-900 mb-3">From the blog</p>

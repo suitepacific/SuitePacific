@@ -92,6 +92,7 @@ export default function PrivateEquityPage() {
         isShort
       />
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
+        <Link href="/industries" className="mb-4 inline-block text-xs text-brand-400 hover:text-accent hover:underline">All industries</Link>
         <SectionHeading as="h1" eyebrow="Private Equity & Family Office" title="NetSuite Support & Development for Private Equity Firms & Family Offices" subtitle="Portfolio consolidation, waterfall distribution scripts, LP capital account tracking, and management fee billing for PE firms already live on NetSuite." align="left" />
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <p className="text-sm text-brand-600 mb-3">Tell us what your PE firm or family office NetSuite account needs.</p>

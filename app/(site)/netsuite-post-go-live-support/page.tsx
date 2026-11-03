@@ -24,6 +24,7 @@ import { TestimonialStrip } from "@/components/sections/TestimonialStrip";
 import { InlineCta } from "@/components/sections/InlineCta";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
+import { RelatedComparisons } from "@/components/sections/RelatedComparisons";
 
 const SUPPORT_PHASES = [
   {
@@ -656,6 +657,7 @@ export default function PostGoLiveSupportPage() {
           </div>
         </div>
 
+        <RelatedComparisons group="support" />
         {/* Related reading */}
         <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
           <p className="text-sm font-semibold text-brand-900 mb-3">Related reading</p>

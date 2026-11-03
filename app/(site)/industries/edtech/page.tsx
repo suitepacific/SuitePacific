@@ -92,6 +92,7 @@ export default function EdtechPage() {
         isShort
       />
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
+        <Link href="/industries" className="mb-4 inline-block text-xs text-brand-400 hover:text-accent hover:underline">All industries</Link>
         <SectionHeading as="h1" eyebrow="EdTech & Education" title="NetSuite Support & Development for EdTech & Education Companies" subtitle="Enrollment revenue recognition, grant management, LMS integrations, and course profitability reporting for EdTech companies already live on NetSuite." align="left" />
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <p className="text-sm text-brand-600 mb-3">Tell us what your EdTech or education company NetSuite account needs.</p>

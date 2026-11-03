@@ -23,6 +23,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 import { ConstructionBillingLinks } from "@/components/sections/ConstructionBillingLinks";
+import { RelatedComparisons } from "@/components/sections/RelatedComparisons";
 
 const POSTGO_PROBLEMS = [
   {
@@ -345,6 +346,7 @@ export default function ConstructionPage() {
       />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
+        <Link href="/industries" className="mb-4 inline-block text-xs text-brand-400 hover:text-accent hover:underline">All industries</Link>
         <SectionHeading
           as="h1"
           eyebrow="Construction"
@@ -515,6 +517,7 @@ export default function ConstructionPage() {
         <ServiceFaqSection items={FAQ} />
 
         <ConstructionBillingLinks current="/industries/construction" />
+        <RelatedComparisons group="construction" />
         {/* Related reading */}
         <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
           <p className="text-sm font-semibold text-brand-900 mb-3">Related reading</p>

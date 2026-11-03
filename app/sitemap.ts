@@ -194,6 +194,7 @@ const SERVICE_PAGES: { path: string; lastModified: Date }[] = [
   { path: "/netsuite-consolidation-oneworld-vs-prophix", lastModified: new Date("2026-10-18") },
   // Oct-Nov 2026
   { path: "/netsuite-ai-readiness-assessment", lastModified: new Date("2026-11-04") },
+  { path: "/netsuite-comparisons", lastModified: new Date("2026-11-04") },
   { path: "/netsuite-migration-from-quickbooks", lastModified: new Date("2026-09-17") },
 ];
 

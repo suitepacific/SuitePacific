@@ -92,6 +92,7 @@ export default function CannabisPage() {
         isShort
       />
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
+        <Link href="/industries" className="mb-4 inline-block text-xs text-brand-400 hover:text-accent hover:underline">All industries</Link>
         <SectionHeading as="h1" eyebrow="Cannabis & Dispensary" title="NetSuite Support & Development for Cannabis Companies" subtitle="280E cost segregation, Metrc integration, batch inventory tracking, and multi-license accounting for cannabis operators already live on NetSuite." align="left" />
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <p className="text-sm text-brand-600 mb-3">Tell us what your cannabis operator NetSuite account needs.</p>

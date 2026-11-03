@@ -488,6 +488,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     links: [
       { label: "NetSuite AI Integration", href: "/netsuite-ai-integration" },
       { label: "AI Optimization Assessment", href: "/netsuite-ai-optimization-assessment" },
+      { label: "AI Readiness Assessment", href: "/netsuite-ai-readiness-assessment" },
       { label: "AI Invoice Processing", href: "/netsuite-ai-invoice-processing" },
       { label: "AI Reporting", href: "/netsuite-ai-reporting" },
     ],
@@ -505,6 +506,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     title: "Compare",
     links: [
+      { label: "All Comparison Guides", href: "/netsuite-comparisons" },
       { label: "ACS Alternative", href: "/netsuite-acs-alternative" },
       { label: "Support Alternative", href: "/netsuite-support-alternative" },
       { label: "Freelancer vs Firm", href: "/netsuite-freelancer-vs-consulting-firm" },

@@ -22,6 +22,7 @@ import { BreadcrumbJsonLd, FaqJsonLd, ServiceJsonLd, OrganizationJsonLd, VideoOb
 import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
+import { RelatedComparisons } from "@/components/sections/RelatedComparisons";
 
 const CHALLENGES = [
   {
@@ -311,6 +312,7 @@ export default function ManufacturingPage() {
       />
 
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
+        <Link href="/industries" className="mb-4 inline-block text-xs text-brand-400 hover:text-accent hover:underline">All industries</Link>
         <SectionHeading
           as="h1"
           eyebrow="Manufacturing"
@@ -464,6 +466,7 @@ export default function ManufacturingPage() {
 
         <ServiceFaqSection items={FAQ} />
 
+        <RelatedComparisons group="manufacturing" />
         {/* Related reading */}
         <div className="mt-10 rounded-2xl border border-brand-100 bg-brand-50/30 p-5 sm:p-6">
           <p className="text-sm font-semibold text-brand-900 mb-3">Related reading</p>
