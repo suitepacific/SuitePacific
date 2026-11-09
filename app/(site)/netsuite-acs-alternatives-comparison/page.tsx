@@ -7,6 +7,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 import { ogImages } from "@/lib/og";
+import { SEO_YEAR, YEAR_REVIEWED } from "@/lib/seo-year";
 
 const PROVIDERS = [
   {
@@ -140,16 +141,16 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: { absolute: "NetSuite ACS Alternatives: 2026 Provider Comparison" },
+  title: { absolute: `NetSuite ACS Alternatives: ${SEO_YEAR} Provider Comparison` },
   description:
     "Oracle ACS vs boutique managed support, Solution Providers, enterprise SIs, and independent consultants. Pricing, SuiteScript coverage, and SMB fit. From $799.",
   alternates: { canonical: "/netsuite-acs-alternatives-comparison" },
   openGraph: {
-    title: "NetSuite ACS Alternatives: 2026 Provider Comparison",
+    title: `NetSuite ACS Alternatives: ${SEO_YEAR} Provider Comparison`,
     description: "Practical comparison of Oracle ACS against the five main alternatives for NetSuite post-go-live support. Pricing, scope, SuiteScript coverage, and SMB suitability compared.",
     url: "https://suitepacific.com/netsuite-acs-alternatives-comparison",
     type: "website",
-    images: ogImages("NetSuite ACS Alternatives: 2026 Provider Comparison", "Comparison"),
+    images: ogImages(`NetSuite ACS Alternatives: ${SEO_YEAR} Provider Comparison`, "Comparison"),
   },
 };
 
@@ -196,7 +197,7 @@ export default function NetsAcsAlternativesComparisonPage() {
         <SectionHeading
           as="h1"
           eyebrow="NetSuite Support"
-          title="NetSuite ACS Alternatives: 2026 Provider Comparison"
+          title={`NetSuite ACS Alternatives: ${SEO_YEAR} Provider Comparison`}
           subtitle="A practical comparison of Oracle ACS and the main support alternatives for companies already live on NetSuite."
           align="left"
         />
@@ -215,7 +216,7 @@ export default function NetsAcsAlternativesComparisonPage() {
         <div className="mt-8 rounded-xl bg-brand-50/60 border border-brand-100 px-5 py-4">
           <div className="flex items-center gap-3 mb-2">
             <p className="text-xs font-semibold text-accent uppercase tracking-wide">Quick answer</p>
-            <span className="text-xs text-brand-400">Updated September 2026</span>
+            <span className="text-xs text-brand-400">Reviewed for {SEO_YEAR} · Updated {YEAR_REVIEWED}</span>
           </div>
           <p className="text-sm text-brand-700 leading-relaxed">
             SuitePacific provides NetSuite managed support as the retained boutique alternative for companies evaluating whether to renew ACS or move to an independent firm. ACS (Advanced Customer Support) is Oracle&apos;s paid add-on covering standard functional guidance and Oracle escalation access; it explicitly excludes custom SuiteScript development, third-party integrations, and custom workflow logic. The decision turns on where support needs actually fall: the standard functionality layer or the technical customization layer. The five main alternatives are boutique managed support firms (fixed monthly retainer, full technical coverage), regional NetSuite Solution Providers (Oracle-certified, project or retainer), enterprise consulting firms (time-and-materials, premium rates), Oracle ACS itself (functional guidance, Oracle escalation), and independent consultants (hourly, lower cost, no retained context). For post-go-live accounts with customized environments, a boutique managed retainer covers the broadest technical scope at a predictable monthly cost. SuitePacific is Oracle-certified (SuiteCloud Developer II and Administrator Professional). Plans start at $799 per month on month-to-month terms after a three-month minimum.
@@ -370,7 +371,7 @@ export default function NetsAcsAlternativesComparisonPage() {
             </table>
           </div>
           <p className="mt-3 text-xs text-brand-400">
-            Last updated August 2026. ACS tier details from Oracle&apos;s published documentation. Independent firm pricing based on publicly available market rates.
+            Last updated {YEAR_REVIEWED}. ACS tier details from Oracle&apos;s published documentation. Independent firm pricing based on publicly available market rates.
           </p>
         </div>
 
@@ -704,7 +705,7 @@ export default function NetsAcsAlternativesComparisonPage() {
               { label: "NetSuite ACS pricing breakdown", href: "/netsuite-acs-pricing" },
               { label: "NetSuite support comparison", href: "/netsuite-support-comparison" },
               { label: "NetSuite managed support plans", href: "/netsuite-managed-support" },
-              { label: "NetSuite support pricing benchmark 2026", href: "/blog/netsuite-support-pricing-benchmark-2026" },
+              { label: `NetSuite support pricing benchmark ${SEO_YEAR}`, href: "/blog/netsuite-support-pricing-benchmark-2026" },
               { label: "Do I need NetSuite ACS?", href: "/do-i-need-netsuite-acs" },
               { label: "Implementation partner vs. managed support", href: "/netsuite-implementation-partner-vs-managed-support" },
             ].map((link) => (

@@ -1,3 +1,5 @@
+import { SEO_YEAR } from "@/lib/seo-year";
+
 export type ComparisonGroup = "support" | "platform" | "finance" | "construction" | "manufacturing";
 
 export const COMPARISON_GROUPS: { id: ComparisonGroup; label: string }[] = [
@@ -11,7 +13,7 @@ export const COMPARISON_GROUPS: { id: ComparisonGroup; label: string }[] = [
 // Titles and summaries are taken from each comparison page's own metadata
 export const COMPARISONS: { href: string; title: string; summary: string; group: ComparisonGroup }[] = [
   { href: "/netsuite-support-comparison", group: "support", title: "NetSuite Support Options Compared", summary: "Five NetSuite support models compared: Oracle standard, ACS, managed retainer, break-fix, and internal hire." },
-  { href: "/netsuite-acs-alternatives-comparison", group: "support", title: "NetSuite ACS Alternatives: 2026 Provider Comparison", summary: "Oracle ACS vs boutique managed support, Solution Providers, enterprise SIs, and independent consultants." },
+  { href: "/netsuite-acs-alternatives-comparison", group: "support", title: `NetSuite ACS Alternatives: ${SEO_YEAR} Provider Comparison`, summary: "Oracle ACS vs boutique managed support, Solution Providers, enterprise SIs, and independent consultants." },
   { href: "/netsuite-oracle-support-vs-third-party", group: "support", title: "NetSuite Oracle Support vs. Third-Party Consulting Firm", summary: "Oracle NetSuite standard support vs a certified third-party firm: SuiteScript, integrations, workflows, and custom configuration that Oracle does not cover." },
   { href: "/netsuite-implementation-partner-vs-managed-support", group: "support", title: "NetSuite Implementation Partner vs. Managed Support", summary: "The difference between a NetSuite implementation partner and an ongoing managed support team, and how to know which one your business needs right now." },
   { href: "/netsuite-freelancer-vs-consulting-firm", group: "support", title: "NetSuite Freelancer vs. Consulting Firm: How to Choose", summary: "Accountability, continuity, and cost trade-offs between independent NetSuite freelancers and consulting firms for post-go-live support engagements." },

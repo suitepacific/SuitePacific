@@ -8,6 +8,7 @@ import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL, LEGAL_NAME } from "@/lib/content";
 import { ogImages } from "@/lib/og";
+import { SEO_YEAR } from "@/lib/seo-year";
 
 const COMPARISON_ROWS = [
   {
@@ -111,17 +112,17 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: { absolute: "NetSuite Freelancer vs. Consulting Firm: How to Choose" },
+  title: `NetSuite Freelancer vs. Consulting Firm in ${SEO_YEAR}`,
   description:
     "Accountability, continuity, and cost trade-offs between independent NetSuite freelancers and consulting firms for post-go-live support engagements. Free guide.",
   alternates: { canonical: "/netsuite-freelancer-vs-consulting-firm" },
   openGraph: {
-    title: "NetSuite Freelancer vs. Consulting Firm: How to Choose",
+    title: `NetSuite Freelancer vs. Consulting Firm in ${SEO_YEAR}: How to Choose`,
     description:
       "Practical trade-offs between a freelance NetSuite developer and a consulting firm: accountability, continuity, cost structure, and which model fits your situation.",
     url: "https://suitepacific.com/netsuite-freelancer-vs-consulting-firm",
     type: "website",
-    images: ogImages("NetSuite Freelancer vs. Consulting Firm: How to Choose", "Comparison"),
+    images: ogImages(`NetSuite Freelancer vs. Consulting Firm in ${SEO_YEAR}: How to Choose`, "Comparison"),
   },
 };
 
@@ -149,10 +150,10 @@ export default function FreelancerVsConsultingFirmPage() {
       />
       <ArticleJsonLd
         url={`${SITE_URL}/netsuite-freelancer-vs-consulting-firm`}
-        headline="NetSuite Freelancer vs. Consulting Firm: How to Choose"
+        headline={`NetSuite Freelancer vs. Consulting Firm in ${SEO_YEAR}: How to Choose`}
         description="The practical trade-offs between hiring a freelance NetSuite developer and working with a consulting firm: accountability, continuity, cost structure, and when each model fits."
         datePublished="2025-08-01T00:00:00+00:00"
-        dateModified="2026-08-12T00:00:00+00:00"
+        dateModified="2026-11-10T00:00:00+00:00"
       />
       <ServiceJsonLd
         name="NetSuite Managed Support"
@@ -170,7 +171,7 @@ export default function FreelancerVsConsultingFirmPage() {
         <SectionHeading
           as="h1"
           eyebrow="Choosing the Right Model"
-          title="NetSuite Freelancer vs. Consulting Firm"
+          title={`NetSuite Freelancer vs. Consulting Firm in ${SEO_YEAR}`}
           subtitle="The real trade-offs between hiring a freelance NetSuite developer and working with a consulting firm, and how to know which one fits what you actually need."
           align="left"
         />

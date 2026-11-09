@@ -1,7 +1,9 @@
 ---
-title: "NetSuite Consultant Hourly Rate: What You Are Actually Paying Per Completed Request"
+title: "NetSuite Consultant Hourly Rate in {{year}}: What You Are Actually Paying Per Completed Request"
+seoTitle: "NetSuite Consultant Hourly Rate in {{year}}"
 description: "NetSuite consultant rates range from $75 to $300 per hour depending on the type of firm. But the hourly rate is not the right number to compare. Here is what drives total cost per completed item."
 date: "2026-08-19"
+updated: "2026-11-10"
 tags: ["Post-Go-Live", "Consulting"]
 ---
 

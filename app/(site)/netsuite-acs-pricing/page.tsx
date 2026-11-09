@@ -6,6 +6,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 import { ogImages } from "@/lib/og";
+import { SEO_YEAR } from "@/lib/seo-year";
 
 const ACS_TIERS = [
   {
@@ -83,16 +84,16 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite ACS Pricing: 2026 Cost Breakdown by Tier",
+  title: `NetSuite ACS Pricing: ${SEO_YEAR} Cost Breakdown by Tier`,
   description:
     "Oracle ACS pricing across four tiers: Advise, Monitor, Optimize, and Architect. Cost estimates at different license values and managed support comparison.",
   alternates: { canonical: "/netsuite-acs-pricing" },
   openGraph: {
-    title: "NetSuite ACS Pricing: 2026 Cost Breakdown by Tier",
+    title: `NetSuite ACS Pricing: ${SEO_YEAR} Cost Breakdown by Tier`,
     description: "How Oracle prices NetSuite ACS across four tiers: Advise, Monitor, Optimize, Architect. Cost examples, scope breakdown, and comparison to managed support alternatives.",
     url: "https://suitepacific.com/netsuite-acs-pricing",
     type: "website",
-    images: ogImages("NetSuite ACS Pricing: 2026 Cost Breakdown by Tier"),
+    images: ogImages(`NetSuite ACS Pricing: ${SEO_YEAR} Cost Breakdown by Tier`),
   },
 };
 
@@ -131,7 +132,7 @@ export default function NetSuiteAcsPricingPage() {
         <SectionHeading
           as="h1"
           eyebrow="NetSuite Support Costs"
-          title="NetSuite ACS Pricing: 2026 Cost Breakdown"
+          title={`NetSuite ACS Pricing: ${SEO_YEAR} Cost Breakdown`}
           subtitle="How Oracle prices Advanced Customer Support across four tiers, what each tier costs, and how ACS pricing compares to independent managed support."
           align="left"
         />
@@ -301,7 +302,7 @@ export default function NetSuiteAcsPricingPage() {
               { label: "NetSuite ACS alternatives comparison", href: "/netsuite-acs-alternatives-comparison" },
               { label: "NetSuite ACS alternative", href: "/netsuite-acs-alternative" },
               { label: "Is NetSuite ACS worth it?", href: "/do-i-need-netsuite-acs" },
-              { label: "NetSuite support pricing benchmark 2026", href: "/blog/netsuite-support-pricing-benchmark-2026" },
+              { label: `NetSuite support pricing benchmark ${SEO_YEAR}`, href: "/blog/netsuite-support-pricing-benchmark-2026" },
               { label: "NetSuite managed support plans", href: "/netsuite-managed-support" },
               { label: "NetSuite consultant cost", href: "/netsuite-consultant-cost" },
             ].map((link) => (

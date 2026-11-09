@@ -1,14 +1,14 @@
 ---
-title: "NetSuite Support and Managed Services Pricing Guide (2026)"
-description: "What NetSuite post-go-live support and managed services actually cost in 2026: service models, typical price ranges, what drives cost up or down, and how to evaluate whether you are getting value."
+title: "NetSuite Support and Managed Services Pricing Guide ({{year}})"
+description: "What NetSuite post-go-live support and managed services actually cost in {{year}}: service models, typical price ranges, what drives cost up or down, and how to evaluate whether you are getting value."
 date: "2026-08-13"
-updated: "2026-08-14"
+updated: "2026-11-10"
 tags: ["Post-Go-Live", "Consulting"]
 ---
 
 NetSuite support and managed services pricing is one of the least transparent areas in the NetSuite consulting market. Most firms do not publish rates. Buyers go into initial conversations without a realistic expectation of cost, which makes it harder to evaluate whether a proposal is fair or to compare providers on an apples-to-apples basis.
 
-This guide covers what NetSuite post-go-live support and managed services actually cost in 2026, how the major pricing models work, what drives cost up or down within each model, and what to watch for when evaluating a proposal.
+This guide covers what NetSuite post-go-live support and managed services actually cost in {{year}}, how the major pricing models work, what drives cost up or down within each model, and what to watch for when evaluating a proposal.
 
 <div style="background:#eef2fb;border:1px solid #b2c2e6;border-radius:10px;padding:1.25rem 1.5rem;margin:2rem 0;font-family:system-ui,-apple-system,sans-serif">
 <p style="margin:0 0 0.5rem;font-size:0.7rem;font-weight:700;color:#4f7fff;text-transform:uppercase;letter-spacing:0.08em">Quick answer</p>

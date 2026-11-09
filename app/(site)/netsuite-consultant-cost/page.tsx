@@ -8,6 +8,7 @@ import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { LeadForm } from "@/components/sections/LeadForm";
 import { SITE_URL } from "@/lib/content";
 import { ogImages } from "@/lib/og";
+import { SEO_YEAR, YEAR_REVIEWED } from "@/lib/seo-year";
 
 const MODELS = [
   {
@@ -65,16 +66,16 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: { absolute: "NetSuite Consultant Cost: What Ongoing Support Costs in 2026" },
+  title: { absolute: `NetSuite Consultant Cost: What Ongoing Support Costs in ${SEO_YEAR}` },
   description:
     "NetSuite consultant rates range from $75 to $300 per hour by firm type. How three support models compare on actual cost per completed request. Free guide.",
   alternates: { canonical: "/netsuite-consultant-cost" },
   openGraph: {
-    title: "NetSuite Consultant Cost: What Ongoing Support Actually Costs in 2026",
+    title: `NetSuite Consultant Cost: What Ongoing Support Actually Costs in ${SEO_YEAR}`,
     description: "NetSuite consultant rates range from $75 to $300 per hour depending on the type. How the three main models compare on actual cost per completed request.",
     url: "https://suitepacific.com/netsuite-consultant-cost",
     type: "website",
-    images: ogImages("NetSuite Consultant Cost: What Ongoing Support Actually Costs in 2026"),
+    images: ogImages(`NetSuite Consultant Cost: What Ongoing Support Actually Costs in ${SEO_YEAR}`),
   },
 };
 
@@ -113,11 +114,11 @@ export default function NetSuiteConsultantCostPage() {
         <SectionHeading
           as="h1"
           eyebrow="NetSuite Support Pricing"
-          title="NetSuite Consultant Cost: What Ongoing Support Actually Costs"
+          title={`NetSuite Consultant Cost: What Ongoing Support Actually Costs in ${SEO_YEAR}`}
           subtitle="NetSuite consultant rates range from $75 to $300 per hour, but the hourly rate is not the right number to compare. Here is how the three main support models actually differ on total cost."
           align="left"
         />
-        <p className="mt-1 text-xs text-brand-300">Last updated October 2026</p>
+        <p className="mt-1 text-xs text-brand-300">Reviewed for {SEO_YEAR} · Updated {YEAR_REVIEWED}</p>
 
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>

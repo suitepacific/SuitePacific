@@ -7,19 +7,20 @@ import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 import { TestimonialStrip } from "@/components/sections/TestimonialStrip";
 import { ogImages } from "@/lib/og";
+import { SEO_YEAR, YEAR_REVIEWED } from "@/lib/seo-year";
 
 export const metadata: Metadata = {
-  title: "NetSuite Managed Services Pricing",
+  title: `NetSuite Managed Services Pricing in ${SEO_YEAR}`,
   description:
     "NetSuite managed services pricing: $799 to $12,000+ per month. SuitePacific publishes three plans with no hidden rates, no setup fee, and no annual contract.",
   alternates: { canonical: "/netsuite-managed-services-pricing" },
   openGraph: {
-    title: "NetSuite Managed Services Pricing | SuitePacific",
+    title: `NetSuite Managed Services Pricing in ${SEO_YEAR} | SuitePacific`,
     description:
       "NetSuite managed services cost between $799 and $12,000+ per month depending on hours, provider, and scope. SuitePacific plans from $799 with published rates.",
     url: `${SITE_URL}/netsuite-managed-services-pricing`,
     type: "website",
-    images: ogImages("NetSuite Managed Services Pricing | SuitePacific"),
+    images: ogImages(`NetSuite Managed Services Pricing in ${SEO_YEAR}`, "Pricing"),
   },
 };
 
@@ -180,7 +181,7 @@ export default function NetSuiteManagedServicesPricingPage() {
         url={`${SITE_URL}/netsuite-managed-services-pricing`}
         serviceType="NetSuite Managed Services"
         datePublished="2026-09-23T00:00:00+00:00"
-        dateModified="2026-09-23T00:00:00+00:00"
+        dateModified="2026-11-10T00:00:00+00:00"
         offers={[
           { name: "Care", price: 799, description: "10 hours/month: SuiteScript, admin, workflow, saved searches, break-fix. Month-to-month after 3-month minimum." },
           { name: "Care Plus", price: 1499, description: "20 hours/month: all Care work plus integration maintenance and upgrade preparation. Month-to-month." },
@@ -204,7 +205,7 @@ export default function NetSuiteManagedServicesPricingPage() {
         <div data-section="hero" className="mb-8">
           <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3">NetSuite Managed Services Pricing</p>
           <h1 className="text-3xl sm:text-4xl font-bold text-brand-900 leading-tight mb-4">
-            NetSuite Managed Services Pricing
+            NetSuite Managed Services Pricing in {SEO_YEAR}
           </h1>
           <h2 className="text-base font-semibold text-brand-700 mb-3">What is NetSuite managed services?</h2>
           <p className="text-base text-brand-500 leading-relaxed">
@@ -332,7 +333,7 @@ export default function NetSuiteManagedServicesPricingPage() {
           <p className="text-xs text-brand-300 mb-8">
             Enterprise partner and ACS pricing estimated from third-party benchmarks. Oracle ACS pricing is not publicly published. Last reviewed September 2026. See{" "}
             <Link href="/blog/netsuite-support-pricing-benchmark-2026" className="underline hover:text-brand-400">
-              NetSuite support pricing benchmark 2026
+              NetSuite support pricing benchmark {SEO_YEAR}
             </Link>{" "}
             for detailed source data.
           </p>
@@ -508,7 +509,7 @@ export default function NetSuiteManagedServicesPricingPage() {
             </li>
             <li className="text-sm text-brand-400">
               <Link href="/blog/netsuite-support-pricing-benchmark-2026" className="text-accent hover:underline">
-                NetSuite support pricing benchmark 2026
+                NetSuite support pricing benchmark {SEO_YEAR}
               </Link>{" "}
               compares ACS, managed services, and break-fix pricing across provider types.
             </li>
@@ -529,7 +530,7 @@ export default function NetSuiteManagedServicesPricingPage() {
 
         <ServiceFaqSection items={FAQ} />
 
-        <p className="mt-6 text-xs text-brand-300 text-center">Last updated September 2026</p>
+        <p className="mt-6 text-xs text-brand-300 text-center">Reviewed for {SEO_YEAR} · Updated {YEAR_REVIEWED}</p>
 
       </div>
     </main>

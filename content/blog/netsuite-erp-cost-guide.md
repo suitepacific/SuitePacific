@@ -1,10 +1,10 @@
 ---
-title: "NetSuite ERP Cost: What Companies Pay for Licensing, Implementation, and Support"
+title: "NetSuite ERP Cost in {{year}}: What Companies Pay for Licensing, Implementation, and Support"
 description: "NetSuite pricing has three components: licensing, implementation, and ongoing support. This guide breaks down what each costs, what drives the price up, and how to budget accurately before you sign."
-seoTitle: "NetSuite ERP Pricing: License, Setup, Support"
+seoTitle: "NetSuite ERP Pricing {{year}}: License, Setup, Support"
 metaDescription: "NetSuite ERP pricing has three parts: licensing, implementation and ongoing support. What each costs, what pushes the price up, and how to budget for it."
 date: "2026-09-19"
-updated: "2026-09-19"
+updated: "2026-11-10"
 tags: ["NetSuite", "Pricing", "Implementation"]
 calloutText: "Already on NetSuite and looking for post-go-live support? Tell us about your account."
 ---

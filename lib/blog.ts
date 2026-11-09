@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { withYear } from "@/lib/seo-year";
 import readingTime from "reading-time";
 import type { BlogPost, BlogPostMeta } from "./types";
 import { parseMarkdown } from "./markdown";
@@ -22,7 +23,7 @@ export async function getAllSlugs(): Promise<string[]> {
 export async function getAllPosts(): Promise<BlogPostMeta[]> {
   return slugsFromDisk()
     .map((slug) => {
-      const raw = fs.readFileSync(path.join(BLOG_DIR, `${slug}.md`), "utf-8");
+      const raw = withYear(fs.readFileSync(path.join(BLOG_DIR, `${slug}.md`), "utf-8"));
       const { data, content } = matter(raw);
       return {
         slug,
@@ -44,7 +45,7 @@ export async function getAllPosts(): Promise<BlogPostMeta[]> {
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   const filePath = path.join(BLOG_DIR, `${slug}.md`);
   if (!fs.existsSync(filePath)) return null;
-  const raw = fs.readFileSync(filePath, "utf-8");
+  const raw = withYear(fs.readFileSync(filePath, "utf-8"));
   const { data, content } = matter(raw);
   return {
     slug,

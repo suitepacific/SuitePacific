@@ -8,6 +8,7 @@ import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 import { ogImages } from "@/lib/og";
+import { SEO_YEAR, YEAR_REVIEWED } from "@/lib/seo-year";
 
 const MODELS = [
   {
@@ -160,17 +161,17 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite Support Options Compared",
+  title: `NetSuite Support Options Compared (${SEO_YEAR})`,
   description:
     "Five NetSuite support models compared: Oracle standard, ACS, managed retainer, break-fix, and internal hire. Scope, cost, and which fits which account.",
   alternates: { canonical: "/netsuite-support-comparison" },
   openGraph: {
-    title: "NetSuite Support Options Compared",
+    title: `NetSuite Support Options Compared (${SEO_YEAR})`,
     description:
       "All five NetSuite support models compared: Oracle standard support, ACS, third-party managed retainer, break-fix, and internal hire. What each covers, what each costs, and which fits which account.",
     url: `${SITE_URL}/netsuite-support-comparison`,
     type: "website",
-    images: ogImages("NetSuite Support Options Compared", "Comparison"),
+    images: ogImages(`NetSuite Support Options Compared (${SEO_YEAR})`, "Comparison"),
   },
 };
 
@@ -215,11 +216,11 @@ export default function NetSuiteSupportComparisonPage() {
         <SectionHeading
           as="h1"
           eyebrow="Support Options"
-          title="NetSuite Support Options: All Five Models Compared"
+          title={`NetSuite Support Options in ${SEO_YEAR}: All Five Models Compared`}
           subtitle="Oracle standard support, ACS, third-party managed retainer, break-fix, and internal hire. What each covers, what each costs, and which fits a post-go-live account."
           align="left"
         />
-        <p className="mt-1 text-xs text-brand-300">Last updated October 2026</p>
+        <p className="mt-1 text-xs text-brand-300">Reviewed for {SEO_YEAR} · Updated {YEAR_REVIEWED}</p>
 
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
           <p className="text-sm text-brand-600 mb-3">Tell us what your account needs.</p>

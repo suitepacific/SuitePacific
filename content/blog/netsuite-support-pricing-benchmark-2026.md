@@ -1,8 +1,9 @@
 ---
-title: "NetSuite Support Pricing Benchmark: ACS, Managed Services, and Break-Fix Compared (2026)"
+title: "NetSuite Support Pricing Benchmark: ACS, Managed Services, and Break-Fix Compared ({{year}})"
+seoTitle: "NetSuite Support Pricing Benchmark {{year}}"
 description: "A structured comparison of NetSuite support pricing across ACS tiers, managed service retainers, break-fix consulting, and offshore options. Real numbers, where published, with methodology notes for estimates."
 date: "2026-08-30"
-updated: "2026-08-30"
+updated: "2026-11-10"
 tags: ["Post-Go-Live", "Consulting", "Admin"]
 ---
 

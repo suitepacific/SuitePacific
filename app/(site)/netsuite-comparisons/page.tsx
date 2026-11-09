@@ -5,9 +5,10 @@ import { BreadcrumbJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { COMPARISONS, COMPARISON_GROUPS } from "@/lib/comparisons";
 import { SITE_URL } from "@/lib/content";
+import { SEO_YEAR, YEAR_REVIEWED } from "@/lib/seo-year";
 import { ogImages } from "@/lib/og";
 
-const TITLE = "NetSuite Comparison Guides: Native vs. Custom vs. Vendors";
+const TITLE = `NetSuite Comparison Guides for ${SEO_YEAR}: Native, Custom, Vendors`;
 const DESCRIPTION =
   "34 NetSuite comparison guides for live accounts: support models, SuiteFlow vs. SuiteScript, native modules vs. third-party tools, construction, manufacturing.";
 
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     url: `${SITE_URL}/netsuite-comparisons`,
     type: "website",
-    images: ogImages("NetSuite Comparison Guides", "Comparison"),
+    images: ogImages(`NetSuite Comparison Guides for ${SEO_YEAR}`, "Comparison"),
   },
 };
 
@@ -47,11 +48,11 @@ export default function NetSuiteComparisonsPage() {
         <SectionHeading
           as="h1"
           eyebrow="Comparison guides"
-          title="NetSuite Comparison Guides"
+          title={`NetSuite Comparison Guides for ${SEO_YEAR}`}
           subtitle="Side-by-side guides for the decisions companies face after go-live: which support model to use, configuration or customization, and when a native NetSuite module is enough."
           align="left"
         />
-        <p className="mt-1 text-xs text-brand-300">Last updated November 2026</p>
+        <p className="mt-1 text-xs text-brand-300">Reviewed for {SEO_YEAR} · Updated {YEAR_REVIEWED}</p>
 
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>

@@ -18,6 +18,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 import { ogImages } from "@/lib/og";
+import { SEO_YEAR, YEAR_REVIEWED } from "@/lib/seo-year";
 
 const ACS_TIERS = [
   {
@@ -295,17 +296,17 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: { absolute: "NetSuite ACS Alternative for SMBs: No Annual Contract" },
+  title: `NetSuite ACS Alternative for SMBs in ${SEO_YEAR}`,
   description:
     "Third-party NetSuite support covering SuiteScript, integration maintenance, and custom workflows that Oracle ACS excludes in all tiers. Plans from $799/month.",
   alternates: { canonical: "/netsuite-acs-alternative" },
   openGraph: {
-    title: "NetSuite ACS Alternative for SMBs: Managed Support Without the Annual Contract",
+    title: `NetSuite ACS Alternative for SMBs in ${SEO_YEAR}: Managed Support Without the Annual Contract`,
     description:
       "The best NetSuite ACS alternative for SMBs: SuitePacific covers SuiteScript, integrations, and custom workflows starting at $799/month, month-to-month, with direct access to a certified consultant.",
     url: `${SITE_URL}/netsuite-acs-alternative`,
     type: "website",
-    images: ogImages("NetSuite ACS Alternative for SMBs: Managed Support Without the Annual Contract"),
+    images: ogImages(`NetSuite ACS Alternative for SMBs in ${SEO_YEAR}: Managed Support Without the Annual Contract`),
   },
 };
 
@@ -344,7 +345,7 @@ export default function AcsAlternativePage() {
         <SectionHeading
           as="h1"
           eyebrow="ACS Alternative for SMBs"
-          title="The Best NetSuite ACS Alternative for SMBs"
+          title={`The Best NetSuite ACS Alternative for SMBs in ${SEO_YEAR}`}
           subtitle="NetSuite ACS covers the platform. It does not cover your SuiteScript, your integrations, or anything your implementation partner built. For SMBs, SuitePacific replaces ACS with direct consultant access, full customization coverage, and month-to-month pricing starting at $799."
           align="left"
         />
@@ -355,7 +356,7 @@ export default function AcsAlternativePage() {
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Direct access · Month-to-month · Covers your full customization layer</p>
 
-        <p className="mt-3 text-xs text-brand-300">Last updated August 2026</p>
+        <p className="mt-3 text-xs text-brand-300">Reviewed for {SEO_YEAR} · Updated {YEAR_REVIEWED}</p>
 
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>

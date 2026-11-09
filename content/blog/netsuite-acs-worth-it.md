@@ -1,8 +1,9 @@
 ---
-title: "Is NetSuite ACS Worth It? How to Evaluate the Cost Against What You Actually Use"
+title: "Is NetSuite ACS Worth It in {{year}}? How to Evaluate the Cost Against What You Actually Use"
+seoTitle: "Is NetSuite ACS Worth It in {{year}}?"
 description: "NetSuite ACS costs 4-8% of your annual license and is paid upfront. Whether it is worth that cost depends entirely on what your account actually needs. This guide covers the calculation, the scope gaps, and when ACS delivers value versus when it does not."
 date: "2026-09-03"
-updated: "2026-09-03"
+updated: "2026-11-10"
 tags: ["Post-Go-Live", "Admin", "Consulting"]
 ---
 

@@ -15,6 +15,7 @@ import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SuitePacificCallout } from "@/components/sections/SuitePacificCallout";
 import { SITE_URL } from "@/lib/content";
 import { ogImages } from "@/lib/og";
+import { SEO_YEAR, YEAR_REVIEWED } from "@/lib/seo-year";
 
 const WHY_SP = [
   {
@@ -72,17 +73,17 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: { absolute: "NetSuite Oracle Support vs. Third-Party Consulting Firm" },
+  title: { absolute: `NetSuite Oracle Support vs. Third-Party Firm (${SEO_YEAR})` },
   description:
     "Oracle NetSuite standard support vs a certified third-party firm: SuiteScript, integrations, workflows, and custom configuration that Oracle does not cover.",
   alternates: { canonical: "/netsuite-oracle-support-vs-third-party" },
   openGraph: {
-    title: "NetSuite Oracle Support vs. Third-Party Consulting Firm",
+    title: `NetSuite Oracle Support vs. Third-Party Consulting Firm (${SEO_YEAR})`,
     description:
       "A side-by-side comparison of Oracle NetSuite support and third-party consulting firms: what each covers, response time, cost structure, and when each is the right choice.",
     url: `${SITE_URL}/netsuite-oracle-support-vs-third-party`,
     type: "website",
-    images: ogImages("NetSuite Oracle Support vs. Third-Party Consulting Firm", "Comparison"),
+    images: ogImages(`NetSuite Oracle Support vs. Third-Party Consulting Firm (${SEO_YEAR})`, "Comparison"),
   },
 };
 
@@ -121,7 +122,7 @@ export default function OracleSupportVsThirdPartyPage() {
         <SectionHeading
           as="h1"
           eyebrow="Support Comparison"
-          title="NetSuite Oracle Support vs. Third-Party Consulting Firm"
+          title={`NetSuite Oracle Support vs. Third-Party Consulting Firm in ${SEO_YEAR}`}
           subtitle="Oracle NetSuite support and third-party consulting firms serve different parts of a live account. Understanding which covers which helps you decide where your support spend belongs."
           align="left"
         />
@@ -132,7 +133,7 @@ export default function OracleSupportVsThirdPartyPage() {
         </div>
         <p className="mt-3 text-xs text-brand-400">NetSuite-certified · Direct access · No ticket queue · Month-to-month</p>
 
-        <p className="mt-3 text-xs text-brand-300">Last updated August 2026</p>
+        <p className="mt-3 text-xs text-brand-300">Reviewed for {SEO_YEAR} · Updated {YEAR_REVIEWED}</p>
 
         <div className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>

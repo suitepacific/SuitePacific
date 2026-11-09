@@ -9,6 +9,7 @@ import { ServiceFaqSection } from "@/components/ui/ServiceFaqSection";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { SITE_URL } from "@/lib/content";
 import { ogImages } from "@/lib/og";
+import { SEO_YEAR } from "@/lib/seo-year";
 
 const COMPARISON_ROWS = [
   { factor: "Annual cost", inhouse: "$90,000–$130,000 (salary + benefits + taxes)", outsourced: "$9,588–$29,988 ($799–$2,499/month)" },
@@ -103,17 +104,17 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = {
-  title: "NetSuite: In-House Admin vs. Outsourced Specialist",
+  title: `NetSuite In-House Admin vs. Outsourced (${SEO_YEAR})`,
   description:
     "Compare the real cost and capability of a full-time NetSuite administrator versus outsourced specialist support for live NetSuite accounts. Updated for 2026.",
   alternates: { canonical: "/netsuite-in-house-admin-vs-outsourced-support" },
   openGraph: {
-    title: "NetSuite: In-House Admin vs. Outsourced Specialist",
+    title: `NetSuite In-House Admin vs. Outsourced (${SEO_YEAR})`,
     description:
       "Compare the real cost and capability of a full-time NetSuite administrator versus outsourced specialist support for live NetSuite accounts. Updated for 2026.",
     url: `${SITE_URL}/netsuite-in-house-admin-vs-outsourced-support`,
     type: "website",
-    images: ogImages("NetSuite: In-House Admin vs. Outsourced Specialist", "Comparison"),
+    images: ogImages(`NetSuite In-House Admin vs. Outsourced (${SEO_YEAR})`, "Comparison"),
   },
 };
 
@@ -144,7 +145,7 @@ export default function InHouseAdminVsOutsourcedPage() {
         <SectionHeading
           as="h1"
           eyebrow="NetSuite Support Model"
-          title="In-House NetSuite Admin vs. Outsourced Specialist: What Live Accounts Actually Cost"
+          title={`In-House NetSuite Admin vs. Outsourced Specialist: What Live Accounts Actually Cost in ${SEO_YEAR}`}
           subtitle="A practical comparison of in-house NetSuite administrator hires versus outsourced specialist support, covering cost, capability, and retention risk for live NetSuite accounts."
           align="left"
         />
