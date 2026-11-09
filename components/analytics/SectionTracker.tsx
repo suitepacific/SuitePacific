@@ -3,33 +3,20 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
-const UTM_STORAGE_KEY = "sp_first_touch";
+type FirstTouch = { utmSource: string | null; utmMedium: string | null; utmCampaign: string | null; gclid: string | null };
 
-function captureFirstTouch() {
+// Kept in memory, not browser storage, so first-party analytics writes nothing to the visitor's device.
+// It survives client-side navigation within a visit and resets on a full page load.
+let firstTouchMemo: FirstTouch | null = null;
+
+function captureFirstTouch(): FirstTouch {
   const params = new URLSearchParams(window.location.search);
   const utmSource = params.get("utm_source");
-  const utmMedium = params.get("utm_medium");
-  const utmCampaign = params.get("utm_campaign");
   const gclid = params.get("gclid");
-
   if (utmSource || gclid) {
-    const firstTouch = { utmSource, utmMedium, utmCampaign, gclid };
-    try {
-      sessionStorage.setItem(UTM_STORAGE_KEY, JSON.stringify(firstTouch));
-    } catch {
-      // sessionStorage unavailable; ignore
-    }
-    return firstTouch;
+    firstTouchMemo = { utmSource, utmMedium: params.get("utm_medium"), utmCampaign: params.get("utm_campaign"), gclid };
   }
-
-  try {
-    const cached = sessionStorage.getItem(UTM_STORAGE_KEY);
-    if (cached) return JSON.parse(cached);
-  } catch {
-    // sessionStorage unavailable; ignore
-  }
-
-  return { utmSource: null, utmMedium: null, utmCampaign: null, gclid: null };
+  return firstTouchMemo ?? { utmSource: null, utmMedium: null, utmCampaign: null, gclid: null };
 }
 
 export function SectionTracker() {

@@ -48,6 +48,8 @@ Before comparing providers, define what your account actually needs:
 
 ## NetSuite ACS alternatives for SMBs
 
+*Disclosure: this guide is published by SuitePacific, which is one of the providers listed below. Details about other providers come from their publicly available information at the time of writing and may have changed; check each provider's website for current services and pricing.*
+
 ### SuitePacific
 
 SuitePacific is a boutique post-go-live NetSuite support firm positioning specifically as an ACS alternative for SMBs. The model is a monthly retainer covering administration, SuiteScript development, SuiteFlow workflow automation, integrations, saved searches, and release preparation.

@@ -108,7 +108,7 @@ Yes. SuitePacific builds AIA billing configurations including the schedule of va
 A standard AIA billing build for a single entity with a defined contract structure typically takes four to eight weeks from scoping to first live pay application. Complexity factors include the number of cost code levels in the schedule of values, whether stored materials need to be tracked separately, and whether the G702 requires notarization fields or lender-specific formatting. Multi-entity or multi-contract structures take longer.
 
 **What certifications does SuitePacific hold for construction NetSuite work?**
-SuitePacific is a NetSuite Solution Provider specializing in post-go-live support and customization for mid-market companies, including construction contractors. Our work spans custom PDF templates, project billing configuration, WIP reporting, and retainage management across commercial, residential, and specialty trade contractors. We focus on accounts that are already live on NetSuite and need the billing and reporting infrastructure built out properly.
+SuitePacific's team holds Oracle NetSuite SuiteCloud Developer II and Administrator Professional certifications and specializes in post-go-live support and customization for mid-market companies, including construction contractors. Our work spans custom PDF templates, project billing configuration, WIP reporting, and retainage management across commercial, residential, and specialty trade contractors. We focus on accounts that are already live on NetSuite and need the billing and reporting infrastructure built out properly.
 
 ## Related reading
 

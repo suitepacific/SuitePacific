@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FOOTER_COLUMNS } from "@/lib/content";
+import { CookieSettingsLink } from "@/components/analytics/CookieSettingsLink";
 
 export function Footer() {
   return (
@@ -101,10 +102,18 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-white/10 text-xs flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
           <span>© {new Date().getFullYear()} SuitePacific, LLC. All rights reserved.</span>
-          <Link href="/privacy" className="text-blue-100/60 hover:text-white transition-colors">
-            Privacy Policy
-          </Link>
+          <div className="flex gap-4">
+            <Link href="/privacy" className="text-blue-100/60 hover:text-white transition-colors">
+              Privacy Policy
+            </Link>
+            <CookieSettingsLink className="text-blue-100/60 hover:text-white transition-colors" />
+          </div>
         </div>
+        <p className="mt-4 text-[11px] leading-relaxed text-blue-100/40">
+          Oracle and NetSuite are registered trademarks of Oracle and/or its affiliates. Other names may be
+          trademarks of their respective owners. They are used on this site only to identify the products and
+          services discussed.
+        </p>
       </div>
     </footer>
   );
