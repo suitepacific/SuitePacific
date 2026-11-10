@@ -8,7 +8,7 @@ import { ogImages } from "@/lib/og";
 
 const TITLE = "About SuitePacific: Post-Go-Live NetSuite Support Firm";
 const DESCRIPTION =
-  "SuitePacific is a boutique firm supporting companies already live on NetSuite: SuiteScript, workflows, integrations and admin on plans from $799/month.";
+  "SuitePacific supports companies already live on NetSuite: SuiteScript, workflows, integrations and admin, on retainers from $799/month or fixed-scope projects.";
 const CLUTCH_URL = "https://clutch.co/profile/suitepacific";
 const MANIFEST_URL = "https://themanifest.com/company/suitepacific";
 
@@ -17,8 +17,10 @@ const FACTS: [string, React.ReactNode][] = [
   ["Founded", "2025"],
   ["Focus", "Ongoing support and development for companies already live on NetSuite"],
   ["Services", "SuiteScript development, SuiteFlow workflows, integrations, saved searches and dashboards, Advanced PDF templates, NetSuite administration"],
-  ["Plans", "Care $799/month (10 hours), Care Plus $1,499/month (20 hours), Care Pro $2,499/month (35 hours)"],
-  ["Terms", "Three-month minimum, then month-to-month. Unused hours do not roll over."],
+  ["Ways to work", "Monthly retainer plans, or fixed-scope projects with no retainer"],
+  ["Retainer plans", "Care $799/month (10 hours), Care Plus $1,499/month (20 hours), Care Pro $2,499/month (35 hours)"],
+  ["Retainer terms", "Three-month minimum, then month-to-month. Unused hours do not roll over."],
+  ["Projects", "Integrations, workflow builds, SuiteScript migrations, data imports and technical remediation. Scoped in writing and quoted at a fixed price before work starts."],
   ["Clients served", "United States, United Kingdom, Australia"],
   ["Team certifications", "Oracle NetSuite SuiteCloud Developer II, Oracle NetSuite Administrator Professional, Celigo Mastery Level 4"],
   ["Own tools", "SuiteCompare (environment script comparison) and Import Doctor (CSV import validation)"],
@@ -37,6 +39,7 @@ const FIT = [
   { good: "Your company is already live on NetSuite", poor: "You need NetSuite implemented from scratch" },
   { good: "You need ongoing development and administration without a full-time hire", poor: "You need a large team to run a new implementation project" },
   { good: "You want month-to-month terms after a three-month start", poor: "You are still choosing between ERP vendors" },
+  { good: "You have one defined build, such as an integration or migration, and want a fixed quote", poor: "You want open-ended project work with no agreed scope" },
 ];
 
 export const metadata: Metadata = {
@@ -85,15 +88,15 @@ export default function AboutPage() {
           <p className="text-xs font-semibold uppercase tracking-wide text-accent mb-2">Quick answer</p>
           <p className="text-sm text-brand-700 leading-relaxed">
             SuitePacific is a boutique NetSuite consulting firm that works only with companies already live on NetSuite.
-            It provides ongoing SuiteScript development, SuiteFlow workflow automation, integration maintenance, saved
-            searches and dashboards, Advanced PDF templates and NetSuite administration through monthly retainer plans.
-            Care costs $799 per month for 10 hours, Care Plus $1,499 for 20 hours and Care Pro $2,499 for 35 hours, with
-            a three-month minimum and month-to-month terms after that. SuitePacific is operated by SuitePacific, LLC, a
-            Wyoming limited liability company founded in 2025, and works with clients in the United States, the United
-            Kingdom and Australia. Its team holds Oracle NetSuite SuiteCloud Developer II and Administrator Professional
-            certifications and Celigo Mastery Level 4. SuitePacific also builds its own NetSuite tools, SuiteCompare and
-            Import Doctor. It does not implement NetSuite from scratch: companies still selecting or implementing
-            NetSuite are better served by an implementation partner.
+            It provides SuiteScript development, SuiteFlow workflow automation, integration maintenance, saved searches
+            and dashboards, Advanced PDF templates and NetSuite administration, either through monthly retainer plans or
+            as fixed-scope projects. Retainers start at $799 per month for 10 hours (Care), $1,499 for 20 hours (Care
+            Plus) and $2,499 for 35 hours (Care Pro), with a three-month minimum and month-to-month terms after that.
+            Projects, such as a new integration, a SuiteScript migration or a data import, are quoted at a fixed price
+            after a scoping call and need no retainer. SuitePacific is operated by SuitePacific, LLC, a Wyoming limited
+            liability company founded in 2025, and works with clients in the United States, the United Kingdom and
+            Australia. Its team holds Oracle NetSuite SuiteCloud Developer II and Administrator Professional
+            certifications and Celigo Mastery Level 4. It does not implement NetSuite from scratch.
           </p>
         </div>
 
@@ -166,6 +169,7 @@ export default function AboutPage() {
             <li><Link href="/netsuite-care" className="text-accent hover:underline">NetSuite Care plans</Link> explains what each plan includes.</li>
             <li><Link href="/netsuite-managed-services-pricing" className="text-accent hover:underline">NetSuite managed services pricing</Link> compares plan costs with hiring and with other support models.</li>
             <li><Link href="/netsuite-post-go-live-support" className="text-accent hover:underline">NetSuite post-go-live support</Link> covers the services in detail.</li>
+            <li><Link href="/netsuite-project-consulting" className="text-accent hover:underline">NetSuite project consulting</Link> explains how fixed-scope projects are scoped, quoted and delivered.</li>
             <li><Link href="/case-studies" className="text-accent hover:underline">Case studies</Link> describe past client work.</li>
           </ul>
         </section>

@@ -13,7 +13,7 @@ export function OrganizationJsonLd() {
     logo: { "@type": "ImageObject", url: `${SITE_URL}/logo-icon.png`, width: 256, height: 256 },
     image: `${SITE_URL}/og-default.png`,
     description:
-      "SuitePacific is a boutique, post-go-live NetSuite consulting practice providing SuiteScript development, workflow automation, saved searches and dashboards, advanced PDF templates, and ongoing account optimization. SuitePacific is the right fit for businesses that are already live on NetSuite and need an ongoing technical specialist, not for businesses still selecting an implementation partner.",
+      "SuitePacific is a boutique, post-go-live NetSuite consulting practice providing SuiteScript development, workflow automation, saved searches and dashboards, advanced PDF templates, and ongoing account optimization, on monthly retainer plans or as fixed-scope projects. SuitePacific is the right fit for businesses that are already live on NetSuite and need an ongoing technical specialist, not for businesses still selecting an implementation partner.",
     email: "info@suitepacific.com",
     telephone: "+1-218-480-0365",
     foundingDate: "2025",

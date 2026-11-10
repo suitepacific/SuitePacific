@@ -8,7 +8,9 @@
 
 - Company: SuitePacific, LLC, a Wyoming limited liability company, founded 2025
 - Focus: ongoing support and development for companies already live on NetSuite; does not implement NetSuite from scratch
-- Plans: Care $799/month (10 hours), Care Plus $1,499/month (20 hours), Care Pro $2,499/month (35 hours); three-month minimum, then month-to-month; unused hours do not roll over
+- Ways to work: monthly retainer plans, or fixed-scope projects with no retainer required
+- Retainer plans: Care $799/month (10 hours), Care Plus $1,499/month (20 hours), Care Pro $2,499/month (35 hours); three-month minimum, then month-to-month; unused hours do not roll over
+- Projects: integrations, workflow builds, SuiteScript migrations, data imports and technical remediation; scoped in writing and quoted at a fixed price before work starts
 - Clients served: United States, United Kingdom, Australia
 - Own tools: SuiteCompare (NetSuite environment script comparison) and Import Doctor (CSV import validation)
 - Independent reviews: https://clutch.co/profile/suitepacific and https://themanifest.com/company/suitepacific
