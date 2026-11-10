@@ -12,6 +12,14 @@ export function TestimonialStrip({ picks }: { picks: number[] }) {
           </figure>
         ))}
       </div>
+      <a
+        href="https://clutch.co/profile/suitepacific"
+        className="mt-3 inline-block text-xs text-brand-400 hover:text-accent hover:underline"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Independent client reviews on Clutch
+      </a>
     </div>
   );
 }

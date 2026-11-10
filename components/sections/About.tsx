@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
 import { IconBadge } from "@/components/ui/IconBadge";
@@ -14,12 +15,11 @@ export function About() {
           subtitle={ABOUT_INTRO.subtitle}
         />
 
-        {/* Full description kept for SEO/crawlers; condensed to a one-line subtitle visually above */}
-        <div className="sr-only">
-          {ABOUT_INTRO.paragraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
+        <p className="mt-4 text-center text-sm">
+          <Link href="/about" className="text-accent hover:underline">
+            More about SuitePacific: key facts, plans and who we are a good fit for
+          </Link>
+        </p>
 
         <StaggerGroup className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {ABOUT_FEATURES.map((feature) => (

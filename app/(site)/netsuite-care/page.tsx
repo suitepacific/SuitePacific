@@ -420,6 +420,11 @@ export default function NetSuiteCarePage() {
           </h2>
         </div>
         <TestimonialCarousel testimonials={TESTIMONIALS} />
+        <p className="mt-6 text-center text-sm">
+          <a href="https://clutch.co/profile/suitepacific" className="text-accent hover:underline" target="_blank" rel="noopener noreferrer">
+            Read independent client reviews of SuitePacific on Clutch
+          </a>
+        </p>
         <p className="mt-5 text-center text-xs text-brand-400">
           Rated 5.0 on{" "}
           <a href="https://clutch.co/profile/suitepacific" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">

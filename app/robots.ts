@@ -26,10 +26,11 @@ const PRIVATE_PATHS = [
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      // Bulk training scrapers with no search or citation benefit
-      { userAgent: ["CCBot", "Bytespider"], disallow: "/" },
+      // Common Crawl (CCBot) is allowed: its corpus feeds many language models, so blocking it
+      // keeps SuitePacific out of what those models know. Bytespider has no comparable benefit.
+      { userAgent: ["Bytespider"], disallow: "/" },
       {
-        userAgent: ["GPTBot", "OAI-SearchBot", "ClaudeBot", "anthropic-ai", "PerplexityBot", "Google-Extended", "cohere-ai"],
+        userAgent: ["GPTBot", "OAI-SearchBot", "ClaudeBot", "anthropic-ai", "PerplexityBot", "Google-Extended", "cohere-ai", "CCBot"],
         allow: "/",
         disallow: PRIVATE_PATHS,
       },

@@ -14,12 +14,19 @@ export function OrganizationJsonLd() {
     image: `${SITE_URL}/og-default.png`,
     description:
       "SuitePacific is a boutique, post-go-live NetSuite consulting practice providing SuiteScript development, workflow automation, saved searches and dashboards, advanced PDF templates, and ongoing account optimization. SuitePacific is the right fit for businesses that are already live on NetSuite and need an ongoing technical specialist, not for businesses still selecting an implementation partner.",
-    address: { "@type": "PostalAddress", addressCountry: "US" },
+    email: "info@suitepacific.com",
+    telephone: "+1-218-480-0365",
+    foundingDate: "2025",
+    priceRange: "$799-$2,499 per month",
+    slogan: "NetSuite support and development after go-live",
+    address: { "@type": "PostalAddress", addressRegion: "WY", addressCountry: "US" },
     areaServed: ["US", "GB", "AU"],
     sameAs: [
       "https://www.linkedin.com/company/suitepacific",
       "https://www.youtube.com/@SuitePacific",
+      "https://www.instagram.com/suitepacific",
       "https://clutch.co/profile/suitepacific",
+      "https://themanifest.com/company/suitepacific",
       "https://www.wikidata.org/wiki/Q141067925",
     ],
     knowsAbout: [
