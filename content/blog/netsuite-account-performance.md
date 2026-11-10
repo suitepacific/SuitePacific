@@ -169,7 +169,7 @@ A: Go to Customization &gt; Lists, Records, and Fields and review each field typ
 **Q: Will removing unused workflows break anything?**
 A: Deactivate workflows rather than delete them initially. An inactive workflow does not run but can be reactivated if needed. Before deactivating, confirm the workflow has not been used recently by checking its execution history.
 
-Account performance issues are almost always fixable without an upgrade or a re-implementation, just a focused look at what's actually running and how often. This kind of cleanup is part of our [account optimization service](/netsuite-account-optimization). If your account has gotten noticeably slower over time, [book a free consultation](/#contact) and we'll help you find out why. For related reading, see [10 NetSuite Saved Search Tips Every Finance Team Should Know](/blog/netsuite-saved-search-tips) and [NetSuite Account Optimization: What to Audit and Fix on a Live Account](/blog/netsuite-optimization).
+Account performance issues are almost always fixable without an upgrade or a re-implementation, just a focused look at what's actually running and how often. This kind of cleanup is part of our [account optimization service](/netsuite-account-optimization). If your account has gotten noticeably slower over time, [request a free consultation](/#contact) and we'll help you find out why. For related reading, see [10 NetSuite Saved Search Tips Every Finance Team Should Know](/blog/netsuite-saved-search-tips) and [NetSuite Account Optimization: What to Audit and Fix on a Live Account](/blog/netsuite-optimization).
 
 ## Related reading
 

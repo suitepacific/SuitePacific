@@ -26,7 +26,7 @@ export function MobileStickyCta() {
       }`}
     >
       <Button href="/#contact" className="w-full justify-center">
-        Book a Free Consultation
+        Request a Free Consultation
       </Button>
     </div>
   );

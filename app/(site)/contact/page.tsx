@@ -20,16 +20,16 @@ const TRUST_BADGES = [
 ];
 
 export const metadata: Metadata = {
-  title: { absolute: "Contact SuitePacific | Book a Free NetSuite Consultation" },
+  title: { absolute: "Contact SuitePacific | Request a Free NetSuite Consultation" },
   description:
     "Contact SuitePacific for post-go-live NetSuite support: SuiteScript, workflow automation, integration maintenance, and administration. Plans from $799/month.",
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact SuitePacific | Book a Free NetSuite Consultation",
-    description: "Get in touch with SuitePacific for NetSuite post-go-live support, SuiteScript development, workflow automation, and integrations. Book a free consultation, no long-term contracts.",
+    title: "Contact SuitePacific | Request a Free NetSuite Consultation",
+    description: "Contact SuitePacific for NetSuite post-go-live support, SuiteScript, workflows and integrations. Request a free consultation, with no long-term contracts.",
     url: "https://suitepacific.com/contact",
     type: "website",
-    images: ogImages("Contact SuitePacific | Book a Free NetSuite Consultation"),
+    images: ogImages("Contact SuitePacific | Request a Free NetSuite Consultation"),
   },
 };
 

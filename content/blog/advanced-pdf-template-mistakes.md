@@ -98,7 +98,7 @@ A: The most common cause is a null field without the FreeMarker null-safety oper
 **Q: How do I reduce rendering time on a complex template?**
 A: Eliminate deep nested joins to related records at print time. Pull values onto the transaction via a saved search or User Event script at save time instead, and reference those flattened fields in the template. This reduces the work the template engine has to do at render time.
 
-Advanced PDF templates are one of the easiest things to get visually right and functionally fragile at the same time. Building and hardening them against real-world data is part of our [advanced PDF template service](/netsuite-advanced-pdf-templates). If your invoices, statements, or forms break on certain customers or transaction types, [book a free consultation](/#contact) and we'll help you track down why. For related reading, see [SuiteScript Best Practices](/blog/suitescript-best-practices) and [NetSuite Post-Go-Live Checklist: What to Prioritize in Your First 90 Days](/blog/netsuite-post-go-live-checklist).
+Advanced PDF templates are one of the easiest things to get visually right and functionally fragile at the same time. Building and hardening them against real-world data is part of our [advanced PDF template service](/netsuite-advanced-pdf-templates). If your invoices, statements, or forms break on certain customers or transaction types, [request a free consultation](/#contact) and we'll help you track down why. For related reading, see [SuiteScript Best Practices](/blog/suitescript-best-practices) and [NetSuite Post-Go-Live Checklist: What to Prioritize in Your First 90 Days](/blog/netsuite-post-go-live-checklist).
 
 ## Related reading
 

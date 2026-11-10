@@ -15,7 +15,7 @@ export function MidCta() {
             </h2>
             <div className="mt-7">
               <Button href="/#contact" size="lg">
-                Book a Free Consultation
+                Request a Free Consultation
               </Button>
             </div>
             <p className="mt-4 text-sm text-brand-400 max-w-md mx-auto text-balance">

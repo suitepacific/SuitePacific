@@ -5,6 +5,7 @@ import { BreadcrumbJsonLd, OrganizationJsonLd } from "@/components/seo/JsonLd";
 import { LeadFormLight } from "@/components/sections/LeadFormLight";
 import { ABOUT_INTRO, CONTACT_EMAIL, SITE_URL } from "@/lib/content";
 import { ogImages } from "@/lib/og";
+import { getCaseStudy } from "@/lib/case-studies";
 
 const TITLE = "About SuitePacific: Post-Go-Live NetSuite Support Firm";
 const DESCRIPTION =
@@ -33,6 +34,17 @@ const FACTS: [string, React.ReactNode][] = [
     </>,
   ],
   ["Contact", <a key="c" href={`mailto:${CONTACT_EMAIL}`} className="text-accent hover:underline">{CONTACT_EMAIL}</a>],
+];
+
+const WORK_EXAMPLES = ["partner-replacement-onboarding", "managed-support-retainer", "celigo-integration-failure-diagnosis"]
+  .map((slug) => getCaseStudy(slug))
+  .filter((cs) => cs !== undefined);
+
+const STEPS = [
+  { title: "Understand your requirements", body: "A free consultation to discuss what is not working in your NetSuite account and what matters most." },
+  { title: "Review your environment", body: "With the access you approve, we review the relevant configuration, scripts, workflows, integrations or reporting." },
+  { title: "Agree scope and engagement", body: "We recommend a practical fix and agree priorities and scope before any work starts, either under a monthly retainer or as a fixed-scope project with a fixed quote." },
+  { title: "Build, test and support", body: "Changes are built and tested in a sandbox account where one is available, deployed at an agreed time, and supported afterwards." },
 ];
 
 const FIT = [
@@ -81,7 +93,7 @@ export default function AboutPage() {
       />
 
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading as="h1" eyebrow="Company" title="About SuitePacific" subtitle={ABOUT_INTRO.subtitle} align="left" />
+        <SectionHeading as="h1" eyebrow="Company" title="About SuitePacific" subtitle="Going live is just the beginning. SuitePacific helps businesses get more from NetSuite through ongoing technical support, custom development, reporting, integrations and practical improvements." align="left" />
         <p className="mt-1 text-xs text-brand-300">Last updated November 2026</p>
 
         <div data-section="quick-answer" className="mt-6 rounded-2xl border-l-4 border-accent bg-brand-50/50 p-5">
@@ -101,7 +113,7 @@ export default function AboutPage() {
         </div>
 
         <div className="mt-6 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
-          <p className="text-sm text-brand-600 mb-3">Want to see if SuitePacific fits your account? Tell us what you need.</p>
+          <p className="text-sm text-brand-600 mb-3">Request a free consultation: tell us what is not working in your NetSuite account.</p>
           <LeadFormLight />
         </div>
 
@@ -128,6 +140,47 @@ export default function AboutPage() {
               <p key={p}>{p}</p>
             ))}
           </div>
+        </section>
+
+        <section data-section="work" className="mt-14">
+          <h2 className="text-xl font-semibold text-brand-900">What has SuitePacific worked on?</h2>
+          <p className="mt-2 text-sm text-brand-400">Three examples from client accounts, with client names withheld.</p>
+          <div className="mt-5 grid grid-cols-1 gap-4">
+            {WORK_EXAMPLES.map((cs) => (
+              <Link
+                key={cs.slug}
+                href={`/case-studies/${cs.slug}`}
+                className="block rounded-2xl border border-brand-100 bg-white p-5 shadow-soft hover:border-accent/40 transition-colors"
+              >
+                <p className="font-semibold text-brand-900">{cs.title}</p>
+                <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-brand-400">The problem</p>
+                <p className="mt-1 text-sm text-brand-600 leading-relaxed">{cs.cardChallenge}</p>
+                <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-accent">What changed</p>
+                <p className="mt-1 text-sm text-brand-600 leading-relaxed">{cs.cardOutcome}</p>
+                <p className="mt-3 text-xs text-accent">Read the case study</p>
+              </Link>
+            ))}
+          </div>
+          <p className="mt-4 text-sm">
+            <Link href="/case-studies" className="text-accent hover:underline">See all case studies</Link>
+          </p>
+        </section>
+
+        <section data-section="how-we-work" className="mt-14">
+          <h2 className="text-xl font-semibold text-brand-900">How does working with SuitePacific work?</h2>
+          <ol className="mt-5 grid grid-cols-1 gap-4">
+            {STEPS.map((step, i) => (
+              <li key={step.title} className="flex gap-4 rounded-2xl border border-brand-100 bg-white p-5">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-50 text-sm font-semibold text-brand-900 tabular-nums">
+                  {i + 1}
+                </span>
+                <div>
+                  <p className="font-semibold text-brand-900">{step.title}</p>
+                  <p className="mt-1 text-sm text-brand-600 leading-relaxed">{step.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </section>
 
         <section data-section="fit" className="mt-14">
@@ -175,8 +228,11 @@ export default function AboutPage() {
         </section>
 
         <div className="mt-14 rounded-2xl border border-brand-100 bg-white p-5 shadow-soft">
-          <p className="text-base font-semibold text-brand-900">Talk to SuitePacific</p>
-          <p className="mt-1 mb-4 text-sm text-brand-600">Leave your work email. We reply within one business day to set up a free consultation.</p>
+          <p className="text-base font-semibold text-brand-900">Request a free NetSuite consultation</p>
+          <p className="mt-1 mb-4 text-sm text-brand-600">
+            Tell us what&apos;s not working in your NetSuite account. We&apos;ll discuss your priorities and help identify the next
+            steps, and we reply within one business day.
+          </p>
           <LeadFormLight />
         </div>
       </div>

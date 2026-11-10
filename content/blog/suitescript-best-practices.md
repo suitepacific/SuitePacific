@@ -92,7 +92,7 @@ A comment that says `// loop through line items` adds nothing; the code already 
 
 ---
 
-Most of the SuiteScript "bugs" we get called in for aren't really bugs. They're customizations that made a reasonable assumption that stopped being true as the business changed. This kind of cleanup is core to our [SuiteScript development service](/netsuite-suitescript-development). If you've got scripts nobody on your team wants to touch anymore, [book a free consultation](/#contact) and we'll take a look at what's actually going on. For related reading, see [5 Common NetSuite Workflow Automation Mistakes](/blog/workflow-automation-mistakes) and [NetSuite User Event Scripts vs Client Scripts](/blog/netsuite-user-event-vs-client-script).
+Most of the SuiteScript "bugs" we get called in for aren't really bugs. They're customizations that made a reasonable assumption that stopped being true as the business changed. This kind of cleanup is core to our [SuiteScript development service](/netsuite-suitescript-development). If you've got scripts nobody on your team wants to touch anymore, [request a free consultation](/#contact) and we'll take a look at what's actually going on. For related reading, see [5 Common NetSuite Workflow Automation Mistakes](/blog/workflow-automation-mistakes) and [NetSuite User Event Scripts vs Client Scripts](/blog/netsuite-user-event-vs-client-script).
 
 ## Frequently asked questions
 

@@ -168,8 +168,8 @@ export default async function CaseStudyPage({
         <div className="mt-14 pt-10 border-t border-brand-50 text-center">
           <p className="text-brand-900 font-semibold">Have a similar challenge?</p>
           <p className="mt-2 text-sm text-brand-400">
-            Most engagements start with a conversation about what&apos;s not working. Book a free
-            call and we&apos;ll tell you what&apos;s realistic.
+            Most engagements start with a conversation about what&apos;s not working. Request a free
+            consultation and we&apos;ll tell you what&apos;s realistic.
           </p>
           <div className="mx-auto mt-6 max-w-md text-left">
             <LeadFormLight />

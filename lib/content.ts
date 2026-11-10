@@ -390,7 +390,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     question: "How much does SuitePacific cost?",
     answer:
-      "Pricing depends on the scope of ongoing work your account needs. Because we're a boutique practice without enterprise consulting overhead, our rates are typically well below large NetSuite consulting firms. Book a free consultation and we'll give you a clear, specific quote.",
+      "Pricing depends on the scope of ongoing work your account needs. Because we're a boutique practice without enterprise consulting overhead, our rates are typically well below large NetSuite consulting firms. Request a free consultation and we'll give you a clear, specific quote.",
   },
   {
     question: "Is your team certified on NetSuite?",

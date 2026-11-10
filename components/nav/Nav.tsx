@@ -89,7 +89,7 @@ export function Nav() {
 
         <div className="hidden md:block">
           <Button href="/#contact" size="md">
-            Book a Free Consultation
+            Request a Free Consultation
           </Button>
         </div>
 
@@ -135,7 +135,7 @@ export function Nav() {
             );
           })}
           <Button href="/#contact" className="w-full justify-center">
-            Book a Free Consultation
+            Request a Free Consultation
           </Button>
         </div>
       )}

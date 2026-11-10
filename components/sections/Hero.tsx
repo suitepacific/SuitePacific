@@ -23,7 +23,7 @@ export function Hero() {
 
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <Button href="#contact" size="lg">
-              Book a Free Consultation
+              Request a Free Consultation
             </Button>
             <Button href="#timeline" variant="secondary" size="lg">
               See How We Help

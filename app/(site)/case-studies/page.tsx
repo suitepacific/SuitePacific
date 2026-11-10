@@ -84,10 +84,10 @@ export default function CaseStudiesIndexPage() {
           <p className="text-brand-900 font-semibold">Have a similar challenge?</p>
           <p className="mt-2 text-sm text-brand-400">
             Most of our engagements start with a conversation about what&apos;s not working or what
-            needs to be built. Book a free call and we&apos;ll tell you what&apos;s realistic.
+            needs to be built. Request a free consultation and we&apos;ll tell you what&apos;s realistic.
           </p>
           <div className="mt-6">
-            <Button href="/contact">Book a Free Consultation</Button>
+            <Button href="/contact">Request a Free Consultation</Button>
           </div>
         </div>
       </div>

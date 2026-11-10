@@ -419,7 +419,7 @@ export default function HireNetSuiteDeveloperPage() {
 
         {/* Above the fold CTA */}
         <div className="mt-6">
-          <Button href="#contact">Book a Free Consultation</Button>
+          <Button href="#contact">Request a Free Consultation</Button>
         </div>
 
         {/* Social proof, real outcomes */}
